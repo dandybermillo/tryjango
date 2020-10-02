@@ -1,0 +1,292 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>USER MAIN PAGE</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<style>
+    /* -------- loading begin---- */
+
+    .loading {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading>img {
+        width: 150px;
+
+    }
+
+    .hidden {
+        animation: fadeOut .01s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    /* ---- loading end ----- */
+
+    /* ---------- table -----------  */
+    .row-number {
+        width: 3.5rem;
+    }
+
+    .code-number {
+        width: 5rem;
+        display: none;
+    }
+
+    .date_entered {
+        width: 13rem;
+    }
+
+    .amount {
+        border-radius: 25px;
+    }
+
+    .dates {
+        min-width: 6rem;
+        border-radius: 25px;
+    }
+
+    .balance,
+    .amount {
+        /* max-width: 6rem; */
+        font-weight: bold;
+
+    }
+
+    table th,
+    td {
+
+        text-align: center;
+    }
+
+
+
+    /* load static */
+
+    span>img {
+        width: 1.5rem;
+        display: none;
+
+    }
+
+    .show_loading_img {
+
+        display: inline-flex;
+    }
+
+    .cashin {
+
+        color: #218838;
+    }
+
+    .cashout {
+        color: red;
+    }
+
+    .left_align {
+        text-align: left;
+    }
+</style>
+
+
+
+<body>
+    {% block loading %}
+    <div class="loading">
+
+        <img src="/static/img/load.gif" alt="Loading..." />
+    </div>
+    {% endblock loading %}
+
+    <div class="wrapper">
+        <div class="wrapper_inner">
+            <div class="vertical_wrap">
+                <div class="backdrop"></div>
+                <div class="vertical_bar">
+                    <div class="profile_info">
+                        <div class="img_holder">
+                            <img src="pic.png" alt="profile_pic">
+                        </div>
+                        <p class="title">{{member_info.firstname|title}} {{member_info.lastname|title}}</p>
+                        <p class="sub_title">{{user.username}}</p>
+                    </div>
+                    <ul class="menu">
+                        <li><a href="{% url 'fx:user_dashboard_url' member_info.id  %}" id="item 1"
+                                class='{{State.dashboard}}'>
+                                <span class="icon"><i class="fas fa-home"></i></span>
+                                <span class="text">Dashboard</span>
+                            </a></li>
+                        <li><a href="{% url 'fx:user_finance_url' member_info.id %}" id="item 2"
+                                class='{{State.account}}'>
+                                <span class="icon"><i class="fas fa-file-alt"></i></span>
+                                <span class="text">Account</span>
+                            </a></li>
+                        <li><a href="{% url 'fx:user_finance_url' member_info.id %}" id="item 3"
+                                class='{{State.transfer}}'>
+                                <span class=" icon"><i class="fas fa-chart-pie"></i></span>
+                                <span class="text">Transfer</span>
+                            </a></li>
+                        <li><a href="{% url 'fx:update_user_info_url' member_info.id %}" id="item 4"
+                                class='{{State.profile}}'>
+                                <span class="icon"><i class="fas fa-user"></i></span>
+                                <span class="text">Profile</span>
+                            </a></li>
+                        <li><a href="#item5" id="item  5">
+                                <span class="icon"><i class="fas fa-cog"></i></span>
+                                <span class="text">Settings</span>
+                            </a></li>
+                    </ul>
+
+                    <ul class="social">
+                        <li><a class="user-account" href="#"><i class="fas fa-cog"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="top_bar">
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="logo">
+                        Awesome <span>Community</span>
+                    </div>
+                </div>
+
+
+                <div class="sub container">
+                    <div class="target">
+
+                        <!-- <div id="item1" class="toggle">  hello-->
+
+                        {% block sub_content%}
+                        {% endblock sub_content%}
+
+
+                        <!-- </div> -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="user-account-modal modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Welcome, {{user.username}}
+                    </button>
+                    {% if user.is_authenticated %}
+                    <!-- <a href="{% url 'products:user_dashboard_url' 0 %}"
+                        class="list-group-item list-group-item-action">Personal Profile</a> -->
+                    <a href="{% url 'password_change'  %}" class="list-group-item list-group-item-action">Change
+                        Password
+                    </a>
+                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">Log out</a>
+                    {%else %}
+
+                    <a class="btn btn-info" href="{% url 'fx:login' %}">Log In</a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock content %}
+    <script>
+
+        $(document).ready(function () {
+            $(".user-account").click(function () {
+                console.log("search...");
+
+                $('.user-account-modal').modal('toggle');
+            });
+
+            var hamburger = document.querySelector(".hamburger");
+            var wrapper = document.querySelector(".wrapper");
+            var backdrop = document.querySelector(".backdrop");
+
+            hamburger.addEventListener("click", function () {
+
+                wrapper.classList.add("active");
+            });
+
+            backdrop.addEventListener("click", function () {
+
+                wrapper.classList.remove("active");
+            });
+
+
+        });
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        window.addEventListener("load", function () {
+
+            const loader = document.querySelector(".loading");
+            loader.className += " hidden";
+
+        });
+
+
+    </script>
+
+    {% block javascript %}
+    {% endblock javascript %}
+
+</body>
+
+</html>

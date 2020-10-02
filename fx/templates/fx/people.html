@@ -1,0 +1,21 @@
+{% extends 'fx/base.html' %}
+{% load static %}
+
+{% load table_tags %}
+
+
+
+<!-- "table-responsive table-sm" -->
+<br>
+{% block main_content %}
+hellow world
+<div class="container">
+    <!-- {{people}} -->
+
+    {% render_table people %}
+
+
+</div>
+
+
+{% endblock main_content %}

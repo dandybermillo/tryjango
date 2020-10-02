@@ -1,0 +1,99 @@
+-------------- confirm dialog --------
+
+
+
+<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="false"
+    id="mi-modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                <h4 class="modal-title" id="myModalLabel">{{message}}</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="modal-btn-yes">Yes</button>
+                <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    console.log("..@confrm modal..code:{{code}}");
+
+    // ---------  cancel transfer --------- note: another copy on cash_transfer.html
+    var modalConfirm = function (callback) {
+        //#mi-modal name of the confirm dialog
+        $("#modal-btn-yes").on("click", function () {
+            callback(true);
+            $("#mi-modal").modal('hide');
+        });
+        $("#modal-btn-no").on("click", function () {
+            callback(false);
+            $("#mi-modal").modal('hide');
+        });
+    };
+
+    modalConfirm(function (confirm) {
+        var obj = $("#mi-modal").val();
+        $(obj).closest('tr').toggleClass("to-delete");
+
+
+        if (confirm) {
+            var code = obj.value;
+            var data = {}
+            var request_action = $(obj).text();
+            console.log("..request_action:", request_action);
+            data['code'] = code;
+
+            data['request_action'] = request_action;
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:update_transfer_status_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    console.log("response ", response);
+                    if (response['data'] == "Success") {
+
+                        $(obj).closest('tr').toggleClass("selected");
+                        $(obj).closest('tr').find('.W').removeClass("W").toggleClass("C");
+                        $(obj).closest('tr').find('.status').text("Cancelled");
+                        $(obj).remove();
+                        alert("Code number " + code + " has been successfully cancelled.");
+
+                    } else {
+                        alert("Sorry! Code number " + code + " cannot be cancelled.");
+                    }
+
+                },
+                error: function (response) {
+                    //todo add error logger
+                    console.log("error reach:");
+                    console.log(response);
+                }
+            });
+
+
+        }// else {
+        //   //Acciones si el usuario no confirma
+        //   console.log("no");
+        // }
+    });
+
+    function cancel_transfer(obj) {
+        $(obj).closest('tr').toggleClass("to-delete"); //to-delete means it shud be highlighted
+        console.log("....{{model_code}}  obj:",obj);
+        $("#mi-modal").modal('show');
+        $("#mi-modal").val(obj);
+
+    }
+    $(".cancel-transfer-btn",".reject-transfer-btn").on("click", {
+    }, cancel_transfer);
+
+  // --------- end of cancel transfer ---------
+
+
+
+</script>

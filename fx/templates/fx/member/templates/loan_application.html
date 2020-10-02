@@ -1,0 +1,562 @@
+{% extends 'fx/base.html' %}
+{% load custom_tags%}
+{% load crispy_forms_tags %}
+
+
+
+{% block sub_content %}
+
+<style>
+    .container {
+
+        width: 80%;
+
+    }
+
+    .saving-info-container div {
+        border-left: 5px solid green;
+        width: 100%;
+
+    }
+
+
+    #id_wallet-transaction_type,
+    #id_transaction_type {
+        /* id="id_wallet-transaction_type" */
+        display: none;
+    }
+
+    div.form-group {
+        padding-left: 0px;
+
+    }
+</style>
+
+<div class="container" style="border:none">
+    <div>
+        <p style="font-size: 1.5rem;"> LOAN APPLICATION FORM</p>
+    </div>
+    {% if loan.errors %}
+    {% for field in loan %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% for message in messages %}
+
+    <div id="wallet-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <div id="wallet-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+        Please fill in the box with asterisk sign(*). Thank you.
+    </div>
+
+
+
+     <div class="form-row" style="border-bottom:1px solid #ced4da">
+        <div class="form-group col-md-6">
+            <label for="wallet-member-name" class="col-form-label">Borrower </label>
+
+            <input id="wallet-member-name" type="text" readonly class="form-control-plaintext"
+                style="border:1px solid #ced4da"
+                value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+        </div>
+        <div class="form-group col-md-6 ">
+            <label for="id_date_entered" class="col-form-label">Date </label>
+            {{ loan.date_entered}}
+        </div>
+
+    </div>
+
+
+    <div>
+
+
+
+        <br>
+        <form action="" class="needs-validation" id="form_loan" method="POST">
+            {% csrf_token %}
+            {{loan.source_type}}{{loan.percent}}
+            {{loan.note_id}}{{loan.cc_id}}{{loan.source_id}}{{loan.saving_id}}{{loan.flag}}
+
+            <!-- fields=["cc_loan","saving","percent","date_entered","source_type","note_id","cc_id","source_id","flag","saving_id"]    -->
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="main-source-drop" class="col-form-label">Source: </label>
+                    <div class="dropdown" id="main-source-drop">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="border:1px solid #ced4da">
+
+                            {% ifequal loan.source_type.value 'C' %} CASH {%else%} WALLET ACCOUNT {%endifequal%}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                            <button class="source-cash dropdown-item" type="button">CASH</button>
+                            <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="main-percent-drop" class="col-form-label">Percentage: </label>
+                    <div class="dropdown" id="main-percent-drop">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="cc-percent-drop"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="border:1px solid #ced4da">
+                            {{loan.percent.value}}% Of The Saving
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="cc-percent-drop">
+                            <button class="cc-percent dropdown-item" type="button">200% Of The Saving </button>
+
+                            <button class="cc-percent dropdown-item" type="button">100% Of The Saving </button>
+                            <button class="cc-percent dropdown-item" type="button">50% Of The Saving</button>
+                            <button class="cc-percent dropdown-item" type="button">25% Of The Saving</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
+                    {{ loan.saving|as_crispy_field}}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ loan.cc_loan|as_crispy_field}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="note-loan-txt" class="col-form-label">Note: </label>
+                    <textarea class="form-control" id="note-loan-txt" aria-describedby="inputGroupPrepend" rows="4"
+                        name="note" placeholder="Please provide a note if neccesary." form="form_loan"
+                        maxlength="50">{{loan.note}}</textarea>
+                </div>
+                <div class="form-group col-md-6 mb-0">
+                    <div style="position: absolute;width:100%">
+
+
+                        <label for="account-assets-table" class="col-form-label">FINANCE:</label>
+                        <table id="account-assets-table" class="table table-bordered">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Wallet</th>
+                                    <th scope="col">C-Coin</th>
+                                    <th scope="col">Saving</th>
+                                    <th scope="col">Loan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-primary">
+
+                                    <td id="WALLET" class="{{loan.account_name.WALLET}}">{{asset_liabities.wallet}}</td>
+                                    <td>{{asset_liabities.cc}}</td>
+                                    <td id="SAVING">{{asset_liabities.saving}}</td>
+                                    <td>{{asset_liabities.loan}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                {%if post_data %}
+                <a id="wallet-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+
+                <a class="edit_button btn btn-primary btn-md"
+                    href="{% url 'fx:loan_application_url' member_info.id loan.id    %}">
+                    Make Changes</a>
+                {% else %}
+                <a id="wallet-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <input id="loan-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
+                <input id="loan-submit-btn" class="submit btn btn-primary btn-sm" type="submit" name="Submit"
+                    value="SAVE" />
+                {%endif%}
+            </div>
+        </form>
+        <br>
+    </div>
+
+
+
+
+
+
+</div>
+<div class="modal fade" id="wallet-transaction-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Loan Application</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div id="review-loan-app-form">
+                    <form>
+                        <h4>Please review the following before submitting. Thanks.</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="review-borrower-loan-txt" class="col-sm-1 col-form-label"
+                                    style="padding-left: 8px">Member:</label>
+
+                                <input style="background-color: transparent;" id="review-borrower-loan-txt" type="text"
+                                    readonly class="review form-control"
+                                    value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="review-date-loan-txt" class="col-sm-1 col-form-label"
+                                    style="padding-left: 8px">Date:</label>
+
+                                <input id="review-date-loan-txt" type="text" readonly class="review form-control"
+                                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="review form-group row">
+
+                            <label for="review-source-loan-txt" class="col-sm-1 col-form-label">Source:</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-source-loan-txt"
+                                    value="">
+                            </div>
+
+
+                            <label for="review-note-loan-txt" class="col-sm-1 col-form-label">Note: </label>
+                            <div class="col-md-5">
+                                <textarea class="form-control" id="review-note-loan-txt" readonly
+                                    aria-describedby="inputGroupPrepend" rows="1"
+                                    placeholder="Please provide a note if neccesary." maxlength="50"></textarea>
+                            </div>
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-percent-loan-txt" class="col-sm-1 col-form-label">Percentage</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-percent-loan-txt"
+                                    value="">
+                            </div>
+                            <div class="form-group col-md-6 mb-0">
+                                <div style="position: absolute;width:100%">
+
+
+                                    <label for="financial-table" class="col-form-label">Financial </label>
+                                    <table id="financial-table" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">Wallet</th>
+                                                <th scope="col">C-Coin</th>
+                                                <th scope="col">Saving</th>
+                                                <th scope="col">Loan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-primary">
+
+                                                <td id="WALLET" class="{{loan.account_name.WALLET}}">{{asset_liabities.wallet}}</td>
+                                                <td>{{asset_liabities.cc}}</td>
+                                                <td id="SAVING">{{asset_liabities.saving}}</td>
+                                                <td>{{asset_liabities.loan}}</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-saving-loan-txt" class="col-sm-1 col-form-label">Saving</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-saving-loan-txt"
+                                    value="">
+                            </div>
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-cc-loan-txt" class="col-sm-1 col-form-label">CC(Loan)</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-cc-loan-txt"
+                                    value="">
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="review-loan-modal-footer" style="text-align:right">
+                            <button id="review-back-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-loan-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="edit-loan-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-close-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="edit-loan-btn" type="button" class="btn btn-primary">Make Changes</button>
+                        </div>
+                    </form>
+
+
+
+                    <!-- ----- end of review form ---- -->
+
+
+                </div>
+
+
+                <!-- ----- review form ---- -->
+         
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        var keys = {};
+        var keys_account={"W":"WALLET","C":"CASH"};
+        keys["previous-selected-account"] =keys_account["W"];
+        console.log("previous acct:"+ keys["previous-selected-account"]);
+        //var s_type = "{{loan.source_type}}"
+         
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        $(document).ready(function () {
+            var minimum_deposit = 10 // min amount to deposit for saving account
+            var transaction_type = "{{member_info.requested_action}}";
+            var post_data = "{{post_data}}";
+
+            keys['wallet-balance'] = parseFloat("{{asset_liabities.wallet}}".replace(',', ''));
+            // set Saving input max property
+            $(".source-cash").trigger("click");
+            // add class names to form fields
+            $("#id_date_entered").prop("class", "form-control");
+            $("#id_saving").prop("class", "form-control");
+            // set the max and min properties of saving/deposit box
+            // max = keys['wallet-balance'];
+            // if (max > 0 && max < minimum_deposit) {
+            //     minimum_deposit = max
+            // }
+            $("#id_saving").prop("min", minimum_deposit);
+            $("#id_saving").prop("max", "100000");
+            ///end: set the max and min properties of saving/deposit box
+            $("#id_cc_loan").prop("class", "form-control");
+
+
+            console.log(" keys['wallet-balance']:" + keys['wallet-balance']);
+            //detect saving input text changed value
+            $(".dropdown-menu button.cc-percent").click(function () {
+                var selText = $(this).text(); //.replace(" Percent","%");
+                $("#cc-percent-drop").text(selText);
+                $("#id_saving").trigger("input");
+            });
+            $("#id_saving").on("input", function () {
+
+                var cc_percent = parseInt($("#cc-percent-drop").text());
+                // var cash_percent = (100 - cc_percent) / 100;
+
+                var amount = parseInt($(this).val());
+                var cc = amount * ((cc_percent / 100));
+                // var cc = (amount * (cc_percent / 100)) / cash_percent;
+                cc = Math.round(cc);
+                console.log("changing:" + cc);
+                $("#id_cc_loan").val(cc);
+
+            });
+
+            //hide form fields:
+
+            $("#id_percent").hide();
+            $("#id_flag").hide();
+            $("#id_note_id").hide();
+            $("#id_source_id").hide();
+            $("#id_source_type").hide();
+            $("#id_saving_id").hide();
+            $("#id_cc_id").hide();
+
+
+            if (post_data == "True") {
+                $('#note-loan-txt').css("background-color", "transparent");
+                $('#id_cc_loan').css("background-color", "transparent");
+                $('#id_saving').css("background-color", "transparent");
+                $('#cc-percent-drop').css("background-color", "transparent");
+                $('#source-cash-drop').css("background-color", "transparent");
+
+                $('#note-loan-txt').prop("disabled", true);
+                $('#id_cc_loan').prop("disabled", true);
+                $('#id_saving').prop("disabled", true);
+                $('#cc-percent-drop').prop("disabled", true);
+                $('#source-cash-drop').prop("disabled", true);
+
+
+            }
+
+            $(".source-cash").click(function () {
+                var minimum_deposit = 10;
+                console.log("source cash clik");
+                var text = $(this).text().trim();
+                $("#source-cash-drop").text(text);
+                var max = 0
+                account_name = ""
+                if (text == "CASH") {
+                    source_type = "C";
+                    max = 10000;
+                    account_name = "CASH";
+                } else {
+                    source_type = "W";
+                    account_name = "WALLET";
+                    max = keys['wallet-balance'];
+                    if (max > 0 && max < minimum_deposit) {
+                        minimum_deposit = max
+                    }
+                }
+                $("#id_source_type").val(source_type);
+                $("#id_saving").prop("min", minimum_deposit);
+                $("#id_saving").prop("max", max);
+
+                var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
+                console.log("account:" + previous_account_name);
+                if (previous_account_name != "CASH") {
+
+                    $("#account-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+                    $("#financial-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+
+                    
+                }
+                if (account_name != "CASH") {
+                    $("#account-assets-table tr").find('#' + account_name).attr("class", "selected_account");
+                    $("#financial-table tr").find('#' + account_name).attr("class", "selected_account");
+
+
+                }
+                keys["previous-selected-account"] = account_name;
+                 
+
+            });
+            $(".dropdown-menu button.cc-percent").click(function () {
+                var selText = $(this).text(); //.replace(" Percent","%");
+                var percent = parseInt(selText);
+
+                $("#id_percent").val(percent);
+                $("#cc-percent-drop").text(selText);
+
+
+
+
+
+                //$(".source-cash").trigger("click");
+            });
+
+
+            // if (post_data == "True") {
+            //     $('#id_description').css("background-color", "#e9ecef");
+            //     $('#id_credit').css("background-color", "#e9ecef");
+            //     $('#id_debit').css("background-color", "#e9ecef");
+
+            // }
+            $(".edit_button").click(function () {
+                $('.submit').prop("disabled", false);
+                $(".alert").hide();
+                $(this).hide();
+            });
+            $("#id_date_entered").css("background-color", "transparent");
+            $("#loan-submit-btn").hide();
+            $("#review-loan-submit-btn").click(function () {
+                $("#loan-submit-btn").trigger("click");
+
+
+
+            });
+
+            $("#loan-done").click(function () {
+
+                var form = document.querySelector(".needs-validation");
+                var reportVal = form.checkValidity();
+                if (reportVal == false) {
+                    $("#wallet-failed-alert").show();
+                    form.reportValidity();
+                    return;
+                }
+
+
+
+                var source = $("#source-cash-drop").text().trim();
+                var cc_loan = $("#id_cc_loan").val();
+                var saving = $("#id_saving").val();
+                var percent = parseInt($("#cc-percent-drop").text());
+                var note = $("#note-loan-txt").val().trim();
+
+
+
+                $("#review-cc-loan-txt").val(cc_loan);
+                $("#review-source-loan-txt").val(source);
+                $("#review-saving-loan-txt").val(saving);
+                $("#review-note-loan-txt").val(note);
+                $("#review-percent-loan-txt").val(percent + " %");
+                $("#wallet-transaction-modal").modal('show');
+
+            });
+        });
+    </script>
+
+
+    {% endblock sub_content %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,0 +1,260 @@
+{% load humanize %}
+{% load app_filters %}
+{% load custom_tags%}
+
+{% load app_filters %}
+
+
+{% load table_tag%}
+
+<!-- code={{code}} Options={{search_receiver.get_nav_settings}}   preference={{preference}} -->
+
+<!-- 
+<div class="loading hidden loading-{{code}}" >
+    <img src="/static/img/load.gif" alt="Loading..." />
+</div> -->
+
+<table class="table table-hover table-bordered" id="table-{{code}}" width="100%">
+    <thead>
+        <tr>
+
+            <th># </th>
+            <th scope="col">CODE</th>
+            <th scope="col">NAME</th>
+
+            <th scope="col">ADDDRESS</th>
+            <th scope="col">CONTACT NOS.</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">ACTION</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th> </th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+
+        </tr>
+
+
+    </tbody>
+</TABLE>
+
+<!-- preference: {'total_records': 4, 'rows_per_page': 10, 'rows_option_list': [1, 3, 5, 10, 20, 30, 50, 100], 'filter_field_value': 2, 'filter_field': 'sender_id'} -->
+
+
+{% include 'fx/e_wallet/preference_modal.html' with code=code Options=search_receiver.get_nav_settings   preference=preference  %}
+
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+       // console.log(".....times....{{code}}");
+        var data = {}; //the query is always available 
+ 
+        var code = "{{code}}";  // use in fill_search_receiver_table()
+
+        initialize();
+        $(".container-alert-not-found-{{code}}").hide();
+        function initialize() {
+            $("#last-row-{{code}}").html("0")
+            $("#last-row-{{code}}").prop("value", 0);
+            $("#total_record-{{code}}").html("0 Entry")
+            $('#load-more-{{code}}').hide();
+        }
+
+        $('#txt-{{code}}').keypress(function (event) {
+           
+            if (event.which == 13) {
+                $('.btn-{{code}}-submit').trigger("click");
+                console.log("enter");
+            }
+
+
+        });
+
+
+       // $("#set_per_page{{code}}").hide();
+
+        $('.btn-{{code}}-submit').click(function (event) {
+            $(".loading").toggleClass("hidden");
+
+            console.log(".....btn-{{code}}-submit....is clicked");
+           
+            $("#table-{{code}} tbody").find("tr").remove();  // table for found recievers after search
+
+            var receiver_username = $('#txt-{{code}}').val().trim();  //search textbox
+
+            receiver_username = receiver_username.replace(/(<([^>]+)>)/ig, '');
+            var total_no_of_row_per_page = parseInt($("#selected_total_no_of_rows-{{code}} option:selected").text()); // $("#total_no_of_row").val();
+            console.log("...total_no_of_row_per_page: ", total_no_of_row_per_page);
+
+            if (receiver_username.length < 3) {
+                initialize();
+                $(".container-alert-not-found-{{code}}").show();
+                // setTimeout();
+                $("div .alert-not-found-{{code}}").text("Must be at least 3 characters long.");
+                $('#txt-{{code}}').focus();
+                event.preventDefault();
+                return 0;
+            }
+           // $(".loading-{{code}}").toggleClass("hidden");
+            console.log("......loading-{{code}}");
+
+            data["action_request"] = "search"
+            data['filter_field_value'] = receiver_username
+            data["total_no_of_row_per_page"] = total_no_of_row_per_page
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:search_receiver_url' %}",
+                data: data,
+
+                dataType: "json",
+                success: function (response) {
+                    //prop = JSON.stringify(obj);
+                    //$("#{{table.Options.model}}-properties{{code}}").val(prop);
+                    //console.log("prop:", prop);
+                    var row_ctr = 0; //0 during searching;
+                    data["action_request"] = ""; //this time...loading more data not a fresh search 
+                    console.log(response["data"]);
+                    console.log(response["properties"]);
+                    properties = response["properties"]
+                    $(".container-alert-not-found-{{code}}").hide();
+                    $(".container-alert-found-{{code}}").hide();
+
+                    if (properties.total_record <= 0) {
+                        initialize();
+                        $(".container-alert-not-found-{{code}}").show();
+                        $("div .alert-not-found-{{code}}").text("Keyword " + receiver_username + " does not exist!");
+                        $('#txt-{{code}}').focus();
+                        return;
+                    }
+                  
+                    response["data"].forEach(function (item) {
+                        row_ctr = row_ctr + 1;
+                        fill_search_receiver_table(item, row_ctr); // todo uncomment
+                    });
+                    $("#last-row-{{code}}").html(row_ctr)
+                    $("#last-row-{{code}}").prop("value", row_ctr);
+
+                    $("#total_record-{{code}}").html(properties.total_record + " Entry")
+                    $("#total_record-{{code}}").prop("value", properties.total_record);
+                    console.log("total rec:", properties.total_record);
+                    console.log("ctr:", row_ctr);
+             
+                    if (row_ctr >= properties.total_record) { //last page reached
+                        $('#load-more-{{code}}').hide();
+                    } else {
+                       console.log('.....load more showed...{{code}}');
+                       // $('#load-more-{{code}}').prop("disabled", false);
+                        $('#load-more-{{code}}').show();
+
+                    }
+
+                    console.log("....{{code}}")
+                    $(".container-alert-found-{{code}}").show();
+                    $("div .alert-found-{{code}}").text(  properties.total_record +  " record(s) found!");
+
+                },
+                error: function (response) {
+                    console.log("error reach:");
+                    console.log(response);
+                }
+            })
+
+
+            $(".loading").toggleClass("hidden");
+        });
+
+        function fill_search_receiver_table(item, row_ctr) {
+            //var date = get_date(item.date);
+            var fullname = item.gender + " " + item.firstname + " " + item.lastname;
+            var classname = "class ='table-{{code}}'";
+            //  <a class='btn btn-sm btn-outline-info' href='/create_update_member_wallet/" + member_id + "/" + item.id + "/" + item.transaction_type + "/' >EDIT</a> </td>
+            //console.log(".....code", code);
+            var markup = "";
+            if (code == "search-member") {
+                button = "<td> <a class='btn btn-sm btn-info' href='/member/" + item.id + "/' >Show Info</a> </td>";
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td><span id='code'>" + item.id + "</span></td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td> <td class='left'>" + item.username + " </td> " + button + "</tr>";
+            } else {
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td><span id='code'>" + item.id + "</span></td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td> <td class='left'>" + item.username + " </td> <td><button onclick='add_receiver(this)' name='make-receiver-extension' class='make-receiver btn btn-sm btn-info'> Make receiver </button></td></tr>";
+            }
+            $("#table-{{code}} tbody").append(markup);
+        }
+
+        function loadData() {
+            $(".loading").toggleClass("hidden");
+            //console.log("... loadData() at search_receiver.html code {{code}}");
+            // total_no_of_row - the selected total_rows in option buttons
+            var total_no_of_row_per_page = parseInt($("#selected_total_no_of_rows-{{code}} option:selected").text()); // $("#total_no_of_row").val();
+            var last_row = $("#last-row-{{code}}").val();
+            if (isNaN(total_no_of_row_per_page)) {
+                var total_rows = parseInt($("#total_record-{{code}}").val());
+                console.log("isNaN(total_no_of_row_per_page)");
+                total_no_of_row_per_page = total_rows - last_row;
+            }
+            data['total_no_of_row_per_page'] = total_no_of_row_per_page;    // selected rows to be displayed
+            data['last_row'] = last_row;
+
+            //console.log("at script data:", data);
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:search_receiver_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    row_ctr = parseInt(last_row)
+                    console.log(response["data"]);
+
+                    response["data"].forEach(function (item) {
+                        row_ctr = row_ctr + 1;
+                        fill_search_receiver_table(item, row_ctr); // todo uncomment
+                    });
+
+                    $("#last-row-{{code}}").html(row_ctr)
+                    $("#last-row-{{code}}").prop("value", row_ctr);
+
+                    if (row_ctr >= properties.total_record) { //last page reached
+                        $('#load-more-{{code}}').hide();
+                    } else {
+                        $('#load-more-{{code}}').show();
+                    }
+                    // if (response['last_page']) {
+                    //     $('#load-more-{{code}}').hide();
+                    // }
+
+                },
+                error: function (response) {
+                    console.log("error reach:");
+                    console.log(response);
+                }
+            })
+            $(".loading").toggleClass("hidden");
+
+        }
+
+        $('#load-more-{{code}}').click(function () {
+            $('#load-more-{{code}}').prop("disabled", true);
+           // $(".loading").toggleClass("hidden");
+            //$("img").toggleClass("show_loading_img");
+          //  console.log("loading data...");
+            loadData();
+           // $(".loading-{{code}}").toggleClass("hidden");
+          // $(".loading").toggleClass("hidden");
+           // $("img").toggleClass("show_loading_img");
+            $('#load-more-{{code}}').prop("disabled", false);
+
+        });
+
+    });
+
+</script>

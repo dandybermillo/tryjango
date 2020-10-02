@@ -1,0 +1,30 @@
+{% load custom_tags %}
+
+
+
+
+
+
+<table style="width:100%">
+    <tr>
+
+        {% for  key, value  in fields.items %}
+        <th>{{value}}</th>
+        {% endfor %}
+
+    </tr>
+    </tr>
+    {% for obj in model %}
+    <tr>
+        {% for  k,v in fields.items %}
+
+        <td>{% getattribute obj v %}
+            {% autoescape off %}
+            {% insert xtra   %}
+            {% endautoescape %}
+        </td>
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>

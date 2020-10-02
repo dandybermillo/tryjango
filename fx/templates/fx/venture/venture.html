@@ -1,0 +1,863 @@
+{% extends 'fx/base.html' %}
+{% load custom_tags%}
+{% load crispy_forms_tags %}
+
+
+
+{% block sub_content %}
+
+<style>
+    #id_amount,
+    .small-size,
+    #id_cc {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+    }
+
+    .container {
+
+        width: 80%;
+
+    }
+
+    .saving-info-container div {
+        border-left: 5px solid green;
+        width: 100%;
+
+    }
+
+
+    #id_wallet-transaction_type,
+    #id_transaction_type {
+        /* id="id_wallet-transaction_type" */
+        display: none;
+    }
+
+    div.form-group {
+        padding-left: 0px;
+
+    }
+</style>
+
+
+{% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
+
+<div class="container" style="border:none">
+    <div class="tcard">
+        <div>
+            <p style="font-size: 1.5rem;"> CUSTOMER PAYMENT FORM</p>
+        </div>
+        {% if venture.errors %}
+        {% for field in venture %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% for message in messages %}
+
+        <div id="payment-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+            Please fill in the box with asterisk sign(*). Thank you.
+        </div>
+
+        <div>
+
+            <form action="" class="needs-validation" id="form_venture" method="POST">
+                {% csrf_token %}
+                <div hidden>
+                    {{venture.role_type}}{{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
+                    {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
+                </div>
+
+                <div class="form-row" style="border-bottom:1px solid #ced4da">
+                    <div class="form-group col-md-3">
+                        <label for="venture-customer_id-txt" class="col-form-label">ID<span
+                                class="asteriskField">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" style="background-color: transparent;"><i
+                                        class="fas fa-search"></i></div>
+                            </div>
+                            <input pattern="[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}" {% if customer_info.member_id %}
+                                readonly {% endif %} id="venture-customer_id-txt" type="text" name="venture-customer_id"
+                                required value="{{customer_info.member_id}}" class="mid-size form-control"
+                                style="border:1px solid #ced4da;">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        {% ifequal venture.request_action 'venture' %}
+                        <label id="customer-name-lbl" for="customer-name" class="col-form-label">CUSTOMER</label>
+                        {% else %}
+                        {% if venture.id > 0 %}
+                        <label id="role_type-drop" for="customer-name"
+                            class="col-form-label">{% ifequal venture.role_type.value 'S' %}
+                            SELLER {%else%} BUYER {%endifequal%}</label>
+
+                        {%else%}
+                        <div class="dropdown">
+                            <button id="role_type-drop" class="left-position small-size btn btn-light dropdown-toggle"
+                                type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="border:none;width: 100%;background: transparent;">
+
+                                {% ifequal venture.role_type.value 'S' %} SELLER {%else%} BUYER {%endifequal%}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="role_type-drop">
+                                <button class="role_type dropdown-item" type="button">BUYER</button>
+                                <button class="role_type dropdown-item" type="button">SELLER</button>
+                            </div>
+                        </div>
+                        {%endif%}
+                        {%endifequal%}
+
+                        <input id="customer-name" type="text" required readonly style="border:1px solid #ced4da;"
+                            value="{{customer_info.gender|upper}} {{customer_info.firstname|upper}} {{customer_info.lastname|upper}}"
+                            class="mid-size gray-background  form-control">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="venture-date-txt" class="col-form-label">DATE </label>
+                        <input id="venture-date-txt" type="text" required readonly
+                            class="mid-size gray-background form-control"
+                            style="border:1px solid #ced4da;padding-left:1rem" value="{{ venture.date_entered.value}}">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
+                                class="asteriskField">*</span> </label>
+                        <input id="venture-total-txt" required type="number" step='any' min=5 max="10000"
+                            class="mid-size form-control" value="{{venture.totalCost}}">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {% ifequal venture.role_type.value 'S' %}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">SELLER
+                            {% if venture.id > 0 %} RECEIVED {%else%} RECEIVES {%endif%}</label>
+                        {%else%}
+
+                        {%ifequal venture.request_action 'trade' %}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">BUYER
+                            {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%} </label>
+                        {%else%}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt"
+                            class="col-form-label">COSTUMER {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%}</label>
+                        {%endifequal%}
+                        {%endifequal%}
+                        <input id="venture-total_owing-txt" type="text" readonly style="border:1px solid #ced4da;"
+                            class="mid-size gray-background  form-control" value="{% if venture.amount.value > 0%}  {%ifequal venture.source_type.value 'W'  %}P {{venture.amount.value}}  (FROM WALLET ACCOUNT)  {%else%}  P {{venture.amount.value}} {%endifequal%}  {% else %} 
+                              {% endif %}">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="main-percent-drop" class="col-form-label">PERCENTAGE<span
+                                class="asteriskField">*</span> </label>
+                        <div class="dropdown" id="main-percent-drop">
+                            <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
+                                id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                name="percent" style="border:1px solid #ced4da;width:100%;">
+                                {{venture.percent.value}}%
+                            </button>
+                            <!-- .custom {
+                                width: 78px !important;
+                            } -->
+                            <div class="dropdown-menu" aria-labelledby="percent-drop">
+                                <button class="cc-percent dropdown-item" type="button">95% </button>
+                                <button class="cc-percent dropdown-item" type="button">90% </button>
+                                <button class="cc-percent dropdown-item" type="button">85% </button>
+                                <button class="cc-percent dropdown-item" type="button">80% </button>
+                                <button class="cc-percent dropdown-item" type="button">75% </button>
+                                <button class="cc-percent dropdown-item" type="button">70% </button>
+                                <button class="cc-percent dropdown-item" type="button">65% </button>
+                                <button class="cc-percent dropdown-item" type="button">60% </button>
+                                <button class="cc-percent dropdown-item" type="button">50% </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="main-source-drop" class="col-form-label">SOURCE<span
+                                class="asteriskField">*</span></label>
+                        <div class="dropdown" id="main-source-drop">
+                            <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
+                                id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="border:1px solid #ced4da;width: 100%;">
+
+                                {% ifequal venture.source_type.value 'W' %} WALLET ACCOUNT {%else%}CASH {%endifequal%}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                                <button class="source-cash dropdown-item" type="button">CASH</button>
+                                <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label for="venture-description-txt" class="col-form-label">DESCRIPTION</label>
+                        <textarea style="font-size: 1rem;" name="venture_note" class="form-control"
+                            id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
+                        {{ venture.amount|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ venture.cc|as_crispy_field}}
+                    </div>
+
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6 mb-0">
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    {%if post_data %}
+                    <a class="hide btn btn-secondary btn-md"
+                        href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+
+                    <a class="edit_button btn btn-warning btn-md"
+                        href="{% url 'fx:create_update_venture_url' member_info.id venture.id venture.request_action   %}">
+                        Make Changes</a>
+                    {% else %}
+                    <a class="hide btn btn-secondary btn-md"
+                        href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                    <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
+                    <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
+                    {% if venture.id > 0 %}
+                    <a hidden id="venture-delete"
+                        href="{% url 'fx:delete_venture_url' member_info.id  venture.id venture.request_action %}"></a>
+
+                    <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
+                        value="Delete this" />
+
+                    {%endif%}
+                    {%endif%}
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">CUSTOMER PAYMENT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="review-venture-form">
+                    <form>
+                        <h4>Please review before submitting</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-1">
+                                <label class="col-form-label"></label>
+                                <label class="col-form-label"> </span></label>
+
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="review-venture-customer_id-txt" class="col-form-label">ID<span
+                                        class="asteriskField">*</span></label>
+
+                                <input id="review-venture-customer_id-txt" type="text" name="venture-customer-member_id"
+                                    readonly class="mid-size form-control" style="border:1px solid #ced4da;">
+                            </div>
+
+                            <div class="form-group col-md-7">
+
+                                <label id="review-venture-customer-lbl" for="review-venture-customer-txt"
+                                    class="col-form-label">Customer</label>
+
+                                <input id="review-venture-customer-txt" type="text" readonly
+                                    class="mid-size  form-control">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="review-venture-date-txt" class="col-sm-1 col-form-label"
+                                    style="padding-left: 8px">Date:</label>
+
+                                <input id="review-venture-date-txt" type="text" readonly class="mid-size form-control">
+                            </div>
+                        </div>
+
+                        <div class="review form-group row">
+
+                            <label for="review-venture-total-txt" class="col-md-1 col-form-label">TOTAL COST<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="mid-size review form-control"
+                                    id="review-venture-total-txt" value="">
+                            </div>
+
+                            <label id="review-total_owing-txt" for="review-venture-total_owing-txt"
+                                class="col-md-1 col-form-label">CUSTOMER PAYS
+                            </label>
+                            <div class="col-md-5">
+                                <input type="text" readonly class="mid-size review form-control"
+                                    id="review-venture-total_owing-txt" value="">
+                            </div>
+
+
+                        </div>
+                        <div class="review form-group row">
+
+                            <label for="review-venture-percentage-txt" class="col-sm-1 col-form-label">Percentage<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size review form-control"
+                                    id="review-venture-percentage-txt" value="">
+                            </div>
+                            <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">Amount<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-amount-txt" value="">
+                            </div>
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-source-txt" value="">
+                            </div>
+
+                            <label for="review-venture-cc-txt" class="col-sm-1 col-form-label">CC<span
+                                    class="asteriskField">*</span></label>
+
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-cc-txt" value="">
+                            </div>
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-venture-description-txt"
+                                class="col-sm-1 col-form-label">Description</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-description-txt" value="">
+                            </div>
+
+                            <label for="review-blank-description-txt" class="col-sm-1 col-form-label"> </label>
+
+                            <div class="col-sm-5">
+                                <input type="text" style="border:none" readonly class="small-size  review form-control"
+                                    id="review-blank-description-txt" value="">
+                            </div>
+
+                        </div>
+
+                        <div class="review-venture-modal-footer" style="text-align:right">
+                            <button id="review-back-venture-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-venture-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="venture-edit-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-venture-close-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="venture-edit-btn" type="button" class="btn btn-primary">Make Changes</button>
+                        </div>
+                    </form>
+
+
+
+                    <!-- ----- end of review form ---- -->
+
+
+                </div>
+
+
+                <!-- ----- review form ---- -->
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        var ID_Info = new Object();
+        ID_Info.id ="";
+        ID_Info.ON_SEARCH =false;
+        ID_Info.is_name_blank =true;
+
+        var keys = {};
+        var keys_account = { "W": "WALLET", "K": "CASH" };
+        keys["previous-selected-account"] = "CASH";
+        keys["PREVIOUS-INPUT"] = "";
+        // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
+        console.log("previous acct:" + keys["previous-selected-account"]);
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        console.log("submitting......");
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        $(document).ready(function () {
+            $("#venture-delete-this").click(function () {
+                $("#confim-modal-venture_payment").text("Are you sure you want to delete this payment?");
+                $("#yes-no-modal-venture_payment").modal('show');
+            });
+            confirm_venture_payment(function (confirm) {
+                // var request_action = $(obj).text().trim();
+                if (confirm) {
+
+                    document.getElementById('venture-delete').click();
+
+                } else {
+                    $("#yes-no-modal-venture_payment").hide();
+                }
+            });
+            var submit_now = false;
+            $('form').submit(function (e) {
+                console.log(" submitting.... form");
+                if (submit_now == false) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                // or return false;
+            });
+
+            var post_data = "{{post_data}}";
+            var maximum_deposit = parseFloat("{{limits.maximum_deposit}}");
+
+            var minimum_deposit = "{{limits.minimum_deposit}}"; // min amount to deposit for saving account
+            var transaction_type = "{{venture.request_action}}";
+            console.log("transaction_type:" + transaction_type);
+            keys['CC-BALANCE'] = parseFloat("{{asset_balance.cc_balance}}".replace(',', ''));
+
+            console.log("minimum_deposit:" + keys['CC-BALANCE']);
+
+            keys["SOURCE"] = 'K';
+            ID_Info.ON_SEARCH = false; // use stop the excessive searching
+            ID_Info.id = "";
+
+            $("#id_cc").prop("step", "any");
+            $("#id_amount").prop("step", "any");
+            $(".source-cash").trigger("click");
+            // add class names to form fields
+            $("#id_date_entered").prop("class", "form-control");
+            $("#id_saving").prop("class", "form-control");
+            $("#id_amount").prop("min", minimum_deposit);
+            $("#id_amount").prop("max", maximum_deposit);
+            if (minimum_deposit > keys['CC-BALANCE']) {
+                keys['CC-BALANCE'] = minimum_deposit;
+            }
+            $("#id_cc").prop("min", minimum_deposit);
+            $("#id_cc").prop("max", keys['CC-BALANCE']);
+            ///end: set the max and min properties of saving/deposit box
+            $("#id_cc").prop("class", "form-control");
+            $("#id_percent").prop("step", "any");
+
+
+
+            document.getElementById("venture-customer_id-txt").addEventListener("change", function () {
+                //This input has changed
+                customer_id = this.value.trim().toUpperCase();
+                if (ID_Info.id != customer_id) {
+                    search_member(customer_id);
+                } else {
+                    console.log("leave");
+                }
+                console.log("focus");
+                
+                 
+            });
+            //'input[name="record"]'
+            function search_member(customer_id) {
+                console.log("on search_member func");
+                customer_id= customer_id.trim().toUpperCase();
+                var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
+                 
+                var match =customer_id.match($regexname);
+                if(match == null  || match != customer_id) {
+                    console.log("not match");
+                    if ( !ID_Info.is_name_blank ){
+                        $("#customer-name").val("");
+                        ID_Info.is_name_blank =true;
+                    }
+                    return
+                }
+                 
+                if (ID_Info.id == customer_id) {
+                    console.log(" equal...");
+                    return;
+
+                }else{
+                    console.log("not equal...");
+                }
+                keys["PREVIOUS-INPUT"] = "";
+                ID_Info.id = customer_id;
+                var data = {}
+                ID_Info.ON_SEARCH = true;
+                data['customer_id'] = customer_id;
+                $.ajax({
+                    type: 'GET',
+                    url: "{% url 'fx:get_customer_details_url' %}",
+                    data: data,
+                    dataType: "json",
+                    success: function (response) {
+                        ID_Info.ON_SEARCH = false;
+                        if (response['data'] == "Success") {
+                            $("#venture-payment-failed-alert").hide();
+                            name = response["member_info"]['name'].toUpperCase();
+                            $("#customer-name").val(name);
+                            cc_balance = response["cc_balance"]
+                            if (minimum_deposit > cc_balance) {
+                                cc_balance = minimum_deposit;
+                            }
+                            $("#id_cc").prop("max", cc_balance);
+                            customer_id = response["member_info"]["id"];
+                            ID_Info.id = customer_id;
+                            ID_Info.is_name_blank =false;
+                            $("#id_customer").val(customer_id);
+                            $("#review-venture-customer-txt").val(name); // for review form
+                            $("#venture-total-txt").focus();
+                        } else {
+                            ID_Info.id="";
+                            ID_Info.is_name_blank =true;
+                            $("#venture-customer_id-txt").focus();
+                            $("#customer-name").val("");
+                            $("#venture-payment-failed-alert").text("Message: Customer ID '" + customer_id + "' doest not exist.");
+                            $("#venture-payment-failed-alert").show();
+
+                        }
+
+                    },
+                    error: function (response) {
+                        ID_Info.ON_SEARCH = false;
+                        cancel_dialog_hidden = false;
+                        console.log("error reach:");
+                        // console.log(response);
+                    }
+                });
+            }
+            $("input").keyup(function (event) {
+                if (event.target.id == "venture-customer_id-txt" || event.which == 13 && keys["PREVIOUS-INPUT"] == "venture-customer_id") {
+                    console.log("inside event");
+                    if (keys["PREVIOUS-INPUT"] == "") {
+                        keys["PREVIOUS-INPUT"] = "venture-customer_id";
+                    }
+                    enter_key = false;
+                    if (event.which === 13) {
+                        customer_id = $("#venture-customer_id-txt").val().trim().toUpperCase();
+                        enter_key = true;
+                        console.log("inside event.which: 13");
+                    } else {
+                        customer_id = $(this).val().trim().toUpperCase();
+                    }
+                    len = customer_id.length;
+                    if (len > 11) {
+                        return;
+                    }
+                    // if (enter_key || len >= 8 && !ID_Info.ON_SEARCH && ID_Info.id != customer_id) {
+                    //     search_member(customer_id);
+
+                    // }
+                } else {
+                    keys["PREVIOUS-INPUT"] = "";
+                }
+
+            });
+
+
+
+            $("#venture-total-txt").on("keyup", function () {
+                var percent = parseFloat($("#percent-drop").text());
+                if (percent <= 0 || percent > 100 || isNaN(percent)) {
+                    percent = 95;
+                    $("#percent-drop").text(percent + "%");
+                }
+                total_cost = parseFloat($(this).val());
+                if (isNaN(total_cost)) {
+                    total_cost = 0;
+                }
+                var amount = total_cost * ((percent / 100))   //Math.round(total_cost * ((cc_percent / 100)));
+                amount = amount.toFixed(2).replace('.00', '');
+                $("#id_amount").val(amount);
+                cc = total_cost - amount;
+                $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
+                if (keys["SOURCE"] != 'W') {  //cash: K
+                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                    $("#venture-total_owing-txt").val("P " + amount);
+                } else {
+                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+                }
+            });
+
+            $("#id_amount").on("keyup", function () {
+                console.log(" #id_amount is on");
+                amount = parseFloat($(this).val());
+                if (isNaN(amount)) {
+                    amount = 0;
+                }
+                total_cost = parseFloat($("#venture-total-txt").val());
+                var cc = total_cost - amount;  // Math.round(total_cost - amount);
+                cc = cc.toFixed(2).replace('.00', '');
+                $("#id_cc").val(cc);
+                percent = (amount * 100) / total_cost // Math.round((amount * 100) / total_cost);
+                if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+                    percent = 95;
+                    $("#percent-drop").text(percent + "%");
+                }
+                $("#id_percent").val(percent.toFixed(2))
+                percent = percent.toFixed(2).replace('.00', '');
+                if (isNaN(percent)) {
+                    percent = 0;
+                }
+                $("#percent-drop").text(percent + "%");
+                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                if (keys["SOURCE"] != 'W') {  //cash: K
+                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                    if (amount > 0) {
+                        $("#venture-total_owing-txt").val("P " + amount);
+                    } else {
+                        $("#venture-total_owing-txt").val("");
+                    }
+                } else {
+
+                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+                }
+
+
+            });
+            $("#id_cc").on("keyup", function () {
+                var percent = parseFloat($("#percent-drop").text());
+                if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+                    percent = 95;
+                    console.log("changing percent");
+                    $("#percent-drop").text(percent + "%");
+                }
+                cc = parseFloat($(this).val());
+                total_cost = parseFloat($("#venture-total-txt").val());
+                var amount = 0; //Math.round(total_cost - cc);
+                amount = total_cost - cc;
+                percent = (amount * 100) / total_cost; /// Math.round((amount * 100) / total_cost);
+                if (isNaN(percent)) {
+                    percent = 0
+                }
+                if (isNaN(amount)) {
+                    amount = 0
+                }
+                $("#id_amount").val(amount);
+                $("#id_percent").val(percent.toFixed(2))
+                percent = percent.toFixed(2).replace('.00', '');
+                $("#percent-drop").text(percent + "%");
+                if (keys["SOURCE"] != 'W') {  //cash: K
+                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                    $("#venture-total_owing-txt").val("P " + amount);
+                } else {
+
+                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+                }
+            });
+
+
+            $(".dropdown-menu button.cc-percent").click(function () {
+
+                var new_percentage = $(this).text(); //.replace(" Percent","%");
+                console.log("..percent: " + new_percentage);
+                $("#percent-drop").text(new_percentage);
+                $("#id_percent").val(parseFloat(new_percentage))
+                $("#venture-total-txt").trigger("keyup");
+            });
+
+            if (post_data == "True") {
+
+
+                $('#venture-customer_id-txt').css("background-color", "transparent");
+                $('#venture-total-txt').css("background-color", "transparent");
+                $('#id_cc').css("background-color", "transparent");
+                $('#id_amount').css("background-color", "transparent");
+                $('#percent-drop').css("background-color", "transparent");
+                $('#source-cash-drop').css("background-color", "transparent");
+                $('#venture-customer_id-txt').prop("disabled", true);
+
+                $('#venture-total-txt').prop("disabled", true);
+                $('#id_cc').prop("disabled", true);
+                $('#id_amount').prop("disabled", true);
+                $('#percent-drop').prop("disabled", true);
+                $('#source-cash-drop').prop("disabled", true);
+            }
+
+            $(".role_type").click(function () {
+                var text = $(this).text().trim();
+                $("#role_type-drop").text(text);
+                if (text.trim() == "BUYER") {
+                    role_type = "B";
+                    $("#venture-total_owing-lbl").text("BUYER PAYS");
+                    $("#review-total_owing-txt").text("BUYER PAYS");
+                } else {
+
+                    role_type = "S";
+                    $("#venture-total_owing-lbl").text("SELLER RECEIVES");
+                    $("#review-total_owing-txt").text("SELLER RECEIVES");
+                }
+                $("#id_role_type").val(role_type);
+
+            })
+            $(".source-cash").click(function () {
+                var text = $(this).text().trim();
+                $("#source-cash-drop").text(text);
+                var max = 0
+                account_name = ""
+                if (text == "CASH") {
+                    source_type = "K";
+                    // max = 10000;
+                    account_name = "CASH";
+
+                } else {
+                    source_type = "W";
+                    account_name = "WALLET";
+                    keys['CC-BALANCE']
+
+                }
+                keys["SOURCE"] = source_type;
+                $("#id_source_type").val(source_type);
+                // $("#id_amount").prop("min", minimum_deposit);
+                // $("#id_amount").prop("max", max);
+
+                var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
+                console.log("account:" + previous_account_name);
+                if (previous_account_name != "CASH") {
+
+                    $("#account-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+                    $("#financial-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+                }
+                if (account_name != "CASH") {
+                    $("#account-assets-table tr").find('#' + account_name).attr("class", "selected_account");
+                    $("#financial-table tr").find('#' + account_name).attr("class", "selected_account");
+                }
+                keys["previous-selected-account"] = account_name;
+                if (keys["SOURCE"] != 'W') {  //cash: K
+                    amount = $("#id_amount").val();
+                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                    $("#venture-total_owing-txt").val("P " + amount);
+                } else {
+                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+                }
+
+            });
+
+            $(".edit_button").click(function () {
+                $('.submit').prop("disabled", false);
+                $(".alert").hide();
+                $(this).hide();
+            });
+            $("#id_date_entered").css("background-color", "transparent");
+            // $("#venture-submit-btn").hide();
+            $("#review-venture-submit-btn").click(function () {
+                submit_now = true;
+                console.log("submit review-venture-submit-btn....");
+                $("#venture-submit-btn").trigger("click");
+
+
+
+            });
+
+
+            $("#venture-done").click(function () {
+                var form = document.querySelector(".needs-validation");
+                var reportVal = form.checkValidity();
+                if (reportVal == false) {
+
+                    $("#venture-payment-failed-alert").show();
+                    form.reportValidity();
+                    return;
+                }
+                if (transaction_type == "trade") {
+                    $("#review-venture-customer-lbl").text($("#role_type-drop").text());
+                } else {
+                    $("#review-venture-customer-lbl").text($("#customer-name-lbl").text());
+                }
+                //
+                $("#review-venture-customer-txt").val($("#customer-name").val()); // for review form
+                $("#review-venture-date-txt").val($("#venture-date-txt").val());
+                $("#review-venture-customer_id-txt").val($("#venture-customer_id-txt").val());
+                $("#review-venture-total-txt").val($("#venture-total-txt").val());
+                $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
+                $("#review-venture-cc-txt").val($("#id_cc").val());
+                $("#review-venture-amount-txt").val($("#id_amount").val());
+                $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
+
+                $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
+                $("#review-venture-description-txt").val($("#venture-description-txt").val().trim());
+
+
+                $("#venture-payment-transaction-modal").modal('show');
+                $("#venture-payment-failed-alert").hide();
+
+            });
+
+
+
+
+        });
+    </script>
+
+
+    {% endblock sub_content %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,0 +1,308 @@
+{% extends 'fx/base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+
+
+<!-- collapsable -->
+{% block sub_content%}
+
+
+<div class="container" style="border: none;">
+    <div class="tcard">
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% for message in messages %}
+
+        <div id="wallet-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div id="member-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+            Please fill in the box with asterisk sign(*) . Thank you.
+        </div>
+        <div>
+            <h4> MEMBER DATA ENTRY FORM </h4>
+
+            <form action="" class="needs-validation" id="form_member" method='POST'>
+                {% csrf_token %}
+                <div hidden> {{form.birthday}}</div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-2">
+                        {{ form.gender|as_crispy_field  }} </div>
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        {{ form.firstname|as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        {{ form.middlename |as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-4">
+
+                        {{ form.lastname |as_crispy_field }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="member-month-txt" class="col-form-label">MONTH<span
+                                class="asteriskField">*</span></label>
+                        <input id="member-month-txt" type="number" required style="border:1px solid #ced4da;"
+                            class="birthday-txt  form-control" value = "{{form.birthday.value|date:'m'}}" min="1" max="12">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="member-day-txt" class="col-form-label">DAY<span
+                                class="asteriskField">*</span></label>
+                        <input id="member-day-txt" type="number" required style="border:1px solid #ced4da;"
+                            class="birthday-txt  form-control" value="{{form.birthday.value|date:'d'}}" min="1" max="31">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="member-year-txt" class="col-form-label">YEAR<span
+                                class="asteriskField">*</span></label>
+                        <input id="member-year-txt" type="number" required style="border:1px solid #ced4da;"
+                            class="birthday-txt form-control" value="{{form.birthday.value|date:'Y'}}" min="1920" max="2020">
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form.telephone |as_crispy_field }}
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{ form.address |as_crispy_field }}
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        {{ form.email |as_crispy_field }}
+                    </div>
+
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-0">
+                        {{ form.active|as_crispy_field  }}
+                    </div>
+                </div>
+
+                {%if post_data %}
+
+                <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <a class="edit_button btn btn-warning btn-sm"
+                    href="{% url 'fx:create_update_member_url' member_info.id  %}">
+                    Make Changes</a>
+                {% else %}
+                <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="I'm Done" />
+                <input style="display:none" id="member-submit" class="submit btn btn-success btn-sm" type='submit'
+                    class="btn btn-primary" value='save' />
+
+
+                {%endif%}
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="review-member-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Data Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div id="review-member-form">
+
+                    <form>
+                        <h4>Please review the following before submitting. Thanks.</h4>
+                        <div class="form-row">
+
+
+                            <div class="form-group col-md-1">
+                                <label for="review-gender" class="col-form-label">Gender</label>
+                                <input id="review-gender" type="text" readonly class="review form-control" value="">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="review-firstname" class="col-form-label">Firstname</label>
+                                <input id="review-firstname" type="text" readonly class="review form-control" value="">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="review-middlename" class="col-form-label">Middlename</label>
+
+                                <input id="review-middlename" type="text" readonly class="review form-control"
+                                    value=" ">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="review-lastname" class="col-form-label">Lastname</label>
+
+                                <input id="review-lastname" type="text" readonly class="review form-control" value="">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+                            <label for="review-address" class="col-sm-1 col-form-label">Address</label>
+                            <div class="form-group  col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-address" value="">
+                            </div>
+                            <label for="review-birthday" class="col-sm-1 col-form-label">Birthday</label>
+                            <div class="form-group  col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-birthday" value="">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <label for="review-e-address" class="col-sm-1 col-form-label">E-Address</label>
+                            <div class="form-group  col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-e-address" value="">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <label for="review-telephone" class="col-sm-1 col-form-label">Telephone</label>
+                            <div class="form-group col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-telephone" value="">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <label for="review-active" class="col-sm-0 col-form-label">Active</label>
+                            <div class="form-group col-md-1">
+                                <input readonly class="form-control" type="checkbox" id="review-active" value="">
+                            </div>
+
+                        </div>
+
+
+                        <div class="review-loan-modal-footer" style="text-align:right">
+                            <button id="review-back-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go
+                                Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-member-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="edit-loan-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-close-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="edit-loan-btn" type="button" class="btn btn-primary">Make Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- ----- end of review form ---- -->
+
+
+    </div>
+
+    <script>
+
+
+        $(document).ready(function () {
+            var post_data = "{{post_data}}";
+
+          
+            
+
+            $("#review-member-submit-btn").click(function () {
+                $("#member-submit").trigger("click");
+
+            });
+
+            $(".edit_button").click(function () {
+                $('.submit').prop("disabled", false);
+                $('.alert').hide();
+                $(this).hide();
+            });
+            console.log("post_data..." + post_data)
+            if (post_data == "True") {
+                $("#id_active,#id_gender").prop("disabled", true);
+                $("#form_member").find("input[type='text']").each(function () {
+
+                    $(this).css("background-color", "transparent");
+                    $(this).prop("disabled", true);
+                });
+            }
+            // add class names to form elements:
+            $("#id_gender").prop("class", "form-control");
+            $("#id_active").prop("class", "form-control");
+            $("#form_member").find("input[type='text']").each(function () {
+                $(this).prop("class", "form-control");
+            });
+        });
+        $("#member-done").click(function () {
+
+            var form = document.querySelector(".needs-validation");
+            var reportVal = form.checkValidity();
+            if (reportVal == false) {
+                $("#member-failed-alert").show();
+                form.reportValidity();
+                return;
+            }
+
+
+            yr = $("#member-year-txt").val();
+            m = $("#member-month-txt").val();
+            d = $("#member-day-txt").val();
+           // var date = new Date(yr, m, d); 
+            bd = m+"/"+d+"/"+yr;
+            $("#id_birthday").val(bd);
+            $("#review-birthday").val(bd );
+            $("#review-gender").val($("#id_gender").val());
+            $("#review-firstname").val($("#id_firstname").val());
+            $("#review-middlename").val($("#id_middlename").val());
+            $("#review-lastname").val($("#id_lastname").val());
+            $("#review-address").val($("#id_address").val());
+            $("#review-e-address").val($("#id_email").val());
+            $("#review-telephone").val($("#id_telephone").val());
+            $("#review-active").prop("checked", $("#id_active").prop("checked"));
+
+            $("#review-member-modal").modal('show');
+
+        });
+
+
+    </script>
+
+    {% endblock sub_content%}

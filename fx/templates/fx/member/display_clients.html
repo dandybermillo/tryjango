@@ -1,0 +1,69 @@
+{% extends 'fx/base.html' %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+
+
+
+
+
+
+{% block CSS_style %}
+<style>
+  nav .pagination {
+    width: max-content;
+    border: 1px solid darkgray
+  }
+
+  .pagination li {
+    padding: 8px;
+    border-right: 1px solid darkgray
+  }
+
+  .pagination li a:hover {
+    height: inherit;
+    transition: 0.5s;
+    color: darkblue;
+    text-decoration: none;
+  }
+
+  .pagination li a {
+    padding: 3px;
+    width: inherit;
+
+  }
+
+  .pagination .active {
+    background: darkgray;
+    font-weight: 900;
+  }
+</style>
+
+{%endblock CSS_style %}
+
+{% block breadcrumb %}
+{{ block.super }} <li class="breadcrumb-item"> <a href="">All Members</a></li>
+
+{% endblock %}
+
+{% block main_content %}
+
+
+
+
+<div class="container">
+
+  {% if table %}
+  <h5>LIST OF MEMBERS</h5>
+  {% render_table table %}
+  {%else%}
+  <h5>NO RECORD FOUND!</h5>
+
+  {% endif %}
+</div>
+
+
+
+
+
+{% endblock %}

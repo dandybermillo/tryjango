@@ -1,0 +1,446 @@
+{% extends 'fx/base.html' %}
+{% load humanize %}
+{% load app_filters %}
+{% load crispy_forms_tags %}
+
+{% block sub_content %}
+
+<style>
+    td.selected_account {
+        background-color: #8cf367;
+        font-weight: bold;
+
+    }
+
+    .container {
+
+        width: 80%;
+
+    }
+
+    .saving-info-container div {
+        border-left: 5px solid green;
+        width: 100%;
+
+    }
+
+
+    #id_deposit_withdraw-transaction_type {
+        /* id="id_wallet-transaction_type" */
+        display: none;
+    }
+
+    div.form-group {
+        padding-left: 0px;
+
+    }
+</style>
+
+<div class="container" style="border:none">
+    <div class="tcard">
+    <div>
+        <p style="font-size: 1.5rem;"> {{account.account_name|upper}} ACCOUNT FORM </p>
+    </div>
+    {% if account.errors %}
+    {% for field in account %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% for message in messages %}
+
+    <div id="account-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <div id="account-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+        Please fill in the box with asterisk sign(*). Thank you.
+    </div>
+
+
+
+
+    <div class="form-row" style="border-bottom:1px solid #ced4da">
+        <div class="form-group col-md-6">
+            <label for="account-member-name" style="padding-left:2px">Member:</label>
+
+            <input id="account-member-name" type="text" readonly class="form-control-plaintext"
+                style="border:1px solid #ced4da"
+                value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+        </div>
+    </div>
+
+
+    <div>
+
+
+
+        <form action="" class="needs-validation" method="POST">
+            {% csrf_token %}
+            {{account.transaction_type}}
+            <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+
+                    <label for="type-of-transaction" class="col-form-label">Transaction:</label>
+                    <!-- <span
+                    style="font-size:medium;font-weight:600 ;color:{% ifequal member_info.requested_action  'D' %} green {%else%} red {%endifequal%}">
+                </span> -->
+                    <input id="type-of-transaction" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da"
+                        value="{% ifequal account.requested_action  'D' %} DEPOSIT {%else%} WITHDRAWAL{%endifequal%}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="id-date_entered" class="col-form-label">Date</label>
+                    <input id="id-date_entered" type="text" readonly class="small-size form-control-plaintext"
+                        style="border:1px solid #ced4da"
+                        value="{%if account.account_id > 0 %}{{ account.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today {%endif%}">
+
+
+                </div>
+                <div style="display: none;"> {{ account.date_entered }} </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+
+                    {{ account.description|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-6 mb-0">
+
+                    <div class="container-finance-account">
+                        <label for="account-assets-table" class="col-form-label">FINANCE</label>
+                        <table id="account-assets-table" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Wallet</th>
+                                    <th scope="col">C-Coin</th>
+                                    <th scope="col">Saving</th>
+                                    <th scope="col">Loan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-primary">
+
+                                    <td class="{{account.account.wallet}}">{{asset_liabities.wallet}}</td>
+                                    <td>{{asset_liabities.cc}}</td>
+                                    <td class="{{account.account.saving}}">{{asset_liabities.saving}}</td>
+                                    <td>{{asset_liabities.loan}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            {%ifequal 'D' account.requested_action %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ account.credit|as_crispy_field}}
+                    <div style="display:none">{{ account.debit}}</div>
+                </div>
+            </div>
+            {%else%}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ account.debit|as_crispy_field}}
+                    <div style="display:none">{{ account.credit}}</div>
+                </div>
+            </div>
+            {%endifequal%}
+            <br>
+            <div>
+                {%if post_data %}
+                <a id="account-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <a class="edit_button btn btn-warning btn-md"
+                    href="{% url 'fx:create_update_member_finance_url' account.account_name  member_info.id account.account_id  account.requested_action  %}">
+                    Make Changes</a>
+                {% else %}
+                <a id="account-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <input id="account-done" class="done btn btn-primary btn-md" type="button" value="I am Done" />
+                <input id="account-submit-btn" class="submit btn btn-primary btn-md" type="submit" name="Submit"
+                    value="SAVE" />
+                {%endif%}
+            </div>
+        </form>
+        <br>
+    </div>
+
+
+
+
+
+</div>
+</div>
+<div class="modal fade" id="account-transaction-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{account.account_name|upper}} TRANSACTION</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div id="review-wallet-app-form">
+                    <form>
+                        <h4>Please review the following before submitting. Thanks.</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="review-borrower-loan-txt" class="col-form-label">Member</label>
+
+                                <input style="background-color: transparent;" id="review-borrower-loan-txt" type="text"
+                                    readonly class="form-control-plaintext"
+                                    value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="review-date-txt" class="col-form-label">Date:</label>
+                                <input id="review-date-txt" type="text" readonly class="form-control-plaintext"
+                                    value="{%if account.account_id > 0 %}{{ account.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today  {%endif%}">
+                            </div>
+                            <!-- <div class="form-group col-md-6">
+                                {% now 'SHORT_DATETIME_FORMAT' %}
+                                <label for="review-date-loan-txt" class="col-sm-1 col-form-label"
+                                    style="padding-left: 8px">Date:</label>
+                                <input id="review-date-loan-txt" type="text" readonly class="form-control-plaintext"
+                                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+                            </div> -->
+
+                        </div>
+                        <div class="form-group row">
+
+                            <label for="review-source-loan-app-txt" class="col-sm-1 col-form-label">Transaction</label>
+
+                            <div class="col-md-5">
+                                <input type="text" readonly class="review form-control" id="review-transaction-type"
+                                    value="">
+                            </div>
+
+                            <div class="col-md-5 mb-0">
+
+                                <div class="container-finance-account">
+                                    <label for="account-assets-table" class="col-form-label">FINANCE</label>
+                                    <table id="account-assets-table" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">Wallet</th>
+                                                <th scope="col">C-Coin</th>
+                                                <th scope="col">Saving</th>
+                                                <th scope="col">Loan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-primary">
+
+                                                <td class="{{account.account.wallet}}">{{asset_liabities.wallet}}</td>
+                                                <td>{{asset_liabities.cc}}</td>
+                                                <td class="{{account.account.saving}}">{{asset_liabities.saving}}</td>
+                                                <td>{{asset_liabities.loan}}</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-id-description" class="col-sm-1 col-form-label">Description</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-id-description"
+                                    value="">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-account-amount" class="col-sm-1 col-form-label">Amount</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-account-amount"
+                                    value="">
+                            </div>
+
+                        </div>
+
+
+                        <div class="review-loan-modal-footer" style="text-align:right">
+                            <button id="review-back-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-account-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="edit-loan-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-close-loan-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="edit-loan-btn" type="button" class="btn btn-warning">Make Changes</button>
+                        </div>
+                    </form>
+
+                    <!-- ----- end of review form ---- -->
+                </div>
+                <!-- ----- review form ---- -->
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+
+        var keys = {};
+
+        function get_date(date_entered) {
+
+            const today = moment();
+            var date = moment();
+
+            if (moment().year() == moment(date_entered).year()) {
+                days = parseInt(today.diff(date_entered, 'days'));
+                if (days < 8) {
+                    if (days == 0) {
+                        date = "Today";
+                    } else if (days == 1) {
+                        date = "Yesterday";
+                    } else { date = days + " days ago" }
+                } else {
+                    date = moment(date_entered).format("MMM Do");
+                }
+
+            } else {
+                date = moment(date_entered).format("MMM Do YY");
+            }
+            return date;
+        }
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        $(document).ready(function () {
+            var transaction_type = "{{account.requested_action}}";
+            var post_data = "{{post_data}}";
+            var account_name = "{{account.account_name}}";
+            console.log("account_name: " + account_name);
+            if (account_name == "wallet") {
+                keys['{{account.account_name}}-balance'] = parseFloat("{{asset_liabities.wallet}}".replace(',', ''));
+            } else {
+                keys['{{account.account_name}}-balance'] = parseFloat("{{asset_liabities.saving}}".replace(',', ''));
+
+            }
+            console.log("{{account.account_name}}-balance: " + keys['{{account.account_name}}-balance']);
+
+            if (transaction_type == "W") {
+                $("#id_deposit_withdraw-debit").prop("class", "form-control ");
+                $("#id_deposit_withdraw-debit").prop("min", "10");
+
+                $("#id_deposit_withdraw-debit").prop("max", keys['{{account.account_name}}-balance']);
+                if (keys['{{account.account_name}}-balance'] < 10) {
+                    $("#id_deposit_withdraw-debit").prop("min", keys['{{account.account_name}}-balance']);
+                }
+            } else {
+                $("#id_deposit_withdraw-credit").prop("class", "form-control");
+                $("#id_deposit_withdraw-credit").prop("min", "10");
+                $("#id_deposit_withdraw-credit").prop("max", 100000);
+
+            }
+            if (post_data == "True") {
+                $('#id_deposit_withdraw-description').css("background-color", "transparent");
+                $('#id_deposit_withdraw-credit').css("background-color", "transparent");
+                $('#id_deposit_withdraw-debit').css("background-color", "transparent");
+                $('#id_deposit_withdraw-description').prop("disabled", true);
+                $('#id_deposit_withdraw-credit').prop("disabled", true);
+                $('#id_deposit_withdraw-debit').prop("disabled", true);
+
+            }
+            $(".edit_button").click(function () {
+                $('.submit').prop("disabled", false);
+                $(".alert").hide();
+                $(this).hide();
+            });
+
+            $("#id_date_entered").css("background-color", "transparent");
+            $("#account-submit-btn").hide();
+            $("#review-account-submit-btn").click(function () {
+                $("#account-submit-btn").trigger("click");
+
+            });
+
+
+
+            $("#id_deposit_withdraw-description").prop("class", "form-control");
+
+            $("#account-done").click(function () {
+
+                var form = document.querySelector(".needs-validation");
+                var reportVal = form.checkValidity();
+                if (reportVal == false) {
+                    $("#account-failed-alert").show();
+                    form.reportValidity();
+                    return;
+                }
+
+
+
+                var types = $("#type-of-transaction").val();
+                var description = $("#id_deposit_withdraw-description").val();
+                var account_amount = "";
+                if (transaction_type == "D") {
+                    account_amount = $("#id_deposit_withdraw-credit").val();
+                } else {
+                    account_amount = $("#id_deposit_withdraw-debit").val();
+                }
+
+
+                $("#review-id-description").val(description);
+                $("#review-transaction-type").val(types);
+                $("#review-account-amount").val(account_amount);
+                $("#account-transaction-modal").modal('show');
+
+            });
+        });
+    </script>
+
+
+    {% endblock sub_content %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,0 +1,1114 @@
+{% extends 'fx/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% load app_filters %}
+{% load custom_tags%}
+{% load table_tag%}
+
+{% block sub_content %}
+<style>
+  /* load static */
+
+  /* img {
+    width: 1.5rem;
+    display: none;
+
+  } */
+  td.selected_account {
+    background-color: #8cf367;
+    font-weight: bold;
+
+  }
+
+  div.transfer-tab {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 3rem;
+  }
+
+  i.calculator-money-transfer,
+  i.info {
+    font-size: 1.2rem;
+    color: dodgerblue;
+    margin: 5px, auto;
+    padding-left: 5px;
+    /* cursor: pointer; */
+
+  }
+
+
+  /* end load static */
+
+  ul.messagelist {
+    padding: 1px;
+    margin: 1px;
+
+  }
+
+  ul.messagelist li {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 10px 10px 65px;
+    margin: 0 0 1px 0;
+    background: #dfd url(../img/icon-yes.svg) 40px 12px no-repeat;
+    background-size: auto;
+    background-size: 16px auto;
+    color: #333;
+  }
+
+  ul.messagelist li {
+    list-style-type: square;
+    padding: 1px 0;
+  }
+
+  ul.messagelist li,
+  dt,
+  dd {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+
+  td:empty {
+    visibility: hidden;
+    border: 0;
+  }
+
+  td:blank {
+    border: 0;
+    visibility: hidden;
+  }
+
+
+  i.money-transfer.fa.fa-search {
+    border: .5px solid lightgray;
+    padding: 8px 15px;
+    border-radius: 15px;
+
+  }
+
+  i.money-transfer.fa.fa-search:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgb(132, 215, 116);
+
+  }
+
+
+  /* -----todo: remove:   already in base.html */
+
+
+  .amount {
+    text-align: center;
+  }
+
+
+
+  input.money-transfer {
+    font-weight: 500;
+    border: transparent;
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+
+
+
+  /* .fa:hover .tooltiptext,
+  .info {
+    visibility: visible;
+  } */
+
+  /* input:invalid:required {
+
+    border: .1px dotted red;
+  } */
+
+  td.checkbox {
+    text-align: center;
+  }
+
+  td.left {
+    text-align: left;
+  }
+
+  input[type="checkbox"] {
+    height: 1.5rem;
+    width: 1.5rem;
+
+  }
+
+  /* ----- temporarily blank row in receiver table ------ */
+
+  tr#row1 {
+    height: 10rem;
+  }
+
+  td.flex {
+    display: flex;
+
+  }
+
+  /* ---- toggle button menu --- */
+  span.arrow {
+    font-size: .8rem;
+    color: red;
+
+
+  }
+</style>
+
+<!-- <ul class="messagelist" style="font-size: 22px;">
+ 
+</ul> -->
+
+
+<p>
+  <a class="btn-menu btn btn-outline-primary" data-toggle="collapse" href="#money-transfer-tab" role="button"
+    aria-expanded="false" aria-controls="money-transfer-collapsible">
+    <i class="fas fa-random"></i> Money Transfer <span class="arrow  fas fa-chevron-down"></span> </a>
+  {% if post_data %}
+  <a class="btn-menu btn btn-outline-primary disabled" id="list-receiver-btn" data-toggle="collapse"
+    href="#list-receiver-tab" role="button" aria-disabled="true" aria-controls="multiCollapseExample1">
+    <i class="fas fa-users"></i> List of Recievers </a>
+
+  {% else %}
+  <a id="list-receiver-btn" class="btn-menu btn btn-outline-primary" data-toggle="collapse" href="#list-receiver-tab"
+    role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+    <i class="fas fa-users"></i> List of Recievers <span class="arrow "></span></a>
+  <a class="btn-menu btn btn-outline-primary" id="transfer-history-btn" data-toggle="collapse"
+    href="#transfer-history-tab" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+    <i class="fas fa-folder"></i> Transfer History <span class="arrow "></span></a>
+
+  {% endif %}
+</p>
+
+
+<div class="container">
+
+  <div class="transfer-tab row1">
+    <div class="collapse multi-collapse show" id="money-transfer-tab" style="width:100%">
+      <div class="tcard">
+
+        <!-- ------ begin body ----- -->
+        {% if post_data %}
+        {% include 'fx/utilities/message_viewer.html'  %}
+        {% else %}
+        <div class="message-viewer alert alert-danger alert-dismissible" role="alert" style="display: none;">
+          <a class="close" href="#" data-dismiss="alert">×</a>
+          <span> Message: </span>
+
+
+        </div>
+        {% endif %}
+        <div class="header">
+           <h4> NEW TRANSFER FORM </h4>
+          
+        </div>
+        <div class="form-row" style="border-bottom:1px solid #ced4da">
+          <div class="form-group col-md-6">
+            <label for="account-member-name" class="col-sm-3 col-form-label">SENDER:</label>
+
+            <input id="account-member-name"  type="text" readonly style="border:transparent;background: transparent;width:70%"
+              value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+          </div>
+        </div>
+
+
+        <div class="div-form">
+
+          <form method="POST" class="needs-validation" id="receiver_form" action="">
+            {% csrf_token %}
+
+            {% if not post_data%}
+            <br>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="date-txt" class="col-sm-3 col-form-label">DATE:</label>
+                <input id="date-txt" type="text" readonly style="border:transparent;background: transparent;"
+                  value="{%if account.account_id > 0 %}{{ account.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %}   {%endif%}">
+              </div>
+              <div class="form-group col-md-6 mb-0">
+                <div class="container-finance-account">
+                  <label for="account-assets-table" class="col-form-label">FINANCE</label>
+                  <table id="account-assets-table" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Wallet</th>
+                        <th scope="col">C-Coin</th>
+                        <th scope="col">Saving</th>
+                        <th scope="col">Loan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-primary">
+                        <td id="wallet" class="selected_account">{{asset_liabities.wallet}}</td>
+                        <td id="cc">{{asset_liabities.cc}}</td>
+                        <td id="saving">{{asset_liabities.saving}}</td>
+                        <td>{{asset_liabities.loan}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+
+                <div class="dropdown" id="main-source-drop">
+                  <label for="main-source-drop" class="col-sm-3 col-form-label">SOURCE: </label>
+                  <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"  
+                   value="W" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border:1px solid #ced4da">
+                   WALLET ACCOUNT
+                    <!-- {% ifequal loan.source_type.value 'C' %} CC ACCOUNT {%else%} {% ifequal loan.source_type.value 'W' %}   WALLET ACCOUNT {%else%} SAVING ACCOUNT  {%endifequal%} {%endifequal%} -->
+                  </button>
+                  <input type="text" id="source-type" name="sourcetype" value="wallet" hidden> 
+                  <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                    <button class="source-cash  dropdown-item" type="button">WALLET ACCOUNT</button>
+                    <button class="source-cash dropdown-item" type="button">CC ACCOUNT</button>
+                    <button class="source-cash dropdown-item" type="button">SAVING ACCOUNT</button>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            {% endif %}
+            {% if not post_data %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="btn-search-receiver" class="col-sm-3 col-form-label">RECEIVER: </label>
+
+                <span class="span-search">
+                  <i id="btn-search-receiver" data-toggle=" tooltip" data-placement="top"
+                    title="Search new receiver in the database" class="money-transfer fa fa-search"
+                    style="font-size: 1.2rem;color: #0069d9;background-color: white;width:10rem">
+
+                    &nbsp; Search</i>  <span>
+              </div>
+            </div>
+            {% endif%}
+            <table class="table  table-bordered" id="receiverTable" data-min="10" data-max="{{asset_liabities.wallet}}">
+              <thead style="text-align: center;">
+                <tr>
+                  {% if post_data %}
+                  <th class="first-col">#</th>
+                  </th>
+                  {% else %}
+                  <th class="first-col"><input id="delete_rows_check" type='checkbox'></th>
+                  </th>
+                  {% endif %}
+                  <th scope="col">RECEIVER(S) </th>
+                  <th scope="col">DESCRIPTION<span class="asteriskField"> *</span> </th>
+                  <th scope="col">AMOUNT<span class="asteriskField"> *</span> </th>
+                  {% if post_data %}
+                  <th scope="col">STATUS </th>
+                  {% endif %}
+
+                </tr>
+              </thead>
+              <tbody>
+
+                {% if post_data %}
+                {% for obj in post_data %}
+                <tr>
+                  <th> {{ forloop.counter }}</th>
+                  <td class="left">{{obj.receiver.gender|upper}} {{obj.receiver.firstname|upper}}
+                    {{obj.receiver.lastname|upper}}
+                  </td>
+                  <td class="left"> {{obj.purpose}} </td>
+                  <td> {{obj.amount|floatformat:2|intcomma}} </td>
+                  {% ifequal obj.status 'W'%}
+                  <td> Waiting </td>
+                  {%else%}
+                  <td>
+                    Undefined
+                  </td>
+                  {%endifequal%}
+                </tr>
+                {% endfor %}
+
+
+                {%else%}
+                <tr id="row1">
+                  <td colspan=" 5">
+                  </td>
+                </tr>
+                {% endif %}
+
+              </tbody>
+
+
+              <tfoot>
+
+                <tr>
+                  {% if not post_data %}
+                  <td colspan="2"> <button type="button" class="delete-row btn btn-outline-primary" style="float:left">
+                      Remove
+                  </td>
+                  {% else %}
+                  <td colspan="2"></td>
+                  {% endif %}
+                  <td style="text-align: right;">
+                  </td>
+                  <td style="display:flex">
+                    {% if not post_data %}
+                    <i id="calculator" class="calculator-money-transfer fa fa-calculator"> </i>
+                    <p id="table-transfer-total-amount" style="flex:1;color:green"> P 0.0</p>
+                    {% else %}
+                    <p id="table-transfer-total-amount" style="flex:1;color:green"> P
+                      {{total_amount.sum|floatformat:2|intcomma}}
+                    </p>
+                    {% endif %}
+
+
+                  </td>
+
+                </tr>
+              </tfoot>
+
+            </table>
+          </form>
+        </div>
+
+        {% if not post_data %}
+        <div class="cashTransfer-actions">
+          <a id="wallet-hide" class="hide btn btn-secondary btn-md"
+            href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+          <input class="btn btn-success" hidden type="submit" id="submit-transfer" name="submit" form='receiver_form'
+            value="Start" />
+          <input type="button" id="done-transfer-btn" style="display:none;" class="btn btn-success" value="I am done" />
+        </div>
+        {% endif %}
+
+        <!-- ------- end body--- -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="transfer-tab row2" id="list-receiver-container">
+    <div class="collapse multi-collapse" id="list-receiver-tab" style="width:100%">
+      <div class="tcard" style="background:transparent;border-left:4px solid green">
+
+
+
+
+        LIST OF RECEIVERS
+        <!-- table_receiver.code_name: {{table_receiver.code_name}} -->
+        {% if table_receiver.user_preference %}
+        {% include 'fx/member/templates/transfer_receivers_table.html' with  code=table_receiver.code_name preference=table_receiver.user_preference.transfer_receiver transfer=table_receiver %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="transfer-tab row3" id="new-transfer-history-container">
+    <div class="collapse multi-collapse" id="transfer-history-tab" style="width:100%">
+      <div class=" card card-body" style="background:transparent;border-left:4px solid burlywood">
+
+        TRANSFER HISTORY
+        {% if table_transfer_history.user_preference %}
+        {% include 'fx/member/templates/transfer_receivers_table.html' with  code=table_transfer_history.code_name preference=table_transfer_history.user_preference.transfer_history transfer=table_transfer_history show_load_more=True %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="modal_edit_purpose" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" value="">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModaelLabel">Purpose</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+
+          <label for="recipient-name" class="col-form-label">Pls state the purpose of transfer:</label>
+          <textarea class="form-control" id="txt-purpose" required minlength="3"></textarea>
+          <div class="modal-footer">
+            <button type="search button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input class="btn_edit_purpose btn btn-primary" type="submit" name="submit" value="Save Changes" />
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ------------ Search Receivers modal-------- -->
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Search ssss</button> -->
+
+<div id="modal-search-receiver" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="border:1px solid blue">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">Search Receivers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="container-alert-not-found-search-receiver alert alert-danger alert-dismissible fade show"
+          role="alert">
+          <strong>Message:</strong> <span class="alert-not-found-search-receiver">.</span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="container-alert-found-search-receiver alert alert-success alert-dismissible fade show" role="alert"
+          style="display:none;">
+          <strong>Message:</strong> <span class="alert-found-search-receiver">.</span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="form-group" style="display:block">
+
+          <label for="recipient-name" class="col-form-label">type name or username:</label>
+          <input type="text" id="txt-search-receiver" required minlength="3"></input>
+        </div>
+        <br>
+        {% include 'fx/member/templates/search_table.html' with code=table_search.code_name preference=table_search.user_preference.search_receiver search_receiver=table_search   %}
+        <div class="modal-footer">
+          <button type="search button" class="-search-receiver btn btn-secondary" data-dismiss="modal">Close</button>
+          <input class="btn-search-receiver-submit btn btn-success" type="submit" name="submit" value="Search now" />
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<!-- -------------- confirm dialog -------- -->
+
+
+
+{% include 'fx/e_wallet/yes_no_modal.html' with code='new_transfer'  %}
+
+<!-- <div class="modal fade" id="cancel-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" value="">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ACTION TO TAKE</h5>
+ 
+      </div>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <h4 class="modal-title" id="myModalLabel">Are you sure you want to cancel this record?</h4>
+
+          <br>
+            <br>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="modal-btn-yes"><span class=" fas fa-check"></span>  Yes</button>
+        <button type="button" class="btn btn-primary" id="modal-btn-no"><span class=" fas fa-times"></span>  No</button>
+
+          </div>
+        </div>
+ -->
+
+<div id="review-transfer-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+  aria-labelledby="classInfo" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title" id="classModalLabel">
+          NEW TRANSFER FORM:
+        </h4>
+      </div>
+      
+      <div class="modal-body">
+        <h5>Please review the following before submitting. Thanks.</h5>
+
+        <table id="review-transfer-modal-table" class="table table-bordered">
+          <thead>
+            <th scope="col">#</th>
+            <th scope="col">RECEIVER(S) </th>
+            <th scope="col"> PURPOSE </th>
+            <th scope="col">AMOUNT </th>
+          </thead>
+          <tbody>
+
+          </tbody>
+          <tfoot>
+
+            <tr>
+
+              <td colspan="2"></td>
+
+              <td>Total: </td>
+              <td style="display:flex">
+                <p id="table-review-total-amount" style="flex:1"> P 200</p>
+              </td>
+
+            </tr>
+          </tfoot>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+        <button id="table-review-transfer-now" type="button" class="btn btn-success" data-dismiss="modal">
+          Transfer Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  var keys = {};
+  var cancel_dialog_hidden = true
+  keys["wallet"]="Money";
+  keys["saving"]="Money";
+  keys["cc"]="Cc";
+  keys["cc-balance"] = parseFloat("{{asset_liabities.cc}}".replace(",", ""));
+  keys["saving-balance"] = parseFloat("{{asset_liabities.saving}}".replace(",", ""));
+  keys["wallet-balance"] = parseFloat("{{asset_liabities.wallet}}".replace(",", ""));
+  console.log(" keys[saving-balance] "+ keys["saving-balance"]);
+  console.log(" keys[wallet-balance] "+ keys["wallet-balance"]);
+
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  function cancel_transfer(obj) {
+    $(obj).closest('tr').toggleClass("to-delete");
+    cancel_dialog_hidden = false
+    $("#confim-modal-new_transfer").text("Are you sure you want to cancel this transfer?");
+    $("#yes-no-modal-new_transfer").modal('show');
+    $("#yes-no-modal-new_transfer").val(obj);
+
+  }
+  function add_receiver(target) {
+
+    // console.log(".... at add_receiver at new_cash_trans.html")
+    if (target.name != "make-receiver-extension") { // "make-receiver-extension": this the makereciever dynamically made button 
+      target = target.target
+    }
+    var check_value = $("#delete_rows_check").prop("checked"); // make the checkbox is unchecked
+    if (check_value) {
+      $("#delete_rows_check").prop("checked", false)
+    }
+    var rowcount = $("#receiverTable  tr").length;
+    if (rowcount <=3)
+    {
+      $("#done-transfer-btn").show();
+    }
+    console.log("rowcount: "+rowcount);
+    var indx = 0;
+
+    $('input#submit-transfer').prop("disabled", false);  //1212
+    if (rowcount <= 3) {   // this represent blank space it means this a default row that is blank and must be remove  when receiver table is empty of reciever names
+      $("#row1").remove();
+    }
+    //here
+    var receiver = $(target).closest('tr').find('#receiver').text();
+    var classname = "class='" + $(target).closest('tr').attr("class") + "'";
+
+    //console.log("...class name", classname);
+    $($(target).closest('tr')).toggleClass("selected");
+
+    var receiver_code = $(target).closest('tr').find('#code').text();
+    var sender = $('.current-user').text().trim();
+
+    //var data_max = $("#receiverTable");
+    max_amount = $("#receiverTable").attr("data-max").replace(",","");
+    min_amount = $("#receiverTable").attr("data-min");
+    // max_balance = data_max.data("max"); 
+    console.log("max::::" + max_amount);
+    //var classname = "class='" + $(target).closest('tr').attr("class") + "'";
+    account_name = keys["previous-selected-account"];
+    purpose = keys[account_name] + " Transfer";
+    var newRow = "<tr " + classname + " id='" + receiver_code.trim() + "'><td class='checkbox'><input type='checkbox' name='record'></td><td class='left'>" + receiver + "</td><td class='flex left' >  <input class='money-transfer form-control' type='text'  value='"+purpose+"'  required   minlength='10' maxlength='100'    id='purpose' name='" + receiver_code + "_purpose'  form='receiver_form'> <span ><i class='info fa fa-edit' onclick='edit_purpose(this)' ></i></span>    </td><td style='text-align: center;'><input class='form-control' id='amount' name='" + receiver_code + "_amount' type='number' step='any' max ='" + max_amount + "' min ='" + min_amount + "' required form ='receiver_form'>  </td>  </tr>";
+    $("#receiverTable tbody").append(newRow);
+    $(target).prop("disabled", true)
+  }
+  function edit_purpose(target) {
+    var purpose = $(target).closest('tr').find('#purpose').val();
+
+    var receiver_code = $(target).closest('tr').prop("id");
+
+    $('#txt-purpose').val(purpose);
+    $('#modal_edit_purpose').attr("value", receiver_code)
+    $('#txt-purpose').focus();
+    $('#modal_edit_purpose').modal('toggle');
+  }
+
+  $(document).ready(function () {
+ 
+    keys["previous-selected-account"] = "wallet";  // default value
+     
+    $(".source-cash").click(function () {
+      
+      var minimum_deposit = 10;
+      console.log("source cash clik");
+      var text = $(this).text().trim();
+      console.log(".....button text:"+text);
+      $("#source-cash-drop").text(text);
+
+     $("#source-type").prop("value",text);
+      if (text == "WALLET ACCOUNT"){
+        $("#source-type").val("wallet");
+      }else if(text == "SAVING ACCOUNT"){
+        $("#source-type").val("saving");
+      }else
+      {
+        $("#source-type").val("cc");
+      }
+      var max = 0
+      // WALLET ACCOUNT</button>
+      //             <button class="source-cash dropdown-item" type="button">COMM-COIN ACCOUNT</button>
+      //             <button class="source-cash dropdown-item" type="button">SAVING ACCOUNT</
+      account_name = "wallet";
+      if (text == "WALLET ACCOUNT") {
+        account_name = "wallet";
+        max = keys['wallet-balance'];
+        if (max > 0 && max < minimum_deposit) {
+          minimum_deposit = max
+        }
+      } else if (text == "CC ACCOUNT") {
+        account_name = "cc";
+       // source_type = "2";
+        max = keys['cc-balance'];
+        if (max > 0 && max < minimum_deposit) {
+          minimum_deposit = max
+        }
+      } else {
+        account_name = "saving";
+        //source_type = "3";
+        max = keys['saving-balance'];
+        console.log("saving max:" + max);
+        if (max > 0 && max < minimum_deposit) {
+          minimum_deposit = max
+        }
+
+      }
+
+
+      $("#receiverTable tr").each(function () {
+        var currentRow = $(this);
+
+        currentRow.find("td:eq(3) input[type='number']").prop("min", minimum_deposit);;
+        currentRow.find("td:eq(3) input[type='number']").prop("max", max);
+      });
+      //insert max value to the table 
+
+      $("#receiverTable").attr("data-max", max);
+      console.log("max-change:" + $("#receiverTable").attr("data-max"));
+      //end: insert max value to the table 
+      var previous_account = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
+      console.log("account:" + previous_account);
+      if (previous_account) {
+
+        $("#account-assets-table tr").find('#' + previous_account).removeAttr("class", "selected_account");
+      }
+
+      $("#account-assets-table tr").find('#' + account_name).attr("class", "selected_account");
+
+      keys["previous-selected-account"] = account_name;
+      compute_total_amount();
+      // console.log("val...:"+val);
+
+      // $("#id_source_type").val(source_type);
+      // $("#id_saving").prop("min", minimum_deposit);
+      // $("#id_saving").prop("max", max);
+    });
+
+    $("#done-transfer-btn").click(function () { //  <done> is clicked
+      total = compute_total_amount();
+
+
+      var form = document.querySelector(".needs-validation");
+      var reportVal = form.checkValidity();
+      console.log("..reportVal:" + reportVal);
+      var account = keys["previous-selected-account"];
+      var bal = keys[account + "-balance"]
+      if (reportVal == false) {
+        $(".message-viewer span").text("Please fill in the column with asterisk sign (*). Thank you. ");
+        $(".message-viewer").show();
+        form.reportValidity();
+        return;
+      } else {
+        
+        if (total >  bal) {   //i remove parsefloat here
+          $(".message-viewer span").text("2Total amount must not exceed the balance of P " + bal);
+          $(".message-viewer").show();
+          return;
+        }
+
+
+
+      }
+
+      $('#review-transfer-modal').modal('show');
+      var total = 0;
+      var ctr = 0;
+      $("#review-transfer-modal-table tbody").find("tr").remove();
+      $("#receiverTable tbody tr").each(function () {
+        ctr = ctr + 1;
+        var currentRow = $(this);
+        var receiver = currentRow.find("td:eq(1)").text().trim();
+        var purpose = currentRow.find("td:eq(2) input[type='text']").val();
+        var amount = currentRow.find("td:eq(3) input[type='number']").val();
+        // amount=amount.toFixed(2);
+        var newRow = "<tr><td>" + ctr + "</td><td class='left'>" + receiver + "</td><td class='left'>" + purpose + "</td><td>" + amount + "</td>  </tr>";
+        $("#review-transfer-modal-table tbody").append(newRow);
+
+        amount = $("#table-transfer-total-amount").text();
+        console.log("amount:" + amount);
+
+        $("#table-review-total-amount").html(amount);
+
+      });
+
+    });
+
+
+
+    $("#table-review-transfer-now").click(function () { //start submitting the transfer process
+      $("#submit-transfer").trigger("click");
+    });
+
+    $('#yes-no-modal-new_transfer').on('hidden.bs.modal', function (e) { // make sure highlighted row is unhighlighted back
+      var obj = $("#yes-no-modal-new_transfer").val();
+      if (!cancel_dialog_hidden) {
+        cancel_dialog_hidden = true;
+        $(obj).closest('tr').toggleClass("to-delete");
+
+      }
+      console.log("cancel-dialog is hidden?", cancel_dialog_hidden);
+    })
+    //----------------  
+
+    var sender = "{{info.sender}}";
+    var running_balance = parseInt("{{balance.balance_long}}");
+
+
+    confirm_new_transfer(function (confirm) {
+      var obj = $("#yes-no-modal-new_transfer").val();
+
+      var request_action = $(obj).text().trim();
+
+      $(obj).closest('tr').toggleClass("to-delete");
+      if (confirm) {
+        var code = obj.value;   // the value contains the code(id) to be cancelled (at Cashtransfer table)
+        var data = {}
+        data['code'] = code;
+        data['request_action'] = request_action;
+
+        $.ajax({
+          type: 'GET',
+          url: "{% url 'fx:update_transfer_status_url' %}",
+          data: data,
+          dataType: "json",
+          success: function (response) {
+            console.log("response ", response);
+            if (response['data'] == "Success") {
+              cancel_dialog_hidden = true;
+              $(obj).closest('tr').toggleClass("selected");
+
+              $(obj).closest('tr').find('.W').removeClass("W").toggleClass("C");
+              $(obj).closest('tr').find('.status').text("Cancelled");
+              $(obj).remove();
+              alert("Code number " + code + " has been successfully cancelled.");
+
+            } else {
+              alert("Sorry! Code number " + code + " cannot be cancelled.");
+            }
+
+          },
+          error: function (response) {
+            cancel_dialog_hidden = false;
+            console.log("error reach:");
+            // console.log(response);
+          }
+        });
+
+
+      } else {
+        cancel_dialog_hidden = true;
+        console.log("no button is clicked");
+      }
+    });
+
+
+    $(".cancel-transfer-btn").on("click", {
+    }, cancel_transfer);
+
+    // --------- end of cancel transfer ---------
+
+
+
+
+    $("#transfer-history-btn").click(function () { //when tab is clicked it will prepopulate the table for the first time using ajax
+      var value = $(this).val();
+      console.log("value:", value);
+      if (value) {
+        console.log(" ignored");
+      } else {
+        $(this).val(true);
+
+        $("#last-row-transfer-history").html(0)
+        $("#last-row-transfer-history").prop("value", 0);
+        $("#load-more-transfer-history").trigger("click");
+        $("#load-more-transfer-history").prop("disabled", false);
+        console.log(" first filling...");
+      }
+
+    });
+
+    $('.btn-menu').click(function () {  //this is present  in dmi.html(script.end)
+      // $(this).find("span.arrow").toggleClass("fas fa-chevron-down");
+
+      var obj = $(this).find("span.arrow");
+      obj.toggleClass("fas fa-chevron-down");
+      var val = $(obj).hasClass("fa-chevron-down");
+      if (val) {
+        var name = "";
+        var id = $(this).attr("id").trim();
+        if (id == "transfer-history-btn") {
+          name = "new-transfer-history-container";
+        } else if (id == "list-receiver-btn") {
+          // console.log("...id: ", id);
+          name = "list-receiver-container";
+        }
+        // console.log("...id: ",id);
+        //console.log("...name: ",name);
+
+        if (name != "") {
+
+          document.getElementById(name).scrollIntoView();
+        }
+      }
+
+
+
+
+
+
+    });
+
+ 
+    $("input#submit-transfer").click(function (event) {
+      var total_amount = compute_total_amount();
+      var account = keys["previous-selected-account"];
+      var running_bal = keys[account + "-balance"]
+      if (total_amount > running_bal) {
+        console.log("exceed");
+        console.log("total_amount:"+ total_amount);
+        console.log(typeof total_amount);
+         
+        console.log("running_bal:"+running_bal);
+        console.log(typeof running_bal);
+
+        $(".message-viewer span").text("Total amount must not exceed the remaining balance of P " + running_bal);
+        $(".message-viewer").show();
+        event.preventDefault();
+      } else {
+        $(".message-viewer").hide();
+        console.log("not exceed");
+      }
+
+    });
+
+    $('.alert').on('close.bs.alert', function (event) { // ff line prevent from removing from DOM
+      console.log("remove......");
+      event.preventDefault();
+      $(this).hide();
+    });
+
+    $('#modal_edit_purpose').on('shown.bs.modal', function () {
+      $('#txt-purpose').trigger('focus')
+    })
+    $('#modal-search-receiver').on('shown.bs.modal', function () {
+      $('#txt-search-receiver').trigger('focus')
+    })
+
+    $("#btn-search-receiver").click(function () {
+      console.log(".........search button click");
+      $('#modal-search-receiver').modal('toggle');
+
+    });
+
+    $(".btn_edit_purpose").click(function () { // a popup menu to edit purpose of transfer
+      var receiver_code = $('#modal_edit_purpose').attr("value")
+      var tr = "#receiverTable #" + receiver_code.trim();
+      var purpose = $('#txt-purpose').val();
+      $(tr).find('#purpose').val(purpose)
+      $('#modal_edit_purpose').modal('toggle');
+
+    });
+
+ 
+    $(".make-receiver").on("click", {
+    }, add_receiver);
+ 
+
+    $("#delete_rows_check").click(function (e) {
+      // check or uncheck the main "check button"
+      var check_value = $(this).prop("checked");
+      $("#receiverTable tbody").find('input[name="record"]').each(function () {
+
+        $(this).prop("checked", check_value);
+      });
+    }
+    );
+
+
+    function compute_total_amount() {
+      var total = 0;
+
+      $("#receiverTable tr").each(function () {
+        var currentRow = $(this);
+        var amount = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+        if (isNaN(amount)) {
+        } else {
+          total = total + amount;
+        }
+
+      });
+      total = total.toFixed(2);
+      var account = keys["previous-selected-account"];
+      var bal = keys[account + "-balance"]
+      console.log("bal:" + bal);
+      console.log("total:" + total);
+      if (total >  bal) { // i remove   parseFloat(bal)
+        $("#table-transfer-total-amount").css("color", "red");
+        $("#table-transfer-total-amount").text("P " + total  );
+      } else {
+        $("#table-transfer-total-amount").css("color", "green");
+        $(".message-viewer").hide();
+        $("#table-transfer-total-amount").text("P " + total);
+      }
+      
+      return total;
+    }
+
+    $('#calculator').click(function () {
+      compute_total_amount();
+
+    });
+
+
+    function remove_from_previous_receiver_table(tablename, receiver_code) {
+      var tr = "#" + tablename + " #" + receiver_code.trim();
+      var reciever_button = ".make-receiver";
+      var value = $(tr).find(reciever_button).prop("disabled");
+      if (value) {
+        $(tr).toggleClass("selected");
+        $(tr).find(reciever_button).prop("disabled", false);
+      }
+    }
+
+    $(".delete-row").click(function () {
+ 
+      $("#receiverTable tbody").find('input[name="record"]').each(function () {
+        if ($(this).is(":checked")) {
+          var tablename = $(this).closest('tr').attr("class")
+          var receiver_code = $(this).closest('tr').prop("id");
+          console.log("at receiver_code :", receiver_code);
+          remove_from_previous_receiver_table(tablename, receiver_code);
+          $(this).parents("tr").remove(); //todo uncomment this line
+        }
+      });
+
+      compute_total_amount();
+      var rowcount = $("#receiverTable  tr").length;
+      console.log("compute total: rowcount:", rowcount);
+      if (rowcount <= 2) {
+        $('input#submit-transfer').prop("disabled", true);
+      }
+      var rowcount = $("#receiverTable  tr").length;
+
+      var rowcount = $("#receiverTable tbody  tr").length;
+      console.log("compute total: rowcount0:", rowcount);
+      if (rowcount <=0) {
+        var newRow = "<tr id='row1'> <td colspan='5'></td>"
+        $("#receiverTable tbody").append(newRow);
+        $("#done-transfer-btn").hide();
+      }
+
+      
+    });
+
+  });
+</script>
+
+{% endblock %}

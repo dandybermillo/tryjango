@@ -1,0 +1,64 @@
+{% extends 'fx/base.html' %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+{% block css_style %}
+
+<style>
+    @media all and (max-width: 760px) {
+
+        table {
+            display: block;
+        }
+
+        table caption {
+            display: inline-block;
+        }
+
+        table tr {
+            display: list-item;
+            border: none;
+            border-top: 2px solid gray;
+        }
+
+        table th {
+            display: inline-block;
+            border: solid thin gray;
+
+            width: 100%;
+
+        }
+
+        table td {
+            display: inline-block;
+            border: solid thin rgb(133, 119, 119);
+            margin-right: 0.2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .empty {
+            display: none;
+        }
+
+        .navigators-modal,
+        .navigators-modal-row {
+            width: 100%;
+            background: transparent;
+        }
+
+    }
+</style>
+{% endblock css_style %}
+
+
+{% block sub_content%}
+{% if table %}
+<h5>LIST OF MEMBERS</h5>
+{% render_table table %}
+{%else%}
+<h5>NO RECORD FOUND!</h5>
+
+{% endif %}
+
+{% endblock sub_content%}

@@ -1,0 +1,18 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Reset your password confirmation
+From: webmaster@localhost
+To: dandytbermillo@yahoo.com.ph
+Date: Sun, 05 Apr 2020 17:30:50 -0000
+Message-ID: <158610785014.5739.7524738044544889154@Dandys-MacBook-Air.local>
+
+<h1>Forgot your password?</h1>
+<p>Enter your email address below, and we'll email instructions for setting a new one.</p>
+
+<form method="POST">
+    
+    
+    <input type="submit" value="Send me instructions!">
+</form>
+-------------------------------------------------------------------------------

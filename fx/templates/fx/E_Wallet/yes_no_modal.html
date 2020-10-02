@@ -1,0 +1,54 @@
+<div class="modal fade" id="yes-no-modal-{{code}}" tabindex="-1" role="dialog" aria-labelledby="ex" aria-hidden="true"
+    value="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ex">Choose the action to take:</h5>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label style="font-size:x-large; " for="recipient-name" id="confim-modal-{{code}}"
+                        class="col-form-label">Are
+                        you
+                        sure
+                        want to reset the temporary password</label>
+                    <div class="modal-footer">
+                        {% if float %} 
+                        <button style="float:right"  type="button" class="btn btn-danger" id="modal-btn-yes-{{code}}"><span
+                                class=" fas fa-check"></span>
+                            Yes</button>
+                        {%else%}
+                        <button   type="button" class="btn btn-danger" id="modal-btn-yes-{{code}}"><span
+                            class=" fas fa-check"></span>
+                        Yes</button>
+                        {%endif%}
+                        <button type="button" class="btn btn-primary" id="modal-btn-no-{{code}}"><span
+                                class=" fas fa-times"></span>
+                            No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var confirm_{{code}} = function (callbacks) {
+        //#mi-modal name of the confirm dialog
+        $("#modal-btn-yes-{{code}}").on("click", function () {
+            callbacks(true);
+            $("#yes-no-modal-{{code}}").modal('hide');
+        });
+        $("#modal-btn-no-{{code}}").on("click", function () {
+            callbacks(false);
+            $("#yes-no-modal-{{code}}").modal('hide');
+        });
+    };
+
+
+</script>

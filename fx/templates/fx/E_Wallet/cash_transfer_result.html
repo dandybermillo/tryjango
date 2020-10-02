@@ -1,0 +1,19 @@
+{% extends 'fx/base.html' %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+
+{% block main_content %}
+
+
+<div class=" container">
+
+    {% if table %}
+    <h5>THE FOLLOWING LIST IS SUCCESSFULLY RECORDED!</h5>
+    {% render_table table %}
+    {%else%}
+    <h5>Unable to process Cash Transfer!</h5>
+
+    {% endif %}
+
+    {% endblock main_content %}

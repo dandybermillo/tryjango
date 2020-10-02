@@ -1,0 +1,91 @@
+<style>
+  .navigator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    background-color: #18354c;
+
+
+  }
+
+  .logo {
+
+    color: hsl(210, 59%, 70%);
+    text-transform: Uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+
+  }
+
+  .nav-links {
+    display: inline-flex;
+    top: 4px;
+    justify-content: space-around;
+    width: 30%;
+
+  }
+
+  .nav-links li {
+    list-style: none;
+
+  }
+
+  .nav-links a {
+
+    color: rgb(229, 229, 236);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 17px;
+
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    background-color: #18354c;
+  }
+</style>
+<nav class="navigator">
+  <div class=“logo”>
+    <h4 class="logo Nav"> Mys Community</h4>
+  </div>
+  {% if user.is_authenticated and user.is_staff %}
+
+  <ul class="nav-links">
+    <li><a href="{% url 'fx:display_all_members_url'  %}">Members </a></li>
+    <li><a href="{% url 'fx:update_member_info_url' 0 %}">new Member</a></li>
+    <li><a href="">Loan </a></li>
+  </ul>
+  <div class="search-container">
+    <form action="{% url 'fx:search_member_url' %}" method="GET">
+
+      <input type="text" placeholder="Search" name='search' />
+
+      <button href="≈" type="submit">
+        <i>Search</i>
+      </button>
+    </form>
+  </div>
+  <a>{{user.username}}</a>
+  <a href="{% url 'password_change' %}">password change</a>
+
+
+  <a href=" {% url 'logout' %}">Logout </a>
+  {% else %}
+
+
+  <a href="{% url 'fx:login' %}">Sign in</a>
+  {% endif %}
+
+
+
+</nav>
+
+
+
+
+
+ 

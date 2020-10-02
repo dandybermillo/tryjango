@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMMUNITY MAIN PAGE</title>
+
+
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<style>
+    input.gray-background {
+        background-color: #f8f9fa;
+    }
+
+    .left-position {
+        text-align: left;
+
+    }
+
+    .mid-size {
+
+        font-size: 1.3rem;
+        padding-left: 1rem;
+    }
+    .tcard {
+        border: 5px solid blue;
+        display: block;
+        padding: 20px;
+        margin: 20px;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+
+    /* ---- required failed ---- */
+    td.selected_account {
+        background-color: #8cf367;
+        font-weight: bold;
+
+    }
+
+    span.asteriskField {
+
+        color: red;
+        font-weight: 500;
+    }
+
+    /* make finance-sub-lnk clickable */
+    .edit-loan-sub-lnk,
+    .edit-member-sub-lnk {
+        cursor: pointer;
+        color: #0056b3;
+    }
+
+    .edit-loan-sub-lnk,
+    .edit-member-sub-lnk:hover {
+
+        text-decoration: underline;
+    }
+
+    /* --- */
+    .modalbox .box {
+        background-color: rgba(0, 0, 0, 0.97);
+        margin: 0 auto;
+        min-width: 210px;
+        padding: 40px;
+        width: 30%;
+        margin-top: 100px;
+    }
+
+    .modalbox .title {
+        border-bottom: 1px solid #ccc;
+        font-family: verdana;
+        font-size: 22px;
+        letter-spacing: 0.2em;
+        margin: 0;
+        padding: 0 0 10px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .modalbox .content {
+        display: block;
+        font-family: Verdana;
+        font-size: 22px;
+        letter-spacing: 0.2em;
+        line-height: 22px;
+        padding: 10px 0 0;
+        color: #fff;
+    }
+
+    .modalbox .menu-lnk {
+
+        display: block;
+        font-family: Verdana;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.1em;
+        padding: 10px 0 0;
+
+    }
+
+    .modalbox .close {
+        color: #fff;
+        display: block;
+        float: right;
+        font-family: Verdana;
+        font-size: 22px;
+        height: 25px;
+        text-decoration: none;
+    }
+
+
+    .modalbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: #333333;
+    }
+
+    .modalbox:target {
+        display: block;
+        outline: none;
+    }
+
+
+    .link-modal {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 400px;
+        padding-left: 15px;
+    }
+
+
+    .link-modal a {
+        border: 1px solid #fff;
+        color: #fff;
+        font-family: Verdana;
+        font-size: 20px;
+        letter-spacing: 0.3em;
+        padding: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+
+
+    /* end of modalbox  */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+        background: #e1ecf2;
+    }
+
+    .wrapper {
+        margin: 0px;
+        display: block;
+    }
+
+    .wrapper.collapse {
+
+        display: block;
+    }
+
+    .wrapper .top_navbar {
+        width: calc(100% - 20px);
+        height: 60px;
+        display: flex;
+        position: fixed;
+        top: 0px;
+    }
+
+    .wrapper .top_navbar .hamburger {
+        width: 70px;
+        height: 100%;
+        background: #2e4ead;
+        padding: 15px 17px;
+        border-top-left-radius: 20px;
+        cursor: pointer;
+    }
+
+    .wrapper .top_navbar .hamburger div {
+        width: 35px;
+        height: 4px;
+        background: #92a6e2;
+        margin: 5px 0;
+        border-radius: 5px;
+    }
+
+
+
+    .wrapper .top_navbar .top_menu {
+        width: calc(100% - 70px);
+        height: 100%;
+        background: #fff;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: flex-end;
+
+
+
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .wrapper .top_navbar .top_menu ul {
+        margin-bottom: 0px;
+    }
+
+    .wrapper .top_navbar .top_menu .logo {
+        color: #2e4ead;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 3px;
+    }
+
+    .wrapper .top_navbar .top_menu ul {
+        display: flex;
+    }
+
+    .wrapper .top_navbar .top_menu ul li a {
+        display: block;
+        margin: 0 10px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+
+    }
+
+    .wrapper .top_navbar .top_menu ul li a.lnk {
+        text-align: center;
+        border: 1px solid #2e4ead;
+        border-radius: 50%;
+        color: #2e4ead;
+
+
+    }
+
+    .wrapper .top_navbar .top_menu ul li a.current-user {
+        text-align: left;
+        margin-right: 10px;
+        width: max-content;
+
+
+    }
+
+
+
+    .wrapper .top_navbar .top_menu ul li a:hover {
+        background: #4360b5;
+        color: #fff;
+    }
+
+    .wrapper .top_navbar .top_menu ul li a:hover i {
+        color: #fff;
+    }
+
+    .wrapper .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        background: #2e4ead;
+        width: 200px;
+        height: calc(100% - 80px);
+        border-bottom-left-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .wrapper .sidebar ul li a {
+        display: block;
+        padding: 20px;
+        color: #fff;
+        position: relative;
+        margin-bottom: 1px;
+        color: #92a6e2;
+        white-space: nowrap;
+    }
+
+    .wrapper .sidebar ul li a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: #92a6e2;
+        display: none;
+    }
+
+    .wrapper .sidebar ul li a span.icon {
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+    .wrapper .sidebar ul li a span.title {
+        display: inline-block;
+    }
+
+    .wrapper .sidebar ul li a:hover,
+    .wrapper .sidebar ul li a.active {
+        background: #4360b5;
+        color: #fff;
+    }
+
+    .wrapper .sidebar ul li a:hover:before,
+    .wrapper .sidebar ul li a.active:before {
+        display: block;
+    }
+
+    .wrapper .main_container {
+        width: (100% - 200px);
+        margin-top: 60px;
+        margin-left: 200px;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+
+
+
+    .wrapper.collapse .sidebar {
+        width: 70px;
+    }
+
+    .wrapper.collapse .sidebar ul li a {
+        text-align: center;
+    }
+
+    .wrapper.collapse .sidebar ul li a span.icon {
+        margin: 0;
+    }
+
+    .wrapper.collapse .sidebar ul li a span.title {
+        display: none;
+    }
+
+    .wrapper.collapse .main_container {
+        width: (100% - 70px);
+        margin-left: 70px;
+    }
+
+    /* ----- loading icon ------- */
+
+    .loading {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: .50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading>img {
+        width: 150px;
+
+    }
+
+    .hidden {
+        animation: fadeOut .01s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    /* ---------- TABLE -----------  */
+    .row-number {
+        width: 3.5rem;
+    }
+
+    .code-number {
+        width: 5rem;
+        display: none;
+    }
+
+    .date_entered {
+        width: 13rem;
+    }
+
+    .amount {
+        border-radius: 25px;
+    }
+
+    .dates {
+        min-width: 6rem;
+        border-radius: 25px;
+    }
+
+    .balance,
+    .amount {
+        /* max-width: 6rem; */
+        font-weight: bold;
+
+    }
+
+    table th,
+    td {
+
+        text-align: center;
+    }
+
+
+
+    /* load static */
+
+    #img_loadmore {
+        width: 1.5rem;
+        display: none;
+
+    }
+
+    img.profile-pic {
+        width: 10rem;
+        display: inline-block;
+    }
+
+    .show_loading_img {
+
+        display: inline-flex;
+    }
+
+    .cashin {
+
+        color: #218838;
+    }
+
+    .cashout {
+        color: red;
+    }
+
+    .left_align {
+        text-align: left;
+    }
+
+    td.left {
+        text-align: left;
+    }
+
+    tr.selected {
+        font-weight: 600;
+        color: green;
+
+    }
+
+    tr.to-delete {
+        background-color: rgb(248, 121, 121);
+    }
+
+    tr.to-accept {
+        background-color: rgb(97, 191, 133);
+    }
+
+    a.btn-menu {
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        min-width: 194px;
+        border-radius: 50px;
+
+    }
+
+    div.container-finance-account {
+        /* ---- finance container table --- */
+        position: absolute;
+        width: 100%;
+    }
+
+    /* ----------------------------------
+                  MEDIA
+    ---------------------------------- */
+    @media (max-width: 770px) {
+
+        div.container-finance-account {
+            /* ---- finance container table --- */
+            position: relative;
+            width: 100%;
+        }
+
+        .wrapper .top_navbar .top_menu ul li a {
+            display: block;
+            margin: 0px;
+            margin-left: 5px;
+        }
+
+        .wrapper .top_navbar .hamburger {
+
+            border-radius: 0px;
+        }
+
+        .wrapper .top_navbar .top_menu {
+
+            border-top-right-radius: 0px;
+        }
+
+
+
+        .logo {
+            display: none;
+        }
+
+        .wrapper {
+            margin: 0px;
+
+        }
+
+        .wrapper .top_navbar .top_menu {
+
+            justify-content: flex-end;
+        }
+
+        .hamburger {
+
+            border: 0px;
+        }
+
+        .wrapper .top_navbar {
+            position: absolute;
+            width: 100%;
+            display: flex;
+
+            left: 0px;
+            top: 0px;
+
+        }
+
+        .wrapper .vertical_wrap {
+            position: absolute;
+            height: 100%;
+
+            width: 100%;
+            visibility: visible;
+            z-index: 99;
+        }
+
+        .vertical_wrap .sidebar {
+            position: absolute;
+            border-bottom-left-radius: 0px;
+
+            top: 0px;
+            height: 100%;
+
+        }
+
+        .backdrop {
+            /* border: 2px dashed red; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0px;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .wrapper .main_container {
+            position: relative;
+
+            margin-left: 0px;
+            width: 100%;
+            left: 0px;
+            padding: 5px;
+            overflow: auto;
+
+        }
+
+        .wrapper.collapse .main_container {
+            left: 0px;
+            margin-left: 0px;
+        }
+
+        .wrapper.collapse .vertical_wrap {
+
+            visibility: hidden;
+        }
+
+        /* ----- authentication ----- */
+        .auth-row {
+
+            display: block;
+        }
+
+        .auth-col {
+
+            max-width: 100%;
+        }
+
+        a.btn {
+            padding: 0px;
+            text-align: left;
+
+        }
+
+        input.submit,
+        a.edit_button {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* ---------- search------------ */
+        div.modal-footer {
+
+            display: block;
+        }
+
+        /* ---------------- table -------------- */
+        table {
+            display: block;
+        }
+
+        table caption {
+            display: inline-block;
+        }
+
+        table tr {
+            display: list-item;
+            border: none;
+            border-top: 2px solid gray;
+        }
+
+        table th {
+            display: inline-block;
+            border: solid thin gray;
+
+            width: 100%;
+
+        }
+
+
+        table tbody,
+        thead,
+        tfoot {
+            display: block;
+        }
+
+        tbody td {
+            display: inline-block;
+            border: solid thin rgb(133, 119, 119);
+            margin-right: 0.2rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .empty {
+            display: none;
+        }
+
+        .navigators-modal,
+        .navigators-modal-row {
+            width: 100%;
+            background: transparent;
+        }
+
+        a.btn-menu {
+
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+        }
+    }
+
+    @media (max-width: 420px) {
+
+        a.btn-menu {
+
+            width: 100%;
+        }
+    }
+</style>
+{% block css_style %}
+{%  endblock css_style %}
+
+<body>
+
+    {% block loading %}
+    <div class="loading">
+
+        <img src="/static/img/load.gif" alt="Loading..." />
+    </div>
+    {% endblock loading %}
+
+    <div class="wrapper collapse" id="wrapper">
+
+
+
+        <div class="top_navbar">
+
+            <div class="hamburger">
+                {% if user.is_authenticated and user.is_staff %}
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                {%endif%}
+
+            </div>
+
+            <div class="top_menu" style="z-index:99999">
+                <div class="logo">
+                    <span>A</span><span class="logo-title">WESOME</span> <span>C</span><span
+                        class="logo-title">OMMUNITY</span>
+
+                    <!-- get_nav_settings: {{table_search.get_nav_settings}} -->
+                </div>
+                <ul>
+                    {% if user.is_authenticated and user.is_staff %}
+
+                    {% if  member_info %}
+
+                    <li><a class="current-user" href="{% url 'fx:display_member_info_url' member_info.id  %}">
+                            {% if member_info.reserve %}
+                            {{member_info.firstname|upper}}
+                            {%else%}
+                             {{member_info.name|upper}}
+
+
+                            {%endif%}
+                        </a></li>
+
+                    {% endif %}
+
+                    <li><a class="lnk search-member-link" data-toggle=" tooltip" data-placement="top"
+                            title="Search member in the database" href="#">
+                            <i class="search_member fas fa-search"></i>
+                        </a></li>
+                    <li><a class="lnk" data-toggle=" tooltip" data-placement="top" title="Show Alert messages" href="#">
+                            <i class="fas fa-bell"></i>
+                        </a></li>
+                    <li><a class="lnk member-profile-link" data-toggle=" tooltip" data-placement="top"
+                            title="show logout menu" href="#">
+                            <i class="member-profile fas fa-user"></i>
+                        </a></li>
+                    {%else%}
+                    <li><a class="lnk" href="{% url 'fx:login' %}">
+
+                            <i class="fas fa-user"></i></a></li>
+                    {%endif%}
+                </ul>
+
+            </div>
+        </div>
+        {% if user.is_authenticated and user.is_staff %}
+        <div class="vertical_wrap">
+            <div class="backdrop"></div>
+            <div class="sidebar">
+                <ul>
+                    <li><a href="{% url 'fx:dashboard_url'  %}" class='{{State.dashboard}}'>
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="title">DASHBOARD</span>
+                        </a></li>
+                    <li> <a id="member-lnk" class='modal-menu {{State.new_member}} btn-group' href="#modal-member-container-menu">
+                            <span class="'modal-menu icon"><i class="fas fa-user"></i></span>
+                            <span class="'modal-menu title">MEMBER</span>
+                        </a></li>
+
+                    <li><a id="finance-lnk" href="#modal-finance-container-menu">
+                            <span class="icon"><i class="fas fa-file-alt"></i></span>
+                            <span class="title">FINANCE</span>
+                        </a></li>
+                    <li><a   href="{% url 'fx:create_update_venture_url' member_info.id 0 'trade'   %}">
+                            <span class="icon"><i class="fas fa-blog"></i></span>
+                            <span class="title">TRADE</span>
+                        </a></li>
+                    <li><a href="">
+                            <span class="icon"><i class="fas fa-leaf"></i></span>
+                            <span class="title">SETTINGS</span>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+        {%endif%}
+
+        <div class="main_container" style="border:dashed dashed gray;">
+            <div class=target>
+
+                {% block sub_content%}
+                .
+                {% endblock sub_content%}
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div  style="display: none;" class="modal-menu modalbox" id="modal-member-container-menu">
+
+        <div class="box" style="width: 100%;height: 100%;margin-top: 0px;">
+            
+            <p class="modal-menu title">MEMBERS MENU</p>
+            <div class="modal-menu content">
+                <form>
+                    <div class="container-member">
+                        <div class="form-group row">
+                            <label for="new-member" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="menu-lnk" href="{% url 'fx:create_update_member_url' 0  %}">ADD NEW MEMBER</a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="edit-member" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+
+                                {% if user.is_authenticated and user.is_staff and member_info.id > 1 %}
+                                <a class="menu-lnk" href="{% url 'fx:create_update_member_url' member_info.id   %}">EDIT
+                                    {{member_info.gender|upper}} {{member_info.firstname|upper}}
+                                    {{member_info.lastname|upper}}'S PROFILE</a>
+                                {% else%}
+                                <a class="edit-member-sub-lnk menu-lnk" style="color:#0056b3">EDIT MEMBER'S PROFILE</a>
+                                {%endif %}
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                        </div>
+                        <div class="form-group row">
+                            <label for="venture-done-here" class="col-sm-2 col-form-label"></label>
+                            <input id="modal-finance-container-menu-done" class="venture-done-here btn btn-secondary btn-md" type="button"
+                            value="DONE HERE" />
+                        </div>
+                    </div> <!-- -end of members menu  -->
+
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    {% if user.is_authenticated and user.is_staff %}
+
+
+    <div style="display: none;" class="modal-menu modalbox" id="modal-finance-container-menu">
+
+        <div class="box" style="width: 100%;height: 100%;margin-top: 0px;">
+            
+            <p class="modal-menu title">FINANCE MENU</p>
+            <div class="modal-menu content">
+
+
+                <form>
+                    <div class="container-member">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <label class="col-form-label">WALLET ACCOUNT</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="New  Cash In  transaction"
+                                    href="{% url 'fx:create_update_member_finance_url' 'wallet'  member_info.id 0  'D'  %}">
+                                    DEPOSIT
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="New Cash Out transaction"
+                                    href="{% url 'fx:create_update_member_finance_url' 'wallet' member_info.id 0 'W'   %}">
+                                    WITHDRAW
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- -end of wallet menu  -->
+
+
+                    <div class="container-saving">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <label class="col-form-label">SAVING ACCOUNT</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="New  Deposit To Saving Account"
+                                    href="{% url 'fx:create_update_member_finance_url' 'saving'  member_info.id 0 'D'   %}">
+                                    DEPOSIT
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="Withraw From Saving ACcount"
+                                    href="{% url 'fx:create_update_member_finance_url' 'saving'  member_info.id 0 'W'  %}">
+                                    WITHDRAW
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- -end of savings menu  -->
+
+                    <div class="container-loan" style="margin-top: 2rem;">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <label class="col-form-label">LOAN ACCOUNT</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="New Loan Request"
+                                    href="{% url 'fx:loan_application_url' member_info.id 0    %}">
+                                    NEW LOAN APPLICATION
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="loan-payment" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <a class="loan-payment finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="Loan Payment Transaction"
+                                    href="{% url 'fx:create_update_payment_url' 2 0  %}">
+                                    LOAN PAYMENT
+
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                        </div>
+                        <div class="form-group row">
+                            <label for="venture-done-here" class="col-sm-2 col-form-label"></label>
+                            <input id="modal-finance-container-menu-done" class="venture-done-here btn btn-secondary btn-md" type="button"
+                            value="DONE HERE" />
+                        </div>
+
+                    </div><!-- -end of loan's menu  -->
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endif %}
+
+
+
+    <div class="profile-modal modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Welcome, {{user.username}}
+                    </button>
+
+                    {% if user.is_authenticated and user.is_staff %}
+                    <a href="{% url 'fx:user_dashboard_url' 0 %}"
+                        class="list-group-item list-group-item-action">Personal Profile</a>
+                    <a href="{% url 'password_change' %}" class="list-group-item list-group-item-action">Change Password
+                    </a>
+                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">Log out</a>
+                    {%else %}
+
+                    <a class="btn btn-info" href="{% url 'fx:login' %}">Log In</a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ---------------  search  ---------------- -->
+
+    <div id="modal-search-member" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="false">
+        <div class="modal-dialog modal-xl">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search Member</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="container-alert-not-found-search-member alert alert-danger alert-dismissible fade show"
+                        role="alert" style="display:none">
+                        <strong>Message:</strong> <span class="alert-not-found-search-member">danger</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="container-alert-found-search-member alert alert-success alert-dismissible fade show"
+                        role="alert" style="display:none">
+                        <strong>Message:</strong> <span class="alert-found-search-member">success</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="form-group" style="display:block">
+
+                        <label for="recipient-name" class="col-form-label">Type name or username:</label>
+                        <input type="text" id="txt-search-member" required minlength="3"></input>
+                    </div>
+                    <br>
+
+                    table_search_context.user_preference.search_member:{{table_search_context.user_preference.search_member}}
+                    {% include 'fx/member/templates/search_table.html' with code=table_search_context.code_name preference=table_search_context.user_preference.search_member search_receiver=table_search_context %}
+                    <!-- search_receiver instead of member -->
+                    <div class="modal-footer">
+                        <button type="search button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input class="btn-search-member-submit btn btn-success" type="submit" name="submit"
+                            value="Search now" />
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ----------------- end search ------------------- -->
+    <script>
+        $(document).ready(function () {
+            var member_id = "{{member_info.id}}";
+
+
+            $(".venture-done-here").click(function (event) {
+
+                $("#modal-member-container-menu").hide();
+                $("#modal-finance-container-menu").hide();
+                //event.preventDefault();
+                //event.stopPropagation();
+            });
+            $(".finance-sub-lnk,.edit-member-sub-lnk").click(function (event) {  //form name "needs-validation"
+                console.log("Handler for wallet lnk  called.");
+                if (member_id <= 0) {
+                    $('#modal-search-member').modal('toggle');
+                    $("#modal-member-container-menu").hide();
+                    $("#modal-finance-container-menu").hide();
+
+
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    console.log("else of member < 0")
+                    $("#modal-member-container-menu").hide();
+                    $("#modal-finance-container-menu").hide();
+                }
+            });
+            $("#finance-lnk").click(function () {  //
+                $("#modal-finance-container-menu").show();
+
+            });
+            $("#member-lnk").click(function () {  //
+                $("#modal-member-container-menu").show();
+
+            });
+            
+
+            $("#new-loan-lnk").click(function () {
+
+                if (member_id) {
+                }
+                else {
+
+                    $('#modal-search-member').modal('toggle');
+                }
+
+            });
+
+            $('.alert').on('close.bs.alert', function (event) {
+                console.log("remove......");
+                event.preventDefault();
+                $(this).hide();
+            });
+
+
+
+            $('#exampleModal').on('show.bs.modal', function () {
+                console.log("exampleModal");
+                $(this).css({
+                    'height': '100%'
+
+                });
+            });
+
+            $('#modal-search-member').on('shown.bs.modal', function () {
+                $('#txt-search-member').trigger('focus')
+            })
+
+            // modal menu 
+            // $(".modal-menu").click(function () {
+            //     $("#modal-member-container-menu").show();
+            // });
+
+            $(".search_member, .search-member-link").click(function () {
+                $("#modal-member-container-menu").hide();
+                $('#modal-search-member').modal('toggle');
+
+            });
+
+
+            $(".member-profile,.member-profile-link").click(function () {
+                console.log("search...");
+
+                $('.profile-modal').modal('toggle');
+            });
+
+            $(".hamburger").click(function () {
+                console.log("bugerr");
+                $(".wrapper").toggleClass("collapse");
+                $(".wrapper").css("display", "block");
+            });
+            $(".backdrop").click(function () {
+                $(".wrapper").toggleClass("collapse");
+                $(".wrapper").css("display", "block");
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script> -->
+    <script type="text/javascript">
+
+        window.addEventListener("load", function () {
+
+            const loader = document.querySelector(".loading");
+            // loader.className += " hidden";
+            $(".loading").toggleClass("hidden");
+            $("#wrapper").addClass("wrapper collapse");
+        });
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

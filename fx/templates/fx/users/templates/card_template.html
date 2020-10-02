@@ -1,0 +1,204 @@
+{% load app_filters %}
+{% load custom_tags%}
+
+
+{% load table_tag%}
+
+{% block CSS_style%}
+
+<style>
+    .cards-container {
+        max-width: 1400px;
+        min-width: 350px;
+        display: flex;
+        
+
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-top: 10px;
+
+    }
+
+
+    .containers {
+        background-color: whitesmoke;
+        max-width: 350px;
+        margin-bottom: 20px;
+         
+
+    }
+
+    .kard:hover {
+        box-shadow: 0 0 0 1px rgb(89, 174, 226), 0 1px 1px 0 rgba(16, 22, 26, 0.20), 0 2px 6px 0 rgba(16, 22, 26, 0.15), 0 2px 20px 0 rgba(16, 22, 26, 0.10);
+    }
+
+    .kard {
+
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-radius: 4px;
+        min-width: 350px;
+
+        transition: all .2s ease;
+        box-shadow: 0 0 0 1px #CED9E0, 0 1px 1px 0 rgba(16, 22, 26, 0.20), 0 2px 6px 0 rgba(16, 22, 26, 0.15), 0 2px 20px 0 rgba(16, 22, 26, 0.10);
+
+
+
+
+        min-height: 100px;
+        font-family: sans-serif;
+
+        padding: 20px;
+        display: inline-flex;
+        justify-content: space-between;
+
+
+
+    }
+
+
+    .value {
+        margin-top: 29px;
+        display: inline-block;
+        align-items: baseline;
+        font-size: 40px;
+
+    }
+</style>
+
+{%endblock CSS_style%}
+
+{% block sub_content%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+ 
+<div class="cards-container">
+    {% for obj in table.cards%}
+    <div class="containers">
+        <article class="kard" style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+            <div class="left">
+                 
+                <div class="title">{{obj.name}}</div>
+                {% getbalance obj.id True obj.model_name as balance %}
+                
+                <div class="value" > <button class="card-account" value="{{obj.model_name}}" style="border:none;color:blue;background-color: transparent;">
+                        {{balance.balance}} </button>
+                        
+                    <input type="hidden" id="{{obj.name}}-cash_in" value="{{balance.transaction.cash_in}}">
+                    <input type="hidden" id="{{obj.name}}-cash_out" value="{{balance.transaction.cash_out}}">
+                    <div class="unit" style="font-size:12px;margin-top:-6px">Running balance</div>
+                   
+                </div>
+            </div>
+            <canvas id="{{obj.card_name}}"
+                style="height:150px;max-width:220px;border:1px solid none;margin:0px;padding:0px;margin-right:-35px;margin-top:-5px"></canvas>
+
+        </article>
+    </div>
+    
+
+    {%endfor%}
+
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+    var chart = ""
+    var cash_in = ""
+    var cash_out = ""
+    {% for obj in table.cards %}
+    chart = document.getElementById('{{obj.card_name}}').getContext('2d');
+    cash_in = parseInt(document.getElementById("{{obj.name}}-cash_in").value);;
+    cash_out = parseInt(document.getElementById("{{obj.name}}-cash_out").value);
+    myFunction(chart, cash_in, cash_out);
+    {% endfor %}
+
+
+
+    // document.getElementById("myChart").onload = function () { alert("hii") };
+
+
+    function myFunction(myChart, cash_in, cash_out) {
+
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 15;
+        Chart.defaults.global.defaultFontColor = '#777';
+
+        let massPopChart = new Chart(myChart, {
+            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: ['Cash in', 'Cash out'],
+                datasets: [{
+                    label: 'Total amount',
+                    data: [
+
+                        cash_in,
+                        cash_out,
+
+                    ],
+                    //backgroundColor:'green',
+                    backgroundColor: [
+
+                         'rgba(0, 128, 0, 0.7)',
+                          
+                         'rgba(253, 253, 0, .7)'
+                    ],
+                    borderWidth: 0,
+                    borderColor: '#777',
+                    hoverBorderWidth: 1,
+                    hoverBorderColor: '#000'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Cash In VS Cash Out',
+                    fontSize: 15
+                },
+                legend: {
+                    display: false,
+                    position: 'right',
+
+                    labels: {
+                        fontColor: '#000'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true
+                }
+            }
+        });
+
+
+    }
+
+
+
+
+</script>
+
+
+{% endblock sub_content%}

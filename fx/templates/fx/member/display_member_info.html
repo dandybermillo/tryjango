@@ -1,0 +1,2373 @@
+{% extends 'fx/base.html' %}
+{% load app_filters %}
+{% load custom_tags%}
+
+
+{% load table_tag%}
+{% load static%}
+
+<!-- collapsable -->
+{% block sub_content%}
+<style>
+  /* tabs for finance */
+  a.finance-lnk.active {
+    color: white;
+    font-weight: lighter;
+    background-color: lightgrey !important;
+  }
+
+  /* form-group-on loan app */
+
+  div.review.form-group {
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+
+  }
+
+  input.review.form-control-plaintext {
+    border: 1px solid #eee;
+    padding: 5px 6px;
+  }
+
+  /* ------------ user tabs ---------------- */
+
+
+  div.user-tab {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 3rem;
+  }
+
+  /* --------------- user tabs end ----------------- */
+  @media all and (max-width: 760px) {
+
+    table {
+      display: block;
+    }
+
+    table caption {
+      display: inline-block;
+    }
+
+    table tr {
+      display: list-item;
+      border: none;
+      border-top: 2px solid gray;
+    }
+
+    table th {
+      display: inline-block;
+      border: solid thin gray;
+
+      width: 100%;
+
+    }
+
+    table td {
+      display: inline-block;
+      border: solid thin rgb(133, 119, 119);
+      margin-right: 0.2rem;
+      width: 100%;
+
+    }
+
+
+    .empty {
+      display: none;
+    }
+
+    .navigators-modal,
+    .navigators-modal-row {
+      width: 100%;
+      background: transparent;
+    }
+
+  }
+
+
+  /* ----------- profile ------------- */
+
+  .align-center,
+  .center {
+    text-align: center !important;
+  }
+
+  .profile-user-info {
+    display: table;
+    width: 98%;
+    width: calc(100% - 24px);
+    margin: 0 auto
+  }
+
+  .profile-info-row {
+    display: table-row
+  }
+
+  .profile-info-name,
+  .profile-info-value {
+    display: table-cell;
+    border-top: 1px dotted #D5E4F1
+  }
+
+  .profile-info-name {
+    text-align: right;
+    padding: 6px 10px 6px 4px;
+    font-weight: 400;
+    color: #667E99;
+    background-color: transparent;
+    width: 110px;
+    vertical-align: middle
+  }
+
+  .profile-info-value {
+    padding: 6px 4px 6px 6px
+  }
+
+  .profile-info-value>span+span:before {
+    display: inline;
+    content: ",";
+    margin-left: 1px;
+    margin-right: 3px;
+    color: #666;
+    border-bottom: 1px solid #FFF
+  }
+
+  .profile-info-value>span+span.editable-container:before {
+    display: none
+  }
+
+  .profile-info-row:first-child .profile-info-name,
+  .profile-info-row:first-child .profile-info-value {
+    border-top: none
+  }
+
+  .profile-user-info-striped {
+    border: 1px solid #DCEBF7
+  }
+
+  .profile-user-info-striped .profile-info-name {
+    color: #336199;
+    background-color: #EDF3F4;
+    border-top: 1px solid #F7FBFF
+  }
+
+  .profile-user-info-striped .profile-info-value {
+    border-top: 1px dotted #DCEBF7;
+    padding-left: 12px
+  }
+
+  .profile-picture {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    padding: 4px;
+    display: inline-block;
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .15)
+  }
+
+  .dd-empty,
+  .dd-handle,
+  .dd-placeholder,
+  .dd2-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box
+  }
+
+  /* ---------------- wallet buttons --------------- */
+  ul a.wallet-link {
+
+    border: 1px solid lightgray;
+    display: block;
+    padding: .4rem 1rem;
+    border-radius: 35px;
+  }
+
+  ul a.wallet-link:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgb(132, 215, 116);
+
+  }
+
+
+  @media only screen and (max-width:770px) {
+    .profile-info-name {
+      width: 80px
+    }
+
+    .profile-user-info-striped .profile-info-name {
+      float: none;
+      width: auto;
+      text-align: left;
+      padding: 6px 4px 6px 10px;
+      display: block
+    }
+
+    .profile-user-info-striped .profile-info-value {
+      margin-left: 10px;
+      display: block
+    }
+
+    .user-profile .memberdiv {
+      width: 50%;
+      margin-left: 0;
+      margin-right: 0
+    }
+
+    tbody td.center-btn {
+
+      text-align: center;
+    }
+
+  }
+
+  /* ---- toggle button menu --- */
+  span.arrow {
+    font-size: .8rem;
+    color: red;
+
+  }
+
+  div.dashboard-receive {
+    border: .5px solid lightgray;
+    padding: 2rem 2rem;
+    border-radius: 5px;
+    border-left: 3px solid green;
+  }
+</style>
+
+
+<div>
+  <p>
+
+    <a id="dashboard-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse" href="#dashboard-tab"
+      role="button" aria-expanded="false" aria-controls="dashboard-tab">
+      <i class="fas fa-home"></i> DASHBOARD <span class="arrow span-toggle fas fa-chevron-down"></span></a>
+    {% if not member_info.reserve %}
+    <a id="profile-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
+      href="#profile-collapsible" role="button" aria-expanded="false" aria-controls="profile-collapsible">
+      <i class="fas fa-id-card"></i> PROFILE <span class="arrow "></span></a>
+    {%endif %}
+
+    <a id="financial-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
+      href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+      <i class="fas fa-credit-card"></i> FINANCE<span id="financial-toggle-span" class="arrow "></span></a>
+
+
+    <a class="btn-menu btn btn-outline-primary btn-sm" href="{% url 'fx:transfer_url' 'wallet' member_info.id %}">
+      <i class="fas fa-random"></i> TRANSFER
+    </a>
+
+    <a id="history-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
+      href="#transfer-history-tab" role="button" aria-expanded="false" aria-controls="transfer-history-tab">
+      <i class="fas fa-folder"></i> HISTORY <span class="arrow "></span></a>
+
+    <!-- <a id="new-loan-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
+      href="#new-loan-tab" role="button" aria-expanded="false" aria-controls="transfer-history-tab">
+      <i class="fas fa-folder"></i> NEW LOAN <span class="arrow "></span></a> -->
+
+  </p>
+
+  <!--------------------  DASHBOARD ------------------------------>
+  <div class="container">
+
+    <div class="user-tab row dashboard" id="dashboard-container">
+
+      <div class="collapse multi-collapse show" id="dashboard-tab" style="width:100%">
+        <div class="tcard">
+          {% if claim_transfer_table.data %}
+          <div class="dashboard-receive">
+
+            RECEIVE HISTORY
+            <!-- claim_transfer_table.code_name: {{claim_transfer_table.code_name}} -->
+            {% if claim_transfer_table.user_preference %}
+            {% include 'fx/member/templates/transfer_receivers_table.html' with  code=claim_transfer_table.code_name preference=claim_transfer_table.user_preference.claim_transfer transfer=claim_transfer_table show_load_more=True  message=claim_transfer_table.message.claim_transfer %}
+            {% endif %}
+          </div>
+          {% endif%}
+          <div>
+            {%if table_card %}
+            {% render_table table_card%}
+            {%endif%}
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+    {% if not member_info.reserve %}
+    <div class="user-tab row" id="profile-container">
+      <div class="collapse multi-collapse" id="profile-collapsible" style="width:100%">
+        <div class="tcard">
+
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                aria-selected="false">Contact</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-3 center">
+                  <span class="profile-picture">
+                    <img class="profile-picture editable img-responsive" alt=" Avatar" id="avatar"
+                      src="/static/img/{%ifequal member_info.gender 'Mr.' %}male.png {%else%}female.png {%endifequal%}"
+                      alt="male" />
+
+                  </span>
+
+                  <div class="space space-4"></div>
+
+                  <a href="{% url 'fx:create_update_member_url' 2  %}" class="btn btn-sm btn-block btn-success">
+                    <i class="ace-icon fa fa-plus-circle"></i>
+                    <span class="bigger-110">Edit Profile</span>
+                  </a>
+
+                  <a href="#" class="btn btn-sm btn-block btn-primary">
+                    <i class="ace-icon fa fa-minus-circle bigger-120"></i>
+                    <span class="bigger-110">Disable Profile</span>
+                  </a>
+                </div><!-- /.col -->
+
+                <div class="col-xs-12 col-sm-9">
+                  <h4 class="blue">
+                    <span class="middle">{{member_info.gender}} {{member_info.firstname|title}}
+                      {{member_info.lastname|title}} </span>
+
+
+                  </h4>
+
+                  <div class="profile-user-info">
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Username </div>
+
+                      <div class="profile-info-value">
+                        <span>{{member_info.username}}</span>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Password </div>
+
+                      <div class="profile-info-value">
+
+                        <button id="btn-reset-pass" type="button" class="btn-outline-primary btn-sm"
+                          data-toggle=" tooltip" data-placement="top" title="Reset existing password"> Reset </button>
+
+                        <button id="btn-show-pass" type="button" class="btn-outline-primary btn-sm"
+                          data-toggle=" tooltip" data-placement="top" title="Show temporary password"> Show </button>
+
+                        <span id="hidden-pass"></span>
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Location </div>
+
+                      <div class="profile-info-value">
+
+                        <span>{{member_info.address}}</span>
+
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Age </div>
+
+                      <div class="profile-info-value">
+                        <span>n/a</span>
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> telephone </div>
+
+                      <div class="profile-info-value">
+                        <span>{{member_info.telephone}}</span>
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> E-mail </div>
+
+                      <div class="profile-info-value">
+                        <span>{{member_info.email}}</span>
+                      </div>
+                    </div>
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Joined </div>
+
+                      <div class="profile-info-value">
+                        <span>2010/06/20</span>
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Active </div>
+
+                      <div class="profile-info-value">
+                        <span>{{member_info.active}}</span>
+                      </div>
+                    </div>
+
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Last Online </div>
+
+                      <div class="profile-info-value">
+                        <span>n/a</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hr hr-8 dotted"></div>
+
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+
+              <div class="space-20"></div>
+
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> Under Construction
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Under Construction
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+    {% endif %}
+
+
+    <!----------------------   FINANCIAL TAB MENUS ------------------------>
+
+    <div class="user-tab row" id="wallet-container">
+      <div class="collapse multi-collapse" id="multiCollapseExample1" style="width:100%">
+        <div class="tcard">
+
+          <div class="header">
+            <!-- ... -->
+
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="finance-lnk nav-item nav-link" id="nav-cc-tab" data-toggle="tab" href="#nav-cc" role="tab"
+                  aria-controls="nav-cc" aria-selected="false">C-COIN </a>
+                <a class="finance-lnk nav-item nav-link active" id="nav-wallet-tab" data-toggle="tab" href="#nav-wallet"
+                  role="tab" aria-controls="nav-wallet" aria-selected="true"> WALLET </a>
+
+                <a class="finance-lnk nav-item nav-link" id="nav-saving-tab" data-toggle="tab" href="#nav-saving"
+                  role="tab" aria-controls="nav-saving" aria-selected="false">SAVINGS</a>
+
+                <a class="finance-lnk nav-item nav-link" id="nav-payment-tab" data-toggle="tab" href="#nav-payment"
+                  role="tab" aria-controls="nav-payment" aria-selected="false">PAYMENT</a>
+                <a class="finance-lnk nav-item nav-link" id="nav-loan-tab" data-toggle="tab" href="#nav-loan" role="tab"
+                  aria-controls="nav-loan" aria-selected="false">LOAN</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-wallet" role="tabpanel" aria-labelledby="nav-wallete-tab">
+
+                <!-- --------------wallet------- -->
+                <div class="" style="border:1px solid green;width: 50;height: 100;">
+
+
+                  {% include 'fx/member/templates/table.html' with code="wallet" preference=wallet_transaction.user_preference.financial_transaction data_source=wallet_transaction  %}
+
+
+                </div>
+              </div>
+
+
+
+              <div class="tab-pane fade" id="nav-cc" role="tabpanel" aria-labelledby="nav-cc-tab">
+                <div class="" style="border:1px solid green;width: 50;min-height: 100;">
+
+                  {% include 'fx/member/templates/table.html' with code="cc" preference=Cc_transaction.user_preference.financial_transaction data_source=Cc_transaction  %}
+
+
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="nav-saving" role="tabpanel" aria-labelledby="nav-saving-tab">
+                <div class="" style="border:1px solid green;width: 50;height: 100;">
+
+
+
+                  {% include 'fx/member/templates/table.html' with code="saving" preference=Saving_transaction.user_preference.financial_transaction data_source=Saving_transaction  %}
+
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab">
+                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                  {% include 'fx/member/templates/table.html' with code="payment" preference=Payment_transaction.user_preference.financial_transaction data_source=Payment_transaction  %}
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="nav-loan" role="tabpanel" aria-labelledby="nav-loan-tab">
+                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                  {% include 'fx/member/templates/data_loader_table.html' with code="loan" preference=Loan_transaction.user_preference.financial_transaction data_source=Loan_transaction  %}
+
+
+                </div>
+              </div>
+
+
+            </div>
+
+
+            <!-- .... -->
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="user-tab row" id="transfer-history-container">
+
+      <div class="collapse multi-collapse" id="transfer-history-tab" style="width:100%">
+        <div class="tcard">
+
+
+          TRANSFER HISTORY
+          {% if table_transfer_history.user_preference %}
+          {% include 'fx/member/templates/transfer_receivers_table.html' with  code=table_transfer_history.code_name preference=table_transfer_history.user_preference.transfer_history transfer=table_transfer_history show_load_more=True message=table_transfer_history.message.transfer_history %}
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <!-- --------- Modal for Transfer history and Reset passsword --------------- -->
+  {% include 'fx/e_wallet/yes_no_modal.html' with code='transfer'  %}
+  {% include 'fx/e_wallet/yes_no_modal.html' with code='reset'  %}
+
+  <!-- ------------------ MODAL (info)----------------------------------->
+
+
+  <!--------------------  INFO  TRANSFER MODAL ------------------- -->
+  <div class="modal fade" id="info-transfer-modal" tabindex="-1" role="dialog" aria-labelledby="source-info-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="info-transfer-modal-title">Modal title</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+
+
+        <div class="modal-body">
+          <!-- ... -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <h5 class="modal-subtitle" id="info-transfer-modal-subtitle">Modal subtitle</h5>
+            </div>
+          </div>
+          <form>
+            <!-- <h4>Please review the following before submitting. Thanks.</h4> -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="transfer-borrower-txt" class="col-form-label">Sender:</label>
+                <input style="background-color: transparent;" id="transfer-borrower-txt" type="text" readonly
+                  class="form-control-plaintext"
+                  value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+              </div>
+
+              <!-- <div class="col-md-6">
+                <label for="info-transfer-date_entered-txt" class="col-form-label">Date:</label>
+                <input id="info-transfer-date_entered-txt" type="text" readonly class="form-control-plaintext" value="">
+              </div> -->
+            </div>
+
+            <div class="form-group row">
+              <label for="info-transfer-transaction-txt" class="col-sm-1 col-form-label">Transaction</label>
+              <div class="col-md-5">
+                <input type="text" readonly class="form-control" id="info-transfer-transaction-txt" value="">
+              </div>
+
+
+              <label for="info-transfer-date_entered-txt" class="col-form-label">Date:</label>
+              <div class="col-md-5">
+                <input id="info-transfer-date_entered-txt" type="text" readonly class="form-control" value="">
+              </div>
+
+
+            </div>
+            <div class="form-group row">
+              <label for="info-transfer-description-txt" class="col-sm-1 col-form-label">Description</label>
+              <div class="col-sm-5">
+                <input type="text" readonly class="form-control" id="info-transfer-description-txt" value="">
+              </div>
+              <div class="col-md-5 mb-0">
+                <div class="container-finance-account">
+                  <label for="transfer-assets-table" class="col-form-label">FINANCE</label>
+                  <table id="transfer-assets-table" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Wallet</th>
+                        <th scope="col">C-Coin</th>
+                        <th scope="col">Saving</th>
+                        <th scope="col">Loan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-primary">
+
+                        <td>{{asset_liabities.wallet}}</td>
+                        <td>{{asset_liabities.cc}}</td>
+                        <td>{{asset_liabities.saving}}</td>
+                        <td>{{asset_liabities.loan}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="review form-group row">
+              <label for="info-transfer-amount-txt" class="col-sm-1 col-form-label">Amount</label>
+              <div class="col-sm-5">
+                <input type="text" readonly class="review form-control" id="info-transfer-amount-txt" value="">
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label id="info-transfer-status-receiver-lbl" for="info-transfer-status-txt"
+                class="col-sm-1 col-form-label">Status:</label>
+              <div id="info-transfer-status-receiver-div" class="col-sm-5">
+                <input type="text" readonly class="review form-control" id="info-transfer-status-txt" value="">
+              </div>
+
+            </div>
+            <div class=" form-group row">
+
+              <label id="info-transfer-date-status-receiver-lbl" for="info-transfer-date-accounted-txt"
+                class="col-sm-1 col-form-label">Date Accounted:</label>
+              <div id="info-transfer-date-status-receiver-div" class="col-sm-5">
+                <input type="text" readonly class="review form-control" id="info-transfer-date-accounted-txt" value="">
+              </div>
+
+              <div class="col-md-12">
+
+                <table id="transfer-receivers-table" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Receiver</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr class="table-primary">
+                      <td>1</td>
+                      <td>23-23-2000</td>
+                      <td>Dandy T. Bermillo</td>
+                      <td>transfer to account</td>
+                      <td>50.00</td>
+                      <td>Waiting</td>
+                    </tr> -->
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+            <div class="form-group row">
+
+              <label id="info-transfer-receiver-lbl" for="info-transfer-status-txt"
+                class="col-sm-1 col-form-label">Receiver:</label>
+              <div id="info-transfer-receiver-div" class="col-sm-5">
+                <input type="text" readonly class="review form-control" id="info-transfer-receiver-txt" value="">
+              </div>
+
+
+            </div>
+
+
+          </form>
+
+
+          <!-- ... -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--------------------  INFO SOURCE MODAL ------------------------->
+  <div class="modal fade" id="info-source-modal" tabindex="-1" role="dialog" aria-labelledby="source-info-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="info-source-modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ... -->
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <h5 class="modal-subtitle" id="info-source-modal-subtitle">Modal subtitle</h5>
+            </div>
+          </div>
+
+          <form>
+            <!-- <h4>Please review the following before submitting. Thanks.</h4> -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="source-borrower-txt" class="col-form-label">Member</label>
+                <input style="background-color: transparent;" id="source-borrower-txt" type="text" readonly
+                  class="form-control-plaintext"
+                  value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+              </div>
+
+
+            </div>
+
+            <div class="form-group row">
+              <label for="info-source-transaction-txt" class="col-sm-1 col-form-label">Transaction</label>
+              <div class="col-md-5">
+                <input type="text" readonly class="form-control" id="info-source-transaction-txt" value="">
+              </div>
+
+              <label for="info-source-date_entered-txt" class="col-form-label">Date:</label>
+              <div class="col-md-5  ">
+                <input id="info-source-date_entered-txt" type="text" readonly class="form-control" value="">
+              </div>
+
+
+
+            </div>
+            <div class="form-group row">
+              <label for="info-source-description-txt" class="col-sm-1 col-form-label">Description</label>
+              <div class="col-sm-5">
+                <input type="text" readonly class="form-control" id="info-source-description-txt" value="">
+              </div>
+
+              <div class="col-md-5 mb-0">
+                <div class="container-finance-account">
+                  <label for="reg-transaction-assets-table" class="col-form-label">FINANCE</label>
+                  <table id="reg-transaction-assets-table" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Wallet</th>
+                        <th scope="col">C-Coin</th>
+                        <th scope="col">Saving</th>
+                        <th scope="col">Loan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-primary">
+
+                        <td>{{asset_liabities.wallet}}</td>
+                        <td>{{asset_liabities.cc}}</td>
+                        <td>{{asset_liabities.saving}}</td>
+                        <td>{{asset_liabities.loan}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="info-source-amount-txt" class="col-sm-1 col-form-label">Amount</label>
+              <div class="col-sm-5">
+                <input type="text" readonly class="form-control" id="info-source-amount-txt" value="">
+              </div>
+
+            </div>
+            <div class="form-group row">
+              &nbsp;
+            </div>
+
+          </form>
+
+
+          <!-- ... -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------- LOAN  MODAL  ------------------------------->
+  <div class="modal fade" id="info-financial-modal" tabindex="-1" role="dialog"
+    aria-labelledby="info-financial-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="info-financial-modal-title">LOAN ACCOUNT</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ... -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <h5 class="modal-subtitle" id="info-financial-modal-subtitle">Modal subtitle</h5>
+            </div>
+          </div>
+
+
+
+          <div id="review-loan-app-form">
+            <form>
+              <h4></h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="review-borrower-loan-txt" class="col-sm-1 col-form-label"
+                    style="padding-left: 8px">Member:</label>
+
+                  <input style="background-color: transparent;" id="review-borrower-loan-txt" type="text" readonly
+                    class="review form-control"
+                    value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+
+                </div>
+
+                <!-- <div class="form-group col-md-6">
+                  <label for="info-date-loan-txt" class="col-sm-1 col-form-label"
+                    style="padding-left: 8px">Date:</label>
+
+                  <input id="info-date-loan-txt" type="text" readonly class="review form-control"
+                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+
+                </div> -->
+
+              </div>
+
+              <div class="review form-group row">
+
+                <label for="info-source-loan-txt" class="col-sm-1 col-form-label">Source:</label>
+                <div class="col-md-5">
+                  <input type="text" readonly class="review form-control" id="info-source-loan-txt">
+                </div>
+
+
+                <label for="info-date-loan-txt" class="col-sm-1 col-form-label" style="padding-left: 8px">Date:</label>
+                <div class="col-md-5">
+                  <input id="info-date-loan-txt" type="text" readonly class="review form-control"
+                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+                </div>
+
+
+
+
+              </div>
+              <div class="review form-group row">
+                <label for="info-percent-loan-txt" class="col-sm-1 col-form-label">Percentage</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-percent-loan-txt">
+                </div>
+
+                <label for="info-note-loan-txt" class="col-sm-1 col-form-label">Note: </label>
+                <div class="col-md-5">
+                  <textarea class="form-control" id="info-note-loan-txt" readonly aria-describedby="inputGroupPrepend"
+                    rows="1" placeholder="Please provide a note if neccesary." maxlength="50"></textarea>
+                </div>
+
+
+
+              </div>
+              <div class="review form-group row">
+                <label for="info-saving-loan-txt" class="col-sm-1 col-form-label">Saving (Peso)</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-saving-loan-txt" value="">
+                </div>
+
+                <div class="form-group col-md-6 mb-0">
+                  <div style="position: absolute;width:94%">
+
+
+                    <label for="loan-assets-table" class="col-form-label">Financial </label>
+                    <table id="loan-assets-table" class="table table-bordered">
+                      <thead>
+                        <tr>
+
+                          <th scope="col">Wallet</th>
+                          <th scope="col">C-Coin</th>
+                          <th scope="col">Saving</th>
+                          <th scope="col">Loan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-primary">
+
+                          <td id="WALLET" class="{{loan.account_name.WALLET}}">{{asset_liabities.wallet}}</td>
+                          <td>{{asset_liabities.cc}}</td>
+                          <td id="SAVING">{{asset_liabities.saving}}</td>
+                          <td>{{asset_liabities.loan}}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="review form-group row">
+                <label for="info-cc-loan-txt" class="col-sm-1 col-form-label">CC(Loan)</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-cc-loan-txt" value="">
+                </div>
+
+              </div>
+
+
+            </form>
+
+
+
+            <!-- ----- end of review form ---- -->
+
+
+          </div>
+
+
+          <!-- ... -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ------------------------ PAYMENT MODAL ------------------------- -->
+  <div class="modal fade" id="info-payment-modal" tabindex="-1" role="dialog" aria-labelledby="info-payment-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="info-payment-modal-title">PAYMENT ACCOUNT</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ... -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <h5 class="modal-subtitle" id="info-payment-modal-subtitle">Modal subtitle</h5>
+            </div>
+          </div>
+
+
+
+          <div id="review-payment-app-form">
+            <form>
+              <h4></h4>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="review-borrower-payment-txt" class="col-sm-1 col-form-label"
+                    style="padding-left: 8px">Member:</label>
+
+                  <input style="background-color: transparent;" id="review-borrower-payment-txt" type="text" readonly
+                    class="review form-control"
+                    value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+
+                </div>
+
+
+
+              </div>
+
+              <div class="review form-group row">
+
+                <label for="info-payment-balance-txt" class="col-sm-1 col-form-label">Balance:</label>
+                <div class="col-md-5">
+                  <input type="text" readonly class="review form-control" id="info-payment-balance-txt">
+                </div>
+
+                <label for="info-payment-date-txt" class="col-sm-1 col-form-label"
+                  style="padding-left: 8px">Date:</label>
+                <div class="col-md-5">
+                  <input id="info-payment-date-txt" type="text" readonly class="review form-control"
+                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+                </div>
+
+
+
+
+              </div>
+              <div class="review form-group row">
+                <label for="info-payment-source-txt" class="col-sm-1 col-form-label">Source:</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-payment-source-txt">
+                </div>
+                <div class="form-group col-md-6 mb-0">
+                  <div style="position: absolute;width:94%">
+
+
+                    <label for="payment-assets-table" class="col-form-label">Financial </label>
+                    <table id="payment-assets-table" class="table table-bordered">
+                      <thead>
+                        <tr>
+
+                          <th scope="col">Wallet</th>
+                          <th scope="col">C-Coin</th>
+                          <th scope="col">Saving</th>
+                          <th scope="col">Loan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-primary">
+
+                          <td id="WALLET" class="{{payment.account_name.WALLET}}">{{asset_liabities.wallet}}</td>
+                          <td>{{asset_liabities.cc}}</td>
+                          <td id="SAVING">{{asset_liabities.saving}}</td>
+                          <td>{{asset_liabities.loan}}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="review form-group row">
+
+                <label for="info-payment-transaction-txt" class="col-sm-1 col-form-label">Transaction</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-payment-transaction-txt" value="">
+                </div>
+
+              </div>
+              <div class="review form-group row">
+
+                <label for="info-payment-description-txt" class="col-sm-1 col-form-label">Description</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-payment-description-txt" value="">
+                </div>
+
+              </div>
+              <div class="review form-group row">
+
+                <label for="info-payment-amount-txt" class="col-sm-1 col-form-label">Amount</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control" id="info-payment-amount-txt" value="">
+                </div>
+
+              </div>
+
+
+
+            </form>
+
+          </div>
+          <!-- ... -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- ----------------------- NEW LOAN MODAL ------------------ -->
+  <div class="modal fade" id="new-loan-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">LOAN APPLICATION</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div id="main-failed-loan-alert" class="alert alert-danger" role="alert" style="display:none">
+            Please fill in the box with red color. Thank you.
+          </div>
+
+          <div id="main-loan-app-form">
+            <form id="main-loan-form" class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="main-borrower-loan-txt" class="col-sm-2 col-form-label"
+                    style="padding-left: 8px">Member:</label>
+
+                  <input id="main-borrower-loan-txt" type="text" readonly class="review form-control-plaintext"
+                    value="{{member_info.gender}} {{member_info.firstname|title}} {{member_info.lastname|title}}">
+
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="main-date-loan-txt" class="col-sm-2 col-form-label"
+                    style="padding-left: 8px">Date:</label>
+
+                  <input id="main-date-loan-txt" type="text" readonly class="review form-control-plaintext"
+                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+                </div>
+              </div>
+
+              <div class="form-row">
+
+                <div class="form-group col-md-6">
+                  <label for="main-source-drop" class="col-form-label">Source: </label>
+                  <div class="dropdown" id="main-source-drop">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                      style="border:1px solid #ced4da">
+                      CASH
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                      <button class="source-cash dropdown-item" type="button">CASH</button>
+                      <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="main-percent-drop" class="col-form-label">Percentage: </label>
+                  <div class="dropdown" id="main-percent-drop">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="cc-percent-drop"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                      style="border:1px solid #ced4da">
+                      100% of the amount
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="cc-percent-drop">
+                      <button class="cc-percent dropdown-item" type="button">200% of the saving </button>
+
+                      <button class="cc-percent dropdown-item" type="button">100% of the saving </button>
+                      <button class="cc-percent dropdown-item" type="button">50% of the saving</button>
+                      <button class="cc-percent dropdown-item" type="button">25% of the saving</button>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="loan-saving-txt" class="col-form-label">Saving</label>
+                  <input type='number' step='any' max='100000' min='10' required class="form-control"
+                    id="loan-saving-txt" placeholder="Enter an amount">
+                  <div class="invalid-feedback">
+                    <span id="main-loan-invalid-feedback"> Please enter an amount between 10-10000.</span>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cc-loan-txt" class="col-form-label">CC Loan</label>
+                  <input type='number' class="form-control" id="cc-loan-txt" aria-describedby="inputGroupPrepend"
+                    required>
+
+                </div>
+              </div>
+
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="main-note-loan-txt" class="col-form-label">Note: </label>
+                  <textarea class="form-control" id="main-note-loan-txt" aria-describedby="inputGroupPrepend" rows="4"
+                    placeholder="Please provide a note if neccesary." maxlength="50"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="loan-assets-table" class="col-form-label">Assets/Liabilities </label>
+                  <table id="loan-assets-table" class="table table-bordered">
+                    <thead>
+                      <tr>
+
+                        <th scope="col">Wallet</th>
+                        <th scope="col">C-Coin</th>
+                        <th scope="col">Saving</th>
+                        <th scope="col">Loan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-primary">
+
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+              <div class="form-row main-loan-modal-footer">
+                <div class="form-group col-md-6">
+                  <button id="hide-loan-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Close this
+                    form</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- ---- begin of review -- -->
+          <div id="review-loan-app-form" style="display:none">
+            <div id="review-success-loan-alert" class="alert alert-success" role="alert" style="display:none">
+              This new loan has been successfully approved!
+            </div>
+            <div id="review-failed-loan-alert" class="alert alert-danger" role="alert" style="display:none">
+              Sorry, this application encounter unexpected error!
+            </div>
+
+            <form>
+              <h4>Please review the following:</h4>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="review-borrower-loan-txt" class="col-sm-2 col-form-label"
+                    style="padding-left: 8px">Member:</label>
+
+                  <input id="review-borrower-loan-txt" type="text" readonly class="review form-control-plaintext"
+                    value="{{member_info.gender}} {{member_info.firstname|title}} {{member_info.lastname|title}}">
+
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="review-date-loan-txt" class="col-sm-2 col-form-label"
+                    style="padding-left: 8px">Date:</label>
+
+                  <input id="review-date-loan-txt" type="text" readonly class="review form-control-plaintext"
+                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+
+                </div>
+              </div>
+              <div class="review form-group row">
+
+                <label for="review-source-loan-app-txt" class="col-sm-1 col-form-label">Source:</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control-plaintext" id="review-source-loan-app-txt"
+                    value="">
+                </div>
+
+
+                <label for="review-note-loan-txt" class="col-sm-1 col-form-label">Note: </label>
+                <div class="col-md-5">
+                  <textarea class="form-control" id="review-note-loan-txt" aria-describedby="inputGroupPrepend" rows="1"
+                    placeholder="Please provide a note if neccesary." maxlength="50"></textarea>
+                </div>
+
+
+              </div>
+              <div class="review form-group row">
+                <label for="review-saving-loan-app-txt" class="col-sm-1 col-form-label">Saving</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control-plaintext" id="review-saving-loan-app-txt"
+                    value="loan">
+                </div>
+              </div>
+              <div class="review form-group row">
+                <label for="review-cc-loan-app-txt" class="col-sm-1 col-form-label">CC(Loan)</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control-plaintext" id="review-cc-loan-app-txt"
+                    value="cc">
+                </div>
+
+              </div>
+              <div class="review form-group row">
+                <label for="review-percent-loan-app-txt" class="col-sm-1 col-form-label">Percentage</label>
+                <div class="col-sm-5">
+                  <input type="text" readonly class="review form-control-plaintext" id="review-percent-loan-app-txt"
+                    value="">
+                </div>
+              </div>
+
+              <div class="review-loan-modal-footer" style="text-align:right">
+                <button id="review-back-loan-btn" type="button" class="btn btn-secondary">Back</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="review-submit-loan-btn" type="button" class="btn btn-success">Submit</button>
+              </div>
+              <div class="edit-loan-modal-footer" style="text-align:left;display:none">
+                <button id="preview-close-loan-btn" type="button" data-dismiss="modal" class="btn btn-secondary">Close
+                  this form</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="edit-loan-btn" type="button" class="btn btn-primary">Edit</button>
+              </div>
+            </form>
+            <div>
+              <!-- ----- end of review form ---- -->
+            </div>
+            <!-- ----- review form ---- -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  var dict_transaction = {
+    W: "WITHDRAWAL",
+    D: "DEPOSIT"
+  };
+  var dict_transfer_status = {
+    W: "Waiting",
+    A: "Accepted",
+    C: "Cancelled",
+    R: "Rejected"
+  };
+  var dict_source = {
+    K: "CASH",
+    C: "CC ACCOUNT",
+    W: "WALLET ACCOUNT",
+    S: "SAVING ACCOUNT"
+  };
+
+  var keys = {};
+
+  function get_date(date_entered, extend_date = false) {
+
+    const today = moment();
+    var date = moment();
+    var extension = "";
+    if (extend_date) {
+      extension = "   " + moment(date_entered).format("MMM Do");
+    }
+
+    if (moment().year() == moment(date_entered).year()) {
+      days = parseInt(today.diff(date_entered, 'days'));
+      if (days < 8) {
+        if (days == 0) {
+          date = "Today." + extension;
+        } else if (days == 1) {
+          date = "Yesterday." + extension;
+        } else {
+          date = days + " days ago." + extension;
+        }
+      } else {
+        date = moment(date_entered).format("MMM Do");
+      }
+
+    } else {
+      date = moment(date_entered).format("MMM Do YY");
+    }
+    return date;
+  }
+
+
+  var member_id = "{{member_info.id}}";
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  function transfer_info(account_name, source_id, subtitle) {
+    console.log(" source_info...." + subtitle);
+
+    $("#info-transfer-modal-title").text(account_name.toUpperCase() + " ACCOUNT");
+    $("#info-transfer-modal-subtitle").text(subtitle);
+    $("#info-transfer-modal").modal('show');
+
+    //keys['source_id'] = source_id;
+    data = {};
+    data['source_id'] = source_id;
+    data['source_name'] = account_name;
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'fx:get_transfer_details_url' %}",
+      data: data,
+      dataType: "json",
+      success: function (response) {
+        console.log("response ", response);
+        if (response['data'] == "Success") {
+
+          console.log("response ", response['transfer']);
+          $("#info-transfer-transaction-txt").val(dict_transaction[response['transfer']["transaction"]]);
+          $("#info-transfer-description-txt").val(response['transfer']["description"]);
+          $("#info-transfer-amount-txt").val(response['transfer']["amount"]);
+          $("#info-transfer-date_entered-txt").val(get_date(response['transfer']["date_entered"], true)); // +".   " +response['transfer']["date_entered"]);
+          $("#info-transfer-receiver-txt").val(response['transfer']["fullname"])
+          //transfer-receivers-table
+          if (response['receivers'].length <= 0) {
+            console.log("------------ 1 recrs");
+
+            $("#info-transfer-status-txt").val(response['transfer']["status"]);
+            if (response['transfer']["date_accounted"]) {
+              $("#form-transfer-label-date-status").text("Date " + response['transfer']["status"] + ":");
+              $("#info-transfer-date-accounted-txt").val(get_date(response['transfer']["date_accounted"], true));
+            } else {
+              $("#info-transfer-date-accounted-txt").val("N/A");
+            }
+            $("#transfer-receivers-table").hide();
+            $("#info-transfer-status-receiver-lbl").text("Status");
+            $("#info-transfer-status-receiver-div").show();
+
+            $("#info-transfer-date-status-receiver-lbl").show();
+            $("#info-transfer-date-status-receiver-div").show();
+            $("#info-transfer-receiver-lbl").show();
+            $("#info-transfer-receiver-div").show();
+          } else {
+
+            $("#transfer-receivers-table tbody").find("tr").remove();
+            $("#transfer-receivers-table").show();
+
+            console.log("------------ more recrs");
+
+
+            $("#info-transfer-status-receiver-lbl").text("Receivers:");
+            $("#info-transfer-status-receiver-div").hide();
+            $("#info-transfer-date-status-receiver-lbl").hide();
+            $("#info-transfer-date-status-receiver-div").hide();
+            $("#info-transfer-receiver-lbl").hide();
+            $("#info-transfer-receiver-div").hide();
+            row_ctr = 0;
+            console.log("length:" + response['receivers'].length)
+            response["receivers"].forEach(function (item) {
+              //console.log("....item:",item);
+              row_ctr = row_ctr + 1;
+              receiver = item.gender + " " + item.firstname + " " + item.lastname;
+              newRow = "<tr><td>" + row_ctr + "</td><td> " + item.date + "</td> <td class='left'>" + receiver + "</td><td class='left'>   <input type='text' readonly   value='" + item.purpose + "'> </input></td><td style='text-align: center;'>" + item.amount + " </td> <td>" + dict_transfer_status[item.status] + "</td>  </tr>";
+
+              $("#transfer-receivers-table tbody").append(newRow);
+            });
+          }
+
+        } else {
+
+          console.log("unable to obtain loan details");
+
+
+        }
+
+      },
+      error: function (response) {
+
+        //todo add error logger
+        console.log("error reach get transfer info details:");
+        console.log(response);
+      }
+    });
+
+  }
+
+  function source_info(account_name, source_id, subtitle) {
+    console.log(" source_info....");
+    $("#info-source-modal-title").text(account_name.toUpperCase() + " ACCOUNT");
+    $("#info-source-modal-subtitle").text(subtitle)
+    $("#info-source-modal").modal('show');
+
+    keys['source_id'] = source_id;
+    data = {};
+    data['source_id'] = source_id;
+    data['source_name'] = account_name;
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'fx:get_source_details_url' %}",
+      data: data,
+      dataType: "json",
+      success: function (response) {
+        console.log("response ", response);
+        if (response['data'] == "Success") {
+
+          console.log("response ", response['source']);
+          $("#info-source-transaction-txt").val(dict_transaction[response['source']["transaction"]]);
+          $("#info-source-description-txt").val(response['source']["description"]);
+          $("#info-source-amount-txt").val(response['source']["amount"]);
+          $("#info-source-date_entered-txt").val(get_date(response['source']["date_entered"], true));
+
+
+        } else {
+
+          console.log("unable to obtain loan details");
+
+
+        }
+
+      },
+      error: function (response) {
+
+        //todo add error logger
+        console.log("error reach get loan details:");
+        console.log(response);
+      }
+    });
+
+  }
+  function loan_info(account_name, loan_id, subtitle) {
+    console.log(" loan_info....subtitle:" + subtitle);
+    $("#info-financial-modal-title").text(account_name.toUpperCase() + " ACCOUNT");
+    $("#info-financial-modal-subtitle").text(subtitle);
+    $("#info-financial-modal").modal('show');
+    keys['loan_edit'] = true;
+    keys['loan_id'] = loan_id;
+    data = {};
+    data['loan_id'] = loan_id;
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'fx:get_loan_details_url' %}",
+      data: data,
+      dataType: "json",
+      success: function (response) {
+        console.log("response ", response);
+        if (response['data'] == "Success") {
+          $("#info-saving-loan-txt").val(response['loan']["saving"]);
+          $("#info-cc-loan-txt").val(response['loan']["cc_loan"]);
+          source = response['loan']["source_type"];
+          // if (source == "C") {
+          //   source_type = 'CASH';
+          // } else if (source = "W") {
+          //   source_type = 'WALLET ACCOUNT';
+          // }
+          // dict_transaction[response['payment']["transaction_type"]]
+          $("#info-source-loan-txt").val(dict_source[response['loan']["source_type"]]);
+          $("#info-percent-loan-txt").val(response['loan']["percent"] + "% of the saving");
+          $("#info-note-loan-txt").val(response['loan']["note"]);
+          $("#info-date-loan-txt").val(get_date(response['loan']["date_entered"], true));
+
+
+          console.log("Loan details:" + response['loan']["note"]);
+
+        } else {
+
+          console.log("unable to obtain loan details");
+        }
+      },
+      error: function (response) {
+
+        //todo add error logger
+        console.log("error reach get loan details:");
+        console.log(response);
+      }
+    });
+
+  }
+  function payment_info(account_name, payment_id, subtitle) {
+
+    $("#info-payment-modal-title").text(account_name.toUpperCase() + " ACCOUNT");
+    $("#info-payment-modal-subtitle").text(subtitle);
+    $("#info-payment-modal").modal('show');
+    keys['payment_id'] = payment_id;
+    data = {};
+    data['payment_id'] = payment_id;
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'fx:get_payment_details_url' %}",
+      data: data,
+      dataType: "json",
+      success: function (response) {
+        console.log("response ", response);
+        if (response['data'] == "Success") {
+          $("#info-payment-transaction-txt").val(dict_transaction[response['payment']["transaction_type"]]);
+          $("#info-payment-date-txt").val(get_date(response['payment']["date_entered"], true));
+          $("#info-payment-source-txt").val(dict_source[response['payment']["source_type"]]);
+          $("#info-payment-amount-txt").val(response['payment']["amount"]);
+
+          if (response['payment']["transaction_type"] == 'D') {
+            description = "Loan Amount Granted"
+          } else {
+            description = "Loan Payment"
+          }
+          $("#info-payment-description-txt").val(description);
+
+
+
+        } else {
+
+          console.log("unable to obtain loan details");
+        }
+      },
+      error: function (response) {
+
+        //todo add error logger
+        console.log("error reach get loan details:");
+        console.log(response);
+      }
+    });
+
+  }
+  //edit
+  function show_info(target) {
+
+    request_action = $(target).text().trim();
+    category = $(target).attr("data-category");
+    var account_name = $(target).prop("id");
+    console.log("...account_name: " + account_name)
+    console.log("....code:" + request_action);
+    console.log("...category: " + category);
+    table_name = ""
+    if (account_name == "saving") {
+      $("#loan-saving-txt").css('background-color', '#adfa9d');
+      $("#cc-loan-txt").css('background-color', 'white');
+    } else if (account_name == "cc" || account_name == "payment") {
+      $("#cc-loan-txt").css('background-color', '#adfa9d');
+      $("#loan-saving-txt").css('background-color', 'white');
+    } else if (account_name == "wallet") {
+      $("#cc-loan-txt").css('background-color', 'white');
+      $("#loan-saving-txt").css('background-color', '#adfa9d');
+    }
+    else {   // loan
+      $("#cc-loan-txt").css('background-color', 'white');
+      $("#loan-saving-txt").css('background-color', 'white');
+    }
+    if (request_action == "Info") {
+      if (category == 0) {
+        table_name = "reg-transaction";
+      } else if (category == 1) {
+        table_name = "transfer";
+      } else if (category == 5) {
+        table_name = "loan";
+      } else if (category == 6) {
+        table_name = "payment";
+      }
+
+      get_balances(table_name);
+      if (account_name == "wallet") {
+        if (category == 0) {  //regular transaction
+          source_id = $(target).attr("data-id");
+          console.log("....source_id:" + source_id);
+
+          source_info(account_name, source_id, "Regular Transaction");
+
+        } else if (category == 1) {  // Transfer transaction
+
+          source_id = $(target).attr("data-id");
+          $("#info-transfer-modal").modal('show');
+          transfer_info(account_name, source_id, "Transfer Transaction");
+
+        } else if (category == 5) {   //Loan transaction
+
+          $("#info-saving-loan-txt").css('background-color', '#adfa9d');
+          $("#info-cc-loan-txt").css('background-color', '#e9ecef');
+          loan_id = $(target).val();
+          loan_info(account_name, loan_id, "Loan Transaction");
+
+        } if (category == 6) {   // loan payment transaction
+          payment_id = $(target).val();
+          payment_info(account_name, payment_id, "FROM: Loan Payment");
+        }
+
+
+      } else if (account_name == "saving") {
+        if (category == 0) {  // regular transaction (deposit or withraw)
+          source_id = $(target).attr("data-id");
+          console.log("....source_id:" + source_id);
+
+          source_info(account_name, source_id, "Regular Transaction");
+
+        } if (category == 1) {  // transfer
+
+          source_id = $(target).attr("data-id");
+          $("#info-transfer-modal").modal('show');
+          transfer_info(account_name, source_id, "FROM: Transfer Transaction");
+        }
+        else if (category == 5) { //loan
+          $("#info-saving-loan-txt").css('background-color', '#adfa9d');
+          $("#info-cc-loan-txt").css('background-color', '#e9ecef');
+          table_name = "loan"
+          loan_id = $(target).val();
+          loan_info(account_name, loan_id, "FROM: Loan Transaction");
+        } if (category == 6) {
+          payment_id = $(target).val();
+          payment_info(account_name, payment_id, "FROM: Loan Payment");
+        }
+      } else if (account_name == "cc") {
+
+        if (category == 1) {  // transfer
+
+          source_id = $(target).attr("data-id");
+          $("#info-transfer-modal").modal('show');
+          transfer_info(account_name, source_id, "FROM: Transfer Transaction");
+
+        } else if (category == 5) {  //loan
+
+          $("#info-saving-loan-txt").css('background-color', '#e9ecef');
+          $("#info-cc-loan-txt").css('background-color', '#adfa9d');
+          loan_id = $(target).val();
+          loan_info(account_name, loan_id, "FROM: Loan Transaction");
+        } if (category == 6) {
+          payment_id = $(target).val();
+          payment_info(account_name, payment_id, "FROM: Loan Payment");
+        }
+
+      } else if (account_name == "loan") {
+        $("#info-saving-loan-txt").css('background-color', '#e9ecef');
+        $("#info-cc-loan-txt").css('background-color', '#e9ecef');
+        loan_id = $(target).val();
+        loan_info(account_name, loan_id, "FROM: Loan Transaction");
+      } else if (account_name == "payment") {
+        //$("#info-saving-loan-txt").css('background-color', '#e9ecef');
+        //$("#info-cc-loan-txt").css('background-color', '#e9ecef');
+        if (category == 5) {   //Loan transaction
+
+          $("#info-saving-loan-txt").css('background-color', '#e9ecef');
+          $("#info-cc-loan-txt").css('background-color', '#adfa9d');
+          loan_id = $(target).val();
+          loan_info(account_name, loan_id, "Loan Transaction");
+        } else if (category == 6) {
+          payment_id = $(target).attr("data-id");
+          payment_info(account_name, payment_id, "FROM: Loan Payment");
+        }
+      }
+
+
+
+
+    } else { // for E D I T button
+
+
+
+
+
+
+
+    }
+
+
+  }//function show_info(target)
+
+  var cancel_dialog_hidden = true; // used if incase the user clicked on the backdrop of the modal
+  var request_action = "";
+  function cancel_transfer(obj) {
+    request_action = $(obj).text().trim();
+    var message = "";
+
+    if (request_action == "Cancel") {
+      $(obj).closest('tr').toggleClass("to-delete");
+      message = "Are you sure you want to cancel this transfer?";
+    } else if (request_action == "Reject") {
+      message = "Are you sure you want to reject this transfer?";
+      $(obj).closest('tr').toggleClass("to-delete");
+    } else if (request_action == "Accept") {
+      $(obj).closest('tr').toggleClass("to-accept");
+      message = "Do you want to accept this transfer?";
+    }
+
+    $("#confim-modal-transfer").text(message);   //title in yes-no-modal
+    $("#yes-no-modal-transfer").modal('show');
+    $("#yes-no-modal-transfer").val(obj);
+    cancel_dialog_hidden = false
+
+  }
+  function get_balances(account_name) {
+    data = {};
+    data['member_id'] = member_id;
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'fx:get_balances_url' %}",
+      data: data,
+      dataType: "json",
+      success: function (response) {
+        // console.log("I N I T");
+        // console.log("response ", response);
+        keys['Balances'] = " .........>>>>";
+        if (response['data'] == "Success") {
+          var currentRow = $("#" + account_name + "-assets-table tbody tr:first")
+          currentRow.find("td:eq(0)").text("P" + response['balances']["wallet"]);
+          currentRow.find("td:eq(1)").text(response['balances']["cc"]);
+          currentRow.find("td:eq(2)").text("P" + response['balances']["saving"]);
+          currentRow.find("td:eq(3)").text("P" + response['balances']["loan"]);
+          console.log("balances:" + response['balances']["wallet"]);
+
+          keys['wallet-balance'] = response['balances']["wallet"];
+          $("#loan-saving-txt").prop("max", keys['wallet-balance']);
+          $("#main-loan-invalid-feedback").text("Please enter an amount between 10 and " + keys['wallet-balance']);
+          keys["Balances"] = response['balances'];
+        } else {
+          console.log("unable to obtain balances");
+        }
+
+      },
+      error: function (response) {
+        //todo add error logger
+        console.log("error reach get balances:");
+        console.log(response);
+      }
+    });
+
+  }
+
+  $(document).ready(function () {
+    keys['loan_edit'] = "";
+    keys['wallet_tab'] = false;
+    keys['cc_tab'] = false;
+    keys['saving_tab'] = false;
+    keys['payment_tab'] = false;
+    keys['loan_tab'] = false;
+    keys['wallet-balance'] = "";
+
+
+     
+    //22
+    $(".card-account").click(function () {
+      var tab_name = $(this).val().trim();
+
+      var value = keys[tab_name + '-tab']; //   $(this).val();
+      console.log("......value:", value);
+      console.log("......keys['cc']:", keys);
+
+
+
+      var val = $("#financial-toggle-span").hasClass("fa-chevron-down");
+
+
+
+      if (!val) {
+        $("#financial-toggle-span").toggleClass("fas fa-chevron-down");
+        $("#multiCollapseExample1").toggleClass("show");
+      }
+      $("#nav-" + tab_name + "-tab").trigger("click");
+
+
+
+      console.log("...tab_name:" + tab_name);
+    });
+
+    ///delete this
+    $(".source-cash").click(function () {
+      var text = $(this).text().trim();
+      $("#source-cash-drop").text(text);
+      var max = 0
+      if (text == "CASH") {
+        $("#main-loan-invalid-feedback").text("Please enter an amount between 10 and 10000");
+        max = 10000;
+      }
+      else {
+
+
+        $("#main-loan-invalid-feedback").text("Please enter an amount between 10 and " + keys['wallet-balance']);
+        max = keys['wallet-balance'];
+      }
+      $("#loan-saving-txt").prop("max", max);
+
+
+    });
+
+    $(".show_info-btn").on("click", function () { show_info(obj); });
+
+    $("#review-back-loan-btn").click(function () {
+      $("#main-loan-app-form").show();
+      $("#review-loan-app-form").hide();
+
+    });
+    $(".needs-validation").submit(function (event) {  //form name "needs-validation"
+      console.log("Handler for .submit() called.");
+      event.preventDefault();
+    });
+
+    //111     keys['loan_edit']="";
+    ///delete this
+    $("#edit-loan-btn").click(function () {
+
+      $("#review-loan-app-form").hide();
+      $("#main-loan-app-form").show();
+      $(".edit-loan-modal-footer").hide();
+      $(".review-loan-modal-footer").show();
+      $("#review-success-loan").hide();
+      keys['loan_edit'] = true;
+      $("#review-success-loan-alert").hide();
+      $("#review-failed-loan-alert").hide();
+
+      var saving = $("#review-saving-loan-app-txt").val();
+      var cc_loan = $("#review-cc-loan-app-txt").val();
+      var source = $("#review-source-loan-app-txt").val();
+      var cc_percent = $("#review-percent-loan-app-txt").val();
+      var note = $("#review-note-loan-txt").val();
+      $("#loan-saving-txt").val(saving);
+      $("#cc-loan-txt").val(cc_loan);
+      $("#source-cash-drop").text(source);
+      $("#cc-percent-drop").text(cc_percent);
+      $("#main-note-loan-txt").val(note)
+
+
+    });
+    ///delete this
+    $("#main-cancel-loan-btn,#preview-close-loan-btn").click(function () {
+      keys['loan_edit'] = false;
+      // $("#loan-amount-txt").val("");
+      // $("#cc-amount-txt").val("");
+      $("#main-loan-app-form").show();
+      $("#review-loan-app-form").hide();
+
+      document.getElementById("main-loan-form").reset();
+
+      $(".review-loan-modal-footer").show();
+      $(".edit-loan-modal-footer").hide();
+      $("#review-success-loan").hide();
+      $("#main-failed-loan-alert").hide();
+
+      //  $('.needs-validation').reset();
+
+
+    });
+    ///delete this
+    $("#done-loan-btn").click(function (event) {
+      var form = document.querySelector(".needs-validation");
+      var reportVal = form.checkValidity();
+      if (reportVal == false) {
+        $("#main-failed-loan-alert").show();
+        return;
+      }
+      $("#main-failed-loan-alert").hide();
+
+
+
+      var amount = $("#loan-saving-txt").val();
+      var cc_loan = $("#cc-loan-txt").val();
+      var source = $("#source-cash-drop").text().trim();
+      var cc_percent = parseInt($("#cc-percent-drop").text());
+      var note = $("#main-note-loan-txt").val().trim();
+      console.log("note:" + note);
+      if (note) {
+        $("#review-note-loan-txt").val(note);
+      }
+
+      $("#review-cc-loan-app-txt").val(cc_loan);
+      $("#review-saving-loan-app-txt").val(amount);
+      $("#review-source-loan-app-txt").val(source);
+      $("#review-percent-loan-app-txt").val(cc_percent + "%");
+      $("#main-loan-app-form").hide();
+
+      $("#review-loan-app-form").show();
+
+      //console.log("pass submit");
+
+
+    });
+
+    ///delete this
+    $("#review-submit-loan-btn").click(function (event) {
+
+      //1 
+      var form = document.querySelector(".needs-validation");
+      var reportVal = form.checkValidity();
+      if (reportVal == false) {
+        $("#main-loan-app-form").show();
+        $("#review-loan-app-form").hide();
+        event.preventDefault();
+        event.stopPropagation();
+
+        console.log("event:" + event);
+        console.log("not valid:" + reportVal);
+        return;
+      }
+      console.log("pass valid === false");
+
+
+      //
+      data = {};
+      if (keys['loan_edit']) {
+        data['request_action'] = "Edit";
+        data['loan_id'] = keys["loan_id"];
+      } else {
+        data['request_action'] = "New";
+
+      }
+      var note = $("#review-note-loan-txt").val().trim();
+      if (note) {
+        data['note'] = note;
+      }
+
+
+      var amount = $("#loan-saving-txt").val();
+      var cc_loan = $("#cc-loan-txt").val();
+      var source = $("#source-cash-drop").text();
+      //var note =
+      if (source == "CASH") {
+        source_type = 'C';
+      } else if (source = "WALLET ACCOUNT") {
+        source_type = 'W';
+      }
+      var cc_percent = parseInt($("#cc-percent-drop").text());
+      data['amount'] = amount;
+      data['cc_loan'] = cc_loan;
+      data['member_id'] = member_id;
+      data['percent'] = cc_percent;
+      data['source_type'] = source_type;
+      console.log("...data ", data);
+
+
+
+
+
+    });
+
+
+    ///delete this
+    $(".dropdown-menu button.cc-percent").click(function () {
+      var selText = $(this).text(); //.replace(" Percent","%");
+      $("#cc-percent-drop").text(selText);
+      $("#loan-saving-txt").trigger("input");
+    });
+    ///delete this
+    $("#loan-saving-txt").on("input", function () {
+
+      var cc_percent = parseInt($("#cc-percent-drop").text());
+      // var cash_percent = (100 - cc_percent) / 100;
+
+      var amount = parseInt($(this).val());
+      var cc = amount * ((cc_percent / 100));
+      // var cc = (amount * (cc_percent / 100)) / cash_percent;
+      cc = Math.round(cc);
+
+      $("#cc-loan-txt").val(cc);
+
+    });
+
+    if ("{{has_temp_pwd}}".trim() == "False") {
+      $("#btn-show-pass").hide();
+    }
+
+
+    $("#new-loan-lnk").on("click", function () {
+      //console.log(":",  get_balances());
+      $("#new-loan-modal").modal('show');
+
+    });
+
+
+    confirm_reset(function (confirm) {
+      if (confirm) {
+        console.log("yes");
+        obj = $("#btn-reset-pass")
+        reset_show_pwd(obj);
+      }
+      else {
+        console.log("no");
+
+      }
+
+
+    });
+
+    $("#btn-reset-pass").on("click", function () {
+      var message = "Are you sure you want to reset the temporary password?"
+      $("#confim-modal-reset").text(message);
+      $("#yes-no-modal-reset").modal('show');
+
+    });
+
+
+    function reset_show_pwd(obj) {
+
+      var data = {}
+      var text = $(obj).text().trim();
+      var button_id = $(obj).attr("id");
+      console.log("..id", button_id);
+      if (button_id == "btn-show-pass") {
+
+        if (text == "Hide") {
+          $(obj).text("Show");
+          $("#hidden-pass").text("********");
+          return;
+        } else {
+          $(obj).text("Hide");
+        }
+        data['request_action'] = "show";
+      } else {
+        data['request_action'] = "reset";
+
+      }
+      console.log("..request_action", data['request_action']);
+      data['member_id'] = member_id;
+
+
+      $.ajax({
+        type: 'GET',
+        url: "{% url 'fx:reset_show_password_url' %}",
+        data: data,
+        dataType: "json",
+        success: function (response) {
+          console.log("response ", response);
+          if (response['data'] == "Success") {
+
+            if (data['request_action'] == "show") {
+              console.log("response['pass']:", response['pass']);
+              $("#hidden-pass").text(response['pass']);
+            } else {
+              $("#btn-show-pass").show();
+              alert("Temporary password: " + response['pass']);
+            }
+
+          } else {
+            alert("Unable to show the temporary password");
+
+          }
+
+        },
+        error: function (response) {
+          cancel_dialog_hidden = false;
+          //todo add error logger
+          console.log("error reach:");
+          console.log(response);
+        }
+      });
+
+    }
+
+    $("#btn-show-pass").click(function () {
+
+      reset_show_pwd(this);
+    });
+    // ------------- end  reset pwd confirm dialog ----------------------
+
+
+    $('#yes-no-modal-transfer').on('hidden.bs.modal', function (e) {
+      var obj = $("#yes-no-modal-transfer").val();
+      if (!cancel_dialog_hidden) {
+        cancel_dialog_hidden = true;
+        if (request_action == "Reject" || request_action == "Cancel") {
+          $(obj).closest('tr').toggleClass("to-delete");
+        }
+        else {
+
+          $(obj).closest('tr').toggleClass("to-accept");
+        }
+
+
+      }
+      console.log("cancel-dialog is request_action?", request_action);
+    })
+
+
+
+    confirm_transfer(function (confirm) {
+      var obj = $("#yes-no-modal-transfer").val();
+      request_action = $(obj).text().trim();
+      //var status="";
+      if (request_action == "Reject" || request_action == "Cancel") {
+
+        $(obj).closest('tr').toggleClass("to-delete");
+
+      } else {
+        status = "A";
+        $(obj).closest('tr').toggleClass("to-accept");
+
+      }
+
+
+      if (confirm) {
+        var code = obj.value; // this is item.id or the ID in the cashtransfer table
+        console.log("....code:", code);
+        var data = {}
+
+        console.log("..request_action:", request_action);
+        data['code'] = code;
+
+        data['request_action'] = request_action;
+        $.ajax({
+          type: 'GET',
+          url: "{% url 'fx:update_transfer_status_url' %}",
+          data: data,
+          dataType: "json",
+          success: function (response) {
+            console.log("response ", response);
+            if (response['data'] == "Success") {
+              cancel_dialog_hidden = true;
+              $(obj).closest('tr').toggleClass("selected");
+              if (request_action == "Cancel") { //is not used here used in new transfer.html instead
+                $(obj).closest('tr').find('.W').removeClass("W").toggleClass("C");
+                $(obj).closest('tr').find('.status').text("Cancelled");
+                $(obj).closest('tr').find('.cancel').text("");
+                //$(obj).remove();
+
+                alert("Code number " + code + " has been successfully cancelled.");
+              } else if (request_action == "Reject" || request_action == "Accept") {
+                mess = { "Reject": "rejected.", "Accept": "accepted." }
+                var row = $(obj).closest('tr')
+                // $(obj).closest('tr').find('.W').removeClass("W").toggleClass("R");
+
+                $(row).find('td.reject').text(mess[request_action]);
+                $(row).find('td.accept').text("");
+                alert("Code number " + code + " has been successfully " + mess[request_action]);
+              }
+
+            } else {
+              //cancel_dialog_hidden = false ;
+              alert("Sorry! Code number " + code + " cannot be accepted and/or rejected.");
+            }
+
+          },
+          error: function (response) {
+            cancel_dialog_hidden = false;
+            //todo add error logger
+            console.log("error reach:");
+            console.log(response);
+          }
+        });
+
+
+      } else {
+        cancel_dialog_hidden = true;
+        console.log("no");
+      }
+    });
+
+
+
+    //$("#bfCaptchaEntry").on("click", function(){ myFunction(); });
+    //$(".cancel-transfer-btn", ".reject-transfer-btn", ".accept-transfer-btn").on("click", cancel_transfer);
+    $(".cancel-transfer-btn", ".reject-transfer-btn", ".accept-transfer-btn").on("click", function () { cancel_transfer(obj); });
+
+    // --------- end of cancel transfer ---------
+
+
+
+    //123
+
+    $("#financial-btn").click(function () {
+      $("#nav-cc-tab").trigger("click");
+    });
+
+    $("#nav-wallet-tab").click(function () {
+      console.log("nav-wallet-tab");
+
+      // value = keys['wallet_tab'] = true;
+      load_more_data("wallet", "wallet-tab");
+
+    });
+    $("#nav-cc-tab").click(function () {
+      console.log("nav-cc-tab");
+      load_more_data("cc", "cc-tab");
+    });
+    $("#nav-saving-tab").click(function () {
+      console.log("nav-saving-tab");
+      load_more_data("saving", "saving-tab");
+    });
+    $("#nav-payment-tab").click(function () {
+      console.log("nav-payment-tab");
+      load_more_data("payment", "payment-tab");
+    });
+
+    $("#nav-loan-tab").click(function () {
+      console.log("nav-loan-tab");
+      load_more_data("loan", "loan-tab");
+    });
+
+
+    function load_more_data(model, tab_name) {
+      var value = keys[tab_name]; //   $(this).val();
+      // console.log("value:", value);
+      if (value) {
+        // console.log(" ignored");
+      } else {
+        console.log("......load-more......tab_name:" + tab_name);
+        value = keys[tab_name] = true;
+        $("#last-row-" + model).html(0)
+        $("#last-row-" + model).prop("value", 0);
+        $("#load-more-" + model).trigger("click");
+        $("#load-more-" + model).prop("disabled", false);
+      }
+    }
+
+    $("#history-btn").click(function () { //when tab is clicked it will populate the table for the first time using ajax
+      // document.getElementById("transfer-history-container").scrollIntoView();
+      //$(this).prop("disabled", true);
+      var val = $(this).hasClass("fa-chevron-down");
+      console.log("has class:", val);
+
+      var value = $(this).val();
+      if (value) {
+        console.log(" ignored");
+      } else {
+        $(this).val(true);
+
+        $("#last-row-transfer-history").html(0)
+        $("#last-row-transfer-history").prop("value", 0);
+        $("#load-more-transfer-history").trigger("click");
+        $("#load-more-transfer-history").prop("disabled", false);
+        console.log(" first filling...");
+      }
+
+    });
+
+    $('.btn-menu').click(function () {
+      var obj = $(this).find("span.arrow");
+      obj.toggleClass("fas fa-chevron-down");
+      var val = $(obj).hasClass("fa-chevron-down");
+
+
+      if (val) {
+        var name = "";
+        var id = $(this).attr("id").trim();
+        if (id == "financial-btn") {
+          name = "wallet-container";
+        } else if (id == "history-btn") {
+          name = "transfer-history-container";
+        }
+        if (name != "") {
+          document.getElementById(name).scrollIntoView();
+        }
+      }
+
+
+    });
+
+  });
+
+</script>
+
+{% endblock sub_content%}

@@ -1,0 +1,158 @@
+{% load humanize %}
+{% load app_filters %}
+{% load custom_tags%}
+  
+<table class="table table-hover table-bordered" id="table-{{code}}" width="350px">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">DATE</th> 
+            <th scope="col">SOURCE OF FUND</th> 
+            <th scope="col">SAVING</th>
+            <th scope="col">C-COIN (Loan)</th>
+            <th scope="col">PERCENT</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+
+    </tbody>
+    <tfoot>
+ 
+    </tfoot>
+
+</table>
+table setting:{{data_source.get_nav_settings}}
+{% include 'fx/e_wallet/preference_modal.html' with code=code Options=data_source.get_nav_settings preference=preference  show=True %}
+
+<script>
+ 
+
+    $(document).ready(function () {
+        var data = {  'model':'{{data_source.model}}','filter_field': '{{data_source.filter_field}}', 'filter_field_value': '{{data_source.filter_field_value}}' };
+
+
+        function get_date(date_entered) {
+            const today = moment();
+            var date = moment();
+            if (moment().year() == moment(date_entered).year()) {
+                days = parseInt(today.diff(date_entered, 'days'));
+                if (days < 8) {
+                    if (days == 0) {
+                        date = "Today";
+                    } else if (days == 1) {
+                        date = "Yesterday";
+                    } else { date = days + " days ago" }
+                } else {
+                    date = moment(date_entered).format("MMM Do");
+                }
+
+            } else {
+                date = moment(date_entered).format("MMM Do YY");
+            }
+            return date;
+        }
+
+        function fill_table(item, row_ctr) {
+            amount = 0;
+            message = ""
+            // if (item.transaction_type == "W") {
+            //     message = "cashout"
+            //     amount = item.debit
+            // } else {
+            //     message = "cashin"
+            //     amount = item.credit;
+            // }
+            // <th scope="col">#</th>
+            // <th scope="col">ID</th>
+            // <th scope="col">DATE</th> 
+            // <th scope="col">SAVING</th>
+            // <th scope="col">C-COIN (Loan)</th>
+            // <th scope="col">PERCENT</th>
+            var date = get_date(item.date);
+            var member_id = '{{data_source.member_id}}';
+            var edit_btn =""
+            // if (item.edit) {  edit_data
+           // edit_btn ="<td class='center-btn'> <a class='btn btn-sm btn-outline-info' href='/create_update_member_wallet/" + member_id + "/" + item.id + "/" + item.transaction_type + "/' >EDIT</a> </td>";
+            // }else{
+            //     edit_btn ="";
+            // }
+            action1 = "<button id='loan' data-category='5'  onclick='show_info(this)' value='" + item.id + "' name='show_info' class='show_info-btn btn btn-sm btn-info'>"+ "{{data_source.button_info}}"+" </button>";
+            action2 = "<a   class='edit_data-btn btn btn-sm btn-primary' href='/loan_application/" +  member_id +  "/"+item.id  +"/' >"+ "{{data_source.button_edit}}"+"</a>";
+
+            if (item.source_type =="W"){
+                source_type ="Wallet Account";
+            }else{
+                source_type ="Cash"
+            }
+             
+            var markup = "<tr> <th>" + row_ctr + "</th><td class='left loan-id'>"+ item.id +"</td>  <td > <a  class='dates btn btn-sm btn-light'>" + date + "</a></td> <td class='left source-type'>"+ source_type +"</td>  <td class='left saving' >" + item.saving + "</td><td class='left cc-loan' >" + item.cc_loan + "</td><td class='left percent' >" + item.percent +"%"+ "</td> <td class='center-btn'>" + action1 +"  "+action2 + "</td></tr>";  //   "+ edit_btn +" </tr>";
+   
+            $("#table-{{code}} tbody").append(markup);
+        }
+
+        function loadData() {
+            $(".loading").toggleClass("hidden");
+            var total_no_of_row_per_page = parseInt($("#selected_total_no_of_rows-{{code}} option:selected").text()); // $("#total_no_of_row").val();
+            var last_row = $("#last-row-{{code}}").val();
+            
+            if (isNaN(total_no_of_row_per_page)) {
+
+                var total_rows = parseInt($("#total_rows-{{code}}").text());
+                total_no_of_row_per_page = total_rows - last_row;
+            }
+             
+            data['total_no_of_row_per_page'] = total_no_of_row_per_page;
+            data['last_row'] = last_row;
+            console.log("...load data @ data_loader.html:", data);
+             
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:data_load_more_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+
+                    console.log("respsonse", response["data"]);
+                    row_ctr = parseInt(last_row)
+                    response["data"].forEach(function (item) {
+                        //console.log("....item:",item);
+                        row_ctr = row_ctr + 1;
+                        fill_table(item, row_ctr );
+
+                });
+                    $("#last-row-{{code}}").html(row_ctr)
+                    $("#last-row-{{code}}").prop("value", row_ctr);
+                    if (response['last_page']) {
+                        $('#load-more-{{code}}').hide();
+                    }
+
+
+                },
+                error: function (response) {
+                  //  $(".loading").toggleClass("hidden");
+                    console.log("error reach:");
+                    console.log(response);
+                }
+            })
+
+            $(".loading").toggleClass("hidden");
+        }
+
+        $('#load-more-{{code}}').click(function () {
+            console.log("...load more button clicked");
+            $('#load_more-{{code}}').prop("disabled", true);
+           
+            loadData();
+          
+            $('#load_more-{{code}}').prop("disabled", false);
+
+        });
+
+        //i remove the user preference ajax here
+        
+
+    });
+</script>

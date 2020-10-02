@@ -1,0 +1,143 @@
+<!-- table.get_nav_settings:{{table.get_nav_settings}} -->
+
+<div>
+
+    <table class="navigators-modal">
+        <tr class="navigators-modal-row">
+            <td><input type="button" id="last-row-{{code}}" style="background:transparent;border:none"
+                    value="{% if Options.total_records < Options.rows_per_page  %} {{Options.total_records}} {%else%}  {{Options.rows_per_page}} {% endif %} ">&nbsp;out
+                of </input>
+                <span id="total_record-{{code}}" value={{Options.total_records}}>
+                    {{Options.total_records }} Entr{{Options.total_records|pluralize:"y,ies"}}</span> </td>
+            <td>
+
+
+                <!-- <span><img id="img_loadmore" class="hide" src="/static/img/load.gif" alt="Loading..." />
+                </span> -->
+                <button class="btn btn-sm btn-outline-primary" data-toggle=" tooltip" data-placement="top"
+                    title="Display more entries" style="padding-left: 1rem;padding-right: 1rem ;margin-left:.5rem"
+                    type="button" id="load-more-{{code}}"> Load
+                    more...
+                </button>
+
+
+
+            </td>
+
+            <td class="empty" style='width: 5rem;'>
+
+            </td>
+
+            <td>
+                <label> Per page:</label>
+
+
+
+                <select name="dropdown" id="selected_total_no_of_rows-{{code}}">
+
+                    {% for item in  Options.rows_option_list %}
+                    {{item}}
+                    {% if item == preference %}
+                    <option value="{{preference}}" selected="selected">
+                        {{preference}}
+                    </option>
+                    {%else%}
+                    <option value={{item}}>{{item}}</option>
+                    {%endif%}
+                    {%endfor%}
+
+
+
+                    <!-- <option value="ALL">All</option> -->
+                </select>
+
+            </td>
+        </tr>
+    </table>
+    <!-- delay_Filling : {{delay_Filling}}
+    Options.total_records:{{Options.total_records}} <= preference:{{preference}} </div> -->
+        <div class="modal fade" id="set_per_page_modal" tabindex="-1" role="dialog" aria-labelledby="exampleSetperpage"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Set number of rows per page</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="user_preference-{{code}}" class="col-form-label">Select number of rows
+                                per page:</label>
+
+                            <select name="user_preference-{{code}}" id="user_preference-{{code}}">
+                                <option value="3">3</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class=" modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" id="update_user_preference-{{code}}" value=""
+                            class="btn btn-primary">Update</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+        <script>
+            var delay_Filling = "{{delay_filling}}".trim();
+            if(delay_Filling =="True"){
+                delay_Filling = true
+            }else{
+                delay_Filling =false
+            }
+            console.log("..parseboolean:",delay_Filling);
+            if (parseInt("{{Options.total_records}}") <= parseInt("{{preference}}") && !delay_Filling) {
+                $('#load-more-{{code}}').hide();
+            }
+
+
+
+
+
+
+
+            $("#selected_total_no_of_rows-{{code}}").change(function () {
+                var field_to_update = "{{code}}"
+                field_to_update = field_to_update.replace("-", "_");
+                var row_per_page = parseInt($("#selected_total_no_of_rows-{{code}} option:selected").text());
+                $("#selected_total_no_of_rows-{{code}}").val(row_per_page);
+
+                $.ajax({
+                    type: 'GET',
+                    url: "{% url 'fx:update_user_preference_url' %}",
+                    data: { "field_value": row_per_page, "field_to_update": field_to_update },
+                    success: function (response) {
+                        console.log("...udpate pref successful!");
+
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    }
+                })
+
+            });
+
+        </script>

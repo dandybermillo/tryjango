@@ -1,0 +1,225 @@
+{% load humanize %}
+{% load app_filters %}
+{% load custom_tags%}
+
+{% load app_filters %}
+
+
+{% load table_tag%}
+<style>
+    td.W {
+        color: blue;
+    }
+    td.C,td.R {
+        color: Red;
+    }
+    td.R {
+        color: rgb(247, 94, 94);
+    }
+    td.A {
+        color: green;
+    }
+</style>
+
+<!-- <div class="loading hidden loading-{{code}}"  >
+    <img src="/static/img/load.gif" alt="Loading..." />
+</div> -->
+
+<table class="table table-hover table-bordered" id="table-{{code}}" width="100%">
+    <thead>
+        <tr>
+            <th># </th>
+            {% for obj in transfer.columns %}
+            {%ifequal obj 'ACTION' %}
+            <th colspan="2" scope="col">{{obj}}</th>
+            {% else %}
+            <th scope="col">{{obj}}</th>
+            {% endifequal %}
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+
+        {% ifequal code 'claim-transfer' %}
+
+        {% for obj in transfer.data %}
+        <tr id={{obj.receiver.id}} class="table-{{code}}">
+            <th> {{ forloop.counter }}</th>
+            <td class='left'><span id="code"> {{obj.id}} </span></td>
+            <td class='left'><span > {{obj.sender_id}} </span></td>
+            <td class='left'><span > {{obj.receiver_id}} </span></td>
+            <td class='left'><span > {{obj.date_entered}} </span></td>
+            <td class='left'  >{{obj.sender.gender}} {{obj.sender.firstname|title}}
+                {{obj.sender.lastname|title}}
+            </td>
+            <td class='left'> <span>{{obj.purpose}}</span></td>
+
+            <td class='left'>
+                {{obj.amount|floatformat:2|intcomma}}
+            </td>
+            <td class="accept center-btn">
+                <button value="{{obj.id}}" onclick="cancel_transfer(this)" class="accept-transfer-btn btn btn-sm btn-success"> Accept </button>
+            </td>   
+            <td class="reject center-btn"> 
+                <button value="{{obj.id}}" onclick="cancel_transfer(this)" class="reject-transfer-btn btn btn-sm btn-danger"> Reject </button>
+
+            </td>
+        </tr>
+        {% endfor %}
+
+
+
+        {%else%}
+        {% if transfer.show_data %}
+        {% for obj in transfer.data %}
+        <tr id={{obj.receiver.id}} class="table-{{code}}">
+            <th> {{ forloop.counter }}</th>
+            <td class='left'><span id="code"> {{obj.receiver.id}} </span></td>
+            <td class='left'> <span>{{obj.sender_id}}</span></td>
+            <td class='left'> <span>{{obj.receiver_id}}</span></td>
+
+            <td class='left' id="receiver">{{obj.receiver.gender}} {{obj.receiver.firstname|title}}
+                {{obj.receiver.lastname|title}}
+            </td>
+            <td class='left'> <span>{{obj.receiver.address}}</span></td>
+
+            <td class='left'>
+                {{obj.receiver.telephone}}
+            </td>
+            <td class='center-btn'>
+                <button class="make-receiver btn btn-sm btn-info"> Make receiver </button>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {%endifequal%}
+    </tbody>
+</TABLE>
+
+
+{% include 'fx/e_wallet/preference_modal.html' with code=code Options=transfer.get_nav_settings preference=preference  delay_filling=transfer.delay_filling %}
+
+
+
+
+
+ 
+
+
+
+
+<script>
+    keys_source={};
+    keys_status={};
+    keys_source["C"]="CC Acct";
+    keys_source["W"]="Wallet Acct";
+    keys_source["S"]="Saving Acct";
+
+    keys_status["A"]="Accepted";
+    keys_status["C"]="Cancelled";
+    keys_status["R"]="Rejected";
+    keys_status["W"]="Waiting";
+
+
+    $(document).ready(function () {
+
+        var data = { 'filter_field': '{{transfer.filter_field}}', 'filter_field_value': '{{transfer.filter_field_value}}' };
+        var code = "{{code}}";
+        console.log("printing...");
+
+        function cancel_transfer() {
+
+
+        }
+        function fill_table(item, row_ctr) {
+            //var date = get_date(item.date);
+            var fullname = item.gender + " " + item.firstname + " " + item.lastname;
+            var classname = "class ='table-{{code}}'";
+            var markup = ""
+            source_type = keys_source[item.source_type];
+            
+            if (code == "transfer-history") {
+                var status = keys_status[item.status];
+                var action = "";
+                if (item.status == "W") {
+                    action = "<button onclick='cancel_transfer(this)' value='" + item.id + "' name='cancel-transfer' class='cancel-transfer-btn btn btn-sm btn-outline-info'>Cancel </button>";
+                    
+                }
+              
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td class='left' ><span id='code'>" + item.id + "</span></td><td>"+item.sender_id +"</td><td> "+item.receiver_id +"</td> <td class='left'>" + item.date_entered + " </td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.purpose + "</td><td>"+ source_type+"</td> <td>" + item.amount + "</td><td class='" + item.status + "' ><span class='status'>" + status + "</span></td><td class='cancel center-btn'>" + action + "</td></tr>";
+            } else if (code == "claim-transfer") {
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td class='left' ><span id='code'>" + item.id + "</span></td> <td>"+item.sender_id +"</td><td> "+item.receiver_id +"</td>  <td class='left'>" + item.date_entered + " </td>  <td class='left' id='sender'>" + fullname + "</td><td class='left'>" + item.purpose + "</td>  <td>" + item.amount + "</td >  <td class='accept center-btn'><button onclick='cancel_transfer(this)'   class='accept-transfer-btn btn btn-sm btn-outline-success'> Accept </button></td> <td class='reject center-btn'><button onclick='cancel_transfer(this)' value='"+ item.id  +"'  class='reject-transfer-btn btn btn-sm btn-outline-danger'> Reject</button></td></tr>";
+            }
+            else{ 
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td class='left' ><span id='code'>" + item.id + "</span></td><td>"+item.sender_id +"</td><td> "+item.receiver_id +"</td>  <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td><td><button onclick='add_receiver(this)' name='make-receiver-extension' class='center-btn make-receiver btn btn-sm btn-outline-info'> Make receiver </button></td></tr>";
+            } 
+            $("#table-{{code}} tbody").append(markup);
+        }
+
+        function loadData() {
+           // console.log("loading at transfer_receiver_table");
+            $(".loading").toggleClass("hidden");
+            // total_no_of_row - the selected total_rows in option buttons
+            var total_no_of_row_per_page = parseInt($("#selected_total_no_of_rows-{{code}} option:selected").text()); // $("#total_no_of_row").val();
+            var last_row = $("#last-row-{{code}}").val();
+            // console.log("total_no_of_row", total_no_of_row_per_page);
+            //console.log("last_row:", last_row);
+            if (isNaN(total_no_of_row_per_page)) { //todo: undentify code
+                var total_rows = parseInt($("#total_rows").text());
+                total_no_of_row_per_page = total_rows - last_row;
+            }
+
+            //var properties = $("#properties-{{code}}").val();
+            //  var data = JSON.parse(properties.replace(/'/g, '"'));
+            data['total_no_of_row_per_page'] = total_no_of_row_per_page;    // selected rows to be displayed
+            data['last_row'] = last_row;
+            data['request_list'] = "{{code}}";  // data to be displayed
+            data['filter_dict']='{{transfer.filter_dict}}';
+            console.log("....data:", data);
+
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:Transfer_load_more_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    row_ctr = parseInt(last_row)
+                    properties = response["properties"]
+                    response["data"].forEach(function (item) {
+                        row_ctr = row_ctr + 1;
+                        fill_table(item, row_ctr); // todo uncomment
+                    });
+                    $("#last-row-{{code}}").html(row_ctr)
+                    $("#last-row-{{code}}").prop("value", row_ctr);
+
+                    $("#total_record-{{code}}").html(properties.total_record + " Entry")
+                    $("#total_record-{{code}}").prop("value", properties.total_record);
+                    if (response['last_page']) {
+                        $('#load-more-{{code}}').hide();
+                    }
+                   
+                },
+                error: function (response) {
+                    console.log("error reach:");
+                    console.log(response);
+                }
+            });
+
+            $(".loading").toggleClass("hidden");
+        }
+
+        $('#load-more-{{code}}').click(function () {
+            console.log("...pass load more button clicked.");
+            $('#load-more-{{code}}').prop("disabled", true);
+           // $(".loading").toggleClass("hidden");
+         //   $("img").toggleClass("show_loading_img");
+            loadData();
+//$("img").toggleClass("show_loading_img");
+           // $(".loading").toggleClass("hidden");
+            $('#load-more-{{code}}').prop("disabled", false);
+
+        });
+
+    });
+
+</script>
