@@ -301,6 +301,7 @@ class Tmp_UsernameModel(models.Model):
 
 class Tmp_PasswordModel(models.Model):
     pwd = models.CharField(max_length=12,blank =False, null =False)
+    qrcode_pwd = models.CharField(max_length=12, null =False,default="")
     member_id =models.IntegerField()
     date_entry =models.DateField(auto_now_add = True)
 

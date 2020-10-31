@@ -60,17 +60,39 @@ SOURCE_TRADING,SOURCE_VENTURE,SOURCE_REGULAR =(1,2,3)
 CAT_REG_TRANSACTION,CAT_TRANSFER,CAT_GROCERY,CAT_LOAN,CAT_VENTURE,CAT_TRADE =(0,1,2,5,6,7)
 source_funds_cc= {SOURCE_VENTURE:"VentureCcModel",SOURCE_TRADING:"CcModel",SOURCE_REGULAR:"CcModel"}
 source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletModel",SOURCE_REGULAR:"WalletModel"}
+#21
 def get_customer_details(request):
     customer_id = request.GET.get("customer_id", "").strip().upper()
+    from_code = request.GET.get("from", "manual").strip()
+    qrpassword=""
+
+    if from_code == "qrcode":
+        qrpassword = request.GET.get("qrpassword", "").strip()
+    print (f"from_code: {from_code}, qrpassword: {qrpassword}")
+
     if request.is_ajax and request.method == "GET":
+      Message=""
       try:   
+            message ="xusername"  #invalid username
             member_qs = MemberModel.objects.get(member_id=customer_id) 
+            
+            if from_code == "qrcode":
+                    message ="Invalid password"  #invalid password
+                    pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
+                    pwd = base64.b64decode(pwd)
+                    pwd =pwd.decode("utf-8")
+                    print (f"pwd: {pwd}, qrpassword: {qrpassword}")
+                    if  pwd != qrpassword:
+                         print (f"pwd not matched")
+                         return JsonResponse({"message":message}, status = 200)  
+
+
             member_info = {"id":member_qs.id,"name":member_qs.name}
             cc_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
             return JsonResponse({"data":"Success","member_info":member_info,"cc_balance":cc_balance}, status = 200)
       except Exception as e:
             print (f"{e}, {type(e)}")
-            return JsonResponse({}, status = 200)    
+            return JsonResponse({"message":message}, status = 200)    
     return JsonResponse({}, status = 400)
 
  
@@ -363,9 +385,9 @@ def create_update_venture(request,member_id,venture_id,request_action ):
     model_name =model_list.get(request_action) 
     Model = apps.get_model('fx', model_name)
     all_valid = True 
-    default_percentage = 95
+    default_percentage = 95  #
     member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
-    print(f"model_name:{model_name}")
+   # print(f"model_name:{model_name}")
     #return
      
 
@@ -375,10 +397,11 @@ def create_update_venture(request,member_id,venture_id,request_action ):
             customer_source_fund = SOURCE_REGULAR
             seller_dest_fund =SOURCE_VENTURE
     elif request_action == "trade":
-            customer_source_fund = SOURCE_REGULAR
-            seller_dest_fund =SOURCE_REGULAR
             category = CAT_TRADE
             description ="TRADE"
+            customer_source_fund = SOURCE_REGULAR
+            seller_dest_fund =SOURCE_REGULAR
+           
     seller = member_info.id
     if venture_id > 0: #edit
         venture_qs= get_object_or_404(Model, id=venture_id)
@@ -392,23 +415,23 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                     cc_balance = maximum_deposit
                 asset_balance ={"cc_balance":cc_balance}
     if request.method == 'GET':
-                if venture_id > 0:  # requesting to edit the existing loan data
+                if venture_id > 0:  # requesting to edit the existing   data
                     if  request_action == "venture":
-                          customer = venture_qs.customer_id
-                          ventureForm = VentureForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
+                            customer = venture_qs.customer_id
+                            ventureForm = VentureForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
                     else:
                             if   venture_qs.role_type == "S": #here the the default seller becomes the buyer or customer
                                     customer = venture_qs.seller_id
                             else:
                                     customer = venture_qs.customer_id
                             ventureForm = TradeForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
-                    print(f"........ventureForm.id: {venture_qs.id}")
+                    #print(f"........ventureForm.id: {venture_qs.id}")
                     customer_info = get_member_info( customer,"#create_update_venture. 1") #create_update_venture. 1
                     ventureForm.id= venture_qs.id
                     ventureForm.totalCost = venture_qs.amount + venture_qs.cc
                     ventureForm.request_action =request_action
                     asset_balance["cc_balance"]= asset_balance["cc_balance"] + venture_qs.cc
-                    print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
+                    #print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
                     if venture_qs.note_id > 0: #note has been provided
                             try:
                                ventureForm.note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
@@ -416,7 +439,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                 print(f"loan app note: {e}")
                     else: 
                             ventureForm.note =""
-                else:  # requesting new loan application
+                else:   
                     initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
                     if  request_action == "venture":
                             ventureForm = VentureForm(initial =initial_data)
@@ -444,16 +467,22 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         percent  = float(request.POST.get("percent",-1)) #delete
         customer  = int(request.POST.get("customer",-1))
         seller  = int(request.POST.get("seller",-1))
-        role_type  = request.POST.get("role_type","").strip()
+        
         source_type  = request.POST.get('source_type','K') 
         note = request.POST.get("venture_note", "").strip()
        # print(f"...seller:{seller}, customer:{customer}..note:{note}, amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
         running_balance =-1
         old_amount = 0
+        #+
+        if request_action == "trade":
+              role_type  = request.POST.get("role_type","").strip()
+        else:
+              role_type ="" 
         if role_type == 'S':
             cust = seller
         else:
-            cust =customer
+            cust = customer
+
         customer_info = get_member_info(cust,"#request.method == 'POST'. 1") #request.method == 'POST'. 1
         if venture_id > 0:
                     old_venture_qs =  get_object_or_404(Model, id=venture_id)
@@ -464,7 +493,13 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                     old_customer_cc_id = old_venture_qs.customer_cc_id
                     old_customer_id =  old_venture_qs.customer_id
                     old_note_id = old_venture_qs.note_id
-                    old_role_type=  old_venture_qs.role_type
+
+                    #+
+                    if request_action == "trade":
+                         old_role_type=  old_venture_qs.role_type
+                    else:
+                         old_role_type =""
+
                     if old_note_id > 0:
                             try:
                                 old_note = NoteModel.objects.get(id = old_note_id ).note
@@ -521,11 +556,15 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                 cc = ventureForm.cleaned_data['cc']  
                                 percent = ventureForm.cleaned_data['percent']
                                 source_type = ventureForm.cleaned_data['source_type'] 
-                                role_type = ventureForm.cleaned_data['role_type'] 
+                                
                                 filter_fields = {"amount":amount,"cc":cc,"percent":percent}
                                 update_venture_qs ="" #delete
-                                if old_role_type != role_type:
-                                       filter_fields["role_type"] = role_type
+                                #+
+                                if request_action == "trade":
+                                    role_type = ventureForm.cleaned_data['role_type'] 
+                                    if old_role_type != role_type: # indent to the right
+                                        filter_fields["role_type"] = role_type
+
                                 if source_type != old_source_type:
                                         filter_fields["source_type"] = source_type
                                 if source_type == 'K':
@@ -617,20 +656,28 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         source_type = ventureForm.cleaned_data['source_type']
                         cc =  ventureForm.cleaned_data['cc']
                         percent = ventureForm.cleaned_data['percent']
-                        role_type = ventureForm.cleaned_data['role_type']
-                        if role_type == "S":
-                                temp = seller
-                                seller = customer
-                                customer =temp
+                        #+
+                        if request_action == "trade":
+                            role_type = ventureForm.cleaned_data['role_type']
+                            if role_type == "S":
+                                    temp = seller
+                                    seller = customer
+                                    customer =temp
                                       
                         Success = True
-                        print(f"...seller:{seller}, customer_id: {customer_id} ,source_type:{source_type} ")
-                        print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
+                       # print(f"...seller:{seller}, customer_id: {customer_id} ,source_type:{source_type} ")
+                       # print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
                         venture_id = 0
                         try:
-                                venture_qs = Model(seller = seller,customer = customer,category =category,
-                                amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
-                                source_type =source_type,percent =percent,role_type=role_type)
+                                if request_action == "trade":
+                                        venture_qs = Model(seller = seller,customer = customer,category =category,
+                                        amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
+                                        source_type =source_type,percent =percent,role_type=role_type)
+                                else:
+                                        venture_qs = Model(seller = seller,customer = customer,category =category,
+                                        amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
+                                        source_type =source_type,percent =percent)
+
                                 venture_qs.save()
                                 venture_id =venture_qs.id
                         except Exception as e:
@@ -1262,7 +1309,7 @@ def reset_show_password(request):
                         
                        newPassword = newPassword.encode("utf-8")
                        encoded = base64.b64encode(newPassword).decode("utf-8")
-                       result = Tmp_PasswordModel.objects.filter(member_id =member_id).update( pwd = encoded)
+                       result = Tmp_PasswordModel.objects.filter(member_id =member_id).update( pwd = encoded,qrcode_pwd =encoded)
                        print(f"...result tmp password saving:",result)
                        if result <=0:
                           res = Tmp_PasswordModel.objects.create(member_id= member_id, pwd = encoded)
@@ -1452,7 +1499,7 @@ def search_receiver(request):
         print(f"qs:{qs}")
         
         for row in qs:
-           row ={"id":row.id,"gender":row.gender,"firstname":row.firstname,"lastname":row.lastname,"address":row.address,"telephone":row.telephone,"username":row.user.username}
+           row ={"id":row.id,"gender":row.gender,"firstname":row.firstname,"lastname":row.lastname,"address":row.address,"telephone":row.telephone,"username":row.member_id}
            data.append(row)
           
            #print("...row:",row)

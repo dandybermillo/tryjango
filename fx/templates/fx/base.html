@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>COMMUNITY MAIN PAGE</title>
+    <title>FX MAIN PAGE</title>
 
 
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
@@ -735,8 +736,8 @@
 
             <div class="top_menu" style="z-index:99999">
                 <div class="logo">
-                    <span>A</span><span class="logo-title">WESOME</span> <span>C</span><span
-                        class="logo-title">OMMUNITY</span>
+                    <span>F</span><span class="logo-title">AIR</span> <span>E</span><span
+                        class="logo-title">XCHANGE</span>
 
                     <!-- get_nav_settings: {{table_search.get_nav_settings}} -->
                 </div>
@@ -795,13 +796,13 @@
                             <span class="icon"><i class="fas fa-file-alt"></i></span>
                             <span class="title">FINANCE</span>
                         </a></li>
-                    <li><a   href="{% url 'fx:create_update_venture_url' member_info.id 0 'trade'   %}">
+                    <li><a   href="{% url 'fx:create_update_venture_url' member_info.id 0 'venture'   %}">
                             <span class="icon"><i class="fas fa-blog"></i></span>
-                            <span class="title">TRADE</span>
+                            <span class="title">STORE</span>
                         </a></li>
-                    <li><a href="">
+                    <li><a  href="{% url 'fx:create_update_venture_url' member_info.id 0 'trade'   %}">
                             <span class="icon"><i class="fas fa-leaf"></i></span>
-                            <span class="title">SETTINGS</span>
+                            <span class="title">TRADING</span>
                         </a></li>
                 </ul>
             </div>
