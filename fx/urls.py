@@ -17,7 +17,10 @@ urlpatterns = [
      path('get_source_details/', views.get_source_details, name = "get_source_details_url"),
      path('get_transfer_details/', views.get_transfer_details, name = "get_transfer_details_url"),
      path('get_payment_details/', views.get_payment_details, name = "get_payment_details_url"),
+     #path('get_customer_details/', views.get_customer_details, name = "get_customer_details_url"),
      path('get_customer_details/', views.get_customer_details, name = "get_customer_details_url"),
+     path('check_user/', views.check_user, name = "check_user_url"),#must be removed
+
 
      
 

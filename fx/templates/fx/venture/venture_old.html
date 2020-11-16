@@ -1,32 +1,11 @@
-{% load static %}
+{% extends 'fx/base.html' %}
 {% load custom_tags%}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>login</title>
-        <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-      <script src="{% static 'js/popper.min.js' %}"></script>  
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-crossorigin="anonymous"></script> -->
-
-    <script src="{% static 'js/jquery_3.5.1.js' %}"></script>
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
-   
 
 
 
+{% block sub_content %}
 
-
-
-</head>
 <style>
     /*Trigger Button*/
     .login-trigger {
@@ -62,7 +41,7 @@ crossorigin="anonymous"></script> -->
     .form-control:hover,
     .form-control:focus {
         box-shadow: none;
-        border-color: blue;
+        border-color:blue;
     }
 
     .username,
@@ -149,368 +128,352 @@ crossorigin="anonymous"></script> -->
     }
 </style>
 
+<button type="button" class="btn btn-secondary">Secondary</button>
 
 
-<body>
-
-
-
-
-    <div id="login" class="modal fade" role="dialog">
-        <div class="modal-dialog  modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button data-dismiss="modal" class="close">&times;</button>
-                    <h4>Authenticate Member</h4>
-                    <div class="scanner">
-                        <video id="preview"></video></div>
-                    <div id="authenticate-alert" class="alert alert-danger" role="alert" style="display:none">
-                        Invalid username or password
-                    </div>
-                    <form>
-                        <br>
-                        <input type="text" name="customer_id" id="customer_id" class="customer-username form-control"
-                            placeholder="Username" />
-                        <input type="password" id="customer-password" name="password" class="password form-control"
-                            placeholder="password" />
-                        <br>
-
-                        <button class="btn login" id="btn-agree">AGREE</button>
-                        <button class="btn login" type="cancel"> CANCEL</button>
-                    </form>
+<div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button data-dismiss="modal" class="close">&times;</button>
+                <h4>Authenticate Member</h4>
+                <div class="scanner">
+                    <video id="preview"></video></div>
+                <div id="authenticate-alert" class="alert alert-danger" role="alert" style="display:none">
+                    Invalid username or password
                 </div>
-            </div>
-        </div>
-    </div>
+                <form>
+                    <br>
+                    <input type="text" name="customer_id" id="customer_id" class="customer-username form-control" placeholder="Username" />
+                    <input type="password" id ="customer-password" name="password" class="password form-control" placeholder="password" />
+                    <br>
 
-    {% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
-
-
-    <div class="container" style="border:none;width: 90%;">
-        <div class="tcard">
-            <div>
-                <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
-            </div>
-            {% if venture.errors %}
-            {% for field in venture %}
-            {% for error in field.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-
-            {% for error in form.non_field_errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
-
-            {% for message in messages %}
-
-            <div id="payment-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
-                <a class="close" href="#" data-dismiss="alert">×</a>
-                {{ message }}
-            </div>
-            {% endfor %}
-            <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
-                Please fill in the box with asterisk sign(*). Thank you.
-            </div>
-
-            <div>
-
-
-
-
-                <form action="" class="needs-validation" id="form_venture" method="POST">
-                    {% csrf_token %}
-                    <div hidden>
-                        {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
-                        {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
-                                    class="asteriskField">*</span> </label>
-                            <input id="venture-total-txt" required type="number" step='any' min=5 max="10000"
-                                class="mid-size form-control" value="{{venture.totalCost}}">
-                        </div>
-
-                        <div class="form-group col-md-3">
-                            <label for="main-source-drop" class="col-form-label">SOURCE<span
-                                    class="asteriskField">*</span></label>
-                            <div class="dropdown" id="main-source-drop">
-                                <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
-                                    id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
-
-                                    {% ifequal venture.source_type.value 'W' %} WALLET ACCOUNT {%else%}CASH
-                                    {%endifequal%}
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="source-cash-drop">
-                                    <button class="source-cash dropdown-item" type="button">CASH</button>
-                                    <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-3">
-                            <label for="main-percent-drop" class="col-form-label">PERCENTAGE </label>
-                            <div class="dropdown" id="main-percent-drop">
-                                <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
-                                    id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    name="percent" style="border:1px solid #ced4da;width:100%;">
-                                    {{venture.percent.value}}%
-                                </button>
-                                <!-- .custom {
-                                    width: 78px !important;
-                                } -->
-                                <div class="dropdown-menu" aria-labelledby="percent-drop">
-                                    <button class="cc-percent dropdown-item" type="button">95% </button>
-                                    <button class="cc-percent dropdown-item" type="button">90% </button>
-                                    <button class="cc-percent dropdown-item" type="button">85% </button>
-                                    <button class="cc-percent dropdown-item" type="button">80% </button>
-                                    <button class="cc-percent dropdown-item" type="button">75% </button>
-                                    <button class="cc-percent dropdown-item" type="button">70% </button>
-                                    <button class="cc-percent dropdown-item" type="button">65% </button>
-                                    <button class="cc-percent dropdown-item" type="button">60% </button>
-                                    <button class="cc-percent dropdown-item" type="button">50% </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="form-group col-md-6">
-                            {% ifequal venture.role_type.value 'S' %}
-                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">SELLER
-                                {% if venture.id > 0 %} RECEIVED {%else%} RECEIVES {%endif%}</label>
-                            {%else%}
-    
-                            {%ifequal venture.request_action 'trade' %}
-                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">BUYER
-                                {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%} </label>
-                            {%else%}
-                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt"
-                                class="col-form-label">CUSTOMER {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%}</label>
-                            {%endifequal%}
-                            {%endifequal%}
-                            <input id="venture-total_owing-txt" type="text" readonly style="border:1px solid #ced4da;"
-                                class="mid-size gray-background  form-control" value="{% if venture.amount.value > 0%}  {%ifequal venture.source_type.value 'W'  %}P {{venture.amount.value}}  (FROM WALLET ACCOUNT)  {%else%}  P {{venture.amount.value}} {%endifequal%}  {% else %} 
-                                  {% endif %}">
-                        </div> -->
-
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
-                            {{ venture.amount|as_crispy_field}}
-                        </div>
-                        <div class="form-group col-md-6">
-                            {{ venture.cc|as_crispy_field}}
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-
-
-                        <div class="form-group col-md-6">
-                            <label for="venture-description-txt" class="col-form-label">DESCRIPTION</label>
-                            <textarea style="font-size: 1rem;" name="venture_note" class="form-control"
-                                id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
-
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6 mb-0">
-                        </div>
-                    </div>
-
-
-                    <div>
-
-                        {%if post_data %}
-                        <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
-
-                        <a class="edit_button btn btn-warning btn-md"
-                            href="{% url 'fx:create_update_venture_url' member_info.id venture.id venture.request_action   %}">
-                            Make Changes</a>
-                        {% else %}
-                        <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
-                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
-                        <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
-                        {% if venture.id > 0 %}
-                        <a hidden id="venture-delete"
-                            href="{% url 'fx:delete_venture_url' member_info.id  venture.id venture.request_action %}"></a>
-
-                        <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
-                            value="Delete this" />
-
-                        {%endif%}
-                        {%endif%}
-                    </div>
+                    <button class="btn login" id="btn-login" >AGREE</button>
+                    <button class="btn login" type="cancel"> CANCEL</button> 
                 </form>
-                <br>
             </div>
         </div>
     </div>
+</div>
+
+{% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
 
 
-    <div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
-        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">PRODUCT ORDER FORM REVIEW</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+<div class="container" style="border:none;width: 90%;">
+    <div class="tcard">
+        <div>
+            <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
+        </div>
+        {% if venture.errors %}
+        {% for field in venture %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% for message in messages %}
+
+        <div id="payment-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+            Please fill in the box with asterisk sign(*). Thank you.
+        </div>
+
+        <div>
+
+
+
+
+            <form action="" class="needs-validation" id="form_venture" method="POST">
+                {% csrf_token %}
+                <div hidden>
+                    {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
+                    {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                 </div>
-                <div class="modal-body">
-                    <div id="review-venture-form">
-                        <form>
-                            <div class="form-row">
-
-
-
-
-
-                            </div>
-                            <div class="form-row">
-                                <label id="review-venture-customer-lbl" for="review-venture-customer-txt"
-                                    class="col-form-label">Customer</label>
-                                <div class="form-group col-md-7">
-
-                                    <input id="review-venture-customer-txt" type="text" readonly
-                                        class="mid-size  form-control">
-                                </div>
-                                <label for="review-venture-customer_id-txt" class="col-form-label">ID<span
-                                        class="asteriskField">*</span></label>
-                                <div class="form-group col-md-3">
-
-                                    <input id="review-venture-customer_id-txt" type="text"
-                                        name="venture-customer-member_id" readonly class="mid-size form-control"
-                                        style="border:1px solid #ced4da;">
-                                </div>
-                            </div>
-                            <div class="review form-group row">
-                                <label for="review-venture-balance-txt" class="col-sm-1 col-form-label"
-                                    style="padding-left: 8px">CM Balance:</label>
-                                <div class="form-group col-md-7">
-                                    <input id="review-venture-balance-txt" type="text" readonly
-                                        class="mid-size form-control">
-                                </div>
-                            </div>
-                            <div class="review form-group row">
-
-                                <label for="review-venture-total-txt" class="col-md-1 col-form-label">TOTAL COST<span
-                                        class="asteriskField">*</span></label>
-                                <div class="col-sm-5">
-                                    <input type="text" readonly class="mid-size review form-control"
-                                        id="review-venture-total-txt" value="">
-                                </div>
-                                <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
-                                        class="asteriskField">*</span></label>
-                                <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
-                                        id="review-venture-source-txt" value="">
-                                </div>
-
-                                <!-- <label id="review-total_owing-txt" for="review-venture-total_owing-txt"
-                                    class="col-md-1 col-form-label">CUSTOMER PAYS
-                                </label>
-                                <div class="col-md-5">
-                                    <input type="text" readonly class="mid-size review form-control"
-                                        id="review-venture-total_owing-txt" value="">
-                                </div> -->
-
-
-                            </div>
-                            <div class="review form-group row">
-
-
-                                <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">PHP<span
-                                        class="asteriskField">*</span></label>
-                                <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
-                                        id="review-venture-amount-txt" value="">
-                                </div>
-                                <label for="review-venture-cc-txt" class="col-sm-1 col-form-label">Comm. Money<span
-                                        class="asteriskField">*</span></label>
-
-                                <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
-                                        id="review-venture-cc-txt" value="">
-                                </div>
-
-                            </div>
-
-                            <div class="review form-group row">
-                                <label for="review-venture-description-txt"
-                                    class="col-sm-1 col-form-label">Description</label>
-                                <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
-                                        id="review-venture-description-txt" value="">
-                                </div>
-
-
-
-                            </div>
-
-                            <div class="review-venture-modal-footer" style="text-align:right">
-                                <button id="review-back-venture-btn" type="button" data-dismiss="modal"
-                                    class="btn btn-secondary">Go Back</button>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <button id="review-venture-submit-btn" type="button" class="btn btn-success">Submit
-                                    Now</button>
-                            </div>
-                            <div class="venture-edit-modal-footer" style="text-align:left;display:none">
-                                <button id="preview-venture-close-btn" type="button" data-dismiss="modal"
-                                    class="btn btn-secondary">Close</button>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <button id="venture-edit-btn" type="button" class="btn btn-primary">Make
-                                    Changes</button>
-                            </div>
-                        </form>
-
-
-
-                        <!-- ----- end of review form ---- -->
-
-
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
+                                class="asteriskField">*</span> </label>
+                        <input id="venture-total-txt" required type="number" step='any' min=5 max="10000"
+                            class="mid-size form-control" value="{{venture.totalCost}}">
                     </div>
 
+                    <div class="form-group col-md-3">
+                        <label for="main-source-drop" class="col-form-label">SOURCE<span
+                                class="asteriskField">*</span></label>
+                        <div class="dropdown" id="main-source-drop">
+                            <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
+                                id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="border:1px solid #ced4da;width: 100%;">
 
-                    <!-- ----- review form ---- -->
+                                {% ifequal venture.source_type.value 'W' %} WALLET ACCOUNT {%else%}CASH {%endifequal%}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                                <button class="source-cash dropdown-item" type="button">CASH</button>
+                                <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="main-percent-drop" class="col-form-label">PERCENTAGE </label>
+                        <div class="dropdown" id="main-percent-drop">
+                            <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
+                                id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                name="percent" style="border:1px solid #ced4da;width:100%;">
+                                {{venture.percent.value}}%
+                            </button>
+                            <!-- .custom {
+                                width: 78px !important;
+                            } -->
+                            <div class="dropdown-menu" aria-labelledby="percent-drop">
+                                <button class="cc-percent dropdown-item" type="button">95% </button>
+                                <button class="cc-percent dropdown-item" type="button">90% </button>
+                                <button class="cc-percent dropdown-item" type="button">85% </button>
+                                <button class="cc-percent dropdown-item" type="button">80% </button>
+                                <button class="cc-percent dropdown-item" type="button">75% </button>
+                                <button class="cc-percent dropdown-item" type="button">70% </button>
+                                <button class="cc-percent dropdown-item" type="button">65% </button>
+                                <button class="cc-percent dropdown-item" type="button">60% </button>
+                                <button class="cc-percent dropdown-item" type="button">50% </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group col-md-6">
+                        {% ifequal venture.role_type.value 'S' %}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">SELLER
+                            {% if venture.id > 0 %} RECEIVED {%else%} RECEIVES {%endif%}</label>
+                        {%else%}
+
+                        {%ifequal venture.request_action 'trade' %}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">BUYER
+                            {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%} </label>
+                        {%else%}
+                        <label id="venture-total_owing-lbl" for="venture-total_owing-txt"
+                            class="col-form-label">CUSTOMER {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%}</label>
+                        {%endifequal%}
+                        {%endifequal%}
+                        <input id="venture-total_owing-txt" type="text" readonly style="border:1px solid #ced4da;"
+                            class="mid-size gray-background  form-control" value="{% if venture.amount.value > 0%}  {%ifequal venture.source_type.value 'W'  %}P {{venture.amount.value}}  (FROM WALLET ACCOUNT)  {%else%}  P {{venture.amount.value}} {%endifequal%}  {% else %} 
+                              {% endif %}">
+                    </div> -->
 
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
+                        {{ venture.amount|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ venture.cc|as_crispy_field}}
+                    </div>
+
+                </div>
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-6">
+                        <label for="venture-description-txt" class="col-form-label">DESCRIPTION</label>
+                        <textarea style="font-size: 1rem;" name="venture_note" class="form-control"
+                            id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                    </div>
+                </div>
+
+
+                <div>
+
+                    {%if post_data %}
+                    <a class="hide btn btn-secondary btn-md"
+                        href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+
+                    <a class="edit_button btn btn-warning btn-md"
+                        href="{% url 'fx:create_update_venture_url' member_info.id venture.id venture.request_action   %}">
+                        Make Changes</a>
+                    {% else %}
+                    <a class="hide btn btn-secondary btn-md"
+                        href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                    <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
+                    <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
+                    {% if venture.id > 0 %}
+                    <a hidden id="venture-delete"
+                        href="{% url 'fx:delete_venture_url' member_info.id  venture.id venture.request_action %}"></a>
+
+                    <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
+                        value="Delete this" />
+
+                    {%endif%}
+                    {%endif%}
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">PRODUCT ORDER FORM REVIEW</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <div id="review-venture-form">
+                    <form>
+                        <div class="form-row">
+
+                           
 
 
 
+                        </div>
+                        <div class="form-row">
+                            <label id="review-venture-customer-lbl" for="review-venture-customer-txt"
+                                class="col-form-label">Customer</label>
+                            <div class="form-group col-md-7">
 
+                                <input id="review-venture-customer-txt" type="text" readonly
+                                    class="mid-size  form-control">
+                            </div>
+                            <label for="review-venture-customer_id-txt" class="col-form-label">ID<span
+                                class="asteriskField">*</span></label>
+                        <div class="form-group col-md-3">
+
+                            <input id="review-venture-customer_id-txt" type="text" name="venture-customer-member_id"
+                                readonly class="mid-size form-control" style="border:1px solid #ced4da;">
+                        </div>
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-venture-balance-txt" class="col-sm-1 col-form-label"
+                                style="padding-left: 8px">CM Balance:</label>
+                            <div class="form-group col-md-7">
+                                <input id="review-venture-balance-txt" type="text" readonly
+                                    class="mid-size form-control">
+                            </div>
+                        </div>
+                        <div class="review form-group row">
+
+                            <label for="review-venture-total-txt" class="col-md-1 col-form-label">TOTAL COST<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="mid-size review form-control"
+                                    id="review-venture-total-txt" value="">
+                            </div>
+                            <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-source-txt" value="">
+                            </div>
+
+                            <!-- <label id="review-total_owing-txt" for="review-venture-total_owing-txt"
+                                class="col-md-1 col-form-label">CUSTOMER PAYS
+                            </label>
+                            <div class="col-md-5">
+                                <input type="text" readonly class="mid-size review form-control"
+                                    id="review-venture-total_owing-txt" value="">
+                            </div> -->
+
+
+                        </div>
+                        <div class="review form-group row">
+
+
+                            <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">PHP<span
+                                    class="asteriskField">*</span></label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-amount-txt" value="">
+                            </div>
+                            <label for="review-venture-cc-txt" class="col-sm-1 col-form-label">Comm. Money<span
+                                    class="asteriskField">*</span></label>
+
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-cc-txt" value="">
+                            </div>
+
+                        </div>
+
+                        <div class="review form-group row">
+                            <label for="review-venture-description-txt"
+                                class="col-sm-1 col-form-label">Description</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="small-size  review form-control"
+                                    id="review-venture-description-txt" value="">
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="review-venture-modal-footer" style="text-align:right">
+                            <button id="review-back-venture-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-venture-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="venture-edit-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-venture-close-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="venture-edit-btn" type="button" class="btn btn-primary">Make Changes</button>
+                        </div>
+                    </form>
+
+
+
+                    <!-- ----- end of review form ---- -->
+
+
+                </div>
+
+
+                <!-- ----- review form ---- -->
+
+            </div>
         </div>
 
 
 
 
+    </div>
 
 
 
 
-</body>
-
-</html>
-<script>
-     //okss
-     var ID_Info = new Object();
+    <script>
+        //okss
+        var ID_Info = new Object();
         ID_Info.id = "";
         ID_Info.ON_SEARCH = false;
         ID_Info.is_name_blank = true;
@@ -592,7 +555,9 @@ crossorigin="anonymous"></script> -->
             confirm_venture_payment(function (confirm) {
                 //x var request_action = $(obj).text().trim();
                 if (confirm) {
+
                     document.getElementById('venture-delete').click();
+
                 } else {
                     $("#yes-no-modal-venture_payment").hide();
                 }
@@ -639,9 +604,26 @@ crossorigin="anonymous"></script> -->
             $("#id_cc").prop("class", "form-control");
             $("#id_percent").prop("step", "any");
 
-            $("#btn-agree").click(function () {
+
+
+            // document.getElementById("venture-customer_id-txt").addEventListener("change", function () {
+            //     //This input has changed
+            //     customer_id = this.value.trim().toUpperCase();
+            //     if (ID_Info.id != customer_id) {
+            //         search_member(customer_id,"");
+            //     } else {
+            //         console.log("leave");
+            //     }
+            //     console.log("focus");
+
+
+            // });
+            //'input[name="record"]'
+
+            
+            $("#btn-login").click(function () {
                 //submit_now =true;
-                console.log("btn agree");
+                console.log("btn login");
                 customer_id = $("#customer_id").val();
                 pwd = $("#customer-password").val();
                 search_member(customer_id,pwd,"manual")
@@ -988,6 +970,15 @@ crossorigin="anonymous"></script> -->
                 $("#venture-payment-failed-alert").hide();
 
             });
-        });
 
-</script>
+
+
+
+        });
+    </script>
+
+
+    {% endblock sub_content %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

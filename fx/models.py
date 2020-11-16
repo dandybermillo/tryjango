@@ -247,8 +247,8 @@ class VentureModel(models.Model):
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Customer' ) # todo null=False
       transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
       category = models.PositiveIntegerField(default = 2 ,choices = cat) # 0 means  debit or credit in general
-      amount = models.FloatField(verbose_name ="AMOUNT",blank =False,null =False)
-      cc = models.FloatField(verbose_name ="CC",default =0)
+      amount = models.FloatField(verbose_name ="PHP",blank =False,null =False)
+      cc = models.FloatField(verbose_name ="Comm. Money",default =0)
       percent = models.FloatField(default =95)
       source_type = models.CharField(max_length=1,default = 'K',choices = sources)  #c: cash
       customer_source_id = models.IntegerField(default = 0)

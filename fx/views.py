@@ -34,6 +34,8 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import template
 from django.core.validators import EmailValidator, ValidationError
+from django.core.exceptions import ObjectDoesNotExist
+
 from django import forms
 from .models import TransferModel
 from django.http import JsonResponse
@@ -61,35 +63,189 @@ CAT_REG_TRANSACTION,CAT_TRANSFER,CAT_GROCERY,CAT_LOAN,CAT_VENTURE,CAT_TRADE =(0,
 source_funds_cc= {SOURCE_VENTURE:"VentureCcModel",SOURCE_TRADING:"CcModel",SOURCE_REGULAR:"CcModel"}
 source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletModel",SOURCE_REGULAR:"WalletModel"}
 #21
+
+
+
+
+def parseint(string,lenght=10): #10 has no meaning
+    result = '0'
+    ctr = 0
+    for x in string:
+        if x.isdigit():
+           result+=x
+           ctr = ctr + 1
+        else:
+            return int(result)
+        if ctr >= lenght:
+               return int(result)
+    return int(result)
+def decode(qr_code):
+   # print("qr_code: "+qr_code )
+    #qr_code ="8da1010-09652"
+    x = parseint(qr_code,2)
+    if x > 9:
+        lent = 2
+    else:
+        lent = 1
+    part_un = qr_code[lent+2:lent+6]
+    part_pwd = qr_code[lent+x:]
+
+   # print(f"x:{x}, lent:{lent}, part_un:{part_un}, part_pwd:{part_pwd}") 
+    #get pass
+    #print(f"------ username:   {qr_code[lent:x+lent]}")
+    customer_id = qr_code[lent:x+lent]
+    save_pwd = get_temp_pass(customer_id)
+    #save_pwd =pwd.decode("utf-8")
+    #print(f"save pwd: {save_pwd} , username: {qr_code[lent:x+lent]}")
+    #save_pwd = "4590"
+    pwd = parseint(reverse(save_pwd))
+    subtrahend = parseint(part_un) + pwd
+    #print(f"subtrahend:{subtrahend}, pwd:{pwd}")
+    pwd = parseint(part_pwd) - subtrahend
+    pwd = reverse(str(pwd))
+    if len(pwd) <= 3:
+        pwd =pwd+"0"
+   # print("password:"+ pwd)
+    #print("username:"+qr_code[lent:x+lent])
+    return {"username":qr_code[lent:x+lent],"password":pwd}
+def reverse(s): 
+    str = "" 
+    for i in s: 
+        str = i + str
+    return str
+
+
+  #  return {"username":qr_code[lent:x+lent],"password":pwd}
+
+def get_temp_pass(username):
+    try:   
+            message ="xusername"  #invalid username
+            member_qs = MemberModel.objects.get(member_id=username)
+            pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
+            pwd = base64.b64decode(pwd)
+            pwd =pwd.decode("utf-8")
+            return pwd
+    except Exception as e:
+            print (f"def get_temp_pass: {e}, {type(e)}")
+            return "" 
+    
+def check_user(request):
+    member_id = request.POST.get("member_id", "").strip().upper()
+    password = request.POST.get("password", "").strip()
+    print("ajax_check_user_url.... reached")
+    print(f"member_id:{member_id} , password:{password}")
+    if  request.method == "POST":
+            if member_id and password:
+                        try:
+                            user = MemberModel.objects.get(member_id = member_id).user
+                            username=user.username
+                            print("user name:",user.username)
+                        except  Exception as e:
+                            print (f"{e}, {type(e)}")
+                        user = authenticate(username=username, password=password)
+                        print(f"....self.user:{user}, username:{username}")
+                        if user is None:
+                            try:
+                                # User.objects.get(username__exact=username)
+                                user = User.objects.get(username__exact=username)
+                                res= user.check_password(password)
+                                print(f"....password:{password} , check: {res}")
+                                if not user.check_password(password):
+                                    print( 'Incorrect password' )
+                                if not user.is_active:
+                                    print('This user is not active')
+                            except ObjectDoesNotExist:
+                                   print('This user does not exist')
+       
+                               
+    else:
+        context = {
+        'post_data':True,
+    }
+    return render(request, 'fx/venture/login.html', context)
+
+                 
+         
+
+
+
+   
+
 def get_customer_details(request):
     customer_id = request.GET.get("customer_id", "").strip().upper()
     from_code = request.GET.get("from", "manual").strip()
     qrpassword=""
+    #qr_code = request.GET.get("qr_code", "").strip()
 
     if from_code == "qrcode":
-        qrpassword = request.GET.get("qrpassword", "").strip()
-    print (f"from_code: {from_code}, qrpassword: {qrpassword}")
-
+       # qrpassword = request.GET.get("qrpassword", "").strip()
+        qrcode = decode(customer_id)
+        qrpassword = qrcode["password"]
+        customer_id =qrcode['username'] #qrcode['username']
+        # print("-------")
+        # print(f"username:{qrcode['username']}, pwd: {qrcode['password']}")
+    else:
+        password = request.GET.get("password", "").strip()
     if request.is_ajax and request.method == "GET":
       Message=""
       try:   
-            message ="xusername"  #invalid username
+            message ="This user does not exist!"  #invalid username
+            print(f"---customer_id:{customer_id}")
             member_qs = MemberModel.objects.get(member_id=customer_id) 
             
             if from_code == "qrcode":
-                    message ="Invalid password"  #invalid password
+                    message ="Incorrect password!"  #invalid password
                     pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
                     pwd = base64.b64decode(pwd)
-                    pwd =pwd.decode("utf-8")
+                    pwd = pwd.decode("utf-8")
                     print (f"pwd: {pwd}, qrpassword: {qrpassword}")
-                    if  pwd != qrpassword:
+                    print (f"pwd: {parseint(pwd)}, qrpassword: {parseint(qrpassword)}")
+                    if  parseint(pwd) != parseint(qrpassword):
                          print (f"pwd not matched")
                          return JsonResponse({"message":message}, status = 200)  
+            else:
+                    member_id = customer_id  # request.POST.get("customer_id", "").strip().upper()
+                    
+                    # print (f"member_id:{member_id}, password: {password}")
+                    if member_id and password:
+                            try:
+                                user = MemberModel.objects.get(member_id = member_id).user
+                                username = user.username
+                                print("user name:",user.username)
+                            except  Exception as e:
+                                print (f" here: {e}, {type(e)}")
+                                return JsonResponse({"message":'This user does not exist'}, status = 200) 
+                            user = authenticate(username=username, password=password)
+                            print(f"....self.user:{user}, username:{username}")
+                            if user is None:
+                                    try:
+                                        # User.objects.get(username__exact=username)
+                                            user = User.objects.get(username__exact=username)
+                                            res= user.check_password(password)
+                                            print(f"....password:{password} , check: {res}")
+                                            if not user.check_password(password):
+                                                return JsonResponse({"message":'Incorrect password'}, status = 200)
+                                            if not user.is_active:
+                                                return JsonResponse({"message":'This user is not active'}, status = 200) 
+                                                
+                                    except ObjectDoesNotExist:
+                                        return JsonResponse({"message":'This user does not exist'}, status = 200) 
+
+                    else:
+                         return JsonResponse({"message":'Sorry. We are unable to indentify this username'}, status = 200) 
+                 
 
 
-            member_info = {"id":member_qs.id,"name":member_qs.name}
-            cc_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
-            return JsonResponse({"data":"Success","member_info":member_info,"cc_balance":cc_balance}, status = 200)
+                   # password = request.GET.get("password", "").strip()
+                    #x = check_user(customer_id,password)
+                    #print(f"---get_user:{x}")
+                    
+          
+
+            member_info = {"member_id":member_qs.member_id,"name":member_qs.name}
+            print(f"member_info:{member_info}")
+            cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
+            return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":cm_balance}, status = 200)
       except Exception as e:
             print (f"{e}, {type(e)}")
             return JsonResponse({"message":message}, status = 200)    
@@ -380,6 +536,9 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
     # print(f"customer_id: {customer_id}")
 
     # return
+
+
+
 def create_update_venture(request,member_id,venture_id,request_action ):
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -439,11 +598,12 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                 print(f"loan app note: {e}")
                     else: 
                             ventureForm.note =""
-                else:   
-                    initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
+                else:  # NEW VENTURE 
                     if  request_action == "venture":
+                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
                             ventureForm = VentureForm(initial =initial_data)
                     else:
+                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
                             ventureForm = TradeForm(initial =initial_data)
                     
                    # ventureForm = VentureForm(initial =initial_data)
@@ -2603,8 +2763,13 @@ def ValidateUsername(username):
 def gen_password():
     
     rndPwd =""
+    ctr = 0
     for x in range(2):
-      rndPwd += str(random.randint(1,21)*5)
+        pwd = random.randint(1,21) * 5
+        if (ctr == 0 and pwd == 0) or (ctr == 4 and pwd == 0) :
+            pwd = 1
+        rndPwd += str(pwd)
+        ctr = ctr  + 1 
      
     lenght = len(rndPwd)
     if lenght > 4:
