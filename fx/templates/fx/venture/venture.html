@@ -7,9 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-        <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <!-- <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
 
-      <script src="{% static 'js/popper.min.js' %}"></script>  
+    <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
 crossorigin="anonymous"></script> -->
@@ -19,7 +19,7 @@ crossorigin="anonymous"></script> -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
-   
+
 
 
 
@@ -175,8 +175,8 @@ crossorigin="anonymous"></script> -->
                             placeholder="password" />
                         <br>
 
-                        <button class="btn login" id="btn-agree">AGREE</button>
-                        <button class="btn login" type="cancel"> CANCEL</button>
+                        <a class="btn login" id="btn-agree">AGREED</a>
+                        <a class="btn login" type="cancel"> CANCEL</a>
                     </form>
                 </div>
             </div>
@@ -312,11 +312,37 @@ crossorigin="anonymous"></script> -->
 
                     </div>
                     <div class="form-row">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="checkGrocery" value="Grocery">
+                            <label class="form-check-label" for="checkGrocery"> Grocery</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="checkLoad" value="Load">
+                            <label class="form-check-label" for="checkLoad"> Load</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" id="checkServices" value="Services">
+                            <label class="form-check-label" for="checkServices"> Services</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" id="checkOther" name="checkOther"
+                                value="Others">
+                            <label class="form-check-label" for="checkOther"> Other</label>
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-row">
 
 
                         <div class="form-group col-md-6">
-                            <label for="venture-description-txt" class="col-form-label">DESCRIPTION</label>
-                            <textarea style="font-size: 1rem;" name="venture_note" class="form-control"
+
+                            <textarea  style="font-size: 1rem;display: none;" name="venture_note" class="form-control"
                                 id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
 
                         </div>
@@ -377,11 +403,6 @@ crossorigin="anonymous"></script> -->
                     <div id="review-venture-form">
                         <form>
                             <div class="form-row">
-
-
-
-
-
                             </div>
                             <div class="form-row">
                                 <label id="review-venture-customer-lbl" for="review-venture-customer-txt"
@@ -455,7 +476,7 @@ crossorigin="anonymous"></script> -->
                             <div class="review form-group row">
                                 <label for="review-venture-description-txt"
                                     class="col-sm-1 col-form-label">Description</label>
-                                <div class="col-sm-5">
+                                <div class="col-sm-11">
                                     <input type="text" readonly class="small-size  review form-control"
                                         id="review-venture-description-txt" value="">
                                 </div>
@@ -509,485 +530,496 @@ crossorigin="anonymous"></script> -->
 
 </html>
 <script>
-     //okss
-     var ID_Info = new Object();
-        ID_Info.id = "";
-        ID_Info.ON_SEARCH = false;
-        ID_Info.is_name_blank = true;
+    //okss
+    var ID_Info = new Object();
+    ID_Info.id = "";
+    ID_Info.ON_SEARCH = false;
+    ID_Info.is_name_blank = true;
 
-        var keys = {};
-        var keys_account = { 'W': 'WALLET', 'K': 'CASH' };
-        keys["previous-selected-account"] = "CASH";
-        keys["PREVIOUS-INPUT"] = "";
-        // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
-        //console.log("previous acct:" + keys["previous-selected-account"]);
-
-
+    var keys = {};
+    var keys_account = { 'W': 'WALLET', 'K': 'CASH' };
+    keys["previous-selected-account"] = "CASH";
+    keys["PREVIOUS-INPUT"] = "";
+    // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
+    //console.log("previous acct:" + keys["previous-selected-account"]);
 
 
 
 
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        console.log("submitting......");
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-        $(document).ready(function () {
 
 
-            // this is document ready start
-
-
-            // qrcode scanner
-
-            let scanner = new Instascan.Scanner(
-                {
-                    video: document.getElementById('preview')
-                }
-            );
-            scanner.addListener('scan', function (content) {
-
-                //x document.getElementById("venture-customer_id-txt").value = content;
-                //x $("#venture-customer_id-txt").val(username);
-                search_member(content, "","qrcode");
-                beep();
-                //xThis is working program
-                //x alert('SucceessDo you want to open this page?: ' + content);
-                console.log("code: " + content)
-                //x window.open(content, "_blank");
-            });
-
-            Instascan.Camera.getCameras().then(function (cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
-                } else {
-                    console.error("Please enable Camera!");
-                }
-            });
-            function beep() {
-                (new
-                    Audio(
-                        "data:audio/wav;base64,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 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU="
-                    )).play();
-            }
-            // end qrcode scanner
-            $("#venture-delete-this").click(function () {
-                $("#confim-modal-venture_payment").text("Are you sure you want to delete this payment?");
-                $("#yes-no-modal-venture_payment").modal('show');
-            });
-            confirm_venture_payment(function (confirm) {
-                //x var request_action = $(obj).text().trim();
-                if (confirm) {
-                    document.getElementById('venture-delete').click();
-                } else {
-                    $("#yes-no-modal-venture_payment").hide();
-                }
-            });
-            var submit_now = false;
-            $('form').submit(function (e) {
-                console.log(" submitting.... form");
-                console.log("submit_now: "+submit_now)
-                if (submit_now == false) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                // or return false;
-            });
-
-            var post_data = "{{post_data}}";
-            var maximum_deposit = parseFloat("{{limits.maximum_deposit}}");
-
-            var minimum_deposit = "{{limits.minimum_deposit}}"; // min amount to deposit for saving account
-            var transaction_type = "{{venture.request_action}}";
-            console.log("transaction_type:" + transaction_type);
-            keys['CC-BALANCE'] = parseFloat("{{asset_balance.cc_balance}}".replace(',', ''));
-
-            console.log("minimum_deposit:" + keys['CC-BALANCE']);
-
-            keys["SOURCE"] = 'K';
-            ID_Info.ON_SEARCH = false; // use stop the excessive searching
-            ID_Info.id = "";
-
-            $("#id_cc").prop("step", "any");
-            $("#id_amount").prop("step", "any");
-            $(".source-cash").trigger("click");
-            // add class names to form fields
-            $("#id_date_entered").prop("class", "form-control");
-            $("#id_saving").prop("class", "form-control");
-            $("#id_amount").prop("min", minimum_deposit);
-            $("#id_amount").prop("max", maximum_deposit);
-            if (minimum_deposit > keys['CC-BALANCE']) {
-                keys['CC-BALANCE'] = minimum_deposit;
-            }
-            $("#id_cc").prop("min", minimum_deposit);
-            $("#id_cc").prop("max", keys['CC-BALANCE']);
-            ///end: set the max and min properties of saving/deposit box
-            $("#id_cc").prop("class", "form-control");
-            $("#id_percent").prop("step", "any");
-
-            $("#btn-agree").click(function () {
-                //submit_now =true;
-                console.log("btn agree");
-                customer_id = $("#customer_id").val();
-                pwd = $("#customer-password").val();
-                search_member(customer_id,pwd,"manual")
-            });
-            function search_member(customer_id, qrpassword,code) {
-                console.log("on search_member func");
-                console.log("customer_id: "+customer_id)
-                console.log("qrpassword: "+qrpassword)
-                customer_id = customer_id.trim().toUpperCase();
-                var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
-
-                // var match = customer_id.match($regexname);
-                // if (match == null || match != customer_id) {
-                //     console.log("not match");
-                //     if (!ID_Info.is_name_blank) {
-                //         $("#customer-name").val("");
-                //         ID_Info.is_name_blank = true;
-                //     }
-                //     return
-                // }
-
-                if (ID_Info.id == customer_id) {
-                    console.log(" equal...");
-                    return;
-
-                } else {
-                    console.log("not equal...");
-                }
-                keys["PREVIOUS-INPUT"] = "";
-                ID_Info.id = customer_id;
-                var data = {}
-                ID_Info.ON_SEARCH = true;
-                data['customer_id'] = customer_id;
-                if (code == "qrcode") {
-                    data['from'] = 'qrcode';
-                    //data['qrpassword'] = qrpassword;
-                } else {
-                    data['password'] = qrpassword;
-                    data['from'] = 'manual';
-                }
-                console.log("reading now..:"+ data['from']);
-                $.ajax({
-                    type: 'GET',
-                    url: "{% url 'fx:get_customer_details_url' %}",
-                    data: data,
-                    dataType: "json",
-                    success: function (response) {
-                        ID_Info.ON_SEARCH = false;
-                        if (response['data'] == "Success") {
-                            //added 4
-                            $("#venture-payment-failed-alert").hide();
-                            $("#login").modal('hide');
-                            $("#venture-payment-transaction-modal").modal('show');
-
-                            name = response["member_info"]['name'].toUpperCase();
-                            $("#customer-name").val(name); //change to: appear in summary form
-                            cm_balance = response["cm_balance"]
-                            if (minimum_deposit > cm_balance) {
-                                cm_balance = minimum_deposit;
-                            }
-                            $("#id_cc").prop("max", cm_balance);
-
-                            
-                            customer_id = response["member_info"]["member_id"];
-                            console.log("member_info..")
-                            console.log(response["member_info"])
-                            ID_Info.id = customer_id;
-                            ID_Info.is_name_blank = false;
-                            $("#review-venture-balance-txt").val(cm_balance);
-                            $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
-                            $("#review-venture-customer-txt").val(name); //change to: appear in summary form
-                            $("#venture-total-txt").focus();
-                        } else {
-                            ID_Info.id = "";
-                            ID_Info.is_name_blank = true;
-                            $("#venture-customer_id-txt").focus();
-                            $("#customer-name").val("");
-                            message = response['message'];
-                            //if (message == "xusername") {
-                                //added 4
-                            //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
-                            //} else {
-                                //added 4
-                                $("#authenticate-alert").text("Message: " + message);
-                          //  }
-                            //added 4
-                            $("#authenticate-alert").show();
-
-                        }
-
-                    },
-                    error: function (response) {
-                        ID_Info.ON_SEARCH = false;
-                        cancel_dialog_hidden = false;
-                        console.log("error reach:");
-                        // console.log(response);
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    console.log("submitting......");
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
                     }
-                });
-            }
-            $("input").keyup(function (event) {
-                if (event.target.id == "venture-customer_id-txt" || event.which == 13 && keys["PREVIOUS-INPUT"] == "venture-customer_id") {
-                    console.log("inside event");
-                    if (keys["PREVIOUS-INPUT"] == "") {
-                        keys["PREVIOUS-INPUT"] = "venture-customer_id";
-                    }
-                    enter_key = false;
-                    if (event.which === 13) {
-                        customer_id = $("#venture-customer_id-txt").val().trim().toUpperCase();
-                        enter_key = true;
-                        console.log("inside event.which: 13");
-                    } else {
-                        customer_id = $(this).val().trim().toUpperCase();
-                    }
-                    len = customer_id.length;
-                    if (len > 11) {
-                        return;
-                    }
-                    // if (enter_key || len >= 8 && !ID_Info.ON_SEARCH && ID_Info.id != customer_id) {
-                    //     search_member(customer_id);
-
-                    // }
-                } else {
-                    keys["PREVIOUS-INPUT"] = "";
-                }
-
+                    form.classList.add('was-validated');
+                }, false);
             });
+        }, false);
+    })();
+
+    $(document).ready(function () {
 
 
-
-            $("#venture-total-txt").on("keyup", function () {
-                var percent = parseFloat($("#percent-drop").text());
-                if (percent <= 0 || percent > 100 || isNaN(percent)) {
-                    percent = 95;
-                    $("#percent-drop").text(percent + "%");
-                }
-                total_cost = parseFloat($(this).val());
-                if (isNaN(total_cost)) {
-                    total_cost = 0;
-                }
-                var amount = total_cost * ((percent / 100))   //Math.round(total_cost * ((cc_percent / 100)));
-                amount = amount.toFixed(2).replace('.00', '');
-                $("#id_amount").val(amount);
-                cc = total_cost - amount;
-                $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
-                if (keys["SOURCE"] != 'W') {  //cash: K
-                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                    $("#venture-total_owing-txt").val("P " + amount);
-                } else {
-                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-                }
-            });
-
-            $("#id_amount").on("keyup", function () {
-                console.log(" #id_amount is on");
-                amount = parseFloat($(this).val());
-                if (isNaN(amount)) {
-                    amount = 0;
-                }
-                total_cost = parseFloat($("#venture-total-txt").val());
-                var cc = total_cost - amount;  // Math.round(total_cost - amount);
-                cc = cc.toFixed(2).replace('.00', '');
-                $("#id_cc").val(cc);
-                percent = (amount * 100) / total_cost // Math.round((amount * 100) / total_cost);
-                if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
-                    percent = 95;
-                    $("#percent-drop").text(percent + "%");
-                }
-                $("#id_percent").val(percent.toFixed(2))
-                percent = percent.toFixed(2).replace('.00', '');
-                if (isNaN(percent)) {
-                    percent = 0;
-                }
-                $("#percent-drop").text(percent + "%");
-                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                if (keys["SOURCE"] != 'W') {  //cash: K
-                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                    if (amount > 0) {
-                        $("#venture-total_owing-txt").val("P " + amount);
-                    } else {
-                        $("#venture-total_owing-txt").val("");
-                    }
-                } else {
-
-                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-                }
+        // this is document ready start
 
 
-            });
-            $("#id_cc").on("keyup", function () {
-                var percent = parseFloat($("#percent-drop").text());
-                if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
-                    percent = 95;
-                    console.log("changing percent");
-                    $("#percent-drop").text(percent + "%");
-                }
-                cc = parseFloat($(this).val());
-                total_cost = parseFloat($("#venture-total-txt").val());
-                var amount = 0; //Math.round(total_cost - cc);
-                amount = total_cost - cc;
-                percent = (amount * 100) / total_cost; /// Math.round((amount * 100) / total_cost);
-                if (isNaN(percent)) {
-                    percent = 0
-                }
-                if (isNaN(amount)) {
-                    amount = 0
-                }
-                $("#id_amount").val(amount);
-                $("#id_percent").val(percent.toFixed(2))
-                percent = percent.toFixed(2).replace('.00', '');
-                $("#percent-drop").text(percent + "%");
-                if (keys["SOURCE"] != 'W') {  //cash: K
-                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                    $("#venture-total_owing-txt").val("P " + amount);
-                } else {
+        // qrcode scanner
 
-                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-                }
-            });
+        // let scanner = new Instascan.Scanner(
+        //     {
+        //         video: document.getElementById('preview')
+        //     }
+        // );
+        // scanner.addListener('scan', function (content) {
 
+        //     //x document.getElementById("venture-customer_id-txt").value = content;
+        //     //x $("#venture-customer_id-txt").val(username);
+        //     search_member(content, "","qrcode");
+        //     beep();
+        //     //xThis is working program
+        //     //x alert('SucceessDo you want to open this page?: ' + content);
+        //     console.log("code: " + content)
+        //     //x window.open(content, "_blank");
+        // });
 
-            $(".dropdown-menu button.cc-percent").click(function () {
-
-                var new_percentage = $(this).text(); //.replace(" Percent","%");
-                console.log("..percent: " + new_percentage);
-                $("#percent-drop").text(new_percentage);
-                $("#id_percent").val(parseFloat(new_percentage))
-                $("#venture-total-txt").trigger("keyup");
-            });
-
-            if (post_data == "True") {
-
-
-                $('#venture-customer_id-txt').css("background-color", "transparent");
-                $('#venture-total-txt').css("background-color", "transparent");
-                $('#id_cc').css("background-color", "transparent");
-                $('#id_amount').css("background-color", "transparent");
-                $('#percent-drop').css("background-color", "transparent");
-                $('#source-cash-drop').css("background-color", "transparent");
-                $('#venture-customer_id-txt').prop("disabled", true);
-
-                $('#venture-total-txt').prop("disabled", true);
-                $('#id_cc').prop("disabled", true);
-                $('#id_amount').prop("disabled", true);
-                $('#percent-drop').prop("disabled", true);
-                $('#source-cash-drop').prop("disabled", true);
-            }
-
-            // $(".role_type").click(function () {
-            //     var text = $(this).text().trim();
-            //     $("#role_type-drop").text(text);
-            //     if (text.trim() == "BUYER") {
-            //         role_type = "B";
-            //         $("#venture-total_owing-lbl").text("BUYER PAYS");
-            //         $("#review-total_owing-txt").text("BUYER PAYS");
-            //     } else {
-
-            //         role_type = "S";
-            //         $("#venture-total_owing-lbl").text("SELLER RECEIVES");
-            //         $("#review-total_owing-txt").text("SELLER RECEIVES");
-            //     }
-            //     $("#id_role_type").val(role_type);
-
-            // })
-
-            $(".source-cash").click(function () {
-                var text = $(this).text().trim();
-                $("#source-cash-drop").text(text);
-                var max = 0
-                account_name = ""
-                if (text == "CASH") {
-                    source_type = "K";
-                    // max = 10000;
-                    account_name = "CASH";
-
-                } else {
-                    source_type = "W";
-                    account_name = "WALLET";
-                    keys['CC-BALANCE']
-
-                }
-                keys["SOURCE"] = source_type;
-                $("#id_source_type").val(source_type);
-
-                var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
-                console.log("account:" + previous_account_name);
-                if (previous_account_name != "CASH") {
-
-                    $("#account-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
-                    $("#financial-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
-                }
-                if (account_name != "CASH") {
-                    $("#account-assets-table tr").find('#' + account_name).attr("class", "selected_account");
-                    $("#financial-table tr").find('#' + account_name).attr("class", "selected_account");
-                }
-                keys["previous-selected-account"] = account_name;
-                if (keys["SOURCE"] != 'W') {  //cash: K
-                    amount = $("#id_amount").val();
-                    console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                    $("#venture-total_owing-txt").val("P " + amount);
-                } else {
-                    $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-                }
-
-            });
-
-            $(".edit_button").click(function () {
-                $('.submit').prop("disabled", false);
-                $(".alert").hide();
-                $(this).hide();
-            });
-            $("#id_date_entered").css("background-color", "transparent");
-            // $("#venture-submit-btn").hide();
-            $("#review-venture-submit-btn").click(function () {
-                submit_now = true;
-                console.log("submit review-venture-submit-btn....");
-                $("#venture-submit-btn").trigger("click");
-            });
-
-
-            $("#venture-done").click(function () {
-                var form = document.querySelector(".needs-validation");
-                var reportVal = form.checkValidity();
-                if (reportVal == false) {
-
-                    $("#venture-payment-failed-alert").show();
-                    form.reportValidity();
-                    return;
-                }
-                console.log("success ito");
-
-                $("#login").modal('show');
-
-                $("#review-venture-customer-txt").val($("#customer-name").val()); // for review form
-                $("#review-venture-date-txt").val($("#venture-date-txt").val());
-                $("#review-venture-customer_id-txt").val($("#venture-customer_id-txt").val());
-                $("#review-venture-total-txt").val($("#venture-total-txt").val());
-                $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
-                $("#review-venture-cc-txt").val($("#id_cc").val());
-                $("#review-venture-amount-txt").val($("#id_amount").val());
-                $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
-                $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
-                $("#review-venture-description-txt").val($("#venture-description-txt").val().trim());
-
-                $("#venture-payment-failed-alert").hide();
-
-            });
+        // Instascan.Camera.getCameras().then(function (cameras) {
+        //     if (cameras.length > 0) {
+        //         scanner.start(cameras[0]);
+        //     } else {
+        //         console.error("Please enable Camera!");
+        //     }
+        // });
+        function beep() {
+            (new
+                Audio(
+                    "data:audio/wav;base64,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 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU="
+                )).play();
+        }
+        // end qrcode scanner
+        $("#venture-delete-this").click(function () {
+            $("#confim-modal-venture_payment").text("Are you sure you want to delete this payment?");
+            $("#yes-no-modal-venture_payment").modal('show');
         });
+        confirm_venture_payment(function (confirm) {
+            //x var request_action = $(obj).text().trim();
+            if (confirm) {
+                document.getElementById('venture-delete').click();
+            } else {
+                $("#yes-no-modal-venture_payment").hide();
+            }
+        });
+        var submit_now = false;
+        $('form').submit(function (e) {
+            console.log(" submitting.... form");
+            console.log("submit_now: " + submit_now)
+            if (submit_now == false) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            // or return false;
+        });
+
+        var post_data = "{{post_data}}";
+        var maximum_deposit = parseFloat("{{limits.maximum_deposit}}");
+
+        var minimum_deposit = "{{limits.minimum_deposit}}"; // min amount to deposit for saving account
+        var transaction_type = "{{venture.request_action}}";
+        console.log("transaction_type:" + transaction_type);
+        keys['CC-BALANCE'] = parseFloat("{{asset_balance.cc_balance}}".replace(',', ''));
+
+        console.log("minimum_deposit:" + keys['CC-BALANCE']);
+
+        keys["SOURCE"] = 'K';
+        ID_Info.ON_SEARCH = false; // use stop the excessive searching
+        ID_Info.id = "";
+
+        $("#id_cc").prop("step", "any");
+        $("#id_amount").prop("step", "any");
+        $(".source-cash").trigger("click");
+        // add class names to form fields
+        $("#id_date_entered").prop("class", "form-control");
+        $("#id_saving").prop("class", "form-control");
+        $("#id_amount").prop("min", minimum_deposit);
+        $("#id_amount").prop("max", maximum_deposit);
+        if (minimum_deposit > keys['CC-BALANCE']) {
+            keys['CC-BALANCE'] = minimum_deposit;
+        }
+        $("#id_cc").prop("min", minimum_deposit);
+        $("#id_cc").prop("max", keys['CC-BALANCE']);
+        ///end: set the max and min properties of saving/deposit box
+        $("#id_cc").prop("class", "form-control");
+        $("#id_percent").prop("step", "any");
+
+        $("#btn-agree").click(function () {
+            //submit_now =true;
+            console.log("btn agree");
+            customer_id = $("#customer_id").val();
+            pwd = $("#customer-password").val();
+            search_member(customer_id, pwd, "manual")
+        });
+        function search_member(customer_id, qrpassword, code) {
+            console.log("on search_member func");
+            console.log("customer_id: " + customer_id)
+            console.log("qrpassword: " + qrpassword)
+            customer_id = customer_id.trim().toUpperCase();
+            var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
+
+            // var match = customer_id.match($regexname);
+            // if (match == null || match != customer_id) {
+            //     console.log("not match");
+            //     if (!ID_Info.is_name_blank) {
+            //         $("#customer-name").val("");
+            //         ID_Info.is_name_blank = true;
+            //     }
+            //     return
+            // }
+
+            if (ID_Info.id == customer_id) {
+                console.log(" equal... not reading");
+                return;
+
+            } else {
+                console.log("not equal...");
+            }
+            keys["PREVIOUS-INPUT"] = "";
+            ID_Info.id = customer_id;
+            var data = {}
+            ID_Info.ON_SEARCH = true;
+            data['customer_id'] = customer_id;
+            if (code == "qrcode") {
+                data['from'] = 'qrcode';
+                //data['qrpassword'] = qrpassword;
+            } else {
+                data['password'] = qrpassword;
+                data['from'] = 'manual';
+            }
+            console.log("reading now..:" + data['from']);
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:get_customer_details_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    ID_Info.ON_SEARCH = false;
+                    if (response['data'] == "Success") {
+                        //added 4
+                        $("#venture-payment-failed-alert").hide();
+                        $("#login").modal('hide');
+                        $("#venture-payment-transaction-modal").modal('show');
+
+                        name = response["member_info"]['name'].toUpperCase();
+                        $("#customer-name").val(name); //change to: appear in summary form
+                        cm_balance = response["cm_balance"]
+                        if (minimum_deposit > cm_balance) {
+                            cm_balance = minimum_deposit;
+                        }
+                        $("#id_cc").prop("max", cm_balance);
+
+
+                        customer_id = response["member_info"]["member_id"];
+                        console.log("member_info..")
+                        console.log(response["member_info"])
+                        ID_Info.id = customer_id;
+                        ID_Info.is_name_blank = false;
+                        $("#review-venture-balance-txt").val(cm_balance);
+                        $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
+                        $("#review-venture-customer-txt").val(name); //change to: appear in summary form
+                        $("#venture-total-txt").focus();
+                    } else {
+                        ID_Info.id = "";
+                        ID_Info.is_name_blank = true;
+                        $("#venture-customer_id-txt").focus();
+                        $("#customer-name").val("");
+                        message = response['message'];
+                        //if (message == "xusername") {
+                        //added 4
+                        //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
+                        //} else {
+                        //added 4
+                        $("#authenticate-alert").text("Message: " + message);
+                        //  }
+                        //added 4
+                        $("#authenticate-alert").show();
+
+                    }
+
+                },
+                error: function (response) {
+                    ID_Info.ON_SEARCH = false;
+                    cancel_dialog_hidden = false;
+                    console.log("error reach:");
+                    // console.log(response);
+                }
+            });
+        }
+//23
+        $('input[type=checkbox][name=checkOther]').change(function () {
+            if (this.checked) {
+                $("#venture-description-txt").show();
+
+            } else {
+                $("#venture-description-txt").hide();
+            }
+
+        });
+
+        $("input").keyup(function (event) {
+            if (event.target.id == "venture-customer_id-txt" || event.which == 13 && keys["PREVIOUS-INPUT"] == "venture-customer_id") {
+                console.log("inside event");
+                if (keys["PREVIOUS-INPUT"] == "") {
+                    keys["PREVIOUS-INPUT"] = "venture-customer_id";
+                }
+                enter_key = false;
+                if (event.which === 13) {
+                    customer_id = $("#venture-customer_id-txt").val().trim().toUpperCase();
+                    enter_key = true;
+                    console.log("inside event.which: 13");
+                } else {
+                    customer_id = $(this).val().trim().toUpperCase();
+                }
+                len = customer_id.length;
+                if (len > 11) {
+                    return;
+                }
+                // if (enter_key || len >= 8 && !ID_Info.ON_SEARCH && ID_Info.id != customer_id) {
+                //     search_member(customer_id);
+
+                // }
+            } else {
+                keys["PREVIOUS-INPUT"] = "";
+            }
+
+        });
+
+
+
+        $("#venture-total-txt").on("keyup", function () {
+            var percent = parseFloat($("#percent-drop").text());
+            if (percent <= 0 || percent > 100 || isNaN(percent)) {
+                percent = 95;
+                $("#percent-drop").text(percent + "%");
+            }
+            total_cost = parseFloat($(this).val());
+            if (isNaN(total_cost)) {
+                total_cost = 0;
+            }
+            var amount = total_cost * ((percent / 100))   //Math.round(total_cost * ((cc_percent / 100)));
+            amount = amount.toFixed(2).replace('.00', '');
+            $("#id_amount").val(amount);
+            cc = total_cost - amount;
+            $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
+            if (keys["SOURCE"] != 'W') {  //cash: K
+                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                $("#venture-total_owing-txt").val("P " + amount);
+            } else {
+                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+            }
+        });
+
+        $("#id_amount").on("keyup", function () {
+            console.log(" #id_amount is on");
+            amount = parseFloat($(this).val());
+            if (isNaN(amount)) {
+                amount = 0;
+            }
+            total_cost = parseFloat($("#venture-total-txt").val());
+            var cc = total_cost - amount;  // Math.round(total_cost - amount);
+            cc = cc.toFixed(2).replace('.00', '');
+            $("#id_cc").val(cc);
+            percent = (amount * 100) / total_cost // Math.round((amount * 100) / total_cost);
+            if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+                percent = 95;
+                $("#percent-drop").text(percent + "%");
+            }
+            $("#id_percent").val(percent.toFixed(2))
+            percent = percent.toFixed(2).replace('.00', '');
+            if (isNaN(percent)) {
+                percent = 0;
+            }
+            $("#percent-drop").text(percent + "%");
+            console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+            if (keys["SOURCE"] != 'W') {  //cash: K
+                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                if (amount > 0) {
+                    $("#venture-total_owing-txt").val("P " + amount);
+                } else {
+                    $("#venture-total_owing-txt").val("");
+                }
+            } else {
+
+                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+            }
+
+
+        });
+        $("#id_cc").on("keyup", function () {
+            var percent = parseFloat($("#percent-drop").text());
+            if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+                percent = 95;
+                console.log("changing percent");
+                $("#percent-drop").text(percent + "%");
+            }
+            cc = parseFloat($(this).val());
+            total_cost = parseFloat($("#venture-total-txt").val());
+            var amount = 0; //Math.round(total_cost - cc);
+            amount = total_cost - cc;
+            percent = (amount * 100) / total_cost; /// Math.round((amount * 100) / total_cost);
+            if (isNaN(percent)) {
+                percent = 0
+            }
+            if (isNaN(amount)) {
+                amount = 0
+            }
+            $("#id_amount").val(amount);
+            $("#id_percent").val(percent.toFixed(2))
+            percent = percent.toFixed(2).replace('.00', '');
+            $("#percent-drop").text(percent + "%");
+            if (keys["SOURCE"] != 'W') {  //cash: K
+                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                $("#venture-total_owing-txt").val("P " + amount);
+            } else {
+
+                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+            }
+        });
+
+
+        $(".dropdown-menu button.cc-percent").click(function () {
+
+            var new_percentage = $(this).text(); //.replace(" Percent","%");
+            console.log("..percent: " + new_percentage);
+            $("#percent-drop").text(new_percentage);
+            $("#id_percent").val(parseFloat(new_percentage))
+            $("#venture-total-txt").trigger("keyup");
+        });
+
+        if (post_data == "True") {
+
+
+            $('#venture-customer_id-txt').css("background-color", "transparent");
+            $('#venture-total-txt').css("background-color", "transparent");
+            $('#id_cc').css("background-color", "transparent");
+            $('#id_amount').css("background-color", "transparent");
+            $('#percent-drop').css("background-color", "transparent");
+            $('#source-cash-drop').css("background-color", "transparent");
+            $('#venture-customer_id-txt').prop("disabled", true);
+
+            $('#venture-total-txt').prop("disabled", true);
+            $('#id_cc').prop("disabled", true);
+            $('#id_amount').prop("disabled", true);
+            $('#percent-drop').prop("disabled", true);
+            $('#source-cash-drop').prop("disabled", true);
+        }
+
+        // $(".role_type").click(function () {
+        //     var text = $(this).text().trim();
+        //     $("#role_type-drop").text(text);
+        //     if (text.trim() == "BUYER") {
+        //         role_type = "B";
+        //         $("#venture-total_owing-lbl").text("BUYER PAYS");
+        //         $("#review-total_owing-txt").text("BUYER PAYS");
+        //     } else {
+
+        //         role_type = "S";
+        //         $("#venture-total_owing-lbl").text("SELLER RECEIVES");
+        //         $("#review-total_owing-txt").text("SELLER RECEIVES");
+        //     }
+        //     $("#id_role_type").val(role_type);
+
+        // })
+
+        $(".source-cash").click(function () {
+            var text = $(this).text().trim();
+            $("#source-cash-drop").text(text);
+            var max = 0
+            account_name = ""
+            if (text == "CASH") {
+                source_type = "K";
+                // max = 10000;
+                account_name = "CASH";
+
+            } else {
+                source_type = "W";
+                account_name = "WALLET";
+                keys['CC-BALANCE']
+
+            }
+            keys["SOURCE"] = source_type;
+            $("#id_source_type").val(source_type);
+
+            var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
+            console.log("account:" + previous_account_name);
+            if (previous_account_name != "CASH") {
+
+                $("#account-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+                $("#financial-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+            }
+            if (account_name != "CASH") {
+                $("#account-assets-table tr").find('#' + account_name).attr("class", "selected_account");
+                $("#financial-table tr").find('#' + account_name).attr("class", "selected_account");
+            }
+            keys["previous-selected-account"] = account_name;
+            if (keys["SOURCE"] != 'W') {  //cash: K
+                amount = $("#id_amount").val();
+                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+                $("#venture-total_owing-txt").val("P " + amount);
+            } else {
+                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+            }
+
+        });
+
+        $(".edit_button").click(function () {
+            $('.submit').prop("disabled", false);
+            $(".alert").hide();
+            $(this).hide();
+        });
+        $("#id_date_entered").css("background-color", "transparent");
+        // $("#venture-submit-btn").hide();
+        $("#review-venture-submit-btn").click(function () {
+            submit_now = true;
+            console.log("submit review-venture-submit-btn....");
+            $("#venture-submit-btn").trigger("click");
+        });
+
+
+        $("#venture-done").click(function () {
+            var form = document.querySelector(".needs-validation");
+            var reportVal = form.checkValidity();
+            if (reportVal == false) {
+
+                $("#venture-payment-failed-alert").show();
+                form.reportValidity();
+                return;
+            }
+            console.log("success ito");
+
+            $("#login").modal('show');
+
+            $("#review-venture-customer-txt").val($("#customer-name").val()); // for review form
+            $("#review-venture-date-txt").val($("#venture-date-txt").val());
+            $("#review-venture-customer_id-txt").val($("#venture-customer_id-txt").val());
+            $("#review-venture-total-txt").val($("#venture-total-txt").val());
+            $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
+            $("#review-venture-cc-txt").val($("#id_cc").val());
+            $("#review-venture-amount-txt").val($("#id_amount").val());
+            $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
+            $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
+            $("#review-venture-description-txt").val($("#venture-description-txt").val().trim());
+
+            $("#venture-payment-failed-alert").hide();
+
+        });
+    });
 
 </script>
