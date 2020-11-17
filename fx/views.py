@@ -242,7 +242,7 @@ def get_customer_details(request):
                     
           
 
-            member_info = {"member_id":member_qs.member_id,"name":member_qs.name}
+            member_info = {"member_id":member_qs.member_id,"name":member_qs.name,"id": member_qs.id}
             print(f"member_info:{member_info}")
             cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
             return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":cm_balance}, status = 200)
@@ -538,7 +538,7 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
     # return
 
 
-
+#cuv
 def create_update_venture(request,member_id,venture_id,request_action ):
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -630,7 +630,10 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         
         source_type  = request.POST.get('source_type','K') 
         note = request.POST.get("venture_note", "").strip()
-       # print(f"...seller:{seller}, customer:{customer}..note:{note}, amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
+
+        print(f".......note: {note}")
+        print(f"...seller:{seller}, customer:{customer}..note:{note},cc: {cc} ,amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
+         
         running_balance =-1
         old_amount = 0
         #+
@@ -676,6 +679,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                     messages.error(request, f"Message: Technical problem encountered while saving record.")
 
         cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
+        
         if  len(cc.strip()) > 0 and float(cc) > cc_running_balance + old_cc:
                     all_valid = False
                     if running_balance > 2000:
@@ -800,6 +804,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         context = {'asset_balance':asset_balance,'venture': ventureForm,'limits':limits,'customer_info':customer_info,'member_info':member_info}   
                         return render(request, 'fx/venture/venture.html', context)
         else: #venture_id == 0:              ----  P O S T  ----
+                    
                     if  request_action == "venture":
                             ventureForm = VentureForm(request.POST)
                             form_valid = ventureForm.is_valid()
@@ -816,6 +821,8 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         source_type = ventureForm.cleaned_data['source_type']
                         cc =  ventureForm.cleaned_data['cc']
                         percent = ventureForm.cleaned_data['percent']
+                        # print(f".......")
+                        # return
                         #+
                         if request_action == "trade":
                             role_type = ventureForm.cleaned_data['role_type']
