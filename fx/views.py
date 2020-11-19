@@ -490,7 +490,7 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
                         print(f"loan app note: {e}")
         else:     
                         ventureForm.note =""
-        
+        print(f"====venture_qs.note_id: {venture_qs.note_id},, ventureForm.note: {ventureForm.note}  ")
         context = { 
                 'post_data':True,
                    #id = member_id
@@ -538,7 +538,8 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
     # return
 
 
-#cuv
+
+#todo 
 def create_update_venture(request,member_id,venture_id,request_action ):
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -600,10 +601,10 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                             ventureForm.note =""
                 else:  # NEW VENTURE 
                     if  request_action == "venture":
-                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
+                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
                             ventureForm = VentureForm(initial =initial_data)
                     else:
-                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} #note: new loan app 
+                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} 
                             ventureForm = TradeForm(initial =initial_data)
                     
                    # ventureForm = VentureForm(initial =initial_data)

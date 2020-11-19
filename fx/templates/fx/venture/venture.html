@@ -225,7 +225,7 @@ crossorigin="anonymous"></script> -->
 
                 <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
-                    <div>
+                    <div hidden>
                         {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
                         {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
@@ -568,6 +568,17 @@ crossorigin="anonymous"></script> -->
     })();
 
     $(document).ready(function () {
+        var post_data = "{{post_data}}";
+        desc = $("#venture-description-txt").val().trim();
+        console.log("desc==="+ desc);
+           
+           if (desc.length > 0 && post_data != "True" )  {
+               console.log("pass ready stateement");
+               console.log("pass ready stateement,post_data:" +post_data);
+
+              trim_description(desc);
+           }
+
 
 
         // this is document ready start
@@ -641,7 +652,7 @@ crossorigin="anonymous"></script> -->
             // or return false;
         });
 
-        var post_data = "{{post_data}}";
+        
         var maximum_deposit = parseFloat("{{limits.maximum_deposit}}");
 
         var minimum_deposit = "{{limits.minimum_deposit}}"; // min amount to deposit for saving account
@@ -946,44 +957,93 @@ crossorigin="anonymous"></script> -->
             $('#source-cash-drop').prop("disabled", true);
 
             desc = $("#venture-description-txt").val().trim();    //prop("desc");
-           
+            console.log("_post data: "+ desc);
             if (desc.length > 0) {
-               
-                console.log("left-code:" + parseInt(desc));
-                console.log("desc:"+desc);
-                code = parseInt(desc);
-                if (code & 8) {
-                    $("#checkGrocery").prop("checked",true);
-
-                }
-                if (code & 4) {
-                    $("#checkLoad").prop("checked",true);
-
-                }
-                if (code & 2) {
-                    $("#checkServices").prop("checked",true);
-                    console.log("code 2 : yes");
-
-                }
-                if (code & 1) {
-                    $("#venture-description-txt").val(desc.substring(3));
-                    $("#checkOther").prop("checked",true);
-                    $("#venture-description-txt").show();
-
-                } else {
-                    $("#venture-description-txt").val("");
-                    $("#venture-description-txt").hide();
-                }
-
-
-
-
-
-
+               trim_description(desc);
             }
 
 
         }
+
+    
+        //  desc = $("#venture-description-txt").val().trim();    //prop("desc");
+           
+        //     if (desc.length > 0) {
+               
+        //         console.log("left-code:" + parseInt(desc));
+        //         console.log("desc:"+desc);
+        //         code = parseInt(desc);
+        //         if (code & 8) {
+        //             $("#checkGrocery").prop("checked",true);
+
+        //         }
+        //         if (code & 4) {
+        //             $("#checkLoad").prop("checked",true);
+
+        //         }
+        //         if (code & 2) {
+        //             $("#checkServices").prop("checked",true);
+        //             console.log("code 2 : yes");
+
+        //         }
+        //         if (code & 1) {
+        //             $("#venture-description-txt").val(desc.substring(3));
+        //             $("#checkOther").prop("checked",true);
+        //             $("#venture-description-txt").show();
+
+        //         } else {
+        //             $("#venture-description-txt").val("");
+        //             $("#venture-description-txt").hide();
+        //         }
+
+
+        //     }
+    
+        function trim_description(desc){
+
+
+            
+           if (desc.length > 0) {
+              
+               console.log("left-code:" + parseInt(desc));
+               console.log("desc:"+desc);
+               code = parseInt(desc);
+               if (code & 8) {
+                   $("#checkGrocery").prop("checked",true);
+
+               }
+               if (code & 4) {
+                   $("#checkLoad").prop("checked",true);
+
+               }
+               if (code & 2) {
+                   $("#checkServices").prop("checked",true);
+                   console.log("code 2 : yes");
+
+               }
+
+               console.log("post_data ==  true"+ code)
+               if (code & 1) {
+                 $("#venture-description-txt").val(desc.substring(3));
+                   $("#checkOther").prop("checked",true);
+                   $("#venture-description-txt").show();
+
+               } else {
+                   $("#venture-description-txt").val("");
+                   $("#venture-description-txt").hide();
+               }
+               $("#venture-description-txt").show();
+
+
+
+
+
+
+           }
+        }
+
+
+            
 
         // $(".role_type").click(function () {
         //     var text = $(this).text().trim();
