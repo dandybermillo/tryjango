@@ -569,15 +569,7 @@ crossorigin="anonymous"></script> -->
 
     $(document).ready(function () {
         var post_data = "{{post_data}}";
-        desc = $("#venture-description-txt").val().trim();
-        console.log("desc==="+ desc);
-           
-           if (desc.length > 0 && post_data != "True" )  {
-               console.log("pass ready stateement");
-               console.log("pass ready stateement,post_data:" +post_data);
-
-              trim_description(desc);
-           }
+       
 
 
 
@@ -938,6 +930,9 @@ crossorigin="anonymous"></script> -->
             $("#venture-total-txt").trigger("keyup");
         });
 
+
+
+        desc = $("#venture-description-txt").val().trim();
         if (post_data == "True") {
      //   if (true) {
 
@@ -956,11 +951,26 @@ crossorigin="anonymous"></script> -->
             $('#percent-drop').prop("disabled", true);
             $('#source-cash-drop').prop("disabled", true);
 
-            desc = $("#venture-description-txt").val().trim();    //prop("desc");
+            // desc = $("#venture-description-txt").val().trim();    //prop("desc");
             console.log("_post data: "+ desc);
             if (desc.length > 0) {
                trim_description(desc);
             }
+
+
+        }else
+        {
+
+            
+        console.log("desc==="+ desc);
+           
+           if (desc.length > 0 )  {
+               console.log("pass ready stateement");
+               console.log("pass ready stateement,post_data:" +post_data);
+
+              trim_description(desc);
+           }
+
 
 
         }
@@ -1032,7 +1042,7 @@ crossorigin="anonymous"></script> -->
                    $("#venture-description-txt").val("");
                    $("#venture-description-txt").hide();
                }
-               $("#venture-description-txt").show();
+             //  $("#venture-description-txt").show();
 
 
 
