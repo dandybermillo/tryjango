@@ -539,8 +539,13 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
 
 
 
-#todo 
+#todo.
+@login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
+    
+    if request.user.is_staff and request.user.is_active:
+        print (f"user: {request.user}")
+    
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
     Model = apps.get_model('fx', model_name)
@@ -2836,7 +2841,8 @@ def create_update_member(request, id=id):
                             print("...newpassword:",newPassword)
                             user = User.objects.create_user( newUsername, email = None,password= newPassword)
                             pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = newPassword )
-                            
+                            print(f"newUsername:{newUsername}")
+                            return
                             print("saving new member(valid).......")
                             qs = memberForm.save(commit= False)
                             qs.user = user   #todo unquote 'user'
