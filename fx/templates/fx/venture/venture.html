@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <!-- <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
     <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -153,7 +153,24 @@ crossorigin="anonymous"></script> -->
 
 <body>
 
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {% if user.is_authenticated and user.is_staff %}
 
+         
+          <a  style= "color:#fff;font-weight: bold;" > {{ user.username|upper}}</a>
+          {% endif %}
+        </nav>
+      </div>
 
 
     <div id="login" class="modal fade" role="dialog">
@@ -578,30 +595,30 @@ crossorigin="anonymous"></script> -->
 
         // qrcode scanner
 
-        // let scanner = new Instascan.Scanner(
-        //     {
-        //         video: document.getElementById('preview')
-        //     }
-        // );
-        // scanner.addListener('scan', function (content) {
+        let scanner = new Instascan.Scanner(
+            {
+                video: document.getElementById('preview')
+            }
+        );
+        scanner.addListener('scan', function (content) {
 
-        //     //x document.getElementById("venture-customer_id-txt").value = content;
-        //     //x $("#venture-customer_id-txt").val(username);
-        //     search_member(content, "","qrcode");
-        //     beep();
-        //     //xThis is working program
-        //     //x alert('SucceessDo you want to open this page?: ' + content);
-        //     console.log("code: " + content)
-        //     //x window.open(content, "_blank");
-        // });
+            //x document.getElementById("venture-customer_id-txt").value = content;
+            //x $("#venture-customer_id-txt").val(username);
+            search_member(content, "","qrcode");
+            beep();
+            //xThis is working program
+            //x alert('SucceessDo you want to open this page?: ' + content);
+            console.log("code: " + content)
+            //x window.open(content, "_blank");
+        });
 
-        // Instascan.Camera.getCameras().then(function (cameras) {
-        //     if (cameras.length > 0) {
-        //         scanner.start(cameras[0]);
-        //     } else {
-        //         console.error("Please enable Camera!");
-        //     }
-        // });
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error("Please enable Camera!");
+            }
+        });
         function beep() {
             (new
                 Audio(
