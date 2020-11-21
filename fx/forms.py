@@ -7,6 +7,8 @@ from django.contrib.auth import (
     get_user_model
 
 )
+from fx.models import Tmp_UsernameModel
+
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.validators import EmailValidator, ValidationError
@@ -96,7 +98,7 @@ class MemberForm(forms.ModelForm):
     )
    class Meta:
       model = MemberModel
-      fields =["gender","firstname","middlename","lastname","email","address","telephone","active","birthday"]
+      fields =["member_id","gender","firstname","middlename","lastname","email","address","telephone","active","birthday"]
 
    def clean_email(self,*args, **kwargs):
         print(".....clean_emaill")
@@ -111,6 +113,52 @@ class MemberForm(forms.ModelForm):
                      raise forms.ValidationError("Please enter valid email address.")
         
         return email
+   def ValidateUsername(self,username):
+    codeCtr=1
+    qs = User.objects.filter(username__iexact = username) 
+    if qs.count() == 0:
+        print ("not found...")
+        return username
+    else:
+          qs = Tmp_UsernameModel.objects.filter(username__iexact = username)
+          if qs.count() == 0:
+              print("new record on code_counter:", username)
+             
+              Tmp_UsernameModel.objects.create(username=username,code_counter= codeCtr )
+            
+          else:
+               
+              qs = Tmp_UsernameModel.objects.filter(username__iexact = username)
+              codeCtr = qs[0].code_counter + 1
+              
+              qs.update(code_counter = codeCtr ) #return  1 success or 0 failed
+              print("code ctr must increment")
+         
+    
+    newCodeCtr = str(codeCtr).strip()
+    if len(newCodeCtr) == 1:    # convert the 1 digit value from db to 2 digits
+        newCodeCtr = newCodeCtr
+    username = username+ newCodeCtr
+    return username
+    
+   def clean_member_id(self,*args, **kwargs):
+        print(".....clean_ member_id")
+        member_id = self.cleaned_data.get('member_id')
+        
+        
+        
+        
+        member_id = self.ValidateUsername(member_id)
+        # validator = EmailValidator()
+        # email =email.strip()
+        # if(len(email )> 0):
+        #         try:
+        #             validator(email)
+        #         except ValidationError:
+        #              print("Please enter valid email address.")
+        #              raise forms.ValidationError("Please enter valid email address.")
+        
+        return member_id
 
 
 

@@ -28,6 +28,10 @@ crossorigin="anonymous"></script> -->
 
 </head>
 <style>
+
+    div.white {
+        color:white;
+    }
     /*Trigger Button*/
     .login-trigger {
         font-weight: bold;
@@ -153,6 +157,97 @@ crossorigin="anonymous"></script> -->
 
 <body>
 
+
+
+ <!-- ---------------  User profile  ---------------- -->
+
+
+    <div class="profile-modal modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Welcome, {{user.username}}
+                    </button>
+
+                    {% if user.is_authenticated and user.is_staff %}
+                    <a href="{% url 'fx:user_dashboard_url' 0 %}"
+                        class="list-group-item list-group-item-action">Personal Profile</a>
+                    <a href="{% url 'password_change' %}" class="list-group-item list-group-item-action">Change Password
+                    </a>
+                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">Log out</a>
+                    {%else %}
+
+                    <a class="btn btn-info" href="{% url 'fx:login' %}">Log In</a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ---------------  end user profile  ---------------- -->
+
+
+<!-- ---------------  search  ---------------- -->
+
+<div id="modal-search-member" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+aria-labelledby="myLargeModalLabel" aria-hidden="false">
+<div class="modal-dialog modal-xl">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Search Member</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="container-alert-not-found-search-member alert alert-danger alert-dismissible fade show"
+                role="alert" style="display:none">
+                <strong>Message:</strong> <span class="alert-not-found-search-member">danger</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container-alert-found-search-member alert alert-success alert-dismissible fade show"
+                role="alert" style="display:none">
+                <strong>Message:</strong> <span class="alert-found-search-member">success</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="form-group" style="display:block">
+
+                <label for="recipient-name" class="col-form-label">Type name or username:</label>
+                <input type="text" id="txt-search-member" required minlength="3"></input>
+            </div>
+            <br>
+
+            table_search_context.user_preference.search_member:{{table_search_context.user_preference.search_member}}
+            {% include 'fx/member/templates/search_table.html' with code=table_search_context.code_name preference=table_search_context.user_preference.search_member search_receiver=table_search_context %}
+            <!-- search_receiver instead of member -->
+            <div class="modal-footer">
+                <button type="search button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input class="btn-search-member-submit btn btn-success" type="submit" name="submit"
+                    value="Search now" />
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>
+
+
+<!-- ----------------- end search ------------------- -->
+
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
@@ -163,11 +258,60 @@ crossorigin="anonymous"></script> -->
         <nav class="navbar navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            
           </button>
+          <!-- ----------------------------  search icon ------------------------------- -->
+          <div id="search_div" class ="white" style="border: 1px solid green;" data-toggle=" tooltip" data-placement="top"
+          title="Search member from the database" >
+         
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg>
+        </div>
+
+
+         <!-- ----------------------------End  search icon ------------------------------- -->
+
+       
+
+
+
           {% if user.is_authenticated and user.is_staff %}
 
+
+
+
+         <div class="white">
+            
+          <a  > {{ user.username|upper}}</a>
          
-          <a  style= "color:#fff;font-weight: bold;" > {{ user.username|upper}}</a>
+          <!-- ------------------------- user profile ( login,profile,dashboard)------------------- -->
+         <div id ="user_profile_div" data-toggle=" tooltip" data-placement="top"
+         title="show logout menu">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+              </svg>
+            </div>
+
+          {%else%}  
+
+
+
+          <!-- -----------------------  log out ---------------------- -->
+          <a class="lnk"  data-toggle=" tooltip" data-placement="top"
+          title="show logout menu" href="{% url 'fx:login' %}">
+          <svg class="white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor"  >
+            <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
+            <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
+          </svg>
+        </a>
+        
+        </div>
+
+
           {% endif %}
         </nav>
       </div>
@@ -542,10 +686,11 @@ crossorigin="anonymous"></script> -->
 
 
 
-
+ 
 </body>
 
 </html>
+
 <script>
     //okss
     var ID_Info = new Object();
@@ -584,9 +729,24 @@ crossorigin="anonymous"></script> -->
         }, false);
     })();
 
+
+
     $(document).ready(function () {
         var post_data = "{{post_data}}";
-       
+        
+        $("#user_profile_div",).click(function () {
+
+                $('.profile-modal').modal('toggle');
+            });
+        $('#modal-search-member').on('shown.bs.modal', function () {
+                $('#txt-search-member').trigger('focus')
+            })
+        $("#search_div").click(function () {
+              console.log("search....");
+                
+                $('#modal-search-member').modal('toggle');
+
+            });
 
 
 

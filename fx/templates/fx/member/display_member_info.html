@@ -244,25 +244,25 @@
 
     <a id="dashboard-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse" href="#dashboard-tab"
       role="button" aria-expanded="false" aria-controls="dashboard-tab">
-      <i class="fas fa-home"></i> DASHBOARD <span class="arrow span-toggle fas fa-chevron-down"></span></a>
+      <i class="fa fa-home"></i> DASHBOARD <span class="arrow span-toggle fa fa-chevron-down"></span></a>
     {% if not member_info.reserve %}
     <a id="profile-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
       href="#profile-collapsible" role="button" aria-expanded="false" aria-controls="profile-collapsible">
-      <i class="fas fa-id-card"></i> PROFILE <span class="arrow "></span></a>
+      <i class="fa fa-id-card"></i> PROFILE <span class="arrow "></span></a>
     {%endif %}
 
     <a id="financial-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
       href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-      <i class="fas fa-credit-card"></i> FINANCE<span id="financial-toggle-span" class="arrow "></span></a>
+      <i class="fa fa-credit-card"></i> FINANCE<span id="financial-toggle-span" class="arrow "></span></a>
 
 
     <a class="btn-menu btn btn-outline-primary btn-sm" href="{% url 'fx:transfer_url' 'wallet' member_info.id %}">
-      <i class="fas fa-random"></i> TRANSFER
+      <i class="fa fa-random"></i> TRANSFER
     </a>
 
     <a id="history-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
       href="#transfer-history-tab" role="button" aria-expanded="false" aria-controls="transfer-history-tab">
-      <i class="fas fa-folder"></i> HISTORY <span class="arrow "></span></a>
+      <i class="fa fa-folder"></i> HISTORY <span class="arrow "></span></a>
 
     <!-- <a id="new-loan-btn" class="btn-menu btn btn-outline-primary btn-sm" data-toggle="collapse"
       href="#new-loan-tab" role="button" aria-expanded="false" aria-controls="transfer-history-tab">

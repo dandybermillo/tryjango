@@ -2768,8 +2768,8 @@ def ValidateUsername(username):
     
     newCodeCtr = str(codeCtr).strip()
     if len(newCodeCtr) == 1:    # convert the 1 digit value from db to 2 digits
-        newCodeCtr ="0"+ newCodeCtr
-    username = username+"-"+ newCodeCtr
+        newCodeCtr = newCodeCtr
+    username = username+ newCodeCtr
     return username
     
 
@@ -2830,22 +2830,31 @@ def create_update_member(request, id=id):
                     return render(request, "fx/create_update_member.html", context)
             else:     
                 if id == 0:
+                    username = request.POST.get("member_id","")
                    
+                   # newUsername = ValidateUsername(username)
+                   # print(f"username:{username},newusrname:{newUsername}")
+                    
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
+                            print('pass member form valid!Y')
                             firstname = memberForm.cleaned_data['firstname'].strip()
                             lastname= memberForm.cleaned_data['lastname'].strip()
-                            newUsername = ValidateUsername(firstname+lastname)
-                            newUsername = newUsername.lower()
+                            newUsername= memberForm.cleaned_data['member_id'].strip()
+                            
+                           # newUsername = ValidateUsername(member_id)
+                           # newUsername = newUsername.lower()
                             newPassword = gen_password()
-                            print("...newpassword:",newPassword)
+                            print(f"...newpassword: {newPassword} new username:{newUsername}")
+                             
                             user = User.objects.create_user( newUsername, email = None,password= newPassword)
                             pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = newPassword )
                             print(f"newUsername:{newUsername}")
-                            return
+                            
                             print("saving new member(valid).......")
                             qs = memberForm.save(commit= False)
                             qs.user = user   #todo unquote 'user'
+                            qs.member_id = newUsername
                             updated_Member = qs.save()  #todo uncomment
                             msg = "New member has been successfully added!"
                             return redirect(f'/success/create_update_member_result/{qs.id}/{msg}')

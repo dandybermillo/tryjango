@@ -8,6 +8,7 @@
 
 
 <div class="container" style="border: none;">
+   
     <div class="tcard">
         {% if form.errors %}
         {% for field in form %}
@@ -40,6 +41,7 @@
 
             <form action="" class="needs-validation" id="form_member" method='POST'>
                 {% csrf_token %}
+                {{form.member_id}}
                 <div hidden> {{form.birthday}}</div>
                 <div class="form-row">
 
@@ -95,15 +97,11 @@
                         {{ form.address |as_crispy_field }}
 
                     </div>
-
                     <div class="form-group col-md-6">
 
                         {{ form.email |as_crispy_field }}
                     </div>
-
-
                 </div>
-
                 <div class="form-row">
                     <div class="form-group col-md-0">
                         {{ form.active|as_crispy_field  }}
@@ -113,13 +111,13 @@
                 {%if post_data %}
 
                 <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
-                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                    href="">Close This Form </a>
                 <a class="edit_button btn btn-warning btn-sm"
-                    href="{% url 'fx:create_update_member_url' member_info.id  %}">
+                    href="{% url 'fx:create_update_member_url' a  %}">
                     Make Changes</a>
                 {% else %}
                 <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
-                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                    href="">Close This Form </a>
                 <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="I'm Done" />
                 <input style="display:none" id="member-submit" class="submit btn btn-success btn-sm" type='submit'
                     class="btn btn-primary" value='save' />
@@ -189,9 +187,13 @@
 
                         </div>
                         <div class="form-row">
-                            <label for="review-e-address" class="col-sm-1 col-form-label">E-Address</label>
+                            <label for="review-e-address" class="col-sm-1 col-form-label">E-Mail</label>
                             <div class="form-group  col-sm-5">
                                 <input type="text" readonly class="review form-control" id="review-e-address" value="">
+                            </div>
+                            <label for="review-username" class="col-sm-1 col-form-label">Username</label>
+                            <div class="form-group  col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-username" value="">
                             </div>
 
                         </div>
@@ -281,22 +283,59 @@
 
 
             yr = $("#member-year-txt").val();
-            m = $("#member-month-txt").val();
-            d = $("#member-day-txt").val();
+            m = $("#member-month-txt").val().trim();
+            d = $("#member-day-txt").val().trim();
            // var date = new Date(yr, m, d); 
             bd = m+"/"+d+"/"+yr;
             $("#id_birthday").val(bd);
             $("#review-birthday").val(bd );
-            $("#review-gender").val($("#id_gender").val());
-            $("#review-firstname").val($("#id_firstname").val());
+            gender = $("#id_gender").val().trim();
+            $("#review-gender").val(gender);
+            firstname =$("#id_firstname").val().trim();
+            $("#review-firstname").val(firstname);
             $("#review-middlename").val($("#id_middlename").val());
             $("#review-lastname").val($("#id_lastname").val());
             $("#review-address").val($("#id_address").val());
             $("#review-e-address").val($("#id_email").val());
             $("#review-telephone").val($("#id_telephone").val());
             $("#review-active").prop("checked", $("#id_active").prop("checked"));
+              
+            firstname_part = firstname.substring(0,2).toUpperCase();
+            console.log("firstname_part:"+firstname_part);
+            
+            if (parseInt(m) < 10){
+                month_part ="0"+ m;
+            }else{
+                month_part =m.trim();
+            }
+            if (parseInt(d) < 10){
+                day_part ="0"+ d;
+            }else{
+                day_part =d.trim();
+            }
+
+            if (gender == "Mr."){
+                gender_part = "1";
+            }else{
+               gender_part ="0" ;
+            }
+            member_id = firstname_part +month_part+day_part+ "-"+gender_part;
+            $("#review-username").val(member_id);
+            $("#id_member_id").val(member_id);
+
+
+            
+
+           
+            console.log("member_id"+member_id);
+            
+
+
 
             $("#review-member-modal").modal('show');
+            
+
+            
 
         });
 

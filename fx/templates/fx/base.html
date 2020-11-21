@@ -22,6 +22,7 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script>  
   <script src="{% static 'js/popper.min.js' %}"></script>   -->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -765,19 +766,19 @@
 
                     <li><a class="lnk search-member-link" data-toggle=" tooltip" data-placement="top"
                             title="Search member in the database" href="#">
-                            <i class="search_member fas fa-search"></i>
+                            <i class="search_member fa fa-search"></i>
                         </a></li>
                     <li><a class="lnk" data-toggle=" tooltip" data-placement="top" title="Show Alert messages" href="#">
-                            <i class="fas fa-bell"></i>
+                            <i class="fa fa-bell"></i>
                         </a></li>
-                    <li><a class="lnk member-profile-link" data-toggle=" tooltip" data-placement="top"
+                    <li><a class="lnk member-profile-link"  data-toggle=" tooltip" data-placement="top"
                             title="show logout menu" href="#">
-                            <i class="member-profile fas fa-user"></i>
+                            <i class="member-profile fa fa-user"></i>
                         </a></li>
                     {%else%}
                     <li><a class="lnk" href="{% url 'fx:login' %}">
 
-                            <i class="fas fa-user"></i></a></li>
+                            <i class="fa fa-user"></i></a></li>
                     {%endif%}
                 </ul>
 
@@ -789,26 +790,20 @@
             <div class="sidebar">
                 <ul>
                     <li><a href="{% url 'fx:dashboard_url'  %}" class='{{State.dashboard}}'>
-                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="icon"><i class="fa fa-home"></i></span>
                             <span class="title">DASHBOARD</span>
                         </a></li>
                     <li> <a id="member-lnk" class='modal-menu {{State.new_member}} btn-group' href="#modal-member-container-menu">
-                            <span class="'modal-menu icon"><i class="fas fa-user"></i></span>
+                            <span class="'modal-menu icon"><i class="fa fa-user"></i></span>
                             <span class="'modal-menu title">MEMBER</span>
                         </a></li>
 
                     <li><a id="finance-lnk" href="#modal-finance-container-menu">
-                            <span class="icon"><i class="fas fa-file-alt"></i></span>
+                            <span class="icon"><i class="fa fa-file-alt"></i></span>
                             <span class="title">FINANCE</span>
                         </a></li>
-                    <li><a   href="{% url 'fx:create_update_venture_url' member_info.id 0 'venture'   %}">
-                            <span class="icon"><i class="fas fa-blog"></i></span>
-                            <span class="title">STORE</span>
-                        </a></li>
-                    <li><a  href="{% url 'fx:create_update_venture_url' member_info.id 0 'trade'   %}">
-                            <span class="icon"><i class="fas fa-leaf"></i></span>
-                            <span class="title">TRADING</span>
-                        </a></li>
+                    
+                  
                 </ul>
             </div>
         </div>
@@ -897,11 +892,19 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+                                {% if member_info.id > 0 %}
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="New  Cash In  transaction"
                                     href="{% url 'fx:create_update_member_finance_url' 'wallet'  member_info.id 0  'D'  %}">
                                     DEPOSIT
                                 </a>
+                                {%else%}
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="New  Cash In  transaction"
+                                href="">
+                                DEPOSIT
+                            </a>
+                                {%endif%}
 
                             </div>
 
@@ -909,11 +912,20 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+                                {% if member_info.id > 0 %}
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="New Cash Out transaction"
                                     href="{% url 'fx:create_update_member_finance_url' 'wallet' member_info.id 0 'W'   %}">
                                     WITHDRAW
                                 </a>
+                                {%else%}
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="New Cash Out transaction"
+                                href="">
+                                WITHDRAW
+                            </a>
+
+                                {%endif%}
                             </div>
                         </div>
                     </div> <!-- -end of wallet menu  -->
@@ -929,11 +941,23 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+                                {% if member_info.id > 0 %}
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="New  Deposit To Saving Account"
+                                  
                                     href="{% url 'fx:create_update_member_finance_url' 'saving'  member_info.id 0 'D'   %}">
                                     DEPOSIT
                                 </a>
+                                {%else%}
+
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="New  Deposit To Saving Account"
+                              
+                                href="">
+                                DEPOSIT
+                            </a>
+
+                                {%endif%}
 
                             </div>
                         </div>
@@ -941,11 +965,21 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+                                {% if member_info.id > 0 %}
+
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="Withraw From Saving ACcount"
                                     href="{% url 'fx:create_update_member_finance_url' 'saving'  member_info.id 0 'W'  %}">
                                     WITHDRAW
                                 </a>
+                                {%else%}
+
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="Withraw From Saving ACcount"
+                                href="">
+                                WITHDRAW
+                            </a>
+                                {%endif%}
                             </div>
                         </div>
                     </div> <!-- -end of savings menu  -->
@@ -960,11 +994,35 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+                                {% if member_info.id > 0 %}
+                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                    title="Withraw From Saving ACcount"
+                                    href="{% url 'fx:create_update_member_finance_url' 'saving'  member_info.id 0 'W'  %}">
+                                    WITHDRAW
+                                </a>
+                                {%else%}
+
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="Withraw From Saving ACcount"
+                                href="">
+                                WITHDRAW
+                            </a>
+
+                                {%endif%}
+                                {% if member_info.id > 0 %}
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="New Loan Request"
                                     href="{% url 'fx:loan_application_url' member_info.id 0    %}">
                                     NEW LOAN APPLICATION
                                 </a>
+                                {%else%}
+                                <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="New Loan Request"
+                                href="">
+                                NEW LOAN APPLICATION
+                            </a>
+
+                                {%endif%}
                             </div>
                         </div>
                         <div class="form-group row">

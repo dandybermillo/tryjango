@@ -30,7 +30,7 @@ class MemberModel (models.Model):
      birthday = models.DateField(  blank= True, null =True)
      active =  models.BooleanField(default= True)
      reserve =  models.BooleanField(default= False)
-     member_id = models.CharField(max_length=11,blank =False, null =False,default="2001/12/12", unique =  True)
+     member_id = models.CharField(max_length=11,blank =False, null =False,default="DA/12/12", unique =  True)
 
      @property
      def name(self):
