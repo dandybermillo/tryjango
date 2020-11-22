@@ -768,9 +768,7 @@
                             title="Search member in the database" href="#">
                             <i class="search_member fa fa-search"></i>
                         </a></li>
-                    <li><a class="lnk" data-toggle=" tooltip" data-placement="top" title="Show Alert messages" href="#">
-                            <i class="fa fa-bell"></i>
-                        </a></li>
+                     
                     <li><a class="lnk member-profile-link"  data-toggle=" tooltip" data-placement="top"
                             title="show logout menu" href="#">
                             <i class="member-profile fa fa-user"></i>
@@ -1123,7 +1121,7 @@
                     </div>
                     <br>
 
-                    table_search_context.user_preference.search_member:{{table_search_context.user_preference.search_member}}
+                    <!-- table_search_context.user_preference.search_member:{{table_search_context.user_preference.search_member}} -->
                     {% include 'fx/member/templates/search_table.html' with code=table_search_context.code_name preference=table_search_context.user_preference.search_member search_receiver=table_search_context %}
                     <!-- search_receiver instead of member -->
                     <div class="modal-footer">

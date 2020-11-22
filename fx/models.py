@@ -245,6 +245,7 @@ class VentureModel(models.Model):
         (CASH,"CASH"),(SAVING,"SAVINGS ACCOUNT"))
       seller = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Seller' ) # todo null=False
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Customer' ) # todo null=False
+      in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='in_charge' ) # todo null=False
       transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
       category = models.PositiveIntegerField(default = 2 ,choices = cat) # 0 means  debit or credit in general
       amount = models.FloatField(verbose_name ="PHP",blank =False,null =False)

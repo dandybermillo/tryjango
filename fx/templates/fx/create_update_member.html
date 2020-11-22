@@ -41,7 +41,7 @@
 
             <form action="" class="needs-validation" id="form_member" method='POST'>
                 {% csrf_token %}
-                {{form.member_id}}
+               <div hidden> {{form.member_id}}</div>
                 <div hidden> {{form.birthday}}</div>
                 <div class="form-row">
 
@@ -113,7 +113,7 @@
                 <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
                     href="">Close This Form </a>
                 <a class="edit_button btn btn-warning btn-sm"
-                    href="{% url 'fx:create_update_member_url' a  %}">
+                    href="{% url 'fx:create_update_member_url' member_info.id  %}">
                     Make Changes</a>
                 {% else %}
                 <a id="wallet-hide" class="hide btn btn-secondary btn-sm"

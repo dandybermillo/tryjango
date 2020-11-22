@@ -461,6 +461,7 @@ def create_or_update_venture_note(source_id,note,category=2):
                     return {"Success":False}
 
 def create_update_venture_result(request,member_id,venture_id,msg,request_action):
+
         
         model_name =model_list.get(request_action) 
         Model = apps.get_model('fx', model_name)
@@ -539,12 +540,22 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
 
 
 
-#todo.
+#todo. cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
     
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
+        staff_info=""
+        try:
+            staff_info =  MemberModel.objects.get(user_id = request.user.id) 
+            print(f"..staff_info:{staff_info.name}")
+           
+        except Exception as e:
+
+            raise Http404("Sorry. User id does not exist!")
+            print(f"def cuv @exception, id: None , e:{e}")
+        
     
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -618,6 +629,8 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                     ventureForm.note = "" #delete
                     customer_info=""
                     
+                ventureForm.staff = staff_info.name
+                
                 context = {
                     'asset_balance':asset_balance,
                     'venture': ventureForm,  
@@ -2798,7 +2811,8 @@ def gen_password():
 def create_update_member_result(request,id,msg):
         member_info = get_member_info(id,"#create_update_member_result.   1")#create_update_member_result.   1
         form = MemberForm(instance=member_info)
-       
+        
+        
         context = {
             'form': form,
             'post_data':True,
