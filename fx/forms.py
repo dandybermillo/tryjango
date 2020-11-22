@@ -35,6 +35,7 @@ class UserLoginForm(AuthenticationForm):
                 if self.user is None:
                     
                     try:
+                        print("try.....")
                         # User.objects.get(username__exact=username)
                         self.user = User.objects.get(username__exact=username)
                         res=self.user.check_password(password)
@@ -117,7 +118,7 @@ class MemberForm(forms.ModelForm):
     codeCtr=1
     qs = User.objects.filter(username__iexact = username) 
     if qs.count() == 0:
-        print ("not found...")
+        print (f"not found... username:{username}")
         return username
     else:
           qs = Tmp_UsernameModel.objects.filter(username__iexact = username)
@@ -157,7 +158,7 @@ class MemberForm(forms.ModelForm):
         #         except ValidationError:
         #              print("Please enter valid email address.")
         #              raise forms.ValidationError("Please enter valid email address.")
-        
+        print(f"clean_member_id: {member_id}")
         return member_id
 
 
@@ -337,7 +338,7 @@ class SavingForm(forms.ModelForm):
 class VentureForm(forms.ModelForm):
     class Meta:
       model = VentureModel
-      fields=['seller','customer','transaction_type','date_entered','source_type','amount','customer_source_id','seller_source_id','cc','category','percent']  
+      fields=['seller','customer',"in_charge",'transaction_type','date_entered','source_type','amount','customer_source_id','seller_source_id','cc','category','percent']  
 
     def clean_amount(self,*args, **kwargs):
         amount = self.cleaned_data.get('amount')

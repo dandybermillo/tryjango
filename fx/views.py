@@ -740,7 +740,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                 percent = ventureForm.cleaned_data['percent']
                                 source_type = ventureForm.cleaned_data['source_type'] 
                                 
-                                filter_fields = {"amount":amount,"cc":cc,"percent":percent}
+                                filter_fields = {"amount":amount,"cc":cc,"percent":percent,"in_charge":staff_info.id}
                                 update_venture_qs ="" #delete
                                 #+
                                 if request_action == "trade":
@@ -2852,12 +2852,12 @@ def create_update_member(request, id=id):
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
                             print('pass member form valid!Y')
-                            firstname = memberForm.cleaned_data['firstname'].strip()
-                            lastname= memberForm.cleaned_data['lastname'].strip()
+                            # firstname = memberForm.cleaned_data['firstname'].strip()
+                            # lastname= memberForm.cleaned_data['lastname'].strip()
                             newUsername= memberForm.cleaned_data['member_id'].strip()
                             
                            # newUsername = ValidateUsername(member_id)
-                           # newUsername = newUsername.lower()
+                            newUsername = newUsername.lower()
                             newPassword = gen_password()
                             print(f"...newpassword: {newPassword} new username:{newUsername}")
                              
