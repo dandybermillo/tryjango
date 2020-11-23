@@ -43,6 +43,10 @@ urlpatterns = [
   path('fx/accounts/', include('django.contrib.auth.urls')),
   path('login/', views.login_request, name="login"),
   path("logout/", LogoutView.as_view(), name="logout"),
+  path("logouts/",views.logout_request, name="logouts_url"),
+  
+   # --------------- store authentication staff -----------------
+  path('venture_login/', views.venture_login_request, name="venture_login"),
 
    #------------------- Loan ------------------------- 
   path('loan_application/<int:member_id>/<int:loan_id>/', views.loan_application, name = "loan_application_url"), #0 - new,1 edit
@@ -76,6 +80,7 @@ urlpatterns = [
   #-------------------- VENTURE ------------------------
   path('create_update_venture/<int:member_id>/<int:venture_id>/<str:request_action>/', views.create_update_venture, name = "create_update_venture_url"), 
   path('delete_venture/<int:member_id>/<int:venture_id>//<str:request_action>/', views.delete_venture, name = "delete_venture_url"), 
+  path('venture_main_request/', views.venture_main_request, name = "venture_main_request_url"), 
 
 
   

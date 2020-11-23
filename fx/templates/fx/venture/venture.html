@@ -176,7 +176,7 @@ crossorigin="anonymous"></script> -->
                         class="list-group-item list-group-item-action">Personal Profile</a>
                     <a href="{% url 'password_change' %}" class="list-group-item list-group-item-action">Change Password
                     </a>
-                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">Log out</a>
+                    <a href="{% url 'fx:logouts_url' %}" class="list-group-item list-group-item-action">Log out</a>
                     {%else %}
 
                     <a class="btn btn-info" href="{% url 'fx:login' %}">Log In</a>
@@ -315,7 +315,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
           {% endif %}
         </nav>
       </div>
-
+              <!-- -------------------------- end of  top nav bar-------------------------- -->
 
     <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog  modal-lg">
@@ -386,8 +386,8 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
 
                 <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
-                    <div hidden>
-                        {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
+                    <div >
+                        {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
                         {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
                     <div class="form-row">

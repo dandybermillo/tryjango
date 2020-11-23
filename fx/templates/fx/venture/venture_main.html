@@ -1,0 +1,120 @@
+{% load static %}
+{% load custom_tags%}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- test oks -->
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script> -->
+
+    <script src="{% static 'js/jquery_3.5.1.js' %}"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
+
+
+
+
+
+
+
+</head>
+<style>
+
+  div.white {
+      color:white;
+  }
+  </style>
+  {% block css_style %}
+  {%  endblock css_style %}
+
+<body>
+
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button>
+          <!-- ----------------------------  search icon ------------------------------- -->
+          <div id="search_div" class ="white"   data-toggle=" tooltip" data-placement="top"
+          title="Search member from the database" >
+         
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg>
+        </div>
+
+
+         <!-- ----------------------------End  search icon ------------------------------- -->
+
+       
+
+
+
+          {% if user.is_authenticated and user.is_staff %}
+
+
+
+
+         <div class="white"  style="display: inline-flex;">
+            
+          <a style="padding-right: .5rem;" > {{ user.username|upper}}</a>
+         
+          <!-- ------------------------- user profile ( login,profile,dashboard)------------------- -->
+         <div id ="user_profile_div" data-toggle=" tooltip" data-placement="top"
+         title="show logout menu"  >
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+              </svg>
+            </div> 
+             
+          {%else%}  
+
+
+
+          <!-- -----------------------  log out ---------------------- -->
+          <a  class="lnk"  data-toggle=" tooltip" data-placement="top"
+          title="show logout menu" href="{% url 'fx:venture_login' %}">
+          <svg class="white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor"  >
+            <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
+            <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
+          </svg>
+        </a>
+        
+        </div>
+
+
+          {% endif %}
+        </nav>
+      </div>
+
+
+
+
+
+
+      {% block sub_content%}
+      ..
+      {% endblock sub_content%}
+    
+</body>
+</html>

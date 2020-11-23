@@ -543,7 +543,7 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
 #todo. cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
-    
+   # return redirect("/venture_main_request/")
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
         staff_info=""
@@ -617,7 +617,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                             ventureForm.note =""
                 else:  # NEW VENTURE 
                     if  request_action == "venture":
-                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
+                            initial_data ={'in_charge':1,'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
                             ventureForm = VentureForm(initial =initial_data)
                     else:
                             initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} 
@@ -869,7 +869,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         except Exception as e:
                             Success = False
                             print(f"creating venture transaction: {e}")
-                        filter_fields = {"flag":1} 
+                        filter_fields = {"flag":1,'in_charge':staff_info.id} 
                         if   source_type =="W": #create new record. A
                                 customer_source_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"#create new record. A")
                                 filter_fields["customer_source_id"] =customer_source_id
@@ -1853,6 +1853,58 @@ def dash(request,message):
 
     return render(request, "fx/pagenotfound.html", {"message":message})
 
+
+
+def logout_request(request):
+    print('logout_request')
+    logout(request)
+    return redirect("/venture_main_request/")
+    
+def venture_main_request(request):
+    context={}
+    return render(request, "fx/venture/venture_main.html", context)
+
+ 
+#vlr
+def venture_login_request(request):
+    print("venture_login_request:----------")
+    if request.method == 'GET' and request.user.is_authenticated is True and request.user.is_active is True:
+        return redirect('/logouts/')
+    user = None
+    nextl = request.GET.get('next')
+    print(f"....next:{nextl}")
+    nextl = '' if nextl == 'None' or nextl is None or nextl.isspace() else nextl
+    if request.method == 'POST':
+        form = UserLoginForm( data=request.POST) # remove request =request before data=request.POST  but still valid if not remove
+        if form.is_valid(): # valid() is used to get the right error messages and it alreadry authenticates user for username,password
+            # the 2 statements are used to dobule check the user permission
+            user = form.get_user()
+            if user and  user.is_active:
+                login(request, user)
+                if user.is_staff:
+                  print("success login in venture. staff")
+                  
+                  return redirect(f'/create_update_venture/{1}/{0}/{"venture"}')
+                else:
+                    print("success login in venture")
+                    return
+                    if nextl:
+                      
+                      return redirect(nextl)  
+                    else:    
+                        member_info = MemberModel.objects.get(user = user.id)
+                        print(f"member_info:{member_info}")
+                       # client_info ={'id':client_info.id}  #todo eliminate extra fields
+                        return redirect('/user_dashboard/{}'.format(member_info.id)) # without / before user_ django will add /login before /user_
+        else:
+            print("not valid..")     
+            member_info ={} #todo
+        return render(request, './registration/venture/venture_login.html', {'form': form,'member_info':member_info})
+
+    form = UserLoginForm()
+    return render(request = request,
+                    template_name = "./registration/venture/venture_login.html",
+                    context={"form":form})
 #lr
 def login_request(request):
     print("login request:----------")
@@ -1860,6 +1912,7 @@ def login_request(request):
         return redirect('/logout/')
     user = None
     nextl = request.GET.get('next')
+    print(f"....next:{nextl}")
     nextl = '' if nextl == 'None' or nextl is None or nextl.isspace() else nextl
     if request.method == 'POST':
         form = UserLoginForm( data=request.POST) # remove request =request before data=request.POST  but still valid if not remove
@@ -1893,6 +1946,44 @@ def login_request(request):
  
 
 
+def venture_login_requestssss(request):
+    print("login request:----------")
+    if request.method == 'GET' and request.user.is_authenticated is True and request.user.is_active is True:
+        return redirect('/logouts/')
+    user = None
+    nextl = request.GET.get('next')
+    print(f"....next:{nextl}")
+    nextl = '' if nextl == 'None' or nextl is None or nextl.isspace() else nextl
+    if request.method == 'POST':
+        form = UserLoginForm( data=request.POST) # remove request =request before data=request.POST  but still valid if not remove
+        if form.is_valid(): # valid() is used to get the right error messages and it alreadry authenticates user for username,password
+            # the 2 statements are used to dobule check the user permission
+            user = form.get_user()
+            if user and  user.is_active:
+                login(request, user)
+                if user.is_staff:
+
+                  return redirect('/dashboard/')
+                else:
+                    if nextl:
+                      return redirect(nextl)  
+                    else:    
+                        member_info = MemberModel.objects.get(user = user.id)
+                        print(f"member_info:{member_info}")
+                       # client_info ={'id':client_info.id}  #todo eliminate extra fields
+                        return redirect('/user_dashboard/{}'.format(member_info.id)) # without / before user_ django will add /login before /user_
+        else:
+            print("not valid..")     
+            member_info ={} #todo
+        return render(request, './registration/login.html', {'form': form,'member_info':member_info})
+
+    form = UserLoginForm()
+    return render(request = request,
+                    template_name = "./registration/login.html",
+                    context={"form":form})
+ 
+
+ 
 
  
 
