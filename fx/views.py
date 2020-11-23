@@ -245,7 +245,7 @@ def get_customer_details(request):
             member_info = {"member_id":member_qs.member_id,"name":member_qs.name,"id": member_qs.id}
             print(f"member_info:{member_info}")
             cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
-            return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":cm_balance}, status = 200)
+            return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":round(cm_balance)}, status = 200)
       except Exception as e:
             print (f"{e}, {type(e)}")
             return JsonResponse({"message":message}, status = 200)    
@@ -1880,22 +1880,22 @@ def venture_login_request(request):
             # the 2 statements are used to dobule check the user permission
             user = form.get_user()
             if user and  user.is_active:
-                login(request, user)
-                if user.is_staff:
-                  print("success login in venture. staff")
-                  
-                  return redirect(f'/create_update_venture/{1}/{0}/{"venture"}')
-                else:
-                    print("success login in venture")
-                    return
-                    if nextl:
-                      
-                      return redirect(nextl)  
-                    else:    
-                        member_info = MemberModel.objects.get(user = user.id)
-                        print(f"member_info:{member_info}")
-                       # client_info ={'id':client_info.id}  #todo eliminate extra fields
-                        return redirect('/user_dashboard/{}'.format(member_info.id)) # without / before user_ django will add /login before /user_
+                    login(request, user)
+                    if user.is_staff:
+                            print("success login in venture. staff")
+                            member_info = MemberModel.objects.get(user = request.user.id)
+                            return redirect(f'/create_update_venture/{member_info.id}/{0}/{"venture"}')
+                    else:
+                            print("success login in venture")
+                            return
+                            if nextl:
+                            
+                               return redirect(nextl)  
+                            else:    
+                                member_info = MemberModel.objects.get(user = user.id)
+                                print(f"member_info:{member_info}")
+                            # client_info ={'id':client_info.id}  #todo eliminate extra fields
+                                return redirect('/user_dashboard/{}'.format(member_info.id)) # without / before user_ django will add /login before /user_
         else:
             print("not valid..")     
             member_info ={} #todo
@@ -1922,8 +1922,11 @@ def login_request(request):
             if user and  user.is_active:
                 login(request, user)
                 if user.is_staff:
-
-                  return redirect('/dashboard/')
+                     print(f".....nextl:{nextl}")
+                     if nextl:
+                          if "venture_main_request" in nextl:
+                             return redirect(nextl)  
+                     return redirect('/dashboard/')
                 else:
                     if nextl:
                       return redirect(nextl)  
