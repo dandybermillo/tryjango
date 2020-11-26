@@ -386,6 +386,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
 
                     </div>
                     <div class="form-row">
+                        <div class="form-group col-md-6">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="checkGrocery" value="Grocery">
                             <label class="form-check-label" for="checkGrocery"> Grocery</label>
@@ -407,8 +408,45 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
                                 value="Others">
                             <label class="form-check-label" for="checkOther"> Other</label>
                         </div>
+                        </div>
+                         
 
 
+                        <div class="form-group col-md-2 has-change-group">
+                            <label for="tender-txt" class="col-form-label">TENDER</label>
+                            <div  id="main-source-drop">
+                                <input type="text"   class="small-size  review form-control"
+                                id="tender-txt" value="">
+                            </div>
+                        </div>
+                         
+                        <div class="form-group col-md-2 has-change-group">
+                            <label for="change-txt" class="col-form-label">CHANGE</label>
+                        <div  id="main-source-drop">
+                            <input type="text"   class="small-size  review form-control"
+                            id="change-txt" name="change" value="">
+                        </div>
+                        </div>
+                        <div class="form-group col-md-2 has-change-group">
+                            <label for="main-source-drop" class="col-form-label">DEPOSIT CHANGE TO</label>
+                            <div class="dropdown" id="main-source-drop">
+                                <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
+                                    id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;"> WALLET ACCT
+ 
+                                </button>
+                                <input hidden type="hidden"  name="change_deposit_to"   value="WALLET ACCT"
+                                id="change_deposit_to"  >
+
+                                <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                                    
+                                    <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
+                                    <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                     </div>
                     <div class="form-row">
@@ -910,6 +948,30 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
         });
 
 
+        $("#tender-txt").on("keyup", function () {
+            
+            var amount = parseFloat($("#id_amount").val());
+            var tender =  parseFloat($(this).val());
+            console.log("amount:"+ amount);
+            console.log("tender:"+ tender);
+
+            var change = tender - amount ;
+            change = change.toFixed(2).replace('.00', '');
+            console.log("change:"+ change);
+            if(change > 0){
+            $("#change-txt").val(change);
+
+            }else{
+                $("#change-txt").val("");
+
+
+            }
+
+
+        });
+
+        
+        
 
         $("#venture-total-txt").on("keyup", function () {
             var percent = parseFloat($("#percent-drop").text());
@@ -1162,6 +1224,16 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
 
         // })
 
+        $(".deposit-cash").click(function () {
+            var text = $(this).text().trim();
+            $("#deposit-cash-drop").text(text);
+            $("#change_deposit_to").val(text);
+
+
+
+        });
+
+
         $(".source-cash").click(function () {
             var text = $(this).text().trim();
             $("#source-cash-drop").text(text);
@@ -1171,11 +1243,19 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
                 source_type = "K";
                 // max = 10000;
                 account_name = "CASH";
+            
+            //25
+            $(".has-change-group").show();
+            
+
+
 
             } else {
                 source_type = "W";
                 account_name = "WALLET";
-                keys['CC-BALANCE']
+                keys['CC-BALANCE'] 
+                $(".has-change-group").hide();
+
 
             }
             keys["SOURCE"] = source_type;
@@ -1226,6 +1306,8 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
 
 
         $("#venture-done").click(function () {
+            value = $("#deposit-cash-drop").val();
+            console.log("value:"+ value);
             var form = document.querySelector(".needs-validation");
             var reportVal = form.checkValidity();
             if (reportVal == false) {

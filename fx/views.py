@@ -541,6 +541,19 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
 
 
 #todo. cuv
+def add_regular_transaction(member,description,transaction_type,credit=0,debit=0,source_id=0,category = 0):
+    
+    try:  
+            wallet = WalletModel(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+            wallet.save() 
+            return {"Success":True}
+            
+    except Exception as e:
+            
+            print (f"add_regular_transaction:error result:{e}, {type(e)}")
+            return {"Success":False}
+
+
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
    # return redirect("/venture_main_request/")
@@ -641,10 +654,24 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                 return render(request, 'fx/venture/venture.html', context)
 
     else:   # request.method == 'POST':
+        
+        
+        change_deposit_to  = request.POST.get("change_deposit_to","") 
+        change_amount  = request.POST.get("change","") 
+        print(f"change_deposit_to:{change_deposit_to}, change_amount:{change_amount}")
+        customer  = int(request.POST.get("customer",-1))
         amount  = request.POST.get("amount",0) 
         cc  = request.POST.get("cc",0) 
+        
+             
+        #11-25
+        
+        
+        
+        
+        #return
         percent  = float(request.POST.get("percent",-1)) #delete
-        customer  = int(request.POST.get("customer",-1))
+        # customer  = int(request.POST.get("customer",-1))
         seller  = int(request.POST.get("seller",-1))
         
         source_type  = request.POST.get('source_type','K') 
@@ -808,6 +835,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                                 response= create_or_update_venture_note(venture_qs.note_id,note,2) #todo 
                                                 if response["Success"] and response["result"] > 0 and old_note_id <=0:
                                                         filter_fields["note_id"] = response["result"]
+                                                        ##11-25
                                 if Success:
                                         update_venture_qs = Model.objects.filter(id =venture_id).update( **filter_fields)
                                         print(f"response:{response} update_venture_qs: {update_venture_qs}, filter_fields : {filter_fields}")
@@ -912,8 +940,23 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                              print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
                         print(f"filter_fields: {filter_fields}")
                         if Success:
-                               venture_result = Model.objects.filter(id =venture_id).update( **filter_fields)
-                               print(f"filter_fields: {filter_fields} ,,venture_result: {venture_result}")
+                                Success = True
+                                try:
+                                    venture_result = Model.objects.filter(id =venture_id).update( **filter_fields)
+                                    print(f"venture: filter_fields: {filter_fields} ,venture_result: {venture_result}")
+                                    
+                                except Exception as e:
+                                        print (f"error result:{e}, {type(e)}")
+                                        Success = False
+                                #11-25
+                                if Success:
+                                        response = add_regular_transaction(customer,"Change Deposit","D",amount,0,venture_id)
+                                        if response["Success"] :
+                                            print("success................")
+                                
+                                
+                                
+                                    
                             # if Success and source_id > 0:
                             #       wallet_qs = WalletModel.objects.filter( id = source_id).update(source_id = venture_id)
                             # if Success and cc_create_result > 0:

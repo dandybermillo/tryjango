@@ -165,8 +165,8 @@ class WalletModel(models.Model):
     debit = models.FloatField(verbose_name ="Amount to Cash Out", default =0 )
     credit = models.FloatField(verbose_name ="Amount Cash In",default =0 )
     category = models.PositiveIntegerField(default = 0 ,choices = cat) # 0 means  debit or credit in general
-    source_id = models.IntegerField(default = 0) # > 0 linking to transfer,loan
-
+    source_id = models.IntegerField(default = 0) # > 0 linking to transfer,loan 
+    
     class Meta:
       ordering = ['-id']
 class VentureWalletModel(models.Model):  
@@ -259,6 +259,29 @@ class VentureModel(models.Model):
       date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
       flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       note_id = models.IntegerField(default =0)
+      @property
+      def total_cost(self):
+          return self.amount + self.cc
+class Temp_VentureModel(models.Model):
+      REG_TRANSACTION,TRANSFER,GROCERY,LOAN,TRADE =(0,1,2,5,7)
+      # cat =((REG_TRANSACTION,"REGULAR TRANSACTION"),
+      #   (TRANSFER,"TRANSFER"),(GROCERY,"GROCERY"),(LOAN,"LOAN"),(TRADE,"TRADE"))
+      # DEPOSIT,WITHRAW =('D','W')
+       
+       
+      venture = models.ForeignKey(VentureModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      
+      #seller_source_id = models.IntegerField(default = 0)
+      # customer_cc_id = models.IntegerField(default = 0)
+      #seller_cc_id = models.IntegerField(default = 0)
+      date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
+      #flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
+      
+      
+      note_id = models.IntegerField(default =0)
+      change_deposit_id = models.IntegerField(default =0)
+      
+      
       @property
       def total_cost(self):
           return self.amount + self.cc
