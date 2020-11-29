@@ -262,29 +262,17 @@ class VentureModel(models.Model):
       @property
       def total_cost(self):
           return self.amount + self.cc
-class Temp_VentureModel(models.Model):
-      REG_TRANSACTION,TRANSFER,GROCERY,LOAN,TRADE =(0,1,2,5,7)
-      # cat =((REG_TRANSACTION,"REGULAR TRANSACTION"),
-      #   (TRANSFER,"TRANSFER"),(GROCERY,"GROCERY"),(LOAN,"LOAN"),(TRADE,"TRADE"))
-      # DEPOSIT,WITHRAW =('D','W')
-       
-       
-      venture = models.ForeignKey(VentureModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+class Change_Table(models.Model):
       
-      #seller_source_id = models.IntegerField(default = 0)
-      # customer_cc_id = models.IntegerField(default = 0)
-      #seller_cc_id = models.IntegerField(default = 0)
+       
+      change = models.FloatField(verbose_name ="PHP",blank =False,null =False)
+      wallet = models.ForeignKey(WalletModel,null =True, on_delete =models.SET_NULL)
+      venture = models.ForeignKey(VentureModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
       #flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       
       
-      note_id = models.IntegerField(default =0)
-      change_deposit_id = models.IntegerField(default =0)
-      
-      
-      @property
-      def total_cost(self):
-          return self.amount + self.cc
+    
 class TradingModel(models.Model):
       BUYER_ROLE,SELLER_ROLE =('B','S')
       roles =((BUYER_ROLE,"BUYER"),(SELLER_ROLE,"SELLER"))
