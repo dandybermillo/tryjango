@@ -423,16 +423,22 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
                         <div class="form-group col-md-2 has-change-group">
                             <label for="change-txt" class="col-form-label">CHANGE</label>
                         <div  id="main-source-drop">
-                            <input type="text"   class="small-size  review form-control"
+                            <input type="text" readonly   class="small-size  review form-control"
                             id="change-txt" name="change" value="{{venture.change}}">
                         </div>
                         </div>
+                          
                         <div class="form-group col-md-2 has-change-group">
                             <label for="main-source-drop" class="col-form-label">DEPOSIT CHANGE TO</label>
                             <div class="dropdown" id="main-source-drop">
                                 <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;"> WALLET ACCT
+                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
+                                    {% ifequal venture.destination_acct_code 'S' %} SAVING ACCT {%else%}  {% ifequal venture.destination_acct_code 'W' %}  WALLET ACCT
+                                    {%else%}SELECT OPTION
+                                    {%endifequal%}
+                                    {%endifequal%}
+                                    
  
                                 </button>
                                 <input hidden type="hidden"  name="change_deposit_to"   value="WALLET ACCT"

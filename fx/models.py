@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 # tutorial/models.py
  
 # Create your models here.
-
+  
 class CodeGeneratorModel(models.Model):
       sender_id =models.IntegerField(default = 0)
       code = models.PositiveIntegerField(default =0)
@@ -41,7 +41,15 @@ class IdRepositoryModel(models.Model):
     code =  models.CharField(max_length=8,unique =  True, blank =True, null =True)
     counter =  models.IntegerField(default =0) 
 
+class LoanSummaryModel(models.Model):
+    member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL) # todo null=False
+    date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
+    max_loan = models.FloatField(verbose_name ="Max Loan", default =300 )
+    percent = models.PositiveIntegerField(default =35)
+    
 
+
+    
 class CcModel(models.Model):
   # amount,date_entered,description,transaction_type,Client
    REG_TRANSACTION,TRANSFER,GROCERY,SAVING_INTEREST,EARNED,LOAN,VENTURE,TRADE=(0,1,2,3,4,5,6,7)
@@ -266,9 +274,10 @@ class Change_Table(models.Model):
       
        
       change = models.FloatField(verbose_name ="PHP",blank =False,null =False)
-      wallet = models.ForeignKey(WalletModel,null =True, on_delete =models.SET_NULL)
+      destination_acct_id = models.IntegerField(default = 0) # > 0 linking to transfer,loan 
       venture = models.ForeignKey(VentureModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
+      destination_acct_code = models.CharField(max_length=1,blank =True,default ='W') #W wallet S:Saving
       #flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       
       

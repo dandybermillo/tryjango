@@ -12,6 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
+from fx.models import LoanSummaryModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -497,16 +498,20 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
         print(f"====venture_qs.note_id: {venture_qs.note_id},, ventureForm.note: {ventureForm.note}  ")
         
         # get change intry
-        
+        ventureForm.change_destination =""
         try:
              change_table_qs = Change_Table.objects.get(venture_id= venture_id)
              ventureForm.change = change_table_qs.change
              ventureForm.tender =  venture_qs.amount + change_table_qs.change
+             ventureForm.destination_acct_code =change_table_qs.destination_acct_code
+             
              print(f"ventureForm.tender:{ventureForm.tender}")
         except Exception as e:
                 ventureForm.change =""
                 ventureForm.tender =""
+                ventureForm.destination_acct_code=""
                 print(f"create_update_venture_result:change_table: {e}")
+        
                 
 
         context = { 
@@ -598,42 +603,98 @@ def add_change_transaction(code, wallet_id,venture_id,amount):
 def add_regular_transaction(code, target_table ,member,description ="Change Deposit",transaction_type="D",credit=0,debit=0,source_id=0,category = 0):
            
             # request_action =request_action.strip().lower()
-              
-            model_name =model_list_change.get(target_table) 
+            # if target_table == "WALLET ACCT":
+            #               destination_acct_code ="W"
+            # elif target_table == "SAVING ACCT":
+            #               destination_acct_code ="S"    
+             
+            print(f"credit:{credit}, venture_id:{source_id}")
+            try:    
+                change = Change_Table.objects.get(venture_id=source_id)
+                destination_acct_id = change.destination_acct_id
+                old_destination_acct_code = change.destination_acct_code
+                print(f"old_destination_acct_code:{old_destination_acct_code}")
+            except Exception as e:
+                        print (f"add_regular_transaction:not found,code > 0:{e}, {type(e)}")
+                        if credit <=0:
+                                
+                                return {"Success":False}
+                        else:
+                            code = 0
+                            
+                
+            if credit <=0 and code != 0:
+                    if old_destination_acct_code == "W":
+                         target_table = "WALLET ACCT"
+                    elif old_destination_acct_code == "S":
+                         target_table = "SAVING ACCT"
+                 
+                    print(f"xtarget_table:{target_table}")
+            model_name = model_list_change.get(target_table) 
             Model = apps.get_model('fx', model_name)
             #update_wallet_result = Model.objects.filter(id = source_id).update( debit = debit,credit =credit)
-            if code > 0:
-                    try:
+            # if code > 0:
+            #         try:
                         
-                        change = Change_Table.objects.get(venture_id=source_id)
-                        wallet_id = change.wallet_id
-                    except Exception as e:
-                            print (f"add_regular_transaction:not found:{e}, {type(e)}")
-                            code = 0
-                                    
+            #             change = Change_Table.objects.get(venture_id=source_id)
+            #             destination_acct_id = change.destination_acct_id
+            #         except Exception as e:
+            #                 print (f"add_regular_transaction:not found:{e}, {type(e)}")
+            #                 code = 0
+            destination_acct_code = ""
+            if target_table == "WALLET ACCT":
+                          destination_acct_code ="W"
+            elif target_table == "SAVING ACCT":
+                          destination_acct_code ="S"    
+             
+                                     
             if code > 0:
                     
                     change = Change_Table.objects.get(venture_id=source_id)
-                    wallet_id = change.wallet_id
-                    print(f"source_id{source_id}, wallet_id:{wallet_id}, venture_id:{source_id}, credit:{credit}")
+                    destination_acct_id = change.destination_acct_id
+                    old_destination_acct_code = change.destination_acct_code
+                    print(f" old_destination_acct_code:{destination_acct_code} = change.destination_acct_code:{destination_acct_code}")
+                     
+                    if credit > 0 and destination_acct_code != old_destination_acct_code:
+                                try: 
+                                        if  old_destination_acct_code == "W":
+                                            delete_walletModel = WalletModel.objects.get(id = destination_acct_id).delete() 
+                                        elif old_destination_acct_code == "S":
+                                            delete_savingModel = SavingModel.objects.get(id = destination_acct_id).delete() 
+                                        print("---dldldl")
+                                except Exception as e:
+                                            print (f"destination_acct != old_destination_acct:delete rec:{e}, {type(e)}")
+                                            return {"Success":False}
+                                try:
+                                        destination_model = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+                                        destination_model.save() 
+                                        wallet_change_deposit = Change_Table.objects.filter(venture_id = source_id).update( destination_acct_code = destination_acct_code,destination_acct_id =destination_model.id)
+                                        return {"Success":True}
+                                except Exception as e:
+                                            print (f"destination_acct != old_destination_acct:adding rec{e}, {type(e)}")
+                                            return {"Success":False}
+                    
+                    print(f"source_id{source_id}, wallet_id:{destination_acct_id}, venture_id:{source_id}, credit:{credit}")
                     if credit > 0:
-                            print(f"add_regular_transaction:code > 0,wallet_id:{wallet_id},credit:{credit}") 
-                            try:
-                                    wallet_change_deposit = Model.objects.filter(id = wallet_id).update( credit = credit)
-                                    wallet_change_deposit = Change_Table.objects.filter(venture_id = source_id).update( change = credit)
-                                    return {"Success":True}
-                            except Exception as e:
-                                print (f"add_regular_transaction:update change:{e}, {type(e)}")
-                                return {"Success":False}
-                    else:
-                            try:
-                                
-                                    delete_wallet_change = Model.objects.get(id = wallet_id).delete() 
-                                    delete_change = Change_Table.objects.get(venture_id = source_id).delete()
-                                    return {"Success":True}
-                            except Exception as e:
-                                    print (f"add_regular_transaction:delete wallet and change tables:{e}, {type(e)}")
+                                print(f"add_regular_transaction:code > 0,destination_acct_id:{destination_acct_id},credit:{credit}") 
+                                try:
+                                        destination = Model.objects.filter(id = destination_acct_id).update( credit = credit)
+                                        wallet_change_deposit = Change_Table.objects.filter(venture_id = source_id).update( change = credit)
+                                        return {"Success":True}
+                                except Exception as e:
+                                    print (f"add_regular_transaction:update change:  credit > :{e}, {type(e)}")
                                     return {"Success":False}
+                    else:
+                                try:
+                                        print(f"model_name:{model_name}, destination_acct_id:{destination_acct_id}")
+                                        delete_wallet_change = Model.objects.get(id = destination_acct_id).delete() 
+                                        print("deleting.........")
+                                        delete_change = Change_Table.objects.get(venture_id = source_id).delete()
+                                        print("deleting wallet change")
+                                        return {"Success":True}
+                                except Exception as e:
+                                        print (f"add_regular_transaction:delete wallet and change tables:else credit >  0:{e}, {type(e)}")
+                                        return {"Success":False}
 
                         
                     
@@ -642,8 +703,9 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                     
                     wallet = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
                     wallet.save() 
-                    try:  
-                            change = Change_Table(wallet_id = wallet.id, date_entered=date.today(),venture_id=source_id ,change=credit )
+                    
+                    try:    
+                            change = Change_Table(destination_acct_id = wallet.id, date_entered=date.today(),venture_id=source_id ,change=credit,destination_acct_code = destination_acct_code)
                             change.save() 
                             return {"Success":True,"id":change.id}
                     
@@ -658,6 +720,30 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
 @login_required(login_url='/login/')
 #cuv
 def create_update_venture(request,member_id,venture_id,request_action ):
+    
+    try:    
+        loan_qs = LoanSummaryModel.objects.get(member_id=2)
+        loan = loan_qs.max_loan
+        percent = loan_qs.percent/100
+    except Exception as e:
+         print (f"retrieving LoanSummaryModel:{e}, {type(e)}")
+         
+    amount = 300
+    loan =300
+    remaining = 200
+    used = loan - remaining
+    min = percent * used
+    print(f"min:{min}, used:{used},percent:{percent},loan:{loan}")
+    if amount < min:
+        print("not allowed")
+        return
+    partial = amount * 2
+    if partial + remaining > 500:
+        partial = 500 - remaining
+    new_loan = partial + remaining
+    print(f"new_loan:{new_loan}")
+    return
+
    # return redirect("/venture_main_request/")
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
@@ -707,29 +793,42 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                 asset_balance ={"cc_balance":cc_balance}
     if request.method == 'GET':
                 if venture_id > 0:  # requesting to edit the existing   data
-                    if  request_action == "venture":
-                            customer = venture_qs.customer_id
-                            ventureForm = VentureForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
-                    else:
-                            if   venture_qs.role_type == "S": #here the the default seller becomes the buyer or customer
-                                    customer = venture_qs.seller_id
-                            else:
+                            if  request_action == "venture":
                                     customer = venture_qs.customer_id
-                            ventureForm = TradeForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
-                    #print(f"........ventureForm.id: {venture_qs.id}")
-                    customer_info = get_member_info( customer,"#create_update_venture. 1") #create_update_venture. 1
-                    ventureForm.id= venture_qs.id
-                    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
-                    ventureForm.request_action =request_action
-                    asset_balance["cc_balance"]= asset_balance["cc_balance"] + venture_qs.cc
-                    #print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
-                    if venture_qs.note_id > 0: #note has been provided
+                                    ventureForm = VentureForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
+                            else:
+                                    if   venture_qs.role_type == "S": #here the the default seller becomes the buyer or customer
+                                            customer = venture_qs.seller_id
+                                    else:
+                                            customer = venture_qs.customer_id
+                                    ventureForm = TradeForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
+                            #print(f"........ventureForm.id: {venture_qs.id}")
+                            customer_info = get_member_info( customer,"#create_update_venture. 1") #create_update_venture. 1
+                            ventureForm.id= venture_qs.id
+                            ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+                            ventureForm.request_action =request_action
+                            asset_balance["cc_balance"]= asset_balance["cc_balance"] + venture_qs.cc
+                            #print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
+                            if venture_qs.note_id > 0: #note has been provided
+                                    try:
+                                          ventureForm.note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                                    except Exception as e:
+                                        print(f"loan app note: {e}")
+                            else: 
+                                    ventureForm.note =""
                             try:
-                               ventureForm.note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                                        change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+                                        ventureForm.change = change_table_qs.change
+                                        ventureForm.tender =  venture_qs.amount + change_table_qs.change
+                                        
+                                        ventureForm.destination_acct_code =change_table_qs.destination_acct_code
+
+                                        
+                                        print(f"ventureForm.tender:{ventureForm.tender},change_table_qs.change:{change_table_qs.change},change_table_qs.destination_acct_code:{change_table_qs.destination_acct_code} ")
                             except Exception as e:
-                                print(f"loan app note: {e}")
-                    else: 
-                            ventureForm.note =""
+                                    ventureForm.change =""
+                                    ventureForm.tender =""
+                                    print(f"cresate_update_venture:change_table: {e}")
                 else:  # NEW VENTURE 
                     if  request_action == "venture":
                             initial_data ={'in_charge':1,'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
@@ -1072,9 +1171,10 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                         Success = False
                                 #11-25
                                 if Success:
-                                        response = add_regular_transaction(0,customer,"Change Deposit","D",amount,0,venture_id)
+                                        print(f"============ change amnt:{change_amount}")
+                                        response = add_regular_transaction(0,change_deposit_to,customer,"Change Deposit","D",change_amount,0,venture_id)
                                         if response["Success"] :
-                                             response = add_change_transaction(venture_id_change, response["id"],venture_id,amount)
+                                           #  response = add_change_transaction(venture_id_change, response["id"],venture_id,amount)
                                             
                                              print("success................")
                                 
