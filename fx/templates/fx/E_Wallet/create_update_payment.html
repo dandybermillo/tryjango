@@ -39,7 +39,7 @@
 <div class="container" style="border:none">
     <div class="tcard"> 
     <div>
-        <p style="font-size: 1.5rem;"> LOAN PAYMENT FORM </p>
+        <p style="font-size: 1.5rem;">PAYMENT FORM </p>
     </div>
     {% if payment.errors %}
     {% for field in payment %}
@@ -87,8 +87,25 @@
             <div style="display: none;">{{ payment.credit}} {{ payment.date_entered }}{{payment.transaction_type}} {{payment.source_type}}
             </div>
             <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="payment-max" class="col-form-label">MAX:</label>
+                    <input id="payment-max" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da" value="{{payment.max}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="payment-paid" class="col-form-label">PAID</label>
+                    <input id="payment-paid" type="text" readonly class="form-control-plaintext"
+                    style="border:1px solid #ced4da" value="{{payment.paid}}">
+                </div>
+                <!-- <div class="form-group col-md-6">
+                    <label for="payment-percent" class="col-form-label">PERCENT</label>
+                    <input id="payment-percent" type="text" readonly class="form-control-plaintext"
+                    style="border:1px solid #ced4da" value="{{payment.percent}}">
+                </div> -->
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="payment-balance" class="col-form-label">Balance:</label>
+                    <label for="payment-balance" class="col-form-label">Loan Owing:</label>
                     <input id="payment-balance" type="text" readonly class="form-control-plaintext"
                         style="border:1px solid #ced4da" value="{{asset_liabities.loan}}">
                 </div>
@@ -101,7 +118,11 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-3">
+                    {{ payment.debit|as_crispy_field}}
+                     
+                </div>
+                <div class="form-group col-md-3">
                     <label for="main-source-drop" class="col-form-label">Source: </label>
                     <div class="dropdown" id="main-source-drop">
                         <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"
@@ -130,7 +151,7 @@
                                     <th scope="col">Wallet</th>
                                     <th scope="col">C-Coin</th>
                                     <th scope="col">Saving</th>
-                                    <th scope="col">Loan</th>
+                                    <th scope="col">Loan Owing</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -148,12 +169,12 @@
 
             </div>
 
-            <div class="form-row">
+            <!-- <div class="form-row">
                 <div class="form-group col-md-6">
                     {{ payment.debit|as_crispy_field}}
                      
                 </div>
-            </div>
+            </div> -->
              {% if payment.payment_id > 0 and not post_data %} 
             
              

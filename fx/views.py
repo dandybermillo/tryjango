@@ -717,23 +717,40 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
     
 
 
-@login_required(login_url='/login/')
+
+
+def getLoanPayment(member_id):
+    try:    
+        loan_qs = LoanSummaryModel.objects.get(member_id=member_id)
+        max_loan = loan_qs.max_loan
+        percent = loan_qs.percent
+    except Exception as e:
+        print (f"retrieving LoanSummaryModel:{e}, {type(e)}")
+        return {}
+    return {"max_loan":max_loan,"percent":percent}
+
+
+         
+
 #cuv
+@login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
     
-    try:    
-        loan_qs = LoanSummaryModel.objects.get(member_id=2)
-        loan = loan_qs.max_loan
-        percent = loan_qs.percent/100
-    except Exception as e:
-         print (f"retrieving LoanSummaryModel:{e}, {type(e)}")
-         
+    # try:    
+    #     loan_qs = LoanSummaryModel.objects.get(member_id=2)
+    #     loan = loan_qs.max_loan
+    #     percent = loan_qs.percent/100
+    # except Exception as e:
+    #      print (f"retrieving LoanSummaryModel:{e}, {type(e)}")
+     
+    loan_details =getLoanPayment(member_id)   
+    percent =loan_details["percent"]
     amount = 300
-    loan =300
+    max_loan = loan_details["max_loan"]
     remaining = 200
-    used = loan - remaining
-    min = percent * used
-    print(f"min:{min}, used:{used},percent:{percent},loan:{loan}")
+    paid = max_loan - remaining
+    min = percent * paid
+    print(f"min:{min}, paid:{paid},percent:{percent},loan:{max_loan}")
     if amount < min:
         print("not allowed")
         return
@@ -2280,15 +2297,24 @@ def create_update_payment_result(request,account_name,id,payment_id,msg):
         member_info = get_member_info(id,"#create_update_payment_result. 1") #create_update_payment_result. 1
         payment_qs= get_object_or_404(PaymentModel, id=payment_id)
         paymentForm = PaymentForm( instance=payment_qs,prefix="payment")  
-        
-         
-
 
         paymentForm.payment_id =payment_id
         paymentForm.account_name = account_name
         print(f"paymentForm.account_name: {paymentForm.account_name}")
         paymentForm.account_name = account_name
         paymentForm.account = {account_name:"selected_account"}
+        
+        
+        loan_details = getLoanPayment(id)
+        all_balances= get_all_balances(id)
+        max_loan = loan_details["max_loan"]
+        owing_balance = all_balances["loan"]
+        percent = loan_details["percent"]
+        paid = max_loan - owing_balance
+        
+        paymentForm.paid = loan_details["max_loan"] - all_balances["loan"] # 200  #remove and below
+        paymentForm.max =max_loan
+        paymentForm.percent = f"{percent}  %"
 
         context = { 
                 'asset_liabities':get_all_balances(id),
@@ -2308,6 +2334,7 @@ def create_update_payment(request,member_id,payment_id):
      account_name="cash" #default
      account_name_list={"W":"wallet","S":"saving","K":"cc","C":"cash"}
      all_balances=get_all_balances(member_id)
+    
      if request.method == 'POST':
                     
                     valid =True 
@@ -2339,7 +2366,7 @@ def create_update_payment(request,member_id,payment_id):
                             print(f"...amount:{amount}, temp_balance:{temp_balance}")
                             if  len(amount.strip()) > 0 and float(amount) > temp_balance:
                                 valid = False
-                                messages.error(request, f"Amount to cash out must not be more than {running_balance}")
+                                messages.error(request, f"Amount to withdraw must not be more than {running_balance}")
                     else: # C A S H PAID
                        source_id=0
 
@@ -2352,6 +2379,20 @@ def create_update_payment(request,member_id,payment_id):
                     if payment_id ==0:
                             paymentForm = PaymentForm(request.POST,prefix="payment")
                             if valid and paymentForm.is_valid():
+                                print("succ")
+                                loan_details = getLoanPayment(member_id)
+                                max_loan = loan_details["max_loan"]
+                                owing_balance = all_balances["loan"]
+                                percent = loan_details["percent"]
+                                paid = max_loan - owing_balance
+                                print(f"percent: {percent}  paid:{paid},max Loan:{max_loan},amount:{amount}, remaining:{owing_balance}")
+                                amount = float(amount)
+                                additonal_loan = amount * (percent/100)
+                                print(f" owing_balance:{type(owing_balance)}")
+                                print(f"additonal_loan:{additonal_loan}")
+                                
+                                
+                                
                                 debit=paymentForm.cleaned_data['debit']
                                 Success = True
                                 if source_type != 'C':
@@ -2378,8 +2419,41 @@ def create_update_payment(request,member_id,payment_id):
                                             Success = False
                                             print (f"deduction from  source:{account_name}, {e}, {type(e)}")
                                     if Success:
-                                        msg ="New payment has been successfully added!"
-                                        return redirect(f'/success/create_update_payment_result/{account_name}/{member_id}/{payment_qs.id}/{msg}')
+                                        cc_id =0
+                                        try:
+                                                #12-4
+                                                description = "Additional Loan"
+                                                category = 5 #loan
+                                                Cc_qs = CcModel(member_id = member_id, date_entered=date.today(),transaction_type='D' ,description=description,credit=additonal_loan,debit=0,category=category,source_id = 0 ) #source_id =loan_qs.id 
+                                                Cc_qs.save() 
+                                                cc_id = Cc_qs.id
+                                                print(f"success Additional Loan")
+                                        except Exception as e:
+                                                Success= False
+                                                print (f"error result:{e}, {type(e)}")  
+                                    if  Success:
+                                            try:
+                                                source_type ="A" # additional loan
+                                                source_id = 0
+                                                payment_additional_qs = PaymentModel(source_type=source_type,source_id = cc_id ,date_entered=date_entered,transaction_type='D' ,credit=additonal_loan,debit=0 ,member_id=member_id,category=category)
+                                                payment_additional_qs.save()   
+                                                print(f"success in recording additional loan")
+                                            except Exception as e:
+                                                Success = False
+                                                print (f"Error: recording additional loan, {e}, {type(e)}")
+                                    if Success:
+                                            msg ="New payment has been successfully added!"
+                                        #     loan_details = getLoanPayment(member_id)   
+                                        # # percent = loan_details["percent"]
+                                        #     max_loan = loan_details["max_loan"]
+                                        #     print(f"loan_details['max_loan']:{loan_details['max_loan']}- loan_details['cc']:{all_balances['loan']}")
+                                        #     paid = loan_details["max_loan"] - all_balances["loan"] # 200  #remove and below
+                                            
+                                            
+                                            
+                                            
+                                            #12-1a
+                                            return redirect(f'/success/create_update_payment_result/{account_name}/{member_id}/{payment_qs.id}/{msg}')
                                 if not Success:
                                         messages.error(request, 'Sorry,Unexpected error has been encountered while saving payment transaction. Thank you.')
                                         #return render(request, 'products/e_wallet/create_update_member_wallet.html',context)
@@ -2463,6 +2537,7 @@ def create_update_payment(request,member_id,payment_id):
                             return render(request, 'fx/e_wallet/create_update_payment.html', context)
 
      else: #request.method == 'GET':
+            
             if payment_id == 0: # add new record
                     initial_data ={'debit':'', 'credit':0, 'transaction_type':'W', 'date_entered': date.today()} #note: not for editing data
                     paymentForm = PaymentForm(initial =initial_data,prefix="payment")  
@@ -2481,7 +2556,15 @@ def create_update_payment(request,member_id,payment_id):
                     if payment_qs.source_type != 'C':
                          all_balances[account_name] =round( all_balances[account_name] + payment_qs.debit,2)
                     all_balances["loan"] = round( all_balances['loan']  + payment_qs.debit,2)
-           
+                   
+             #12-1
+            loan_details = getLoanPayment(member_id)   
+            percent = loan_details["percent"]
+            max_loan = loan_details["max_loan"]
+            print(f"loan_details['max_loan']:{loan_details['max_loan']}- loan_details['cc']:{all_balances['loan']}")
+            paymentForm.paid = loan_details["max_loan"] - all_balances["loan"] # 200  #remove and below
+            paymentForm.max =loan_details["max_loan"]
+            paymentForm.percent = f"{loan_details['percent']}  %"
             context = { 
                     'asset_liabities':all_balances,
                     'payment': paymentForm,
