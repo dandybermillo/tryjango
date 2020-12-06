@@ -119,7 +119,7 @@ class PaymentModel(models.Model):
    credit = models.FloatField(verbose_name ="Amount to Cash In",default =0 )
    category = models.PositiveIntegerField(default = 0 ,choices = cat) # 0 means  debit or
    source_id = models.IntegerField(default =0) 
-   source_type = models.CharField(max_length=1,blank =True,default = 'C')  #c: cash,A Additional Loan
+   source_type = models.CharField(max_length=1,blank =True,default = 'C')  #c: cash,A Additional Loan, M max loan                                                                                                                                                 
    class Meta:
       ordering = ['-id']
 
