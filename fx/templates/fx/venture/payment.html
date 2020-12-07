@@ -1,0 +1,547 @@
+{% extends 'fx/venture/venture_main.html' %}
+{% load humanize %}
+{% load app_filters %}
+{% load crispy_forms_tags %}
+
+{% block sub_content%}<br>
+<style>
+    td.selected_account {
+        background-color: #8cf367;
+        font-weight: bold;
+
+    }
+
+    .container {
+
+        width: 80%;
+
+    }
+
+    .saving-info-container div {
+        border-left: 5px solid green;
+        width: 100%;
+
+    }
+
+
+    #id_deposit_withdraw-transaction_type {
+        /* id="id_wallet-transaction_type" */
+        display: none;
+    }
+
+    div.form-group {
+        padding-left: 0px;
+
+    }
+</style>
+
+<div class="container" style="border:none">
+    <div class="tcard"> 
+    <div>
+        <p style="font-size: 1.5rem;">PAYMENT FORM </p>
+    </div>
+    {% if payment.errors %}
+    {% for field in payment %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% for message in messages %}
+
+    <div id="payment-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <div id="payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
+        Please fill in the box with asterisk sign(*). Thank you.
+    </div>
+
+
+
+     <div class="form-row" style="border-bottom:1px solid #ced4da">
+        <div class="form-group col-md-6">
+            <label for="account-member-name" style="padding-left:2px">Member:</label>
+
+            <input id="account-member-name" type="text" readonly class="form-control-plaintext"
+                style="border:1px solid #ced4da"
+                value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+        </div>
+    </div>
+    
+
+    <div>
+        <form action="" class="needs-validation" method="POST">
+            {% csrf_token %}
+            <div style="display: none;">{{ payment.credit}} {{ payment.date_entered }}{{payment.transaction_type}} {{payment.source_type}}
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="payment-max" class="col-form-label">MAX:</label>
+                    <input id="payment-max" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da" value="{{payment.max}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="payment-paid" class="col-form-label">PAID</label>
+                    <input id="payment-paid" type="text" readonly class="form-control-plaintext"
+                    style="border:1px solid #ced4da" value="{{payment.paid}}">
+                </div>
+                <!-- <div class="form-group col-md-6">
+                    <label for="payment-percent" class="col-form-label">PERCENT</label>
+                    <input id="payment-percent" type="text" readonly class="form-control-plaintext"
+                    style="border:1px solid #ced4da" value="{{payment.percent}}">
+                </div> -->
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="payment-balance" class="col-form-label">Loan Owing:</label>
+                    <input id="payment-balance" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da" value="{{asset_liabities.loan}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="id-date_entered" class="col-form-label">Date</label>
+                    <input id="id-date_entered" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da"
+                        value="{%if payment.payment_id > 0 %}{{ payment.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today {%endif%}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    {{ payment.debit|as_crispy_field}}
+                     
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="main-source-drop" class="col-form-label">Source: </label>
+                    <div class="dropdown" id="main-source-drop">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="border:1px solid #ced4da">
+
+                            {% ifequal payment.source_type.value 'C' %} CASH {%else%}
+                            {% ifequal payment.source_type.value 'W' %} WALLET ACCOUNT {%else%} {% ifequal payment.source_type.value 'S' %} SAVING ACCOUNT {%else%} COMM-COIN ACCOUNT  {%endifequal%}  {%endifequal%}
+                            {%endifequal%}  
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                            <button data-source="CASH" class="source-cash dropdown-item" type="button">CASH</button>
+                            <button data-source="WALLET" class="source-cash dropdown-item" type="button">WALLET ACCOUNT <span style='color: blue;'>{{asset_liabities.wallet}}</span></button>
+                            <button data-source="CC" class="source-cash dropdown-item" type="button">COMM-COIN ACCOUNT <span style='color: blue;'>{{asset_liabities.cc}}</span></button>
+                            <button data-source="SAVING" class="source-cash dropdown-item" type="button">SAVING ACCOUNT <span style='color: blue;'>{{asset_liabities.saving}}</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6 mb-0">
+                    <div class="container-finance-account">
+                        <label for="payment-assets-table" class="col-form-label">FINANCE</label>
+                        <table id="payment-assets-table" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Wallet</th>
+                                    <th scope="col">C-Coin</th>
+                                    <th scope="col">Saving</th>
+                                    <th scope="col">Loan Owing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-primary">
+
+                                    <td id="WALLET" class="{{payment.account.wallet}}">{{asset_liabities.wallet}}</td>
+                                    <td id="CC" class="{{payment.account.cc}}">{{asset_liabities.cc}}</td>
+                                    <td id="SAVING" class="{{payment.account.saving}}">{{asset_liabities.saving}}</td>
+                                    <td>{{asset_liabities.loan}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ payment.debit|as_crispy_field}}
+                     
+                </div>
+            </div> -->
+             {% if payment.payment_id > 0 and not post_data %} 
+            
+             
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                  <div > <span style="color: green;">  Note:  </span> To avoid confusion,  <span style="color: blue" > {{payment.debit.value}} </span> was added back to original balance
+                </div>
+                </div>
+            </div>
+            {%endif%}
+           
+
+ 
+            <div>
+                {%if post_data %}
+                <a id="account-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <a class="edit_button btn btn-warning btn-md"
+                    href="{% url 'fx:create_update_payment_url'  member_info.id payment.payment_id   %}">
+                    Make Changes</a>
+                {% else %}
+                <a id="account-hide" class="hide btn btn-secondary btn-md"
+                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                <input id="payment-done-btn" class="done btn btn-primary btn-md" type="button" value="I am Done" />
+              <div hidden>   <input id="payment-submit-btn" class="submit btn btn-primary btn-md" type="submit" name="Submit"
+                    value="SAVE" /></div>
+                {%endif%}
+            </div>
+        </form>
+        <br>
+    </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="payment-transaction-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">PAYMENT TRANSACTION</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div id="review-wallet-app-form">
+                    <form>
+                        <h4>Please review the following before submitting. Thanks.</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="review-borrower-txt" class="col-form-label">Member</label>
+
+                                <input style="background-color: transparent;" id="review-borrower-txt" type="text"
+                                    readonly class="form-control-plaintext"
+                                    value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="review-date-txt" class="col-form-label">Date:</label>
+                                <input id="review-date-txt" type="text" readonly class="form-control-plaintext"
+                                    value="{%if payment.payment_id > 0 %}{{ payment.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today  {%endif%}">
+                            </div>
+                            <!-- <div class="form-group col-md-6">
+                                {% now 'SHORT_DATETIME_FORMAT' %}
+                                <label for="review-date-loan-txt" class="col-sm-1 col-form-label"
+                                    style="padding-left: 8px">Date:</label>
+                                <input id="review-date-loan-txt" type="text" readonly class="form-control-plaintext"
+                                    value="{% now 'SHORT_DATETIME_FORMAT' %}">
+                            </div> -->
+
+                        </div>
+                        <div class="form-group row">
+                            <div  style="border: 1px solid gray;">  </div>
+                        </div>
+                        <div class="form-group row">
+
+                            <label for="review-payment-balance" class="col-sm-1 col-form-label">Balance:</label>
+
+                            <div class="col-md-5">
+                                <input type="text" readonly class="review form-control" id="review-payment-balance"
+                                    value="">
+                            </div>
+
+                            <div class="col-md-5 mb-0">
+
+                                <div class="container-finance-account">
+                                    <label for="review-payment-assets-table" class="col-form-label">FINANCE</label>
+                                    <table id="review-payment-assets-table" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">Wallet</th>
+                                                <th scope="col">C-Coin</th>
+                                                <th scope="col">Saving</th>
+                                                <th scope="col">Loan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-primary">
+
+                                                <td id="WALLET" class="{{payment.account.wallet}}">
+                                                    {{asset_liabities.wallet}}</td>
+                                                <td id="CC" class="{{payment.account.cc}}">{{asset_liabities.cc}}</td>
+                                                <td id="SAVING" class="{{payment.account.saving}}">
+                                                    {{asset_liabities.saving}}</td>
+                                                <td>{{asset_liabities.loan}}</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-payment-source-type" class="col-sm-1 col-form-label">Source:</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-payment-source-type"
+                                    value="">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="review form-group row">
+                            <label for="review-payment-amount" class="col-sm-1 col-form-label">Amount</label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-payment-amount"
+                                    value="">
+                            </div>
+
+                        </div>
+
+
+                        <div class="review-payment-modal-footer" style="text-align:right">
+                            <button id="review-back-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Go Back</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="review-payment-submit-btn" type="button" class="btn btn-success">Submit
+                                Now</button>
+                        </div>
+                        <div class="edit-loan-modal-footer" style="text-align:left;display:none">
+                            <button id="preview-payment-close-btn" type="button" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="payment-edit-btn" type="button" class="btn btn-warning">Make Changes</button>
+                        </div>
+                    </form>
+
+                    <!-- ----- end of review form ---- -->
+                </div>
+                <!-- ----- review form ---- -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var keys = {};
+
+    function get_date(date_entered) {
+
+        const today = moment();
+        var date = moment();
+
+        if (moment().year() == moment(date_entered).year()) {
+            days = parseInt(today.diff(date_entered, 'days'));
+            if (days < 8) {
+                if (days == 0) {
+                    date = "Today";
+                } else if (days == 1) {
+                    date = "Yesterday";
+                } else { date = days + " days ago" }
+            } else {
+                date = moment(date_entered).format("MMM Do");
+            }
+
+        } else {
+            date = moment(date_entered).format("MMM Do YY");
+        }
+        return date;
+    }
+
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    $(document).ready(function () {
+        var source_type = "{{payment.source_type.value}}";
+        var post_data = "{{post_data}}";
+        var min = 10;
+        var max = 10000;
+        var account_name = "{{payment.account_name}}".toUpperCase();
+        keys["previous-selected-account"] =account_name;
+        console.log(".........account_name: " + account_name);
+        keys['WALLET-BALANCE'] = parseFloat("{{asset_liabities.wallet}}".replace(',', ''));
+        keys['SAVING-BALANCE'] = parseFloat("{{asset_liabities.saving}}".replace(',', ''));
+        keys['CC-BALANCE'] = parseFloat("{{asset_liabities.cc}}".replace(',', ''));
+        keys['CASH-BALANCE'] = parseFloat("{{asset_liabities.loan}}".replace(',', ''));
+        // if (account_name){
+        //     var payment_id = parseInt("{{payment.payment_id}}");
+        //     if (payment_id > 0)
+        //     {
+        //         keys[account_name+'-BALANCE'] =keys[account_name+'-BALANCE'] + parseFloat("{{payment.debit.value}}".replace(',', ''));
+        //         console.log(".....keys[account_name+'-BALANCE']: "+ keys[account_name+'-BALANCE']);
+        //     }
+        //     console.log(".....edit time" + "{{payment.debit.value}}");
+        //   //  keys[account_name+'-BALANCE'] =keys[account_name+'-BALANCE'] + parseFloat("{{payment.debit.value}}".replace(',', ''));
+        // }
+
+        console.log("source_type:" + source_type);
+
+        if (keys['CASH-BALANCE'] < min) {
+            min = keys['CASH-BALANCE'];
+        }
+        if (source_type == "C") {
+            max = keys['CASH-BALANCE'];
+        } else if (source_type == "W") {
+            max = keys['WALLET-BALANCE'];
+        } else if (source_type == "S") {
+            max = keys['SAVING-BALANCE'];
+        }else if (source_type == "K") {
+            max = keys['CC-BALANCE'];
+        }
+
+        $("#id_payment-debit").prop("class", "form-control");
+        $("#id_payment-debit").prop("min", min);
+        $("#id_payment-debit").prop("max", max);
+        if (post_data == "True") {
+            $('#id_deposit_withdraw-description').css("background-color", "transparent");
+            $('#id_deposit_withdraw-credit').css("background-color", "transparent");
+            $('#id_deposit_withdraw-debit').css("background-color", "transparent");
+            $('#id_deposit_withdraw-description').prop("disabled", true);
+            $('#id_deposit_withdraw-credit').prop("disabled", true);
+            $('#id_deposit_withdraw-debit').prop("disabled", true);
+
+        }
+        $(".edit_button").click(function () {
+            $('.submit').prop("disabled", false);
+            $(".alert").hide();
+            $(this).hide();
+        });
+
+        $("#id_date_entered").css("background-color", "transparent");
+        //$("#review-payment-submit-btn").hide();
+        $("#review-payment-submit-btn").click(function () {
+            $("#payment-submit-btn").trigger("click");
+
+        });
+
+        $("#payment-done-btn").click(function () {
+
+            var form = document.querySelector(".needs-validation");
+            var reportVal = form.checkValidity();
+            if (reportVal == false) {
+                $("#payment-failed-alert").show();
+                form.reportValidity();
+                return;
+            }
+            $("#review-payment-balance").val($("#payment-balance").val());
+            $("#review-payment-source-type").val( $("#source-cash-drop").text().trim());
+            $("#review-payment-amount").val($("#id_payment-debit").val());
+            $("#payment-transaction-modal").modal('show');
+
+        });
+
+
+        if (post_data == "True") {
+                $('#source-cash-drop').css("background-color", "transparent");
+                $('#id_payment-debit').css("background-color", "transparent");
+                 
+ 
+                $('#id_payment-debit').prop("disabled", true);
+                $('#source-cash-drop').prop("disabled", true);
+            }
+        $(".source-cash").click(function () {
+            // var minimum_deposit = 10;
+            console.log("source cash clik");
+            var source = $(this).attr('data-source').trim();
+            var text = $(this).text().trim();
+            console.log("...."+source);
+            $("#source-cash-drop").text(text);
+           // .toggleClass("collapse");
+            console.log("source: "+ source);
+            var max = 0
+            local_account_name = ""
+            if (source == "CASH") {
+                source_type = "C";
+                max = keys['CASH-BALANCE'];
+                local_account_name = "CASH";
+            } else if (source == "WALLET") {
+                source_type = "W";
+                local_account_name = "WALLET";
+                max = keys['WALLET-BALANCE'];
+                if (max > 0 && max < min) {
+                    min = max
+                }
+            } else if (source == "SAVING"){  //
+                source_type = "S";
+                local_account_name = "SAVING";
+                max = keys['SAVING-BALANCE'];
+                if (max > 0 && max < min) {
+                    min = max
+                }
+            }else{
+                source_type = "K";
+                local_account_name = "CC";
+                max = keys['CC-BALANCE'];
+                if (max > 0 && max < min) {
+                    min = max
+                }
+
+            }
+            
+            
+            $("#id_payment-source_type").val(source_type);
+            $("#id_payment-debit").prop("min", min);
+            $("#id_payment-debit").prop("max", max);
+
+            var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
+            console.log("previous account:" + previous_account_name);
+            if (previous_account_name != "CASH") {
+                $("#payment-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+                $("#review-payment-assets-table tr").find('#' + previous_account_name).removeAttr("class", "selected_account");
+            }
+            if (local_account_name != "CASH") {
+                $("#payment-assets-table tr").find('#' + local_account_name).attr("class", "selected_account");
+                $("#review-payment-assets-table tr").find('#' + local_account_name).attr("class", "selected_account");
+
+            }
+            keys["previous-selected-account"] = local_account_name;
+
+
+        });
+    
+    
+    
+    
+    
+    });
+</script>
+
+{% endblock %}
+
