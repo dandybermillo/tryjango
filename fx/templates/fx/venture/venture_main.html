@@ -47,14 +47,14 @@ crossorigin="anonymous"></script> -->
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
-            <h4 class="text-white">COMMUNITY FAIR EXCHANCE</h4>
+            <h4 class="text-white">COMMUNITY FAIR EXCHANGE</h4>
 
  <br/>
  <br/>     <div style ="display: block;"> 
           
             {% if member_info.id > 0 %} 
             <a id ="main-venture" class="text-muted" href="{% url 'fx:create_update_venture_url' member_info.id 0 'VENTURE'  %}">VENTURE</a>
-            <a id ="main-payment" class="text-muted" href="{% url 'fx:payment_venture_url' member_info.id 0  %}">PAYMENT</a>
+            <!-- <a id ="main-payment" class="text-muted" href="{% url 'fx:payment_venture_url' member_info.id 0  %}">PAYMENT</a> -->
             {% endif%}
           </div>
           </div>

@@ -123,7 +123,11 @@ class PaymentModel(models.Model):
    class Meta:
       ordering = ['-id']
 
-
+class tmpVariables(models.Model):
+       max_loan = models.FloatField(verbose_name ="Max loan allowrd",default =300) 
+       
+      
+      
 
 class PersonalLoanModel(models.Model):
    UNACCEPTED,ACCEPTED,BEING_EDITED,DONE_EDITING =(0,1,2,3)

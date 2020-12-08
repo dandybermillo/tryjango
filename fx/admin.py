@@ -4,7 +4,7 @@ from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,Ventu
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
-from .models import LoanSummaryModel
+from .models import LoanSummaryModel,tmpVariables
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -85,7 +85,12 @@ class Change_TableAdmin(admin.ModelAdmin):
 class LoanSummaryModelAdmin(admin.ModelAdmin):
     list_display = ['id','member_id','percent','max_loan',"date_entered"
 ]
-admin.site.register(LoanSummaryModel,LoanSummaryModelAdmin)
+    
+
+class tmpVariablesModelAdmin(admin.ModelAdmin):
+    list_display = ['id','max_loan'
+]
+admin.site.register(tmpVariables,tmpVariablesModelAdmin)
 
 admin.site.register(VentureWalletModel,VentureWalletModelAdmin)
 admin.site.register(TradingModel,TradingModelAdmin)

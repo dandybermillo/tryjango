@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel
+from fx.models import LoanSummaryModel,tmpVariables
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -2779,7 +2779,7 @@ def payment_venture(request,member_id,payment_id):
                        source_id=0
 
                     credit =0
-                    category = 6 #means   payment, 5 for loan
+                    category = CAT_LOAN #means   payment, 5 for loan
                     description= "Loan Payment"
                     transaction_type="W"
                     date_entered = date.today()    
@@ -3818,33 +3818,44 @@ def create_update_member_result(request,id,msg):
 #cum
 @login_required(login_url='/login/')
 def create_update_member(request, id=id):
+            
             if id > 0 :
-               member_info = get_member_info(id,"#create_update_member.1") #create_update_member.1
+                  member_info = get_member_info(id,"#create_update_member.1") #create_update_member.1
             else:
-                member_info={"id":0}
+                  member_info={"id":0}
             if request.method == "GET":
-                    if id == 0:
-                         initial_data ={'birthday':date.today()}
-                         print(f"initial_data: {initial_data}")
-                         form = MemberForm( )   
-                    else:
+                        if id == 0:
+                            initial_data ={'birthday':date.today()}
+                            print(f"initial_data: {initial_data}")
+                            form = MemberForm()   
+                        else:
 
-                         form = MemberForm(instance = member_info)
-                    context = {
-                        'form': form,
-                        'member_info': member_info,
-                        'State':{"new_member":"active"}
-                    }
-                    return render(request, "fx/create_update_member.html", context)
-            else:     
+                            form = MemberForm(instance = member_info)
+                        context = {
+                            'form': form,
+                            'member_info': member_info,
+                            'State':{"new_member":"active"}
+                        }
+                        return render(request, "fx/create_update_member.html", context)
+            else:     #' P O S T'
                 if id == 0:
-                    username = request.POST.get("member_id","")
-                   
-                   # newUsername = ValidateUsername(username)
-                   # print(f"username:{username},newusrname:{newUsername}")
                     
+                    
+                    username = request.POST.get("member_id","")
+                    # add Loan to new member initialize
+                    try: 
+                         max_loan = tmpVariables.objects.values("max_loan").get(id = 1)["max_loan"]
+                         print(f"----- max: {max_loan}")
+                    except Exception as e:
+                                print(f"------ Error in reading max_loan")
+                                
+                   # return
+                        
+                    #ed loan to new member initialize
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
+                        
+                            
                             print('pass member form valid!Y')
                             # firstname = memberForm.cleaned_data['firstname'].strip()
                             # lastname= memberForm.cleaned_data['lastname'].strip()
@@ -3863,7 +3874,41 @@ def create_update_member(request, id=id):
                             qs = memberForm.save(commit= False)
                             qs.user = user   #todo unquote 'user'
                             qs.member_id = newUsername
+                            
+                            print("---- memberid: {memberid}")
+                            
                             updated_Member = qs.save()  #todo uncomment
+                            print(f"---- qs.id: {qs.id}")
+                            memberid = qs.id
+                            ## add Loan to new member
+                            Success = True
+                            category = CAT_LOAN
+                            if  Success:
+                                    try:
+                                        source_type ="M" # additional loan
+                                        payment_additional_qs = PaymentModel(source_type=source_type,source_id =0 ,date_entered=date.today(),transaction_type='D' ,credit=max_loan,debit=0 ,member_id=memberid,category=category)
+                                        payment_additional_qs.save()   
+                                        print(f"success in recording additional loan max:{max_loan}")
+                                    except Exception as e:
+                                        Success = False
+                                        print (f"Error: recording additional loan (Bonus), {e}, {type(e)}")
+                                    if Success:
+                                        try:
+                                                    
+                                                description = "Additional Loan (Bonus)"
+                                                 #loan
+                                                Cc_qs = CcModel(member_id = memberid, date_entered=date.today(),transaction_type='D' ,description=description,credit=max_loan,debit=0,category=category,source_id = payment_additional_qs.id ) #source_id =loan_qs.id 
+                                                Cc_qs.save() 
+                                                
+                                                print(f"success Additional Loan")
+                                        except Exception as e:
+                                                Success= False
+                                                print (f"error result in adding addional loan (bonus):{e}, {type(e)}")
+                            ## end of loan to new member
+                            
+                            
+                            
+                            
                             msg = "New member has been successfully added!"
                             return redirect(f'/success/create_update_member_result/{qs.id}/{msg}')
                     else:
