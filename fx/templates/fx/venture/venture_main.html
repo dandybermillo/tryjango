@@ -158,16 +158,19 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
             <div class="form-group" style="display:block">
 
                 <label for="recipient-name" class="col-form-label">Type name or username:</label>
-                <input type="text" id="txt-search-member" required minlength="3"></input>
+                <input type="text" id="txt-member-partial-payment" required minlength="3"></input>
             </div>
             <br>
 
-            <!-- table_search_context.user_preference.search_member:{{table_search_context.user_preference.search_member}} -->
-            {% include 'fx/member/templates/search_table.html' with code=table_search_context.code_name preference=table_search_context.user_preference.search_member search_receiver=table_search_context %}
+            <!-- xxxxtable_search_context.user_preference.search_member:{{xxxxxxxtable_search_context.user_preference.search_member}} -->
+            ------- venture_main, code-name:{{table_search_context.code_name}}
+            {% include 'fx/member/templates/search_table.html' with code='member-partial-payment' preference=table_search_context.user_preference.search_member search_receiver=table_search_context %}
+
+            
             <!-- search_receiver instead of member -->
             <div class="modal-footer">
                 <button type="search button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input class="btn-search-member-submit btn btn-success" type="submit" name="submit"
+                <input class="btn-member-partial-payment-submit btn btn-success" type="submit" name="submit"
                     value="Search now" />
             </div>
         </div>
