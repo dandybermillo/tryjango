@@ -58,9 +58,10 @@ urlpatterns = [
   path('success/create_update_member_result/<int:id>/<str:msg>', views.create_update_member_result, name="create_update_member_result_url"),
   path('success/create_update_loan_result/<int:id>/<int:loan_id>/<str:msg>', views.create_update_loan_result, name="create_update_loan_result_url"),
   path('success/create_update_payment_result/<str:account_name>/<int:id>/<int:payment_id>/<str:msg>', views.create_update_payment_result, name="create_update_payment_result_url"),
-  path('success/create_update_payment_result/<str:account_name>/<int:id>/<int:payment_id>/<str:msg>', views.create_update_payment_result, name="create_update_payment_result_url"),
+  path('success/payment_venture_result/<str:account_name>/<int:id>/<int:payment_id>/<str:msg>', views.payment_venture_result, name="payment_venture_result_url"),
   path('success/create_update_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.create_update_venture_result, name="create_update_venture_result_url"),
- 
+  # path('success/payment_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.payment_venture_result, name="payment_venture_result_url"),
+
 
 
 

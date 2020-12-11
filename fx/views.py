@@ -207,6 +207,7 @@ def check_user(request):
    
 
 def get_customer_details(request):
+    print("-- get customer id")
     customer_id = request.GET.get("customer_id", "").strip().upper()
     from_code = request.GET.get("from", "manual").strip()
     qrpassword=""
