@@ -84,8 +84,9 @@ def parseint(string,lenght=10): #10 has no meaning
                return int(result)
     return int(result)
 def decode(qr_code):
-   # print("qr_code: "+qr_code )
+    #rint(f"len:{len('da1010-0')}")
     #qr_code ="8da1010-09652"
+    print("qr_code: "+qr_code )
     x = parseint(qr_code,2)
     if x > 9:
         lent = 2
@@ -94,14 +95,14 @@ def decode(qr_code):
     part_un = qr_code[lent+2:lent+6]
     part_pwd = qr_code[lent+x:]
 
-   # print(f"x:{x}, lent:{lent}, part_un:{part_un}, part_pwd:{part_pwd}") 
+    print(f"-----x:{x}, lent:{lent}, part_un:{part_un}, part_pwd:{part_pwd}") 
     #get pass
     #print(f"------ username:   {qr_code[lent:x+lent]}")
     customer_id = qr_code[lent:x+lent]
     save_pwd = get_temp_pass(customer_id)
     #save_pwd =pwd.decode("utf-8")
     #print(f"save pwd: {save_pwd} , username: {qr_code[lent:x+lent]}")
-    #save_pwd = "4590"
+   # save_pwd = "1010"
     pwd = parseint(reverse(save_pwd))
     subtrahend = parseint(part_un) + pwd
     #print(f"subtrahend:{subtrahend}, pwd:{pwd}")
@@ -120,6 +121,36 @@ def reverse(s):
 
 
   #  return {"username":qr_code[lent:x+lent],"password":pwd}
+
+
+def create_qrcode_code(username,save_pwd):
+   # username ="da1212-01"
+    part_un = username[2:6].strip()
+    lent = str(len(username)).strip()
+   # print(f"encode, lent:{lent}, partun:{part_un}")
+   # save_pwd = "1359"
+    pwd =parseint( reverse(save_pwd))
+    part_username = parseint(part_un)
+    subtrahend = part_username + pwd
+    pwd =  pwd + subtrahend
+    
+   ## print(f"{lent}{username}{pwd}")
+    code =f"{lent}{username}{pwd}"
+ #   print(f"code:{code}")
+   # print("decoding")
+   # decoded = decode(code)
+   # decoded = decode("9da1212-0121210")
+    return code
+    #return f"username:{decoded['username']} ,pass:{decoded['password']}"
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 def get_temp_pass(username):
     try:   
@@ -735,17 +766,10 @@ def getLoanPayment(member_id):
 #cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
+    # print("------ create_update_venture")
+    # print(create_qrcode_code("NA1212-0","5105"))
+    # return
     
-    # try:    
-    #     loan_qs = LoanSummaryModel.objects.get(member_id=2)
-    #     loan = loan_qs.max_loan
-    #     percent = loan_qs.percent/100
-    # except Exception as e:
-    #      print (f"retrieving LoanSummaryModel:{e}, {type(e)}")
-     
-     
-
-   # return redirect("/venture_main_request/")
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
         staff_info=""
@@ -757,7 +781,8 @@ def create_update_venture(request,member_id,venture_id,request_action ):
 
             raise Http404("Sorry. User id does not exist!")
             print(f"def cuv @exception, id: None , e:{e}")
-        
+  
+     
     
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -2735,7 +2760,7 @@ def payment_venture_result(request,account_name,id,payment_id,msg):
         return render(request, 'fx/venture/payment.html',context)
 
 
-####    
+####    pv
 def payment_venture(request,member_id,payment_id):
      member_info = get_member_info(member_id,"#create_update_payment. 1") #create_update_payment. 1
      running_balance = 0
@@ -3897,13 +3922,23 @@ def create_update_member(request, id=id):
                                                     
                                                 description = "Additional Loan (Bonus)"
                                                  #loan
-                                                Cc_qs = CcModel(member_id = memberid, date_entered=date.today(),transaction_type='D' ,description=description,credit=max_loan,debit=0,category=category,source_id = payment_additional_qs.id ) #source_id =loan_qs.id 
+                                                Cc_qs = CcModel(member_id = memberid, date_entered=date.today(),transaction_type='D', description=description,credit=max_loan,debit=0,category=category,source_id = payment_additional_qs.id ) #source_id =loan_qs.id 
                                                 Cc_qs.save() 
                                                 
                                                 print(f"success Additional Loan")
                                         except Exception as e:
                                                 Success= False
                                                 print (f"error result in adding addional loan (bonus):{e}, {type(e)}")
+                                        # Add new 
+                                        if  Success:
+                                                try:
+                                                            loanSummary_qs = LoanSummaryModel (member_id = memberid, max_loan =300,date_entered = date.today())
+                                                            loanSummary_qs.save() 
+                                                except Exception as e:
+                                                            print(f" creating new entry for new member e:{e}")
+                                                            Success = False
+                                            
+                                         
                             ## end of loan to new member
                             
                             

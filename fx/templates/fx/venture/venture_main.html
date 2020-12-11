@@ -54,7 +54,7 @@ crossorigin="anonymous"></script> -->
           
             {% if member_info.id > 0 %} 
             <a id ="main-venture" class="text-muted" href="{% url 'fx:create_update_venture_url' member_info.id 0 'VENTURE'  %}">VENTURE</a>
-            <!-- <a id ="main-payment" class="text-muted" href="{% url 'fx:payment_venture_url' member_info.id 0  %}">PAYMENT</a> -->
+            <a id ="payment-login-lnk" class="text-muted" >PAYMENT</a>
             {% endif%}
           </div>
           </div>
@@ -160,6 +160,8 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
                 <label for="recipient-name" class="col-form-label">Type name or username:</label>
                 <input type="text" id="txt-member-partial-payment" required minlength="3"></input>
             </div>
+            <div class="scanner">
+              <video class="preview"></video></div>
             <br>
 
             <!-- xxxxtable_search_context.user_preference.search_member:{{xxxxxxxtable_search_context.user_preference.search_member}} -->

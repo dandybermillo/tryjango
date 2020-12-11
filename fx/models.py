@@ -45,7 +45,7 @@ class LoanSummaryModel(models.Model):
     member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL) # todo null=False
     date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
     max_loan = models.FloatField(verbose_name ="Max Loan", default =300 )
-    percent = models.PositiveIntegerField(default =35)
+    percent = models.PositiveIntegerField(default =25)
     
 
 

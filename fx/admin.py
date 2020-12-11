@@ -91,6 +91,7 @@ class tmpVariablesModelAdmin(admin.ModelAdmin):
     list_display = ['id','max_loan'
 ]
 admin.site.register(tmpVariables,tmpVariablesModelAdmin)
+admin.site.register(LoanSummaryModel,LoanSummaryModelAdmin)
 
 admin.site.register(VentureWalletModel,VentureWalletModelAdmin)
 admin.site.register(TradingModel,TradingModelAdmin)
