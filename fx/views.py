@@ -2336,6 +2336,213 @@ def create_update_payment_result(request,account_name,id,payment_id,msg):
         messages.success(request, msg)
         return render(request, 'fx/e_wallet/create_update_payment.html',context)
 
+#cufr
+
+def finance_venture_result(request,account_name,id,account_id,msg):
+        model_list= {"wallet":"WalletModel","saving":"SavingModel","cc":"CcModel","payment":"PaymentModel","loan":"PersonalLoanModel"}
+        model_name =model_list.get(account_name).lower()
+        Model = apps.get_model('fx', model_name)
+        member_info = get_member_info(id,"#create_update_result.1") #create_update_result.1
+        account= get_object_or_404(Model, id=account_id)
+        #Form = apps.get_form('fx', 'WalletForm')
+        if account_name =="wallet":
+            accountForm = WalletForm( instance=account,prefix="deposit_withdraw")
+           # accountForm.wallet_id =account_id
+        else:
+            accountForm = SavingForm( instance=account,prefix="deposit_withdraw")
+        accountForm.account_id =account_id
+        accountForm.account_name = account_name
+        accountForm.account = {account_name:"selected_account"}
+        accountForm.requested_action = account.transaction_type
+        context = { 
+                'asset_liabities':get_all_balances(id),
+                'post_data':True,
+                'member_info':member_info, 
+                'account':accountForm,
+            }
+        
+        messages.success(request, msg)
+        return render(request, 'fx/venture/finance.html',context)
+
+#cuf
+def finance_venture(request,account_name,member_id,account_id,transType):
+        transType_description= {'D': 'Cash In', 'W': 'Cash out' }[transType] 
+        model_list= {"wallet":"WalletModel","saving":"SavingModel","cc":"CcModel","payment":"PaymentModel","loan":"PersonalLoanModel"}
+        model_name =model_list.get(account_name).lower()
+        Model = apps.get_model('fx', model_name)
+        member_info = get_member_info(member_id,"# create_update_member_finance.1") # create_update_member_finance.1
+        
+        running_balance = 0
+        running_balance = get_running_finance_balance(account_name,"member_id",member_id)["running_balance"]
+        #         No_Transaction_Yet = False
+        # except  WalletTransaction.DoesNotExist:
+        #         running_balance =0
+          
+        if request.method == 'POST':
+                print(f"......... past request.method == 'POST':")
+                valid =True 
+                if transType == 'W': 
+                        if account_id == 0:
+                            temp_balance = running_balance
+                            amount= request.POST.get("deposit_withdraw-debit")
+                        else:
+                            wallet=Model.objects.get(id=account_id)  #todo try:
+                            debit =wallet.debit 
+                            temp_balance = running_balance + debit
+                            amount= request.POST.get("deposit_withdraw-debit")
+                        
+                        if  len(amount.strip()) > 0 and float(amount) > temp_balance:
+                            valid = False
+                            messages.error(request, f"Amount to cash out must not be more than {running_balance}")
+
+                if account_id == 0:   #---------------------  Save New record -----------------------------------
+                        print(f"......... if account_id == 0:")
+                       # memberTrans = WalletTransaction.objects.get (member_id=id) # add try exception
+                        if account_name == "wallet":
+                            accountForm = WalletForm(request.POST,prefix="deposit_withdraw")
+                           # accountForm.account_id=account_id   # extra field inserted  used in .html
+                        else:
+                            accountForm = SavingForm(request.POST,prefix="deposit_withdraw")
+                        accountForm.account_id=account_id
+                        accountForm.account = {account_name:"selected_account"}
+                        accountForm.requested_action = transType
+                        if valid and accountForm.is_valid():
+                                if transType == 'D':
+                                    debit=0
+                                    credit=accountForm.cleaned_data['credit']
+                                else:  # this withdrawal
+                                    debit=accountForm.cleaned_data['debit']
+                                    credit =0
+                                category = 0 #means normal debit and credit transaction
+                                date_entered =accountForm.cleaned_data['date_entered']
+                                description =accountForm.cleaned_data['description']
+                                #walletTransaction_id = memberTrans.id  
+                                account = Model(date_entered=date_entered,transaction_type=transType ,description=description,credit=credit,debit=debit ,member_id=member_id,category=category)
+                                account.save()  #todo now {uncomment}
+                                #print("after saving wallet id:",wallet.id)
+                              #  parameters["wallet_id"] = wallet.id
+                                
+                                msg ="New transaction has been successfully added!"
+                                return redirect(f'/success/finance_venture_result/{account_name}/{member_id}/{account.id}/{msg}')
+                                #return render(request, 'products/e_wallet/create_update_member_wallet.html',context)
+                        else:
+                                print("invalid entry...")
+                                messages.error(request, 'Please fill the box with red color. Thanks.')
+                              #  messages.error(request, 'Error encountered while saving new record!')
+                                context = {
+                                        'asset_liabities':get_all_balances(member_id),
+                                        'member_info':member_info, 
+                                        'account': accountForm,
+                                }
+                                return render(request, 'fx/venture/finance.html', context)
+                                
+                #--------------------- end of Save New record -----------------------------------
+                else: # update existing record in  wallet database
+
+
+                    
+                            #print(f"......... else of if wallet_id == 0: ")
+                            account= get_object_or_404(Model, id=account_id)
+                            # wallet_transaction_type =  wallet.transaction_type
+                            if account_name == "wallet":
+                                 #accountForm = WalletForm(request.POST,prefix="deposit_withdraw")
+                                accountForm = WalletForm(request.POST , instance=account,prefix="deposit_withdraw")
+                            else:
+                                accountForm = SavingForm(request.POST , instance=account,prefix="deposit_withdraw")
+                            accountForm.account = {account_name:"selected_account"} #to mark the remaining balance of an account
+                            accountForm.account_id=account_id
+                            accountForm.requested_action = transType
+                            if valid and accountForm.is_valid():
+                               # print(f"......past <if valid and walletForm.is_valid()>:")
+                                account =accountForm.save()
+                                context = { 
+                                           'asset_liabities':get_all_balances(member_id),
+                                            'member_info':member_info, 
+                                            'account':accountForm ,  
+                                        }
+                                msg ="Following record has been successfully updated!"
+                                return redirect(f'/success/finance_venture_result/{account_name}/{member_id}/{account.id}/{msg}')
+                               # messages.success(request, 'Following record has been successfully updated!.')
+                                #return render(request, 'products/e_wallet/create_update_member_wallet.html',context) 
+#111
+                            else:
+                                messages.error(request, 'Please fill the box with red color. Thanks.')
+
+                                print("invalid form.....")
+                                
+                                context = {
+                                        'asset_liabities':get_all_balances(member_id),
+                                        'account': accountForm,
+                                        'member_info':member_info,
+                                        
+                                }
+                                return render(request, 'fx/venture/finance.html', context)
+                                #todo replace with code to go bac to form
+                           # return redirect("/display_client_saving/{}".format(client.id))  #todo change to wallet from saving
+
+                    
+        else: #  GET: 'else' of if request.method == 'POST': 
+                                #---------------------  create New record -----------------------------------
+                
+                print(f"........ create record reach..")
+                if account_id == 0: # add new record
+                                # client = get_object_or_404(Client,id=id)
+                                    if transType =="W":
+                                        debit=""
+                                        credit=0
+                                    else:
+                                        credit=""
+                                        debit =0
+                                    initial_data ={'debit':debit,'credit':credit, 'transaction_type':transType, 'date_entered': date.today(),'description':transType_description} #note: not for editing data
+                                    
+                                    if account_name == "wallet":
+                                            accountForm = WalletForm(initial =initial_data,prefix="deposit_withdraw")  #--- saving
+                                         #   accountForm.account_id=account_id
+                                    else:
+                                        accountForm = SavingForm(initial =initial_data,prefix="deposit_withdraw")  #--- saving
+                                    accountForm.account_id=account_id
+                                    accountForm.account = {account_name:"selected_account"}
+                                    accountForm.account_name = account_name
+                                    accountForm.requested_action = transType
+                                    
+                                    #1111
+
+                                    # if No_Transaction_Yet:  #   SavingTransaction.DoesNotExist:
+                                    #         running_balance = 0
+                                    #         qs_wallet_info = WalletTransaction(date_entered=date.today(),member_id=id)
+                                    #         qs_wallet_info.save()
+                                    print(f"....member_id: {member_info.id}")
+                                    context = { 
+                                            'asset_liabities':get_all_balances(member_id),
+                                            'account': accountForm,
+                                            'member_info':member_info,
+                                            
+                                        }
+                                    return render(request, 'fx/venture/finance.html', context)
+                                    #---------------------end  Save New record -----------------------------------
+
+                else:  #request a update for existing wallet entry
+                    account= get_object_or_404(Model, id=account_id)
+                    # wallet_transaction_type =  account.transaction_type
+                    if account_name == 'wallet':
+                        accountForm = WalletForm( instance=account,prefix ="deposit_withdraw") # instance=saving bcoz editing process, none when new record
+                     
+                    else:
+                        accountForm = SavingForm( instance=account,prefix ="deposit_withdraw") # instance=saving bcoz editing process, none when new record
+                    accountForm.account_id=account_id
+                    accountForm.account = {account_name:"selected_account"}
+                    accountForm.account_name = account_name
+                    accountForm.requested_action = transType
+
+                    context = {
+                        'asset_liabities':get_all_balances(member_id),
+                        'account': accountForm,   
+                        'member_info':member_info,
+                    }
+                    return render(request, 'fx/venture/finance.html', context)
+
+
+
 
 ####
 def create_update_payment(request,member_id,payment_id):
