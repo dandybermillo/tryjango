@@ -146,32 +146,7 @@
  
  
 
-    <div id="login" class="modal fade" role="dialog">
-        <div class="modal-dialog  modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button data-dismiss="modal" class="close">&times;</button>
-                    <h4>Authenticate Members</h4>
-                    <div class="scanner">
-                        <video id="preview"></video></div>
-                    <div id="authenticate-alert" class="alert alert-danger" role="alert" style="display:none">
-                        Invalid username or password
-                    </div>
-                    <form>
-                        <br>
-                        <input type="text" name="customer_id" id="customer_id" class="customer-username form-control"
-                            placeholder="Username" />
-                        <input type="password" id="customer-password" name="password" class="password form-control"
-                            placeholder="password" />
-                        <br>
-
-                        <a class="btn login" id="btn-agree">AGREE</a>
-                        <a class="btn login" id="btn-auth-hide" type="cancel"> HIDE</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
 
     <!-- <div id="payment-login" class="modal fade" role="dialog">
@@ -389,7 +364,7 @@
                                 id="change_deposit_to"  >
 
                                 <div class="dropdown-menu" aria-labelledby="source-cash-drop">
-                                    
+                                     <button class="deposit-cash dropdown-item" type="button">SELECT OPTION</button>
                                     <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
                                     <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
                                 </div>
@@ -546,6 +521,17 @@
 
 
                             </div>
+                            <div class="review form-group row">
+                                <div class="col-sm-11">
+                                <br>
+
+                                <h3>CHANGE <span id ="review-change" class="badge badge-secondary">P 0.0</span> <span> </span>  <span id ="review-saveOption" class="badge badge-secondary"></span></h3>
+                                </div>
+
+
+
+
+                            </div>
 
                             <div class="review-venture-modal-footer" style="text-align:right">
                                 <button id="review-back-venture-btn" type="button" class="btn btn-secondary">Go
@@ -581,16 +567,12 @@
 
         </div>
 
-
-
-
-
        
  
 </body>
 
 </html>
-<script>
+<!--  
     // document.addEventListener("DOMContentLoaded", event => {
     //  console.log("ok......");
     //   let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
@@ -605,16 +587,7 @@
     //     beep();
     //   });
     
-    // });
-    function beep() {
-            (new
-                Audio(
-                    "data:audio/wav;base64,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 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU="
-                )).play();
-        }
-    </script>
-
-
+    // }); -->
 
 
 <script>
@@ -631,11 +604,6 @@
     keys["PREVIOUS-INPUT"] = "";
     // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
     //console.log("previous acct:" + keys["previous-selected-account"]);
-
-
-
-
-
 
     (function () {
         'use strict';
@@ -656,24 +624,15 @@
         }, false);
     })();
 
-
-
     $(document).ready(function () {
         var post_data = "{{post_data}}";
 
-        
-        
-        $("#main-venture").hide();
+        $("#main-venture").css("disabled", "disabled");
+        $("#main-venture").css("color", "white");
         $('#modal-search-member').on('shown.bs.modal', function () {
                 $('#txt-search-member').trigger('focus')
             })
-        // $("#search_div").click(function () {
-        //       console.log("search....");
-                
-        //         $('#modal-search-member').modal('toggle');
-
-        //     });
-
+       
 
 
         // this is document ready start
@@ -810,6 +769,17 @@
             //     console.log("payment....");
             // }
         });
+       
+        function changeHrefValues(member_id){
+            console.log("member_id:: "+member_id)
+            $("#main-venture-wallet-deposit").attr("href", "/finance/wallet/"+member_id+"/0/D");
+            $("#main-venture-wallet-withdraw").attr("href", "/finance/wallet/"+member_id+"/0/W");
+            $("#main-venture-saving-deposit").attr("href", "/finance/saving/"+member_id+"/0/D");
+            $("#main-venture-saving-withdraw").attr("href", "/finance/saving/"+member_id+"/0/W");
+
+
+        }
+
         function search_member(customer_id, qrpassword, code) {
             console.log("on search_member func");
             console.log("customer_id: " + customer_id)
@@ -880,7 +850,11 @@
                                 $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
                                 $("#review-venture-customer-txt").val(name); //change to: appear in summary form
                                 $("#venture-total-txt").focus();
+                                changeHrefValues(response["member_info"]['id']);
+                          
+
                             } else {
+                                changeHrefValues(response["member_info"]['id']);
                         ID_Info.id = "";
                         ID_Info.is_name_blank = true;
                         $("#venture-customer_id-txt").focus();
@@ -958,11 +932,10 @@
 
         });
 
-
-        $("#tender-txt").on("keyup", function () {
-            
+       
+        function compute_change(){
             var amount = parseFloat($("#id_amount").val());
-            var tender =  parseFloat($(this).val());
+            var tender =  parseFloat($("#tender-txt").val());
             console.log("amount:"+ amount);
             console.log("tender:"+ tender);
 
@@ -970,17 +943,23 @@
             change = change.toFixed(2).replace('.00', '');
             console.log("change:"+ change);
             if(change > 0){
-            $("#change-txt").val(change);
+               $("#change-txt").val(change);
 
             }else{
+                $("#deposit-cash-drop").text("SELECT OPTION");
                 $("#change-txt").val("");
-
-
+                $("#review-saveOption").text("");
+                $("#review-change").text("");
             }
 
+        }
+
+        $("#tender-txt").on("keyup", function () {
+            
+           compute_change();
 
         });
-
+       
         
         
 
@@ -1005,6 +984,7 @@
             } else {
                 $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
             }
+            compute_change();
         });
 
         $("#id_amount").on("keyup", function () {
@@ -1318,13 +1298,7 @@
 
 
         
-        $("#payment-login-lnk").click(function () {
-
-           console.log("payment-login-lnk");
-           $("#login").modal('show');
-             videoCode = 1;
-
-        });
+       //
         
         $("#venture-done").click(function () {
             videoCode = 2
@@ -1395,6 +1369,23 @@
             $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
             $("#review-venture-description-txt").val(description);
             $("#venture-payment-failed-alert").hide();
+            var change =parseFloat( $("#change-txt").val());
+            console.log("change: "+change);
+            if (change > 0 ) {
+                var saveOption =  $("#deposit-cash-drop").text().trim();
+                $("#review-change").text("P "+ change);
+                console.log("saveOption: "+saveOption);
+                if (saveOption != "SELECT OPTION") { 
+                     
+                       $("#review-saveOption").text(saveOption);
+                }else{
+
+                    $("#review-saveOption").text("");
+                }
+
+            }
+
+
 
         });
     });

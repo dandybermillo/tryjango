@@ -29,14 +29,33 @@ crossorigin="anonymous"></script> -->
 
 </head>
 <style>
+
   .lnk{
     color:white;
-    font-size: 1.8rem
+    font-size: 1.8rem;
   }
-   
+  
   div.white {
       color:white;
   }
+  /* .lingk{
+
+    color:blue;
+  } */
+  .lingk-a{
+
+color:white;
+}
+/* a:link {
+color: #0099CC;
+background-color: transparent;
+text-decoration: none;
+} */
+ul {
+  list-style-type: none;
+}
+
+   
   </style>
   {% block css_style %}
   {%  endblock css_style %}
@@ -53,9 +72,26 @@ crossorigin="anonymous"></script> -->
  <br/>     <div style ="display: block;"> 
           
             {% if member_info.id > 0 %} 
-            <a id ="main-venture" class="text-muted" href="{% url 'fx:create_update_venture_url' member_info.id 0 'VENTURE'  %}">VENTURE</a>
-            <a id ="payment-login-lnk" class="text-muted" >PAYMENT</a>
-            <a id ="payment-login-lnk-hidden"  hidden href="/payment/1/0/" ></a>
+            <a id ="payment-login-lnk-hidden"  hidden href="/payment/1/0/" ></a> 
+           <ul> 
+            <li><a id ="main-venture"  href="{% url 'fx:create_update_venture_url' member_info.id 0 'VENTURE'  %}">VENTURE </a>
+            </li>
+            <li class="lingk"> <a id ="payment-login-lnk"  style="color:blue" >PAYMENT ACCOUNT</a></li>
+                <li class="lingk-a"> WALLET ACCOUNT
+                  <ul>
+                    <li> <a id ="main-venture-wallet-deposit" class="lingk"  href="{% url 'fx:finance_venture_url' 'wallet'  member_info.id 0  'D'  %}">DEPOSIT</a> </li>
+                    <li> <a id ="main-venture-wallet-withdraw"  class="lingk" href="{% url 'fx:finance_venture_url' 'wallet'  member_info.id 0  'W'  %}">WITHDRAW</a></li>
+                  </ul>
+                </li>
+                <li class="lingk-a">SAVING'S ACCOUNT
+                   <ul>
+                    <li> <a id ="main-venture-saving-deposit" class="lingk"   href="{% url 'fx:finance_venture_url' 'saving'  member_info.id 0  'D'  %}">DEPOSIT</a> </li>
+                    <li> <a id ="main-venture-saving-withdraw" class="lingk" href="{% url 'fx:finance_venture_url' 'saving'  member_info.id 0  'W'  %}">WITHDRAW</a></li>
+                    </ul>
+                </li>
+           
+            </ul>
+            
 
             {% endif%}
           </div>
@@ -125,7 +161,34 @@ crossorigin="anonymous"></script> -->
 
 
 
+<!-- Athenticate user by logging in -->
 
+<div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+          <div class="modal-body">
+              <button data-dismiss="modal" class="close">&times;</button>
+              <h4>Authenticate Members</h4>
+              <div class="scanner">
+                  <video id="preview"></video></div>
+              <div id="authenticate-alert" class="alert alert-danger" role="alert" style="display:none">
+                  Invalid username or password
+              </div>
+              <form>
+                  <br>
+                  <input type="text" name="customer_id" id="customer_id" class="customer-username form-control"
+                      placeholder="Username" />
+                  <input type="password" id="customer-password" name="password" class="password form-control"
+                      placeholder="password" />
+                  <br>
+
+                  <a class="btn login" id="btn-agree">AGREE</a>
+                  <a class="btn login" id="btn-auth-hide" type="cancel"> HIDE</a>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
 <!-- ---------------  search  ---------------- -->
 
 <div id="modal-search-member" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
@@ -239,6 +302,26 @@ $("#search_div").click(function () {
                 $('#modal-search-member').modal('toggle');
 
             });
+
+
+$("#payment-login-lnk").click(function () {
+
+console.log("payment-login-lnk");
+$("#login").modal('show');
+  videoCode = 1;
+
+});
+
+
+
+
+// $("#finance-lnk").click(function (event) {
+      
+//         event.preventDefault();
+//         event.stopPropagation();
+//         console.log("-----------");
+      
+//     });
 </script>
 
 

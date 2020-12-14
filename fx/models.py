@@ -36,7 +36,27 @@ class MemberModel (models.Model):
      def name(self):
         return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
  
-     
+ 
+class dayTransactionModel(models.Model):
+   PAYMENT,VENTURE,TRANSACTION=(0,1,2)
+   cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"))
+   CASH,WALLET,SAVING=(0,1,2)
+   source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
+   category = models.PositiveIntegerField(default = 1 ,choices = cat)   
+   customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='venture_customer' ) # todo null=False
+   in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='venture_in_charge' ) # todo null=False
+
+   date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
+   source_type = models.CharField(max_length=1,default =CASH,choices = source_type_cat)  #c: cash,A Additional Loan, M max loan  
+   amount = models.FloatField(default =0 )       
+   source_id = models.IntegerField(default =0) 
+                                                                                                                                        
+
+
+   
+
+      
+
 class IdRepositoryModel(models.Model):
     code =  models.CharField(max_length=8,unique =  True, blank =True, null =True)
     counter =  models.IntegerField(default =0) 

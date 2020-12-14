@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables
+from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -62,12 +62,13 @@ model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
 CREATE,UPDATE,DELETE =(0,1,2)
+NEW_RECORD, EDIT_RECORD =(0,1)
 SOURCE_TRADING,SOURCE_VENTURE,SOURCE_REGULAR =(1,2,3)
 CAT_REG_TRANSACTION,CAT_TRANSFER,CAT_GROCERY,CAT_LOAN,CAT_VENTURE,CAT_TRADE =(0,1,2,5,6,7)
 source_funds_cc= {SOURCE_VENTURE:"VentureCcModel",SOURCE_TRADING:"CcModel",SOURCE_REGULAR:"CcModel"}
 source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletModel",SOURCE_REGULAR:"WalletModel"}
 #21
-
+TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 
 
@@ -749,7 +750,20 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
     
 
 
+ #    saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
 
+def  saveTransHistory(user_id,member_id,category,venture_id, description,amount,code):
+
+    if code == NEW_RECORD:
+        print("------------writing on saveHistory")
+        try:
+                daytransactionmodel_qs = dayTransactionModel(in_charge = user_id,customer_id = member_id,category =category, amount = amount,date_entered =date.today())
+            
+                
+                daytransactionmodel_qs.save()
+                #venture_id =venture_qs.id
+        except Exception as e:
+            print(f"creating new record on saveTransHistory: {e}")
 
 def getLoanPayment(member_id):
     try:    
@@ -777,14 +791,10 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         try:
             staff_info =  MemberModel.objects.get(user_id = request.user.id) 
             print(f"..staff_info:{staff_info.name}")
-           
         except Exception as e:
-
             raise Http404("Sorry. User id does not exist!")
             print(f"def cuv @exception, id: None , e:{e}")
   
-     
-    
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
     Model = apps.get_model('fx', model_name)
@@ -793,8 +803,6 @@ def create_update_venture(request,member_id,venture_id,request_action ):
     member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
    # print(f"model_name:{model_name}")
     #return
-     
-
     if  request_action == "venture":
             category =CAT_VENTURE
             description ="GROCERY"
@@ -1115,9 +1123,6 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         source_type = ventureForm.cleaned_data['source_type']
                         cc =  ventureForm.cleaned_data['cc']
                         percent = ventureForm.cleaned_data['percent']
-                        # print(f".......")
-                        # return
-                        #+
                         if request_action == "trade":
                             role_type = ventureForm.cleaned_data['role_type']
                             if role_type == "S":
@@ -1126,8 +1131,6 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                     customer =temp
                                       
                         Success = True
-                       # print(f"...seller:{seller}, customer_id: {customer_id} ,source_type:{source_type} ")
-                       # print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
                         venture_id_change =venture_id
                         venture_id = 0
                         try:
@@ -1146,7 +1149,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                             Success = False
                             print(f"creating venture transaction: {e}")
                         filter_fields = {"flag":1,'in_charge':staff_info.id} 
-                        if   source_type =="W": #create new record. A
+                        if source_type =="W": #create new record. A
                                 customer_source_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"#create new record. A")
                                 filter_fields["customer_source_id"] =customer_source_id
                                 if customer_source_id <=0:
@@ -1187,6 +1190,10 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         if response:
                              print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
                         print(f"filter_fields: {filter_fields}")
+                        
+                        
+                        
+                        
                         if Success:
                                 Success = True
                                 try:
@@ -1204,6 +1211,8 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                            #  response = add_change_transaction(venture_id_change, response["id"],venture_id,amount)
                                             
                                              print("success................")
+                                if Success:
+                                      saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
                                 
                                 
                                 
@@ -1232,7 +1241,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                     'member_info':member_info,
                                 }
                         return render(request, 'fx/venture/venture.html', context)
-         
+
 def get_due_date_string(value):
     month={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"June",7:"Jul",8: "Aug",9:"Sept",10:"Oct", 11:"Nov",12:"Dec"}
     delta = date.today() - value 

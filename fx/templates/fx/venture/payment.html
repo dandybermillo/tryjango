@@ -74,7 +74,7 @@
             <label for="account-member-name" style="padding-left:2px">Member:</label>
 
             <input id="account-member-name" type="text" readonly class="form-control-plaintext"
-                style="border:1px solid #ced4da"
+                style="border:1px solid #ced4da;font-weight: bolder;"
                 value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
         </div>
     </div>
@@ -412,7 +412,10 @@
         // }
 
         console.log("source_type:" + source_type);
-        $("#payment-login-lnk").hide();
+        $("#payment-login-lnk").css("color", "white");
+        $("#payment-login-lnk").attr("disabled", "disabled");
+         
+
 
         if (keys['CASH-BALANCE'] < min) {
             min = keys['CASH-BALANCE'];
