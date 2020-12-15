@@ -301,7 +301,7 @@ class Change_Table(models.Model):
       destination_acct_id = models.IntegerField(default = 0) # > 0 linking to transfer,loan 
       venture = models.ForeignKey(VentureModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
-      destination_acct_code = models.CharField(max_length=1,blank =True,default ='W') #W wallet S:Saving
+      destination_acct_code = models.CharField(max_length=1,blank =True,default ='') #W wallet S:Saving
       #flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       
       

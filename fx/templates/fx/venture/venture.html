@@ -364,9 +364,10 @@
                                 id="change_deposit_to"  >
 
                                 <div class="dropdown-menu" aria-labelledby="source-cash-drop">
-                                     <button class="deposit-cash dropdown-item" type="button">SELECT OPTION</button>
+                                    
                                     <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
                                     <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
+                                    <!-- <button class="deposit-cash dropdown-item" type="button">SELECT OPTION</button> -->
                                 </div>
                             </div>
                         </div>
@@ -627,7 +628,7 @@
     $(document).ready(function () {
         var post_data = "{{post_data}}";
 
-        $("#main-venture").css("disabled", "disabled");
+        $("#main-venture").prop("disabled", true);
         $("#main-venture").css("color", "white");
         $('#modal-search-member').on('shown.bs.modal', function () {
                 $('#txt-search-member').trigger('focus')
@@ -946,7 +947,9 @@
                $("#change-txt").val(change);
 
             }else{
+                 // the bottom 2 must be together
                 $("#deposit-cash-drop").text("SELECT OPTION");
+                $("#change_deposit_to").val("SELECT OPTION");
                 $("#change-txt").val("");
                 $("#review-saveOption").text("");
                 $("#review-change").text("");
@@ -1217,6 +1220,7 @@
 
         $(".deposit-cash").click(function () {
             var text = $(this).text().trim();
+            // note: 2 bottom shud always together
             $("#deposit-cash-drop").text(text);
             $("#change_deposit_to").val(text);
 
