@@ -643,7 +643,8 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                         change = Change_Table.objects.get(venture_id=source_id)
                         destination_acct_id = change.destination_acct_id
                         old_destination_acct_code = change.destination_acct_code
-                        print(f"old_destination_acct_code:{old_destination_acct_code}")
+                        old_amount = change.change
+                        print(f"old_destination_acct_code:{old_destination_acct_code}, change:{old_amount}")
                     except Exception as e:
                                 print (f"add_regular_transaction:not found,code > 0:{e}, {type(e)}")
                                 if credit <=0:
@@ -702,10 +703,16 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                                 except Exception as e:
                                             print (f"destination_acct != old_destination_acct:delete rec:{e}, {type(e)}")
                                             return {"Success":False}
-                                try:
-                                        destination_model = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
-                                        destination_model.save() 
-                                        wallet_change_deposit = Change_Table.objects.filter(venture_id = source_id).update( destination_acct_code = destination_acct_code,destination_acct_id =destination_model.id)
+                                try: 
+                                        id =0
+                                        if target_table !="":
+                                            destination_model = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+                                            destination_model.save() 
+                                            id = destination_model.id
+                                        filter_fields = {"destination_acct_code": destination_acct_code,"destination_acct_id": id}
+                                        if old_amount != credit:
+                                            filter_fields["change"]= credit
+                                        change_deposit = Change_Table.objects.filter(venture_id = source_id).update( **filter_fields)
                                         return {"Success":True}
                                 except Exception as e:
                                             print (f"destination_acct != old_destination_acct:adding rec{e}, {type(e)}")
