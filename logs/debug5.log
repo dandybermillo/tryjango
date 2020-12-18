@@ -75,3 +75,5 @@ INFO 2020-12-18 19:40:51,623 autoreload 36044 16600 C:\Users\dan\just_django\try
 INFO 2020-12-18 19:40:52,180 autoreload 39020 17440 Watching for file changes with StatReloader
 INFO 2020-12-18 19:41:55,947 autoreload 39020 17440 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
 INFO 2020-12-18 19:41:56,561 autoreload 38016 38756 Watching for file changes with StatReloader
+INFO 2020-12-18 20:39:24,369 autoreload 38016 38756 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
+INFO 2020-12-18 20:39:24,891 autoreload 10876 21688 Watching for file changes with StatReloader
