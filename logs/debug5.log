@@ -149,3 +149,11 @@ INFO 2020-12-18 21:00:46,216 autoreload 18836 33320 C:\Users\dan\just_django\try
 INFO 2020-12-18 21:00:46,966 autoreload 43148 28520 Watching for file changes with StatReloader
 INFO 2020-12-18 21:01:06,964 autoreload 43148 28520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
 INFO 2020-12-18 21:01:07,522 autoreload 34468 37800 Watching for file changes with StatReloader
+INFO 2020-12-18 21:01:21,135 views 34468 38300 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-18 21:01:21,254 basehttp 34468 38300 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 90226
+WARNING 2020-12-18 21:01:25,232 basehttp 34468 38300 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2020-12-18 21:01:25,498 basehttp 34468 25124 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2020-12-18 21:01:25,502 basehttp 34468 14088 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2020-12-18 21:01:25,505 basehttp 34468 36212 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2020-12-18 21:01:52,364 views 34468 36212 -- get customer id
+INFO 2020-12-18 21:01:52,558 basehttp 34468 36212 "GET /get_customer_details/?customer_id=NA1212-0&password=5105&from=manual HTTP/1.1" 200 122
