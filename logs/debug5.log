@@ -73,3 +73,5 @@ INFO 2020-12-18 19:40:00,389 basehttp 36044 40828 "GET /static/css/bootstrap.min
 INFO 2020-12-18 19:40:06,918 basehttp 36044 40828 "GET /get_customer_details/?customer_id=NA1212-0&password=5105&from=manual HTTP/1.1" 200 122
 INFO 2020-12-18 19:40:51,623 autoreload 36044 16600 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
 INFO 2020-12-18 19:40:52,180 autoreload 39020 17440 Watching for file changes with StatReloader
+INFO 2020-12-18 19:41:55,947 autoreload 39020 17440 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
+INFO 2020-12-18 19:41:56,561 autoreload 38016 38756 Watching for file changes with StatReloader
