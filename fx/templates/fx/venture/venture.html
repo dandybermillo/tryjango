@@ -826,7 +826,7 @@
                 success: function (response) {
                     ID_Info.ON_SEARCH = false;
                     console.log("videoCode:  >"+videoCode );
-                    if( videoCode == 2) {  // 
+                    if( videoCode == 2) {  // venture
 
                             if (response['data'] == "Success") {
                                 console.log("response['data'] == 'Success' passed" );
@@ -860,22 +860,22 @@
                                 console.log("else of response['data'] == 'Success' passed" );
                                 console.log("changeHrefValues(response[member_info]['id'])");
                                // changeHrefValues(response["member_info"]['id']);
-                        ID_Info.id = "";
-                        ID_Info.is_name_blank = true;
-                        $("#venture-customer_id-txt").focus();
-                        $("#customer-name").val("");
-                        message = response['message'];
-                        //if (message == "xusername") {
-                        //added 4
-                        //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
-                        //} else {
-                        //added 4
-                        $("#authenticate-alert").text("Message: " + message);
-                        //  }
-                        //added 4
-                        $("#authenticate-alert").show();
+                                ID_Info.id = "";
+                                ID_Info.is_name_blank = true;
+                                $("#venture-customer_id-txt").focus();
+                                $("#customer-name").val("");
+                                message = response['message'];
+                                //if (message == "xusername") {
+                                //added 4
+                                //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
+                                //} else {
+                                //added 4
+                                $("#authenticate-alert").text("Message: " + message);
+                                //  }
+                                //added 4
+                                $("#authenticate-alert").show();
 
-                    }
+                                         }
                     }else // payment
                     {
                         var member_id = response["member_info"]['id'];

@@ -214,7 +214,7 @@ def check_user(request):
    
 
 def get_customer_details(request):
-    print("-- get customer id")
+    logger.info("-- get customer id")
     customer_id = request.GET.get("customer_id", "").strip().upper()
     from_code = request.GET.get("from", "manual").strip()
     qrpassword=""
@@ -267,14 +267,18 @@ def get_customer_details(request):
                                             res= user.check_password(password)
                                             print(f"....password:{password} , check: {res}")
                                             if not user.check_password(password):
+                                                logger.info("Incorrect password")
                                                 return JsonResponse({"message":'Incorrect password'}, status = 200)
                                             if not user.is_active:
+                                                logger.info("This user is not active")
                                                 return JsonResponse({"message":'This user is not active'}, status = 200) 
                                                 
-                                    except ObjectDoesNotExist:
+                                    except Exception as e:
+                                        logger.warning(f"get_customer_details: {e}, {type(e)}")
                                         return JsonResponse({"message":'This user does not exist'}, status = 200) 
 
                     else:
+                         logger.info("Sorry. We are unable to indentify this username")
                          return JsonResponse({"message":'Sorry. We are unable to indentify this username'}, status = 200) 
                  
 
@@ -291,6 +295,7 @@ def get_customer_details(request):
             return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":round(cm_balance)}, status = 200)
       except Exception as e:
             print (f"{e}, {type(e)}")
+            logger.warning(f"{e}, {type(e)}")
             return JsonResponse({"message":message}, status = 200)    
     return JsonResponse({}, status = 400)
 

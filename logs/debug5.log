@@ -77,3 +77,75 @@ INFO 2020-12-18 19:41:55,947 autoreload 39020 17440 C:\Users\dan\just_django\try
 INFO 2020-12-18 19:41:56,561 autoreload 38016 38756 Watching for file changes with StatReloader
 INFO 2020-12-18 20:39:24,369 autoreload 38016 38756 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
 INFO 2020-12-18 20:39:24,891 autoreload 10876 21688 Watching for file changes with StatReloader
+INFO 2020-12-18 20:47:14,218 autoreload 10876 21688 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
+INFO 2020-12-18 20:47:14,756 autoreload 15448 28864 Watching for file changes with StatReloader
+INFO 2020-12-18 20:56:24,415 autoreload 15448 28864 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:56:25,168 autoreload 32628 21648 Watching for file changes with StatReloader
+INFO 2020-12-18 20:56:27,640 autoreload 32628 21648 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:56:28,223 autoreload 39696 21936 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:03,659 autoreload 39696 21936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:04,157 autoreload 39200 36032 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:08,701 autoreload 39200 36032 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:09,209 autoreload 15992 32268 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:16,806 autoreload 15992 32268 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:17,339 autoreload 6768 44472 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:39,449 autoreload 6768 44472 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:40,006 autoreload 23452 43672 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:41,521 autoreload 23452 43672 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:42,359 autoreload 26620 37076 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:53,363 autoreload 26620 37076 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:53,940 autoreload 43760 18564 Watching for file changes with StatReloader
+INFO 2020-12-18 20:57:59,281 autoreload 43760 18564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:57:59,892 autoreload 24160 36548 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:04,219 autoreload 24160 36548 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:04,751 autoreload 44036 38304 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:23,831 autoreload 44036 38304 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:24,435 autoreload 44112 32800 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:27,930 autoreload 44112 32800 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:28,528 autoreload 2768 9208 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:40,366 autoreload 2768 9208 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:41,122 autoreload 22200 6724 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:42,696 autoreload 22200 6724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:43,319 autoreload 13096 28152 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:44,888 autoreload 13096 28152 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:45,791 autoreload 29576 41608 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:48,500 autoreload 29576 41608 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:49,402 autoreload 34176 42428 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:55,216 autoreload 34176 42428 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:56,011 autoreload 35592 26224 Watching for file changes with StatReloader
+INFO 2020-12-18 20:58:57,605 autoreload 35592 26224 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:58:58,283 autoreload 25228 37896 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:02,981 autoreload 25228 37896 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:03,737 autoreload 33960 28124 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:13,613 autoreload 33960 28124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:14,390 autoreload 40672 42632 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:17,015 autoreload 40672 42632 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:17,831 autoreload 9616 28360 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:19,440 autoreload 9616 28360 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:20,100 autoreload 3812 37644 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:40,411 autoreload 3812 37644 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:41,042 autoreload 40544 17964 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:42,471 autoreload 40544 17964 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:43,160 autoreload 37180 33352 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:45,657 autoreload 37180 33352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:46,307 autoreload 23304 23112 Watching for file changes with StatReloader
+INFO 2020-12-18 20:59:56,172 autoreload 23304 23112 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 20:59:57,018 autoreload 39376 33780 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:05,930 autoreload 39376 33780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:06,738 autoreload 33788 6744 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:08,392 autoreload 33788 6744 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:09,352 autoreload 18612 43472 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:12,903 autoreload 18612 43472 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:14,218 autoreload 27836 34764 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:18,997 autoreload 27836 34764 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:19,940 autoreload 32212 30612 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:24,765 autoreload 32212 30612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:25,519 autoreload 43940 45036 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:28,172 autoreload 43940 45036 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:28,987 autoreload 29756 21600 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:31,758 autoreload 29756 21600 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:32,517 autoreload 18836 33320 Watching for file changes with StatReloader
+INFO 2020-12-18 21:00:46,216 autoreload 18836 33320 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:00:46,966 autoreload 43148 28520 Watching for file changes with StatReloader
+INFO 2020-12-18 21:01:06,964 autoreload 43148 28520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:01:07,522 autoreload 34468 37800 Watching for file changes with StatReloader
