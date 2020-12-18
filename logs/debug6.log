@@ -13910,3 +13910,1167 @@ DEBUG 2020-12-18 18:55:44,899 autoreload 36044 16600 File C:\Users\dan\just_djan
 DEBUG 2020-12-18 18:55:44,900 autoreload 36044 16600 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\errors.py first seen with mtime 1601934402.0
 DEBUG 2020-12-18 18:55:44,900 autoreload 36044 16600 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\hashlib.py first seen with mtime 1601934402.0
 DEBUG 2020-12-18 18:55:44,900 autoreload 36044 16600 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_collections_abc.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 18:55:46,002 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0006_auto_20200924_1336.py first seen with mtime 1605611996.6479456
+DEBUG 2020-12-18 18:55:46,002 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1605589998.053446
+DEBUG 2020-12-18 18:55:46,003 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1605589995.7973783
+DEBUG 2020-12-18 18:55:46,003 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\layout.py first seen with mtime 1605614348.9827046
+DEBUG 2020-12-18 18:55:46,003 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0011_tmp_passwordmodel_qrcode_pwd.py first seen with mtime 1605611996.6519358
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\common.py first seen with mtime 1605589999.4178433
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1605589995.3429368
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\stringprep.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1605589994.3106968
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\clickjacking.py first seen with mtime 1605589999.4168456
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1605589998.4653456
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0017_auto_20201122_1855.py first seen with mtime 1606042559.438143
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0013_auto_20201031_0947.py first seen with mtime 1605611996.653752
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0010_auto_20200927_0201.py first seen with mtime 1605611996.6509407
+DEBUG 2020-12-18 18:55:46,004 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\compiler.py first seen with mtime 1605589999.2582242
+DEBUG 2020-12-18 18:55:46,008 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1605589998.0584354
+DEBUG 2020-12-18 18:55:46,008 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\compatibility.py first seen with mtime 1605614348.9796808
+DEBUG 2020-12-18 18:55:46,008 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\exceptions.py first seen with mtime 1605614348.9806778
+DEBUG 2020-12-18 18:55:46,008 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\graph.py first seen with mtime 1605589999.1734524
+DEBUG 2020-12-18 18:55:46,009 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1605589995.3389463
+DEBUG 2020-12-18 18:55:46,009 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1605589995.7943912
+DEBUG 2020-12-18 18:55:46,009 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1605589998.064418
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0023_auto_20201129_1744.py first seen with mtime 1606643052.25116
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\templatetags\app_filters.py first seen with mtime 1605611997.0515654
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\helper.py first seen with mtime 1605614348.9816759
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1605589995.799375
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0014_membermodel_reserve2.py first seen with mtime 1605618831.0510542
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\recorder.py first seen with mtime 1605589999.1824286
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\templatetags\crispy_forms_tags.py first seen with mtime 1605614349.1085763
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1605589997.2944837
+DEBUG 2020-12-18 18:55:46,010 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\loader.py first seen with mtime 1605589999.1764479
+DEBUG 2020-12-18 18:55:46,014 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0031_auto_20201215_1819.py first seen with mtime 1608027561.6616867
+DEBUG 2020-12-18 18:55:46,014 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1605589995.3329623
+DEBUG 2020-12-18 18:55:46,014 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\backends.py first seen with mtime 1605589994.8791766
+DEBUG 2020-12-18 18:55:46,015 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1605589998.464347
+DEBUG 2020-12-18 18:55:46,015 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0028_daytransactionmodel.py first seen with mtime 1607933752.3135307
+DEBUG 2020-12-18 18:55:46,016 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1605589994.306707
+DEBUG 2020-12-18 18:55:46,016 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\middleware.py first seen with mtime 1605589994.8911436
+DEBUG 2020-12-18 18:55:46,016 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1605589995.3409424
+DEBUG 2020-12-18 18:55:46,017 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0002_codegeneratormodel_codes.py first seen with mtime 1605611996.6439595
+DEBUG 2020-12-18 18:55:46,017 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0001_initial.py first seen with mtime 1605611996.642963
+DEBUG 2020-12-18 18:55:46,018 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1605589995.3369534
+DEBUG 2020-12-18 18:55:46,019 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\layout_slice.py first seen with mtime 1605614348.984695
+DEBUG 2020-12-18 18:55:46,019 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1605589995.3310006
+DEBUG 2020-12-18 18:55:46,019 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1605589994.3116975
+DEBUG 2020-12-18 18:55:46,019 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0020_auto_20201126_1922.py first seen with mtime 1606389767.48324
+DEBUG 2020-12-18 18:55:46,019 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0024_auto_20201129_1840.py first seen with mtime 1606646432.4652262
+DEBUG 2020-12-18 18:55:46,020 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\__init__.py first seen with mtime 1605611996.6539295
+DEBUG 2020-12-18 18:55:46,021 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1605589995.335956
+DEBUG 2020-12-18 18:55:46,021 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0019_auto_20201126_1431.py first seen with mtime 1606372290.477264
+DEBUG 2020-12-18 18:55:46,021 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0016_remove_membermodel_reserve2.py first seen with mtime 1605837900.9718442
+DEBUG 2020-12-18 18:55:46,022 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\trydjango\wsgi.py first seen with mtime 1605611997.1692472
+DEBUG 2020-12-18 18:55:46,022 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0026_tmpvariables.py first seen with mtime 1607342402.6303008
+DEBUG 2020-12-18 18:55:46,023 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\templatetags\crispy_forms_filters.py first seen with mtime 1605614349.107583
+DEBUG 2020-12-18 18:55:46,023 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0014_auto_20201117_0725.py first seen with mtime 1605624286.2660336
+DEBUG 2020-12-18 18:55:46,023 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1605589994.307704
+DEBUG 2020-12-18 18:55:46,023 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\templatetags\__init__.py first seen with mtime 1605611997.0475926
+DEBUG 2020-12-18 18:55:46,024 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0005_remove_tradingmodels_source_id.py first seen with mtime 1605611996.646948
+DEBUG 2020-12-18 18:55:46,024 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1605589995.3339632
+DEBUG 2020-12-18 18:55:46,026 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\humanize\templatetags\humanize.py first seen with mtime 1605589997.2845042
+DEBUG 2020-12-18 18:55:46,026 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0027_auto_20201209_1613.py first seen with mtime 1607501606.455537
+DEBUG 2020-12-18 18:55:46,026 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1605589995.3289728
+DEBUG 2020-12-18 18:55:46,027 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0012_auto_20201031_0610.py first seen with mtime 1605611996.652933
+DEBUG 2020-12-18 18:55:46,027 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0008_auto_20200924_1916.py first seen with mtime 1605611996.6489427
+DEBUG 2020-12-18 18:55:46,027 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1605589998.0574377
+DEBUG 2020-12-18 18:55:46,028 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0007_auto_20200924_1913.py first seen with mtime 1605611996.6479456
+DEBUG 2020-12-18 18:55:46,028 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\security.py first seen with mtime 1605589999.424823
+DEBUG 2020-12-18 18:55:46,028 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1605589995.347925
+DEBUG 2020-12-18 18:55:46,029 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0025_loansummarymodel.py first seen with mtime 1606723369.6667888
+DEBUG 2020-12-18 18:55:46,029 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\templatetags\crispy_forms_utils.py first seen with mtime 1605614349.109574
+DEBUG 2020-12-18 18:55:46,029 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0003_auto_20200924_1325.py first seen with mtime 1605611996.644973
+DEBUG 2020-12-18 18:55:46,030 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0015_merge_20201120_1002.py first seen with mtime 1605837750.6736445
+DEBUG 2020-12-18 18:55:46,031 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0021_change_table_destination_acct.py first seen with mtime 1606635531.829465
+DEBUG 2020-12-18 18:55:46,032 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\executor.py first seen with mtime 1605589999.172455
+DEBUG 2020-12-18 18:55:46,032 autoreload 36044 16600 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\idna.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 18:55:46,033 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0029_auto_20201214_1626.py first seen with mtime 1607934410.8780167
+DEBUG 2020-12-18 18:55:46,034 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\templatetags\custom_tags.py first seen with mtime 1605611997.0525608
+DEBUG 2020-12-18 18:55:46,034 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1605589998.051452
+DEBUG 2020-12-18 18:55:46,034 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0018_temp_venturemodel.py first seen with mtime 1606314931.9315963
+DEBUG 2020-12-18 18:55:46,034 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0022_auto_20201129_1726.py first seen with mtime 1606641993.101169
+DEBUG 2020-12-18 18:55:46,034 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1605589995.3449302
+DEBUG 2020-12-18 18:55:46,035 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0004_remove_codegeneratormodel_codes1.py first seen with mtime 1605611996.6459548
+DEBUG 2020-12-18 18:55:46,035 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\templatetags\table_tag.py first seen with mtime 1605611997.0525608
+DEBUG 2020-12-18 18:55:46,035 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\humanize\templatetags\__init__.py first seen with mtime 1605589997.2825089
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\urls\__init__.py first seen with mtime 1605589993.811037
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1605589995.3469267
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0009_auto_20200924_2000.py first seen with mtime 1605611996.6499403
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\migrations\0030_auto_20201214_1635.py first seen with mtime 1607934933.7880335
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1605589995.3379507
+DEBUG 2020-12-18 18:55:46,036 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\bootstrap.py first seen with mtime 1605614348.9787035
+DEBUG 2020-12-18 18:55:53,857 utils 36044 32368 (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2020-12-18T10:55:53.787769+00:00'::timestamptz AND "django_session"."session_key" = '395quxn225cqgo2qawb03udfmb6aur5v') LIMIT 21; args=(datetime.datetime(2020, 12, 18, 10, 55, 53, 787769, tzinfo=<UTC>), '395quxn225cqgo2qawb03udfmb6aur5v')
+DEBUG 2020-12-18 18:55:53,865 utils 36044 32368 (0.016) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,)
+INFO 2020-12-18 18:55:53,866 views 36044 32368 >>>>>>>>>>>>>> init cuv!
+DEBUG 2020-12-18 18:55:53,870 utils 36044 32368 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."user_id" = 1 LIMIT 21; args=(1,)
+DEBUG 2020-12-18 18:55:53,931 utils 36044 32368 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."id" = 2 LIMIT 21; args=(2,)
+DEBUG 2020-12-18 18:55:54,069 utils 36044 32368 (0.000) SELECT "fx_userpreferencemodel"."id", "fx_userpreferencemodel"."financial_transaction", "fx_userpreferencemodel"."user_id", "fx_userpreferencemodel"."cash_transfer_nos_of_row", "fx_userpreferencemodel"."search_member", "fx_userpreferencemodel"."search_receiver", "fx_userpreferencemodel"."transfer_receiver", "fx_userpreferencemodel"."transfer_history", "fx_userpreferencemodel"."claim_transfer" FROM "fx_userpreferencemodel" WHERE "fx_userpreferencemodel"."user_id" = 1 LIMIT 21; args=(1,)
+DEBUG 2020-12-18 18:55:54,145 base 36044 32368 Exception while resolving variable 'xxxxxxxtable_search_context' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [xxxxxxxtable_search_context] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540EA78B0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}]
+DEBUG 2020-12-18 18:55:54,167 base 36044 32368 Exception while resolving variable 'table' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [table] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540EA78B0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 18:55:54,168 base 36044 32368 Exception while resolving variable 'delay_Filling' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [delay_Filling] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540EA78B0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 18:55:54,173 base 36044 32368 Exception while resolving variable 'delay_filling' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [delay_filling] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540EA78B0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 18:55:54,173 base 36044 32368 Exception while resolving variable 'table' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [table] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540EA78B0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540ED9F70>}]
+DEBUG 2020-12-18 18:55:54,184 utils 36044 32368 (0.000) DECLARE "_django_curs_32368_sync_1" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 18:55:54,197 utils 36044 32368 (0.000) DECLARE "_django_curs_32368_sync_2" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 18:55:54,207 utils 36044 32368 (0.000) DECLARE "_django_curs_32368_sync_3" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 18:55:54,219 base 36044 32368 Exception while resolving variable 'flag' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'flag' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [flag] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,220 base 36044 32368 Exception while resolving variable 'totalCost' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'totalCost' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [totalCost] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,221 base 36044 32368 Exception while resolving variable 'role_type' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'role_type' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [role_type] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,221 base 36044 32368 Exception while resolving variable 'id' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'id' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [id] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,223 base 36044 32368 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,223 base 36044 32368 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,223 base 36044 32368 Exception while resolving variable 'wrapper_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,223 base 36044 32368 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,232 base 36044 32368 Exception while resolving variable 'html5_required' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,233 base 36044 32368 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,233 base 36044 32368 Exception while resolving variable 'error_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,242 base 36044 32368 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,242 base 36044 32368 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354100FA00>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,250 base 36044 32368 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,250 base 36044 32368 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,250 base 36044 32368 Exception while resolving variable 'wrapper_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,250 base 36044 32368 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,250 base 36044 32368 Exception while resolving variable 'html5_required' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,261 base 36044 32368 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,261 base 36044 32368 Exception while resolving variable 'error_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,266 base 36044 32368 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x000002354102C190>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'tender' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'tender' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tender] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'change' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'change' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [change] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'destination_acct_code' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'destination_acct_code' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [destination_acct_code] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'destination_acct_code' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'destination_acct_code' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [destination_acct_code] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,269 base 36044 32368 Exception while resolving variable 'post_data' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [post_data] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'zWKcVajYwXaauftmgf3wXhrhDLTV0VlXndBeQEOxtBqg2aglF7zsZTKx8vGx8HE3'>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'block': <Block Node: sub_content. Contents: [<TextNode: '\n    \n\n\n\n\n \n \n\n   \n\n\n    '>, <django.template.loader_tags.IncludeNode object at 0x0000023540EE6A30>, <TextNode: '\n\n\n    <div class="contai'>, <IfNode>, <TextNode: '\n\n            '>, <ForNode: for message in messages, tail_len: 5>, <TextNode: '\n            <div id="ven'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000023540EF0C40>, <TextNode: '\n                    <div'>, <Variable Node: venture.in_charge>, <TextNode: ' '>, <Variable Node: venture.source_type>, <Variable Node: venture.customer>, <Variable Node: venture.percent>, <Variable Node: venture.seller_source_id>, <TextNode: '\n                        '>, <Variable Node: venture.date_entered>, <Variable Node: venture.seller>, <Variable Node: venture.transaction_type>, <Variable Node: venture.customer_source_id>, <Variable Node: venture.category>, <Variable Node: venture.flag>, <TextNode: '\n                    </di'>, <Variable Node: venture.totalCost>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.percent.value>, <TextNode: '%\n                       '>, <IfEqualNode>, <TextNode: '\n                        '>, <IfNode>, <TextNode: '">\n                      '>, <Variable Node: venture.amount|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.cc|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.tender>, <TextNode: '">\n                      '>, <Variable Node: venture.change>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.note>, <TextNode: '</textarea>\n\n            '>, <IfNode>, <TextNode: '\n                    </di'>, <Variable Node: venture.request_action>, <TextNode: '".trim().toUpperCase();\n '>, <Variable Node: post_data>, <TextNode: '";\n\n        $("#main-vent'>, <Variable Node: limits.maximum_deposit>, <TextNode: '");\n\n        var minimum_'>, <Variable Node: limits.minimum_deposit>, <TextNode: '"; // min amount to depos'>, <Variable Node: venture.request_action>, <TextNode: '";\n        console.log("t'>, <Variable Node: asset_balance.cc_balance>, <TextNode: '".replace(\',\', \'\'));\n\n   '>, <django.template.defaulttags.URLNode object at 0x0000023540EFB820>, <TextNode: '",\n                data: '>]>}]
+DEBUG 2020-12-18 18:55:54,277 base 36044 32368 Exception while resolving variable 'id' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'id' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [id] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 18:55:54,279 base 36044 32368 Exception while resolving variable 'post_data' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [post_data] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'zWKcVajYwXaauftmgf3wXhrhDLTV0VlXndBeQEOxtBqg2aglF7zsZTKx8vGx8HE3'>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540EDCFA0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E8B8B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540ED9F70>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'block': <Block Node: sub_content. Contents: [<TextNode: '\n    \n\n\n\n\n \n \n\n   \n\n\n    '>, <django.template.loader_tags.IncludeNode object at 0x0000023540EE6A30>, <TextNode: '\n\n\n    <div class="contai'>, <IfNode>, <TextNode: '\n\n            '>, <ForNode: for message in messages, tail_len: 5>, <TextNode: '\n            <div id="ven'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000023540EF0C40>, <TextNode: '\n                    <div'>, <Variable Node: venture.in_charge>, <TextNode: ' '>, <Variable Node: venture.source_type>, <Variable Node: venture.customer>, <Variable Node: venture.percent>, <Variable Node: venture.seller_source_id>, <TextNode: '\n                        '>, <Variable Node: venture.date_entered>, <Variable Node: venture.seller>, <Variable Node: venture.transaction_type>, <Variable Node: venture.customer_source_id>, <Variable Node: venture.category>, <Variable Node: venture.flag>, <TextNode: '\n                    </di'>, <Variable Node: venture.totalCost>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.percent.value>, <TextNode: '%\n                       '>, <IfEqualNode>, <TextNode: '\n                        '>, <IfNode>, <TextNode: '">\n                      '>, <Variable Node: venture.amount|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.cc|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.tender>, <TextNode: '">\n                      '>, <Variable Node: venture.change>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.note>, <TextNode: '</textarea>\n\n            '>, <IfNode>, <TextNode: '\n                    </di'>, <Variable Node: venture.request_action>, <TextNode: '".trim().toUpperCase();\n '>, <Variable Node: post_data>, <TextNode: '";\n\n        $("#main-vent'>, <Variable Node: limits.maximum_deposit>, <TextNode: '");\n\n        var minimum_'>, <Variable Node: limits.minimum_deposit>, <TextNode: '"; // min amount to depos'>, <Variable Node: venture.request_action>, <TextNode: '";\n        console.log("t'>, <Variable Node: asset_balance.cc_balance>, <TextNode: '".replace(\',\', \'\'));\n\n   '>, <django.template.defaulttags.URLNode object at 0x0000023540EFB820>, <TextNode: '",\n                data: '>]>}]
+DEBUG 2020-12-18 18:55:54,281 base 36044 32368 Exception while resolving variable 'cc_balance' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+KeyError: 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'dict' object has no attribute 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [cc_balance] in {}
+INFO 2020-12-18 18:55:54,284 basehttp 36044 32368 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 89749
+DEBUG 2020-12-18 18:55:54,679 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loaders\filesystem.py first seen with mtime 1605589999.4657156
+DEBUG 2020-12-18 18:55:54,687 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1605589997.306451
+DEBUG 2020-12-18 18:55:54,687 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1605589997.30445
+DEBUG 2020-12-18 18:55:54,687 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1605589998.8941987
+DEBUG 2020-12-18 18:55:54,687 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loaders\base.py first seen with mtime 1605589999.4617238
+DEBUG 2020-12-18 18:55:54,687 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1605589998.0554461
+DEBUG 2020-12-18 18:55:54,695 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\storage\base.py first seen with mtime 1605589997.3014622
+DEBUG 2020-12-18 18:55:54,697 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\locale\en\__init__.py first seen with mtime 1605589993.444021
+DEBUG 2020-12-18 18:55:54,697 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loaders\app_directories.py first seen with mtime 1605589999.4607284
+DEBUG 2020-12-18 18:55:54,698 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1605589994.88517
+DEBUG 2020-12-18 18:55:54,700 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\context_processors.py first seen with mtime 1605589999.4318047
+DEBUG 2020-12-18 18:55:54,702 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\utils.py first seen with mtime 1605589997.2954738
+DEBUG 2020-12-18 18:55:54,704 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\fx\context_processors.py first seen with mtime 1607432524.3361127
+DEBUG 2020-12-18 18:55:54,705 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1605589997.2924862
+DEBUG 2020-12-18 18:55:54,706 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1605589997.302458
+DEBUG 2020-12-18 18:55:54,706 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\locale\en\formats.py first seen with mtime 1605589993.4460087
+DEBUG 2020-12-18 18:55:54,709 autoreload 36044 16600 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loaders\__init__.py first seen with mtime 1605589999.4577334
+WARNING 2020-12-18 18:56:01,899 basehttp 36044 32368 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2020-12-18 18:56:02,196 basehttp 36044 23780 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2020-12-18 18:56:02,199 basehttp 36044 4452 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2020-12-18 18:56:02,201 basehttp 36044 30340 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+DEBUG 2020-12-18 18:56:19,339 utils 36044 30340 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."member_id" = 'NA1212-01' LIMIT 21; args=('NA1212-01',)
+INFO 2020-12-18 18:56:19,341 basehttp 36044 30340 "GET /get_customer_details/?customer_id=NA1212-01&password=5105&from=manual HTTP/1.1" 200 40
