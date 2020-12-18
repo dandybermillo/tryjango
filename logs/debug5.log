@@ -39,3 +39,11 @@ INFO 2020-12-18 13:21:52,791 autoreload 23468 13032 C:\Users\dan\just_django\try
 INFO 2020-12-18 13:21:53,349 autoreload 7896 38744 Watching for file changes with StatReloader
 INFO 2020-12-18 13:21:59,476 views 7896 41968 >>>>>>>>>>>>>> init cuv!
 INFO 2020-12-18 13:21:59,764 basehttp 7896 41968 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 89747
+INFO 2020-12-18 13:29:05,461 autoreload 7896 38744 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-18 13:29:06,606 autoreload 39244 20748 Watching for file changes with StatReloader
+INFO 2020-12-18 13:29:30,166 autoreload 39244 20748 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-18 13:29:30,800 autoreload 41444 5488 Watching for file changes with StatReloader
+INFO 2020-12-18 13:29:34,327 autoreload 41444 5488 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-18 13:29:34,882 autoreload 23096 44952 Watching for file changes with StatReloader
+INFO 2020-12-18 13:29:36,357 autoreload 23096 44952 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-18 13:29:36,964 autoreload 20172 39264 Watching for file changes with StatReloader
