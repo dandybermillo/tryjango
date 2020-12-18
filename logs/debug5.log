@@ -1,0 +1,41 @@
+INFO 2020-12-18 13:14:05,090 autoreload 26888 13456 Watching for file changes with StatReloader
+INFO 2020-12-18 13:14:33,662 views 26888 37792 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-18 13:14:34,144 basehttp 26888 37792 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 89747
+INFO 2020-12-18 13:16:36,694 autoreload 26888 13456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:16:37,246 autoreload 29300 29252 Watching for file changes with StatReloader
+INFO 2020-12-18 13:16:41,672 autoreload 29300 29252 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:16:42,243 autoreload 33212 18388 Watching for file changes with StatReloader
+INFO 2020-12-18 13:17:26,048 autoreload 33212 18388 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:17:26,584 autoreload 39060 39404 Watching for file changes with StatReloader
+INFO 2020-12-18 13:17:30,092 autoreload 39060 39404 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:17:30,657 autoreload 22520 34100 Watching for file changes with StatReloader
+INFO 2020-12-18 13:17:33,132 autoreload 22520 34100 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:17:33,759 autoreload 22116 33736 Watching for file changes with StatReloader
+INFO 2020-12-18 13:17:36,326 autoreload 22116 33736 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:17:37,643 autoreload 14928 21336 Watching for file changes with StatReloader
+INFO 2020-12-18 13:17:48,105 autoreload 14928 21336 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:17:48,900 autoreload 12696 28328 Watching for file changes with StatReloader
+INFO 2020-12-18 13:18:06,371 autoreload 12696 28328 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:18:06,909 autoreload 15060 40848 Watching for file changes with StatReloader
+INFO 2020-12-18 13:18:21,361 views 15060 18252 >>>>>>>>>>>>>> init cuv!
+WARNING 2020-12-18 13:18:21,365 views 15060 18252 def cuv @exception,e:MemberModel matching query does not exist.
+ERROR 2020-12-18 13:18:21,723 log 15060 18252 Internal Server Error: /create_update_venture/2/0/venture/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 909, in create_update_venture
+    ventureForm.staff = staff_info.name
+AttributeError: 'str' object has no attribute 'name'
+ERROR 2020-12-18 13:18:21,727 basehttp 15060 18252 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 500 75835
+INFO 2020-12-18 13:21:42,676 autoreload 15060 40848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:21:43,200 autoreload 12432 22448 Watching for file changes with StatReloader
+INFO 2020-12-18 13:21:46,703 autoreload 12432 22448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:21:47,227 autoreload 23468 13032 Watching for file changes with StatReloader
+INFO 2020-12-18 13:21:52,791 autoreload 23468 13032 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 13:21:53,349 autoreload 7896 38744 Watching for file changes with StatReloader
+INFO 2020-12-18 13:21:59,476 views 7896 41968 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-18 13:21:59,764 basehttp 7896 41968 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 89747

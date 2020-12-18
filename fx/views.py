@@ -48,6 +48,12 @@ from django.template.defaultfilters import stringfilter
 import json
 from django.apps import apps
 from .tables import myTable
+#error logging
+import logging,traceback
+# logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
+#error logging end
+
 #register = template.Library()
 minimum_deposit = 0
 maximum_deposit =10000
@@ -802,7 +808,7 @@ def getLoanPayment(member_id):
 #cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
-   
+    logger.info('>>>>>>>>>>>>>> init cuv!')
   #  saveTransHistory(11,2,TRANS_VENTURE,111,"test",100,NEW_RECORD)
     
   #  return
@@ -810,10 +816,11 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         print (f"user: {request.user}")
         staff_info=""
         try:
-            staff_info =  MemberModel.objects.get(user_id = request.user.id) 
+            staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
             print(f"..staff_info:{staff_info.name}")
         except Exception as e:
-            raise Http404("Sorry. User id does not exist!")
+           # raise Http404("Sorry. User id does not exist!")
+            logger.warning(f"def cuv @exception,e:{e}" ) 
             print(f"def cuv @exception, id: None , e:{e}")
   
     request_action =request_action.strip().lower()
