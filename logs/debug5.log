@@ -157,3 +157,100 @@ INFO 2020-12-18 21:01:25,502 basehttp 34468 14088 "GET /static/css/bootstrap.css
 INFO 2020-12-18 21:01:25,505 basehttp 34468 36212 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
 INFO 2020-12-18 21:01:52,364 views 34468 36212 -- get customer id
 INFO 2020-12-18 21:01:52,558 basehttp 34468 36212 "GET /get_customer_details/?customer_id=NA1212-0&password=5105&from=manual HTTP/1.1" 200 122
+INFO 2020-12-18 21:34:33,714 autoreload 34468 37800 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:34:34,313 autoreload 32816 39132 Watching for file changes with StatReloader
+INFO 2020-12-18 21:34:35,804 autoreload 32816 39132 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:34:36,453 autoreload 9600 26216 Watching for file changes with StatReloader
+INFO 2020-12-18 21:34:37,934 autoreload 9600 26216 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:34:38,675 autoreload 25500 32912 Watching for file changes with StatReloader
+INFO 2020-12-18 21:35:05,441 autoreload 25500 32912 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:35:06,000 autoreload 30456 37772 Watching for file changes with StatReloader
+INFO 2020-12-18 21:35:19,962 autoreload 30456 37772 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:35:20,561 autoreload 20312 42780 Watching for file changes with StatReloader
+INFO 2020-12-18 21:35:29,205 autoreload 20312 42780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:35:29,930 autoreload 43468 40824 Watching for file changes with StatReloader
+INFO 2020-12-18 21:35:33,333 autoreload 43468 40824 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:35:34,115 autoreload 36696 44392 Watching for file changes with StatReloader
+INFO 2020-12-18 21:35:40,670 autoreload 36696 44392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:35:41,526 autoreload 27280 27148 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:01,222 autoreload 27280 27148 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:01,832 autoreload 25616 36624 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:04,157 autoreload 25616 36624 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:04,957 autoreload 31312 24328 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:08,437 autoreload 31312 24328 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:09,460 autoreload 40944 25892 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:21,356 autoreload 40944 25892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:22,111 autoreload 27784 16716 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:36,193 autoreload 27784 16716 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:36,979 autoreload 27424 38124 Watching for file changes with StatReloader
+INFO 2020-12-18 21:36:39,728 autoreload 27424 38124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:36:40,869 autoreload 14752 20220 Watching for file changes with StatReloader
+INFO 2020-12-18 21:37:00,436 autoreload 14752 20220 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:37:01,624 autoreload 34812 19332 Watching for file changes with StatReloader
+INFO 2020-12-18 21:37:05,734 autoreload 34812 19332 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:37:07,213 autoreload 7824 19412 Watching for file changes with StatReloader
+INFO 2020-12-18 21:37:12,641 autoreload 7824 19412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:37:14,310 autoreload 26472 2332 Watching for file changes with StatReloader
+INFO 2020-12-18 21:37:22,739 autoreload 26472 2332 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:37:23,809 autoreload 38736 636 Watching for file changes with StatReloader
+INFO 2020-12-18 21:37:33,415 autoreload 38736 636 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:37:34,402 autoreload 11944 13124 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:03,893 autoreload 11944 13124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:38:04,409 autoreload 35588 23568 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:06,919 autoreload 35588 23568 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:38:07,597 autoreload 36716 20400 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:12,222 autoreload 36716 20400 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:38:12,853 autoreload 22260 23140 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:16,696 autoreload 22260 23140 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:38:18,100 autoreload 43204 34972 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:24,504 autoreload 43204 34972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:38:25,562 autoreload 23076 37600 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:49,292 autoreload 18392 35176 Watching for file changes with StatReloader
+INFO 2020-12-18 21:38:59,828 views 18392 43508 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-18 21:39:00,004 basehttp 18392 43508 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 90226
+WARNING 2020-12-18 21:39:00,273 basehttp 18392 43508 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2020-12-18 21:39:00,641 basehttp 18392 648 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2020-12-18 21:39:00,660 basehttp 18392 7764 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2020-12-18 21:39:00,660 basehttp 18392 1548 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2020-12-18 21:39:08,138 views 18392 1548 --def get customer details
+INFO 2020-12-18 21:39:08,403 basehttp 18392 1548 "GET /get_customer_details/?customer_id=NA1212-0&password=5105&from=manual HTTP/1.1" 200 122
+INFO 2020-12-18 21:40:32,370 autoreload 18392 35176 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:33,073 autoreload 42324 42044 Watching for file changes with StatReloader
+INFO 2020-12-18 21:40:39,834 autoreload 42324 42044 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:40,541 autoreload 22720 42404 Watching for file changes with StatReloader
+INFO 2020-12-18 21:40:42,872 autoreload 22720 42404 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:43,558 autoreload 42668 36824 Watching for file changes with StatReloader
+INFO 2020-12-18 21:40:45,968 autoreload 42668 36824 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:46,878 autoreload 39860 31392 Watching for file changes with StatReloader
+INFO 2020-12-18 21:40:50,289 autoreload 39860 31392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:50,977 autoreload 26152 42076 Watching for file changes with StatReloader
+INFO 2020-12-18 21:40:57,619 autoreload 26152 42076 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:40:58,296 autoreload 1348 25716 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:02,832 autoreload 1348 25716 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:41:03,514 autoreload 33252 34648 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:19,905 autoreload 33252 34648 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:41:20,666 autoreload 22388 39844 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:24,334 autoreload 22388 39844 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:41:25,105 autoreload 42020 336 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:28,612 autoreload 42020 336 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:41:29,387 autoreload 17636 2784 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:31,066 autoreload 17636 2784 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-18 21:41:31,836 autoreload 41264 18636 Watching for file changes with StatReloader
+INFO 2020-12-18 21:41:53,730 views 41264 41272 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-18 21:41:53,893 basehttp 41264 41272 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 90226
+WARNING 2020-12-18 21:41:54,373 basehttp 41264 41272 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2020-12-18 21:41:54,685 basehttp 41264 34840 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2020-12-18 21:41:54,701 basehttp 41264 35756 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2020-12-18 21:41:54,703 basehttp 41264 37580 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2020-12-18 21:42:05,188 views 41264 37580 --def get customer details
+WARNING 2020-12-18 21:42:05,298 views 41264 37580 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2020-12-18 21:42:05,299 basehttp 41264 37580 "GET /get_customer_details/?customer_id=SA1212-0&password=8090&from=manual HTTP/1.1" 200 40
+INFO 2020-12-18 21:42:16,081 basehttp 41264 37580 "GET / HTTP/1.1" 302 0
+INFO 2020-12-18 21:42:16,253 basehttp 41264 37580 "GET /dashboard/ HTTP/1.1" 200 57317
+INFO 2020-12-18 21:42:23,476 basehttp 41264 37580 "GET /search_receiver/?action_request=search&filter_field_value=sa1&total_no_of_row_per_page=5 HTTP/1.1" 200 66
+INFO 2020-12-18 21:42:26,560 basehttp 41264 37580 "GET /search_receiver/?action_request=search&filter_field_value=sa12&total_no_of_row_per_page=5 HTTP/1.1" 200 66
+INFO 2020-12-18 21:42:32,087 basehttp 41264 37580 "GET /search_receiver/?action_request=search&filter_field_value=salv&total_no_of_row_per_page=5 HTTP/1.1" 200 66
+INFO 2020-12-18 21:42:36,452 basehttp 41264 37580 "GET /search_receiver/?action_request=search&filter_field_value=bermillo&total_no_of_row_per_page=5 HTTP/1.1" 200 470
+INFO 2020-12-18 21:43:05,333 views 41264 37580 --def get customer details
+INFO 2020-12-18 21:43:05,386 views 41264 37580 else of from_code == 'qrcode': member_id :DA1212-11
+INFO 2020-12-18 21:43:05,732 basehttp 41264 37580 "GET /get_customer_details/?customer_id=DA1212-11&password=1520&from=manual HTTP/1.1" 200 118

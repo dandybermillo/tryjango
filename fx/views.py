@@ -214,7 +214,7 @@ def check_user(request):
    
 
 def get_customer_details(request):
-    logger.info("-- get customer id")
+    logger.info("--def get customer details")
     customer_id = request.GET.get("customer_id", "").strip().upper()
     from_code = request.GET.get("from", "manual").strip()
     qrpassword=""
@@ -245,18 +245,21 @@ def get_customer_details(request):
                     print (f"pwd: {parseint(pwd)}, qrpassword: {parseint(qrpassword)}")
                     if  parseint(pwd) != parseint(qrpassword):
                          print (f"pwd not matched")
+                         logger.info(f"--if from_code == 'qrcode': password not matched")
                          return JsonResponse({"message":message}, status = 200)  
             else:
                     member_id = customer_id  # request.POST.get("customer_id", "").strip().upper()
-                    
+                    logger.info(f"else of from_code == 'qrcode': member_id :{member_id}")
                     # print (f"member_id:{member_id}, password: {password}")
                     if member_id and password:
+                            
                             try:
                                 user = MemberModel.objects.get(member_id = member_id).user
                                 username = user.username
                                 print("user name:",user.username)
                             except  Exception as e:
                                 print (f" here: {e}, {type(e)}")
+                                logger.info(f"if member_id and password: {e}, {type(e)} : This user does not exist")
                                 return JsonResponse({"message":'This user does not exist'}, status = 200) 
                             user = authenticate(username=username, password=password)
                             print(f"....self.user:{user}, username:{username}")
@@ -267,14 +270,14 @@ def get_customer_details(request):
                                             res= user.check_password(password)
                                             print(f"....password:{password} , check: {res}")
                                             if not user.check_password(password):
-                                                logger.info("Incorrect password")
+                                                logger.info("if user is None: Incorrect password")
                                                 return JsonResponse({"message":'Incorrect password'}, status = 200)
                                             if not user.is_active:
-                                                logger.info("This user is not active")
+                                                logger.info("if user is None: This user is not active")
                                                 return JsonResponse({"message":'This user is not active'}, status = 200) 
                                                 
                                     except Exception as e:
-                                        logger.warning(f"get_customer_details: {e}, {type(e)}")
+                                        logger.warning(f"if user is None:: {e}, {type(e)}")
                                         return JsonResponse({"message":'This user does not exist'}, status = 200) 
 
                     else:
