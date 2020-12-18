@@ -15074,3 +15074,1636 @@ INFO 2020-12-18 18:56:02,199 basehttp 36044 4452 "GET /static/css/bootstrap.css.
 INFO 2020-12-18 18:56:02,201 basehttp 36044 30340 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
 DEBUG 2020-12-18 18:56:19,339 utils 36044 30340 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."member_id" = 'NA1212-01' LIMIT 21; args=('NA1212-01',)
 INFO 2020-12-18 18:56:19,341 basehttp 36044 30340 "GET /get_customer_details/?customer_id=NA1212-01&password=5105&from=manual HTTP/1.1" 200 40
+DEBUG 2020-12-18 19:39:52,663 utils 36044 27032 (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2020-12-18T11:39:52.576350+00:00'::timestamptz AND "django_session"."session_key" = '395quxn225cqgo2qawb03udfmb6aur5v') LIMIT 21; args=(datetime.datetime(2020, 12, 18, 11, 39, 52, 576350, tzinfo=<UTC>), '395quxn225cqgo2qawb03udfmb6aur5v')
+DEBUG 2020-12-18 19:39:52,667 utils 36044 27032 (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,)
+INFO 2020-12-18 19:39:52,667 views 36044 27032 >>>>>>>>>>>>>> init cuv!
+DEBUG 2020-12-18 19:39:52,675 utils 36044 27032 (0.015) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."user_id" = 1 LIMIT 21; args=(1,)
+DEBUG 2020-12-18 19:39:52,745 utils 36044 27032 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."id" = 2 LIMIT 21; args=(2,)
+DEBUG 2020-12-18 19:39:52,874 utils 36044 27032 (0.000) SELECT "fx_userpreferencemodel"."id", "fx_userpreferencemodel"."financial_transaction", "fx_userpreferencemodel"."user_id", "fx_userpreferencemodel"."cash_transfer_nos_of_row", "fx_userpreferencemodel"."search_member", "fx_userpreferencemodel"."search_receiver", "fx_userpreferencemodel"."transfer_receiver", "fx_userpreferencemodel"."transfer_history", "fx_userpreferencemodel"."claim_transfer" FROM "fx_userpreferencemodel" WHERE "fx_userpreferencemodel"."user_id" = 1 LIMIT 21; args=(1,)
+DEBUG 2020-12-18 19:39:52,882 base 36044 27032 Exception while resolving variable 'xxxxxxxtable_search_context' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'xxxxxxxtable_search_context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [xxxxxxxtable_search_context] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540E14DC0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}]
+DEBUG 2020-12-18 19:39:52,896 base 36044 27032 Exception while resolving variable 'table' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [table] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540E14DC0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540E27430>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 19:39:52,901 base 36044 27032 Exception while resolving variable 'delay_Filling' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'delay_Filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [delay_Filling] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540E14DC0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540E27430>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 19:39:52,906 base 36044 27032 Exception while resolving variable 'delay_filling' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'delay_filling'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [delay_filling] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540E14DC0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540E27430>}, {'code': 'member-partial-payment', 'Options': {'total_records': 10, 'rows_per_page': 5, 'rows_option_list': [3, 5, 10, 20, 30, 50, 100], 'filter_field_value': '', 'filter_field': ''}, 'preference': 5}]
+DEBUG 2020-12-18 19:39:52,908 base 36044 27032 Exception while resolving variable 'table' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [table] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000023540E14DC0>>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=Unknown, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'code': 'member-partial-payment', 'preference': 5, 'search_receiver': <fx.tables.SearchMember object at 0x0000023540E27430>}]
+DEBUG 2020-12-18 19:39:52,919 utils 36044 27032 (0.000) DECLARE "_django_curs_27032_sync_1" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 19:39:52,949 utils 36044 27032 (0.000) DECLARE "_django_curs_27032_sync_2" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 19:39:52,976 utils 36044 27032 (0.000) DECLARE "_django_curs_27032_sync_3" NO SCROLL CURSOR WITH HOLD FOR SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel"; args=()
+DEBUG 2020-12-18 19:39:53,000 base 36044 27032 Exception while resolving variable 'flag' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'flag' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'flag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [flag] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,003 base 36044 27032 Exception while resolving variable 'totalCost' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'totalCost' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'totalCost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [totalCost] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,006 base 36044 27032 Exception while resolving variable 'role_type' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'role_type' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'role_type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [role_type] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,007 base 36044 27032 Exception while resolving variable 'id' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'id' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [id] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,020 base 36044 27032 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,023 base 36044 27032 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,024 base 36044 27032 Exception while resolving variable 'wrapper_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,025 base 36044 27032 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,026 base 36044 27032 Exception while resolving variable 'html5_required' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,027 base 36044 27032 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,033 base 36044 27032 Exception while resolving variable 'error_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,039 base 36044 27032 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,043 base 36044 27032 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023540FFBB80>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,055 base 36044 27032 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,056 base 36044 27032 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,057 base 36044 27032 Exception while resolving variable 'wrapper_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,058 base 36044 27032 Exception while resolving variable 'form_class' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,058 base 36044 27032 Exception while resolving variable 'html5_required' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,066 base 36044 27032 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,067 base 36044 27032 Exception while resolving variable 'error_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,072 base 36044 27032 Exception while resolving variable 'help_text_inline' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {}]
+DEBUG 2020-12-18 19:39:53,074 base 36044 27032 Exception while resolving variable 'tag' in template 'bootstrap4/field.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'field': <django.forms.boundfield.BoundField object at 0x0000023541110100>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+DEBUG 2020-12-18 19:39:53,074 base 36044 27032 Exception while resolving variable 'tender' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'tender' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [tender] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,074 base 36044 27032 Exception while resolving variable 'change' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'change' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'change'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [change] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,074 base 36044 27032 Exception while resolving variable 'destination_acct_code' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'destination_acct_code' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [destination_acct_code] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,080 base 36044 27032 Exception while resolving variable 'destination_acct_code' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'destination_acct_code' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'destination_acct_code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [destination_acct_code] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,083 base 36044 27032 Exception while resolving variable 'post_data' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [post_data] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'nApYgQesMfqoWMEqlKFriGjIAubmdgBQbRg0bkJ1JTGuuHrpKCbnkiCY5eYYl2UW'>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'block': <Block Node: sub_content. Contents: [<TextNode: '\n    \n\n\n\n\n \n \n\n   \n\n\n    '>, <django.template.loader_tags.IncludeNode object at 0x00000235404A0520>, <TextNode: '\n\n\n    <div class="contai'>, <IfNode>, <TextNode: '\n\n            '>, <ForNode: for message in messages, tail_len: 5>, <TextNode: '\n            <div id="ven'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000023540F093D0>, <TextNode: '\n                    <div'>, <Variable Node: venture.in_charge>, <TextNode: ' '>, <Variable Node: venture.source_type>, <Variable Node: venture.customer>, <Variable Node: venture.percent>, <Variable Node: venture.seller_source_id>, <TextNode: '\n                        '>, <Variable Node: venture.date_entered>, <Variable Node: venture.seller>, <Variable Node: venture.transaction_type>, <Variable Node: venture.customer_source_id>, <Variable Node: venture.category>, <Variable Node: venture.flag>, <TextNode: '\n                    </di'>, <Variable Node: venture.totalCost>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.percent.value>, <TextNode: '%\n                       '>, <IfEqualNode>, <TextNode: '\n                        '>, <IfNode>, <TextNode: '">\n                      '>, <Variable Node: venture.amount|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.cc|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.tender>, <TextNode: '">\n                      '>, <Variable Node: venture.change>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.note>, <TextNode: '</textarea>\n\n            '>, <IfNode>, <TextNode: '\n                    </di'>, <Variable Node: venture.request_action>, <TextNode: '".trim().toUpperCase();\n '>, <Variable Node: post_data>, <TextNode: '";\n\n        $("#main-vent'>, <Variable Node: limits.maximum_deposit>, <TextNode: '");\n\n        var minimum_'>, <Variable Node: limits.minimum_deposit>, <TextNode: '"; // min amount to depos'>, <Variable Node: venture.request_action>, <TextNode: '";\n        console.log("t'>, <Variable Node: asset_balance.cc_balance>, <TextNode: '".replace(\',\', \'\'));\n\n   '>, <django.template.defaulttags.URLNode object at 0x0000023541032910>, <TextNode: '",\n                data: '>]>}]
+DEBUG 2020-12-18 19:39:53,086 base 36044 27032 Exception while resolving variable 'id' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 155, in __getitem__
+    field = self.fields[name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\forms\forms.py", line 157, in __getitem__
+    raise KeyError(
+KeyError: "Key 'id' not found in 'VentureForm'. Choices are: amount, category, cc, customer, customer_source_id, date_entered, in_charge, percent, seller, seller_source_id, source_type, transaction_type."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'VentureForm' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [id] in <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>
+DEBUG 2020-12-18 19:39:53,090 base 36044 27032 Exception while resolving variable 'post_data' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [post_data] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'nApYgQesMfqoWMEqlKFriGjIAubmdgBQbRg0bkJ1JTGuuHrpKCbnkiCY5eYYl2UW'>, 'request': <WSGIRequest: GET '/create_update_venture/2/0/venture/'>, 'user': <SimpleLazyObject: <User: dandybermillo>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000023540E27E80>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000023540E093D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'table_search_context': <fx.tables.SearchMember object at 0x0000023540E27430>}, {}, {'asset_balance': {}, 'venture': <VentureForm bound=False, valid=False, fields=(seller;customer;in_charge;transaction_type;date_entered;source_type;amount;customer_source_id;seller_source_id;cc;category;percent)>, 'limits': {'minimum_deposit': 0, 'maximum_deposit': 10000}, 'member_info': <MemberModel: MemberModel object (2)>, 'customer_info': ''}, {'block': <Block Node: sub_content. Contents: [<TextNode: '\n    \n\n\n\n\n \n \n\n   \n\n\n    '>, <django.template.loader_tags.IncludeNode object at 0x00000235404A0520>, <TextNode: '\n\n\n    <div class="contai'>, <IfNode>, <TextNode: '\n\n            '>, <ForNode: for message in messages, tail_len: 5>, <TextNode: '\n            <div id="ven'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000023540F093D0>, <TextNode: '\n                    <div'>, <Variable Node: venture.in_charge>, <TextNode: ' '>, <Variable Node: venture.source_type>, <Variable Node: venture.customer>, <Variable Node: venture.percent>, <Variable Node: venture.seller_source_id>, <TextNode: '\n                        '>, <Variable Node: venture.date_entered>, <Variable Node: venture.seller>, <Variable Node: venture.transaction_type>, <Variable Node: venture.customer_source_id>, <Variable Node: venture.category>, <Variable Node: venture.flag>, <TextNode: '\n                    </di'>, <Variable Node: venture.totalCost>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.percent.value>, <TextNode: '%\n                       '>, <IfEqualNode>, <TextNode: '\n                        '>, <IfNode>, <TextNode: '">\n                      '>, <Variable Node: venture.amount|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.cc|as_crispy_field>, <TextNode: '\n                        '>, <Variable Node: venture.tender>, <TextNode: '">\n                      '>, <Variable Node: venture.change>, <TextNode: '">\n                      '>, <IfEqualNode>, <TextNode: '\n                        '>, <Variable Node: venture.note>, <TextNode: '</textarea>\n\n            '>, <IfNode>, <TextNode: '\n                    </di'>, <Variable Node: venture.request_action>, <TextNode: '".trim().toUpperCase();\n '>, <Variable Node: post_data>, <TextNode: '";\n\n        $("#main-vent'>, <Variable Node: limits.maximum_deposit>, <TextNode: '");\n\n        var minimum_'>, <Variable Node: limits.minimum_deposit>, <TextNode: '"; // min amount to depos'>, <Variable Node: venture.request_action>, <TextNode: '";\n        console.log("t'>, <Variable Node: asset_balance.cc_balance>, <TextNode: '".replace(\',\', \'\'));\n\n   '>, <django.template.defaulttags.URLNode object at 0x0000023541032910>, <TextNode: '",\n                data: '>]>}]
+DEBUG 2020-12-18 19:39:53,092 base 36044 27032 Exception while resolving variable 'cc_balance' in template 'fx/venture/venture.html'.
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+KeyError: 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'dict' object has no attribute 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'cc_balance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 848, in _resolve_lookup
+    raise VariableDoesNotExist("Failed lookup for key "
+django.template.base.VariableDoesNotExist: Failed lookup for key [cc_balance] in {}
+INFO 2020-12-18 19:39:53,095 basehttp 36044 27032 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 90084
+WARNING 2020-12-18 19:40:00,345 basehttp 36044 27032 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2020-12-18 19:40:00,346 basehttp 36044 40828 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2020-12-18 19:40:00,388 basehttp 36044 39516 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2020-12-18 19:40:00,389 basehttp 36044 40828 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+DEBUG 2020-12-18 19:40:06,476 utils 36044 40828 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."member_id" = 'NA1212-0' LIMIT 21; args=('NA1212-0',)
+DEBUG 2020-12-18 19:40:06,479 utils 36044 40828 (0.000) SELECT "fx_membermodel"."id", "fx_membermodel"."gender", "fx_membermodel"."user_id", "fx_membermodel"."firstname", "fx_membermodel"."middlename", "fx_membermodel"."lastname", "fx_membermodel"."address", "fx_membermodel"."telephone", "fx_membermodel"."note", "fx_membermodel"."email", "fx_membermodel"."birthday", "fx_membermodel"."active", "fx_membermodel"."reserve", "fx_membermodel"."member_id" FROM "fx_membermodel" WHERE "fx_membermodel"."member_id" = 'NA1212-0' LIMIT 21; args=('NA1212-0',)
+DEBUG 2020-12-18 19:40:06,483 utils 36044 40828 (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21; args=(2,)
+DEBUG 2020-12-18 19:40:06,499 utils 36044 40828 (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'na1212-0' LIMIT 21; args=('na1212-0',)
+DEBUG 2020-12-18 19:40:06,898 utils 36044 40828 (0.000) SELECT (1) AS "a" FROM "fx_ccmodel" WHERE ("fx_ccmodel"."member_id" = 2 AND "fx_ccmodel"."transaction_type" = 'D') LIMIT 1; args=(2, 'D')
+DEBUG 2020-12-18 19:40:06,910 utils 36044 40828 (0.016) SELECT SUM("fx_ccmodel"."credit") AS "total_deposit" FROM "fx_ccmodel" WHERE ("fx_ccmodel"."member_id" = 2 AND "fx_ccmodel"."transaction_type" = 'D'); args=(2, 'D')
+DEBUG 2020-12-18 19:40:06,915 utils 36044 40828 (0.000) SELECT (1) AS "a" FROM "fx_ccmodel" WHERE ("fx_ccmodel"."member_id" = 2 AND "fx_ccmodel"."transaction_type" = 'W') LIMIT 1; args=(2, 'W')
+DEBUG 2020-12-18 19:40:06,916 utils 36044 40828 (0.000) SELECT SUM("fx_ccmodel"."debit") AS "total_withdrawal" FROM "fx_ccmodel" WHERE ("fx_ccmodel"."member_id" = 2 AND "fx_ccmodel"."transaction_type" = 'W'); args=(2, 'W')
+INFO 2020-12-18 19:40:06,918 basehttp 36044 40828 "GET /get_customer_details/?customer_id=NA1212-0&password=5105&from=manual HTTP/1.1" 200 122
+DEBUG 2020-12-18 19:40:51,623 autoreload 36044 16600 File C:\Users\dan\just_django\tryjango\trydjango\local_settings.py previous mtime: 1608209576.0649953, current mtime: 1608291650.8541021
+DEBUG 2020-12-18 19:40:51,623 autoreload 36044 16600 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py notified as changed. Signal results: [(<function translation_file_changed at 0x0000023540009700>, None)].
+INFO 2020-12-18 19:40:51,623 autoreload 36044 16600 C:\Users\dan\just_django\tryjango\trydjango\local_settings.py changed, reloading.
+INFO 2020-12-18 19:40:52,180 autoreload 39020 17440 Watching for file changes with StatReloader
+DEBUG 2020-12-18 19:40:52,181 autoreload 39020 17440 Waiting for apps ready_event.
+DEBUG 2020-12-18 19:40:52,232 autoreload 39020 17440 Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2020-12-18 19:40:52,232 autoreload 39020 17440 Watching dir C:\Users\dan\just_django\tryjango\locale with glob **/*.mo.
+DEBUG 2020-12-18 19:40:52,233 autoreload 39020 17440 Watching dir C:\Users\dan\just_django\myenvironmen\lib\site-packages\crispy_forms\locale with glob **/*.mo.
+DEBUG 2020-12-18 19:40:52,233 autoreload 39020 17440 Watching dir C:\Users\dan\just_django\tryjango\fx\locale with glob **/*.mo.
+DEBUG 2020-12-18 19:40:52,546 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\models.py first seen with mtime 1605589993.8239992
+DEBUG 2020-12-18 19:40:52,546 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\apps\registry.py first seen with mtime 1605589993.355252
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\distutils\version.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\backends\__init__.py first seen with mtime 1605589999.4497578
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_bz2.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\__init__.py first seen with mtime 1605589999.2013767
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ctypes\_endian.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\tree.py first seen with mtime 1605589999.5694356
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\__init__.py first seen with mtime 1605589999.0816975
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\module_loading.py first seen with mtime 1605589999.554476
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\checks.py first seen with mtime 1605589993.8190112
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\handlers\wsgi.py first seen with mtime 1605589998.991937
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\sre_parse.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\locks.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\copyreg.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_hashlib.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\utils.py first seen with mtime 1605589999.5016189
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\json\encoder.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_markupbase.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\static.py first seen with mtime 1605589999.4747038
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\apps.py first seen with mtime 1605589998.8862185
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\output.py first seen with mtime 1605589993.182714
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\wsgiref\handlers.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\baseTable.py first seen with mtime 1605611996.6359785
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\contentmanager.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\models.py first seen with mtime 1605589999.2851522
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\signals.py first seen with mtime 1605589999.2243164
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\constants.py first seen with mtime 1605589997.2894902
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\keyword.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\json\scanner.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\urls.py first seen with mtime 1607743659.6747768
+DEBUG 2020-12-18 19:40:52,554 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\base.py first seen with mtime 1605589994.5181413
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\pytz\tzinfo.py first seen with mtime 1605589992.539433
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\manager.py first seen with mtime 1605589999.2173355
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\collections\abc.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\crypto.py first seen with mtime 1605589999.515583
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\decorators\__init__.py first seen with mtime 1605589999.5973613
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_sitebuiltins.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\serializers\base.py first seen with mtime 1605589999.06574
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loader_tags.py first seen with mtime 1605589999.4437726
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\reprlib.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\errors.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\__init__.py first seen with mtime 1605589999.1405394
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\finders.py first seen with mtime 1605589998.889212
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\numbers.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\query_utils.py first seen with mtime 1605589999.2233183
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\i18n.py first seen with mtime 1605589999.470701
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\uploadedfile.py first seen with mtime 1605589998.9819646
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\manage.py first seen with mtime 1605611997.055551
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\quopri.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\humanize\__init__.py first seen with mtime 1605589996.8905585
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\utils.py first seen with mtime 1605589999.1993823
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\sites.py first seen with mtime 1605589993.826997
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\wsgiref\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\concurrent\futures\_base.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\decorators.py first seen with mtime 1605589993.8190112
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\sql.py first seen with mtime 1605589993.1717422
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\urllib\response.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\enums.py first seen with mtime 1605589999.2113688
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\base_subprocess.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\models.py first seen with mtime 1605589995.3648798
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\wsgiref\headers.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\http.py first seen with mtime 1605589999.5425086
+DEBUG 2020-12-18 19:40:52,562 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\urllib\request.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,570 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\cache\backends\base.py first seen with mtime 1605589998.936086
+DEBUG 2020-12-18 19:40:52,570 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\traceback.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,570 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\decorators\cache.py first seen with mtime 1605589999.5993588
+DEBUG 2020-12-18 19:40:52,571 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\utils.py first seen with mtime 1605589998.9849565
+DEBUG 2020-12-18 19:40:52,571 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\utils.py first seen with mtime 1605589998.8991861
+DEBUG 2020-12-18 19:40:52,571 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\views.py first seen with mtime 1608268912.647355
+DEBUG 2020-12-18 19:40:52,572 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\autoreload.py first seen with mtime 1605589999.508598
+DEBUG 2020-12-18 19:40:52,572 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\related_descriptors.py first seen with mtime 1605589999.238278
+DEBUG 2020-12-18 19:40:52,572 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\importlib\util.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,572 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\operations.py first seen with mtime 1605589999.0986533
+DEBUG 2020-12-18 19:40:52,572 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\backends\django.py first seen with mtime 1605589999.4517488
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\site.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\importlib\abc.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_decimal.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\validators.py first seen with mtime 1605589994.9021149
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\ddl_references.py first seen with mtime 1605589999.0826964
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\shortcuts.py first seen with mtime 1605589993.3532562
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\password_validation.py first seen with mtime 1605589994.8961308
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\feedparser.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\__init__.py first seen with mtime 1605589993.351264
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\random.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\subprocess.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\admin.py first seen with mtime 1605589994.8771837
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\__init__.py first seen with mtime 1605615674.181515
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\models.py first seen with mtime 1605589994.8951395
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\apps.py first seen with mtime 1605589993.8180149
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\i18n.py first seen with mtime 1605589999.5933704
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\tz.py first seen with mtime 1605615674.2124343
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\actions.py first seen with mtime 1605589993.817021
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\apps\config.py first seen with mtime 1605589993.3542547
+DEBUG 2020-12-18 19:40:52,573 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\__init__.py first seen with mtime 1605589998.048461
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\handlers.py first seen with mtime 1605589998.89021
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\widgets.py first seen with mtime 1605589993.8309803
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\lorem_ipsum.py first seen with mtime 1605589999.55248
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\templates.py first seen with mtime 1605589998.95703
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\apps\__init__.py first seen with mtime 1605589993.3532562
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\duration.py first seen with mtime 1605589999.532536
+DEBUG 2020-12-18 19:40:52,577 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\transports.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,578 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\base64.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,578 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\database.py first seen with mtime 1605589998.9510477
+DEBUG 2020-12-18 19:40:52,578 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\deletion.py first seen with mtime 1605589999.2093573
+DEBUG 2020-12-18 19:40:52,578 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\types.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,578 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\bisect.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,579 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\platform.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,579 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\engine\__init__.py first seen with mtime 1605589993.174734
+DEBUG 2020-12-18 19:40:52,579 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\base.py first seen with mtime 1605589999.4298103
+DEBUG 2020-12-18 19:40:52,579 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\__init__.py first seen with mtime 1605589993.1657617
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\tempfile.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\signals.py first seen with mtime 1605589994.8981266
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\window.py first seen with mtime 1605589999.2532382
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\__init__.py first seen with mtime 1605589994.5141532
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\widgets.py first seen with mtime 1605589999.289143
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\__init__.py first seen with mtime 1605589998.8852222
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\__init__.py first seen with mtime 1605589999.2542348
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\serializers\__init__.py first seen with mtime 1605589999.0637448
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\client.py first seen with mtime 1605589999.144529
+DEBUG 2020-12-18 19:40:52,580 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\datetime.py first seen with mtime 1605589999.2472534
+DEBUG 2020-12-18 19:40:52,581 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\base_user.py first seen with mtime 1605589994.8811707
+DEBUG 2020-12-18 19:40:52,581 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\utils.py first seen with mtime 1605589999.226311
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\base_futures.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\humanize\apps.py first seen with mtime 1605589996.8935492
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\utils.py first seen with mtime 1605589993.8299825
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\forms.py first seen with mtime 1605589995.3628826
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_ssl.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\html\entities.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\urls.py first seen with mtime 1605589998.961019
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\__init__.py first seen with mtime 1605589999.5026162
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\features.py first seen with mtime 1605589999.0946648
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\datastructures.py first seen with mtime 1605589999.5185745
+DEBUG 2020-12-18 19:40:52,582 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\decorators.py first seen with mtime 1605589994.8861592
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\wsgi.py first seen with mtime 1605589998.930102
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\cgi.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\dispatch\__init__.py first seen with mtime 1605589999.270192
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\events.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\secrets.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\utils.py first seen with mtime 1605589999.448801
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\helpers.py first seen with mtime 1605589993.8220024
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\cache\__init__.py first seen with mtime 1605589998.9320977
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\cache\backends\__init__.py first seen with mtime 1605589998.9340925
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\admin.py first seen with mtime 1607934206.574385
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\math.py first seen with mtime 1605589999.2492495
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\models.py first seen with mtime 1608027544.3756437
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\sre_constants.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\__init__.py first seen with mtime 1605589999.2442617
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\text.py first seen with mtime 1605589999.2522402
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\serializers\python.py first seen with mtime 1605589999.0687313
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\boundfield.py first seen with mtime 1605589999.2781706
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\edit.py first seen with mtime 1605589999.6203
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\utils.py first seen with mtime 1605589999.2871468
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\mimetypes.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\utf_8.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\options.py first seen with mtime 1605589999.2193286
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\views\__init__.py first seen with mtime 1605589994.5201352
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\importlib\machinery.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\abc.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\registry.py first seen with mtime 1605589998.9550343
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\cache.py first seen with mtime 1605589999.5135875
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\enum.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\errorcodes.py first seen with mtime 1605615674.208444
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\version.py first seen with mtime 1605589999.5704334
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\encoding.py first seen with mtime 1605589999.5335302
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\apps.py first seen with mtime 1605589994.878178
+DEBUG 2020-12-18 19:40:52,583 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\calendar.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_queue.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\management\base.py first seen with mtime 1605589999.0128808
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\policy.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\typing.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\importlib\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\socket.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\fields.py first seen with mtime 1605589995.3608882
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\decorators.py first seen with mtime 1605589999.530542
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_uuid.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\__init__.py first seen with mtime 1605589993.8160188
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\mytable.py first seen with mtime 1605611996.671882
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\genericpath.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,587 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\multipart.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\formatter.py first seen with mtime 1605589993.1697478
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\tokens.py first seen with mtime 1605589993.1857047
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\codecs.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\header.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,589 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\creation.py first seen with mtime 1605589999.0916703
+DEBUG 2020-12-18 19:40:52,590 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\dates.py first seen with mtime 1605589999.6183035
+DEBUG 2020-12-18 19:40:52,590 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\__init__.py first seen with mtime 1605589999.4278178
+DEBUG 2020-12-18 19:40:52,590 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\admin_modify.py first seen with mtime 1605589994.5161471
+DEBUG 2020-12-18 19:40:52,590 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\servers\__init__.py first seen with mtime 1605589999.0727215
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\extras.py first seen with mtime 1605615674.2104397
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\storage.py first seen with mtime 1605589998.977975
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\socketserver.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\futures.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\caches.py first seen with mtime 1605589998.9500484
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\base.py first seen with mtime 1605589999.0886788
+DEBUG 2020-12-18 19:40:52,591 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\mail\__init__.py first seen with mtime 1605589998.9939313
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\defaultfilters.py first seen with mtime 1605589999.4337997
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\__init__.py first seen with mtime 1605589999.2761796
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\detail.py first seen with mtime 1605589999.6193013
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\queues.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\state.py first seen with mtime 1605589999.1854243
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\lzma.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\parser.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\hashers.py first seen with mtime 1605589994.889156
+DEBUG 2020-12-18 19:40:52,592 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\deprecation.py first seen with mtime 1605589999.5315413
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\exceptions.py first seen with mtime 1605589999.498628
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\lexer.py first seen with mtime 1605589993.170744
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\forms.py first seen with mtime 1606049529.6051402
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\mixins.py first seen with mtime 1605589999.234291
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\http\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\pytz\exceptions.py first seen with mtime 1605589992.5344467
+DEBUG 2020-12-18 19:40:52,593 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\nonmultipart.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\selector_events.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\compat.py first seen with mtime 1605615674.2074459
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\serializers\json.py first seen with mtime 1605589999.0667377
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\log.py first seen with mtime 1605589994.5191379
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\__init__.py first seen with mtime 1605589999.4677072
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\hmac.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,594 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\deconstruct.py first seen with mtime 1605589999.5285509
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\hashable.py first seen with mtime 1605589999.5395145
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\query.py first seen with mtime 1605589999.221323
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\admin.py first seen with mtime 1605589995.3549035
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\views.py first seen with mtime 1605589998.9011807
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\storage\__init__.py first seen with mtime 1605589997.298467
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\hashlib.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\datetime.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,595 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\utils.py first seen with mtime 1605589993.1737378
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\safestring.py first seen with mtime 1605589999.5604851
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\http\multipartparser.py first seen with mtime 1605589999.4078677
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\aggregates.py first seen with mtime 1605589999.2023733
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\defaulttags.py first seen with mtime 1605589999.4357936
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\lookups.py first seen with mtime 1605589999.2163403
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\static.py first seen with mtime 1605589999.5953662
+DEBUG 2020-12-18 19:40:52,596 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\__init__.py first seen with mtime 1605589995.3539069
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\re.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\introspection.py first seen with mtime 1605589999.096658
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ast.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\log.py first seen with mtime 1605589999.551487
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\urllib\parse.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_compat_pickle.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\management\commands\runserver.py first seen with mtime 1605589998.907166
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ntpath.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\management\commands\runserver.py first seen with mtime 1605589999.041805
+DEBUG 2020-12-18 19:40:52,597 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\checks.py first seen with mtime 1605589995.357896
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\select.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\trsock.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\log.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\_parseaddr.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\management\__init__.py first seen with mtime 1605589999.010888
+DEBUG 2020-12-18 19:40:52,598 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\library.py first seen with mtime 1605589999.4397817
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\cache.py first seen with mtime 1605589999.4697037
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\dis.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\response.py first seen with mtime 1605589999.4457645
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\aligned_indent.py first seen with mtime 1605589993.181716
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\views\autocomplete.py first seen with mtime 1605589994.521132
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\streams.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,599 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\csrf.py first seen with mtime 1605589999.419836
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\dispatch\dispatcher.py first seen with mtime 1605589999.2721887
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\decimal.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\__init__.py first seen with mtime 1605589994.8741915
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\difflib.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\asgiref\current_thread_executor.py first seen with mtime 1605589993.275478
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\cache\utils.py first seen with mtime 1605589998.933095
+DEBUG 2020-12-18 19:40:52,600 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\exceptions.py first seen with mtime 1605589998.9191322
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\reindent.py first seen with mtime 1605589993.183713
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\pprint.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\move.py first seen with mtime 1605589998.975979
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\weakref.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\asgiref\sync.py first seen with mtime 1605589993.280454
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\checks.py first seen with mtime 1605589994.8831656
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\inspect.py first seen with mtime 1605589999.545498
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\translation\trans_real.py first seen with mtime 1605589999.583399
+DEBUG 2020-12-18 19:40:52,601 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\__init__.py first seen with mtime 1605614348.9746947
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\schema.py first seen with mtime 1605589999.1525073
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\locale\__init__.py first seen with mtime 1605589993.3682168
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\__init__.py first seen with mtime 1605589993.815023
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ipaddress.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\http\cookies.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\tokenize.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\selectors.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\signing.py first seen with mtime 1605589998.926114
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\coroutines.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\http\__init__.py first seen with mtime 1605589999.4038773
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\_psycopg.cp39-win_amd64.pyd first seen with mtime 1605615674.205451
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\urllib\error.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\__init__.py first seen with mtime 1605589999.0866823
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\constants.py first seen with mtime 1605589999.2612183
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\handlers\base.py first seen with mtime 1605589998.987947
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\stat.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\errors.py first seen with mtime 1605615674.2094414
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\model_checks.py first seen with mtime 1605589998.9540374
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\concurrent\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\models.py first seen with mtime 1605589999.1963897
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\trydjango\__init__.py first seen with mtime 1605611997.0675573
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\signal.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\conf.py first seen with mtime 1605589999.4956307
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\csv.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\translation.py first seen with mtime 1605589998.9590306
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\renderers.py first seen with mtime 1605589999.2861488
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\pytz\tzfile.py first seen with mtime 1605589992.5384364
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\http\client.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\subqueries.py first seen with mtime 1605589999.267201
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\asgiref\__init__.py first seen with mtime 1605589993.2734704
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\text.py first seen with mtime 1605589999.5634522
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\views\main.py first seen with mtime 1605589994.5231287
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\apps.py first seen with mtime 1605589997.2874956
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\constants.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\security\base.py first seen with mtime 1605589998.965011
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\servers\basehttp.py first seen with mtime 1605589999.0747275
+DEBUG 2020-12-18 19:40:52,602 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\exceptions.py first seen with mtime 1605589999.1704595
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\crispy_forms\templatetags\__init__.py first seen with mtime 1605614349.1045997
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\apps.py first seen with mtime 1605589995.356908
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\asgiref\local.py first seen with mtime 1605589993.2774587
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\images.py first seen with mtime 1605589998.9729877
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\right_margin.py first seen with mtime 1605589993.1847079
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\numberformat.py first seen with mtime 1605589999.5554721
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\staggered.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,606 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\topological_sort.py first seen with mtime 1605589999.5684395
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\list.py first seen with mtime 1605589999.6222963
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\security\csrf.py first seen with mtime 1605589998.9670053
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\mail\utils.py first seen with mtime 1605589998.9969225
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\related.py first seen with mtime 1605589999.2362833
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\management\__init__.py first seen with mtime 1605589995.7874053
+DEBUG 2020-12-18 19:40:52,607 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\regex_helper.py first seen with mtime 1605589999.5574656
+DEBUG 2020-12-18 19:40:52,608 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\__init__.py first seen with mtime 1605611996.6140401
+DEBUG 2020-12-18 19:40:52,608 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\__init__.py first seen with mtime 1605589999.4138503
+DEBUG 2020-12-18 19:40:52,608 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\loader.py first seen with mtime 1605589999.441776
+DEBUG 2020-12-18 19:40:52,608 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\options.py first seen with mtime 1605589993.8249948
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\sslproto.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_lzma.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\windows_events.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\temp.py first seen with mtime 1605589998.9799683
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\encoders.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\formsets.py first seen with mtime 1605589999.2831576
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\async_checks.py first seen with mtime 1605589998.9480553
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\base.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,609 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\reverse_related.py first seen with mtime 1605589999.2422748
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\query.py first seen with mtime 1605589999.265206
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\constants.py first seen with mtime 1605589999.2053726
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\html.py first seen with mtime 1605589999.540523
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\base_tasks.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\http\response.py first seen with mtime 1605589999.4128528
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\copy.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\l10n.py first seen with mtime 1605589999.472698
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\schema.py first seen with mtime 1605589999.1006486
+DEBUG 2020-12-18 19:40:52,610 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\http\request.py first seen with mtime 1605589999.409864
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\engine\filter_stack.py first seen with mtime 1605589993.1757321
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_weakrefset.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\extensions.py first seen with mtime 1605615674.2094414
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\trydjango\settings.py first seen with mtime 1608288943.995798
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\base.py first seen with mtime 1605589999.494664
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\debug.py first seen with mtime 1605589999.589383
+DEBUG 2020-12-18 19:40:52,611 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_asyncio.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\middleware\cache.py first seen with mtime 1605589999.415847
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\mail\message.py first seen with mtime 1605589998.9959257
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\html\parser.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\operations.py first seen with mtime 1605589999.1515095
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_bootlocale.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\locks.py first seen with mtime 1605589998.9739864
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\__init__.py first seen with mtime 1605589993.179721
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\client.py first seen with mtime 1605589999.0896757
+DEBUG 2020-12-18 19:40:52,612 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\trydjango\urls.py first seen with mtime 1605611997.168251
+DEBUG 2020-12-18 19:40:52,613 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,613 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\views.py first seen with mtime 1605589994.9031117
+DEBUG 2020-12-18 19:40:52,613 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\converters.py first seen with mtime 1605589999.4976265
+DEBUG 2020-12-18 19:40:52,613 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\base\validation.py first seen with mtime 1605589999.1016438
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\handlers\__init__.py first seen with mtime 1605589998.9859529
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\comparison.py first seen with mtime 1605589999.2462559
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\asyncio.py first seen with mtime 1605589999.5066059
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\files.py first seen with mtime 1605589999.2313354
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\base.py first seen with mtime 1605589999.615312
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\base64mime.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\messages.py first seen with mtime 1605589998.9520438
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\resolvers.py first seen with mtime 1605589999.500618
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\_json.py first seen with mtime 1605615674.1835182
+DEBUG 2020-12-18 19:40:52,614 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\termcolors.py first seen with mtime 1605589999.5624552
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\base.py first seen with mtime 1605589999.1924012
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\gzip.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\context.py first seen with mtime 1605589999.4308095
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\related_lookups.py first seen with mtime 1605589999.2402737
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\pickle.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\string.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\keywords.py first seen with mtime 1605589993.1697478
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\security\__init__.py first seen with mtime 1605589998.9640114
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_collections_abc.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\user_views.py first seen with mtime 1605611997.0535564
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\queue.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\security\sessions.py first seen with mtime 1605589998.9680057
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\argparse.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,615 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\itercompat.py first seen with mtime 1605589999.5484903
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\operator.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\__init__.py first seen with mtime 1605589997.2855
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\inspect.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\filters\others.py first seen with mtime 1605589993.181716
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\templatetags\tz.py first seen with mtime 1605589999.477681
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\migration.py first seen with mtime 1605589999.1784406
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\dates.py first seen with mtime 1605589999.5245543
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\headerregistry.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\base.py first seen with mtime 1605589998.9709923
+DEBUG 2020-12-18 19:40:52,616 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\constraints.py first seen with mtime 1605589999.2073617
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\latin_1.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\getpass.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\signals.py first seen with mtime 1605589999.0846913
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\gettext.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\_policybase.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\fields.py first seen with mtime 1605589999.1943996
+DEBUG 2020-12-18 19:40:52,617 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ctypes\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\functional.py first seen with mtime 1605589999.5375228
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\bz2.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\contextvars.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\pkgutil.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\message.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,618 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\aliases.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\__init__.py first seen with mtime 1605589999.229302
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\translation\__init__.py first seen with mtime 1605589999.574425
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\ipv6.py first seen with mtime 1605589999.5464957
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\struct.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\posixpath.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\uuid.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\logging\handlers.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ctypes\wintypes.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,619 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\features.py first seen with mtime 1605589999.147523
+DEBUG 2020-12-18 19:40:52,620 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,620 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\mime\text.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,620 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\pytz\lazy.py first seen with mtime 1605589992.5354898
+DEBUG 2020-12-18 19:40:52,620 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\checks\__init__.py first seen with mtime 1605589998.9470572
+DEBUG 2020-12-18 19:40:52,620 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\proxy.py first seen with mtime 1605589999.235286
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\exceptions.py first seen with mtime 1605589993.1687496
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\format_helpers.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\io.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\ssl.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\concurrent\futures\thread.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\json\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,621 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\admin_urls.py first seen with mtime 1605589994.5181413
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sites\shortcuts.py first seen with mtime 1605589998.4922755
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\warnings.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\pathlib.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sites\__init__.py first seen with mtime 1605589998.479308
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\shutil.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\__init__.py first seen with mtime 1605589999.5853963
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\formats.py first seen with mtime 1605589999.5365255
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\_header_value_parser.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,622 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py first seen with mtime 1605589994.5151496
+DEBUG 2020-12-18 19:40:52,623 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\dateparse.py first seen with mtime 1605589999.5215642
+DEBUG 2020-12-18 19:40:52,623 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\urls\__init__.py first seen with mtime 1605589999.4926496
+DEBUG 2020-12-18 19:40:52,623 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\datetime_safe.py first seen with mtime 1605589999.5265498
+DEBUG 2020-12-18 19:40:52,623 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\logging\config.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,623 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\token.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\trydjango\local_settings.py first seen with mtime 1608291650.8541021
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\pytz\__init__.py first seen with mtime 1605589992.533451
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\filters.py first seen with mtime 1605589993.8210063
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\smartif.py first seen with mtime 1605589999.4467618
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\uploadhandler.py first seen with mtime 1605589998.982962
+DEBUG 2020-12-18 19:40:52,624 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\translation\reloader.py first seen with mtime 1605589999.5764153
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\charset.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\heapq.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\logging\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\tokens.py first seen with mtime 1605589994.899125
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\models.py first seen with mtime 1605589998.054443
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\exceptions.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,625 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\protocols.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\iterators.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\wsgiref\simple_server.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\__init__.py first seen with mtime 1605589993.358243
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\backends\base.py first seen with mtime 1605589999.4507573
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\_range.py first seen with mtime 1605615674.2064536
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\base.py first seen with mtime 1605589999.2043679
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\generic\__init__.py first seen with mtime 1605589999.6133182
+DEBUG 2020-12-18 19:40:52,626 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\_os.py first seen with mtime 1605589999.503612
+DEBUG 2020-12-18 19:40:52,627 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\contextlib.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,627 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\where.py first seen with mtime 1605589999.2691958
+DEBUG 2020-12-18 19:40:52,627 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\forms.py first seen with mtime 1605589999.281163
+DEBUG 2020-12-18 19:40:52,627 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\nturl2path.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,628 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\unicodedata.pyd first seen with mtime 1601934422.0
+DEBUG 2020-12-18 19:40:52,628 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\proactor_events.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,628 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_overlapped.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,628 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\__init__.py first seen with mtime 1605589999.190407
+DEBUG 2020-12-18 19:40:52,628 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\management\__init__.py first seen with mtime 1605589995.3219936
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\tokens.py first seen with mtime 1605589993.1717422
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\base_events.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\validators.py first seen with mtime 1605589998.9281087
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\defaults.py first seen with mtime 1605589999.5903804
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\_encoded_words.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\encodings\cp1252.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\threads.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\runners.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\creation.py first seen with mtime 1605589999.146523
+DEBUG 2020-12-18 19:40:52,629 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\utils.py first seen with mtime 1605589999.079706
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\files\__init__.py first seen with mtime 1605589998.9699943
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\baseconv.py first seen with mtime 1605589999.5115888
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\tasks.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\cli.py first seen with mtime 1605589993.1677558
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\utils.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\wsgiref\util.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\functions\mixins.py first seen with mtime 1605589999.2502458
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\sql\datastructures.py first seen with mtime 1605589999.2632103
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\__init__.py first seen with mtime 1605589998.9161413
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\admin\exceptions.py first seen with mtime 1605589993.8200078
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\engine.py first seen with mtime 1605589999.4367921
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\conf\global_settings.py first seen with mtime 1605589993.3602436
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\management\color.py first seen with mtime 1605589999.0138803
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\base.py first seen with mtime 1605589999.1435313
+DEBUG 2020-12-18 19:40:52,630 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\concurrent\futures\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\decorators\debug.py first seen with mtime 1605589999.6043434
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\sre_compile.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\handlers\exception.py first seen with mtime 1605589998.989944
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\_compression.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\staticfiles\checks.py first seen with mtime 1605589998.8872168
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\functools.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\generator.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\http\server.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,632 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\quoprimime.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\fnmatch.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\uu.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\utils.py first seen with mtime 1605589999.0856862
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\subprocess.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\collections\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\operations\special.py first seen with mtime 1605589999.1973872
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\views\decorators\csrf.py first seen with mtime 1605589999.6033435
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\just_django\tryjango\fx\tables.py first seen with mtime 1605611997.002042
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\urls.py first seen with mtime 1605589994.9011219
+DEBUG 2020-12-18 19:40:52,633 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\linecache.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,634 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\json\decoder.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,634 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\template\exceptions.py first seen with mtime 1605589999.4377897
+DEBUG 2020-12-18 19:40:52,634 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\dateformat.py first seen with mtime 1605589999.5195782
+DEBUG 2020-12-18 19:40:52,634 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\expressions.py first seen with mtime 1605589999.213346
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\http\cookie.py first seen with mtime 1605589999.405878
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\distutils\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\forms\fields.py first seen with mtime 1605589999.2801654
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\handlers\asgi.py first seen with mtime 1605589998.98695
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\base_session.py first seen with mtime 1605589998.0504546
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\messages\api.py first seen with mtime 1605589997.2864988
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\engine\statement_splitter.py first seen with mtime 1605589993.1787226
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\paginator.py first seen with mtime 1605589998.9211266
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\core\signals.py first seen with mtime 1605589998.9231272
+DEBUG 2020-12-18 19:40:52,635 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\transaction.py first seen with mtime 1605589999.0787077
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\contenttypes\views.py first seen with mtime 1605589995.3658772
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\opcode.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\threading.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\psycopg2\_ipaddress.py first seen with mtime 1605615674.1825116
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\sqlparse\engine\grouping.py first seen with mtime 1605589993.1777277
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\fields\json.py first seen with mtime 1605589999.2322946
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\models\indexes.py first seen with mtime 1605589999.2143428
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_socket.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\auth\forms.py first seen with mtime 1605589994.8881514
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\html\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\locale.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,636 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\asyncio\windows_utils.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\email\message.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\os.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\timesince.py first seen with mtime 1605589999.5654547
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\backends\postgresql\introspection.py first seen with mtime 1605589999.1495166
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\utils\timezone.py first seen with mtime 1605589999.5664454
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\Lib\urllib\__init__.py first seen with mtime 1601934402.0
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\AppData\Local\Programs\Python\Python39\DLLs\_ctypes.pyd first seen with mtime 1601934420.0
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\contrib\sessions\apps.py first seen with mtime 1605589998.0494566
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\migrations\__init__.py first seen with mtime 1605589999.1674683
+DEBUG 2020-12-18 19:40:52,637 autoreload 39020 17440 File C:\Users\dan\just_django\myenvironmen\Lib\site-packages\django\db\__init__.py first seen with mtime 1605589999.0767102

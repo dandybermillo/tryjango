@@ -825,9 +825,11 @@
                 dataType: "json",
                 success: function (response) {
                     ID_Info.ON_SEARCH = false;
+                    console.log("videoCode:  >"+videoCode );
                     if( videoCode == 2) {  // 
 
                             if (response['data'] == "Success") {
+                                console.log("response['data'] == 'Success' passed" );
                                 $("#venture-payment-failed-alert").hide();
                                 $("#login").modal('hide');
                                 $("#venture-payment-transaction-modal").modal('show');
@@ -855,6 +857,8 @@
                           
 
                             } else {
+                                console.log("else of response['data'] == 'Success' passed" );
+                                console.log("changeHrefValues(response[member_info]['id'])");
                                // changeHrefValues(response["member_info"]['id']);
                         ID_Info.id = "";
                         ID_Info.is_name_blank = true;
