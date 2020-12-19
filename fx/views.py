@@ -215,7 +215,7 @@ def check_user(request):
 
 def get_customer_details(request):
     logger.info("--def get customer details")
-    customer_id = request.GET.get("customer_id", "").strip().upper()
+    customer_id = request.GET.get("customer_id", "").strip().lower()
     from_code = request.GET.get("from", "manual").strip()
     qrpassword=""
     #qr_code = request.GET.get("qr_code", "").strip()
@@ -235,7 +235,7 @@ def get_customer_details(request):
             message ="This user does not exist!"  #invalid username
             print(f"---customer_id:{customer_id}")
             member_qs = MemberModel.objects.get(member_id=customer_id) 
-            
+            print(f"id:{member_qs.id}")
             if from_code == "qrcode":
                     message ="Incorrect password!"  #invalid password
                     pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
