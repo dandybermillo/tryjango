@@ -234,8 +234,9 @@ def get_customer_details(request):
       try:   
             message ="This user does not exist!"  #invalid username
             print(f"---customer_id:{customer_id}")
+            print("------->>>>>")
             member_qs = MemberModel.objects.get(member_id=customer_id) 
-            print(f"id:{member_qs.id}")
+            print(f"------id:{member_qs.id}")
             if from_code == "qrcode":
                     message ="Incorrect password!"  #invalid password
                     pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
@@ -292,7 +293,7 @@ def get_customer_details(request):
                     
           
 
-            member_info = {"member_id":member_qs.member_id,"name":member_qs.name,"id": member_qs.id}
+            member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
             print(f"member_info:{member_info}")
             cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
             return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":round(cm_balance)}, status = 200)
@@ -650,7 +651,7 @@ def add_change_transaction(code, wallet_id,venture_id,amount):
 def add_regular_transaction(code, target_table ,member,description ="Change Deposit",transaction_type="D",credit=0,debit=0,source_id=0,category = 0):
             #code : 0 -new, 1 -edit
             #credit - change_amount
-            print(f"add_regular_transaction ------------- code: {code}, credit:{credit}, venture_id:{source_id}, target_table:{target_table},change_amount: {credit}")
+            print(f"-------------------add_regular_transaction ------------- code: {code}, credit:{credit}, venture_id:{source_id}, target_table:{target_table},change_amount: {credit}")
             if code > 0: # edit existing record
                     old_destination_acct_code =""
                     try:    
@@ -708,6 +709,7 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                     print(f" old_destination_acct_code:{old_destination_acct_code} = change.destination_acct_code:{destination_acct_code}")
                      
                     if credit > 0 and destination_acct_code != old_destination_acct_code:
+                                print("------ credit > 0 and destination_acct_code != old_destination_acct_code:passed")
                                 try: 
                                         if  old_destination_acct_code == "W":
                                             delete_walletModel = WalletModel.objects.get(id = destination_acct_id).delete() 
@@ -734,10 +736,10 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                     
                     print(f"source_id{source_id}, wallet_id:{destination_acct_id}, venture_id:{source_id}, credit:{credit}")
                     if credit > 0:
-                                print(f"add_regular_transaction:code > 0,destination_acct_id:{destination_acct_id},credit:{credit}") 
+                                print(f"-------if credit > 0: add_regular_transaction:code > 0,destination_acct_id:{destination_acct_id},credit:{credit}") 
                                      
                                 try:
-                                        print(f"----target_table:{target_table}")
+                                        print(f"---- try : target_table:{target_table}")
                                         if  target_table != "": 
                                                  destination = Model.objects.filter(id = destination_acct_id).update( credit = credit)
                                         wallet_change_deposit = Change_Table.objects.filter(venture_id = source_id).update( change = credit)
@@ -747,7 +749,7 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                                         return {"Success":False}
                                             
                     else:
-                                print("add_regular_transaction*************************************************ERROR")
+                                print(" else of credit > 0: add_regular_transaction*************************************************ERROR")
                                 print(f"model_name:")
                                 try:
                                         try:
@@ -943,14 +945,6 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         customer  = int(request.POST.get("customer",-1))
         amount  = request.POST.get("amount",0) 
         cc  = request.POST.get("cc",0) 
-        
-             
-        #11-25
-        
-        
-        
-        
-        #return
         percent  = float(request.POST.get("percent",-1)) #delete
         # customer  = int(request.POST.get("customer",-1))
         seller  = int(request.POST.get("seller",-1))
