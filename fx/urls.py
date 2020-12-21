@@ -52,6 +52,7 @@ urlpatterns = [
   path('loan_application/<int:member_id>/<int:loan_id>/', views.loan_application, name = "loan_application_url"), #0 - new,1 edit
   
       #  -------------------------redirect-------------------------
+  # path('user_dashboard/<int:id>/', views.user_dashboard, name="user_dashboard_url"),
 
   path('success/transfer/<int:sender>/<int:code>/', views.success_transfer, name="success_transfer_url"),
   path('success/create_update_result/<str:account_name>/<int:id>/<int:account_id>/<str:msg>', views.create_update_result, name="create_update_result_url"),
@@ -61,7 +62,8 @@ urlpatterns = [
   path('success/payment_venture_result/<str:account_name>/<int:id>/<int:payment_id>/<str:msg>', views.payment_venture_result, name="payment_venture_result_url"),
   path('success/create_update_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.create_update_venture_result, name="create_update_venture_result_url"),
   path('success/finance_venture_result/<str:account_name>/<int:id>/<int:account_id>/<str:msg>', views.finance_venture_result, name="finance_venture_result_url"),
-
+  
+  
   # path('success/payment_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.payment_venture_result, name="payment_venture_result_url"),
 
 
@@ -69,6 +71,8 @@ urlpatterns = [
 
 
        # -------------- user profile -------------------
+  path("unauthorized_user/", views.unauthorized_user, name="unauthorized_user_url"),
+
   path('update_user_info/<int:id>/',user_views.update_user_info, name='update_user_info_url'),
   path("user_dashboard/<int:id>/", user_views.user_dashboard, name="user_dashboard_url"),
   path("user_finance/<int:id>/",user_views.user_finance, name="user_finance_url"),

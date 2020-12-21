@@ -48,6 +48,8 @@ from django.template.defaultfilters import stringfilter
 import json
 from django.apps import apps
 from .tables import myTable
+from django.contrib.auth.models import  Group
+
 #error logging
 import logging,traceback
 # logger = logging.getLogger(__name__)
@@ -818,10 +820,14 @@ def getLoanPayment(member_id):
 #cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
+  
     logger.info('>>>>>>>>>>>>>> init cuv!')
+    print('>>>>>>>>>>>>>> init cuv!')
+    
   #  saveTransHistory(11,2,TRANS_VENTURE,111,"test",100,NEW_RECORD)
     
   #  return
+    print (f"user: {request.user}")
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
         staff_info=""
@@ -830,8 +836,12 @@ def create_update_venture(request,member_id,venture_id,request_action ):
             print(f"..staff_info:{staff_info.name}")
         except Exception as e:
            # raise Http404("Sorry. User id does not exist!")
-            logger.warning(f"def cuv @exception,e:{e}" ) 
             print(f"def cuv @exception, id: None , e:{e}")
+            logger.warning(f"def cuv @exception,e:{e}" ) 
+    else:
+            print("going to unauthorized user page")  
+            return redirect('/unauthorized_user/') #
+
   
     request_action =request_action.strip().lower()
     model_name =model_list.get(request_action) 
@@ -842,7 +852,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
    # print(f"model_name:{model_name}")
     #return
     if  request_action == "venture":
-            category =CAT_VENTURE
+            category = CAT_VENTURE
             description ="GROCERY"
             customer_source_fund = SOURCE_REGULAR
             seller_dest_fund =SOURCE_VENTURE
@@ -1125,7 +1135,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                        
                                        
                                         msg ="Customer Payment has been successfully recorded!"
-                                        return redirect(f'/success/create_update_venture_result/{member_id}/{venture_qs.id}/{msg}/{request_action}')
+                                        return redirect(f'/success/create_update_venture_result/{customer.id}/{venture_qs.id}/{msg}/{request_action}')
                                 else:
                                     
                                     messages.info("Sorry. Technical error has been encountered!")
@@ -1147,6 +1157,8 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         print(".....ventureForm is valid!")
                         amount = ventureForm.cleaned_data['amount']
                         customer = ventureForm.cleaned_data['customer']
+                        print(f">>>>>>>>>>>>>> customer id: {customer.member_id} ,{customer.id}")
+                       # return
                         seller = ventureForm.cleaned_data['seller']
                         transaction_type = ventureForm.cleaned_data['transaction_type']
                         date_entered = ventureForm.cleaned_data['date_entered']
@@ -1258,7 +1270,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                   
                         print(f"Success: {Success}")
                         msg ="Customer Payment has been successfully recorded!"
-                        return redirect(f'/success/create_update_venture_result/{member_id}/{venture_id}/{msg}/{request_action}')
+                        return redirect(f'/success/create_update_venture_result/{customer.id}/{venture_id}/{msg}/{request_action}')
                         
 
                     else:
@@ -2224,13 +2236,13 @@ def venture_login_request(request):
                             return redirect(f'/create_update_venture/{member_info.id}/{0}/{"venture"}')
                     else:
                             print("success login in venture")
-                            return
+                             
                             if nextl:
                             
                                return redirect(nextl)  
                             else:    
                                 member_info = MemberModel.objects.get(user = user.id)
-                                print(f"member_info:{member_info}")
+                                print(f"member_info;:{member_info}")
                             # client_info ={'id':client_info.id}  #todo eliminate extra fields
                                 return redirect('/user_dashboard/{}'.format(member_info.id)) # without / before user_ django will add /login before /user_
         else:
@@ -2284,7 +2296,7 @@ def login_request(request):
  
 
  
-
+ 
 
 def venture_login_requestssss(request):
     print("login request:----------")
@@ -2324,13 +2336,17 @@ def venture_login_requestssss(request):
  
 
  
-
+def unauthorized_user(request):
+     
+         print(" id and request id   is not same.")
+         context ={'message':" Sorry. This  page is for authorized user only. Thank you."}
+         return render(request, "fx/messages/unauthorized_user.html", context) 
  
 
  
 def my_home_page(request):
    # return render(request,"products/bc/user.html",{})
-    print("----my_home_page")
+    print("======================== goint to admin dashboard========")
     print(f"is_authenticated:{request.user.is_authenticated}")
     print(f"is_active:{request.user.is_active}")
     print(f"is_staff:{request.user.is_staff}")
@@ -2338,6 +2354,7 @@ def my_home_page(request):
     if request.user.is_authenticated is True and request.user.is_active and request.user.is_staff:  
          return redirect('/dashboard/')
     else:
+        print("======================== goint to user dashboard========")
         if request.user.is_authenticated is True and request.user.is_active:
             member_info = MemberModel.objects.get(user = request.user.id)
                        # client_info ={'id':client_info.id}  #todo eliminate extra fields
