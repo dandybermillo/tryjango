@@ -1,1 +1,854 @@
 INFO 2020-12-22 20:03:22,798 autoreload 9844 5344 Watching for file changes with StatReloader
+INFO 2020-12-22 20:05:45,921 views 9844 19432 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:05:46,037 basehttp 9844 19432 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 98828
+INFO 2020-12-22 20:05:46,480 basehttp 9844 19432 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:05:46,483 basehttp 9844 7224 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:05:46,484 basehttp 9844 14288 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:05:46,485 basehttp 9844 1264 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:05:46,488 basehttp 9844 2812 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:05:47,328 basehttp 9844 14288 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:05:47,393 log 9844 14288 Not Found: /favicon.ico
+WARNING 2020-12-22 20:05:47,394 basehttp 9844 14288 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:05:47,670 basehttp 9844 14288 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:05:47,670 basehttp 9844 2812 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:06:31,886 views 9844 14288 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:06:31,975 basehttp 9844 14288 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 98821
+INFO 2020-12-22 20:06:32,011 basehttp 9844 14288 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:06:32,019 basehttp 9844 1264 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:06:32,021 basehttp 9844 2812 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:06:32,022 basehttp 9844 7224 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:06:32,023 basehttp 9844 14288 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:06:32,647 basehttp 9844 14288 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:06:32,700 log 9844 14288 Not Found: /favicon.ico
+WARNING 2020-12-22 20:06:32,700 basehttp 9844 14288 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:06:32,982 basehttp 9844 14288 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:06:32,983 basehttp 9844 2812 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:06:34,231 views 9844 14288 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:06:34,315 basehttp 9844 14288 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 98821
+INFO 2020-12-22 20:06:34,345 basehttp 9844 14288 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:06:34,346 basehttp 9844 2812 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:06:34,347 basehttp 9844 7224 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:06:34,350 basehttp 9844 7224 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:06:34,351 basehttp 9844 14288 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:06:35,240 basehttp 9844 7224 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:06:35,298 log 9844 14288 Not Found: /favicon.ico
+WARNING 2020-12-22 20:06:35,298 basehttp 9844 14288 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:06:35,535 basehttp 9844 14288 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:06:35,535 basehttp 9844 7224 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:07:27,105 views 9844 14288 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:07:27,212 basehttp 9844 14288 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 98822
+INFO 2020-12-22 20:07:27,257 basehttp 9844 7224 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:07:27,259 basehttp 9844 2812 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:07:27,261 basehttp 9844 1264 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:07:27,262 basehttp 9844 14288 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:07:27,263 basehttp 9844 7224 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:07:28,458 basehttp 9844 14288 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:07:28,529 log 9844 7224 Not Found: /favicon.ico
+WARNING 2020-12-22 20:07:28,529 basehttp 9844 7224 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:07:28,797 basehttp 9844 14288 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:07:28,797 basehttp 9844 7224 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:36:37,268 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:36:37,350 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99165
+INFO 2020-12-22 20:36:37,373 basehttp 9844 20756 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:36:37,383 basehttp 9844 20756 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:36:37,384 basehttp 9844 6648 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:36:37,384 basehttp 9844 27012 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:36:37,388 basehttp 9844 27012 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:36:42,827 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:36:42,913 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99165
+INFO 2020-12-22 20:36:42,947 basehttp 9844 27012 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:36:42,948 basehttp 9844 20756 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:36:42,952 basehttp 9844 6648 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:36:42,953 basehttp 9844 20756 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:36:42,954 basehttp 9844 27012 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:36:45,493 basehttp 9844 6648 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:36:45,585 log 9844 6648 Not Found: /favicon.ico
+WARNING 2020-12-22 20:36:45,585 basehttp 9844 6648 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:36:45,821 basehttp 9844 6648 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:36:45,821 basehttp 9844 27012 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:37:18,102 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:37:18,189 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99163
+INFO 2020-12-22 20:37:18,221 basehttp 9844 6648 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:37:18,223 basehttp 9844 20756 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:37:18,224 basehttp 9844 1672 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:37:18,225 basehttp 9844 21804 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:37:18,226 basehttp 9844 27012 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:37:24,583 basehttp 9844 6648 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:37:24,689 log 9844 27012 Not Found: /favicon.ico
+WARNING 2020-12-22 20:37:24,689 basehttp 9844 27012 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:37:24,882 basehttp 9844 27012 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:37:24,882 basehttp 9844 6648 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:38:17,727 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:38:17,813 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99071
+INFO 2020-12-22 20:38:17,844 basehttp 9844 27012 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:38:17,845 basehttp 9844 20756 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:38:17,846 basehttp 9844 21804 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:38:17,847 basehttp 9844 1672 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:38:17,848 basehttp 9844 6648 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:38:30,808 basehttp 9844 27012 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:38:30,896 log 9844 6648 Not Found: /favicon.ico
+WARNING 2020-12-22 20:38:30,897 basehttp 9844 6648 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:38:31,141 basehttp 9844 27012 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:38:31,142 basehttp 9844 6648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:39:26,448 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:39:26,530 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99156
+INFO 2020-12-22 20:39:26,554 basehttp 9844 27012 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:39:26,555 basehttp 9844 20756 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:39:26,557 basehttp 9844 21804 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:39:26,559 basehttp 9844 1672 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:39:26,560 basehttp 9844 6648 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:39:31,014 basehttp 9844 27012 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:39:31,114 log 9844 6648 Not Found: /favicon.ico
+WARNING 2020-12-22 20:39:31,114 basehttp 9844 6648 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:39:31,320 basehttp 9844 27012 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:39:31,320 basehttp 9844 6648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:39:40,081 views 9844 20756 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:39:40,193 basehttp 9844 20756 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99156
+INFO 2020-12-22 20:39:40,224 basehttp 9844 27012 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:39:40,225 basehttp 9844 20756 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:39:40,226 basehttp 9844 21804 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:39:40,227 basehttp 9844 1672 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:39:40,227 basehttp 9844 6648 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:39:49,790 basehttp 9844 27012 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:39:49,919 log 9844 6648 Not Found: /favicon.ico
+WARNING 2020-12-22 20:39:49,919 basehttp 9844 6648 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:39:50,105 basehttp 9844 6648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:39:50,106 basehttp 9844 27012 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:45:14,571 views 9844 10544 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:45:14,665 basehttp 9844 10544 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99154
+INFO 2020-12-22 20:45:14,695 basehttp 9844 10544 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:45:14,699 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:45:14,700 basehttp 9844 27672 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:45:14,701 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:45:14,701 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:45:19,878 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:45:20,026 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:45:20,026 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:45:20,233 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:45:20,234 basehttp 9844 19740 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:45:36,104 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:45:36,186 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99153
+INFO 2020-12-22 20:45:36,211 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:45:36,220 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:45:36,222 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:45:36,222 basehttp 9844 27672 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:45:36,223 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:45:38,008 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:45:38,179 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:45:38,179 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:45:38,356 basehttp 9844 19740 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:45:38,356 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:02,315 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:46:02,398 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99155
+INFO 2020-12-22 20:46:02,424 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:46:02,426 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:46:02,428 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:46:02,428 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:46:02,429 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:46:04,253 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:46:04,469 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:46:04,470 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:46:04,654 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:04,654 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:12,540 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:46:12,621 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99155
+INFO 2020-12-22 20:46:12,656 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:46:12,658 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:46:12,659 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:46:12,662 basehttp 9844 27672 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:46:12,663 basehttp 9844 19376 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:46:15,890 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:46:16,098 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:46:16,099 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:46:16,365 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:16,366 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:44,377 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:46:44,469 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99108
+INFO 2020-12-22 20:46:44,514 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:46:44,516 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:46:44,519 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:46:44,520 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:46:44,521 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:46:45,959 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:46:46,161 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:46:46,161 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:46:46,425 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:46:46,425 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:15,767 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:47:15,860 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99135
+INFO 2020-12-22 20:47:15,893 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:47:15,896 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:47:15,898 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:47:15,899 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:47:15,899 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:47:17,472 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:47:17,699 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:47:17,701 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:47:17,938 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:17,939 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:40,752 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:47:40,834 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99136
+INFO 2020-12-22 20:47:40,861 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:47:40,870 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:47:40,871 basehttp 9844 27672 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:47:40,872 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:47:40,872 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:47:42,715 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:47:42,820 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:47:42,820 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:47:43,052 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:43,052 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:51,029 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:47:51,114 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99135
+INFO 2020-12-22 20:47:51,143 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:47:51,145 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:47:51,147 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:47:51,147 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:47:51,148 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:47:52,621 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:47:52,856 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:47:52,856 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:47:53,081 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:47:53,081 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:48:48,323 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:48:48,410 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99131
+INFO 2020-12-22 20:48:48,446 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:48:48,447 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:48:48,449 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:48:48,451 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:48:48,452 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:49:01,839 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:49:02,081 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:49:02,082 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:49:02,269 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:49:02,270 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:49:14,361 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:49:14,441 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99131
+INFO 2020-12-22 20:49:14,476 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:49:14,478 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:49:14,479 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:49:14,480 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:49:14,481 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:49:50,056 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:49:50,139 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99094
+INFO 2020-12-22 20:49:50,173 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:49:50,174 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:49:50,176 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:49:50,177 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:49:50,178 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:50:07,574 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:50:07,826 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:50:07,826 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:50:08,048 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:50:08,049 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:50:24,473 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:50:24,560 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99058
+INFO 2020-12-22 20:50:24,599 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:50:24,600 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:50:24,602 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:50:24,602 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:50:24,603 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:50:26,868 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:50:27,126 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:50:27,127 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:50:27,338 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:50:27,338 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:50:42,686 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:50:42,761 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99094
+INFO 2020-12-22 20:50:42,795 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:50:42,796 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:50:42,797 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:50:42,798 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:50:42,799 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:50:43,962 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:50:44,048 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99094
+INFO 2020-12-22 20:50:44,080 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:50:44,082 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:50:44,083 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:50:44,083 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:50:44,084 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:50:47,233 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:50:47,499 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:50:47,500 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:50:47,713 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:50:47,714 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:51:28,105 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:51:28,193 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99102
+INFO 2020-12-22 20:51:28,230 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:51:28,233 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:51:28,234 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:51:28,235 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:51:28,235 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:51:30,616 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:51:30,769 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:51:30,770 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:51:30,944 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:51:30,944 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:51:53,036 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:51:53,149 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99134
+INFO 2020-12-22 20:51:53,180 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:51:53,182 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:51:53,183 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:51:53,187 basehttp 9844 27672 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:51:53,187 basehttp 9844 19376 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:51:55,424 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:51:55,739 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:51:55,739 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:51:55,992 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:51:55,992 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:52:26,434 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:52:26,523 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99092
+INFO 2020-12-22 20:52:26,556 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:52:26,559 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:52:26,560 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:52:26,561 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:52:26,561 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:52:28,319 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:52:28,663 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:52:28,664 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:52:28,912 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:52:28,912 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:52:38,978 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:52:39,061 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99134
+INFO 2020-12-22 20:52:39,090 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:52:39,099 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:52:39,100 basehttp 9844 19376 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:52:39,101 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:52:39,101 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:52:41,917 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:52:42,260 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:52:42,262 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:52:42,488 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:52:42,492 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:53:29,476 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:53:29,570 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99147
+INFO 2020-12-22 20:53:29,601 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:53:29,603 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:53:29,604 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:53:29,605 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:53:29,605 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:53:32,198 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:53:32,544 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:53:32,544 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:53:32,761 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:53:32,762 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:53:42,432 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:53:42,533 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99147
+INFO 2020-12-22 20:53:42,566 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:53:42,568 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:53:42,569 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:53:42,569 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:53:42,570 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:53:46,292 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:53:46,692 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:53:46,692 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:53:46,883 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:53:46,884 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:00,387 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:54:00,474 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99147
+INFO 2020-12-22 20:54:00,521 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:54:00,522 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:54:00,524 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:54:00,524 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:54:00,525 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:54:03,301 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:54:03,685 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:54:03,686 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:54:03,886 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:03,886 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:12,481 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:54:12,562 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99147
+INFO 2020-12-22 20:54:12,590 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:54:12,592 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:54:12,594 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:54:12,595 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:54:12,595 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:54:17,641 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:54:18,084 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:54:18,085 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:54:18,304 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:18,305 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:37,613 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:54:37,693 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99160
+INFO 2020-12-22 20:54:37,721 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:54:37,722 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:54:37,725 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:54:37,726 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:54:37,727 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:54:40,306 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:54:40,783 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:54:40,783 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:54:40,950 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:40,950 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:54:58,096 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:54:58,185 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99160
+INFO 2020-12-22 20:54:58,223 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:54:58,225 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:54:58,230 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:54:58,231 basehttp 9844 27672 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:54:58,232 basehttp 9844 19376 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:55:00,066 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:55:00,549 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:55:00,549 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:55:00,736 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:00,742 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:09,394 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:55:09,482 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99159
+INFO 2020-12-22 20:55:09,516 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:55:09,517 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:55:09,520 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:55:09,521 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:55:09,522 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:55:17,941 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+INFO 2020-12-22 20:55:18,629 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:55:18,743 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99159
+INFO 2020-12-22 20:55:18,787 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:55:18,798 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:55:18,800 basehttp 9844 19376 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:55:18,800 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:55:18,802 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:55:20,551 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:55:21,061 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:55:21,061 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:55:21,249 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:21,249 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:40,447 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:55:40,539 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99159
+INFO 2020-12-22 20:55:40,568 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:55:40,570 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:55:40,571 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:55:40,572 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:55:40,573 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:55:43,268 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:55:43,591 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:55:43,592 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:55:43,791 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:43,792 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:57,806 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:55:57,897 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99160
+INFO 2020-12-22 20:55:57,933 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:55:57,936 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:55:57,936 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:55:57,937 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:55:57,938 basehttp 9844 19376 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:55:59,156 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:55:59,717 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:55:59,718 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:55:59,929 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:55:59,934 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:56:22,987 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:56:23,071 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99175
+INFO 2020-12-22 20:56:23,106 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:56:23,108 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:56:23,109 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:56:23,111 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:56:23,112 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:56:24,616 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:56:24,717 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99175
+INFO 2020-12-22 20:56:24,744 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:56:24,746 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:56:24,751 basehttp 9844 1536 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:56:24,752 basehttp 9844 27672 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:56:24,753 basehttp 9844 19376 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:56:27,155 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:56:27,750 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:56:27,750 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:56:27,938 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:56:27,939 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:56:45,299 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:56:45,378 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99173
+INFO 2020-12-22 20:56:45,409 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:56:45,411 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:56:45,412 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:56:45,413 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:56:45,413 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:56:46,678 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:56:47,374 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:56:47,375 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:56:47,588 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:56:47,588 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:57:14,971 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:57:15,084 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99172
+INFO 2020-12-22 20:57:15,122 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:57:15,123 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:57:15,125 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:57:15,125 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:57:15,126 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:57:16,717 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:57:17,366 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:57:17,367 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:57:17,618 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:57:17,618 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:57:28,086 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:57:28,176 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99173
+INFO 2020-12-22 20:57:28,211 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:57:28,212 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:57:28,214 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:57:28,214 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:57:28,215 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:57:30,794 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:57:31,411 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:57:31,411 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:57:31,649 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:57:31,650 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:02,563 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:59:02,652 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99169
+INFO 2020-12-22 20:59:02,688 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:59:02,690 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:59:02,692 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:59:02,692 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:59:02,693 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:59:05,396 basehttp 9844 27672 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:59:06,099 log 9844 19376 Not Found: /favicon.ico
+WARNING 2020-12-22 20:59:06,099 basehttp 9844 19376 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:59:06,316 basehttp 9844 27672 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:06,317 basehttp 9844 19376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:10,292 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:59:10,372 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99169
+INFO 2020-12-22 20:59:10,409 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:59:10,410 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:59:10,412 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:59:10,412 basehttp 9844 1536 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:59:10,412 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:59:18,377 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:59:18,861 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:59:18,861 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:59:19,426 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:19,426 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:55,283 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 20:59:55,371 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99155
+INFO 2020-12-22 20:59:55,401 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 20:59:55,403 basehttp 9844 19740 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 20:59:55,404 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 20:59:55,407 basehttp 9844 19376 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 20:59:55,408 basehttp 9844 27672 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 20:59:58,409 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 20:59:59,092 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 20:59:59,093 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 20:59:59,294 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 20:59:59,294 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:00:07,043 views 9844 19376 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:00:07,130 basehttp 9844 19376 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99154
+INFO 2020-12-22 21:00:07,165 basehttp 9844 27672 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:00:07,167 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:00:07,168 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:00:07,169 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:00:07,170 basehttp 9844 19376 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:00:09,036 views 9844 27672 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:00:09,133 basehttp 9844 27672 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99154
+INFO 2020-12-22 21:00:09,891 basehttp 9844 19376 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:00:09,892 basehttp 9844 10544 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:00:09,894 basehttp 9844 1536 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:00:09,895 basehttp 9844 19740 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:00:09,897 basehttp 9844 27672 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:00:13,198 basehttp 9844 19376 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:00:13,916 log 9844 27672 Not Found: /favicon.ico
+WARNING 2020-12-22 21:00:13,916 basehttp 9844 27672 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:00:14,137 basehttp 9844 19376 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:00:14,138 basehttp 9844 27672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:02:27,833 views 9844 11228 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:02:27,918 basehttp 9844 11228 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99252
+INFO 2020-12-22 21:02:27,948 basehttp 9844 11228 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:02:27,950 basehttp 9844 24772 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:02:27,956 basehttp 9844 22480 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:02:27,957 basehttp 9844 24772 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:02:27,958 basehttp 9844 11228 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:02:30,420 basehttp 9844 24772 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:02:31,210 log 9844 24772 Not Found: /favicon.ico
+WARNING 2020-12-22 21:02:31,210 basehttp 9844 24772 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:02:31,456 basehttp 9844 22480 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:02:31,456 basehttp 9844 24772 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:02:56,352 views 9844 24772 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:02:56,439 basehttp 9844 24772 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99209
+INFO 2020-12-22 21:02:56,478 basehttp 9844 24772 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:02:56,480 basehttp 9844 21176 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:02:56,481 basehttp 9844 11228 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:02:56,482 basehttp 9844 19732 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:02:56,482 basehttp 9844 22480 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:03:04,542 basehttp 9844 24772 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:03:05,379 log 9844 22480 Not Found: /favicon.ico
+WARNING 2020-12-22 21:03:05,379 basehttp 9844 22480 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:03:05,620 basehttp 9844 22480 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:03:05,620 basehttp 9844 24772 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:04:30,739 views 9844 22480 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:04:30,821 basehttp 9844 22480 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99096
+INFO 2020-12-22 21:05:42,875 views 9844 22480 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:05:42,964 basehttp 9844 22480 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99097
+INFO 2020-12-22 21:05:57,641 views 9844 22480 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:05:57,722 basehttp 9844 22480 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99097
+INFO 2020-12-22 21:06:05,384 views 9844 22480 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:06:05,467 basehttp 9844 22480 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99097
+INFO 2020-12-22 21:06:09,941 views 9844 22480 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:06:10,027 basehttp 9844 22480 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99097
+INFO 2020-12-22 21:06:18,887 basehttp 9844 22480 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:06:18,889 basehttp 9844 24328 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:08:23,422 views 9844 20096 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:08:23,513 basehttp 9844 20096 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99123
+INFO 2020-12-22 21:08:23,553 basehttp 9844 20096 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:08:23,558 basehttp 9844 4148 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:08:23,559 basehttp 9844 27092 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:08:23,560 basehttp 9844 21052 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:08:23,561 basehttp 9844 18940 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:08:24,897 basehttp 9844 18940 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:08:24,940 log 9844 18940 Not Found: /favicon.ico
+WARNING 2020-12-22 21:08:24,940 basehttp 9844 18940 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:08:25,422 basehttp 9844 18940 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:08:25,423 basehttp 9844 21052 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:10:33,591 views 9844 27516 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:10:33,673 basehttp 9844 27516 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99187
+INFO 2020-12-22 21:12:28,924 views 9844 9100 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:12:29,036 basehttp 9844 9100 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99326
+INFO 2020-12-22 21:14:33,187 views 9844 9184 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:14:33,276 basehttp 9844 9184 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99391
+INFO 2020-12-22 21:26:30,486 views 9844 21732 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:26:30,575 basehttp 9844 21732 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99406
+INFO 2020-12-22 21:26:42,274 basehttp 9844 21732 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:26:42,274 basehttp 9844 12600 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:27:42,927 views 9844 21732 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:27:43,009 basehttp 9844 21732 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99408
+INFO 2020-12-22 21:27:43,045 basehttp 9844 12600 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:27:43,048 basehttp 9844 27044 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:27:43,049 basehttp 9844 13764 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:27:43,050 basehttp 9844 13492 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:27:43,050 basehttp 9844 21732 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:27:46,928 basehttp 9844 13764 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:27:46,990 log 9844 13764 Not Found: /favicon.ico
+WARNING 2020-12-22 21:27:46,990 basehttp 9844 13764 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:27:47,314 basehttp 9844 13492 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:27:47,314 basehttp 9844 13764 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:31:59,212 views 9844 11040 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:31:59,311 basehttp 9844 11040 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99786
+INFO 2020-12-22 21:31:59,354 basehttp 9844 11040 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:31:59,359 basehttp 9844 15488 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:31:59,360 basehttp 9844 23892 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:31:59,360 basehttp 9844 8372 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:31:59,361 basehttp 9844 28476 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:32:01,174 basehttp 9844 28476 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:32:01,225 log 9844 28476 Not Found: /favicon.ico
+WARNING 2020-12-22 21:32:01,225 basehttp 9844 28476 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:32:01,562 basehttp 9844 28476 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:32:01,562 basehttp 9844 8372 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:32:48,413 views 9844 28476 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:32:48,489 basehttp 9844 28476 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99786
+INFO 2020-12-22 21:32:48,525 basehttp 9844 28476 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:32:48,527 basehttp 9844 11040 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:32:48,529 basehttp 9844 23892 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:32:48,530 basehttp 9844 15488 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:32:48,531 basehttp 9844 8372 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:32:49,616 basehttp 9844 28476 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:32:49,672 log 9844 8372 Not Found: /favicon.ico
+WARNING 2020-12-22 21:32:49,673 basehttp 9844 8372 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:32:49,942 basehttp 9844 8372 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:32:49,943 basehttp 9844 28476 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:33:55,873 views 9844 8372 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:33:55,956 basehttp 9844 8372 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99787
+INFO 2020-12-22 21:33:55,988 basehttp 9844 28476 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:33:55,990 basehttp 9844 8372 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:33:55,996 basehttp 9844 15488 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:33:55,997 basehttp 9844 28476 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:33:55,998 basehttp 9844 8372 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:34:01,522 views 9844 28476 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:34:01,604 basehttp 9844 28476 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99787
+INFO 2020-12-22 21:34:01,664 basehttp 9844 8372 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:34:01,665 basehttp 9844 11040 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:34:01,666 basehttp 9844 15488 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:34:01,667 basehttp 9844 23892 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:34:01,668 basehttp 9844 28476 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:34:24,154 basehttp 9844 8372 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:34:24,211 log 9844 28476 Not Found: /favicon.ico
+WARNING 2020-12-22 21:34:24,211 basehttp 9844 28476 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:34:24,443 basehttp 9844 8372 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:34:24,443 basehttp 9844 28476 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-22 21:34:41,553 views 9844 8372 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:34:41,645 basehttp 9844 8372 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99787
+INFO 2020-12-22 21:34:41,683 basehttp 9844 28476 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-22 21:34:41,692 basehttp 9844 23892 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-22 21:34:41,693 basehttp 9844 28476 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-22 21:34:41,694 basehttp 9844 15488 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-22 21:34:41,695 basehttp 9844 8372 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-22 21:34:46,621 basehttp 9844 28476 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-22 21:34:46,659 log 9844 8372 Not Found: /favicon.ico
+WARNING 2020-12-22 21:34:46,659 basehttp 9844 8372 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 21:37:38,565 views 9844 15284 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:37:38,648 basehttp 9844 15284 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99787
+INFO 2020-12-22 21:38:34,547 views 9844 15284 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:38:34,630 basehttp 9844 15284 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99755
+WARNING 2020-12-22 21:38:34,914 log 9844 25120 Not Found: /favicon.ico
+INFO 2020-12-22 21:39:54,460 views 9844 15284 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:39:54,552 basehttp 9844 15284 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99815
+INFO 2020-12-22 21:41:05,874 views 9844 15284 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 21:41:05,961 basehttp 9844 15284 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99726
+INFO 2020-12-22 22:08:27,373 views 9844 12152 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-22 22:08:27,455 basehttp 9844 12152 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99720
+INFO 2020-12-22 22:23:05,332 basehttp 9844 27240 "GET /admin/ HTTP/1.1" 200 2271
+INFO 2020-12-22 22:23:05,371 basehttp 9844 27240 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,373 basehttp 9844 19420 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,374 basehttp 9844 12956 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,375 basehttp 9844 5604 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,377 basehttp 9844 19420 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,384 basehttp 9844 12956 "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,397 basehttp 9844 5604 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,398 basehttp 9844 19420 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:05,398 basehttp 9844 12956 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:07,569 basehttp 9844 27240 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:23:07,617 basehttp 9844 27240 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:23:07,637 basehttp 9844 5604 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:13,482 basehttp 9844 27240 "GET /login/ HTTP/1.1" 200 43612
+INFO 2020-12-22 22:23:17,027 basehttp 9844 27240 "POST /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:23:17,127 basehttp 9844 27240 "GET /dashboard/ HTTP/1.1" 200 57324
+INFO 2020-12-22 22:23:21,674 basehttp 9844 27240 "GET /admin/ HTTP/1.1" 200 15919
+INFO 2020-12-22 22:23:23,660 basehttp 9844 27240 "GET /admin/auth/user/ HTTP/1.1" 200 15763
+INFO 2020-12-22 22:23:23,694 basehttp 9844 19420 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,697 basehttp 9844 5604 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,698 basehttp 9844 27240 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,700 basehttp 9844 24212 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,703 basehttp 9844 19420 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,706 basehttp 9844 5604 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,707 basehttp 9844 27240 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,707 basehttp 9844 25844 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,708 basehttp 9844 24212 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:23,829 basehttp 9844 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-22 22:23:25,698 basehttp 9844 27240 "GET /admin/auth/user/17/change/ HTTP/1.1" 200 29752
+INFO 2020-12-22 22:23:25,729 basehttp 9844 19420 "GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+INFO 2020-12-22 22:23:25,737 basehttp 9844 19420 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:25,741 basehttp 9844 19420 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:25,744 basehttp 9844 25844 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:25,746 basehttp 9844 19420 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:23:25,746 basehttp 9844 5604 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2020-12-22 22:23:25,747 basehttp 9844 24212 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2020-12-22 22:23:25,766 basehttp 9844 19420 "GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+INFO 2020-12-22 22:23:25,775 basehttp 9844 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-22 22:23:35,454 basehttp 9844 27240 "POST /admin/auth/user/17/change/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:23:35,530 basehttp 9844 27240 "GET /admin/auth/user/ HTTP/1.1" 200 15966
+INFO 2020-12-22 22:23:35,591 basehttp 9844 19420 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-22 22:23:40,445 basehttp 9844 27240 "GET / HTTP/1.1" 302 0
+INFO 2020-12-22 22:23:40,624 basehttp 9844 27240 "GET /dashboard/ HTTP/1.1" 200 57324
+INFO 2020-12-22 22:23:47,051 basehttp 9844 27240 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2020-12-22 22:23:49,546 basehttp 9844 27240 "GET /member/16/ HTTP/1.1" 200 212711
+INFO 2020-12-22 22:23:49,573 basehttp 9844 19420 "GET /static/img/male.png HTTP/1.1" 200 11721
+INFO 2020-12-22 22:23:53,381 basehttp 9844 27240 "GET /reset_show_password/?request_action=show&member_id=16 HTTP/1.1" 200 35
+INFO 2020-12-22 22:24:00,726 basehttp 9844 27240 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:24:00,773 basehttp 9844 27240 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:24:04,598 basehttp 9844 27240 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:24:06,637 basehttp 9844 27240 "GET /login/ HTTP/1.1" 200 43612
+INFO 2020-12-22 22:24:10,418 basehttp 9844 27240 "POST /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:24:10,422 basehttp 9844 27240 "GET /user_dashboard/16 HTTP/1.1" 301 0
+INFO 2020-12-22 22:24:10,565 basehttp 9844 27240 "GET /user_dashboard/16/ HTTP/1.1" 200 40599
+WARNING 2020-12-22 22:24:10,629 log 9844 12956 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:24:10,631 log 9844 24212 Not Found: /user_dashboard/16/nicepage.js
+WARNING 2020-12-22 22:24:10,633 log 9844 19420 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:24:10,634 log 9844 5604 Not Found: /user_dashboard/16/jquery.js
+WARNING 2020-12-22 22:24:10,635 basehttp 9844 24212 "GET /user_dashboard/16/nicepage.js HTTP/1.1" 404 12177
+WARNING 2020-12-22 22:24:10,635 basehttp 9844 12956 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:24:10,635 basehttp 9844 19420 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+WARNING 2020-12-22 22:24:10,636 basehttp 9844 5604 "GET /user_dashboard/16/jquery.js HTTP/1.1" 404 12171
+WARNING 2020-12-22 22:24:11,084 log 9844 19420 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:24:11,084 basehttp 9844 19420 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+INFO 2020-12-22 22:25:00,298 basehttp 9844 18128 "GET / HTTP/1.1" 302 0
+INFO 2020-12-22 22:25:00,373 basehttp 9844 18128 "GET /dashboard/ HTTP/1.1" 200 57324
+INFO 2020-12-22 22:25:04,798 basehttp 9844 18128 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:25:04,844 basehttp 9844 18128 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:25:07,323 basehttp 9844 18128 "GET /login/ HTTP/1.1" 200 43612
+INFO 2020-12-22 22:25:12,329 basehttp 9844 18128 "POST /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:25:12,333 basehttp 9844 18128 "GET /user_dashboard/16 HTTP/1.1" 301 0
+INFO 2020-12-22 22:25:12,372 basehttp 9844 18128 "GET /user_dashboard/16/ HTTP/1.1" 200 40599
+WARNING 2020-12-22 22:25:12,434 log 9844 18128 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:25:12,439 log 9844 19248 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:25:12,440 basehttp 9844 18128 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+WARNING 2020-12-22 22:25:12,442 log 9844 27612 Not Found: /user_dashboard/16/jquery.js
+WARNING 2020-12-22 22:25:12,443 log 9844 22972 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:25:12,443 basehttp 9844 19248 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:25:12,444 log 9844 4148 Not Found: /user_dashboard/16/nicepage.js
+WARNING 2020-12-22 22:25:12,446 basehttp 9844 27612 "GET /user_dashboard/16/jquery.js HTTP/1.1" 404 12171
+WARNING 2020-12-22 22:25:12,446 basehttp 9844 22972 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+WARNING 2020-12-22 22:25:12,446 basehttp 9844 4148 "GET /user_dashboard/16/nicepage.js HTTP/1.1" 404 12177
+WARNING 2020-12-22 22:25:21,896 log 9844 22972 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:25:21,897 log 9844 4148 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:25:21,898 basehttp 9844 22972 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:25:21,898 basehttp 9844 4148 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+INFO 2020-12-22 22:28:57,435 basehttp 9844 4148 "GET /user_dashboard/16/ HTTP/1.1" 200 40713
+INFO 2020-12-22 22:28:57,475 basehttp 9844 27612 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-22 22:28:57,477 basehttp 9844 19248 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+WARNING 2020-12-22 22:28:57,485 log 9844 22972 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:28:57,486 log 9844 4148 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:28:57,487 basehttp 9844 4148 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+WARNING 2020-12-22 22:28:57,487 basehttp 9844 22972 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:28:57,502 log 9844 22972 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:28:57,503 basehttp 9844 22972 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+INFO 2020-12-22 22:31:05,433 basehttp 9844 22972 "GET /user_dashboard/16/ HTTP/1.1" 200 40713
+INFO 2020-12-22 22:31:05,463 basehttp 9844 19248 "GET /static/js/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:31:05,464 basehttp 9844 27612 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+WARNING 2020-12-22 22:31:05,480 log 9844 4148 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:31:05,481 log 9844 22972 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:31:05,482 basehttp 9844 4148 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:31:05,482 basehttp 9844 22972 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+WARNING 2020-12-22 22:31:05,497 log 9844 4148 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:31:05,498 basehttp 9844 4148 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+INFO 2020-12-22 22:31:09,182 basehttp 9844 4148 "GET /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:31:09,220 basehttp 9844 4148 "GET /logout/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:31:09,266 basehttp 9844 4148 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:31:12,147 basehttp 9844 4148 "GET /login/ HTTP/1.1" 200 43612
+INFO 2020-12-22 22:31:16,533 basehttp 9844 4148 "POST /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:31:16,538 basehttp 9844 4148 "GET /user_dashboard/16 HTTP/1.1" 301 0
+INFO 2020-12-22 22:31:16,575 basehttp 9844 4148 "GET /user_dashboard/16/ HTTP/1.1" 200 40713
+WARNING 2020-12-22 22:31:16,621 log 9844 4148 Not Found: /user_dashboard/16/nicepage.css
+WARNING 2020-12-22 22:31:16,623 log 9844 22972 Not Found: /user_dashboard/16/Home.css
+WARNING 2020-12-22 22:31:16,625 basehttp 9844 4148 "GET /user_dashboard/16/nicepage.css HTTP/1.1" 404 12180
+WARNING 2020-12-22 22:31:16,626 basehttp 9844 22972 "GET /user_dashboard/16/Home.css HTTP/1.1" 404 12168
+WARNING 2020-12-22 22:31:16,645 log 9844 22972 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:31:16,646 basehttp 9844 22972 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+INFO 2020-12-22 22:35:34,366 basehttp 9844 22724 "GET /user_dashboard/16/ HTTP/1.1" 200 40781
+INFO 2020-12-22 22:35:34,413 basehttp 9844 22724 "GET /static/css/Home.css HTTP/1.1" 200 8299
+INFO 2020-12-22 22:35:34,415 basehttp 9844 19756 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-22 22:35:34,416 basehttp 9844 22876 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+WARNING 2020-12-22 22:35:34,432 log 9844 19756 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:35:34,432 basehttp 9844 19756 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+WARNING 2020-12-22 22:35:34,698 log 9844 22876 Not Found: /favicon.ico
+WARNING 2020-12-22 22:35:34,698 basehttp 9844 22876 "GET /favicon.ico HTTP/1.1" 404 12123
+WARNING 2020-12-22 22:35:34,818 basehttp 9844 22876 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-22 22:36:10,626 basehttp 9844 19756 "GET /user_dashboard/16/ HTTP/1.1" 200 40846
+INFO 2020-12-22 22:36:10,652 basehttp 9844 22724 "GET /static/css/Home.css HTTP/1.1" 200 8299
+INFO 2020-12-22 22:36:10,659 basehttp 9844 25880 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-22 22:36:10,659 basehttp 9844 24052 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-22 22:36:10,662 basehttp 9844 19756 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+WARNING 2020-12-22 22:36:10,683 log 9844 24052 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:36:10,684 basehttp 9844 24052 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+WARNING 2020-12-22 22:36:10,751 log 9844 19756 Not Found: /user_dashboard/16/images/logo1.jpg
+WARNING 2020-12-22 22:36:10,751 basehttp 9844 19756 "GET /user_dashboard/16/images/logo1.jpg HTTP/1.1" 404 12192
+WARNING 2020-12-22 22:36:10,792 log 9844 19756 Not Found: /favicon.ico
+WARNING 2020-12-22 22:36:10,792 basehttp 9844 19756 "GET /favicon.ico HTTP/1.1" 404 12123
+WARNING 2020-12-22 22:36:10,882 basehttp 9844 19756 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-22 22:36:39,236 log 9844 24052 Not Found: /user_dashboard/16/Services.html
+WARNING 2020-12-22 22:36:39,236 basehttp 9844 24052 "GET /user_dashboard/16/Services.html HTTP/1.1" 404 12183
+WARNING 2020-12-22 22:37:02,461 basehttp 9844 24052 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-22 22:39:17,306 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40856
+INFO 2020-12-22 22:39:17,350 basehttp 9844 25752 "GET /static/css/Home.css HTTP/1.1" 200 8299
+INFO 2020-12-22 22:39:17,352 basehttp 9844 24908 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-22 22:39:17,353 basehttp 9844 17588 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-22 22:39:17,356 basehttp 9844 26416 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+WARNING 2020-12-22 22:39:17,698 basehttp 9844 17588 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-22 22:39:18,259 log 9844 24908 Not Found: /favicon.ico
+WARNING 2020-12-22 22:39:18,260 log 9844 25752 Not Found: /user_dashboard/16/img/image/logo1.jpg
+WARNING 2020-12-22 22:39:18,261 basehttp 9844 25752 "GET /user_dashboard/16/img/image/logo1.jpg HTTP/1.1" 404 12201
+WARNING 2020-12-22 22:39:18,261 basehttp 9844 24908 "GET /favicon.ico HTTP/1.1" 404 12123
+INFO 2020-12-22 22:41:07,296 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40851
+INFO 2020-12-22 22:41:07,314 basehttp 9844 24908 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:41:07,318 basehttp 9844 24908 "GET /static/css/Home.css HTTP/1.1" 304 0
+WARNING 2020-12-22 22:41:07,333 log 9844 25752 Not Found: /user_dashboard/16/img/image/logo1.jpg
+WARNING 2020-12-22 22:41:07,333 basehttp 9844 25752 "GET /user_dashboard/16/img/image/logo1.jpg HTTP/1.1" 404 12201
+WARNING 2020-12-22 22:41:07,380 log 9844 24908 Not Found: /user_dashboard/16/img/image/logo1.jpg
+WARNING 2020-12-22 22:41:07,380 basehttp 9844 24908 "GET /user_dashboard/16/img/image/logo1.jpg HTTP/1.1" 404 12201
+INFO 2020-12-22 22:42:27,280 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40857
+INFO 2020-12-22 22:42:27,313 basehttp 9844 24908 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:42:27,314 basehttp 9844 25752 "GET /static/css/Home.css HTTP/1.1" 304 0
+INFO 2020-12-22 22:42:27,315 basehttp 9844 26416 "GET /static/js/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:42:27,315 basehttp 9844 11732 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-22 22:42:27,317 basehttp 9844 24908 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-22 22:42:30,083 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40857
+INFO 2020-12-22 22:42:32,366 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40857
+INFO 2020-12-22 22:43:10,202 basehttp 9844 26416 "GET / HTTP/1.1" 302 0
+INFO 2020-12-22 22:43:10,358 basehttp 9844 26416 "GET /user_dashboard/16/ HTTP/1.1" 200 40857
+INFO 2020-12-22 22:43:18,711 basehttp 9844 26416 "GET /login/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:43:18,751 basehttp 9844 26416 "GET /logout/ HTTP/1.1" 302 0
+INFO 2020-12-22 22:43:18,799 basehttp 9844 26416 "GET / HTTP/1.1" 200 41805
+INFO 2020-12-22 22:43:22,030 basehttp 9844 26416 "GET / HTTP/1.1" 200 41805

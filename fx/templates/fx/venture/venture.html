@@ -477,11 +477,23 @@ th {
   
     </div>
 
-    <div class="form-row">
-        <div class="col-md-4 offset-md-11"> 
+    <div class="row">
+        <div class ="form-group col-md-8" style="padding-left:12px">
             <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
             value="ADD" />
-        </div>
+        
+            <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+        value="CANCEL" /> 
+            
+            
+        <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
+        value="DELETE" />
+    </div> 
+    </div>
+
+       
+        
+        
 </div>
 <div style="height: 350px;overflow: scroll;">
  <table id="pos-table" class="table table-bordered">
@@ -493,7 +505,7 @@ th {
         <th scope="col">Price</th>
         <th scope="col">CM</th>
         <th scope="col">Total</th>
-        <th scope="col"></th>
+       
       </tr>
     </thead>
     <tbody>
@@ -504,7 +516,7 @@ th {
         <td> </td>
         <td> </td>
         <td> </td>
-        <td> </td>
+        
       </tr>
       
        
@@ -760,12 +772,17 @@ th {
         var venture_id = parseInt("{{venture.id}}");
         
         var rIndex =0;  // use by the table save the selected row
+        var product_code ="";  // use by the table save the selected row
+
         console.log("----- ventyreid:" + venture_id);
         var post_data = "{{post_data}}";
         if (isNaN(venture_id)) {
             venture_id = 0;
          }
          console.log("----- ventyreid:" + venture_id);
+
+        //
+        $("#pos-delete-btn").prop("disabled",true);
 
 
         // set customer id text fixed
@@ -855,7 +872,7 @@ th {
             total = qty * price;
             total = total.toFixed(2).replace('.00', '');
             $("#pos-total-txt").val(total);
-            
+
            
 
 
@@ -863,13 +880,29 @@ th {
 
        });
  
+       $("#pos-cancel-btn").click(function () {
+               clear_pos_top();
+               $("#pos-add-btn").val("ADD");
+               $("#pos-delete-btn").prop("disabled",true);
+
+
+       });
+       $("#pos-delete-btn").click(function () {
+
+               $("tr.selected").remove();
+               
+               $(this).prop("disabled",true);
+               clear_pos_top();
+               $("#pos-add-btn").val("ADD");
+
+       });
 
         $("#pos-add-btn").click(function () {
         pcode = $("#pos-product-code-txt").val().trim();
         console.log("pcode:"+pcode);
         pqty =  parseInt($("#pos-qty-txt").val());
         console.log("pqty:"+pqty);
-        if (pcode =="" || pqty <= 0){
+        if (pcode =="" ||  isNaN( pqty) ){
             return;
         }
         action =  $(this).val().trim();
@@ -884,7 +917,7 @@ th {
         ptotal =  $("#pos-total-txt").val();
 
 
-        var newRow = "<tr><td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td> <span ><i class='info fa fa-edit' onclick='edit_purpose(this)' >Edit</i></span> </td>   </tr>";
+        var newRow = "<tr  id=c-"+ pcode +"><td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
            $("#pos-table > tbody").prepend(newRow);
         }else
         {
@@ -905,6 +938,8 @@ th {
         clear_pos_top();
 
 });
+
+
 
   function clear_pos_top(){
          $("#pos-product-code-txt").val("");
@@ -940,6 +975,7 @@ th {
                     if (pcode ==""){
                         return;
                     }
+                    product_code = tableData[0].trim();
                     $("#pos-product-code-txt").val( tableData[0] );
                     $("#pos-product-name-txt").val(tableData[1] );
                     $("#pos-qty-txt").val(tableData[2] );
@@ -947,6 +983,7 @@ th {
                     $("#pos-c-money-txt").val(tableData[4] );
                     $("#pos-total-txt").val(tableData[5] );
                     $("#pos-add-btn").val("EDIT");
+                    $("#pos-delete-btn").prop("disabled",false);
 
 
 
