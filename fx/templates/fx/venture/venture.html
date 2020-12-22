@@ -9,7 +9,34 @@
 {% block css_style %}
 
 <style>
+   
+td, th{
+ 
+height:55px !important;
+/* max-width:150px !important;
+max-height:65px !important;
+min-width:150px !important;
+min-height:55px !important; */
+}
+tr.green th {
+  background: green;
+  color: white;
+}
 
+/* ---------------- */
+ 
+th {
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.8); */
+}
+
+/* when row is selected */
+.selected {
+    color: red;
+    background-color: yellow;
+}
+/* -------------- */
     div.white {
         color:white;
     }
@@ -210,13 +237,7 @@
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*). Thank you.
             </div>
-
-            <div>
-
-
-
-
-                <form action="" class="needs-validation" id="form_venture" method="POST">
+               <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
                     <div hidden>
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
@@ -389,7 +410,7 @@
 
                     </div>
 
-                    </div>
+                
                     <div class="form-row">
 
 
@@ -409,6 +430,92 @@
                         <div class="form-group col-md-6 mb-0">
                         </div>
                     </div>
+ <!-- ------------------- pos ------------------- -->
+
+
+
+
+ <div>
+
+    <div class="form-row">
+        <div class="form-group col-md-1">
+            <label for="pos-product-code-txt" class="col-form-label"> CODE<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-product-code-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-product-name-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control" >
+        </div>
+        <div class="form-group col-md-2">
+            <label for="pos-qty-txt" class="col-form-label">QTY<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-qty-txt" required type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control" value="{{member_info.member_id|upper}}">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="pos-price-txt" class="col-form-label">PRICE<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-price-txt" required type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control" >
+        </div>
+        <div class="form-group col-md-1">
+            <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-c-money-txt" required type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control" >
+        </div>
+        <div class="form-group col-md-2">
+            <label for="pos-total-txt" class="col-form-label">TOTAL<span
+                class="asteriskField">*</span> </label>
+            <input id="pos-total-txt" required type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                class="mid-size form-control" >
+        </div>
+  
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 offset-md-11"> 
+            <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
+            value="ADD" />
+        </div>
+</div>
+<div style="height: 350px;overflow: scroll;">
+ <table id="pos-table" class="table table-bordered">
+    <thead>
+        <tr class="green">
+        <th scope="col">Item ID</th>
+        <th scope="col">Product name</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Price</th>
+        <th scope="col">CM</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+       
+        <th></th>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      
+       
+    </tbody>
+  </table>
+</div>
+
+  <!-- ------------------- pos end --------------------- -->
+
+
+ 
 
 
                     <div>
@@ -435,11 +542,20 @@
                         {%endif%}
                         {%endif%}
                     </div>
+
+                    
                 </form>
-                <br>
-            </div>
+                
+
+         
+            
         </div>
+        
     </div>
+
+
+
+
 
 
     <div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
@@ -643,6 +759,7 @@
     $(document).ready(function () {
         var venture_id = parseInt("{{venture.id}}");
         
+        var rIndex =0;  // use by the table save the selected row
         console.log("----- ventyreid:" + venture_id);
         var post_data = "{{post_data}}";
         if (isNaN(venture_id)) {
@@ -724,6 +841,120 @@
             $("#confim-modal-venture_payment").text("Are you sure you want to delete this payment?");
             $("#yes-no-modal-venture_payment").modal('show');
         });
+
+       // ------------------- pos table --------------
+
+       $("#pos-qty-txt").on("keyup", function () {
+            // var percent = parseFloat($("#percent-drop").text());
+            // if (percent <= 0 || percent > 100 || isNaN(percent)) {
+            //     percent = 95;
+            //     $("#percent-drop").text(percent + "%");
+            // }
+            qty = parseFloat($(this).val());
+            price = parseFloat($("#pos-price-txt").val());
+            total = qty * price;
+            total = total.toFixed(2).replace('.00', '');
+            $("#pos-total-txt").val(total);
+            
+           
+
+
+
+
+       });
+ 
+
+        $("#pos-add-btn").click(function () {
+        pcode = $("#pos-product-code-txt").val().trim();
+        console.log("pcode:"+pcode);
+        pqty =  parseInt($("#pos-qty-txt").val());
+        console.log("pqty:"+pqty);
+        if (pcode =="" || pqty <= 0){
+            return;
+        }
+        action =  $(this).val().trim();
+        console.log("---------------- action:"+ action); 
+        if (action =="ADD") { 
+        console.log("---------------- add"); 
+        pcode =$("#pos-product-code-txt").val();
+        pname = $("#pos-product-name-txt").val();
+        pqty = $("#pos-qty-txt").val();
+        pprice =  $("#pos-price-txt").val();
+        pcmoney =  $("#pos-c-money-txt").val();
+        ptotal =  $("#pos-total-txt").val();
+
+
+        var newRow = "<tr><td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td> <span ><i class='info fa fa-edit' onclick='edit_purpose(this)' >Edit</i></span> </td>   </tr>";
+           $("#pos-table > tbody").prepend(newRow);
+        }else
+        {
+          console.log(">>>>> edit is selected");
+          table = document.getElementById("pos-table");
+          table.rows[rIndex].cells[0].innerHTML =  $("#pos-product-code-txt").val();
+          table.rows[rIndex].cells[1].innerHTML = $("#pos-product-name-txt").val();
+          table.rows[rIndex].cells[2].innerHTML =  $("#pos-qty-txt").val();
+          table.rows[rIndex].cells[3].innerHTML =  $("#pos-price-txt").val();
+          table.rows[rIndex].cells[4].innerHTML = $("#pos-c-money-txt").val();
+          table.rows[rIndex].cells[5].innerHTML =  $("#pos-total-txt").val()
+          $(this).val("ADD");
+          
+
+
+
+        }
+        clear_pos_top();
+
+});
+
+  function clear_pos_top(){
+         $("#pos-product-code-txt").val("");
+          $("#pos-product-name-txt").val("");
+          $("#pos-qty-txt").val("");
+          $("#pos-price-txt").val("");
+          $("#pos-c-money-txt").val("");
+          $("#pos-total-txt").val("")
+  };
+    
+// $("#pos-table > tr").click(function(){
+//    $(this).addClass('selected').siblings().removeClass('selected');    
+//    var value=$(this).find('td:first').html();
+//    console.log( "===================");
+   
+// });
+                $('#pos-table tbody').on('click', 'tr', function() {
+                    //get row contents into an array
+
+                   
+                    $(this).addClass('selected').siblings().removeClass('selected');    
+                    var value=$(this).find('td:first').html();
+
+                    rIndex = this.rowIndex;
+                    console.log(">>>>>>>>>>row index:"+rIndex);
+                    var tableData = $(this).children("td").map(function() {
+                        return $(this).text();
+                    }).get();
+                    var td=tableData[0] +  '*' +  tableData[1] + '*' + tableData[2] + '*' +  tableData[3] + '*' + tableData[4];
+                    console.log(td);
+                    pcode =  tableData[0].trim();
+
+                    if (pcode ==""){
+                        return;
+                    }
+                    $("#pos-product-code-txt").val( tableData[0] );
+                    $("#pos-product-name-txt").val(tableData[1] );
+                    $("#pos-qty-txt").val(tableData[2] );
+                    $("#pos-price-txt").val(tableData[3] );
+                    $("#pos-c-money-txt").val(tableData[4] );
+                    $("#pos-total-txt").val(tableData[5] );
+                    $("#pos-add-btn").val("EDIT");
+
+
+
+
+                });
+
+
+       // ----------------- pos table end ---------------
 
         $("#review-back-venture-btn").click(function () {
             $("#venture-payment-transaction-modal").modal('hide');

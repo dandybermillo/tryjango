@@ -82,9 +82,17 @@
         <div class="form-group col-md-6">
             <label for="account-member-name" style="padding-left:2px">Member:</label>
 
-            <input id="account-member-name" type="text" readonly class="form-control-plaintext"
-                style="border:1px solid #ced4da"
+            <input id="account-member-name" type="text" readonly class="form-control"
+                style="border:1px solid #ced4da;font-weight: bolder;"
                 value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
+        </div>
+        <div class="form-group col-md-6">
+            
+                <label style="padding-bottom: 0px;" for="member-id-txt" class="col-form-label">ID</label>
+                <input style ="font-weight: bolder;" id="member-id-txt" type="text" readonly class="form-control"
+                    value="{{member_info.member_id|upper}}">
+           
+
         </div>
     </div>
 
@@ -124,12 +132,25 @@
                 <div class="form-group col-md-6 mb-0">
 
                     {{ account.description|as_crispy_field}}
+
+                    <div>
+                        {%ifequal 'D' account.requested_action %}
+                                {{ account.credit|as_crispy_field}}
+                                <div style="display:none">{{ account.debit}}</div>
+                        {%else%}
+                                {{ account.debit|as_crispy_field}}
+                                <div style="display:none">{{ account.credit}}</div>
+                           
+                       
+                        {%endifequal%}
+
+                    </div>
                 </div>
 
                 <div class="form-group col-md-6 mb-0">
 
                     <div class="container-finance-account">
-                        <label for="account-assets-table" class="col-form-label">FINANCE</label>
+                        <label style="padding-bottom: 0px;" for="account-assets-table" class="col-form-label">FINANCE</label>
                         <table id="account-assets-table" class="table table-bordered">
                             <thead>
                                 <tr>
@@ -154,21 +175,7 @@
 
             </div>
 
-            {%ifequal 'D' account.requested_action %}
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    {{ account.credit|as_crispy_field}}
-                    <div style="display:none">{{ account.debit}}</div>
-                </div>
-            </div>
-            {%else%}
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    {{ account.debit|as_crispy_field}}
-                    <div style="display:none">{{ account.credit}}</div>
-                </div>
-            </div>
-            {%endifequal%}
+           
             <br>
             <div>
                 {%if post_data %}
@@ -200,7 +207,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">{{account.account_name|upper}} TRANSACTION</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">{{account.account_name|upper}} ACCOUNT</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -209,22 +216,24 @@
 
                 <div id="review-wallet-app-form">
                     <form>
-                        <h4>Please review the following before submitting. Thanks.</h4>
+                        <h4 style="text-align: center;">Review Form</h4>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <label for="review-borrower-loan-txt" class="col-form-label">Member</label>
 
-                                <input style="background-color: transparent;" id="review-borrower-loan-txt" type="text"
-                                    readonly class="form-control-plaintext"
+                                <input style="background-color: transparent;font-weight: bolder;" id="review-borrower-loan-txt" type="text"
+                                    readonly class="form-control"
                                     value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
 
                             </div>
 
-                            <div class="form-group col-md-6">
-                                <label for="review-date-txt" class="col-form-label">Date:</label>
-                                <input id="review-date-txt" type="text" readonly class="form-control-plaintext"
-                                    value="{%if account.account_id > 0 %}{{ account.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today  {%endif%}">
+                            <div class="form-group col-md-5">
+                                <label for="review-date-txt" class="col-form-label">ID</label>
+                                <input id="review-date-txt" type="text" readonly class="form-control"
+                                    value="{{member_info.member_id}}">
                             </div>
+                            <!-- value="{%if account.account_id > 0 %}{{ account.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today  {%endif%}"> -->
+
                             <!-- <div class="form-group col-md-6">
                                 {% now 'SHORT_DATETIME_FORMAT' %}
                                 <label for="review-date-loan-txt" class="col-sm-1 col-form-label"
@@ -236,12 +245,25 @@
                         </div>
                         <div class="form-group row">
 
-                            <label for="review-source-loan-app-txt" class="col-sm-1 col-form-label">Transaction</label>
-
+                          
                             <div class="col-md-5">
+                                <label for="review-source-loan-app-txt" class="col-sm-1 col-form-label">Transaction</label>
                                 <input type="text" readonly class="review form-control" id="review-transaction-type"
                                     value="">
+                                <div> 
+                                   
+                                        <div >
+                                            <label for="review-id-description" class="col-sm-1 col-form-label">Description</label>
+                                            <input type="text" readonly class="review form-control" id="review-id-description"
+                                                value="">
+                                        </div>
+                                </div>
+                                    
+
+            
                             </div>
+                            
+                             
 
                             <div class="col-md-5 mb-0">
 
@@ -274,7 +296,7 @@
 
 
                         </div>
-                        <div class="review form-group row">
+                        <!-- <div class="review form-group row">
                             <label for="review-id-description" class="col-sm-1 col-form-label">Description</label>
                             <div class="col-sm-5">
                                 <input type="text" readonly class="review form-control" id="review-id-description"
@@ -284,10 +306,11 @@
 
 
 
-                        </div>
+                        </div> -->
                         <div class="review form-group row">
-                            <label for="review-account-amount" class="col-sm-1 col-form-label">Amount</label>
+                          
                             <div class="col-sm-5">
+                                <label for="review-account-amount" class="col-sm-1 col-form-label">Amount</label>
                                 <input type="text" readonly class="review form-control" id="review-account-amount"
                                     value="">
                             </div>

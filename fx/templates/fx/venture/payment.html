@@ -5,6 +5,9 @@
 
 {% block sub_content%}<br>
 <style>
+    input[type="text"]  {
+        padding-left: 12px;
+    }
     td.selected_account {
         background-color: #8cf367;
         font-weight: bold;
@@ -230,20 +233,20 @@
 
                 <div id="review-wallet-app-form">
                     <form>
-                        <h4>Please review the following before submitting. Thanks.</h4>
-                        <div class="form-row">
+                        <h4 style="text-align: center;">REVIEW FORM</h4>
+                        <div class="form-row" >
                             <div class="form-group col-md-6">
                                 <label for="review-borrower-txt" class="col-form-label">Member</label>
 
-                                <input style="background-color: transparent;" id="review-borrower-txt" type="text"
-                                    readonly class="form-control-plaintext"
+                                <input style="font-weight: bolder;" id="review-borrower-txt" type="text"
+                                    readonly class="form-control"
                                     value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
 
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="review-date-txt" class="col-form-label">Date:</label>
-                                <input id="review-date-txt" type="text" readonly class="form-control-plaintext"
+                                <input id="review-date-txt" type="text" readonly class="form-control"
                                     value="{%if payment.payment_id > 0 %}{{ payment.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today  {%endif%}">
                             </div>
                             <!-- <div class="form-group col-md-6">
@@ -255,19 +258,24 @@
                             </div> -->
 
                         </div>
+                        
                         <div class="form-group row">
-                            <div  style="border: 1px solid gray;">  </div>
-                        </div>
-                        <div class="form-group row">
-
+                            <div  class="col-md-6">
                             <label for="review-payment-balance" class="col-sm-1 col-form-label">Balance:</label>
 
-                            <div class="col-md-5">
+                            <div >
                                 <input type="text" readonly class="review form-control" id="review-payment-balance"
                                     value="">
                             </div>
+                            
+                            <label for="review-payment-source-type" class="col-sm-1 col-form-label">Source:</label>
+                            <div >
+                                <input type="text" readonly class="review form-control" id="review-payment-source-type"
+                                    value="">
+                            </div>
 
-                            <div class="col-md-5 mb-0">
+                        </div>
+                            <div class="col-md-6">
 
                                 <div class="container-finance-account">
                                     <label for="review-payment-assets-table" class="col-form-label">FINANCE</label>
@@ -300,7 +308,7 @@
 
 
                         </div>
-                        <div class="review form-group row">
+                        <!-- <div class="review form-group row">
                             <label for="review-payment-source-type" class="col-sm-1 col-form-label">Source:</label>
                             <div class="col-sm-5">
                                 <input type="text" readonly class="review form-control" id="review-payment-source-type"
@@ -310,11 +318,14 @@
 
 
 
-                        </div>
+                        </div> -->
+
+                        
                         <div class="review form-group row">
-                            <label for="review-payment-amount" class="col-sm-1 col-form-label">Amount</label>
-                            <div class="col-sm-5">
-                                <input type="text" readonly class="review form-control" id="review-payment-amount"
+                            
+                            <div class="col-sm-6"  >
+                                <label for="review-payment-amount" class="col-sm-1 col-form-label">Amount</label>
+                                <input  type="text" readonly class="review form-control" id="review-payment-amount"
                                     value="">
                             </div>
 
