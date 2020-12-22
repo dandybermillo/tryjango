@@ -75,9 +75,16 @@ urlpatterns = [
 
   path('update_user_info/<int:id>/',user_views.update_user_info, name='update_user_info_url'),
   path("user_dashboard/<int:id>/", user_views.user_dashboard, name="user_dashboard_url"),
+  path("mainpage/", user_views.mainpage, name="mainpage_url"),
+
+  
   path("user_finance/<int:id>/",user_views.user_finance, name="user_finance_url"),
   path('member/<int:id>/', views.display_member_info, name='display_member_info_url'),
   path('create_update/<int:id>/',views.create_update_member, name='create_update_member_url'),
+  
+  path("services/", user_views.services, name="services_url"),
+   path("contact/", user_views.contact, name="contact_url"),
+  
   #--------WALLET------------ 
   path('create_update_member_finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.create_update_member_finance, name='create_update_member_finance_url'),
   
