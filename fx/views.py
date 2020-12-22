@@ -2345,26 +2345,13 @@ def unauthorized_user(request):
 
  
 def my_home_page(request):
-    
-    
-   # return render(request,"products/bc/user.html",{})
-    # print("======================== goint to admin dashboard========")
-    # # return
-    # # print(f"is_authenticated:{request.user.is_authenticated}")
-    # # print(f"is_active:{request.user.is_active}")
-    # # print(f"is_staff:{request.user.is_staff}")
-    # # print(f"user:{request.user}")
-    # # if request.user.is_authenticated is True and request.user.is_active and request.user.is_staff:  
-    # return redirect('/dashboard/')
-    # else:
-    #     print("======================== goint to user dashboard========")
-    #     if request.user.is_authenticated is True and request.user.is_active:
-    #         member_info = MemberModel.objects.get(user = request.user.id)
-    #                    # client_info ={'id':client_info.id}  #todo eliminate extra fields
+         print(" id and request id   is not same.")
+         context ={'message':" Welcome to Fair Exchange!"}
+         return render(request, "fx/users/mainpage.html", {}) 
    
               
 
-    return render(request," fx/users/mainpage.html",{})
+    
 def create_update_payment_result(request,account_name,id,payment_id,msg):
         print(f"account_name:{account_name}")
         member_info = get_member_info(id,"#create_update_payment_result. 1") #create_update_payment_result. 1

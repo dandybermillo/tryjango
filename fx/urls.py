@@ -52,7 +52,6 @@ urlpatterns = [
   path('loan_application/<int:member_id>/<int:loan_id>/', views.loan_application, name = "loan_application_url"), #0 - new,1 edit
   
       #  -------------------------redirect-------------------------
-  # path('user_dashboard/<int:id>/', views.user_dashboard, name="user_dashboard_url"),
 
   path('success/transfer/<int:sender>/<int:code>/', views.success_transfer, name="success_transfer_url"),
   path('success/create_update_result/<str:account_name>/<int:id>/<int:account_id>/<str:msg>', views.create_update_result, name="create_update_result_url"),
@@ -70,15 +69,8 @@ urlpatterns = [
 
 
 
-       # -------------- user profile -------------------
+       # -------------- user profiles -------------------
   path("unauthorized_user/", views.unauthorized_user, name="unauthorized_user_url"),
-
-  path('update_user_info/<int:id>/',user_views.update_user_info, name='update_user_info_url'),
-  path("user_dashboard/<int:id>/", user_views.user_dashboard, name="user_dashboard_url"),
-  path("mainpage/", user_views.mainpage, name="mainpage_url"),
-
-  
-  path("user_finance/<int:id>/",user_views.user_finance, name="user_finance_url"),
   path('member/<int:id>/', views.display_member_info, name='display_member_info_url'),
   path('create_update/<int:id>/',views.create_update_member, name='create_update_member_url'),
   

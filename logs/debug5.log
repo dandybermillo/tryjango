@@ -309,3 +309,128 @@ INFO 2020-12-23 00:28:30,348 autoreload 9796 23420 Watching for file changes wit
 INFO 2020-12-23 00:29:40,871 autoreload 26336 28128 Watching for file changes with StatReloader
 INFO 2020-12-23 00:31:27,601 autoreload 29940 25304 Watching for file changes with StatReloader
 INFO 2020-12-23 00:32:17,222 autoreload 29940 25304 C:\Users\dan\just_django\tryjango\fx\user_views.py changed, reloading.
+INFO 2020-12-23 00:32:18,273 autoreload 15756 8900 Watching for file changes with StatReloader
+INFO 2020-12-23 00:34:16,760 autoreload 30712 29668 Watching for file changes with StatReloader
+INFO 2020-12-23 00:35:09,244 autoreload 6860 28236 Watching for file changes with StatReloader
+INFO 2020-12-23 00:35:37,746 autoreload 19848 26356 Watching for file changes with StatReloader
+INFO 2020-12-23 00:39:10,736 autoreload 30388 21588 Watching for file changes with StatReloader
+INFO 2020-12-23 00:39:54,674 autoreload 28372 13888 Watching for file changes with StatReloader
+INFO 2020-12-23 00:40:43,492 autoreload 24420 24748 Watching for file changes with StatReloader
+INFO 2020-12-23 00:41:56,189 autoreload 15724 20344 Watching for file changes with StatReloader
+INFO 2020-12-23 00:42:53,843 autoreload 11904 26672 Watching for file changes with StatReloader
+INFO 2020-12-23 00:44:26,699 autoreload 5196 4184 Watching for file changes with StatReloader
+INFO 2020-12-23 00:46:08,179 autoreload 28140 27008 Watching for file changes with StatReloader
+INFO 2020-12-23 00:47:24,410 autoreload 4784 29900 Watching for file changes with StatReloader
+INFO 2020-12-23 07:24:47,486 autoreload 20748 29052 Watching for file changes with StatReloader
+INFO 2020-12-23 07:25:59,127 autoreload 27516 1312 Watching for file changes with StatReloader
+INFO 2020-12-23 07:28:37,195 autoreload 24352 25488 Watching for file changes with StatReloader
+INFO 2020-12-23 07:32:23,118 autoreload 24352 25488 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-23 07:32:23,836 autoreload 8900 18804 Watching for file changes with StatReloader
+INFO 2020-12-23 07:32:36,906 autoreload 8900 18804 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-23 07:32:37,600 autoreload 20096 19368 Watching for file changes with StatReloader
+INFO 2020-12-23 07:34:06,426 basehttp 20096 26112 "GET / HTTP/1.1" 200 65
+WARNING 2020-12-23 07:34:06,563 log 20096 26112 Not Found: /favicon.ico
+WARNING 2020-12-23 07:34:06,565 basehttp 20096 26112 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:34:13,127 basehttp 20096 26112 "GET /create_update_venture/15/0/VENTURE/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:34:13,535 basehttp 20096 26112 "GET /login/?next=/create_update_venture/15/0/VENTURE/ HTTP/1.1" 200 43612
+INFO 2020-12-23 07:34:14,146 basehttp 20096 26112 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-23 07:34:16,403 basehttp 20096 26112 "GET /static/img/load.gif HTTP/1.1" 200 79271
+INFO 2020-12-23 07:34:16,608 basehttp 20096 26112 "GET /login/?next=/create_update_venture/15/0/VENTURE/ HTTP/1.1" 200 43612
+INFO 2020-12-23 07:34:16,726 basehttp 20096 26112 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-23 07:34:16,732 basehttp 20096 10940 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-23 07:34:21,225 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:34:21,226 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:34:29,433 basehttp 20096 26112 "POST /login/?next=/create_update_venture/15/0/VENTURE/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:34:29,602 views 20096 26112 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-23 07:34:29,609 basehttp 20096 26112 "GET /create_update_venture/15/0/VENTURE/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:34:29,780 basehttp 20096 26112 "GET /unauthorized_user/ HTTP/1.1" 200 65
+WARNING 2020-12-23 07:34:29,883 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:34:29,883 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:34:37,038 basehttp 20096 26112 "GET / HTTP/1.1" 200 65
+WARNING 2020-12-23 07:34:37,101 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:34:37,102 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+WARNING 2020-12-23 07:36:08,362 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:08,363 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+WARNING 2020-12-23 07:36:09,735 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:09,736 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+WARNING 2020-12-23 07:36:15,364 log 20096 26112 Forbidden (CSRF token missing or incorrect.): /login/
+WARNING 2020-12-23 07:36:15,367 basehttp 20096 26112 "POST /login/?next=/create_update_venture/15/0/VENTURE/ HTTP/1.1" 403 2513
+WARNING 2020-12-23 07:36:15,493 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:15,493 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:19,184 basehttp 20096 26112 "GET /login/?next=/create_update_venture/15/0/VENTURE/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:36:19,265 basehttp 20096 26112 "GET /logout/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:36:19,353 basehttp 20096 26112 "GET / HTTP/1.1" 200 65
+WARNING 2020-12-23 07:36:19,431 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:19,432 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:21,516 basehttp 20096 26112 "GET / HTTP/1.1" 200 65
+WARNING 2020-12-23 07:36:21,552 log 20096 10940 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:21,553 basehttp 20096 10940 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:28,773 basehttp 20096 26112 "GET /logouts/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:36:28,891 basehttp 20096 26112 "GET /venture_main_request/ HTTP/1.1" 200 26276
+INFO 2020-12-23 07:36:28,941 basehttp 20096 10940 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-23 07:36:28,952 basehttp 20096 27496 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-23 07:36:28,953 basehttp 20096 18748 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-23 07:36:28,955 basehttp 20096 11004 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-23 07:36:28,955 basehttp 20096 26112 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-23 07:36:33,738 basehttp 20096 11004 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-23 07:36:34,145 log 20096 11004 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:34,145 basehttp 20096 11004 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:34,407 basehttp 20096 11004 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:36:34,416 basehttp 20096 11004 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:36:36,262 basehttp 20096 26112 "GET /venture_login/ HTTP/1.1" 200 28095
+INFO 2020-12-23 07:36:36,353 basehttp 20096 11004 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-23 07:36:36,354 basehttp 20096 26112 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-23 07:36:36,359 basehttp 20096 27496 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-23 07:36:36,362 basehttp 20096 10940 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-23 07:36:36,363 basehttp 20096 18748 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-23 07:36:44,393 basehttp 20096 18748 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-23 07:36:45,499 log 20096 18748 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:45,500 basehttp 20096 18748 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:45,943 basehttp 20096 11004 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:36:45,944 basehttp 20096 18748 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:36:49,461 basehttp 20096 26112 "POST /venture_login/ HTTP/1.1" 302 0
+INFO 2020-12-23 07:36:49,484 basehttp 20096 18748 "GET /create_update_venture/15/0/venture HTTP/1.1" 301 0
+INFO 2020-12-23 07:36:49,642 views 20096 26112 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-23 07:36:50,127 basehttp 20096 26112 "GET /create_update_venture/15/0/venture/ HTTP/1.1" 200 99720
+INFO 2020-12-23 07:36:50,210 basehttp 20096 18748 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-23 07:36:50,223 basehttp 20096 27496 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-23 07:36:50,226 basehttp 20096 10940 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-23 07:36:50,228 basehttp 20096 18748 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-23 07:36:50,230 basehttp 20096 11004 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-23 07:36:53,811 basehttp 20096 27496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-23 07:36:54,761 log 20096 18748 Not Found: /favicon.ico
+WARNING 2020-12-23 07:36:54,761 basehttp 20096 18748 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:36:55,066 basehttp 20096 27496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:36:55,066 basehttp 20096 18748 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-23 07:40:17,100 autoreload 20096 19368 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:17,859 autoreload 27144 24528 Watching for file changes with StatReloader
+INFO 2020-12-23 07:40:20,499 autoreload 27144 24528 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:21,134 autoreload 21728 26104 Watching for file changes with StatReloader
+INFO 2020-12-23 07:40:28,829 autoreload 21728 26104 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:29,603 autoreload 29960 14216 Watching for file changes with StatReloader
+INFO 2020-12-23 07:40:33,315 autoreload 29960 14216 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:34,090 autoreload 22360 24396 Watching for file changes with StatReloader
+INFO 2020-12-23 07:40:38,786 autoreload 22360 24396 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:39,521 autoreload 20296 25852 Watching for file changes with StatReloader
+INFO 2020-12-23 07:40:43,278 autoreload 20296 25852 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:40:44,205 autoreload 28644 26748 Watching for file changes with StatReloader
+ERROR 2020-12-23 07:40:53,288 log 28644 30344 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2350, in my_home_page
+    return render(request, "fx/user/mainpage.html", {})
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: fx/user/mainpage.html
+ERROR 2020-12-23 07:40:53,293 basehttp 28644 30344 "GET / HTTP/1.1" 500 80442
+WARNING 2020-12-23 07:40:53,408 log 28644 30344 Not Found: /favicon.ico
+WARNING 2020-12-23 07:40:53,409 basehttp 28644 30344 "GET /favicon.ico HTTP/1.1" 404 11863
+INFO 2020-12-23 07:41:02,167 autoreload 28644 26748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-23 07:41:03,063 autoreload 27616 19560 Watching for file changes with StatReloader
