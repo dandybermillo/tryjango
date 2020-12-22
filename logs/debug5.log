@@ -308,3 +308,4 @@ INFO 2020-12-23 00:27:46,132 autoreload 2344 27540 Watching for file changes wit
 INFO 2020-12-23 00:28:30,348 autoreload 9796 23420 Watching for file changes with StatReloader
 INFO 2020-12-23 00:29:40,871 autoreload 26336 28128 Watching for file changes with StatReloader
 INFO 2020-12-23 00:31:27,601 autoreload 29940 25304 Watching for file changes with StatReloader
+INFO 2020-12-23 00:32:17,222 autoreload 29940 25304 C:\Users\dan\just_django\tryjango\fx\user_views.py changed, reloading.
