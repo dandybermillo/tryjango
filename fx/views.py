@@ -2347,7 +2347,8 @@ def unauthorized_user(request):
 def my_home_page(request):
          print(" id and request id   is not same.")
          context ={'message':" Welcome to Fair Exchange!"}
-         return render(request, "fx/users/mainpage.html", {}) 
+         
+         return render(request, "fx/users/mainpage.html",context) 
    
               
 

@@ -79,6 +79,12 @@ urlpatterns = [
   path("join/", user_views.join, name="join_url"),
   path("about/", user_views.about, name="about_url"),
   
+  path('join/', user_views.join, name='join_url'),
+  
+  
+  path("user_dashboard/<int:id>/", user_views.user_dashboard, name="user_dashboard_url"),
+
+  
   #--------WALLET------------ 
   path('create_update_member_finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.create_update_member_finance, name='create_update_member_finance_url'),
   

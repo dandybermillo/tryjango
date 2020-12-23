@@ -1,0 +1,88 @@
+{% extends 'fx/users/main_base.html' %}
+{% load static %}
+
+    
+     {% block scripting_style %}
+     <meta name="keywords" content="We love to have you on board..">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Join</title>
+    <link rel="stylesheet" href="{% static './css/join.css' %}">
+
+    <!-- <link rel="stylesheet" href="join.css" media="screen"> -->
+     
+    {% endblock scripting_style %}
+    {% block sub_content%}
+
+    
+    <form  id ="form" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" >
+        {% csrf_token %}
+        <div class="u-form-group u-form-name">
+          <label for="name-7ac5" class="u-form-control-hidden u-label">Name</label>
+          {{ form.name }}
+          <!-- <input type="text" placeholder="Enter your name" id="name-7ac5" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""> -->
+        </div>
+        <div class="u-form-group u-form-phone u-form-group-2">
+          <label for="phone-db2c" class="u-form-control-hidden u-label">Phone</label>
+          {{ form.phone }}
+          <!-- <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-db2c" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""> -->
+        </div>
+        <div class="u-form-group u-form-group-3">
+          <label for="date-d284" class="u-form-control-hidden u-label">Date</label>
+          <input type="text" placeholder="MM/DD/YYY" id="date-d284" name="date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+        </div>
+        <div class="u-form-group u-form-message">
+          <label for="message-7ac5" class="u-form-control-hidden u-label">Address</label>
+          {{ form.address }}
+          <!-- <textarea placeholder="Address" rows="4" cols="50" id="message-7ac5" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea> -->
+        </div>
+        <div class="u-form-agree u-form-group u-form-group-5">
+          <input type="checkbox" id="agree-b4a7" name="agree" class="u-agree-checkbox" required="">
+          <label for="agree-b4a7" class="u-label">I accept the <a href="#">Terms of Service</a>
+          </label>
+        </div>
+        <div class="u-align-left u-form-group u-form-submit">
+          <button id = "sign-up-btn" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1">Sign Ups</button>
+           
+        </div>
+        <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+        <input type="hidden" value="" name="recaptchaResponse"> -->
+      </form>
+ 
+      <script>
+
+
+
+        const form = document.getElementById('form');
+       //form.addEventListener("submit", submitHandler);
+    
+       $("#sign-up-btn").click(function(e) {
+            event.preventDefault();
+            event.stopPropagation();
+          //$("body").on("submit","#form",function(event){
+            console.log("saving prevent defa");
+             $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : "{% url 'fx:join_url' %}", // the url where we want to POST
+                data        : $('#form').serialize(), // our form data
+                dataType    : 'json', // what type of data do we expect back from the server
+                success     : successFunction
+            });
+
+           
+             
+        });
+    
+ 
+
+
+        function successFunction(msg) {
+            if (msg.message === 'success') {
+                alert('Success!');
+                form.reset()
+            }
+        }
+    </script>
+     {% endblock sub_content%}
+

@@ -36,7 +36,15 @@ class MemberModel (models.Model):
      def name(self):
         return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
  
- 
+class ContactModel(models.Model):
+    name = models.CharField(max_length=124)
+    phone = models.CharField(max_length=124)
+    birthday = models.DateField(  blank= True, null =True)
+    address =  models.CharField(max_length=300,blank =True, null =True)
+    
+
+    def __str__(self):
+        return self.name
 class dayTransactionModel(models.Model):
    PAYMENT,VENTURE,TRANSACTION=(0,1,2)
    cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"))

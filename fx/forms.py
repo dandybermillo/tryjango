@@ -7,6 +7,7 @@ from django.contrib.auth import (
     get_user_model
 
 )
+from .models import ContactModel
 from fx.models import Tmp_UsernameModel
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -17,6 +18,23 @@ User = get_user_model()
 minimum_deposit = 0
 maximum_deposit =10000
 limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
+
+
+
+
+
+class ContactModelForm(forms.ModelForm):
+    name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+
+    phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+    address = forms.CharField(
+        label='Address',required =True,
+        widget=forms.TextInput(attrs={'placeholder': 'Current Address','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'})
+    )
+    birthday = forms.DateField(required = True,widget=forms.DateInput(attrs={'placeholder': 'MM/DD/YY',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+    class Meta:
+        model = ContactModel
+        fields =["name","phone","address","birthday"]
 
 class UserLoginForm(AuthenticationForm):
     user = None
