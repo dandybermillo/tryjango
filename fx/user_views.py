@@ -11,10 +11,10 @@ from .tables import myTable
 
 def services(request):
          context ={'message':" Services offered"}
-         return render(request, "fx/users/Services.html", context) 
+         return render(request, "fx/users/services.html", context) 
 def contact(request):
          context ={'message':" Contact Us"}
-         return render(request, "fx/users/Contact.html", context) 
+         return render(request, "fx/users/contact.html", context) 
 def join(request):
          context ={'message':"Join Us"}
          return render(request, "fx/users/join.html", context) 
