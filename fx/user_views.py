@@ -13,7 +13,13 @@ def services(request):
          context ={'message':" Services offered"}
          return render(request, "fx/users/Services.html", context) 
 def contact(request):
-         context ={'message':" Contact US"}
+         context ={'message':" Contact Us"}
          return render(request, "fx/users/Contact.html", context) 
+def join(request):
+         context ={'message':"Join Us"}
+         return render(request, "fx/users/join.html", context) 
+def about(request):
+         context ={'message':"About Us"}
+         return render(request, "fx/users/about_us.html", context) 
 
 

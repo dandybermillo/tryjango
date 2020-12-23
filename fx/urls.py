@@ -75,7 +75,9 @@ urlpatterns = [
   path('create_update/<int:id>/',views.create_update_member, name='create_update_member_url'),
   
   path("services/", user_views.services, name="services_url"),
-   path("contact/", user_views.contact, name="contact_url"),
+  path("contact/", user_views.contact, name="contact_url"),
+  path("join/", user_views.join, name="join_url"),
+  path("about/", user_views.about, name="about_url"),
   
   #--------WALLET------------ 
   path('create_update_member_finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.create_update_member_finance, name='create_update_member_finance_url'),
