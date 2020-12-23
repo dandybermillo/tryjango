@@ -31,7 +31,7 @@ class ContactModelForm(forms.ModelForm):
         label='Address',required =True,
         widget=forms.TextInput(attrs={'placeholder': 'Current Address','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'})
     )
-    birthday = forms.DateField(required = True,widget=forms.DateInput(attrs={'placeholder': 'MM/DD/YY',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+    birthday = forms.DateField(required = True,widget=forms.DateInput(attrs={'type':'date','placeholder': 'MM/DD/YY',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))    #, 'min':"1920-01-01", 'max':"2010-12-31"}))
     class Meta:
         model = ContactModel
         fields =["name","phone","address","birthday"]
