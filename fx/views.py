@@ -102,10 +102,9 @@ class AjaxHandlerView(View):
             print(f"code: {request.POST.get('code')}")
             result = f"I have : {card_text}"
             return JsonResponse({'data':result}, status =200)
-      else:
-           return JsonResponse({'data':'none'}, status =400)
+s           return JsonResponse({'data':'none'}, status =400)
 
-#end test
+#end test 
 
 
 def parseint(string,lenght=10): #10 has no meaning
