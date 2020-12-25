@@ -1,0 +1,5 @@
+INFO 2020-12-26 04:51:56,910 autoreload 9120 1896 Watching for file changes with StatReloader
+INFO 2020-12-26 04:51:59,646 basehttp 9120 21740 "GET /demo/ HTTP/1.1" 200 28755
+INFO 2020-12-26 04:52:02,635 basehttp 9120 21740 "GET /demo/?button_text=%20GET%20 HTTP/1.1" 200 30
+INFO 2020-12-26 04:53:18,304 basehttp 9120 21740 "GET /demo/?button_text=1608929522.635047 HTTP/1.1" 200 30
+INFO 2020-12-26 04:53:25,617 basehttp 9120 21740 "POST /demo/ HTTP/1.1" 200 23

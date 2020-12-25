@@ -102,7 +102,9 @@ class AjaxHandlerView(View):
             print(f"code: {request.POST.get('code')}")
             result = f"I have : {card_text}"
             return JsonResponse({'data':result}, status =200)
-s           return JsonResponse({'data':'none'}, status =400)
+      else:
+           return JsonResponse({'data':'none'}, status =400)
+
 
 #end test 
 
