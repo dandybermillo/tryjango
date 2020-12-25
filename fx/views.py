@@ -50,6 +50,12 @@ from django.apps import apps
 from .tables import myTable
 from django.contrib.auth.models import  Group
 
+
+#test
+from django.views.generic import View
+from time import time
+#end test
+
 #error logging
 import logging,traceback
 # logger = logging.getLogger(__name__)
@@ -78,6 +84,28 @@ source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletMode
 #21
 TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
+
+#test
+
+
+class AjaxHandlerView(View):
+   def get(self,request):
+      text =  request.GET.get('button_text')
+      if request.is_ajax():
+             t = time()
+             return JsonResponse({'seconds':t}, status =200)
+      return render(request,'fx/venture/test.html')
+   def post(self,request):
+     
+      if  request.is_ajax() and request.method == "POST": 
+            card_text = request.POST.get('text')
+            print(f"code: {request.POST.get('code')}")
+            result = f"I have : {card_text}"
+            return JsonResponse({'data':result}, status =200)
+      else:
+           return JsonResponse({'data':'none'}, status =400)
+
+#end test
 
 
 def parseint(string,lenght=10): #10 has no meaning
@@ -2348,7 +2376,7 @@ def my_home_page(request):
          print(" id and request id   is not same.")
          context ={'message':" Welcome to Fair Exchange!"}
          
-         return render(request, "fx/users/mainpage.html",context) 
+         return render(request, "fx/users/index.html",context) 
    
               
 

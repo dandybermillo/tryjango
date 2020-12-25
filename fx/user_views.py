@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 
-from .forms import ContactModelForm
+from .forms import SignUpModelForm,MessageForm,LoadForm
 
-from fx.models import WalletModel,MemberModel
+from fx.models import WalletModel,MemberModel,MessageModel
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MemberForm  
 from django.contrib import messages
@@ -13,17 +13,86 @@ from django.http import JsonResponse
 
 
 def services(request):
-         context ={'message':" Services offered"}
-         return render(request, "fx/users/services.html", context) 
+      
+         print("--------------------->contact")
+         form_load = LoadForm()
+         print(f" is ajax: {request.is_ajax}")
+         if request.is_ajax and request.method == "POST":
+                print("pass if;;")
+              
+                try: 
+                     form_load = LoadForm(request.POST)
+                except   Exception as e:
+                        print(f"e: {e}")
+                print(f" re: {request.POST}")
+                if form_load.is_valid():
+                    try: 
+                         form_load.save()
+                    except   Exception as e:
+                        print(f"e: {e}")
+                    return JsonResponse({
+                        'message': 'success'
+                    })
+
+                else:
+                     print("not valid")  
+                     #print(f"errors: {form_message.errors['foo']}")
+                     print(f"form:{form_load}")
+                     error_list =""
+                     for field, errors in form_load.errors.items():
+                        print(f"Field: {field} Errors: {errors}")
+                        error_list =errors
+                     return JsonResponse({
+                        'message': error_list
+                    })
+         else:
+              print("else:")
+              print(request.POST)  
+         print("Exit")                
+         return render(request, "fx/users/services.html",{'form_load':form_load}) 
 def contact(request):
-         context ={'message':" Contact Us"}
-         return render(request, "fx/users/contact.html", context) 
+         print("--------------------->contact")
+         form_message = MessageForm()
+         print(f" is ajax: {request.is_ajax}")
+         if request.is_ajax and request.method == "POST":
+                print("pass if;;")
+              
+                try: 
+                     form_message = MessageForm(request.POST)
+                except   Exception as e:
+                        print(f"e: {e}")
+                print(f" re: {request.POST}")
+                if form_message.is_valid():
+                    try: 
+                         form_message.save()
+                    except   Exception as e:
+                        print(f"e: {e}")
+                    return JsonResponse({
+                        'message': 'success'
+                    })
+
+                else:
+                     print("not valid")  
+                     #print(f"errors: {form_message.errors['foo']}")
+                     print(f"form:{form_message}")
+                     error_list =""
+                     for field, errors in form_message.errors.items():
+                        print(f"Field: {field} Errors: {errors}")
+                        error_list =errors
+                     return JsonResponse({
+                        'message': error_list
+                    })
+         else:
+              print("else:")
+              print(request.POST)  
+         print("Exit")                
+         return render(request, "fx/users/contact.html",{'form_message':form_message}) 
 def join(request):
-         print("--------------------->")
-         form = ContactModelForm()
+         print(f"---------------------> user{ request.user}")
+         form = SignUpModelForm()
         
          if request.is_ajax and request.method == "POST":
-                form = ContactModelForm(request.POST)
+                form = SignUpModelForm(request.POST)
                 print(request.POST)
                 if form.is_valid():
                     form.save()

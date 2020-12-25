@@ -69,26 +69,35 @@
                           <h3 class="u-text u-text-10">we value your comment!</h3>
                           <h6 class="u-text u-text-11">Usually respond within 24hrs.</h6>
                           <div class="u-form u-form-1">
-                            <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
+ 
+
+                            <form action=""  id ="form" method="POST" class="needs-validation u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0;" source="custom" >
+                              {% csrf_token %}
                               <div class="u-form-group u-form-name">
                                 <label for="name-3d90" class="u-form-control-hidden u-label">Name</label>
-                                <input type="text" placeholder="Enter your Name" id="name-3d90" name="name" class="u-input u-input-rectangle u-white" required="">
+                                {{ form_message.name }}
+
+                                <!-- <input type="text" placeholder="Enter your Name" id="name-3d90" name="name" class="u-input u-input-rectangle u-white" required=""> -->
                               </div>
                               <div class="u-form-email u-form-group">
                                 <label for="email-3d90" class="u-form-control-hidden u-label">Email</label>
-                                <input type="email" placeholder="Enter a valid email address" id="email-3d90" name="email" class="u-input u-input-rectangle u-white" required="">
+                                {{ form_message.email }}
+
+                                <!-- <input type="email" placeholder="Enter a valid email address" id="email-3d90" name="email" class="u-input u-input-rectangle u-white" required=""> -->
                               </div>
                               <div class="u-form-group u-form-message">
                                 <label for="message-3d90" class="u-form-control-hidden u-label">Message</label>
-                                <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3d90" name="message" class="u-input u-input-rectangle u-white" required=""></textarea>
+                                {{ form_message.message }}
+                                <!-- <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3d90" name="message" class="u-input u-input-rectangle u-white" required=""></textarea> -->
                               </div>
                               <div class="u-align-left u-form-group u-form-submit">
-                                <a href="#" class="u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1">Submit</a>
-                                <input type="submit" value="submit" class="u-form-control-hidden">
+                                <button id = "message-btn" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</button>
+                                <!-- <a href="#" class="u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1">Submit</a> -->
+                                <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
                               </div>
-                              <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                              <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                              <input type="hidden" value="" name="recaptchaResponse">
+                              <div id ="msg-success-div" class="msg-success-div u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                              <div id = "errorlist-div" class="u-form-send-error u-form-send-message"></div>
+                             
                             </form>
                           </div>
                         </div>
@@ -146,4 +155,81 @@
         <a href="https://nicepage.com/website-mockup" class="u-active-palette-3-base u-btn u-button-style u-hover-palette-1-base u-white u-btn-1">Feedback</a>
         <p class="u-text u-text-1"> &nbsp;(c) FairExchange.cc 2020</p>
       </div></footer>
+
+
+
+      <script>
+
+        (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            console.log("submitting......");
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        
+                const form = document.getElementById('form');
+               //form.addEventListener("submit", submitHandler);
+            
+              //  $("#sign-up-lnk").click(function(e) {
+        
+              //  });
+         ///
+               $("#message-btn").click(function(e) {
+                 var form = document.querySelector(".needs-validation");
+                    var reportVal = form.checkValidity();
+                    if (reportVal == false) {
+        
+                        $("#venture-payment-failed-alert").show();
+                        form.reportValidity();
+                        console.log("it is returning");
+                        return;
+                    }
+                  //$("body").on("submit","#form",function(event){
+                    console.log("saving prevent defa");
+                    event.preventDefault();
+
+                    event.stopPropagation();
+                     $.ajax({
+                        type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                        url         : "{% url 'fx:contact_url' %}", // the url where we want to POST
+                        data        : $('#form').serialize(), // our form data
+                        dataType    : 'json', // what type of data do we expect back from the server
+                        success     : successFunction,
+                        error: function (response) {
+                    
+                         console.log("error reach:");
+                         console.log("response:" +response)["messsage"];
+
+                    // console.log(response);
+                }
+                    });
+        
+                   
+                });
+            
+                function successFunction(msg) {
+                  
+                    if (msg.message === 'success') {
+                       $("#msg-success-div").show();
+                        
+                         form.reset()
+                    }else {
+                       
+                      $("#errorlist-div").append(msg["message"]);
+                      $("#errorlist-div").show();
+                     }
+                }
+            </script>
       {% endblock sub_content%}

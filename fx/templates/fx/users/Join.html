@@ -59,9 +59,9 @@
             </div>
 
              
-             <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div> -->
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse"> 
+             <div id="msg-success-div" class="u-form-send-message u-form-send-success"> Thank you! Your record has been saved. </div>
+            <!-- <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+            <input type="hidden" value="" name="recaptchaResponse">  -->
           </form>
 
 
@@ -127,6 +127,8 @@
     
         function successFunction(msg) {
             if (msg.message === 'success') {
+               $("#msg-success-div").show();
+                
                 alert('Success!');
                 form.reset()
             }

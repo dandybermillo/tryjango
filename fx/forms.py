@@ -7,7 +7,7 @@ from django.contrib.auth import (
     get_user_model
 
 )
-from .models import ContactModel
+from .models import ContactModel,MessageModel
 from fx.models import Tmp_UsernameModel
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -22,10 +22,21 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 
-
-class ContactModelForm(forms.ModelForm):
+class LoadForm(forms.ModelForm):
+    CARRIER_CHOICES= [
+    
+    ("SMART","SMART"),("GLOBE","GLOBE"),("DITO","DITO"),("TALK","TALK N TEXT"),("SUN","SUN CELLULAR"),
+]
     name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-
+    phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+    carrier = forms.ChoiceField(label='', choices=CARRIER_CHOICES, widget=forms.Select(attrs={'class':'u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5'}))
+    amount = forms.FloatField(required = True,widget=forms.NumberInput(attrs={'placeholder': 'Amount', 'step': "0.01",'class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+    class Meta:
+        model = ContactModel
+        fields =["name","phone","carrier","amount"]
+    
+class SignUpModelForm(forms.ModelForm):
+    name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
     phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
     address = forms.CharField(
         label='Address',required =True,
@@ -35,6 +46,32 @@ class ContactModelForm(forms.ModelForm):
     class Meta:
         model = ContactModel
         fields =["name","phone","address","birthday"]
+class MessageForm(forms.ModelForm):
+    name = forms.CharField(required = True,widget=forms.PasswordInput(attrs={'placeholder': 'Enter your Name','class':'u-input u-input-rectangle u-white'}))
+
+    email = forms.EmailField(required = True,widget=forms.TextInput(attrs={'type':'email','placeholder': 'Enter a valid email address','class':'u-input u-input-rectangle u-white'}))
+    message = forms.CharField(
+        label='Message',required =True,
+        widget=forms.Textarea(attrs={"rows":3,"cols":20,'placeholder': 'Enter your message','class':'u-input u-input-rectangle u-white'})
+    )      #description= forms.CharField(required =True,widget=forms.Textarea(attrs={"rows":1,"cols":20}))
+
+    
+    class Meta:
+        model = MessageModel
+        fields =["name","email","message"]
+    def clean_email(self,*args, **kwargs):
+                print(".....clean_emaill")
+                email = self.cleaned_data.get('email')
+                validator = EmailValidator()
+                email =email.strip()
+                if(len(email )> 0):
+                        try:
+                            validator(email)
+                        except ValidationError:
+                            print("Please enter valid email address.")
+                            raise forms.ValidationError("Please enter valid email address.")
+                
+                return email
 
 class UserLoginForm(AuthenticationForm):
     user = None

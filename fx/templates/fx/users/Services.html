@@ -231,31 +231,40 @@
         <div class="u-container-layout u-container-layout-1">
           <h2 class="u-text u-text-1">Mobile Top Up</h2>
           <div class="u-expanded-width u-form u-form-1">
-            <form action="#" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+            <form action="#" id ="form_load" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+              {% csrf_token %}
+
               <div class="u-form-group u-form-name u-form-group-1">
                 <label for="name-3e72" class="u-form-control-hidden u-label">Name</label>
-                <input type="text" placeholder="Enter your Name" id="name-3e72" name="name" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                  {{form_load.name}}
+                <!-- <input type="text" placeholder="Enter your Name" id="name-3e72" name="name" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required=""> -->
               </div>
               <div class="u-form-group u-form-phone u-form-group-2">
                 <label for="phone-c90b" class="u-form-control-hidden u-label">Phone</label>
-                <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-c90b" name="phone" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                {{form_load.phone}}
+                <!-- <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-c90b" name="phone" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required=""> -->
               </div>
               <div class="u-form-group u-form-select u-form-group-3">
+
                 <label for="select-4c46" class="u-form-control-hidden u-label">Select</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-4c46" name="select" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5">
+
+
+                  <!-- <select id="select-4c46" name="select" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5">
                     <option value="Smart">Smart</option>
                     <option value="Globe">Globe</option>
                     <option value="Dito (soon)">Dito (soon)</option>
                     <option value="Talk 'N Text">Talk 'N Text</option>
                     <option value="Sun Cellular">Sun Cellular</option>
-                  </select>
+                  </select> -->
+                  {{form_load.carrier}}
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                 </div>
               </div>
               <div class="u-form-group u-form-group-4">
                 <label for="text-9bfe" class="u-form-control-hidden u-label"></label>
-                <input type="text" placeholder="Amount" id="text-9bfe" name="text" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5">
+                {{form_load.amount}}
+                <!-- <input type="text" placeholder="Amount" id="text-9bfe" name="text" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5"> -->
               </div>
               <div class="u-align-left u-form-group u-form-submit u-form-group-5">
                 <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>

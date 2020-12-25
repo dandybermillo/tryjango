@@ -4,6 +4,25 @@ from django.contrib.auth.models import User, Group
 # tutorial/models.py
  
 # Create your models here.
+
+
+
+class livePost(models.Model):
+      READY,NOT_READY,ALMOST_DONE =(0,1,2)
+      STATUS_CODE = ((READY,"READY"),(NOT_READY,"NOT READY"),(ALMOST_DONE,"ALMOST DONE"))
+      
+      MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(0,1,2,3,4)
+      CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
+      
+      
+      member_id = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
+      status =  models.PositiveIntegerField(default =NOT_READY, choices = STATUS_CODE)
+      Remarks =  models.CharField(max_length=300)
+      Category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
+
+
+      
+
   
 class CodeGeneratorModel(models.Model):
       sender_id =models.IntegerField(default = 0)
@@ -45,6 +64,65 @@ class ContactModel(models.Model):
 
     def __str__(self):
         return self.name
+
+class DeliveryModel(models.Model):
+    PASSPORT,DRIVER,SSS,POSTAL,TIN= (0,1,2,3,4)
+    cat = ((PASSPORT,"Passport"),(DRIVER,'Driver Licence'),(SSS,'SSS/GSIS/UMID'),(POSTAL,'Postal ID'),(TIN, 'TIN ID' ))
+    name = models.CharField(max_length=124)
+    phone = models.CharField(max_length=124)
+    origin =  models.CharField(max_length=300,blank =True, null =True)
+    destination =  models.CharField(max_length=300,blank =True, null =True)
+    receiver = models.CharField(max_length=124)
+    pickup =models.DateField(  blank= True, null =True)
+    identification =models.PositiveIntegerField(default = DRIVER ,choices = cat)
+
+class MessageModel(models.Model):
+    name = models.CharField(max_length=124)
+    email = models.CharField(max_length=124)
+    message = models.CharField(max_length=200)
+
+# ----------------  services --------------------
+class ConstructionModel(models.Model):
+       WORKER,MATERIAL =(0,1)
+       cat =((WORKER,"Worker"),(MATERIAL,"Materials"))
+       name = models.CharField(max_length=124)
+       phone = models.CharField(max_length=124)
+       description =  models.CharField(max_length=300)
+       category = models.PositiveIntegerField(default = WORKER ,choices = cat)
+       message =  models.CharField(max_length=300)
+
+       
+ 
+class MechanicModel(models.Model):
+       AUTO,GENERAL =(0,1)
+       cat =((AUTO,"AUTO MECHANIC"),(GENERAL,"GENERAL MECHANiC"))
+       name = models.CharField(max_length=124)
+       phone = models.CharField(max_length=124)
+       address = models.CharField(max_length=300)
+       category = models.PositiveIntegerField(default = AUTO ,choices = cat)
+       description =  models.CharField(max_length=300)
+       
+
+class RepairModel(models.Model):
+       name = models.CharField(max_length=124)
+       phone = models.CharField(max_length=124)
+       description =  models.CharField(max_length=300)
+      
+ 
+class LoadModel(models.Model):
+    SMART,GLOBE,DITO,TALK,SUN =(0,1,2,3,4)
+    cat =((SMART,"SMART"),(GLOBE,"GLOBE"),(DITO,"DITO"),(TALK,"TALK N TEXT"),(SUN,"SUN CELLULAR"))
+    name = models.CharField(max_length=124)
+    phone = models.CharField(max_length=124)
+    carrier = models.PositiveIntegerField(default = SMART ,choices = cat) 
+    amount = models.FloatField(default =0 )       
+
+
+
+
+
+# ----------------  services end --------------------
+
 class dayTransactionModel(models.Model):
    PAYMENT,VENTURE,TRANSACTION=(0,1,2)
    cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"))

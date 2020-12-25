@@ -4,7 +4,7 @@ from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,Ventu
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
-from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,ContactModel
+from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,ContactModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -97,7 +97,37 @@ class dayTransactionModelAdmin(admin.ModelAdmin):
 class ContactModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','address'
 ]
-    
+class MessageModelAdmin(admin.ModelAdmin):
+    list_display = ['name','email','message'
+]
+
+class LoadModelAdmin(admin.ModelAdmin):
+    list_display = ['name','phone','carrier','amount'
+]  
+class RepairModelAdmin(admin.ModelAdmin):
+    list_display = ['name','phone','description'
+] 
+class MechanicModelAdmin(admin.ModelAdmin):
+    list_display = ['name','phone','description'
+]
+class ConstructionModelAdmin(admin.ModelAdmin):
+    list_display = ['name','phone','description','category','message'
+]
+class DeliveryModelAdmin(admin.ModelAdmin):
+    list_display = ['name','phone','origin','destination','receiver','pickup','identification'
+]    
+
+admin.site.register(DeliveryModel,DeliveryModelAdmin)  
+
+admin.site.register(ConstructionModel,ConstructionModelAdmin)  
+admin.site.register(MechanicModel,RepairModelAdmin)
+
+admin.site.register(RepairModel,MechanicModelAdmin)
+
+admin.site.register(LoadModel,LoadModelAdmin)
+
+admin.site.register(MessageModel,MessageModelAdmin)
+
 admin.site.register(ContactModel,ContactModelAdmin)
 
 admin.site.register(dayTransactionModel,dayTransactionModelAdmin)

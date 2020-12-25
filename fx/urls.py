@@ -1,5 +1,6 @@
 from django.urls import path,include
 from . import views,user_views
+from  . views import AjaxHandlerView
 from django.contrib.auth.views import LogoutView
 
 app_name = 'fx'
@@ -66,7 +67,10 @@ urlpatterns = [
   # path('success/payment_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.payment_venture_result, name="payment_venture_result_url"),
 
 
+  #test
+    path('demo/',AjaxHandlerView.as_view(), name='AjaxHandlerView_url'),
 
+  #end test
 
 
        # -------------- user profiles -------------------
