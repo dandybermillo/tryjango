@@ -7,7 +7,7 @@ from django.contrib.auth import (
     get_user_model
 
 )
-from .models import ContactModel,MessageModel
+from .models import MessageModel
 from fx.models import Tmp_UsernameModel
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -22,30 +22,30 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 
-class LoadForm(forms.ModelForm):
-    CARRIER_CHOICES= [
+# class LoadForm(forms.ModelForm):
+#     CARRIER_CHOICES= [
     
-    ("SMART","SMART"),("GLOBE","GLOBE"),("DITO","DITO"),("TALK","TALK N TEXT"),("SUN","SUN CELLULAR"),
-]
-    name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-    phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-    carrier = forms.ChoiceField(label='', choices=CARRIER_CHOICES, widget=forms.Select(attrs={'class':'u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5'}))
-    amount = forms.FloatField(required = True,widget=forms.NumberInput(attrs={'placeholder': 'Amount', 'step': "0.01",'class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-    class Meta:
-        model = ContactModel
-        fields =["name","phone","carrier","amount"]
+#     ("SMART","SMART"),("GLOBE","GLOBE"),("DITO","DITO"),("TALK","TALK N TEXT"),("SUN","SUN CELLULAR"),
+# ]
+#     name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+#     phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+#     carrier = forms.ChoiceField(label='', choices=CARRIER_CHOICES, widget=forms.Select(attrs={'class':'u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5'}))
+#     amount = forms.FloatField(required = True,widget=forms.NumberInput(attrs={'placeholder': 'Amount', 'step': "0.01",'class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+#     class Meta:
+#         model = ContactModel
+#         fields =["name","phone","carrier","amount"]
     
-class SignUpModelForm(forms.ModelForm):
-    name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-    phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
-    address = forms.CharField(
-        label='Address',required =True,
-        widget=forms.TextInput(attrs={'placeholder': 'Current Address','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'})
-    )
-    birthday = forms.DateField(required = True,widget=forms.DateInput(attrs={'type':'date','placeholder': 'MM/DD/YY',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))    #, 'min':"1920-01-01", 'max':"2010-12-31"}))
-    class Meta:
-        model = ContactModel
-        fields =["name","phone","address","birthday"]
+# class SignUpModelForm(forms.ModelForm):
+#     name = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Fullname','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+#     phone = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Enter your phone (e.g. +14155552675)','pattern':'\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))
+#     address = forms.CharField(
+#         label='Address',required =True,
+#         widget=forms.TextInput(attrs={'placeholder': 'Current Address','class':'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'})
+#     )
+#     birthday = forms.DateField(required = True,widget=forms.DateInput(attrs={'type':'date','placeholder': 'MM/DD/YY',"class":'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}))    #, 'min':"1920-01-01", 'max':"2010-12-31"}))
+#     class Meta:
+#         model = ContactModel
+#         fields =["name","phone","address","birthday"]
 class MessageForm(forms.ModelForm):
     name = forms.CharField(required = True,widget=forms.PasswordInput(attrs={'placeholder': 'Enter your Name','class':'u-input u-input-rectangle u-white'}))
 

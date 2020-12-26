@@ -76,6 +76,14 @@ urlpatterns = [
 
   path('sign-in/', views.LoginView.as_view(), name="sign_in"),
   path('user/', views.user_login_success, name="user_login_success"), 
+  
+  path('join/', views.JoinView.as_view(), name="join_url"), 
+  path('mobile/', views.MobileView.as_view(), name="mobile_url"), 
+  path('message/', views.MessageView.as_view(), name="message_url"), 
+
+
+
+   
   #end test
 
 
@@ -86,7 +94,7 @@ urlpatterns = [
   
   path("services/", user_views.services, name="services_url"),
   path("contact/", user_views.contact, name="contact_url"),
-  path("join/", user_views.join, name="join_url"),
+ # path("join/", user_views.join, name="join_url"),
   path("about/", user_views.about, name="about_url"),
   
   path('join/', user_views.join, name='join_url'),

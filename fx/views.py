@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel
+from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -108,9 +108,57 @@ class LoginView(View):
         else:
             print(" access denied!")
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
+class MessageView(View):
+     def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+         
+        print(f"request.post: {request.POST}")
+        try:
+                #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
+            message = MessageModel(name=name,email=email,message =message)
+            message.save() 
+            return JsonResponse({"type":'success', "message":"Your data has been saved!"})
+        except Exception as e:
+            logger.warning(f"@ exception e:{e}")
+            return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
+        print(f"request.POST :{request.POST}")
+class JoinView(View):
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        birthday = request.POST.get('birthday')
+        address = request.POST.get('address')
+        print(f"request.post: {request.POST}")
+        try:
+                #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
+            join = JoinModel(name=name,phone=phone,email=email,birthday =birthday,address = address)
+            join.save() 
+            return JsonResponse({"type":'success', "message":"Your data has been saved!"})
+        except Exception as e:
+            logger.warning(f"@ exception e:{e}")
+            return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
+        print(f"request.POST :{request.POST}")
+ 
+class MobileView(View):
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        select = request.POST.get('select')
+        
+        
+        print(f"select :{select}")
 
+        print(f"request.POST :{request.POST}")
 
-
+       
+        return JsonResponse({"type":'success', "message":"Your data has been saved!"})
+        # else:
+        #     print(" access denied!")
+        #     return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
 
 def create_post(request):
   #  posts = Post.objects.all()

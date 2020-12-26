@@ -55,9 +55,11 @@ class MemberModel (models.Model):
      def name(self):
         return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
  
-class ContactModel(models.Model):
+class JoinModel(models.Model):
     name = models.CharField(max_length=124)
     phone = models.CharField(max_length=124)
+    email= models.EmailField(max_length=254,blank= True,null =True)
+
     birthday = models.DateField(  blank= True, null =True)
     address =  models.CharField(max_length=300,blank =True, null =True)
     
@@ -76,9 +78,9 @@ class DeliveryModel(models.Model):
     pickup =models.DateField(  blank= True, null =True)
     identification =models.PositiveIntegerField(default = DRIVER ,choices = cat)
 
-class MessageModel(models.Model):
+class MessageModel(models.Model):  #contact 
     name = models.CharField(max_length=124)
-    email = models.CharField(max_length=124)
+    email= models.EmailField(max_length=254,blank= True,null =True)
     message = models.CharField(max_length=200)
 
 # ----------------  services --------------------

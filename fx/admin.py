@@ -4,7 +4,7 @@ from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,Ventu
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
-from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,ContactModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel
+from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -94,8 +94,8 @@ class tmpVariablesModelAdmin(admin.ModelAdmin):
 class dayTransactionModelAdmin(admin.ModelAdmin):
     list_display = ['category','customer','date_entered','source_type','amount'
 ]
-class ContactModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','address'
+class JoinModelAdmin(admin.ModelAdmin):
+    list_display = ['name','birthday','phone','address','email'
 ]
 class MessageModelAdmin(admin.ModelAdmin):
     list_display = ['name','email','message'
@@ -128,7 +128,7 @@ admin.site.register(LoadModel,LoadModelAdmin)
 
 admin.site.register(MessageModel,MessageModelAdmin)
 
-admin.site.register(ContactModel,ContactModelAdmin)
+admin.site.register(JoinModel,JoinModelAdmin)
 
 admin.site.register(dayTransactionModel,dayTransactionModelAdmin)
 admin.site.register(tmpVariables,tmpVariablesModelAdmin)
