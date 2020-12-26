@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{% static './css/Page-1.css' %}" >
     
     <script class="u-script" type="text/javascript" src="{% static './js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/custom.js' %}" defer=""></script>
+
     <script class="u-script" type="text/javascript" src="{% static './js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 3.2.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
@@ -38,7 +40,7 @@
 		"@type": "Organization",
 		"name": "fairechange2",
 		"url": "index.html",
-		"logo": "images/logo1.jpg"
+		"logo": "/static/img/image/logo1.jpg"
 }</script>
     <meta property="og:title" content="Page 1">
     <meta property="og:type" content="website">
@@ -154,25 +156,30 @@
 </g><g><g><path d="M145.707,312.512c-14.955-9.045-32.149-13.845-49.707-13.845c-52.928,0-96,43.072-96,96    c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667C21.333,353.493,54.827,320,96,320    c13.675,0,27.029,3.712,38.635,10.752c5.013,3.051,11.584,1.451,14.656-3.584C152.363,322.133,150.741,315.584,145.707,312.512z"></path>
 </g>
 </g></svg></span>
-                      <div class="u-form u-form-1">
-                        <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px" source="custom" name="Login">
-                          <div class="u-form-group u-form-name">
-                            <label for="name-558c" class="u-form-control-hidden u-label u-label-1">Name</label>
-                            <input type="text" placeholder="Name" id="name-558c" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="" autofocus="autofocus">
-                          </div>
-                          <div class="u-form-email u-form-group">
-                            <label for="email-558c" class="u-form-control-hidden u-label u-label-2">Email</label>
-                            <input type="email" placeholder="password" id="email-558c" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
-                          </div>
-                          <div class="u-form-group u-form-submit">
-                            <a href="#" class="u-btn u-btn-submit u-button-style">Signin</a>
-                            <input type="submit" value="submit" class="u-form-control-hidden">
-                          </div>
-                          <div class="u-form-send-message u-form-send-success">Thank you!</div>
-                          <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-                          <input type="hidden" value="" name="recaptchaResponse">
-                        </form>
-                      </div>
+                      
+<div class="u-form u-form-1">
+  <form id="login-form" action="/sign-in/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px">
+    {% csrf_token %}
+    <div class="u-form-group u-form-name">
+      <label for="name-558c" class="u-form-control-hidden u-label u-label-1">Username</label>
+      <input type="text" placeholder="Username"  name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="" autofocus="autofocus">
+    </div>
+    <div class="u-form-email u-form-group">
+      <label for="email-558c" class="u-form-control-hidden u-label u-label-2">Email</label>
+      <input type="password" placeholder="password"  name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
+    </div>
+    <div class="u-form-group u-form-submit">
+    
+      <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style" value="Signin">
+    </div>
+    
+    <div id="login-success" class="u-form-send-success"></div>
+    <div id="login-error" class="u-form-send-error u-form-send-message"></div>
+  
+  </form>
+</div>
+
+
                       <p class="u-align-left u-small-text u-text u-text-font u-text-palette-1-base u-text-variant u-text-10">
                         <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-dialog-link u-hover-none u-none u-text-hover-black u-text-palette-1-base u-btn-2" href="#sec-fc8a">Forgot Password? </a>
                       </p>

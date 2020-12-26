@@ -69,7 +69,13 @@ urlpatterns = [
 
   #test
     path('demo/',AjaxHandlerView.as_view(), name='AjaxHandlerView_url'),
+    path('create/',views.create_post, name='create_url'),
 
+
+
+
+  path('sign-in/', views.LoginView.as_view(), name="sign_in"),
+  path('user/', views.user_login_success, name="user_login_success"), 
   #end test
 
 

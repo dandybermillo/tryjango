@@ -1123,7 +1123,7 @@
 .u-section-3 .u-image-1 {
   width: 216px;
   height: 216px;
-  background-image: url("images/logo1.jpg");
+  background-image: url("/static/img/image/logo1.jpg");
   background-position: 50% 50%;
   box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
   margin: 50px auto 0;

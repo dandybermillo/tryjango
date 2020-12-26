@@ -85,11 +85,60 @@ source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletMode
 TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 
-#test
+def user_login_success(request):
+        return render(request, 'fx/users/user_page.html', {'posts':"posts"})     
 
+    # return HttpResponse(f"<h1 >Login success. logged in username: { request.user.username }</h1>")
+
+class LoginView(View):
+    def post(self, request, *args, **kwargs):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print (f"password:  {password}")
+
+        if username == "" or password=="":
+            return JsonResponse({"type": "error", "message": "Input both username & password"})
+
+        user = authenticate(username= username, password=password)
+
+        if user is not None:
+            print(" successfull!")
+            login(request, user)
+            return JsonResponse({"type":'success', "message":"Login Success"})
+        else:
+            print(" access denied!")
+            return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
+
+
+
+
+def create_post(request):
+  #  posts = Post.objects.all()
+    response_data = {}
+    print(f"create_post: {create_post}")
+
+    if request.POST.get('action') == 'post':
+        try: 
+            title = request.POST.get('title')
+            description = request.POST.get('description')
+
+            response_data['title'] = title
+            response_data['description'] = description
+        except Exception as e:
+             print(f" Errror: {e}")
+
+        # Post.objects.create(
+        #     title = title,
+        #     description = description,
+        #     )
+        return JsonResponse(response_data)
+
+    return render(request, 'fx/venture/test.html', {'posts':"posts"})     
 
 class AjaxHandlerView(View):
+   print("AjaxHandlerView:")
    def get(self,request):
+       
       text =  request.GET.get('button_text')
       if request.is_ajax():
              t = time()
@@ -2374,7 +2423,7 @@ def unauthorized_user(request):
 
  
 def my_home_page(request):
-         print(" id and request id   is not same.")
+         print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
          
          return render(request, "fx/users/index.html",context) 

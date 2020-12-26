@@ -5,6 +5,23 @@
 {% load crispy_forms_tags %}
 {% block sub_content%}
 
+ <div>
+    <form method="POST" id="post-form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" id="title" placeholder="Title">
+        </div>
+         <div class="form-group">
+           <label>Description</label>
+           <textarea class="form-control" id="description" placeholder="Description"></textarea>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+
+ </div>
+
      <button type = "button" class="btn btn-success btn-lg"> GET </button>
 <div>
      <ul id ='seconds'>
@@ -14,7 +31,7 @@
  
     
     <div>
-        <form action="" class="needs-validation" method="POST">
+        <!-- <form action="" class="needs-validation" method="POST">
             {% csrf_token %}
             
                     <input id="type-of-transaction" type="text"   
@@ -22,7 +39,7 @@
                         value="">
                         <ul id = 'right'>
                         </ul>
-        </form>
+        </form> -->
 
     
 </div>
@@ -36,6 +53,40 @@
     
     
     $(document).ready(function(){
+
+
+        $(document).on('submit', '#post-form',function(e){
+    $.ajax({
+        type:'post',
+        url:'{% url "fx:create_url" %}',
+        data:{
+            title:$('#title').val(),
+            description:$('#description').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+        },
+        success:function(json){
+            document.getElementById("post-form").reset();
+            console.log("success here" );
+            // $(".posts").prepend('<div class="col-md-6">'+
+            //     '<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">' +
+            //         '<div class="col p-4 d-flex flex-column position-static">' +
+            //             '<h3 class="mb-0">' + json.title + '</h3>' +
+            //             '<p class="mb-auto">' + json.description + '</p>' +
+            //         '</div>' +
+            //     '</div>' +
+            // '</div>' 
+            // )
+        },
+        error : function(xhr,errmsg,err) {
+            console.log("error here" );
+        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+    }
+    });
+});
+
+
+
 
     console.log("cokie: "+document.cookie);
     function getCookie(name) {
