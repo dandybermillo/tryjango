@@ -1457,3 +1457,23 @@ INFO 2020-12-27 14:40:29,291 autoreload 20416 17512 Watching for file changes wi
 INFO 2020-12-27 14:40:32,724 autoreload 20416 17512 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
 INFO 2020-12-27 14:40:33,310 autoreload 7992 21648 Watching for file changes with StatReloader
 INFO 2020-12-27 14:41:19,013 autoreload 13316 12716 Watching for file changes with StatReloader
+INFO 2020-12-27 14:41:26,510 basehttp 13316 7836 "GET / HTTP/1.1" 200 164138
+INFO 2020-12-27 14:41:27,148 basehttp 13316 10392 "GET /static/js/custom.js HTTP/1.1" 200 5407
+INFO 2020-12-27 14:41:27,150 basehttp 13316 18600 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 14:41:27,151 basehttp 13316 488 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 14:41:27,152 basehttp 13316 18372 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 14:41:27,156 basehttp 13316 7836 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 14:41:27,962 basehttp 13316 18372 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 14:41:28,023 basehttp 13316 18372 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 14:41:28,077 basehttp 13316 7836 "GET / HTTP/1.1" 200 164138
+INFO 2020-12-27 14:41:28,228 basehttp 13316 10392 "GET /static/js/custom.js HTTP/1.1" 200 5407
+INFO 2020-12-27 14:41:28,229 basehttp 13316 488 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 14:41:28,230 basehttp 13316 18600 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 14:41:28,233 basehttp 13316 19724 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 14:41:28,237 basehttp 13316 18372 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+WARNING 2020-12-27 14:41:28,541 basehttp 13316 18372 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 14:41:29,910 basehttp 13316 19724 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 14:41:30,179 basehttp 13316 19724 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 14:41:30,945 log 13316 488 Not Found: /favicon.ico
+WARNING 2020-12-27 14:41:30,945 basehttp 13316 488 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 14:41:49,802 basehttp 13316 7836 "POST /process-form/ HTTP/1.1" 200 56
