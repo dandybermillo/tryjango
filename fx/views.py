@@ -70,7 +70,7 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 model_list= {"venture":"VentureModel","trade":"TradingModel"}
-Model_data_list ={"message":"MessageModel","join":"JoinModel"}
+Model_data_list ={"message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","contruction":"ConstructionModel"}
 model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
@@ -98,7 +98,7 @@ class LoginView(View):
         print (f"password:  {password}")
 
         if username == "" or password=="":
-            return JsonResponse({"type": "error", "message": "Input both username & password"})
+            return JsonResponse({"type": "error", "message": "Please input both username & password"})
 
         user = authenticate(username= username, password=password)
 
@@ -109,27 +109,12 @@ class LoginView(View):
         else:
             print(" access denied!")
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
-class MessageView(View):
-     def post(self, request, *args, **kwargs):
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-         
-        print(f"request.post: {request.POST}")
-        try:
-                #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
-            message = MessageModel(name=name,email=email,message =message)
-            message.save() 
-            return JsonResponse({"type":'success', "message":"Your data has been saved!"})
-        except Exception as e:
-            logger.warning(f"@ exception e:{e}")
-            return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
-        print(f"request.POST :{request.POST}")
+
         
         
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
-        lists =["name","address","phone","message","description","email","birthday","amount","carrier"]
+        lists =["name","address","phone","message","description","email","birthday","amount","carrier","amount"]
         filter_fields ={}
         for key, value in request.POST.items():
                 if key in lists:

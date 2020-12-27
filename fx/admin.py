@@ -102,7 +102,7 @@ class MessageModelAdmin(admin.ModelAdmin):
 ]
 
 class LoadModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','carrier','amount'
+    list_display = ['name','phone','carrier','amount','email'
 ]  
 class RepairModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','description'

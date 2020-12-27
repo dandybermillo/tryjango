@@ -157,7 +157,7 @@
 </g>
 </g></svg></span>
                       
-<div class="u-form u-form-1">
+<div id="login-container" class="u-form u-form-1">
   <form id="login-form" action="/sign-in/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px">
     {% csrf_token %}
     <div class="u-form-group u-form-name">
@@ -172,10 +172,10 @@
     
       <input id ="login-btn" type="submit" value="submit" class="u-btn u-btn-submit u-button-style" value="Signin">
     </div>
-    
+     
     <div id="login-success" class="u-form-send-success"></div>
     <div id="login-error" class="u-form-send-error u-form-send-message"></div>
-  
+      
   </form>
 </div>
 
@@ -1007,8 +1007,10 @@
           <div class="u-expanded-width u-form u-form-1">
             <!-- <form id="login-form" action="/sign-in/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px">
               {% csrf_token %} -->
-            <form id="mobile-form"  action ="/mobile/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="mobile-form">
+            <form id="mobile-form"   action ="/mobile/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="mobile-form">
               {% csrf_token %}
+              <input type="hidden"  name="code" value="mobile">
+
               <div class="u-form-group u-form-name u-form-group-1">
                 <label for="name-3e72" class="u-form-control-hidden u-label">Name</label>
                 <input type="text" placeholder="Enter your Name" id="name-3e72" name="name" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
@@ -1024,7 +1026,7 @@
               <div class="u-form-group u-form-select u-form-group-4">
                 <label for="select-4a6d" class="u-label">Carrier</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-4a6d" name="select" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="required">
+                  <select id="select-4a6d" name="carrier" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="required">
                     <option value="Smart">Smart</option>
                     <option value="Globe">Globe</option>
                     <option value="Sun Cellular">Sun Cellular</option>
@@ -1033,12 +1035,22 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                 </div>
               </div>
+
               <div class="u-align-left u-form-group u-form-submit u-form-group-5">
+
+                <button id = "mobile-btn" form="mobile-form" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
+
+              </div>
+              
+              <div id="join-success" class="u-form-send-success"></div>
+              <div id="join-error" class="u-form-send-error u-form-send-message"></div>
+
+              <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-5">
                 <button id = "mobile-btn" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
 
-                <!-- <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
-                <input type="submit" value="submit" class="u-form-control-hidden"> -->
-              </div>
+                 <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
+                <input type="submit" value="submit" class="u-form-control-hidden"> 
+              </div>  -->
 
               <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
               <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>

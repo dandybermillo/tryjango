@@ -35,7 +35,7 @@ class MemberModel (models.Model):
     
      gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))
      gender = models.CharField(max_length=4,blank =False, null= False,  choices= gender_status)
-     user =models.OneToOneField(User,null =True, on_delete = models.CASCADE, unique =  True)
+     user = models.OneToOneField(User,null =True, on_delete = models.CASCADE, unique =  True)
      
      
      firstname = models.CharField(max_length=50,blank =False, null =False)
@@ -49,7 +49,7 @@ class MemberModel (models.Model):
      birthday = models.DateField(  blank= True, null =True)
      active =  models.BooleanField(default= True)
      reserve =  models.BooleanField(default= False)
-     member_id = models.CharField(max_length=11,blank =False, null =False,default="DA/12/12", unique =  True)
+     member_id = models.CharField(max_length=11,blank =False, null =False,default="DA1212-1", unique =  True)
 
      @property
      def name(self):
@@ -117,6 +117,7 @@ class LoadModel(models.Model):
     name = models.CharField(max_length=124)
     phone = models.CharField(max_length=124)
     carrier = models.PositiveIntegerField(default = SMART ,choices = cat) 
+    email= models.EmailField(max_length=254,blank= True,null =True)
     amount = models.FloatField(default =0 )       
 
 

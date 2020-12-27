@@ -42,53 +42,10 @@
     setTimeout(function () {
       $("#login-success").css({ display: "none" });
       $("#login-error").css({ display: "none" });
-    }, 40000);
+    }, 10000);
   });
 
-  $("#join-btnssss").click(function(e) {
-    // $("#login-form").submit(function (e) {
-       console.log("submit form joins");
-       e.preventDefault();
-   //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
-       $.ajax({
-         type: "POST",
-         url: "/join/",
-   
-         data: $("#join-form").serialize(),
-         success: function (response) {
-           // do something with response
-           response["result"]; // equals 'Success or failed';
-           response["message"]; // equals 'you"re logged in or You messed up';
-   
-           if (response["type"] === "success") {
-             $("#join-form").trigger("reset");
-             $("#join-success").text(response["message"]);
-             $("#join-success").css({ display: "block" });
-             console.log("data saved");
-             
-            //  window.location.replace("/user/");
-           } else if (response["type"] === "error") {
-            // console.log("Something went wrong! Try again.");
-             $("#join-error").text(response["message"]);
-             $("#join-error").css({ display: "block" });
-             console.log("saving denied");
-   
-           }
-         },
-         error: function (response) {
-           // do something with response
-           console.log("Something went wrong! Try again.");
-           $("#join-error").text("Something went wrong! Try again.");
-           $("#join-error").css({ display: "block" });
-         },
-       });
-   
-       setTimeout(function () {
-         $("#join-success").css({ display: "none" });
-         $("#join-error").css({ display: "none" });
-       }, 40000);
-     });
-
+  
      $(".submit-btn").click(function(e) {
 
          console.log("---------- fom id:"+$(this).attr("form"));
