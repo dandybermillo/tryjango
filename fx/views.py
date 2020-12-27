@@ -70,7 +70,7 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 model_list= {"venture":"VentureModel","trade":"TradingModel"}
-Model_data_list ={"message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","contruction":"ConstructionModel"}
+Model_data_list ={"message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","construction":"ConstructionModel"}
 model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
@@ -114,7 +114,8 @@ class LoginView(View):
         
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
-        lists =["name","address","phone","message","description","email","birthday","amount","carrier","amount"]
+        lists =["name","address","phone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
+        #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
         for key, value in request.POST.items():
                 if key in lists:

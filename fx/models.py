@@ -57,7 +57,7 @@ class MemberModel (models.Model):
  
 class JoinModel(models.Model):
     name = models.CharField(max_length=124)
-    phone = models.CharField(max_length=124)
+    phone = models.CharField(max_length=124,blank= True,null =True)
     email= models.EmailField(max_length=254,blank= True,null =True)
 
     birthday = models.DateField(  blank= True, null =True)
@@ -70,28 +70,34 @@ class JoinModel(models.Model):
 class DeliveryModel(models.Model):
     PASSPORT,DRIVER,SSS,POSTAL,TIN= (0,1,2,3,4)
     cat = ((PASSPORT,"Passport"),(DRIVER,'Driver Licence'),(SSS,'SSS/GSIS/UMID'),(POSTAL,'Postal ID'),(TIN, 'TIN ID' ))
-    name = models.CharField(max_length=124)
-    phone = models.CharField(max_length=124)
-    origin =  models.CharField(max_length=300,blank =True, null =True)
-    destination =  models.CharField(max_length=300,blank =True, null =True)
-    receiver = models.CharField(max_length=124)
-    pickup =models.DateField(  blank= True, null =True)
-    identification =models.PositiveIntegerField(default = DRIVER ,choices = cat)
+    name = models.CharField(max_length=124,blank =False, null =False)
+    phone = models.CharField(max_length=124 ,blank= True,null =True)
+    address =  models.CharField(max_length=300,blank =False, null =False)
+    email= models.EmailField(max_length=254,blank= True,null =True)
+    recepient = models.CharField(max_length=124,blank =False, null =False)
+    recepient_address = models.CharField(max_length=124,blank =False, null =False)
+    recepient_phone = models.CharField(max_length=124 ,blank =True, null =True)
+    message = models.CharField(max_length=300 ,blank =True, null =True)
+    
+#     pickup =models.DateField(  blank= True, null =True)
+#     identification =models.PositiveIntegerField(default = DRIVER ,choices = cat)
+    
+     
 
 class MessageModel(models.Model):  #contact 
     name = models.CharField(max_length=124)
     email= models.EmailField(max_length=254,blank= True,null =True)
-    message = models.CharField(max_length=200)
+    message = models.CharField(max_length=300,blank= False,null =False)
 
 # ----------------  services --------------------
 class ConstructionModel(models.Model):
-       WORKER,MATERIAL =(0,1)
-       cat =((WORKER,"Worker"),(MATERIAL,"Materials"))
+       WORKER,MATERIAL,MASON,FOREMAN =(0,1,2,3)
+       cat =((WORKER,"Worker"),(MATERIAL,"Materials"),(MASON,"Mason"),(FOREMAN,"Forman"))
        name = models.CharField(max_length=124)
-       phone = models.CharField(max_length=124)
-       description =  models.CharField(max_length=300)
+       phone = models.CharField(max_length=124 ,blank= False,null =False)
+       email= models.EmailField(max_length=254,blank= True,null =True)
        category = models.PositiveIntegerField(default = WORKER ,choices = cat)
-       message =  models.CharField(max_length=300)
+       message =  models.CharField(max_length=300,blank= False,null =False)
 
        
  
@@ -100,6 +106,7 @@ class MechanicModel(models.Model):
        cat =((AUTO,"AUTO MECHANIC"),(GENERAL,"GENERAL MECHANiC"))
        name = models.CharField(max_length=124)
        phone = models.CharField(max_length=124)
+       email= models.EmailField(max_length=254,blank= True,null =True)
        address = models.CharField(max_length=300)
        category = models.PositiveIntegerField(default = AUTO ,choices = cat)
        description =  models.CharField(max_length=300)
@@ -108,6 +115,7 @@ class MechanicModel(models.Model):
 class RepairModel(models.Model):
        name = models.CharField(max_length=124)
        phone = models.CharField(max_length=124)
+       email= models.EmailField(max_length=254,blank= True,null =True)
        description =  models.CharField(max_length=300)
       
  

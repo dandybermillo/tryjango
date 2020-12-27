@@ -51,7 +51,7 @@
          console.log("---------- fom id:"+$(this).attr("form"));
          selected_form = $(this).attr("form");
          code = $(this).attr("code");
-         console.log("Selected form" +selected_form + " " +code);
+         console.log("Selected form: " +selected_form + " " +code);
        
          e.preventDefault();
      //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",

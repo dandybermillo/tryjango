@@ -105,24 +105,24 @@ class LoadModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','carrier','amount','email'
 ]  
 class RepairModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description'
+    list_display = ['name','phone','description','email'
 ] 
 class MechanicModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description'
+    list_display = ['name','phone','description','email','category'
 ]
 class ConstructionModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description','category','message'
+    list_display = ['name','phone','category','message','email'
 ]
 class DeliveryModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','origin','destination','receiver','pickup','identification'
+    list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message'
 ]    
 
 admin.site.register(DeliveryModel,DeliveryModelAdmin)  
 
 admin.site.register(ConstructionModel,ConstructionModelAdmin)  
-admin.site.register(MechanicModel,RepairModelAdmin)
+admin.site.register(RepairModel,RepairModelAdmin)
 
-admin.site.register(RepairModel,MechanicModelAdmin)
+admin.site.register(MechanicModel,MechanicModelAdmin)
 
 admin.site.register(LoadModel,LoadModelAdmin)
 
