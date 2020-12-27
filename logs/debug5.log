@@ -1,1 +1,1284 @@
 INFO 2020-12-26 22:23:54,543 autoreload 24056 27920 Watching for file changes with StatReloader
+INFO 2020-12-26 22:29:12,434 autoreload 4552 19808 Watching for file changes with StatReloader
+INFO 2020-12-26 22:58:13,039 autoreload 19884 16824 Watching for file changes with StatReloader
+INFO 2020-12-26 22:58:36,846 autoreload 19884 16824 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 22:58:37,605 autoreload 24464 22852 Watching for file changes with StatReloader
+INFO 2020-12-26 22:58:45,715 autoreload 24464 22852 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 22:58:46,224 autoreload 15076 19640 Watching for file changes with StatReloader
+INFO 2020-12-26 22:58:49,635 autoreload 15076 19640 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 22:58:50,041 autoreload 508 22364 Watching for file changes with StatReloader
+INFO 2020-12-26 22:59:22,024 autoreload 508 22364 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 22:59:22,694 autoreload 3732 18156 Watching for file changes with StatReloader
+INFO 2020-12-26 22:59:59,847 autoreload 3732 18156 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 23:00:00,495 autoreload 9812 7944 Watching for file changes with StatReloader
+INFO 2020-12-26 23:00:06,128 autoreload 9812 7944 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 23:00:06,978 autoreload 22584 26100 Watching for file changes with StatReloader
+INFO 2020-12-26 23:00:14,810 autoreload 22584 26100 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 23:00:15,231 autoreload 3628 13300 Watching for file changes with StatReloader
+INFO 2020-12-26 23:00:19,711 autoreload 3628 13300 C:\Users\dan\just_django\tryjango\trydjango\settings.py changed, reloading.
+INFO 2020-12-26 23:00:20,355 autoreload 7368 21904 Watching for file changes with StatReloader
+INFO 2020-12-26 23:00:34,135 basehttp 7368 24352 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:00:34,173 basehttp 7368 24352 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-26 23:00:34,175 basehttp 7368 17928 "GET /static/css/Page-1.css HTTP/1.1" 304 0
+INFO 2020-12-26 23:00:34,177 basehttp 7368 26768 "GET /static/js/custom.js HTTP/1.1" 304 0
+WARNING 2020-12-26 23:00:34,238 basehttp 7368 26768 "GET /static/css/images/logo1.jpg HTTP/1.1" 404 1686
+INFO 2020-12-26 23:04:36,403 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:04:36,810 basehttp 7368 17928 "GET /static/css/images/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-26 23:04:40,062 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:05:09,506 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:05:30,883 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:05:35,461 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:05:37,416 basehttp 7368 17928 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:06:01,051 autoreload 28280 13096 Watching for file changes with StatReloader
+INFO 2020-12-26 23:06:04,379 basehttp 28280 28092 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:06:04,406 basehttp 28280 28092 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-26 23:06:08,227 basehttp 28280 28092 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:06:11,373 basehttp 28280 28092 "GET / HTTP/1.1" 200 163335
+INFO 2020-12-26 23:11:58,570 basehttp 28280 17148 "GET / HTTP/1.1" 200 163368
+INFO 2020-12-26 23:11:58,808 basehttp 28280 17148 "GET /static/js/custom.js HTTP/1.1" 200 6893
+INFO 2020-12-26 23:11:58,874 basehttp 28280 9520 "GET /static/css/images/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-26 23:12:12,185 views 28280 9520 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-26 23:12:12,187 basehttp 28280 9520 "POST /join/ HTTP/1.1" 200 51
+INFO 2020-12-26 23:12:38,003 basehttp 28280 9520 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-26 23:14:57,936 basehttp 28280 9520 "GET / HTTP/1.1" 200 163405
+INFO 2020-12-26 23:14:58,030 basehttp 28280 9520 "GET /static/js/custom.js HTTP/1.1" 200 6895
+INFO 2020-12-26 23:14:58,242 basehttp 28280 9520 "GET /static/css/images/logo1.jpg HTTP/1.1" 304 0
+INFO 2020-12-26 23:15:02,066 basehttp 28280 9520 "GET / HTTP/1.1" 200 163405
+INFO 2020-12-26 23:15:52,586 basehttp 28280 9520 "GET / HTTP/1.1" 200 163405
+INFO 2020-12-26 23:15:52,621 basehttp 28280 9520 "GET /static/js/custom.js HTTP/1.1" 304 0
+WARNING 2020-12-26 23:16:01,600 views 28280 9520 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-26 23:16:01,600 basehttp 28280 9520 "POST /join/ HTTP/1.1" 200 51
+INFO 2020-12-27 04:58:24,247 autoreload 15812 14452 Watching for file changes with StatReloader
+INFO 2020-12-27 05:03:26,824 basehttp 15812 10636 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:03:26,890 basehttp 15812 10636 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:26,892 basehttp 15812 15680 "GET /static/css/Page-1.css HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:26,913 basehttp 15812 13680 "GET /static/js/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:26,916 basehttp 15812 10636 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:26,919 basehttp 15812 16944 "GET /static/img/image/logo1.jpg HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:27,056 basehttp 15812 16944 "GET /static/css/images/logo1.jpg HTTP/1.1" 304 0
+INFO 2020-12-27 05:03:27,264 basehttp 15812 15680 "GET /static/js/custom.js HTTP/1.1" 200 7040
+WARNING 2020-12-27 05:03:27,347 log 15812 15680 Not Found: /favicon.ico
+WARNING 2020-12-27 05:03:27,355 basehttp 15812 15680 "GET /favicon.ico HTTP/1.1" 404 13627
+INFO 2020-12-27 05:03:47,637 basehttp 15812 15680 "POST /sign-in/ HTTP/1.1" 200 51
+INFO 2020-12-27 05:04:24,077 basehttp 15812 15680 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:04:27,799 basehttp 15812 15680 "POST /sign-in/ HTTP/1.1" 200 51
+INFO 2020-12-27 05:04:48,607 basehttp 15812 15680 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-27 05:04:48,822 basehttp 15812 15680 "GET /user/ HTTP/1.1" 200 82
+INFO 2020-12-27 05:04:59,230 basehttp 15812 15680 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:05:01,816 basehttp 15812 15680 "GET / HTTP/1.1" 200 163448
+WARNING 2020-12-27 05:05:44,373 views 15812 15680 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:05:44,373 basehttp 15812 15680 "POST /join/ HTTP/1.1" 200 51
+INFO 2020-12-27 05:06:39,262 autoreload 15812 14452 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:06:39,872 autoreload 16360 10524 Watching for file changes with StatReloader
+INFO 2020-12-27 05:06:45,417 autoreload 16360 10524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:06:45,931 autoreload 9808 13424 Watching for file changes with StatReloader
+INFO 2020-12-27 05:06:49,173 basehttp 9808 18312 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:07:08,541 autoreload 9808 13424 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:07:09,870 autoreload 6812 5084 Watching for file changes with StatReloader
+INFO 2020-12-27 05:07:11,106 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:07:13,378 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:08:32,035 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:09:00,168 basehttp 6812 18300 "POST /join/ HTTP/1.1" 200 59
+WARNING 2020-12-27 05:11:55,366 views 6812 18300 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:11:55,367 basehttp 6812 18300 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:12:45,629 basehttp 6812 18300 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:13:07,797 basehttp 6812 18300 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:13:35,022 basehttp 6812 6192 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:13:35,117 basehttp 6812 16016 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-27 05:13:35,132 basehttp 6812 6440 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-27 05:13:35,860 basehttp 6812 13628 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:13:35,866 basehttp 6812 6440 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:13:35,875 basehttp 6812 6192 "GET /static/js/custom.js HTTP/1.1" 200 7040
+INFO 2020-12-27 05:13:35,880 basehttp 6812 16016 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+WARNING 2020-12-27 05:14:00,968 views 6812 6192 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:14:00,969 basehttp 6812 6192 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:15:19,973 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:15:38,284 basehttp 6812 18300 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:16:07,058 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:16:08,781 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:16:11,096 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+WARNING 2020-12-27 05:16:26,338 views 6812 18300 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:16:26,339 basehttp 6812 18300 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:18:47,264 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:18:49,678 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+INFO 2020-12-27 05:18:51,627 basehttp 6812 18300 "GET / HTTP/1.1" 200 163448
+WARNING 2020-12-27 05:19:20,508 views 6812 18300 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:19:20,510 basehttp 6812 18300 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:19:35,098 autoreload 1744 2316 Watching for file changes with StatReloader
+INFO 2020-12-27 05:20:00,806 basehttp 1744 8040 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:21:40,428 basehttp 1744 6104 "GET / HTTP/1.1" 200 163449
+WARNING 2020-12-27 05:21:45,018 basehttp 1744 2680 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:22:06,913 views 1744 2420 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:22:06,913 basehttp 1744 2420 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:22:11,295 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:11,332 basehttp 1744 8768 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:11,332 basehttp 1744 10872 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:11,334 basehttp 1744 15304 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:11,335 basehttp 1744 8988 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:11,339 basehttp 1744 2420 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:11,348 basehttp 1744 8988 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:11,795 log 1744 8988 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:11,796 basehttp 1744 8988 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:11,800 basehttp 1744 15304 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:22:12,632 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:12,659 basehttp 1744 2420 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:12,660 basehttp 1744 8768 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:12,661 basehttp 1744 10872 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:12,662 basehttp 1744 8884 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:12,663 basehttp 1744 8988 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:12,700 basehttp 1744 8988 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:12,953 log 1744 8988 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:12,953 basehttp 1744 8988 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:13,093 basehttp 1744 8988 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:22:14,891 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:14,915 basehttp 1744 2420 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:14,916 basehttp 1744 10872 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:14,917 basehttp 1744 8768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:14,918 basehttp 1744 17372 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:14,922 basehttp 1744 8884 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:14,956 basehttp 1744 8884 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:15,234 log 1744 8884 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:15,234 basehttp 1744 8884 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:15,285 basehttp 1744 8884 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:22:16,933 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:16,959 basehttp 1744 10872 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:16,959 basehttp 1744 2420 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:16,960 basehttp 1744 8768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:16,962 basehttp 1744 16108 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:16,966 basehttp 1744 17372 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:16,993 basehttp 1744 17372 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:17,278 log 1744 17372 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:17,278 basehttp 1744 17372 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:17,339 basehttp 1744 17372 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:22:19,942 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:19,965 basehttp 1744 2420 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:19,967 basehttp 1744 10872 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:19,968 basehttp 1744 8768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:19,969 basehttp 1744 11764 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:19,973 basehttp 1744 16108 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:20,014 basehttp 1744 16108 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:20,316 log 1744 16108 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:20,316 basehttp 1744 16108 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:20,476 basehttp 1744 16108 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:22:28,371 basehttp 1744 2420 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:22:28,395 basehttp 1744 10872 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:22:28,396 basehttp 1744 2420 "GET /static/js/custom.js HTTP/1.1" 200 6971
+INFO 2020-12-27 05:22:28,398 basehttp 1744 8768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:22:28,399 basehttp 1744 17000 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:22:28,401 basehttp 1744 11764 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:22:28,418 basehttp 1744 11764 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:22:28,642 log 1744 11764 Not Found: /favicon.ico
+WARNING 2020-12-27 05:22:28,642 basehttp 1744 11764 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:22:28,938 basehttp 1744 11764 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:22:44,336 views 1744 2420 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:22:44,337 basehttp 1744 2420 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:23:03,574 basehttp 1744 2420 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:27:29,863 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:29,890 basehttp 1744 10372 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:29,890 basehttp 1744 18064 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:29,890 basehttp 1744 1636 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:29,890 basehttp 1744 14252 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:29,890 basehttp 1744 8832 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:30,193 basehttp 1744 14252 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:27:30,416 basehttp 1744 14252 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:27:30,599 log 1744 1636 Not Found: /favicon.ico
+WARNING 2020-12-27 05:27:30,599 basehttp 1744 1636 "GET /favicon.ico HTTP/1.1" 404 13627
+INFO 2020-12-27 05:27:31,552 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:31,573 basehttp 1744 15768 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:31,575 basehttp 1744 18064 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:31,576 basehttp 1744 10372 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:31,578 basehttp 1744 8832 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:31,581 basehttp 1744 1636 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:31,617 basehttp 1744 1636 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:27:31,924 log 1744 1636 Not Found: /favicon.ico
+WARNING 2020-12-27 05:27:31,925 basehttp 1744 1636 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:27:32,026 basehttp 1744 1636 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:27:33,910 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:33,944 basehttp 1744 8832 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:33,945 basehttp 1744 18064 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:33,945 basehttp 1744 15768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:33,945 basehttp 1744 2584 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:33,945 basehttp 1744 10372 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:33,964 basehttp 1744 2584 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:27:34,527 log 1744 10372 Not Found: /favicon.ico
+WARNING 2020-12-27 05:27:34,527 basehttp 1744 10372 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:27:34,702 basehttp 1744 10372 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:27:35,694 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:35,720 basehttp 1744 8832 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:35,720 basehttp 1744 15768 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:35,722 basehttp 1744 18064 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:35,723 basehttp 1744 13708 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:35,727 basehttp 1744 2584 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:35,730 basehttp 1744 13708 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:27:35,983 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:36,236 basehttp 1744 2584 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:36,310 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:36,350 basehttp 1744 18064 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:36,350 basehttp 1744 13708 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:36,350 basehttp 1744 15768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:36,350 basehttp 1744 8832 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:36,350 basehttp 1744 2584 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:36,376 basehttp 1744 13708 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:27:36,518 basehttp 1744 2584 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:27:36,548 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:36,804 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:36,826 basehttp 1744 18064 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:36,828 basehttp 1744 15768 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:36,831 basehttp 1744 18064 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:36,832 basehttp 1744 15768 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:36,835 basehttp 1744 13708 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:36,873 basehttp 1744 13708 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:27:37,017 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:37,297 basehttp 1744 13708 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:37,400 basehttp 1744 8832 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:27:37,424 basehttp 1744 10536 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:27:37,425 basehttp 1744 15768 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:27:37,426 basehttp 1744 18064 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:27:37,427 basehttp 1744 8832 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:27:37,432 basehttp 1744 13708 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:27:37,455 basehttp 1744 13708 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:27:37,716 basehttp 1744 13708 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:27:37,716 log 1744 15768 Not Found: /favicon.ico
+WARNING 2020-12-27 05:27:37,716 basehttp 1744 15768 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:27:50,641 views 1744 8832 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:27:50,641 basehttp 1744 8832 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:29:00,114 basehttp 1744 5372 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:29:00,148 basehttp 1744 18196 "GET /static/js/custom.js HTTP/1.1" 200 7038
+INFO 2020-12-27 05:29:00,149 basehttp 1744 16204 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:29:00,151 basehttp 1744 18376 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:29:00,152 basehttp 1744 12744 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:29:00,156 basehttp 1744 16216 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:29:00,221 basehttp 1744 16216 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:29:00,313 basehttp 1744 16216 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:29:00,343 basehttp 1744 16216 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 05:29:00,674 basehttp 1744 16216 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:29:00,728 basehttp 1744 16204 "GET /static/js/custom.js HTTP/1.1" 200 7038
+INFO 2020-12-27 05:29:00,729 basehttp 1744 12744 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:29:00,732 basehttp 1744 18376 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:29:00,732 basehttp 1744 18196 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:29:00,732 basehttp 1744 16216 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:29:00,952 basehttp 1744 16216 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:29:01,173 basehttp 1744 16216 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:29:01,459 log 1744 12744 Not Found: /favicon.ico
+WARNING 2020-12-27 05:29:01,459 basehttp 1744 12744 "GET /favicon.ico HTTP/1.1" 404 13627
+INFO 2020-12-27 05:29:12,889 basehttp 1744 5372 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:29:12,914 basehttp 1744 16204 "GET /static/js/custom.js HTTP/1.1" 200 7038
+INFO 2020-12-27 05:29:12,915 basehttp 1744 12744 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:29:12,916 basehttp 1744 18376 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:29:12,917 basehttp 1744 5372 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:29:12,920 basehttp 1744 18196 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:29:12,964 basehttp 1744 18196 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:29:13,508 log 1744 18196 Not Found: /favicon.ico
+WARNING 2020-12-27 05:29:13,508 basehttp 1744 18196 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:29:13,608 basehttp 1744 18196 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:29:19,876 views 1744 5372 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:29:19,876 basehttp 1744 5372 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:30:00,410 basehttp 1744 5372 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:30:37,984 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+WARNING 2020-12-27 05:30:38,088 views 1744 15652 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:30:38,089 basehttp 1744 15652 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:30:40,812 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:41,318 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:41,720 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:42,119 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:42,341 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:42,599 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:42,821 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:43,192 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:43,420 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:43,700 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:44,009 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:44,264 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:44,493 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:44,706 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:44,919 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:45,135 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:45,341 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:45,581 basehttp 1744 15652 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:45,942 basehttp 1744 15236 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:46,193 basehttp 1744 15236 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:30:48,386 basehttp 1744 15236 "GET / HTTP/1.1" 200 163449
+WARNING 2020-12-27 05:31:00,877 views 1744 15236 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:31:00,877 basehttp 1744 15236 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:31:45,388 basehttp 1744 13296 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:31:48,054 basehttp 1744 13296 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:31:49,452 basehttp 1744 13296 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:31:59,699 autoreload 9580 4764 Watching for file changes with StatReloader
+INFO 2020-12-27 05:32:02,407 basehttp 9580 6092 "GET / HTTP/1.1" 200 163449
+WARNING 2020-12-27 05:32:20,140 views 9580 6092 @ exception e:['“” value has an invalid date format. It must be in YYYY-MM-DD format.']
+INFO 2020-12-27 05:32:20,141 basehttp 9580 6092 "POST /join/ HTTP/1.1" 200 56
+INFO 2020-12-27 05:32:50,011 basehttp 9580 16640 "GET / HTTP/1.1" 200 163449
+INFO 2020-12-27 05:32:50,560 basehttp 9580 6536 "GET /static/js/custom.js HTTP/1.1" 200 7038
+WARNING 2020-12-27 05:32:50,597 log 9580 6536 Not Found: /favicon.ico
+INFO 2020-12-27 05:32:57,978 basehttp 9580 16276 "POST /message/ HTTP/1.1" 200 59
+WARNING 2020-12-27 05:33:02,277 basehttp 9580 16276 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:33:26,460 basehttp 9580 5092 "GET /admin/ HTTP/1.1" 200 18649
+INFO 2020-12-27 05:33:26,552 basehttp 9580 16412 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-27 05:33:26,552 basehttp 9580 15852 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-27 05:33:26,553 basehttp 9580 16180 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-27 05:33:31,959 basehttp 9580 15852 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 16570
+INFO 2020-12-27 05:33:32,037 basehttp 9580 16412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 05:33:32,072 basehttp 9580 16412 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2020-12-27 05:33:39,874 basehttp 9580 16412 "POST /admin/fx/messagemodel/ HTTP/1.1" 200 14500
+INFO 2020-12-27 05:33:41,233 basehttp 9580 2688 "POST /admin/fx/messagemodel/ HTTP/1.1" 302 0
+INFO 2020-12-27 05:33:41,310 basehttp 9580 2688 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 13561
+INFO 2020-12-27 05:33:41,367 basehttp 9580 2688 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 05:33:41,398 basehttp 9580 7120 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2020-12-27 05:33:53,942 basehttp 9580 2688 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:34:02,315 basehttp 9580 2688 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 14950
+INFO 2020-12-27 05:34:02,376 basehttp 9580 7120 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 05:37:53,153 basehttp 9580 4688 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:37:53,174 basehttp 9580 4688 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:37:54,471 basehttp 9580 4688 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:37:54,490 basehttp 9580 4688 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-27 05:38:08,628 basehttp 9580 4688 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:38:47,116 basehttp 9580 4688 "POST /join/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:39:02,526 basehttp 9580 4688 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:39:10,406 basehttp 9580 7436 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 15485
+INFO 2020-12-27 05:39:10,471 basehttp 9580 4216 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 05:39:25,510 basehttp 9580 4688 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-27 05:39:25,686 basehttp 9580 4688 "GET /user/ HTTP/1.1" 200 82
+INFO 2020-12-27 05:39:34,117 basehttp 9580 4688 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:39:34,143 basehttp 9580 4688 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-27 05:39:34,186 basehttp 9580 4688 "GET /static/css/images/logo1.jpg HTTP/1.1" 304 0
+INFO 2020-12-27 05:41:22,867 autoreload 9580 4764 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:41:23,473 autoreload 1252 15996 Watching for file changes with StatReloader
+INFO 2020-12-27 05:45:26,882 basehttp 1252 10420 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:45:27,296 basehttp 1252 2740 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:45:27,300 basehttp 1252 4708 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:45:27,300 basehttp 1252 16136 "GET /static/js/custom.js HTTP/1.1" 200 7044
+INFO 2020-12-27 05:45:27,300 basehttp 1252 18228 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:45:27,303 basehttp 1252 10420 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:45:27,741 basehttp 1252 4708 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:45:28,006 basehttp 1252 4708 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:45:28,339 log 1252 18228 Not Found: /favicon.ico
+WARNING 2020-12-27 05:45:28,339 basehttp 1252 18228 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:45:35,021 log 1252 10420 Forbidden (CSRF token missing or incorrect.): /join/
+WARNING 2020-12-27 05:45:35,021 basehttp 1252 10420 "POST /join/ HTTP/1.1" 403 2513
+INFO 2020-12-27 05:46:04,033 basehttp 1252 10420 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:46:04,071 basehttp 1252 2740 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:46:04,072 basehttp 1252 18228 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:46:04,084 basehttp 1252 2740 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:46:04,084 basehttp 1252 16136 "GET /static/js/custom.js HTTP/1.1" 200 7044
+INFO 2020-12-27 05:46:04,084 basehttp 1252 10420 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:46:04,084 basehttp 1252 2740 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:46:04,482 log 1252 18228 Not Found: /favicon.ico
+WARNING 2020-12-27 05:46:04,483 basehttp 1252 18228 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:46:04,695 basehttp 1252 18228 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:46:06,761 basehttp 1252 10420 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:46:06,784 basehttp 1252 16136 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:46:06,787 basehttp 1252 13940 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:46:06,789 basehttp 1252 16136 "GET /static/js/custom.js HTTP/1.1" 200 7044
+INFO 2020-12-27 05:46:06,790 basehttp 1252 10420 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:46:06,794 basehttp 1252 2740 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:46:06,839 basehttp 1252 2740 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:46:07,208 basehttp 1252 2740 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:46:07,256 log 1252 13940 Not Found: /favicon.ico
+WARNING 2020-12-27 05:46:07,256 basehttp 1252 13940 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:46:14,155 log 1252 10420 Forbidden (CSRF token missing or incorrect.): /join/
+WARNING 2020-12-27 05:46:14,155 basehttp 1252 10420 "POST /join/ HTTP/1.1" 403 2513
+INFO 2020-12-27 05:46:47,586 basehttp 1252 10420 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:46:47,612 basehttp 1252 16136 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:46:47,615 basehttp 1252 12784 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:46:47,616 basehttp 1252 10420 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:46:47,618 basehttp 1252 16136 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:46:47,622 basehttp 1252 13940 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:46:47,637 basehttp 1252 13940 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:46:48,044 log 1252 13940 Not Found: /favicon.ico
+WARNING 2020-12-27 05:46:48,045 basehttp 1252 13940 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:46:48,422 basehttp 1252 13940 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:46:48,985 basehttp 1252 10420 "GET / HTTP/1.1" 200 163447
+INFO 2020-12-27 05:46:49,011 basehttp 1252 12784 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:46:49,012 basehttp 1252 10420 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:46:49,013 basehttp 1252 17140 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:46:49,014 basehttp 1252 17460 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:46:49,018 basehttp 1252 16136 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:46:49,042 basehttp 1252 16136 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:46:49,464 log 1252 16136 Not Found: /favicon.ico
+WARNING 2020-12-27 05:46:49,464 basehttp 1252 16136 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:46:49,680 basehttp 1252 16136 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+ERROR 2020-12-27 05:47:01,919 log 1252 10420 Internal Server Error: /join/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 136, in post
+    Model = apps.get_model('fx', model_name)
+NameError: name 'model_name' is not defined
+ERROR 2020-12-27 05:47:01,919 basehttp 1252 10420 "POST /join/ HTTP/1.1" 500 76968
+INFO 2020-12-27 05:49:57,871 basehttp 1252 18128 "GET / HTTP/1.1" 200 163523
+INFO 2020-12-27 05:49:57,906 basehttp 1252 13452 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:49:57,906 basehttp 1252 9312 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:49:57,906 basehttp 1252 11296 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:49:57,906 basehttp 1252 6116 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:49:57,906 basehttp 1252 18128 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:49:58,469 basehttp 1252 6116 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:49:58,819 basehttp 1252 6116 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:49:59,199 log 1252 11296 Not Found: /favicon.ico
+WARNING 2020-12-27 05:49:59,199 basehttp 1252 11296 "GET /favicon.ico HTTP/1.1" 404 13627
+INFO 2020-12-27 05:54:48,933 basehttp 1252 10396 "GET / HTTP/1.1" 200 163523
+INFO 2020-12-27 05:54:48,970 basehttp 1252 7148 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:54:48,970 basehttp 1252 15820 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:54:48,972 basehttp 1252 2836 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:54:48,973 basehttp 1252 14168 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:54:48,977 basehttp 1252 10396 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:54:49,257 basehttp 1252 14168 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:54:49,490 basehttp 1252 14168 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:54:49,731 log 1252 2836 Not Found: /favicon.ico
+WARNING 2020-12-27 05:54:49,731 basehttp 1252 2836 "GET /favicon.ico HTTP/1.1" 404 13627
+INFO 2020-12-27 05:55:11,553 autoreload 1252 15996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:12,100 autoreload 8572 16200 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:15,378 autoreload 8572 16200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:15,906 autoreload 256 14724 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:18,312 autoreload 256 14724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:18,836 autoreload 13096 488 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:22,242 autoreload 13096 488 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:22,790 autoreload 3628 16240 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:24,121 autoreload 3628 16240 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:24,644 autoreload 9124 11764 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:33,176 autoreload 9124 11764 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:33,767 autoreload 12128 16400 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:42,403 autoreload 12128 16400 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:42,937 autoreload 2280 1780 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:46,197 autoreload 2280 1780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:46,717 autoreload 17580 8140 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:49,067 autoreload 17580 8140 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 05:55:49,603 autoreload 11084 6708 Watching for file changes with StatReloader
+INFO 2020-12-27 05:55:54,350 basehttp 11084 17060 "GET / HTTP/1.1" 200 163523
+INFO 2020-12-27 05:55:55,021 basehttp 11084 15604 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:55:55,021 basehttp 11084 13756 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:55:55,021 basehttp 11084 4736 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:55:55,021 basehttp 11084 17652 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:55:55,021 basehttp 11084 17060 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:55:55,037 basehttp 11084 4736 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:55:55,342 log 11084 4736 Not Found: /favicon.ico
+WARNING 2020-12-27 05:55:55,343 basehttp 11084 4736 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:55:55,714 basehttp 11084 4736 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:55:56,314 basehttp 11084 17060 "GET / HTTP/1.1" 200 163523
+INFO 2020-12-27 05:55:56,358 basehttp 11084 5088 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:55:56,359 basehttp 11084 13756 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:55:56,361 basehttp 11084 15604 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:55:56,363 basehttp 11084 17060 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:55:56,366 basehttp 11084 17652 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:55:56,388 basehttp 11084 15604 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:55:56,790 log 11084 17652 Not Found: /favicon.ico
+WARNING 2020-12-27 05:55:56,791 basehttp 11084 17652 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:55:57,214 basehttp 11084 17652 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:56:09,124 basehttp 11084 17060 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:57:32,572 basehttp 11084 17060 "GET / HTTP/1.1" 200 163525
+INFO 2020-12-27 05:57:32,604 basehttp 11084 17060 "GET /static/js/custom.js HTTP/1.1" 200 7035
+INFO 2020-12-27 05:57:32,605 basehttp 11084 13756 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:57:32,606 basehttp 11084 5088 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:57:32,608 basehttp 11084 6928 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:57:32,610 basehttp 11084 15604 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:57:32,648 basehttp 11084 15604 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:57:33,170 log 11084 15604 Not Found: /favicon.ico
+WARNING 2020-12-27 05:57:33,170 basehttp 11084 15604 "GET /favicon.ico HTTP/1.1" 404 13627
+WARNING 2020-12-27 05:57:33,233 basehttp 11084 15604 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:57:43,187 basehttp 11084 17060 "POST /message/ HTTP/1.1" 200 59
+INFO 2020-12-27 05:58:53,335 autoreload 11084 6708 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 05:58:53,879 autoreload 5832 16776 Watching for file changes with StatReloader
+INFO 2020-12-27 05:58:56,268 autoreload 5832 16776 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 05:58:56,783 autoreload 10724 10992 Watching for file changes with StatReloader
+INFO 2020-12-27 05:59:04,356 autoreload 10724 10992 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 05:59:04,880 autoreload 12512 16304 Watching for file changes with StatReloader
+INFO 2020-12-27 05:59:38,395 basehttp 12512 11648 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 05:59:38,821 basehttp 12512 9260 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:59:38,821 basehttp 12512 15904 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:59:38,821 basehttp 12512 17340 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:59:38,839 basehttp 12512 5108 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:59:38,847 basehttp 12512 11648 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:59:38,849 basehttp 12512 17340 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:59:39,117 log 12512 17340 Not Found: /favicon.ico
+WARNING 2020-12-27 05:59:39,117 basehttp 12512 17340 "GET /favicon.ico HTTP/1.1" 404 13643
+WARNING 2020-12-27 05:59:39,304 basehttp 12512 17340 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 05:59:40,167 basehttp 12512 11648 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 05:59:40,193 basehttp 12512 13340 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 05:59:40,193 basehttp 12512 9260 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 05:59:40,193 basehttp 12512 5108 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 05:59:40,193 basehttp 12512 11648 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 05:59:40,193 basehttp 12512 15904 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 05:59:40,211 basehttp 12512 5108 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 05:59:40,689 log 12512 15904 Not Found: /favicon.ico
+WARNING 2020-12-27 05:59:40,689 basehttp 12512 15904 "GET /favicon.ico HTTP/1.1" 404 13643
+WARNING 2020-12-27 05:59:40,826 basehttp 12512 15904 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 05:59:52,606 views 12512 11648 @ exception e:null value in column "phone" of relation "fx_joinmodel" violates not-null constraint
+DETAIL:  Failing row contains (9, da, null, , null, null).
+
+INFO 2020-12-27 05:59:52,607 basehttp 12512 11648 "POST /process-form/ HTTP/1.1" 200 56
+INFO 2020-12-27 06:00:27,156 autoreload 12512 16304 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:00:27,701 autoreload 4216 15668 Watching for file changes with StatReloader
+INFO 2020-12-27 06:00:31,109 autoreload 4216 15668 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:00:31,641 autoreload 17028 14112 Watching for file changes with StatReloader
+INFO 2020-12-27 06:04:37,001 autoreload 17028 14112 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:04:37,551 autoreload 17284 15144 Watching for file changes with StatReloader
+INFO 2020-12-27 06:04:40,876 autoreload 17284 15144 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:04:41,377 autoreload 2284 16648 Watching for file changes with StatReloader
+INFO 2020-12-27 06:04:44,671 autoreload 2284 16648 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:04:45,202 autoreload 568 9592 Watching for file changes with StatReloader
+INFO 2020-12-27 06:04:49,571 autoreload 568 9592 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:04:50,108 autoreload 656 512 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:00,707 autoreload 656 512 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:01,204 autoreload 16964 11700 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:10,750 autoreload 16964 11700 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:11,297 autoreload 16128 5112 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:21,944 autoreload 16128 5112 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:22,586 autoreload 16296 2840 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:26,167 autoreload 16296 2840 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:26,790 autoreload 17492 14292 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:29,204 autoreload 17492 14292 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:29,815 autoreload 16564 15868 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:32,261 autoreload 16564 15868 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:32,943 autoreload 9564 8628 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:38,248 autoreload 9564 8628 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:38,807 autoreload 10468 2520 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:43,280 autoreload 10468 2520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:43,824 autoreload 6892 17448 Watching for file changes with StatReloader
+INFO 2020-12-27 06:05:46,274 autoreload 6892 17448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:05:46,869 autoreload 13592 12712 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:00,400 autoreload 13592 12712 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:00,901 autoreload 1744 16256 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:07,303 autoreload 1744 16256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:07,868 autoreload 17680 11480 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:21,615 autoreload 17680 11480 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:22,165 autoreload 15532 6404 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:25,406 autoreload 15532 6404 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:25,955 autoreload 15880 8884 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:28,168 autoreload 15880 8884 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:28,796 autoreload 4696 13804 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:32,034 autoreload 4696 13804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:32,571 autoreload 17652 13720 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:35,896 autoreload 17652 13720 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:36,370 autoreload 3760 612 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:40,698 autoreload 3760 612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:41,200 autoreload 7688 8008 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:45,552 autoreload 7688 8008 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:46,037 autoreload 14724 16952 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:52,445 autoreload 14724 16952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:52,941 autoreload 13872 2992 Watching for file changes with StatReloader
+INFO 2020-12-27 06:06:57,259 autoreload 13872 2992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:06:57,763 autoreload 14188 18236 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:01,089 autoreload 14188 18236 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:01,576 autoreload 17196 18196 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:27,798 autoreload 17196 18196 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:28,346 autoreload 15940 10432 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:30,739 autoreload 15940 10432 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:31,260 autoreload 3200 7524 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:40,875 autoreload 3200 7524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:41,391 autoreload 12100 15000 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:43,638 autoreload 12100 15000 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:44,152 autoreload 1752 4956 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:45,489 autoreload 1752 4956 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:46,025 autoreload 14296 16928 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:48,399 autoreload 14296 16928 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:49,075 autoreload 12648 7848 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:56,692 autoreload 12648 7848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:07:57,370 autoreload 18216 13688 Watching for file changes with StatReloader
+INFO 2020-12-27 06:07:59,869 autoreload 18216 13688 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:08:00,518 autoreload 8008 12404 Watching for file changes with StatReloader
+INFO 2020-12-27 06:08:04,160 autoreload 8008 12404 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:08:04,792 autoreload 3736 14356 Watching for file changes with StatReloader
+INFO 2020-12-27 06:08:11,048 basehttp 3736 4948 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 06:08:11,865 basehttp 3736 14004 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 06:08:11,884 basehttp 3736 1396 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 06:08:11,887 basehttp 3736 16644 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 06:08:11,892 basehttp 3736 16848 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 06:08:11,896 basehttp 3736 4948 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 06:08:11,897 basehttp 3736 1396 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 06:08:12,612 log 3736 1396 Not Found: /favicon.ico
+WARNING 2020-12-27 06:08:12,617 basehttp 3736 1396 "GET /favicon.ico HTTP/1.1" 404 13643
+WARNING 2020-12-27 06:08:12,619 basehttp 3736 16848 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 06:08:14,269 basehttp 3736 4948 "POST /sign-in/ HTTP/1.1" 200 62
+INFO 2020-12-27 06:08:21,846 basehttp 3736 4948 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 06:08:21,881 basehttp 3736 4948 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 06:08:21,882 basehttp 3736 16644 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 06:08:21,883 basehttp 3736 14004 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 06:08:21,884 basehttp 3736 15588 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 06:08:21,889 basehttp 3736 1396 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 06:08:21,891 basehttp 3736 15588 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 06:08:22,407 basehttp 3736 1396 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 06:08:22,463 log 3736 15588 Not Found: /favicon.ico
+WARNING 2020-12-27 06:08:22,464 basehttp 3736 15588 "GET /favicon.ico HTTP/1.1" 404 13643
+ERROR 2020-12-27 06:08:34,891 log 3736 4948 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\config.py", line 178, in get_model
+    return self.models[model_name.lower()]
+KeyError: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 138, in post
+    Model = apps.get_model('fx', code)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\registry.py", line 211, in get_model
+    return app_config.get_model(model_name, require_ready=require_ready)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\config.py", line 180, in get_model
+    raise LookupError(
+LookupError: App 'fx' doesn't have a 'message' model.
+ERROR 2020-12-27 06:08:34,909 basehttp 3736 4948 "POST /process-form/ HTTP/1.1" 500 90044
+INFO 2020-12-27 06:09:14,565 autoreload 3736 14356 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:09:15,152 autoreload 16100 8816 Watching for file changes with StatReloader
+INFO 2020-12-27 06:09:16,495 autoreload 16100 8816 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:09:17,038 autoreload 9564 12092 Watching for file changes with StatReloader
+INFO 2020-12-27 06:09:19,416 autoreload 9564 12092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:09:19,975 autoreload 2032 18256 Watching for file changes with StatReloader
+INFO 2020-12-27 06:09:23,222 autoreload 2032 18256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 06:09:23,728 autoreload 15260 10636 Watching for file changes with StatReloader
+INFO 2020-12-27 06:09:31,921 basehttp 15260 9260 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 06:09:32,411 basehttp 15260 18192 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 06:09:32,412 basehttp 15260 13092 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 06:09:32,414 basehttp 15260 18228 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 06:09:32,415 basehttp 15260 2428 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 06:09:32,424 basehttp 15260 9260 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 06:09:32,425 basehttp 15260 2428 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 06:09:32,638 log 15260 2428 Not Found: /favicon.ico
+WARNING 2020-12-27 06:09:32,638 basehttp 15260 2428 "GET /favicon.ico HTTP/1.1" 404 13643
+WARNING 2020-12-27 06:09:32,975 basehttp 15260 2428 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 06:09:33,683 basehttp 15260 9260 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 06:09:33,716 basehttp 15260 12376 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 06:09:33,716 basehttp 15260 18192 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 06:09:33,716 basehttp 15260 13092 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 06:09:33,716 basehttp 15260 9260 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 06:09:33,716 basehttp 15260 18228 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 06:09:33,746 basehttp 15260 18192 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 06:09:34,169 log 15260 18228 Not Found: /favicon.ico
+WARNING 2020-12-27 06:09:34,170 basehttp 15260 18228 "GET /favicon.ico HTTP/1.1" 404 13643
+WARNING 2020-12-27 06:09:34,572 basehttp 15260 18228 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+ERROR 2020-12-27 06:09:46,480 log 15260 9260 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\config.py", line 178, in get_model
+    return self.models[model_name.lower()]
+KeyError: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 138, in post
+    Model = apps.get_model('fx', code)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\registry.py", line 211, in get_model
+    return app_config.get_model(model_name, require_ready=require_ready)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\apps\config.py", line 180, in get_model
+    raise LookupError(
+LookupError: App 'fx' doesn't have a 'message' model.
+ERROR 2020-12-27 06:09:46,483 basehttp 15260 9260 "POST /process-form/ HTTP/1.1" 500 90034
+INFO 2020-12-27 06:10:33,310 autoreload 15260 10636 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:10:33,853 autoreload 12348 144 Watching for file changes with StatReloader
+INFO 2020-12-27 06:10:44,684 autoreload 12348 144 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-27 06:10:45,205 autoreload 14080 15728 Watching for file changes with StatReloader
+INFO 2020-12-27 08:37:57,622 basehttp 14080 4932 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 08:37:59,163 basehttp 14080 18852 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 08:37:59,184 basehttp 14080 18952 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 08:37:59,188 basehttp 14080 18940 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 08:37:59,197 basehttp 14080 19384 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 08:37:59,197 basehttp 14080 4932 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 08:37:59,197 basehttp 14080 19384 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 08:37:59,496 log 14080 19384 Not Found: /favicon.ico
+WARNING 2020-12-27 08:37:59,496 basehttp 14080 19384 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 08:38:00,483 basehttp 14080 19384 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 08:38:03,845 basehttp 14080 4932 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-27 08:38:03,918 basehttp 14080 4932 "GET /user/ HTTP/1.1" 200 82
+WARNING 2020-12-27 08:38:03,970 log 14080 18952 Not Found: /favicon.ico
+WARNING 2020-12-27 08:38:03,970 basehttp 14080 18952 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 08:38:09,911 basehttp 14080 4932 "GET /user/ HTTP/1.1" 200 82
+WARNING 2020-12-27 08:38:10,025 log 14080 18952 Not Found: /favicon.ico
+WARNING 2020-12-27 08:38:10,025 basehttp 14080 18952 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 08:38:21,246 basehttp 14080 4932 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 08:39:45,009 basehttp 14080 4932 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-27 08:39:45,196 basehttp 14080 4932 "GET /user/ HTTP/1.1" 200 82
+INFO 2020-12-27 08:39:59,048 basehttp 14080 4932 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 08:40:02,445 basehttp 14080 4932 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-27 08:40:02,535 basehttp 14080 4932 "GET /user/ HTTP/1.1" 200 82
+INFO 2020-12-27 08:40:08,220 basehttp 14080 4932 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 08:40:21,933 basehttp 14080 4932 "POST /sign-in/ HTTP/1.1" 200 62
+INFO 2020-12-27 08:40:32,715 basehttp 14080 4932 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 09:08:13,327 autoreload 14080 15728 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:08:14,353 autoreload 9496 1400 Watching for file changes with StatReloader
+INFO 2020-12-27 09:08:17,208 autoreload 9496 1400 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:08:18,336 autoreload 3260 13720 Watching for file changes with StatReloader
+INFO 2020-12-27 09:08:38,721 autoreload 3260 13720 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:08:39,666 autoreload 14216 11616 Watching for file changes with StatReloader
+INFO 2020-12-27 09:08:43,456 autoreload 14216 11616 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:08:44,156 autoreload 18912 15740 Watching for file changes with StatReloader
+INFO 2020-12-27 09:08:45,822 basehttp 18912 11856 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 09:08:45,846 basehttp 18912 19188 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-27 09:08:54,964 basehttp 18912 11856 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 09:09:04,247 basehttp 18912 11856 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 09:10:02,007 autoreload 18912 15740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:02,516 autoreload 6216 9380 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:04,908 autoreload 6216 9380 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:05,430 autoreload 2520 4708 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:07,709 autoreload 2520 4708 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:08,262 autoreload 14996 1224 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:11,599 autoreload 14996 1224 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:12,128 autoreload 6492 13940 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:15,495 autoreload 6492 13940 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:16,084 autoreload 15540 15136 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:17,511 autoreload 15540 15136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:18,037 autoreload 14480 3880 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:20,443 autoreload 14480 3880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:21,001 autoreload 17480 16928 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:24,423 autoreload 17480 16928 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:25,180 autoreload 4796 8992 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:27,639 autoreload 4796 8992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:28,445 autoreload 17240 2352 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:33,227 autoreload 17240 2352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:34,081 autoreload 14996 3840 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:37,636 autoreload 14996 3840 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:38,202 autoreload 16352 17740 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:41,711 autoreload 16352 17740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:42,448 autoreload 19284 256 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:44,775 autoreload 19284 256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:45,352 autoreload 12228 3288 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:48,670 autoreload 12228 3288 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:49,316 autoreload 16968 14116 Watching for file changes with StatReloader
+INFO 2020-12-27 09:10:52,673 autoreload 16968 14116 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:10:53,329 autoreload 17340 8012 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:19,810 autoreload 17340 8012 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:20,344 autoreload 18016 5564 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:24,730 autoreload 18016 5564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:25,313 autoreload 1368 4252 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:27,685 autoreload 1368 4252 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:28,269 autoreload 2024 10612 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:30,585 autoreload 2024 10612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:31,228 autoreload 19436 18748 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:35,594 autoreload 19436 18748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:36,135 autoreload 15132 18920 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:41,591 autoreload 15132 18920 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:42,198 autoreload 16092 18760 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:50,754 autoreload 16092 18760 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:51,395 autoreload 9096 5288 Watching for file changes with StatReloader
+INFO 2020-12-27 09:11:53,626 autoreload 9096 5288 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:11:54,179 autoreload 18588 3952 Watching for file changes with StatReloader
+INFO 2020-12-27 09:12:02,708 autoreload 18588 3952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:12:03,295 autoreload 1568 15220 Watching for file changes with StatReloader
+INFO 2020-12-27 09:12:07,635 autoreload 1568 15220 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 09:12:08,274 autoreload 15648 16248 Watching for file changes with StatReloader
+INFO 2020-12-27 09:12:59,464 autoreload 18564 15936 Watching for file changes with StatReloader
+INFO 2020-12-27 09:13:01,655 basehttp 18564 16712 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 09:13:04,234 basehttp 18564 16712 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 09:13:19,212 basehttp 18564 16712 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 09:13:30,633 basehttp 18564 16712 "POST /process-form/ HTTP/1.1" 200 59
+ERROR 2020-12-27 09:13:54,175 log 18564 16712 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 137, in post
+    code = request.POST.get('code').strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2020-12-27 09:13:54,176 basehttp 18564 16712 "POST /process-form/ HTTP/1.1" 500 77029
+ERROR 2020-12-27 09:14:09,263 log 18564 16712 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 137, in post
+    code = request.POST.get('code').strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2020-12-27 09:14:09,264 basehttp 18564 16712 "POST /process-form/ HTTP/1.1" 500 77075
+INFO 2020-12-27 12:58:34,434 autoreload 10836 9524 Watching for file changes with StatReloader
+INFO 2020-12-27 12:58:43,057 basehttp 10836 13624 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 12:58:44,887 basehttp 10836 13708 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 12:58:44,888 basehttp 10836 2180 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 12:58:44,892 basehttp 10836 10180 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 12:58:44,895 basehttp 10836 16568 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 12:58:44,906 basehttp 10836 13624 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 12:58:44,910 basehttp 10836 16568 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 12:58:45,366 basehttp 10836 16568 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 12:58:46,345 log 10836 10180 Not Found: /favicon.ico
+WARNING 2020-12-27 12:58:46,345 basehttp 10836 10180 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 12:58:55,086 basehttp 10836 13624 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 12:58:55,123 basehttp 10836 13624 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 12:58:55,124 basehttp 10836 2180 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 12:58:55,126 basehttp 10836 13708 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 12:58:55,127 basehttp 10836 828 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 12:58:55,131 basehttp 10836 10180 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 12:58:55,148 basehttp 10836 10180 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 12:58:55,675 basehttp 10836 10180 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 12:58:55,720 log 10836 828 Not Found: /favicon.ico
+WARNING 2020-12-27 12:58:55,720 basehttp 10836 828 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 12:59:23,031 log 10836 13624 Forbidden (Permission denied): /admin/fx/messagemodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1690, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2020-12-27 12:59:23,037 basehttp 10836 13624 "GET /admin/fx/messagemodel/ HTTP/1.1" 403 135
+INFO 2020-12-27 13:02:05,433 autoreload 10836 9524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:02:06,007 autoreload 9856 18292 Watching for file changes with StatReloader
+INFO 2020-12-27 13:02:08,422 autoreload 9856 18292 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:02:09,271 autoreload 7896 4620 Watching for file changes with StatReloader
+INFO 2020-12-27 13:02:12,652 autoreload 7896 4620 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:02:13,293 autoreload 18504 18440 Watching for file changes with StatReloader
+INFO 2020-12-27 13:02:18,191 basehttp 18504 14340 "GET / HTTP/1.1" 200 163530
+INFO 2020-12-27 13:02:18,836 basehttp 18504 6768 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:02:18,837 basehttp 18504 2316 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:02:18,838 basehttp 18504 19204 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:02:18,840 basehttp 18504 19216 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:02:18,845 basehttp 18504 14340 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:02:18,852 basehttp 18504 19216 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:02:19,183 basehttp 18504 19216 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:02:19,807 log 18504 19204 Not Found: /favicon.ico
+WARNING 2020-12-27 13:02:19,808 basehttp 18504 19204 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:02:46,146 log 18504 14340 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 307, in check_response
+    raise ValueError(
+ValueError: The view fx.views.Process_Data_View didn't return an HttpResponse object. It returned None instead.
+ERROR 2020-12-27 13:02:46,150 basehttp 18504 14340 "POST /process-form/ HTTP/1.1" 500 67382
+INFO 2020-12-27 13:04:19,986 basehttp 18504 14340 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:04:20,152 basehttp 18504 10080 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:04:20,152 basehttp 18504 4360 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:04:20,154 basehttp 18504 18764 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:04:20,156 basehttp 18504 18768 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:04:20,163 basehttp 18504 14340 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:04:20,172 basehttp 18504 18768 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:04:21,539 basehttp 18504 18768 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:04:21,582 log 18504 18764 Not Found: /favicon.ico
+WARNING 2020-12-27 13:04:21,583 basehttp 18504 18764 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:04:22,946 basehttp 18504 14340 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:04:23,017 basehttp 18504 18760 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:04:23,019 basehttp 18504 4360 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:04:23,022 basehttp 18504 10080 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:04:23,024 basehttp 18504 14340 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:04:23,033 basehttp 18504 18764 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:04:23,061 basehttp 18504 10080 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:04:23,954 log 18504 18764 Not Found: /favicon.ico
+WARNING 2020-12-27 13:04:23,955 basehttp 18504 18764 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 13:04:24,094 basehttp 18504 18764 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+ERROR 2020-12-27 13:04:56,683 log 18504 14340 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 307, in check_response
+    raise ValueError(
+ValueError: The view fx.views.Process_Data_View didn't return an HttpResponse object. It returned None instead.
+ERROR 2020-12-27 13:04:56,689 basehttp 18504 14340 "POST /process-form/ HTTP/1.1" 500 67376
+INFO 2020-12-27 13:05:32,709 autoreload 18504 18440 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:05:33,279 autoreload 17928 14852 Watching for file changes with StatReloader
+INFO 2020-12-27 13:06:34,943 autoreload 17928 14852 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:06:35,527 autoreload 9052 14172 Watching for file changes with StatReloader
+INFO 2020-12-27 13:06:37,989 autoreload 9052 14172 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:06:38,583 autoreload 19308 2676 Watching for file changes with StatReloader
+INFO 2020-12-27 13:06:43,029 autoreload 19308 2676 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:06:43,634 autoreload 4628 5064 Watching for file changes with StatReloader
+INFO 2020-12-27 13:06:47,047 autoreload 4628 5064 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:06:47,611 autoreload 11144 11156 Watching for file changes with StatReloader
+INFO 2020-12-27 13:06:48,994 autoreload 11144 11156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:06:49,775 autoreload 11720 4396 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:16,442 autoreload 11720 4396 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:17,026 autoreload 16020 19056 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:19,393 autoreload 16020 19056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:19,925 autoreload 10404 3536 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:24,361 autoreload 10404 3536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:25,038 autoreload 14760 9604 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:34,545 autoreload 14760 9604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:35,082 autoreload 1012 11300 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:41,769 autoreload 1012 11300 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:42,585 autoreload 18676 14928 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:45,013 autoreload 18676 14928 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:45,712 autoreload 18736 18700 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:48,290 autoreload 18736 18700 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:07:49,224 autoreload 18992 3744 Watching for file changes with StatReloader
+INFO 2020-12-27 13:07:52,448 basehttp 18992 16524 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:07:52,973 basehttp 18992 17340 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:07:52,974 basehttp 18992 11148 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:07:52,976 basehttp 18992 2092 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:07:52,977 basehttp 18992 18784 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:07:52,983 basehttp 18992 16524 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:07:52,999 basehttp 18992 18784 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:07:53,475 basehttp 18992 18784 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 13:07:54,070 basehttp 18992 16524 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:07:54,179 basehttp 18992 19100 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:07:54,180 basehttp 18992 11148 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:07:54,183 basehttp 18992 17340 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:07:54,184 basehttp 18992 16524 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:07:54,192 basehttp 18992 2092 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:07:54,203 basehttp 18992 17340 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:07:54,838 basehttp 18992 2092 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:07:55,596 log 18992 17340 Not Found: /favicon.ico
+WARNING 2020-12-27 13:07:55,597 basehttp 18992 17340 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:08:28,762 log 18992 16524 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 307, in check_response
+    raise ValueError(
+ValueError: The view fx.views.Process_Data_View didn't return an HttpResponse object. It returned None instead.
+ERROR 2020-12-27 13:08:28,763 basehttp 18992 16524 "POST /process-form/ HTTP/1.1" 500 67378
+INFO 2020-12-27 13:12:29,168 autoreload 18992 3744 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:29,945 autoreload 8532 9752 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:31,405 autoreload 8532 9752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:32,084 autoreload 5100 18620 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:35,642 autoreload 5100 18620 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:36,323 autoreload 19096 15724 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:39,789 autoreload 19096 15724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:40,586 autoreload 8384 13680 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:42,986 autoreload 8384 13680 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:43,686 autoreload 14044 16416 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:47,191 autoreload 14044 16416 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:47,869 autoreload 9260 1712 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:52,367 autoreload 9260 1712 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:53,107 autoreload 9236 2396 Watching for file changes with StatReloader
+INFO 2020-12-27 13:12:57,645 autoreload 9236 2396 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:12:58,369 autoreload 2156 3924 Watching for file changes with StatReloader
+INFO 2020-12-27 13:13:01,744 autoreload 2156 3924 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:13:02,356 autoreload 8604 7992 Watching for file changes with StatReloader
+INFO 2020-12-27 13:13:14,689 autoreload 8604 7992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:13:15,305 autoreload 12888 18552 Watching for file changes with StatReloader
+INFO 2020-12-27 13:13:29,542 autoreload 12888 18552 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:13:30,144 autoreload 19196 17216 Watching for file changes with StatReloader
+INFO 2020-12-27 13:13:41,047 autoreload 19196 17216 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:13:42,417 autoreload 11144 11148 Watching for file changes with StatReloader
+INFO 2020-12-27 13:14:16,194 autoreload 11144 11148 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:14:16,737 autoreload 10792 12772 Watching for file changes with StatReloader
+INFO 2020-12-27 13:14:24,317 autoreload 10792 12772 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:14:24,876 autoreload 7224 13208 Watching for file changes with StatReloader
+INFO 2020-12-27 13:14:30,333 autoreload 7224 13208 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:14:30,925 autoreload 12512 9484 Watching for file changes with StatReloader
+INFO 2020-12-27 13:14:34,288 autoreload 12512 9484 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:14:34,990 autoreload 19332 9436 Watching for file changes with StatReloader
+INFO 2020-12-27 13:14:39,797 basehttp 19332 10116 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:14:40,293 basehttp 19332 11644 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:14:40,294 basehttp 19332 18816 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:14:40,295 basehttp 19332 17800 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:14:40,296 basehttp 19332 18424 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:14:40,300 basehttp 19332 10116 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:14:40,307 basehttp 19332 18424 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:14:40,698 basehttp 19332 18424 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:14:40,773 log 19332 17800 Not Found: /favicon.ico
+WARNING 2020-12-27 13:14:40,773 basehttp 19332 17800 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:14:43,209 basehttp 19332 10116 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:14:43,242 basehttp 19332 16880 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:14:43,243 basehttp 19332 18816 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:14:43,244 basehttp 19332 11644 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:14:43,245 basehttp 19332 10116 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:14:43,248 basehttp 19332 17800 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:14:43,278 basehttp 19332 17800 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:14:43,938 basehttp 19332 17800 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:14:44,260 log 19332 11644 Not Found: /favicon.ico
+WARNING 2020-12-27 13:14:44,260 basehttp 19332 11644 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:15:06,898 log 19332 10116 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 307, in check_response
+    raise ValueError(
+ValueError: The view fx.views.Process_Data_View didn't return an HttpResponse object. It returned None instead.
+ERROR 2020-12-27 13:15:06,898 basehttp 19332 10116 "POST /process-form/ HTTP/1.1" 500 67362
+INFO 2020-12-27 13:15:51,723 autoreload 19332 9436 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:15:52,314 autoreload 15388 11540 Watching for file changes with StatReloader
+INFO 2020-12-27 13:16:03,885 basehttp 15388 14040 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:16:04,525 basehttp 15388 6224 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:16:04,526 basehttp 15388 4224 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:16:04,528 basehttp 15388 19172 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:16:04,529 basehttp 15388 13880 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:16:04,533 basehttp 15388 14040 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:16:04,547 basehttp 15388 13880 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:16:05,024 basehttp 15388 13880 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:16:05,250 log 15388 19172 Not Found: /favicon.ico
+WARNING 2020-12-27 13:16:05,250 basehttp 15388 19172 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:16:32,103 log 15388 14040 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 150, in post
+    code = request.POST.get('code').strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2020-12-27 13:16:32,109 basehttp 15388 14040 "POST /process-form/ HTTP/1.1" 500 77559
+INFO 2020-12-27 13:16:54,394 autoreload 15388 11540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:16:55,106 autoreload 5056 9456 Watching for file changes with StatReloader
+INFO 2020-12-27 13:16:57,629 basehttp 5056 828 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:16:58,256 basehttp 5056 19100 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:16:58,257 basehttp 5056 10704 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:16:58,258 basehttp 5056 10824 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:16:58,258 basehttp 5056 11928 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:16:58,263 basehttp 5056 828 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:16:58,265 basehttp 5056 11928 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:16:58,741 basehttp 5056 11928 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:16:58,828 log 5056 10824 Not Found: /favicon.ico
+WARNING 2020-12-27 13:16:58,828 basehttp 5056 10824 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:17:02,756 basehttp 5056 828 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:17:02,795 basehttp 5056 10824 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:17:02,807 basehttp 5056 828 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:17:02,808 basehttp 5056 10704 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:17:02,809 basehttp 5056 19100 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:17:02,811 basehttp 5056 1740 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:17:02,812 basehttp 5056 19100 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:17:03,381 basehttp 5056 10824 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:17:04,238 log 5056 1740 Not Found: /favicon.ico
+WARNING 2020-12-27 13:17:04,239 basehttp 5056 1740 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:17:23,101 log 5056 828 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 150, in post
+    code = request.POST.get('code').strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2020-12-27 13:17:23,107 basehttp 5056 828 "POST /process-form/ HTTP/1.1" 500 77558
+INFO 2020-12-27 13:18:34,639 autoreload 5056 9456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:18:35,206 autoreload 14540 1712 Watching for file changes with StatReloader
+INFO 2020-12-27 13:18:45,878 autoreload 14540 1712 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:18:46,431 autoreload 6204 4352 Watching for file changes with StatReloader
+INFO 2020-12-27 13:18:48,860 autoreload 6204 4352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:18:50,295 autoreload 5964 15192 Watching for file changes with StatReloader
+INFO 2020-12-27 13:18:51,473 basehttp 5964 12808 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:18:51,988 basehttp 5964 488 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:18:51,989 basehttp 5964 17380 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:18:51,990 basehttp 5964 12132 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:18:51,991 basehttp 5964 18248 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:18:51,996 basehttp 5964 4684 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:18:52,003 basehttp 5964 18248 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:18:52,543 basehttp 5964 4684 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:18:52,822 log 5964 18248 Not Found: /favicon.ico
+WARNING 2020-12-27 13:18:52,823 basehttp 5964 18248 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:18:54,177 basehttp 5964 12808 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:18:54,213 basehttp 5964 488 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:18:54,213 basehttp 5964 12132 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:18:54,216 basehttp 5964 17380 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:18:54,219 basehttp 5964 12808 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:18:54,224 basehttp 5964 18248 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:18:54,234 basehttp 5964 12132 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:18:55,004 basehttp 5964 18248 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:18:55,481 log 5964 17380 Not Found: /favicon.ico
+WARNING 2020-12-27 13:18:55,482 basehttp 5964 17380 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:19:24,018 log 5964 12808 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 150, in post
+    code = request.POST.get('code').strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2020-12-27 13:19:24,022 basehttp 5964 12808 "POST /process-form/ HTTP/1.1" 500 77554
+INFO 2020-12-27 13:20:41,895 autoreload 5964 15192 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:20:42,509 autoreload 6332 9980 Watching for file changes with StatReloader
+INFO 2020-12-27 13:20:54,210 autoreload 6332 9980 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:20:54,766 autoreload 13736 17132 Watching for file changes with StatReloader
+INFO 2020-12-27 13:21:00,321 autoreload 13736 17132 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:21:01,664 autoreload 1164 4744 Watching for file changes with StatReloader
+INFO 2020-12-27 13:21:02,498 basehttp 1164 18420 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:21:03,032 basehttp 1164 16444 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:21:03,034 basehttp 1164 10480 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:21:03,035 basehttp 1164 16588 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:21:03,036 basehttp 1164 10200 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:21:03,042 basehttp 1164 19096 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:21:03,048 basehttp 1164 10200 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-27 13:21:03,291 basehttp 1164 19096 "GET / HTTP/1.1" 200 163528
+INFO 2020-12-27 13:21:03,612 basehttp 1164 10480 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:21:03,612 basehttp 1164 10200 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:21:03,613 basehttp 1164 16588 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:21:03,616 basehttp 1164 16444 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:21:03,622 basehttp 1164 19096 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:21:03,634 basehttp 1164 10200 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:21:04,248 basehttp 1164 19096 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:21:04,824 log 1164 16444 Not Found: /favicon.ico
+WARNING 2020-12-27 13:21:04,824 basehttp 1164 16444 "GET /favicon.ico HTTP/1.1" 404 13295
+ERROR 2020-12-27 13:21:23,795 log 1164 18420 Internal Server Error: /process-form/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 150, in post
+    code = request.POST.POST('code').strip()
+AttributeError: 'QueryDict' object has no attribute 'POST'
+ERROR 2020-12-27 13:21:23,801 basehttp 1164 18420 "POST /process-form/ HTTP/1.1" 500 77548
+INFO 2020-12-27 13:21:43,316 autoreload 1164 4744 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-27 13:21:43,899 autoreload 18696 18816 Watching for file changes with StatReloader
+INFO 2020-12-27 13:22:36,804 basehttp 18696 18520 "GET / HTTP/1.1" 200 163581
+INFO 2020-12-27 13:22:37,349 basehttp 18696 13548 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:22:37,350 basehttp 18696 9820 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:22:37,351 basehttp 18696 9228 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:22:37,352 basehttp 18696 1744 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:22:37,356 basehttp 18696 18520 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:22:37,360 basehttp 18696 1744 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:22:37,881 log 18696 1744 Not Found: /favicon.ico
+WARNING 2020-12-27 13:22:37,882 basehttp 18696 1744 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 13:22:37,976 basehttp 18696 1744 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 13:22:38,669 basehttp 18696 18520 "GET / HTTP/1.1" 200 163581
+INFO 2020-12-27 13:22:38,715 basehttp 18696 9820 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:22:38,715 basehttp 18696 16464 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:22:38,717 basehttp 18696 13548 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:22:38,718 basehttp 18696 18520 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:22:38,727 basehttp 18696 9228 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:22:38,736 basehttp 18696 13548 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:22:39,865 basehttp 18696 9228 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:22:40,411 log 18696 13548 Not Found: /favicon.ico
+WARNING 2020-12-27 13:22:40,412 basehttp 18696 13548 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:23:03,667 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 56
+INFO 2020-12-27 13:23:39,811 basehttp 18696 18520 "GET / HTTP/1.1" 200 163578
+INFO 2020-12-27 13:23:39,858 basehttp 18696 18520 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:23:39,859 basehttp 18696 9820 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:23:39,861 basehttp 18696 16464 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:23:39,862 basehttp 18696 18312 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:23:39,865 basehttp 18696 13548 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:23:39,883 basehttp 18696 18312 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:23:40,690 log 18696 13548 Not Found: /favicon.ico
+WARNING 2020-12-27 13:23:40,691 basehttp 18696 13548 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 13:23:40,750 basehttp 18696 13548 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 13:23:42,728 basehttp 18696 18520 "POST /sign-in/ HTTP/1.1" 200 62
+INFO 2020-12-27 13:23:45,267 basehttp 18696 18520 "GET / HTTP/1.1" 200 163578
+INFO 2020-12-27 13:23:45,298 basehttp 18696 16464 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:23:45,299 basehttp 18696 9820 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:23:45,302 basehttp 18696 16464 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:23:45,304 basehttp 18696 9820 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:23:45,309 basehttp 18696 18312 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:23:45,312 basehttp 18696 9820 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:23:46,448 log 18696 18312 Not Found: /favicon.ico
+WARNING 2020-12-27 13:23:46,449 basehttp 18696 18312 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 13:23:46,452 basehttp 18696 9820 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 13:24:22,269 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 13:25:00,107 basehttp 18696 18312 "GET /admin/ HTTP/1.1" 200 2271
+INFO 2020-12-27 13:25:04,124 basehttp 18696 18520 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-27 13:25:04,328 basehttp 18696 18312 "GET / HTTP/1.1" 200 163578
+INFO 2020-12-27 13:25:18,557 basehttp 18696 18520 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-27 13:25:18,730 basehttp 18696 18312 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2185
+INFO 2020-12-27 13:25:18,774 basehttp 18696 18312 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2020-12-27 13:25:22,249 basehttp 18696 18520 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-27 13:25:22,692 basehttp 18696 18312 "GET /admin/ HTTP/1.1" 200 18717
+INFO 2020-12-27 13:25:22,780 basehttp 18696 18312 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-27 13:25:22,783 basehttp 18696 16464 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-27 13:25:22,783 basehttp 18696 18520 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-27 13:25:33,026 basehttp 18696 18312 "GET /admin/fx/joinmodel/ HTTP/1.1" 200 16094
+INFO 2020-12-27 13:25:33,349 basehttp 18696 18312 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:25:33,432 basehttp 18696 18312 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2020-12-27 13:25:44,574 basehttp 18696 18520 "POST /admin/fx/joinmodel/ HTTP/1.1" 200 13772
+INFO 2020-12-27 13:25:44,629 basehttp 18696 18312 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:25:46,872 basehttp 18696 18520 "POST /admin/fx/joinmodel/ HTTP/1.1" 302 0
+INFO 2020-12-27 13:25:47,168 basehttp 18696 18312 "GET /admin/fx/joinmodel/ HTTP/1.1" 200 13537
+INFO 2020-12-27 13:25:47,295 basehttp 18696 18312 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:25:47,361 basehttp 18696 18312 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2020-12-27 13:25:49,105 basehttp 18696 18520 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 16811
+INFO 2020-12-27 13:25:49,185 basehttp 18696 18312 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:25:55,040 basehttp 18696 18520 "POST /admin/fx/messagemodel/ HTTP/1.1" 200 14670
+INFO 2020-12-27 13:25:56,709 basehttp 18696 18312 "POST /admin/fx/messagemodel/ HTTP/1.1" 302 0
+INFO 2020-12-27 13:25:56,934 basehttp 18696 18520 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 13561
+INFO 2020-12-27 13:25:57,068 basehttp 18696 18312 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:26:01,441 basehttp 18696 18520 "GET / HTTP/1.1" 200 163578
+INFO 2020-12-27 13:26:01,489 basehttp 18696 16464 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:26:01,493 basehttp 18696 11924 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:26:01,496 basehttp 18696 18520 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:26:01,497 basehttp 18696 19052 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:26:01,498 basehttp 18696 18312 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:26:01,548 basehttp 18696 18312 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:26:02,662 basehttp 18696 18312 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-27 13:26:02,867 log 18696 19052 Not Found: /favicon.ico
+WARNING 2020-12-27 13:26:02,868 basehttp 18696 19052 "GET /favicon.ico HTTP/1.1" 404 13295
+INFO 2020-12-27 13:26:05,783 basehttp 18696 18520 "GET / HTTP/1.1" 200 163578
+INFO 2020-12-27 13:26:05,887 basehttp 18696 18520 "GET /static/js/custom.js HTTP/1.1" 200 7039
+INFO 2020-12-27 13:26:05,889 basehttp 18696 16464 "GET /static/css/Page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-27 13:26:05,894 basehttp 18696 11924 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-27 13:26:05,896 basehttp 18696 6224 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-27 13:26:05,910 basehttp 18696 19052 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-27 13:26:05,924 basehttp 18696 6224 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-27 13:26:07,084 log 18696 19052 Not Found: /favicon.ico
+WARNING 2020-12-27 13:26:07,085 basehttp 18696 19052 "GET /favicon.ico HTTP/1.1" 404 13295
+WARNING 2020-12-27 13:26:07,171 basehttp 18696 19052 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-27 13:26:32,030 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 13:26:38,126 basehttp 18696 18520 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 14988
+INFO 2020-12-27 13:26:38,205 basehttp 18696 6224 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,213 basehttp 18696 11924 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,217 basehttp 18696 18780 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,222 basehttp 18696 18520 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,223 basehttp 18696 17752 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,230 basehttp 18696 6224 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,233 basehttp 18696 11924 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,238 basehttp 18696 18520 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,239 basehttp 18696 18780 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:26:38,405 basehttp 18696 16464 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:27:08,515 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 13:27:24,424 basehttp 18696 18520 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 15290
+INFO 2020-12-27 13:27:24,512 basehttp 18696 16464 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,513 basehttp 18696 17752 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,513 basehttp 18696 6224 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,517 basehttp 18696 18520 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,523 basehttp 18696 18780 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,523 basehttp 18696 17752 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,523 basehttp 18696 16464 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,523 basehttp 18696 6224 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,526 basehttp 18696 18520 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2020-12-27 13:27:24,570 basehttp 18696 11924 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:27:46,086 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 13:27:51,850 basehttp 18696 18520 "GET /admin/fx/joinmodel/ HTTP/1.1" 200 15322
+INFO 2020-12-27 13:27:52,090 basehttp 18696 6224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-27 13:28:32,069 basehttp 18696 18520 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-27 13:28:48,512 basehttp 18696 18520 "GET /admin/fx/messagemodel/ HTTP/1.1" 200 15582
+INFO 2020-12-27 13:28:48,678 basehttp 18696 6224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187

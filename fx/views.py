@@ -70,6 +70,7 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 model_list= {"venture":"VentureModel","trade":"TradingModel"}
+Model_data_list ={"message":"MessageModel","join":"JoinModel"}
 model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
@@ -124,22 +125,45 @@ class MessageView(View):
             logger.warning(f"@ exception e:{e}")
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
         print(f"request.POST :{request.POST}")
-class JoinView(View):
+        
+        
+class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        birthday = request.POST.get('birthday')
-        address = request.POST.get('address')
+        lists =["name","address","phone","message","description","email","birthday","amount","carrier"]
+        filter_fields ={}
+        for key, value in request.POST.items():
+                if key in lists:
+                     filter_fields[key] = value
+                print('Key: %s' % (key) ) 
+                # print(f'Key: {key}') in Python >= 3.7
+                print('Value %s' % (value) )
+                # print(f'Value: {value}') in Python >= 3.7
+        print(f"filter fields: {filter_fields}")
+        # return
+        # print("process data....")
+        # name = request.POST.get('name')
+        # phone = request.POST.get('phone')
+        # email = request.POST.get('email')
+        # message = request.POST.get('message')
+        # address = request.POST.get('address')
         print(f"request.post: {request.POST}")
+        code = request.POST.get('code').strip()
+        print(f"code :{code}")
+        model_name =Model_data_list.get(code) 
+        Model = apps.get_model('fx', model_name)
+       # filter_fields ={"name":name,"message":message,"email":email}
+        #filter_fields ={"name":name,"phone":phone,"email":email,"birthday":birthday,"address":address}
+
         try:
                 #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
-            join = JoinModel(name=name,phone=phone,email=email,birthday =birthday,address = address)
-            join.save() 
+            process_data = Model( **filter_fields) #name=name,phone=phone,email=email,birthday =birthday,address = address)
+            process_data.save() 
+            print("sccuess writing")
             return JsonResponse({"type":'success', "message":"Your data has been saved!"})
         except Exception as e:
-            logger.warning(f"@ exception e:{e}")
-            return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
+            print(f"@ exception e:{e}")
+           # logger.warning(f"@ exception e:{e}")
+            return JsonResponse({"type": "error", "message": "unable to save this data"})#test
         print(f"request.POST :{request.POST}")
  
 class MobileView(View):

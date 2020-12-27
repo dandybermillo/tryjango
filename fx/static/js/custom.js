@@ -1,4 +1,5 @@
 (function () {
+  var code ="";
   //   Handle Login
   $("#login-btn").click(function(e) {
  // $("#login-form").submit(function (e) {
@@ -44,7 +45,7 @@
     }, 40000);
   });
 
-  $("#join-btn").click(function(e) {
+  $("#join-btnssss").click(function(e) {
     // $("#login-form").submit(function (e) {
        console.log("submit form joins");
        e.preventDefault();
@@ -88,34 +89,37 @@
        }, 40000);
      });
 
-     $("#mobile-btn").click(function(e) {
-      // $("#login-form").submit(function (e) {
-         console.log("submit form joins");
+     $(".submit-btn").click(function(e) {
+
+         console.log("---------- fom id:"+$(this).attr("form"));
+         selected_form = $(this).attr("form");
+         code = $(this).attr("code");
+         console.log("Selected form" +selected_form + " " +code);
+       
          e.preventDefault();
      //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
          $.ajax({
            type: "POST",
-           url: "/mobile/",
-     
-           data: $("#mobile-form").serialize(),
+           url: "/process-form/",
+           data: $("#"+selected_form).serialize(),
            success: function (response) {
              // do something with response
              response["result"]; // equals 'Success or failed';
              response["message"]; // equals 'you"re logged in or You messed up';
      
              if (response["type"] === "success") {
-               $("#mobile-form").trigger("reset");
-               $("#mobile-dialog").show();
+               $("#" +code+"-form").trigger("reset");
+               $("#" +code+"-dialog").show();
                 
-              //  $("#mobile-success").text(response["message"]);
-              //  $("#mobile-success").css({ display: "block" });
+               $("#"+code+"-success").text(response["message"]);
+               $("#"+code+"-success").css({ display: "block" });
                console.log("data saved");
                
               //  window.location.replace("/user/");
              } else if (response["type"] === "error") {
               // console.log("Something went wrong! Try again.");
-               $("#mobile-error").text(response["message"]);
-               $("#mobile-error").css({ display: "block" });
+               $("#"+code+"-error").text(response["message"]);
+               $("#" +code+"-error").css({ display: "block" });
                console.log("saving denied");
      
              }
@@ -123,19 +127,20 @@
            error: function (response) {
              // do something with response
              console.log("Something went wrong! Try again.");
-             $("#mobile-error").text("Something went wrong! Try again.");
-             $("#mobile-error").css({ display: "block" });
+             $("#"+code+ "-error").text("Something went wrong! Try again.");
+             $("#"+code+"-error").css({ display: "block" });
            },
          });
      
          setTimeout(function () {
-           $("#mobile-success").css({ display: "none" });
-           $("#mobile-error").css({ display: "none" });
-         }, 40000);
+           console.log("Settimeout:"+code)
+           $("#"+code+"-success").css({ display: "none" });
+           $("#"+code+"-error").css({ display: "none" });
+         }, 10000);
        });
 
 
-$("#message-btn").click(function(e) {
+$("#message-btnsa").click(function(e) {
       // $("#login-form").submit(function (e) {
          console.log("submit form message");
          e.preventDefault();

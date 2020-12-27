@@ -77,9 +77,9 @@ urlpatterns = [
   path('sign-in/', views.LoginView.as_view(), name="sign_in"),
   path('user/', views.user_login_success, name="user_login_success"), 
   
-  path('join/', views.JoinView.as_view(), name="join_url"), 
-  path('mobile/', views.MobileView.as_view(), name="mobile_url"), 
-  path('message/', views.MessageView.as_view(), name="message_url"), 
+  path('process-form/', views.Process_Data_View.as_view(), name="process_form_url"), 
+  # path('mobile/', views.MobileView.as_view(), name="mobile_url"), 
+  # path('message/', views.MessageView.as_view(), name="message_url"), 
 
 
 

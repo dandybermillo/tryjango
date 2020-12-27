@@ -303,9 +303,11 @@
                     <div class="u-container-layout u-container-layout-4">
                       <div class="u-form u-form-1">
 
-                        .,
-                        <form id ="message-form" action="/message/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+                        
+                        <form id ="message-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
                           {% csrf_token %}
+                          <input type="hidden"  name="code" value="message">
+
                            <div class="u-form-group u-form-name">
                             <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
                             <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
@@ -320,7 +322,7 @@
                           </div>
 
                           <div class="u-align-right u-form-group u-form-submit">
-                            <button id = "message-btn" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</button>
+                            <button id = "message-btn" code="message" form="message-form" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
     
                           </div>
                           
@@ -356,7 +358,7 @@
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <h1 class="u-heading-font u-text u-text-palette-1-base u-title u-text-1">We love to have you onboard...</h1>
+                  <h1 class="u-heading-font u-text u-text-palette-1-base u-title u-text-1">Wes love to have you onboard...</h1>
                   <p class="u-align-center u-large-text u-text u-text-font u-text-palette-1-base u-text-variant u-text-2">Thanks for having the interest on browsing our website and let us extend to you the benefit of being a member of our community. Just complete the form by filling in your basic information and received a <span style="font-weight: 700;">Virtual Community Money</span> amounting to 300 which is equivalent to 300.00 Philippine peso. The said amount can be use to purchase any goods and <span style="font-weight: 700;">services</span> available here and in our store.&nbsp;<br>If the Virtual Community Money is consumed, you may return the said amount by paying any amount you can in order for us to help others. Once the total amount was returned, a 300 VCM will again credited to your account.<br>Confused? Questions? Please feel free to contact us by clicking the "<span style="font-weight: 700;">Contact Us</span>" link on top of the page.
                   </p>
                   <h3 class="u-text u-text-body-alt-color u-text-3">03</h3>
@@ -371,7 +373,8 @@
                       
                     <form id ="join-form" action="/join/" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="form">
                        {% csrf_token %}
-                     
+                       <input type="hidden"  name="code" value="join">
+
                       <div class="u-form-group u-form-name">
                         <label for="name-6797" class="u-form-control-hidden u-label">Name</label>
                         <input type="text" placeholder="Name" id="name-6797" name="name" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-1" required="">
@@ -390,7 +393,7 @@
                       </div>
                       <div class="u-form-group u-form-message">
                         <label for="address-6797" class="u-form-control-hidden u-label">Address</label>
-                        <textarea placeholder="Address" rows="4" cols="50" id="address-6797" name="a  ddress" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-5" required=""></textarea>
+                        <textarea placeholder="Address" rows="4" cols="50" id="address-6797" name="address" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-5" required=""></textarea>
                       </div>
                       <div class="u-form-agree u-form-group u-form-group-6">
                         <input type="checkbox" id="agree-d8cc" name="agree" class="u-agree-checkbox" required="">
@@ -398,7 +401,7 @@
                         </label>
                       </div>
                       <div class="u-align-right u-form-group u-form-submit">
-                        <button id = "join-btn" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1">Join</button>
+                        <button id = "join-btn" form="join-form" code ="join" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Join</button>
 
                       </div>
                       
@@ -1031,7 +1034,7 @@
                 </div>
               </div>
               <div class="u-align-left u-form-group u-form-submit u-form-group-5">
-                <button id = "mobile-btn" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</button>
+                <button id = "mobile-btn" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
 
                 <!-- <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
                 <input type="submit" value="submit" class="u-form-control-hidden"> -->
