@@ -75,7 +75,7 @@ urlpatterns = [
 
 
   path('sign-in/', views.LoginView.as_view(), name="sign_in"),
-  path('user/', views.user_login_success, name="user_login_success_url"), 
+  path('user/<int:id>/', views.user_login_success, name="user_login_success_url"), 
   
   path('process-form/', views.Process_Data_View.as_view(), name="process_form_url"), 
   # path('mobile/', views.MobileView.as_view(), name="mobile_url"), 

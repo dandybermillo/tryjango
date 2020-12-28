@@ -1,5 +1,5 @@
 (function () {
-  $("#mobile-success").css({ display: "block" });
+   
 
   var code ="";
   //   Handle Login
@@ -35,7 +35,7 @@
           $("#login-success").css({ display: "block" });
           console.log("Acccess granted");
          // $("#user-page-lnk").click();
-           window.location.replace("/user/");
+          // window.location.replace("{% url 'fx:user_login_success_url' 2 %}");
         } else if (response["type"] === "error") {
          // console.log("Something went wrong! Try again.");
           $("#login-error").text(response["message"]);
@@ -154,51 +154,7 @@
         });
 
 
-$("#message-btnsa").click(function(e) {
-      // $("#login-form").submit(function (e) {
-         console.log("submit form message");
-         e.preventDefault();
-     //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
-         $.ajax({
-           type: "POST",
-           url: "/message/",
-     
-           data: $("#message-form").serialize(),
-           success: function (response) {
-             // do something with response
-             response["result"]; // equals 'Success or failed';
-             response["message"]; // equals 'you"re logged in or You messed up';
-     
-             if (response["type"] === "success") {
-               $("#message-form").trigger("reset");
-               $("#message-dialog").show();
-                
-              //  $("#mobile-success").text(response["message"]);
-              //  $("#mobile-success").css({ display: "block" });
-               console.log("data saved");
-               
-              //  window.location.replace("/user/");
-             } else if (response["type"] === "error") {
-              // console.log("Something went wrong! Try again.");
-               $("#message-error").text(response["message"]);
-               $("#message-error").css({ display: "block" });
-               console.log("saving denied");
-     
-             }
-           },
-           error: function (response) {
-             // do something with response
-             console.log("Something went wrong! Try again.");
-             $("#message-error").text("Something went wrong! Try again.");
-             $("#message-error").css({ display: "block" });
-           },
-         });
-     
-         setTimeout(function () {
-           $("#message-success").css({ display: "none" });
-           $("#message-error").css({ display: "none" });
-         }, 40000);
-       });
+ 
 
 
 })();

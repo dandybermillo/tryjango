@@ -86,7 +86,7 @@ source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletMode
 TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 
-def user_login_success(request):
+def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})   
         context ={'message':" Welcome to Fair Exchange!"}
         return render(request, "fx/users/main/member_index.html",context)  
@@ -105,11 +105,19 @@ class LoginView(View):
             return JsonResponse({"type": "error", "message": "Please input both username & password"})
 
         user = authenticate(username= username, password=password)
-
+        
+        print(f"user: {user}")
+        print(f"user id: {user.id}")
         if user is not None:
             print(" successfull!")
             login(request, user)
-            return JsonResponse({"type":'success', "message":"Login Success"})
+            try:
+                id = MemberModel.objects.get(user_id = user.id).id
+                print(f"--- id: {id}")
+            except Exception as e: 
+                #todo
+                print("LoginView e: {e} ")
+            return JsonResponse({"type":'success', "message":"Login Success","id":id})
         else:
             print(" access denied!")
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
@@ -2489,8 +2497,9 @@ def my_home_page(request):
          print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
          
-         return render(request, "fx/underconstruction.html",context) 
-         #return render(request, "fx/users/main/member_index.html",context) 
+         #return render(request, "fx/underconstruction.html",context) 
+         #return render(request, "fx/users/main/member-page.html",context) 
+         return render(request, "fx/users/index.html",context) 
               
 
     

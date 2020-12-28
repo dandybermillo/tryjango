@@ -3264,3 +3264,250 @@ INFO 2020-12-28 17:48:49,414 basehttp 548 25048 "GET /static/admin/fonts/Roboto-
 INFO 2020-12-28 17:48:49,418 basehttp 548 10368 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
 INFO 2020-12-28 17:49:25,250 autoreload 548 16660 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
 INFO 2020-12-28 17:49:25,813 autoreload 5836 20224 Watching for file changes with StatReloader
+INFO 2020-12-28 19:29:06,947 autoreload 18176 27044 Watching for file changes with StatReloader
+INFO 2020-12-28 19:29:12,551 basehttp 18176 11392 "GET / HTTP/1.1" 200 885
+WARNING 2020-12-28 19:29:15,811 log 18176 11392 Not Found: /favicon.ico
+WARNING 2020-12-28 19:29:15,812 basehttp 18176 11392 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 19:31:07,424 autoreload 18176 27044 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:31:07,973 autoreload 24168 27256 Watching for file changes with StatReloader
+INFO 2020-12-28 19:31:11,416 autoreload 24168 27256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:31:12,106 autoreload 20712 22888 Watching for file changes with StatReloader
+INFO 2020-12-28 19:33:14,639 basehttp 20712 26644 "GET / HTTP/1.1" 200 63200
+INFO 2020-12-28 19:33:14,667 basehttp 20712 26644 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-28 19:33:14,669 basehttp 20712 21392 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-28 19:33:14,670 basehttp 20712 18544 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-28 19:33:14,677 basehttp 20712 24740 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+WARNING 2020-12-28 19:33:14,685 log 20712 26644 Not Found: /logo1.jpg
+WARNING 2020-12-28 19:33:14,685 basehttp 20712 26644 "GET /logo1.jpg HTTP/1.1" 404 13293
+INFO 2020-12-28 19:34:08,698 basehttp 20712 26644 "GET / HTTP/1.1" 200 63200
+WARNING 2020-12-28 19:34:08,743 log 20712 26644 Not Found: /logo1.jpg
+WARNING 2020-12-28 19:34:08,744 basehttp 20712 26644 "GET /logo1.jpg HTTP/1.1" 404 13293
+INFO 2020-12-28 19:34:17,794 basehttp 20712 26644 "GET / HTTP/1.1" 200 63200
+WARNING 2020-12-28 19:34:17,835 log 20712 26644 Not Found: /logo1.jpg
+WARNING 2020-12-28 19:34:17,835 basehttp 20712 26644 "GET /logo1.jpg HTTP/1.1" 404 13293
+INFO 2020-12-28 19:34:45,313 autoreload 20908 26268 Watching for file changes with StatReloader
+INFO 2020-12-28 19:34:49,580 basehttp 20908 26104 "GET / HTTP/1.1" 200 63200
+WARNING 2020-12-28 19:34:49,640 log 20908 26104 Not Found: /logo1.jpg
+WARNING 2020-12-28 19:34:49,640 basehttp 20908 26104 "GET /logo1.jpg HTTP/1.1" 404 13293
+INFO 2020-12-28 19:35:21,153 autoreload 20908 26268 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:35:21,728 autoreload 9580 24160 Watching for file changes with StatReloader
+INFO 2020-12-28 19:35:24,118 autoreload 9580 24160 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:35:25,481 autoreload 21740 27108 Watching for file changes with StatReloader
+INFO 2020-12-28 19:35:26,155 basehttp 21740 23464 "GET / HTTP/1.1" 200 63024
+INFO 2020-12-28 19:35:31,279 basehttp 21740 23464 "GET / HTTP/1.1" 200 63024
+INFO 2020-12-28 19:36:50,002 autoreload 21740 27108 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:36:50,561 autoreload 2760 14128 Watching for file changes with StatReloader
+INFO 2020-12-28 19:36:52,843 autoreload 2760 14128 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:36:53,384 autoreload 5296 1856 Watching for file changes with StatReloader
+INFO 2020-12-28 19:36:56,838 autoreload 5296 1856 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:36:57,458 autoreload 8244 20652 Watching for file changes with StatReloader
+INFO 2020-12-28 19:37:01,904 autoreload 8244 20652 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:37:02,453 autoreload 22156 19648 Watching for file changes with StatReloader
+INFO 2020-12-28 19:37:10,125 autoreload 22156 19648 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 19:37:11,454 autoreload 26868 12100 Watching for file changes with StatReloader
+INFO 2020-12-28 19:37:12,682 basehttp 26868 22296 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 19:37:12,711 basehttp 26868 22296 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-28 19:37:16,871 basehttp 26868 22296 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-28 19:37:16,962 basehttp 26868 22296 "GET /user/ HTTP/1.1" 200 63200
+WARNING 2020-12-28 19:37:17,000 log 26868 22296 Not Found: /user/logo1.jpg
+WARNING 2020-12-28 19:37:17,008 basehttp 26868 22296 "GET /user/logo1.jpg HTTP/1.1" 404 13308
+INFO 2020-12-28 19:37:26,498 basehttp 26868 22296 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 19:52:29,848 basehttp 26868 23344 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 19:53:52,392 basehttp 26868 23632 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 19:53:52,430 basehttp 26868 23632 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-28 19:54:39,639 basehttp 26868 23632 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-28 19:54:39,745 basehttp 26868 23632 "GET /user/ HTTP/1.1" 200 63200
+WARNING 2020-12-28 19:54:39,802 log 26868 23632 Not Found: /user/logo1.jpg
+INFO 2020-12-28 19:54:39,803 basehttp 26868 23400 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-28 19:54:39,806 basehttp 26868 24432 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+WARNING 2020-12-28 19:54:39,807 basehttp 26868 23632 "GET /user/logo1.jpg HTTP/1.1" 404 13308
+INFO 2020-12-28 19:54:39,807 basehttp 26868 26992 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-28 19:54:39,808 basehttp 26868 19156 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-28 20:19:40,512 autoreload 26868 12100 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:19:41,057 autoreload 3332 20352 Watching for file changes with StatReloader
+INFO 2020-12-28 20:19:46,493 autoreload 3332 20352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:19:47,092 autoreload 7840 19724 Watching for file changes with StatReloader
+INFO 2020-12-28 20:19:49,498 autoreload 7840 19724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:19:50,025 autoreload 13136 5820 Watching for file changes with StatReloader
+INFO 2020-12-28 20:19:55,482 autoreload 13136 5820 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:19:56,166 autoreload 6204 7284 Watching for file changes with StatReloader
+INFO 2020-12-28 20:23:32,984 basehttp 6204 23632 "GET /admin/ HTTP/1.1" 200 18666
+INFO 2020-12-28 20:23:36,531 basehttp 6204 23632 "GET /admin/auth/user/ HTTP/1.1" 200 17524
+INFO 2020-12-28 20:23:36,599 basehttp 6204 23632 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-28 20:24:07,167 autoreload 6204 7284 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:24:07,790 autoreload 25996 17360 Watching for file changes with StatReloader
+INFO 2020-12-28 20:24:09,105 autoreload 25996 17360 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:24:09,748 autoreload 26188 25656 Watching for file changes with StatReloader
+INFO 2020-12-28 20:24:18,186 autoreload 26188 25656 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:24:18,719 autoreload 26868 20668 Watching for file changes with StatReloader
+INFO 2020-12-28 20:24:23,135 autoreload 26868 20668 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:24:23,765 autoreload 10384 27264 Watching for file changes with StatReloader
+INFO 2020-12-28 20:24:25,988 autoreload 10384 27264 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:24:26,561 autoreload 22848 22344 Watching for file changes with StatReloader
+INFO 2020-12-28 20:24:37,706 basehttp 22848 26300 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 20:24:37,765 basehttp 22848 26300 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-28 20:24:44,350 basehttp 22848 26300 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-28 20:24:44,467 basehttp 22848 26300 "GET /user/ HTTP/1.1" 200 63200
+INFO 2020-12-28 20:24:44,491 basehttp 22848 26240 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-28 20:24:44,493 basehttp 22848 26300 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-28 20:24:44,496 basehttp 22848 25512 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-28 20:24:44,497 basehttp 22848 26300 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+WARNING 2020-12-28 20:24:44,516 log 22848 25512 Not Found: /user/logo1.jpg
+WARNING 2020-12-28 20:24:44,516 basehttp 22848 25512 "GET /user/logo1.jpg HTTP/1.1" 404 13308
+INFO 2020-12-28 20:25:14,344 basehttp 22848 25512 "GET /admin/ HTTP/1.1" 200 2271
+INFO 2020-12-28 20:25:17,884 basehttp 22848 25512 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:25:18,010 basehttp 22848 25512 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 20:25:18,096 basehttp 22848 25512 "GET /static/js/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-28 20:25:26,248 basehttp 22848 25512 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:25:26,361 basehttp 22848 25512 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2185
+INFO 2020-12-28 20:25:32,092 basehttp 22848 25512 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:25:32,254 basehttp 22848 25512 "GET /admin/ HTTP/1.1" 200 18666
+INFO 2020-12-28 20:25:37,192 basehttp 22848 25512 "GET /admin/fx/membermodel/ HTTP/1.1" 200 16077
+INFO 2020-12-28 20:25:37,264 basehttp 22848 25512 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-28 20:27:04,041 autoreload 22848 22344 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:27:04,657 autoreload 19204 21800 Watching for file changes with StatReloader
+INFO 2020-12-28 20:28:32,133 autoreload 19204 21800 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:28:32,746 autoreload 7012 27572 Watching for file changes with StatReloader
+INFO 2020-12-28 20:28:38,129 autoreload 7012 27572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:28:38,735 autoreload 20180 17960 Watching for file changes with StatReloader
+INFO 2020-12-28 20:28:51,524 autoreload 20180 17960 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:28:52,218 autoreload 23200 25072 Watching for file changes with StatReloader
+INFO 2020-12-28 20:28:54,481 autoreload 23200 25072 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:28:55,052 autoreload 10452 14244 Watching for file changes with StatReloader
+INFO 2020-12-28 20:28:58,313 autoreload 10452 14244 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:28:58,893 autoreload 27340 26780 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:04,229 autoreload 27340 26780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:04,802 autoreload 26608 13232 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:14,379 autoreload 26608 13232 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:14,924 autoreload 24908 20276 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:17,154 autoreload 24908 20276 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:17,745 autoreload 19696 25876 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:20,005 autoreload 19696 25876 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:20,576 autoreload 12684 144 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:23,921 autoreload 12684 144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:24,486 autoreload 9228 1200 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:31,932 autoreload 9228 1200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:32,511 autoreload 11748 18892 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:34,761 autoreload 11748 18892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:35,288 autoreload 9440 18492 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:37,639 autoreload 9440 18492 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:38,403 autoreload 20388 11484 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:51,379 autoreload 20388 11484 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:52,254 autoreload 15932 19820 Watching for file changes with StatReloader
+INFO 2020-12-28 20:29:56,964 autoreload 15932 19820 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:29:57,708 autoreload 25660 18044 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:04,445 autoreload 25660 18044 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:05,457 autoreload 24732 26088 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:09,451 autoreload 24732 26088 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:10,357 autoreload 27284 18688 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:15,841 autoreload 27284 18688 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:16,648 autoreload 25384 16492 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:20,294 autoreload 25384 16492 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:21,108 autoreload 26340 2952 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:37,933 autoreload 26340 2952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:38,936 autoreload 26932 4456 Watching for file changes with StatReloader
+INFO 2020-12-28 20:30:40,616 autoreload 26932 4456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:30:41,547 autoreload 21188 23672 Watching for file changes with StatReloader
+INFO 2020-12-28 20:31:05,187 basehttp 21188 10880 "GET / HTTP/1.1" 200 171745
+INFO 2020-12-28 20:31:12,810 basehttp 21188 10880 "POST /sign-in/ HTTP/1.1" 200 47
+INFO 2020-12-28 20:31:12,920 basehttp 21188 10880 "GET /user/ HTTP/1.1" 200 63200
+WARNING 2020-12-28 20:31:13,001 log 21188 10880 Not Found: /user/logo1.jpg
+WARNING 2020-12-28 20:31:13,002 basehttp 21188 10880 "GET /user/logo1.jpg HTTP/1.1" 404 13308
+INFO 2020-12-28 20:31:48,881 autoreload 21188 23672 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:31:49,434 autoreload 8776 24324 Watching for file changes with StatReloader
+INFO 2020-12-28 20:31:57,988 autoreload 8776 24324 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:31:58,531 autoreload 10604 24160 Watching for file changes with StatReloader
+INFO 2020-12-28 20:32:00,812 autoreload 10604 24160 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:32:01,440 autoreload 17764 8176 Watching for file changes with StatReloader
+INFO 2020-12-28 20:32:32,214 autoreload 17764 8176 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-28 20:32:32,771 autoreload 26316 13196 Watching for file changes with StatReloader
+INFO 2020-12-28 20:32:38,226 autoreload 26316 13196 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-28 20:32:38,770 autoreload 20220 14312 Watching for file changes with StatReloader
+INFO 2020-12-28 20:32:55,800 autoreload 20220 14312 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 20:32:56,338 autoreload 14304 7600 Watching for file changes with StatReloader
+ERROR 2020-12-28 20:33:12,948 log 14304 24712 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2502, in my_home_page
+    return render(request, "fx/users/index.html",context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\urls\base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\urls\resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_login_success_url' with no arguments not found. 1 pattern(s) tried: ['user/(?P<id>[0-9]+)$']
+ERROR 2020-12-28 20:33:12,963 basehttp 14304 24712 "GET / HTTP/1.1" 500 136230
+INFO 2020-12-28 20:33:56,060 basehttp 14304 24712 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:33:58,984 basehttp 14304 24712 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:33:59,025 log 14304 24712 Not Found: /user/
+WARNING 2020-12-28 20:33:59,026 basehttp 14304 24712 "GET /user/ HTTP/1.1" 404 13295
+INFO 2020-12-28 20:34:05,272 basehttp 14304 24712 "GET /user/2 HTTP/1.1" 200 63200
+WARNING 2020-12-28 20:34:05,316 log 14304 24712 Not Found: /user/logo1.jpg
+WARNING 2020-12-28 20:34:05,317 basehttp 14304 24712 "GET /user/logo1.jpg HTTP/1.1" 404 13322
+INFO 2020-12-28 20:35:49,649 basehttp 14304 24712 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:35:53,139 basehttp 14304 24712 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:35:53,175 log 14304 24712 Not Found: /user/
+WARNING 2020-12-28 20:35:53,176 basehttp 14304 24712 "GET /user/ HTTP/1.1" 404 13295
+INFO 2020-12-28 20:36:35,471 autoreload 14304 7600 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2020-12-28 20:36:36,450 autoreload 7620 20608 Watching for file changes with StatReloader
+INFO 2020-12-28 20:36:47,790 autoreload 7228 9532 Watching for file changes with StatReloader
+WARNING 2020-12-28 20:36:50,947 log 7228 19788 Not Found: /user/
+WARNING 2020-12-28 20:36:50,948 basehttp 7228 19788 "GET /user/ HTTP/1.1" 404 13296
+WARNING 2020-12-28 20:36:53,945 log 7228 19788 Not Found: /user/
+WARNING 2020-12-28 20:36:53,947 basehttp 7228 19788 "GET /user/ HTTP/1.1" 404 13296
+INFO 2020-12-28 20:37:02,324 basehttp 7228 19788 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:37:05,161 basehttp 7228 19788 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:37:05,195 log 7228 19788 Not Found: /user/
+WARNING 2020-12-28 20:37:05,198 basehttp 7228 19788 "GET /user/ HTTP/1.1" 404 13296
+INFO 2020-12-28 20:37:17,884 basehttp 7228 19788 "GET /user/2/ HTTP/1.1" 200 63200
+WARNING 2020-12-28 20:37:17,918 log 7228 19788 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 20:37:17,918 basehttp 7228 19788 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-28 20:42:57,552 basehttp 7228 14848 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:42:57,719 basehttp 7228 14848 "GET /static/js/custom.js HTTP/1.1" 200 7319
+WARNING 2020-12-28 20:42:57,770 log 7228 14848 Not Found: /favicon.ico
+ERROR 2020-12-28 20:43:02,289 log 7228 23564 Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 110, in post
+    print(f"user id: {user.id}")
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR 2020-12-28 20:43:02,289 basehttp 7228 23564 "POST /sign-in/ HTTP/1.1" 500 75947
+INFO 2020-12-28 20:43:42,163 basehttp 7228 19960 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:43:45,114 basehttp 7228 19960 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:43:45,145 log 7228 19960 Not Found: /user/
+WARNING 2020-12-28 20:43:45,146 basehttp 7228 19960 "GET /user/ HTTP/1.1" 404 13296
+WARNING 2020-12-28 20:47:51,105 log 7228 19960 Not Found: /user/
+WARNING 2020-12-28 20:47:51,108 basehttp 7228 19960 "GET /user/ HTTP/1.1" 404 13296
+INFO 2020-12-28 20:47:57,267 basehttp 7228 19960 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:48:00,371 basehttp 7228 19960 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:48:00,405 log 7228 19960 Not Found: /user/
+WARNING 2020-12-28 20:48:00,407 basehttp 7228 19960 "GET /user/ HTTP/1.1" 404 13296
+INFO 2020-12-28 20:49:46,573 basehttp 7228 19960 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:49:50,831 basehttp 7228 19960 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 20:49:50,882 log 7228 19960 Not Found: /user/
+WARNING 2020-12-28 20:49:50,882 basehttp 7228 19960 "GET /user/ HTTP/1.1" 404 13296
