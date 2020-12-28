@@ -3174,3 +3174,93 @@ ERROR 2020-12-28 17:35:43,085 basehttp 9908 24184 "GET / HTTP/1.1" 500 82074
 INFO 2020-12-28 17:36:05,476 autoreload 9908 25164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
 INFO 2020-12-28 17:36:06,787 autoreload 548 16660 Watching for file changes with StatReloader
 INFO 2020-12-28 17:36:07,490 basehttp 548 25232 "GET / HTTP/1.1" 200 885
+INFO 2020-12-28 17:46:18,397 basehttp 548 19452 "GET / HTTP/1.1" 200 885
+WARNING 2020-12-28 17:46:18,442 log 548 19452 Not Found: /favicon.ico
+WARNING 2020-12-28 17:46:18,443 basehttp 548 19452 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 17:46:23,943 basehttp 548 19452 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-28 17:46:24,223 basehttp 548 19452 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2185
+INFO 2020-12-28 17:46:26,323 basehttp 548 20268 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-28 17:46:26,324 basehttp 548 25228 "GET /static/admin/css/login.css HTTP/1.1" 200 1185
+INFO 2020-12-28 17:46:26,326 basehttp 548 19452 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-28 17:46:26,326 basehttp 548 8252 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-28 17:46:26,331 basehttp 548 16540 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-28 17:46:26,374 basehttp 548 16540 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-28 17:46:26,404 basehttp 548 16540 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:26,406 basehttp 548 20268 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+WARNING 2020-12-28 17:46:26,448 log 548 16540 Not Found: /favicon.ico
+WARNING 2020-12-28 17:46:26,448 basehttp 548 16540 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 17:46:26,588 basehttp 548 16540 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:26,589 basehttp 548 20268 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:46:30,466 basehttp 548 16540 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-28 17:46:30,708 basehttp 548 16540 "GET /admin/ HTTP/1.1" 200 18666
+INFO 2020-12-28 17:46:30,795 basehttp 548 25228 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2020-12-28 17:46:30,795 basehttp 548 8252 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-28 17:46:30,795 basehttp 548 16540 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-28 17:46:30,796 basehttp 548 20268 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-28 17:46:30,797 basehttp 548 19452 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-28 17:46:30,861 basehttp 548 16540 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-28 17:46:30,896 basehttp 548 16540 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-28 17:46:30,897 basehttp 548 8252 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-28 17:46:30,897 basehttp 548 20268 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-28 17:46:30,905 basehttp 548 25228 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:30,907 basehttp 548 16540 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:46:30,913 basehttp 548 25228 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-28 17:46:31,034 log 548 25228 Not Found: /favicon.ico
+WARNING 2020-12-28 17:46:31,035 basehttp 548 25228 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 17:46:31,192 basehttp 548 25228 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:31,195 basehttp 548 20268 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-28 17:46:31,195 basehttp 548 16540 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:46:35,259 basehttp 548 25228 "GET /admin/fx/loadmodel/ HTTP/1.1" 200 15295
+INFO 2020-12-28 17:46:35,303 basehttp 548 25228 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-28 17:46:35,305 basehttp 548 8252 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2020-12-28 17:46:35,305 basehttp 548 20268 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-28 17:46:35,307 basehttp 548 16540 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-28 17:46:35,311 basehttp 548 25228 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2020-12-28 17:46:35,313 basehttp 548 8252 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2020-12-28 17:46:35,314 basehttp 548 20268 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2020-12-28 17:46:35,316 basehttp 548 16540 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2020-12-28 17:46:35,319 basehttp 548 8252 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2020-12-28 17:46:35,319 basehttp 548 25228 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2020-12-28 17:46:35,321 basehttp 548 16540 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-28 17:46:35,323 basehttp 548 13316 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2020-12-28 17:46:35,324 basehttp 548 20268 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2020-12-28 17:46:35,349 basehttp 548 19452 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-28 17:46:35,406 basehttp 548 13316 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-28 17:46:35,447 basehttp 548 13316 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-28 17:46:35,450 basehttp 548 13316 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+WARNING 2020-12-28 17:46:35,476 log 548 13316 Not Found: /favicon.ico
+WARNING 2020-12-28 17:46:35,478 basehttp 548 13316 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 17:46:35,480 basehttp 548 20268 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:35,481 basehttp 548 25228 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:46:35,482 basehttp 548 16540 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-28 17:46:35,560 basehttp 548 13316 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:46:35,561 basehttp 548 20268 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:46:35,562 basehttp 548 25228 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-28 17:48:48,944 basehttp 548 15688 "GET /admin/fx/loadmodel/ HTTP/1.1" 200 15295
+INFO 2020-12-28 17:48:49,018 basehttp 548 15688 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-28 17:48:49,020 basehttp 548 25048 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-28 17:48:49,025 basehttp 548 24904 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-28 17:48:49,026 basehttp 548 23856 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2020-12-28 17:48:49,031 basehttp 548 15688 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2020-12-28 17:48:49,034 basehttp 548 25048 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2020-12-28 17:48:49,035 basehttp 548 23856 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2020-12-28 17:48:49,035 basehttp 548 24904 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2020-12-28 17:48:49,041 basehttp 548 15688 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2020-12-28 17:48:49,043 basehttp 548 24904 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2020-12-28 17:48:49,044 basehttp 548 23856 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-28 17:48:49,046 basehttp 548 10368 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2020-12-28 17:48:49,046 basehttp 548 25048 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2020-12-28 17:48:49,075 basehttp 548 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-28 17:48:49,130 basehttp 548 10368 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-28 17:48:49,173 basehttp 548 10368 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-28 17:48:49,178 basehttp 548 10368 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2020-12-28 17:48:49,209 basehttp 548 10368 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:48:49,212 basehttp 548 25048 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:48:49,213 basehttp 548 23856 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-28 17:48:49,299 log 548 10368 Not Found: /favicon.ico
+WARNING 2020-12-28 17:48:49,300 basehttp 548 10368 "GET /favicon.ico HTTP/1.1" 404 13299
+INFO 2020-12-28 17:48:49,413 basehttp 548 10368 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-28 17:48:49,414 basehttp 548 25048 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-28 17:48:49,418 basehttp 548 10368 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-28 17:49:25,250 autoreload 548 16660 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-28 17:49:25,813 autoreload 5836 20224 Watching for file changes with StatReloader

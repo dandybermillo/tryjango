@@ -199,7 +199,7 @@ def create_post(request):
     return render(request, 'fx/venture/test.html', {'posts':"posts"})     
 
 class AjaxHandlerView(View):
-   print("AjaxHandlerView:")
+ 
    def get(self,request):
        
       text =  request.GET.get('button_text')
