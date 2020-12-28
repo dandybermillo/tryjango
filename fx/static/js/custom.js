@@ -31,11 +31,12 @@
 
         if (response["type"] === "success") {
           $("#login-form").trigger("reset");
-          $("#login-success").text(response["message"]);
-          $("#login-success").css({ display: "block" });
+          // $("#login-success").text(response["message"]);
+          // $("#login-success").css({ display: "block" });
           console.log("Acccess granted");
          // $("#user-page-lnk").click();
-          // window.location.replace("{% url 'fx:user_login_success_url' 2 %}");
+          id = response["id"];
+          window.location.replace("/user/"+id);
         } else if (response["type"] === "error") {
          // console.log("Something went wrong! Try again.");
           $("#login-error").text(response["message"]);
@@ -126,7 +127,7 @@
                $("#"+code+"-success").css({ display: "block" });
                console.log("data saved");
                
-              //  window.location.replace("/user/");
+              //window.location.replace("/user/2/");
              } else if (response["type"] === "error") {
               // console.log("Something went wrong! Try again.");
                $("#"+code+"-error").text(response["message"]);

@@ -87,8 +87,12 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 
 def user_login_success(request,id):
-      #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})   
-        context ={'message':" Welcome to Fair Exchange!"}
+      #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
+        member = MemberModel.objects.get(id = id)
+        
+        context ={'message':" Welcome to Fair Exchange!",
+                  "member":member,
+                  'asset_liabities':get_all_balances(id)}
         return render(request, "fx/users/main/member_index.html",context)  
         
   

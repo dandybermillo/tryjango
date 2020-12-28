@@ -125,7 +125,7 @@ class LoadModel(models.Model):
     name = models.CharField(max_length=124)
     phone = models.CharField(max_length=124)
     carrier = models.PositiveIntegerField(default = SMART ,choices = cat) 
-#     email= models.EmailField(max_length=250,blank= True,null =True)
+    email= models.EmailField(max_length=250,blank= True,null =True)
     amount = models.FloatField(default =0 )    
        
 

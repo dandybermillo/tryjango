@@ -3511,3 +3511,555 @@ INFO 2020-12-28 20:49:46,573 basehttp 7228 19960 "GET / HTTP/1.1" 200 171712
 INFO 2020-12-28 20:49:50,831 basehttp 7228 19960 "POST /sign-in/ HTTP/1.1" 200 56
 WARNING 2020-12-28 20:49:50,882 log 7228 19960 Not Found: /user/
 WARNING 2020-12-28 20:49:50,882 basehttp 7228 19960 "GET /user/ HTTP/1.1" 404 13296
+INFO 2020-12-28 20:58:17,725 basehttp 7228 24484 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:58:17,749 basehttp 7228 24140 "GET /static/js/custom.js HTTP/1.1" 200 5416
+WARNING 2020-12-28 20:58:17,865 log 7228 24140 Not Found: /favicon.ico
+INFO 2020-12-28 20:58:45,299 basehttp 7228 24484 "GET /admin/ HTTP/1.1" 200 18666
+INFO 2020-12-28 20:58:49,517 basehttp 7228 24484 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:58:49,566 basehttp 7228 24484 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 20:58:49,592 basehttp 7228 27516 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2020-12-28 20:58:57,100 basehttp 7228 24484 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:58:57,201 basehttp 7228 24484 "GET /login/?next=/dashboard/ HTTP/1.1" 200 43612
+INFO 2020-12-28 20:59:02,327 basehttp 7228 24484 "POST /login/?next=/dashboard/ HTTP/1.1" 302 0
+INFO 2020-12-28 20:59:02,527 basehttp 7228 24484 "GET /dashboard/ HTTP/1.1" 200 57318
+INFO 2020-12-28 20:59:08,558 basehttp 7228 24484 "GET /search_receiver/?action_request=search&filter_field_value=dan&total_no_of_row_per_page=5 HTTP/1.1" 200 198
+INFO 2020-12-28 20:59:11,080 basehttp 7228 24484 "GET /member/2/ HTTP/1.1" 200 212624
+INFO 2020-12-28 20:59:16,028 basehttp 7228 24484 "GET /reset_show_password/?request_action=show&member_id=2 HTTP/1.1" 200 35
+WARNING 2020-12-28 20:59:37,642 log 7228 24484 Forbidden (CSRF token missing or incorrect.): /sign-in/
+WARNING 2020-12-28 20:59:37,644 basehttp 7228 24484 "POST /sign-in/ HTTP/1.1" 403 2513
+WARNING 2020-12-28 20:59:52,181 log 7228 24484 Forbidden (CSRF token missing or incorrect.): /sign-in/
+WARNING 2020-12-28 20:59:52,182 basehttp 7228 24484 "POST /sign-in/ HTTP/1.1" 403 2513
+INFO 2020-12-28 21:00:31,520 autoreload 21220 24472 Watching for file changes with StatReloader
+INFO 2020-12-28 21:00:35,282 basehttp 21220 13096 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:00:35,316 basehttp 21220 24792 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-28 21:01:34,127 basehttp 21220 13096 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:01:55,960 basehttp 21220 13096 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:01:56,133 basehttp 21220 24792 "GET /static/js/custom.js HTTP/1.1" 200 5414
+INFO 2020-12-28 21:02:01,668 basehttp 21220 13096 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:04:15,299 basehttp 21220 25812 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:04:15,350 basehttp 21220 22856 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:04:15,351 basehttp 21220 18484 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:04:15,356 basehttp 21220 25812 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:04:15,365 basehttp 21220 18484 "GET /static/js/custom.js HTTP/1.1" 200 5413
+INFO 2020-12-28 21:04:15,367 basehttp 21220 22856 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:04:15,379 basehttp 21220 22856 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:04:25,774 log 21220 22856 Not Found: /favicon.ico
+WARNING 2020-12-28 21:04:25,775 basehttp 21220 22856 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 21:04:26,283 basehttp 21220 22856 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 21:04:35,379 basehttp 21220 25812 "POST /sign-in/ HTTP/1.1" 200 56
+WARNING 2020-12-28 21:04:35,445 log 21220 25812 Not Found: /{% url 'fx:user_login_success_url' 2 %}
+WARNING 2020-12-28 21:04:35,445 basehttp 21220 25812 "GET /%7B%%20url%20'fx:user_login_success_url'%202%20%%7D HTTP/1.1" 404 13444
+WARNING 2020-12-28 21:04:35,510 log 21220 18484 Not Found: /favicon.ico
+WARNING 2020-12-28 21:04:35,510 basehttp 21220 18484 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:05:25,865 basehttp 21220 25812 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:05:25,925 basehttp 21220 25812 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:05:25,926 basehttp 21220 22716 "GET /static/js/custom.js HTTP/1.1" 200 5381
+INFO 2020-12-28 21:05:25,929 basehttp 21220 2584 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:05:25,931 basehttp 21220 25876 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:05:25,933 basehttp 21220 18484 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:05:25,950 basehttp 21220 25876 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:05:27,473 basehttp 21220 18484 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 21:05:28,061 log 21220 25876 Not Found: /favicon.ico
+WARNING 2020-12-28 21:05:28,062 basehttp 21220 25876 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:05:32,307 basehttp 21220 25812 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:05:32,431 basehttp 21220 25812 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 21:05:32,540 basehttp 21220 25812 "GET /user/2/ HTTP/1.1" 200 63200
+INFO 2020-12-28 21:05:32,631 basehttp 21220 22716 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:05:32,633 basehttp 21220 25876 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:05:32,644 basehttp 21220 22716 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:05:32,645 basehttp 21220 25876 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:05:32,651 basehttp 21220 2584 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:05:32,684 log 21220 25876 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:05:32,684 basehttp 21220 25876 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:05:34,609 log 21220 2584 Not Found: /favicon.ico
+WARNING 2020-12-28 21:05:34,610 basehttp 21220 2584 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 21:05:35,578 basehttp 21220 2584 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:05:57,542 log 21220 25876 Not Found: /favicon.ico
+WARNING 2020-12-28 21:05:57,545 basehttp 21220 25876 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:06:03,037 basehttp 21220 25812 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:06:03,088 basehttp 21220 23112 "GET /static/js/custom.js HTTP/1.1" 200 5387
+INFO 2020-12-28 21:06:03,089 basehttp 21220 22716 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:06:03,090 basehttp 21220 25812 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:06:03,095 basehttp 21220 25876 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:06:03,103 basehttp 21220 22716 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:06:03,117 basehttp 21220 22716 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:06:04,231 basehttp 21220 25876 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 21:06:05,123 log 21220 22716 Not Found: /favicon.ico
+WARNING 2020-12-28 21:06:05,124 basehttp 21220 22716 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:06:12,413 basehttp 21220 25812 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:06:12,504 basehttp 21220 25812 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 21:06:12,629 basehttp 21220 25812 "GET /user/2/ HTTP/1.1" 200 63200
+INFO 2020-12-28 21:06:12,712 basehttp 21220 25812 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:06:12,716 basehttp 21220 22716 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:06:12,720 basehttp 21220 26992 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:06:12,725 basehttp 21220 22716 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:06:12,732 basehttp 21220 23112 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:06:12,777 log 21220 26992 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:06:12,778 basehttp 21220 26992 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:06:14,169 basehttp 21220 23112 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:06:14,536 log 21220 22716 Not Found: /favicon.ico
+WARNING 2020-12-28 21:06:14,537 basehttp 21220 22716 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:08:14,317 basehttp 21220 4608 "GET /user/2/ HTTP/1.1" 200 63212
+INFO 2020-12-28 21:08:14,374 basehttp 21220 4608 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:08:14,379 basehttp 21220 23396 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:08:14,381 basehttp 21220 27436 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:08:14,382 basehttp 21220 16924 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:08:14,387 basehttp 21220 15772 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:08:14,413 log 21220 16924 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:08:14,413 basehttp 21220 16924 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:08:15,877 basehttp 21220 15772 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:08:16,197 log 21220 16924 Not Found: /favicon.ico
+WARNING 2020-12-28 21:08:16,200 basehttp 21220 16924 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:09:30,316 basehttp 21220 16924 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:09:30,394 basehttp 21220 4608 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 21:09:30,396 basehttp 21220 27436 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:09:30,400 basehttp 21220 23396 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:09:30,401 basehttp 21220 8760 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:09:30,406 basehttp 21220 16924 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:09:30,425 basehttp 21220 8760 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:09:32,332 log 21220 16924 Not Found: /favicon.ico
+WARNING 2020-12-28 21:09:32,339 basehttp 21220 16924 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 21:09:38,854 basehttp 21220 16924 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 21:09:44,147 basehttp 21220 8760 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:09:44,233 basehttp 21220 8760 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 21:09:44,322 basehttp 21220 8760 "GET /user/2/ HTTP/1.1" 200 63212
+INFO 2020-12-28 21:09:44,406 basehttp 21220 23396 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:09:44,408 basehttp 21220 8760 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:09:44,409 basehttp 21220 25232 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:09:44,409 basehttp 21220 4608 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:09:44,414 basehttp 21220 27436 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:09:44,446 log 21220 8760 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:09:44,447 basehttp 21220 8760 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:09:47,509 log 21220 27436 Not Found: /favicon.ico
+WARNING 2020-12-28 21:09:47,511 basehttp 21220 27436 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 21:09:48,021 basehttp 21220 27436 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 21:10:08,126 autoreload 21220 24472 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:08,800 autoreload 20836 13684 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:15,335 autoreload 20836 13684 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:16,043 autoreload 19368 22436 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:18,427 autoreload 19368 22436 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:19,040 autoreload 22160 11392 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:20,403 autoreload 22160 11392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:21,268 autoreload 4108 8728 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:22,917 autoreload 4108 8728 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:24,221 autoreload 5796 17500 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:27,039 autoreload 5796 17500 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:28,102 autoreload 10976 9164 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:29,690 autoreload 10976 9164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:30,527 autoreload 25012 14052 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:38,269 autoreload 25012 14052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:39,316 autoreload 24892 16752 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:47,009 autoreload 24892 16752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:47,700 autoreload 23584 26856 Watching for file changes with StatReloader
+INFO 2020-12-28 21:10:52,424 autoreload 23584 26856 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:10:53,379 autoreload 16904 24152 Watching for file changes with StatReloader
+INFO 2020-12-28 21:11:02,393 autoreload 16904 24152 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:11:03,204 autoreload 10660 26280 Watching for file changes with StatReloader
+INFO 2020-12-28 21:11:05,533 autoreload 10660 26280 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:11:06,108 autoreload 13148 22552 Watching for file changes with StatReloader
+INFO 2020-12-28 21:11:10,424 autoreload 13148 22552 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:11:11,158 autoreload 9972 27240 Watching for file changes with StatReloader
+INFO 2020-12-28 21:11:13,437 autoreload 9972 27240 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:11:14,055 autoreload 10872 10916 Watching for file changes with StatReloader
+INFO 2020-12-28 21:11:16,390 autoreload 10872 10916 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 21:11:17,065 autoreload 5344 21220 Watching for file changes with StatReloader
+INFO 2020-12-28 21:12:56,457 basehttp 5344 10196 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:12:56,976 basehttp 5344 27428 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 21:12:56,976 basehttp 5344 24996 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:12:56,977 basehttp 5344 7924 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:12:56,978 basehttp 5344 22672 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:12:56,981 basehttp 5344 10196 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:12:57,323 basehttp 5344 22672 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:12:57,874 basehttp 5344 22672 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 21:12:58,334 log 5344 7924 Not Found: /favicon.ico
+WARNING 2020-12-28 21:12:58,335 basehttp 5344 7924 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:13:02,966 basehttp 5344 10196 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:13:03,043 basehttp 5344 10196 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 21:13:03,157 basehttp 5344 10196 "GET /user/2/ HTTP/1.1" 200 63227
+INFO 2020-12-28 21:13:03,370 basehttp 5344 27428 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:13:03,376 basehttp 5344 7924 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:13:03,378 basehttp 5344 10196 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:13:03,379 basehttp 5344 6828 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:13:03,387 basehttp 5344 24996 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:13:03,424 log 5344 7924 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:13:03,424 basehttp 5344 7924 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:13:04,827 basehttp 5344 24996 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:13:05,415 log 5344 6828 Not Found: /favicon.ico
+WARNING 2020-12-28 21:13:05,418 basehttp 5344 6828 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:58:20,019 basehttp 5344 10692 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 21:58:20,075 basehttp 5344 26520 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 21:58:20,079 basehttp 5344 10692 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 21:58:20,099 basehttp 5344 17072 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 21:58:20,099 basehttp 5344 26520 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:58:20,100 basehttp 5344 20712 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:58:20,108 basehttp 5344 20712 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 21:58:21,418 basehttp 5344 20712 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 21:58:21,994 log 5344 26520 Not Found: /favicon.ico
+WARNING 2020-12-28 21:58:21,994 basehttp 5344 26520 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:58:35,661 basehttp 5344 10692 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 21:58:35,768 basehttp 5344 10692 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 21:58:35,916 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63265
+INFO 2020-12-28 21:58:36,037 basehttp 5344 26520 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:58:36,053 basehttp 5344 17072 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:58:36,060 basehttp 5344 27340 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:58:36,061 basehttp 5344 10692 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:58:36,070 basehttp 5344 26520 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:58:36,129 log 5344 27340 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:58:36,129 basehttp 5344 27340 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:58:37,090 basehttp 5344 26520 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:58:37,352 log 5344 27340 Not Found: /favicon.ico
+WARNING 2020-12-28 21:58:37,352 basehttp 5344 27340 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 21:58:55,772 basehttp 5344 10692 "GET /create_update/2/ HTTP/1.1" 200 67673
+INFO 2020-12-28 21:59:12,562 basehttp 5344 10692 "POST /create_update/2/ HTTP/1.1" 302 0
+INFO 2020-12-28 21:59:12,885 basehttp 5344 10692 "GET /success/create_update_member_result/2/The%20following%20has%20been%20successfully%20updated! HTTP/1.1" 200 67834
+INFO 2020-12-28 21:59:21,119 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63297
+INFO 2020-12-28 21:59:21,167 basehttp 5344 10692 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:59:21,169 basehttp 5344 27340 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:59:21,171 basehttp 5344 19068 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:59:21,172 basehttp 5344 1708 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:59:21,175 basehttp 5344 17072 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:59:21,197 log 5344 1708 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:59:21,197 basehttp 5344 1708 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:59:23,561 log 5344 17072 Not Found: /favicon.ico
+WARNING 2020-12-28 21:59:23,563 basehttp 5344 17072 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 21:59:24,577 basehttp 5344 17072 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 21:59:44,100 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63288
+INFO 2020-12-28 21:59:44,147 basehttp 5344 1708 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:59:44,154 basehttp 5344 1708 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 21:59:44,159 basehttp 5344 1708 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 21:59:44,160 basehttp 5344 19068 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 21:59:44,166 basehttp 5344 27340 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 21:59:44,182 log 5344 1708 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 21:59:44,182 basehttp 5344 1708 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 21:59:45,323 basehttp 5344 27340 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 21:59:45,812 log 5344 19068 Not Found: /favicon.ico
+WARNING 2020-12-28 21:59:45,812 basehttp 5344 19068 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:01:03,838 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63292
+INFO 2020-12-28 22:01:03,871 basehttp 5344 10692 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:01:03,872 basehttp 5344 1708 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:01:03,879 basehttp 5344 10692 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:01:03,879 basehttp 5344 1708 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:01:03,883 basehttp 5344 19068 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:01:03,902 log 5344 1708 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:01:03,903 basehttp 5344 1708 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:01:04,691 basehttp 5344 19068 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:01:04,998 log 5344 1708 Not Found: /favicon.ico
+WARNING 2020-12-28 22:01:04,998 basehttp 5344 1708 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:01:14,790 log 5344 10692 Forbidden (CSRF token missing or incorrect.): /user/2/
+WARNING 2020-12-28 22:01:14,790 basehttp 5344 10692 "POST /user/2/ HTTP/1.1" 403 2513
+INFO 2020-12-28 22:02:00,054 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 62935
+INFO 2020-12-28 22:02:00,107 basehttp 5344 1708 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:02:00,114 basehttp 5344 16908 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:02:00,116 basehttp 5344 24260 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:02:00,117 basehttp 5344 13948 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:02:00,120 basehttp 5344 10692 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:02:00,141 log 5344 1708 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:02:00,141 basehttp 5344 1708 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:02:00,673 basehttp 5344 13948 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:02:00,736 basehttp 5344 1708 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:02:01,187 log 5344 24260 Not Found: /favicon.ico
+WARNING 2020-12-28 22:02:01,187 basehttp 5344 24260 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:02:41,178 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 62927
+INFO 2020-12-28 22:02:41,219 basehttp 5344 10692 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:02:41,224 basehttp 5344 24260 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:02:41,225 basehttp 5344 4688 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:02:41,226 basehttp 5344 8692 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:02:41,229 basehttp 5344 16908 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:02:41,251 log 5344 8692 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:02:41,252 basehttp 5344 8692 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:02:41,953 basehttp 5344 16908 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:02:42,152 log 5344 8692 Not Found: /favicon.ico
+WARNING 2020-12-28 22:02:42,153 basehttp 5344 8692 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:03:16,328 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63279
+INFO 2020-12-28 22:03:16,383 basehttp 5344 4688 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:03:16,387 basehttp 5344 8692 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:03:16,388 basehttp 5344 10692 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:03:16,393 basehttp 5344 8692 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:03:16,394 basehttp 5344 24260 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:03:16,420 log 5344 8692 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:03:16,420 basehttp 5344 8692 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:03:17,380 log 5344 24260 Not Found: /favicon.ico
+WARNING 2020-12-28 22:03:17,381 basehttp 5344 24260 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:03:17,383 basehttp 5344 8692 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 22:03:43,549 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63275
+INFO 2020-12-28 22:03:43,594 basehttp 5344 10692 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:03:43,602 basehttp 5344 24260 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:03:43,605 basehttp 5344 20784 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:03:43,607 basehttp 5344 24260 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:03:43,609 basehttp 5344 4688 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:03:43,636 log 5344 24260 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:03:43,637 basehttp 5344 24260 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:03:44,290 log 5344 4688 Not Found: /favicon.ico
+WARNING 2020-12-28 22:03:44,292 basehttp 5344 4688 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:03:44,415 basehttp 5344 24260 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 22:04:04,784 basehttp 5344 10692 "GET /user/2/ HTTP/1.1" 200 63274
+INFO 2020-12-28 22:04:04,828 basehttp 5344 10692 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:04:04,830 basehttp 5344 4688 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:04:04,838 basehttp 5344 4688 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:04:04,838 basehttp 5344 10692 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:04:04,841 basehttp 5344 20784 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:04:04,855 log 5344 4688 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:04:04,856 basehttp 5344 4688 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:04:05,624 log 5344 20784 Not Found: /favicon.ico
+WARNING 2020-12-28 22:04:05,626 basehttp 5344 20784 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:04:05,749 basehttp 5344 4688 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 22:05:59,609 autoreload 5344 21220 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 22:06:00,204 autoreload 27044 4908 Watching for file changes with StatReloader
+INFO 2020-12-28 22:06:07,931 autoreload 27044 4908 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 22:06:08,633 autoreload 6712 16924 Watching for file changes with StatReloader
+INFO 2020-12-28 22:06:12,039 autoreload 6712 16924 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 22:06:12,605 autoreload 20352 24220 Watching for file changes with StatReloader
+INFO 2020-12-28 22:06:14,022 autoreload 20352 24220 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 22:06:14,562 autoreload 16524 9936 Watching for file changes with StatReloader
+INFO 2020-12-28 22:06:16,974 autoreload 16524 9936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-28 22:06:17,548 autoreload 24896 20596 Watching for file changes with StatReloader
+INFO 2020-12-28 22:07:43,556 basehttp 24896 26188 "GET /user/2/ HTTP/1.1" 200 63365
+INFO 2020-12-28 22:07:44,792 basehttp 24896 25180 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:07:44,802 basehttp 24896 4164 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:07:44,815 basehttp 24896 26188 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:07:44,816 basehttp 24896 12676 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:07:44,828 basehttp 24896 25092 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:07:45,894 log 24896 25092 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:07:45,895 basehttp 24896 25092 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:07:47,130 log 24896 25092 Not Found: /favicon.ico
+WARNING 2020-12-28 22:07:47,130 basehttp 24896 25092 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:07:49,536 basehttp 24896 25092 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 22:08:25,323 basehttp 24896 4164 "GET /user/2/ HTTP/1.1" 200 63308
+INFO 2020-12-28 22:08:25,387 basehttp 24896 25180 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:08:25,389 basehttp 24896 4164 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:08:25,390 basehttp 24896 26248 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:08:25,391 basehttp 24896 26188 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:08:25,396 basehttp 24896 12676 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:08:25,422 log 24896 4164 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:08:25,422 basehttp 24896 4164 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:08:26,297 basehttp 24896 12676 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:08:26,619 log 24896 4164 Not Found: /favicon.ico
+WARNING 2020-12-28 22:08:26,623 basehttp 24896 4164 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:09:13,575 log 24896 4164 Not Found: /favicon.ico
+WARNING 2020-12-28 22:09:13,576 basehttp 24896 4164 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:09:33,923 log 24896 4164 Not Found: /favicon.ico
+WARNING 2020-12-28 22:09:33,923 basehttp 24896 4164 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:14:32,579 basehttp 24896 26660 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 22:14:32,647 basehttp 24896 26660 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:14:32,660 basehttp 24896 3368 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:14:32,666 basehttp 24896 26248 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:14:32,667 basehttp 24896 19288 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:14:32,671 basehttp 24896 26660 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:14:33,397 log 24896 19288 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:14:33,398 basehttp 24896 19288 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:14:33,732 basehttp 24896 19288 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:14:34,238 log 24896 26248 Not Found: /favicon.ico
+WARNING 2020-12-28 22:14:34,240 basehttp 24896 26248 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:14:39,295 basehttp 24896 26660 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 22:14:39,341 basehttp 24896 3368 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 22:14:39,341 basehttp 24896 27100 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 22:14:39,343 basehttp 24896 26660 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:14:39,346 basehttp 24896 13100 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:14:39,350 basehttp 24896 26248 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 22:14:39,375 basehttp 24896 13100 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 22:14:40,788 basehttp 24896 26248 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 22:14:41,353 log 24896 13100 Not Found: /favicon.ico
+WARNING 2020-12-28 22:14:41,353 basehttp 24896 13100 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:15:45,759 basehttp 24896 26660 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 22:15:45,806 basehttp 24896 26660 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 22:15:45,807 basehttp 24896 3368 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 22:15:45,809 basehttp 24896 27100 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:15:45,811 basehttp 24896 20944 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:15:45,814 basehttp 24896 13100 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 22:15:45,823 basehttp 24896 20944 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 22:15:46,679 log 24896 13100 Not Found: /favicon.ico
+WARNING 2020-12-28 22:15:46,680 basehttp 24896 13100 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 22:15:47,052 basehttp 24896 13100 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 22:15:56,159 basehttp 24896 26660 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 22:15:56,227 basehttp 24896 26660 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 22:15:56,375 basehttp 24896 26660 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 22:15:56,438 basehttp 24896 3368 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 22:15:56,439 basehttp 24896 20944 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:15:56,441 basehttp 24896 26660 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:15:56,445 basehttp 24896 20944 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:15:56,449 basehttp 24896 27100 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 22:15:56,477 log 24896 20944 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 22:15:56,477 basehttp 24896 20944 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 22:15:57,467 basehttp 24896 27100 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 22:15:57,787 log 24896 20944 Not Found: /favicon.ico
+WARNING 2020-12-28 22:15:57,787 basehttp 24896 20944 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 22:16:52,715 basehttp 24896 26660 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 22:16:52,759 basehttp 24896 3368 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 22:16:52,760 basehttp 24896 32 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 22:16:52,763 basehttp 24896 26660 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 22:16:52,764 basehttp 24896 15896 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 22:16:52,769 basehttp 24896 20944 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 22:16:52,802 basehttp 24896 15896 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 22:16:53,935 basehttp 24896 20944 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-28 22:16:54,447 log 24896 15896 Not Found: /favicon.ico
+WARNING 2020-12-28 22:16:54,454 basehttp 24896 15896 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:00:24,088 basehttp 24896 20024 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 23:00:24,128 basehttp 24896 20024 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 23:00:24,190 basehttp 24896 20024 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 23:00:24,239 basehttp 24896 12784 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:00:24,239 basehttp 24896 20024 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:00:24,239 basehttp 24896 16220 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:00:24,239 basehttp 24896 12900 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:00:24,239 basehttp 24896 14260 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:00:24,270 log 24896 12900 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:00:24,270 basehttp 24896 12900 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:00:25,278 basehttp 24896 14260 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 23:00:25,579 log 24896 12900 Not Found: /favicon.ico
+WARNING 2020-12-28 23:00:25,579 basehttp 24896 12900 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:01:13,570 basehttp 24896 12900 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 23:01:13,614 basehttp 24896 12900 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:01:13,629 basehttp 24896 16220 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:01:13,629 basehttp 24896 12784 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:01:13,629 basehttp 24896 20024 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:01:13,629 basehttp 24896 12900 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:01:13,670 log 24896 12784 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:01:13,670 basehttp 24896 12784 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:01:14,580 log 24896 12900 Not Found: /favicon.ico
+WARNING 2020-12-28 23:01:14,596 basehttp 24896 12900 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 23:01:14,727 basehttp 24896 12900 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 23:01:24,859 basehttp 24896 12784 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 23:01:24,895 basehttp 24896 12784 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:01:24,911 basehttp 24896 20024 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:01:24,911 basehttp 24896 12784 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:01:24,911 basehttp 24896 26372 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:01:24,911 basehttp 24896 16220 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:01:24,937 log 24896 12784 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:01:24,937 basehttp 24896 12784 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:01:25,958 basehttp 24896 16220 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 23:01:26,321 log 24896 26372 Not Found: /favicon.ico
+WARNING 2020-12-28 23:01:26,321 basehttp 24896 26372 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:05:56,596 basehttp 24896 24860 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 23:05:56,654 basehttp 24896 4376 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 23:05:56,655 basehttp 24896 24836 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 23:05:56,658 basehttp 24896 19656 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:05:56,660 basehttp 24896 24836 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:05:56,664 basehttp 24896 24860 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 23:05:56,691 basehttp 24896 24836 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 23:05:58,004 log 24896 24836 Not Found: /favicon.ico
+WARNING 2020-12-28 23:05:58,004 basehttp 24896 24836 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 23:05:58,880 basehttp 24896 24836 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 23:06:08,486 basehttp 24896 24860 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 23:06:08,542 basehttp 24896 4376 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-28 23:06:08,544 basehttp 24896 12032 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-28 23:06:08,545 basehttp 24896 24860 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:06:08,548 basehttp 24896 24540 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:06:08,551 basehttp 24896 19656 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-28 23:06:08,572 basehttp 24896 24540 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-28 23:06:10,014 log 24896 19656 Not Found: /favicon.ico
+WARNING 2020-12-28 23:06:10,014 basehttp 24896 19656 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 23:06:10,471 basehttp 24896 19656 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 23:06:42,457 basehttp 24896 24860 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 23:06:42,574 basehttp 24896 24860 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-28 23:06:42,795 basehttp 24896 24860 "GET /user/2/ HTTP/1.1" 200 63317
+INFO 2020-12-28 23:06:42,908 basehttp 24896 12032 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:06:42,914 basehttp 24896 24540 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:06:42,915 basehttp 24896 22012 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:06:42,917 basehttp 24896 24860 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:06:42,923 basehttp 24896 4376 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:06:42,967 log 24896 24540 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:06:42,968 basehttp 24896 24540 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:06:44,381 basehttp 24896 4376 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 23:06:44,661 log 24896 24540 Not Found: /favicon.ico
+WARNING 2020-12-28 23:06:44,661 basehttp 24896 24540 "GET /favicon.ico HTTP/1.1" 404 13314
+WARNING 2020-12-28 23:09:15,426 log 24896 23496 Not Found: /favicon.ico
+WARNING 2020-12-28 23:09:15,427 basehttp 24896 23496 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:14:01,190 basehttp 24896 27372 "GET /user/2/ HTTP/1.1" 200 63331
+INFO 2020-12-28 23:14:01,268 basehttp 24896 15732 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:14:01,270 basehttp 24896 27372 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:14:01,273 basehttp 24896 1980 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:14:01,276 basehttp 24896 1980 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:14:01,279 basehttp 24896 13180 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:14:02,043 log 24896 13180 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:14:02,044 basehttp 24896 13180 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:14:02,517 basehttp 24896 13180 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 23:14:03,017 log 24896 1980 Not Found: /favicon.ico
+WARNING 2020-12-28 23:14:03,018 basehttp 24896 1980 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:14:22,358 basehttp 24896 1980 "GET /user/2/ HTTP/1.1" 200 63322
+INFO 2020-12-28 23:14:22,411 basehttp 24896 27372 "GET /static/css/user/member-page.css HTTP/1.1" 200 11609
+INFO 2020-12-28 23:14:22,413 basehttp 24896 1980 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:14:22,414 basehttp 24896 12304 "GET /static/js/user/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-28 23:14:22,417 basehttp 24896 15708 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-28 23:14:22,420 basehttp 24896 15732 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938202
+WARNING 2020-12-28 23:14:22,455 log 24896 1980 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:14:22,455 basehttp 24896 1980 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:14:23,822 basehttp 24896 15732 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+WARNING 2020-12-28 23:14:24,155 log 24896 15708 Not Found: /favicon.ico
+WARNING 2020-12-28 23:14:24,156 basehttp 24896 15708 "GET /favicon.ico HTTP/1.1" 404 13314
+INFO 2020-12-28 23:29:32,275 basehttp 24896 18524 "GET /user/2/ HTTP/1.1" 200 63322
+WARNING 2020-12-28 23:29:32,359 log 24896 10272 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:29:32,359 basehttp 24896 10272 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:29:33,803 basehttp 24896 10272 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-28 23:31:58,545 basehttp 24896 17696 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-28 23:31:58,592 basehttp 24896 17696 "GET /static/js/custom.js HTTP/1.1" 304 0
+WARNING 2020-12-28 23:32:00,748 basehttp 24896 17696 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 23:34:03,500 basehttp 24896 9256 "GET / HTTP/1.1" 200 171712
+WARNING 2020-12-28 23:34:05,627 basehttp 24896 26016 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-28 23:34:09,658 basehttp 24896 9256 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-28 23:34:09,789 basehttp 24896 9256 "GET /user/2/ HTTP/1.1" 200 97965
+WARNING 2020-12-28 23:34:09,908 log 24896 9256 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-28 23:34:09,909 basehttp 24896 9256 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+WARNING 2020-12-28 23:34:10,104 basehttp 24896 9256 "GET /static/js/user/jquery.min.map HTTP/1.1" 404 1692
+INFO 2020-12-29 02:59:56,319 basehttp 24896 11204 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-29 02:59:56,360 basehttp 24896 13776 "GET /static/css/page-1.css HTTP/1.1" 304 0
+INFO 2020-12-29 02:59:56,361 basehttp 24896 11204 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-29 02:59:56,367 basehttp 24896 13776 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-29 02:59:56,368 basehttp 24896 11204 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-29 02:59:56,368 basehttp 24896 14260 "GET /static/img/image/logo1.jpg HTTP/1.1" 304 0
+INFO 2020-12-29 03:01:26,804 basehttp 24896 11204 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-29 03:01:32,510 basehttp 24896 11204 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-29 03:01:36,449 basehttp 24896 11204 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-29 03:01:39,602 basehttp 24896 11204 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-29 03:01:39,632 basehttp 24896 11204 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-29 03:01:39,817 basehttp 24896 11204 "GET /user/2/ HTTP/1.1" 200 63448
+INFO 2020-12-29 03:01:39,849 basehttp 24896 14260 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-29 03:01:39,850 basehttp 24896 11204 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-29 03:01:39,850 basehttp 24896 13776 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-29 03:01:39,858 basehttp 24896 11204 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+WARNING 2020-12-29 03:01:39,865 log 24896 14260 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:01:39,866 basehttp 24896 14260 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:03:28,347 basehttp 24896 13676 "GET / HTTP/1.1" 200 171712
+INFO 2020-12-29 03:03:28,404 basehttp 24896 13676 "GET /static/js/custom.js HTTP/1.1" 304 0
+WARNING 2020-12-29 03:03:30,649 basehttp 24896 13676 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-29 03:03:39,449 basehttp 24896 19204 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-29 03:03:39,784 basehttp 24896 19204 "GET /user/2/ HTTP/1.1" 200 63047
+INFO 2020-12-29 03:03:39,901 basehttp 24896 20856 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+WARNING 2020-12-29 03:03:39,908 log 24896 19204 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:03:39,909 basehttp 24896 19204 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:03:39,920 basehttp 24896 20856 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-29 03:03:39,921 basehttp 24896 19204 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-29 03:03:39,921 basehttp 24896 26528 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-29 03:08:41,045 basehttp 24896 26328 "GET /user/2/ HTTP/1.1" 200 63322
+WARNING 2020-12-29 03:08:41,089 log 24896 22092 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:08:41,089 basehttp 24896 22092 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:11:00,495 basehttp 24896 22968 "GET /user/2/ HTTP/1.1" 200 97950
+WARNING 2020-12-29 03:11:00,543 log 24896 22904 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:11:00,543 basehttp 24896 22904 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:12:33,826 basehttp 24896 22968 "GET /user/2/ HTTP/1.1" 200 97950
+WARNING 2020-12-29 03:12:33,869 log 24896 22904 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:12:33,869 basehttp 24896 22904 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:12:38,112 basehttp 24896 22968 "GET /user/2/ HTTP/1.1" 200 97950
+WARNING 2020-12-29 03:12:38,151 log 24896 22904 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:12:38,151 basehttp 24896 22904 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:13:42,142 basehttp 24896 22968 "GET /user/2/ HTTP/1.1" 200 97950
+WARNING 2020-12-29 03:13:42,186 log 24896 22904 Not Found: /user/2/logo1.jpg
+WARNING 2020-12-29 03:13:42,187 basehttp 24896 22904 "GET /user/2/logo1.jpg HTTP/1.1" 404 13329
+INFO 2020-12-29 03:16:21,474 basehttp 24896 26628 "GET /user/2/ HTTP/1.1" 200 97968
+INFO 2020-12-29 03:22:55,126 basehttp 24896 25444 "GET /user/2/ HTTP/1.1" 200 97969
+INFO 2020-12-29 03:24:58,425 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98421
+INFO 2020-12-29 03:25:01,111 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98421
+INFO 2020-12-29 03:25:35,424 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98430
+INFO 2020-12-29 03:26:04,660 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98439
+INFO 2020-12-29 03:27:14,485 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98430
+INFO 2020-12-29 03:27:20,647 basehttp 24896 24624 "GET /user/2/ HTTP/1.1" 200 98430
+INFO 2020-12-29 03:29:48,765 basehttp 24896 9012 "GET /user/2/ HTTP/1.1" 200 63252
+INFO 2020-12-29 04:10:34,828 autoreload 27008 24288 Watching for file changes with StatReloader
+INFO 2020-12-29 04:10:55,522 basehttp 27008 5948 "GET / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:10:55,599 basehttp 27008 19824 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-29 04:11:00,080 basehttp 27008 5948 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-29 04:11:00,267 basehttp 27008 5948 "GET /user/2/ HTTP/1.1" 200 63252
+INFO 2020-12-29 04:11:30,497 basehttp 27008 5948 "GET / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:11:45,539 basehttp 27008 5948 "POST /process-form/ HTTP/1.1" 200 56
+INFO 2020-12-29 04:11:45,610 basehttp 27008 19824 "POST / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:12:27,697 autoreload 27008 24288 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-29 04:12:28,307 autoreload 20736 27068 Watching for file changes with StatReloader
+INFO 2020-12-29 04:13:15,337 autoreload 23680 26472 Watching for file changes with StatReloader
