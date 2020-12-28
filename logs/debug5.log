@@ -4063,3 +4063,38 @@ INFO 2020-12-29 04:11:45,610 basehttp 27008 19824 "POST / HTTP/1.1" 200 171718
 INFO 2020-12-29 04:12:27,697 autoreload 27008 24288 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
 INFO 2020-12-29 04:12:28,307 autoreload 20736 27068 Watching for file changes with StatReloader
 INFO 2020-12-29 04:13:15,337 autoreload 23680 26472 Watching for file changes with StatReloader
+INFO 2020-12-29 04:13:19,219 basehttp 23680 8940 "GET / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:13:22,961 basehttp 23680 8940 "GET / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:13:37,353 basehttp 23680 8940 "POST /process-form/ HTTP/1.1" 200 59
+INFO 2020-12-29 04:13:37,358 basehttp 23680 16756 "POST / HTTP/1.1" 200 171718
+WARNING 2020-12-29 04:13:47,898 log 23680 8940 Forbidden (Permission denied): /admin/fx/loadmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1690, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2020-12-29 04:13:47,922 basehttp 23680 8940 "GET /admin/fx/loadmodel/ HTTP/1.1" 403 135
+INFO 2020-12-29 04:14:00,321 basehttp 23680 16756 "GET /admin/ HTTP/1.1" 200 2271
+INFO 2020-12-29 04:14:03,703 basehttp 23680 8940 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-29 04:14:03,843 basehttp 23680 16756 "GET / HTTP/1.1" 200 171718
+INFO 2020-12-29 04:14:09,052 basehttp 23680 8940 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-29 04:14:09,181 basehttp 23680 16756 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2185
+INFO 2020-12-29 04:14:16,162 basehttp 23680 8940 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-29 04:14:16,363 basehttp 23680 16756 "GET /admin/ HTTP/1.1" 200 18666
+INFO 2020-12-29 04:14:20,680 basehttp 23680 8940 "GET /admin/fx/loadmodel/ HTTP/1.1" 200 15427
+INFO 2020-12-29 04:14:20,822 basehttp 23680 16756 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
