@@ -1,7 +1,20 @@
 (function () {
+  $("#mobile-success").css({ display: "block" });
+
   var code ="";
   //   Handle Login
   $("#login-btn").click(function(e) {
+
+
+    //var form =  document.querySelector(".needs-validation");
+    var form = document.querySelector('#login-form');
+    var reportVal = form.checkValidity();
+    if (reportVal == false) {
+        console.log("validating......login");
+        // $("#venture-payment-failed-alert").show();
+        form.reportValidity();
+        return;
+    }
  // $("#login-form").submit(function (e) {
     console.log("submit form inis");
     e.preventDefault();
@@ -21,8 +34,8 @@
           $("#login-success").text(response["message"]);
           $("#login-success").css({ display: "block" });
           console.log("Acccess granted");
-          
-          window.location.replace("/user/");
+         // $("#user-page-lnk").click();
+           window.location.replace("/user/");
         } else if (response["type"] === "error") {
          // console.log("Something went wrong! Try again.");
           $("#login-error").text(response["message"]);
@@ -44,10 +57,51 @@
       $("#login-error").css({ display: "none" });
     }, 10000);
   });
+  // validate form button
+  $(".validate-form-btn").click(function(e){
 
-  
-     $(".submit-btn").click(function(e) {
+       id = $(this).attr("code");
+      var form = document.querySelector("#"+id  +"-form");
 
+      var reportVal = form.checkValidity();
+      if (reportVal == false) {
+          console.log("validating...... mobile from validate -form - btn");
+          // $("#venture-payment-failed-alert").show();
+          form.reportValidity();
+          return
+          // $("#mobile-dialog").show();
+           
+          
+      }else { 
+         
+          //$(this).prop("disabled", true);
+//          $("#mobile-form :input").prop("disabled", true);
+          // $("#close-mobile-btn").show();
+          
+          // $("#close-"+id).show()
+        
+          //$("[code='mobile-btn']")[0].show();
+          
+          $("#"+id+"-btn").submit();
+          
+         
+ 
+      }
+     
+
+     });
+      
+
+     
+     $(".close-form-btn").click(function(e) {
+      code= $(this).attr("code");
+      $("#"+code+"-x-ico").click();
+      $("#" +code+"-form").trigger("reset");
+     });
+
+     $(".submit-btn").submit(function(e) {
+      // var form = document.querySelector(".needs-validation");
+         console.log('----------------submit-btn');
          console.log("---------- fom id:"+$(this).attr("form"));
          selected_form = $(this).attr("form");
          code = $(this).attr("code");
@@ -65,8 +119,8 @@
              response["message"]; // equals 'you"re logged in or You messed up';
      
              if (response["type"] === "success") {
-               $("#" +code+"-form").trigger("reset");
-               $("#" +code+"-dialog").show();
+               //$("#" +code+"-form").trigger("reset");
+               //$("#" +code+"-dialog").show();
                 
                $("#"+code+"-success").text(response["message"]);
                $("#"+code+"-success").css({ display: "block" });
@@ -94,7 +148,10 @@
            $("#"+code+"-success").css({ display: "none" });
            $("#"+code+"-error").css({ display: "none" });
          }, 10000);
-       });
+       
+       
+        //  $("#"+selected_form+" :input").prop("disabled", true);
+        });
 
 
 $("#message-btnsa").click(function(e) {

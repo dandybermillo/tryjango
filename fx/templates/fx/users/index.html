@@ -11,7 +11,7 @@
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Page 1</title>
     <link rel="stylesheet" href="{% static './css/nicepage.css' %}" >
-    <link rel="stylesheet" href="{% static './css/Page-1.css' %}" >
+    <link rel="stylesheet" href="{% static './css/page-1.css' %}" >
     
     <script class="u-script" type="text/javascript" src="{% static './js/jquery.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'js/custom.js' %}" defer=""></script>
@@ -158,19 +158,20 @@
 </g></svg></span>
                       
 <div id="login-container" class="u-form u-form-1">
-  <form id="login-form" action="/sign-in/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px">
+ <a href="{% url 'fx:user_login_success_url'    %}">user-page </a>
+  <form id="login-form" action="" name= "login-form" method="POST" class="needs-validation u-clearfix u-form-horizontal u-form-spacing-15" style="padding: 15px">
     {% csrf_token %}
     <div class="u-form-group u-form-name">
       <label for="name-558c" class="u-form-control-hidden u-label u-label-1">Username</label>
-      <input type="text" placeholder="Username"  name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="" autofocus="autofocus">
+      <input type="text" placeholder="Username"  name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required autofocus="autofocus">
     </div>
     <div class="u-form-email u-form-group">
       <label for="email-558c" class="u-form-control-hidden u-label u-label-2">Email</label>
-      <input type="password" placeholder="password"  name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
+      <input type="password" placeholder="password"   name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required>
     </div>
     <div class="u-form-group u-form-submit">
     
-      <input id ="login-btn" type="submit" value="submit" class="u-btn u-btn-submit u-button-style" value="Signin">
+      <input id ="login-btn" type="submit" form="login-form"   class="u-btn u-btn-submit u-button-style" value="Submit">
     </div>
      
     <div id="login-success" class="u-form-send-success"></div>
@@ -302,9 +303,9 @@
                   <div class="u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-4">
                       <div class="u-form u-form-1">
-
+                          .,
                         
-                        <form id ="message-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+                        <form id ="message-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation"  style="padding: 0px;" source="custom" name="form">
                           {% csrf_token %}
                           <input type="hidden"  name="code" value="message">
 
@@ -321,10 +322,14 @@
                             <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required=""></textarea>
                           </div>
 
-                          <div class="u-align-right u-form-group u-form-submit">
-                            <button id = "message-btn" code="message" form="message-form" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
-    
-                          </div>
+
+                          
+                      <div class="u-align-left u-form-group">
+                        <input type ="button" class="validate-form-btn" code ="message" value ="Submit"></input>
+                        <button id = "message-btn" form="message-form" code ="message" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
+                      </div>
+
+                          
                           
                           <div id="message-success" class="u-form-send-success"></div>
                           <div id="message-error" class="u-form-send-error u-form-send-message"></div>
@@ -371,7 +376,7 @@
 
                     <!-- <form id="join-form" action="/join/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px" name ="join-fom"> -->
                       
-                    <form id ="join-form" action="/join/" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="form">
+                    <form id ="join-form" action="" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form needs-validation" style="padding: 15px;" source="custom" name="join-form">
                        {% csrf_token %}
                        <input type="hidden"  name="code" value="join">
 
@@ -381,7 +386,7 @@
                       </div>
                       <div class="u-form-group u-form-phone u-form-group-2">
                         <label for="phone" class="u-form-control-hidden u-label">Phone</label>
-                        <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-8118" name="phone" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-2" required="">
+                        <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-8118" name="phone" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-2">
                       </div>
                       <div class="u-form-date u-form-group u-form-group-3">
                         <label for="date-5543" class="u-form-control-hidden u-label">Birthday</label>
@@ -389,7 +394,7 @@
                       </div>
                       <div class="u-form-email u-form-group">
                         <label for="email-6797" class="u-form-control-hidden u-label">Email</label>
-                        <input type="email" placeholder="Email (Optional)" id="email-6797" name="email" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-4" required="">
+                        <input type="email" placeholder="Email (Optional)" id="email-6797" name="email" class="u-border-1 u-border-grey-30 u-grey-5 u-input u-input-rectangle u-input-4" >
                       </div>
                       <div class="u-form-group u-form-message">
                         <label for="address-6797" class="u-form-control-hidden u-label">Address</label>
@@ -400,10 +405,18 @@
                         <label for="agree-d8cc" class="u-label">I accept the <a href="#">Terms of Service</a>
                         </label>
                       </div>
-                      <div class="u-align-right u-form-group u-form-submit">
-                        <button id = "join-btn" form="join-form" code ="join" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Join</button>
 
+                      <div class="u-align-left u-form-group  u-form-group-7">
+                        <input type ="button" class="validate-form-btn" code ="join" value ="Submit"></input>
+                        <button id = "join-btn" form="join-form" code ="join" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
                       </div>
+
+
+
+                      <!-- <div class="u-align-right u-form-group ">
+                        <button id = "join-btn" form="join-form" code ="join" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Joins</button>
+
+                      </div> -->
                       
                       <div id="join-success" class="u-form-send-success"></div>
                       <div id="join-error" class="u-form-send-error u-form-send-message"></div>
@@ -1005,9 +1018,8 @@
         <div class="u-container-layout u-container-layout-1">
           <h2 class="u-text u-text-1">Mobile Top Up</h2>
           <div class="u-expanded-width u-form u-form-1">
-            <!-- <form id="login-form" action="/sign-in/" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-15 " style="padding: 15px">
-              {% csrf_token %} -->
-            <form id="mobile-form"   action ="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="mobile-form">
+            
+            <form id="mobile-form"   action ="" method="POST" class="needs-validation u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="mobile-form">
               {% csrf_token %}
               <input type="hidden"  name="code" value="mobile">
 
@@ -1045,20 +1057,21 @@
               <input id="amount-3e72" required type="number" step='any' min=1 max="100000" placeholder="Enter a amount "  name="amount" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
               </div>
           
-              <div class="u-align-left u-form-group u-form-submit u-form-group-6">
-
-                <button id = "mobile-btn" form="mobile-form" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
-
+              <div class="u-align-left u-form-group  u-form-group-6">
+                <input type ="button" class="validate-form-btn" code ="mobile" value ="Submit"></input>
+                <input  type ="button" form="mobile-form" class="close-form-btn" code ="mobile"  id="close-mobile-btn"  value ="Close" ></input>
+                <button id = "mobile-btn" form="mobile-form" code ="mobile" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
               </div>
-              
-              <div id="join-success" class="u-form-send-success"></div>
-              <div id="join-error" class="u-form-send-error u-form-send-message"></div>
+              <div class="u-align-left u-form-group  u-form-group-7" style="margin-top: 20px;">
+              <div id="mobile-success" class="u-form-send-success"></div>
+              <div id="mobile-error" class="u-form-send-error u-form-send-message"></div>
+              </div>
 
               <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-5">
                 <button id = "mobile-btn" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
 
                  <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
-                <input type="submit" value="submit" class="u-form-control-hidden"> 
+                <input type="submit" val  ue="submit" class="u-form-control-hidden"> 
               </div>  -->
 
               <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
@@ -1066,7 +1079,7 @@
               <input type="hidden" value="" name="recaptchaResponse"> -->
             </form>
           </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
+        </div><button id="mobile-x-ico" class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1ce9"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-1ce9"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg>
       </button>
@@ -1074,7 +1087,20 @@
     </section><style>.u-section-12 {
   min-height: 826px;
 }
+/* dandy added. */
+[hidden] { display: none !important; }
+.validate-form-btn, .close-form-btn{
+    background: #2e8ce3;
+    padding:  12px 50px;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    line-height:  25.6px;
+    text-align: center;
+    border: solid 1px #73c8f0;
+}
 
+/* dandy added end */
 .u-section-12 .u-dialog-1 {
   width: 683px;
   min-height: 485px;
@@ -1184,7 +1210,7 @@
           
            
            
-            <form id="repair-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="repair-form">
+            <form id="repair-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation" style="padding: 0px;" source="custom" name="repair-form">
               {% csrf_token %}
                <input type="hidden"  name="code" value="repair">
 
@@ -1194,11 +1220,11 @@
               </div>
               <div class="u-form-group u-form-phone u-form-group-2">
                 <label for="phone-e95e" class="u-form-control-hidden u-label">Phone</label>
-                <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-e95e" name="phone" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-e95e" name="phone" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
               </div>
               <div class="u-form-email u-form-group u-form-group-3">
                 <label for="email-3e72" class="u-form-control-hidden u-label">Email</label>
-                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
               </div>
               <div class="u-form-group u-form-message u-form-group-4">
                 <label for="message-3e72" class="u-form-control-hidden u-label">Description</label>
@@ -1206,6 +1232,21 @@
               </div>
               
 
+              <div class="u-align-left u-form-group  u-form-group-5">
+                <input type ="button" class="validate-form-btn" code ="repair" value ="Submit"></input>
+                <input  type ="button" form="repair-form" class="close-form-btn" code ="repair"  id="close-repair-btn"  value ="Close" ></input>
+                <button id = "repair-btn" form="repair-form" code ="repair" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
+              </div>
+              <div class="u-align-left u-form-group  u-form-group-6" style="margin-top: 20px;">
+              <div id="repair-success" class="u-form-send-success"></div>
+              <div id="repair-error" class="u-form-send-error u-form-send-message"></div>
+              </div>
+
+
+
+
+
+<!-- 
               <div class="u-align-left u-form-group u-form-submit u-form-group-5">
 
                 <button id = "repair-btn" form="repair-form" code ="repair" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
@@ -1213,7 +1254,7 @@
               </div>
               
               <div id="repair-success" class="u-form-send-success"></div>
-              <div id="repair-error" class="u-form-send-error u-form-send-message"></div>
+              <div id="repair-error" class="u-form-send-error u-form-send-message"></div> -->
               
               <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-5">
                 <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
@@ -1229,7 +1270,7 @@
 
           </div>
 
-        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
+        </div><button id="repair-x-ico" class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1ce9"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-1ce9"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg>
       </button>
@@ -1351,7 +1392,7 @@
 
             
 
-            <form id="mechanic-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="mechanic-form">
+            <form id="mechanic-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation" style="padding: 0px;" source="custom" name="mechanic-form">
               {% csrf_token %}
               <input type="hidden"  name="code" value="mechanic">
 
@@ -1365,7 +1406,7 @@
               </div>
               <div class="u-form-email u-form-group u-form-group-3">
                 <label for="email-3e72" class="u-form-control-hidden u-label">Email</label>
-                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5">
               </div>
               <div class="u-form-group u-form-select u-form-group-4">
                 <label for="select-c943" class="u-form-control-hidden u-label"></label>
@@ -1384,16 +1425,30 @@
 
               
 
-              <div class="u-align-left u-form-group u-form-submit u-form-group-6">
+              <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-6">
                 <button id = "mechanic-btn" form="mechanic-form" code ="mechanic" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
               </div>
               
               <div id="mechanic-success" class="u-form-send-success"></div>
+              <div id="mechanic-error" class="u-form-send-error u-form-send-message"></div> -->
+
+
+
+
+              <div class="u-align-left u-form-group  u-form-group-6">
+                <input type ="button" class="validate-form-btn" code ="mechanic" value ="Submit"></input>
+                <input  type ="button" form="mechanic-form" class="close-form-btn" code ="mechanic"  id="close-mechanic-btn"  value ="Close" ></input>
+                <button id = "mechanic-btn" form="mechanic-form" code ="mechanic" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
+              </div>
+              <div class="u-align-left u-form-group  u-form-group-7" style="margin-top: 20px;">
+              <div id="mechanic-success" class="u-form-send-success"></div>
               <div id="mechanic-error" class="u-form-send-error u-form-send-message"></div>
+              </div>
+
 
             </form>
           </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
+        </div><button id="mechanic-x-ico" class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1ce9"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-1ce9"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg>
       </button>
@@ -1517,7 +1572,7 @@
           <div class="u-expanded-width u-form u-form-1">
 
             
-            <form id = "construction-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="construction-form">
+            <form id = "construction-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation" style="padding: 0px;" source="custom" name="construction-form">
               {% csrf_token %}
               <input type="hidden"  name="code" value="construction">
              
@@ -1532,7 +1587,7 @@
               </div>
               <div class="u-form-email u-form-group u-form-group-3">
                 <label for="email-3e72" class="u-form-control-hidden u-label">Email</label>
-                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
               </div>
              
               <div class="u-form-group u-form-select u-form-group-4">
@@ -1552,14 +1607,22 @@
                 <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3e72" name="message" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required=""></textarea>
               </div>
 
-              
+              <div class="u-align-left u-form-group  u-form-group-6">
+                <input type ="button" class="validate-form-btn" code ="construction" value ="Submit"></input>
+                <input  type ="button" form="construction-form" class="close-form-btn" code ="construction"  id="close-construction-btn"  value ="Close" ></input>
+                <button id = "construction-btn" form="construction-form" code ="construction" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
+              </div>
+              <div class="u-align-left u-form-group  u-form-group-7" style="margin-top: 20px;">
+              <div id="construction-success" class="u-form-send-success"></div>
+              <div id="construction-error" class="u-form-send-error u-form-send-message"></div>
+              </div>
 
-              <div class="u-align-left u-form-group u-form-submit u-form-group-6">
+              <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-6">
                 <button id = "construction-btn" form="construction-form" code ="construction" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
               </div>
               
               <div id="construction-success" class="u-form-send-success"></div>
-              <div id="construction-error" class="u-form-send-error u-form-send-message"></div>
+              <div id="construction-error" class="u-form-send-error u-form-send-message"></div> -->
 
               <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-6">
                 <a href="" class="u-black u-btn u-btn-round u-btn-submit u-button-style u-radius-5 u-btn-1">Submit</a>
@@ -1572,7 +1635,7 @@
 
             </form>
           </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
+        </div><button id="construction-x-ico" class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1ce9"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-1ce9"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg>
       </button>
@@ -1692,7 +1755,7 @@
           <div class="u-expanded-width u-form u-form-1">
  
 
-            <form id="delivery-form" action="/process-form/" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="delivery-form">
+            <form id="delivery-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation" style="padding: 0px;" source="custom" name="delivery-form">
               {% csrf_token %}
               <input type="hidden"  name="code" value="delivery">
               
@@ -1706,7 +1769,7 @@
               </div>
               <div class="u-form-email u-form-group u-form-group-3">
                 <label for="email-3e72" class="u-form-control-hidden u-label">Email</label>
-                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
               </div>
               <div class="u-form-address u-form-group u-form-group-4">
                 <label for="address-27ba" class="u-form-control-hidden u-label">Address</label>
@@ -1726,23 +1789,31 @@
               </div>
               <div class="u-form-group u-form-message u-form-group-8">
                 <label for="message-3e72" class="u-form-control-hidden u-label">Message</label>
-                <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3e72" name="message" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required=""></textarea>
+                <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3e72" name="message" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" ></textarea>
               </div>
 
 
+              <div class="u-align-left u-form-group  u-form-group-9">
+                <input type ="button" class="validate-form-btn" code ="delivery" value ="Submit"></input>
+                <input  type ="button" form="delivery-form" class="close-form-btn" code ="delivery"  id="close-delivery-btn"  value ="Close" ></input>
+                <button id = "delivery-btn" form="delivery-form" code ="delivery" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
+              </div>
+              <div class="u-align-left u-form-group  u-form-group-7" style="margin-top: 20px;">
+              <div id="delivery-success" class="u-form-send-success"></div>
+              <div id="delivery-error" class="u-form-send-error u-form-send-message"></div>
 
-              <div class="u-align-left u-form-group u-form-submit u-form-group-9">
+              <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-9">
                 <button id = "delivery-btn" form="delivery-form" code ="delivery" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
               </div>
               
               <div id="delivery-success" class="u-form-send-success"></div>
-              <div id="delivery-error" class="u-form-send-error u-form-send-message"></div>
+              <div id="delivery-error" class="u-form-send-error u-form-send-message"></div> -->
 
 
 
             </form>
           </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
+        </div><button id="delivery-x-ico" class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1ce9"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-1ce9"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg>
       </button>
@@ -1870,17 +1941,26 @@
 }</style>
 
 <!-- <script>
- $(document).ready(function () {
-        $(".deposit-cash").click(function () {
-            var text = $(this).text().trim();
-            // note: 2 bottom shud always together
-            $("#deposit-cash-drop").text(text);
-            $("#change_deposit_to").val(text);
-
-
-
-        });
-      });
+ (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            console.log(forms);
+            console.log(",,,,,,,,,,,,,,,,,,,,,,,,,,,");
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    console.log("submitting......");
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 </script> -->
 
 </body>

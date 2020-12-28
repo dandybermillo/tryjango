@@ -87,7 +87,11 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 
 def user_login_success(request):
-        return render(request, 'fx/users/user_page.html', {'posts':"posts"})     
+      #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})   
+        context ={'message':" Welcome to Fair Exchange!"}
+        return render(request, "fx/users/main/member_index.html",context)  
+        
+  
 
     # return HttpResponse(f"<h1 >Login success. logged in username: { request.user.username }</h1>")
 
@@ -114,6 +118,7 @@ class LoginView(View):
         
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
+        print("processing data!")
         lists =["name","address","phone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
@@ -2484,8 +2489,8 @@ def my_home_page(request):
          print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
          
-         return render(request, "fx/users/index.html",context) 
-   
+         return render(request, "fx/underconstruction.html",context) 
+         #return render(request, "fx/users/main/member_index.html",context) 
               
 
     
