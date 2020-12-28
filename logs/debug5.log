@@ -3173,3 +3173,4 @@ django.template.exceptions.TemplateDoesNotExist: fx/undercontruction.html
 ERROR 2020-12-28 17:35:43,085 basehttp 9908 24184 "GET / HTTP/1.1" 500 82074
 INFO 2020-12-28 17:36:05,476 autoreload 9908 25164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
 INFO 2020-12-28 17:36:06,787 autoreload 548 16660 Watching for file changes with StatReloader
+INFO 2020-12-28 17:36:07,490 basehttp 548 25232 "GET / HTTP/1.1" 200 885
