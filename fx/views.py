@@ -2501,9 +2501,9 @@ def my_home_page(request):
          print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
          
-         #return render(request, "fx/underconstruction.html",context) 
+         return render(request, "fx/underconstruction.html",context) 
          #return render(request, "fx/users/main/member-page.html",context) 
-         return render(request, "fx/users/index.html",context) 
+         #return render(request, "fx/users/index.html",context) 
               
 
     
