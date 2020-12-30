@@ -7,18 +7,7 @@ from django.contrib.auth.models import User, Group
 
 
 
-class livePost(models.Model):
-      READY,NOT_READY,ALMOST_DONE =(0,1,2)
-      STATUS_CODE = ((READY,"READY"),(NOT_READY,"NOT READY"),(ALMOST_DONE,"ALMOST DONE"))
-      
-      MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(0,1,2,3,4)
-      CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
-      
-      
-      member_id = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
-      status =  models.PositiveIntegerField(default =NOT_READY, choices = STATUS_CODE)
-      Remarks =  models.CharField(max_length=300)
-      Category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
+
 
 
       
@@ -54,7 +43,20 @@ class MemberModel (models.Model):
      @property
      def name(self):
         return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
- 
+class livePostModel(models.Model):
+      READY,NOT_READY,ALMOST_DONE =(0,1,2)
+      STATUS_CODE = ((READY,"READY"),(NOT_READY,"NOT READY"),(ALMOST_DONE,"ALMOST DONE"))
+      
+      MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(0,1,2,3,4)
+      CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
+      
+      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='member' ) # todo null=False
+      in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='expert' ) # todo null=False
+      incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
+      status =  models.PositiveIntegerField(default =NOT_READY, choices = STATUS_CODE)
+      remarks =  models.CharField(max_length=300)
+      category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
+      
 class JoinModel(models.Model):
     name = models.CharField(max_length=124)
     phone = models.CharField(max_length=124,blank= True,null =True)

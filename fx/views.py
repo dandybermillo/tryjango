@@ -113,14 +113,15 @@ class LoginView(View):
         print(f"user: {user}")
         print(f"user id: {user.id}")
         if user is not None:
-            print(" successfull!")
+            
             login(request, user)
             try:
                 id = MemberModel.objects.get(user_id = user.id).id
                 print(f"--- id: {id}")
+                print(" successfull!")
             except Exception as e: 
                 #todo
-                print("LoginView e: {e} ")
+                print(f"LoginView e: {e} ")
             return JsonResponse({"type":'success', "message":"Login Success","id":id})
         else:
             print(" access denied!")
@@ -2356,8 +2357,12 @@ def dash(request,message):
     return render(request, "fx/pagenotfound.html", {"message":message})
 
 
+def user_logout_request(request):
+    print('logout_request')
+    logout(request)
+    return redirect("/index/")
 
-def logout_request(request):
+def logout_request(request): #venture
     print('logout_request')
     logout(request)
     return redirect("/venture_main_request/")
@@ -2365,8 +2370,12 @@ def logout_request(request):
 def venture_main_request(request):
     context={}
     return render(request, "fx/venture/venture_main.html", context)
+#.,
+def main_page_request(request):
+    context={}
+    return render(request, "fx/users/index.html", context)
+         
 
- 
 #vlr
 def venture_login_request(request):
     print("venture_login_request:----------")
@@ -2501,9 +2510,9 @@ def my_home_page(request):
          print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
          
-         return render(request, "fx/underconstruction.html",context) 
+        # return render(request, "fx/underconstruction.html",context) 
          #return render(request, "fx/users/main/member-page.html",context) 
-         #return render(request, "fx/users/index.html",context) 
+         return render(request, "fx/users/index.html",context) 
               
 
     

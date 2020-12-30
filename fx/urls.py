@@ -2,6 +2,7 @@ from django.urls import path,include
 from . import views,user_views
 from  . views import AjaxHandlerView
 from django.contrib.auth.views import LogoutView
+from django.contrib.auth import views as auth_views
 
 app_name = 'fx'
 urlpatterns = [
@@ -45,6 +46,8 @@ urlpatterns = [
   path('login/', views.login_request, name="login"),
   path("logout/", LogoutView.as_view(), name="logout"),
   path("logouts/",views.logout_request, name="logouts_url"),
+  path("user_logout/",views.user_logout_request, name="user_logout_url"),
+
   
    # --------------- store authentication staff -----------------
   path('venture_login/', views.venture_login_request, name="venture_login"),
@@ -63,7 +66,9 @@ urlpatterns = [
   path('success/create_update_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.create_update_venture_result, name="create_update_venture_result_url"),
   path('success/finance_venture_result/<str:account_name>/<int:id>/<int:account_id>/<str:msg>', views.finance_venture_result, name="finance_venture_result_url"),
   
-  
+  # -------------------------------- user ----------------------------
+  path('index/', views.main_page_request, name = "main_page_url"), 
+
   # path('success/payment_venture_result/<int:member_id>/<int:venture_id>/<str:msg>/<str:request_action>/', views.payment_venture_result, name="payment_venture_result_url"),
 
 
@@ -117,6 +122,14 @@ urlpatterns = [
   path('finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.finance_venture, name='finance_venture_url'),
 
 
-
+# athenticate  user
+path(
+        'change_password/',
+        auth_views.PasswordChangeView.as_view(
+            template_name='fx/users/main/change_password.html',
+            success_url = '/'
+        ),
+        name='change_password_url'
+    ),
   
 ]

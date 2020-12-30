@@ -4,14 +4,14 @@ from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,Ventu
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
-from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel
+from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,livePostModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
 #  same dir
 # Register your models here. 
 #from django.contrib.admin.actions import delete_selected as delete_selected_
-admin.site.site_header ="My Community"
+admin.site.site_header ="Fair Exchange Admin"
 
 class MemberAdmin(admin.ModelAdmin):
 
@@ -116,6 +116,11 @@ class ConstructionModelAdmin(admin.ModelAdmin):
 class DeliveryModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message'
 ]    
+
+class livePostModelAdmin(admin.ModelAdmin):
+    list_display = ['incharge','status','remarks','category','customer','in_charge'
+]  
+admin.site.register(livePostModel,livePostModelAdmin)  
 
 admin.site.register(DeliveryModel,DeliveryModelAdmin)  
 
