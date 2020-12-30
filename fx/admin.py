@@ -92,7 +92,7 @@ class tmpVariablesModelAdmin(admin.ModelAdmin):
 ]
     
 class dayTransactionModelAdmin(admin.ModelAdmin):
-    list_display = ['category','customer','date_entered','source_type','amount'
+    list_display = ['account_code','category','customer','in_charge','date_entered','source_type','amount','source_id'
 ]
 class JoinModelAdmin(admin.ModelAdmin):
     list_display = ['name','birthday','phone','address','email'

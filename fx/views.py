@@ -77,8 +77,10 @@ model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
 CREATE,UPDATE,DELETE =(0,1,2)
-NEW_RECORD, EDIT_RECORD =(0,1)
+PAYMENT,LOAN_PAYMENT,VENTURE,TRANSACTION,DEPOSIT,WITHRAWAL,GROCERY,SERVICES=(0,1,2,3,4,5,6,7)
+NEW_RECORD, EDIT_RECORD, DELETE_RECORD =(0,1,2)
 SOURCE_TRADING,SOURCE_VENTURE,SOURCE_REGULAR =(1,2,3)
+ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
 CAT_REG_TRANSACTION,CAT_TRANSFER,CAT_GROCERY,CAT_LOAN,CAT_VENTURE,CAT_TRADE =(0,1,2,5,6,7)
 source_funds_cc= {SOURCE_VENTURE:"VentureCcModel",SOURCE_TRADING:"CcModel",SOURCE_REGULAR:"CcModel"}
 source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletModel",SOURCE_REGULAR:"WalletModel"}
@@ -946,17 +948,38 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
 
 
  #    saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
-
-def  saveTransHistory(user_id,member_id,category,venture_id, description,amount,code):
-
+#.,
+def saveTransHistory(account_code,user_id,member_id,category,source_id,data,code):
+    print(f"data: {data},code ={code},source id :{source_id},account_code:{account_code}") #data or amount
+    id =0
+    try:
+            id =  MemberModel.objects.get(user_id  = user_id).id
+            print(f"..id:{id}")
+    except Exception as e:
+           # raise Http404("Sorry. User id does not exist!")
+            print(f"def cuv @exception, id: None , e:{e}")
+            logger.warning(f"def cuv @exception,e:{e}" ) 
     if code == NEW_RECORD:
-        print("------------writing on saveHistory")
-        try:
-                daytransactionmodel_qs = dayTransactionModel(in_charge_id = user_id,customer_id = member_id,category =category, amount = amount,source_id = venture_id,date_entered =date.today())
-                daytransactionmodel_qs.save()
-                #venture_id =venture_qs.id
-        except Exception as e:
-            print(f"creating new record on saveTransHistory: {e}")
+            print("------------writing on saveHistory")
+            try:
+                    daytransactionmodel_qs = dayTransactionModel(account_code =account_code,in_charge_id = id,customer_id = member_id,category =category, amount = data,source_id = source_id,date_entered =date.today())
+                    daytransactionmodel_qs.save()
+                    #venture_id =venture_qs.id
+            except Exception as e:
+                print(f"creating new record on saveTransHistory: {e}")
+    elif code == EDIT_RECORD:
+            try:
+                print("success eedting on savetrans")
+                account_qs = dayTransactionModel.objects.filter (source_id = source_id , account_code = account_code) .update( **data)
+                print("success eedting on savetrans")
+            except Exception as e:
+                Success = False
+                print(f"updating new record on saveTransHistory: {e}")
+    
+    
+    elif code == DELETE_RECORD:
+        pass
+    
 
 def getLoanPayment(member_id):
     try:    
@@ -1412,7 +1435,9 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                      print(f"ELSE:  change_amount:{change_amount}")
                                      
                                 if Success: #save day transaction for the cashier
-                                      saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
+                                     pass
+                                     #,..
+                                     # saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
                                 
                                 
                                 
@@ -2591,7 +2616,7 @@ def finance_venture(request,account_name,member_id,account_id,transType):
         #         No_Transaction_Yet = False
         # except  WalletTransaction.DoesNotExist:
         #         running_balance =0
-          
+        amount =0
         if request.method == 'POST':
                 print(f"......... past request.method == 'POST':")
                 valid =True 
@@ -2613,6 +2638,7 @@ def finance_venture(request,account_name,member_id,account_id,transType):
                         print(f"......... if account_id == 0:")
                        # memberTrans = WalletTransaction.objects.get (member_id=id) # add try exception
                         if account_name == "wallet":
+                            
                             accountForm = WalletForm(request.POST,prefix="deposit_withdraw")
                            # accountForm.account_id=account_id   # extra field inserted  used in .html
                         else:
@@ -2622,6 +2648,7 @@ def finance_venture(request,account_name,member_id,account_id,transType):
                         accountForm.requested_action = transType
                         if valid and accountForm.is_valid():
                                 if transType == 'D':
+                                    
                                     debit=0
                                     credit=accountForm.cleaned_data['credit']
                                 else:  # this withdrawal
@@ -2633,6 +2660,22 @@ def finance_venture(request,account_name,member_id,account_id,transType):
                                 #walletTransaction_id = memberTrans.id  
                                 account = Model(date_entered=date_entered,transaction_type=transType ,description=description,credit=credit,debit=debit ,member_id=member_id,category=category)
                                 account.save()  #todo now {uncomment}
+                                source_id = account.id
+                                if transType == 'W': 
+                                    category = WITHRAWAL
+                                    
+                                else:
+                                   category = DEPOSIT
+                                if account_name == "wallet":
+                                     account_code = ACCOUNT_WALLET
+                                else:
+                                     account_code = ACCOUNT_SAVINGS
+                                amount = debit + credit
+                                saveTransHistory(account_code,request.user.id,member_id,category,source_id,amount,NEW_RECORD)
+                                print("deposit money")
+                                # account = dayTransactionMode((date_entered=date_entered,transaction_type=transType ,description=description,credit=credit,debit=debit ,member_id=member_id,category=category)
+
+                                
                                 #print("after saving wallet id:",wallet.id)
                               #  parameters["wallet_id"] = wallet.id
                                 
@@ -2659,16 +2702,40 @@ def finance_venture(request,account_name,member_id,account_id,transType):
                             account= get_object_or_404(Model, id=account_id)
                             # wallet_transaction_type =  wallet.transaction_type
                             if account_name == "wallet":
+                                account_code = ACCOUNT_WALLET # used by savehistory
                                  #accountForm = WalletForm(request.POST,prefix="deposit_withdraw")
                                 accountForm = WalletForm(request.POST , instance=account,prefix="deposit_withdraw")
                             else:
+                                account_code = ACCOUNT_SAVINGS  # used by savehistory
                                 accountForm = SavingForm(request.POST , instance=account,prefix="deposit_withdraw")
                             accountForm.account = {account_name:"selected_account"} #to mark the remaining balance of an account
                             accountForm.account_id=account_id
                             accountForm.requested_action = transType
+                            
+                             # saving to day transaction
                             if valid and accountForm.is_valid():
                                # print(f"......past <if valid and walletForm.is_valid()>:")
                                 account =accountForm.save()
+                               
+                                
+                                # saving to day transaction
+                                source_id = account_id
+                                if transType == 'W': 
+                                    category = WITHRAWAL
+                                    amount =account.debit
+                                else:
+                                    category = DEPOSIT
+                                    amount =account.credit
+                                
+                                if account_name == "wallet":
+                                     new_account_code = ACCOUNT_WALLET
+                                     
+                                else:
+                                     new_account_code = ACCOUNT_SAVINGS
+                                data = {'amount':amount}
+                                saveTransHistory(account_code,0,0,0,source_id,data,EDIT_RECORD)
+                                print ("edit savetrans")
+                                # endto saving to day transaction
                                 context = { 
                                            'asset_liabities':get_all_balances(member_id),
                                             'member_info':member_info, 
@@ -3324,11 +3391,20 @@ def payment_venture(request,member_id,payment_id):
                                                             Success= False
                                                             print (f"error result:{e}, {type(e)}") 
                                     if Success:
+                                        
+                                            # save to history
+                                            #pv,.
+                                             
+                                            saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,LOAN_PAYMENT,payment_qs.id,amount,NEW_RECORD)
+                                            print ("edit savetrans")
                                             msg ="New payment has been successfully added!"
                                             return redirect(f'/success/payment_venture_result/{account_name}/{member_id}/{payment_qs.id}/{msg}')
                                 if not Success:
                                         messages.error(request, 'Sorry,Unexpected error has been encountered while saving payment transaction. Thank you.')
                                         #return render(request, 'products/e_wallet/create_update_member_wallet.html',context)
+                            
+                            
+                            
                             else:
                                         print("invalid entry...")
                                         messages.error(request, 'Please fill the box with red color. Thanks.')
@@ -3389,9 +3465,7 @@ def payment_venture(request,member_id,payment_id):
                                 if Success and filter_dict:
                                     payment_qs_result= PaymentModel.objects.filter(id = payment_id).update( **filter_dict)
                                     print(f"payment_qs:{payment_qs_result}")
-                                    #12-4
-                                    
-                                    #for max,paid,owing
+                                
                                     loan_details = getLoanPayment(member_id)
                                     max_loan = loan_details["max_loan"]
                                     owing_balance = all_balances["loan"]
@@ -3464,6 +3538,7 @@ def payment_venture(request,member_id,payment_id):
                                                         
                                             
                                     print(f"last. succcess in writing additional loan:additonal_loan:{additional_loan}")
+                                    saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,LOAN_PAYMENT,payment_id,data,EDIT_RECORD)
 
                                     msg ="New payment has been successfully added!"
                                     return redirect(f'/success/payment_venture_result/{account_name}/{member_id}/{payment_id}/{msg}')

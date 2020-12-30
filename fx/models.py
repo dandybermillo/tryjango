@@ -138,10 +138,14 @@ class LoadModel(models.Model):
 # ----------------  services end --------------------
 
 class dayTransactionModel(models.Model):
-   PAYMENT,VENTURE,TRANSACTION=(0,1,2)
-   cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"))
+   PAYMENT,LOAN_PAYMENT,VENTURE,TRANSACTION,DEPOSIT,WITHRAWAL,GROCERY,SERVICES=(0,1,2,3,4,5,6,7)
+   cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"),(DEPOSIT,"DEPOSIT"),(WITHRAWAL,'WITHRAWAL'),(GROCERY,'GROCERY'),(SERVICES,'SERVICES'),(LOAN_PAYMENT,"LOAN PAYMENT"))
    CASH,WALLET,SAVING=(0,1,2)
    source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
+   ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
+   account_cat =((ACCOUNT_SAVINGS,"SAVING ACCOUNT"),(ACCOUNT_WALLET,"WALLET ACCOUNT"),(ACCOUNT_CC,"CC ACCOUNT"),(ACCOUNT_VENTURE,"VENTURE ACCOUNT"),(ACCOUNT_PAYMENT,"PAYMENT ACCOUNT"))
+
+#    account_cat = source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
    category = models.PositiveIntegerField(default = 1 ,choices = cat)   
    customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='venture_customer' ) # todo null=False
    in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='venture_in_charge' ) # todo null=False
@@ -150,6 +154,8 @@ class dayTransactionModel(models.Model):
    source_type = models.CharField(max_length=1,default =CASH,choices = source_type_cat)  #c: cash,A Additional Loan, M max loan  
    amount = models.FloatField(default =0 )       
    source_id = models.IntegerField(default =0) 
+   account_code =    models.PositiveIntegerField(default = 1 ,choices = account_cat)   
+
                                                                                                                                         
 
 
@@ -310,6 +316,7 @@ class VentureWalletModel(models.Model):
     DEPOSIT,WITHRAW =('D','W')
     t_type =( (DEPOSIT,"DEPOSIT"),(WITHRAW,"WITHRAW"))
     member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL)
+    
     description =models.CharField( max_length = 50, blank =False, null =False)
     date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
     transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here

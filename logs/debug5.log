@@ -6756,3 +6756,1801 @@ INFO 2020-12-30 10:23:38,734 autoreload 24376 21448 Watching for file changes wi
 INFO 2020-12-30 10:23:51,454 autoreload 24376 21448 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
 INFO 2020-12-30 10:23:52,051 autoreload 16304 11228 Watching for file changes with StatReloader
 INFO 2020-12-30 10:32:53,350 autoreload 7344 15544 Watching for file changes with StatReloader
+INFO 2020-12-30 10:32:58,100 basehttp 7344 25880 "GET /admin/ HTTP/1.1" 200 19118
+INFO 2020-12-30 10:33:00,274 basehttp 7344 14800 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2020-12-30 10:33:00,276 basehttp 7344 7668 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-30 10:33:00,277 basehttp 7344 25880 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-30 10:33:00,278 basehttp 7344 14764 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-30 10:33:00,279 basehttp 7344 13692 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-30 10:33:00,306 basehttp 7344 7668 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-30 10:33:00,329 basehttp 7344 7668 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:00,330 basehttp 7344 13692 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-30 10:33:00,330 basehttp 7344 14764 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-30 10:33:00,332 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:00,333 basehttp 7344 25880 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:00,333 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-30 10:33:00,408 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:33:00,409 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:33:00,472 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:00,474 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:00,475 basehttp 7344 7668 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 10:33:04,370 basehttp 7344 16684 "GET /admin/fx/livepostmodel/ HTTP/1.1" 200 13742
+INFO 2020-12-30 10:33:04,467 basehttp 7344 16684 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-30 10:33:04,471 basehttp 7344 7668 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-30 10:33:04,471 basehttp 7344 14800 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-30 10:33:04,477 basehttp 7344 13692 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2020-12-30 10:33:04,483 basehttp 7344 16684 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2020-12-30 10:33:04,490 basehttp 7344 7668 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2020-12-30 10:33:04,491 basehttp 7344 14800 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2020-12-30 10:33:04,493 basehttp 7344 13692 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2020-12-30 10:33:04,501 basehttp 7344 16684 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2020-12-30 10:33:04,503 basehttp 7344 7668 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2020-12-30 10:33:04,505 basehttp 7344 13692 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-30 10:33:04,507 basehttp 7344 25880 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2020-12-30 10:33:04,509 basehttp 7344 14800 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2020-12-30 10:33:04,544 basehttp 7344 14764 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:33:04,591 basehttp 7344 14800 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-30 10:33:04,650 basehttp 7344 14800 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:04,656 basehttp 7344 14800 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:04,679 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:04,680 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:04,692 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-30 10:33:04,772 log 7344 14800 Not Found: /favicon.ico
+WARNING 2020-12-30 10:33:04,774 basehttp 7344 14800 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:33:04,829 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:04,830 basehttp 7344 7668 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:04,831 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 10:33:07,264 basehttp 7344 25880 "GET /admin/fx/livepostmodel/add/ HTTP/1.1" 200 19087
+INFO 2020-12-30 10:33:07,345 basehttp 7344 7668 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-30 10:33:07,346 basehttp 7344 16684 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-30 10:33:07,347 basehttp 7344 14800 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-30 10:33:07,365 basehttp 7344 25880 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2020-12-30 10:33:07,366 basehttp 7344 14764 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2020-12-30 10:33:07,366 basehttp 7344 13692 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2020-12-30 10:33:07,376 basehttp 7344 14800 "GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+INFO 2020-12-30 10:33:07,379 basehttp 7344 25880 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2020-12-30 10:33:07,380 basehttp 7344 13692 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2020-12-30 10:33:07,385 basehttp 7344 14764 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2020-12-30 10:33:07,389 basehttp 7344 25880 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-30 10:33:07,390 basehttp 7344 14764 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2020-12-30 10:33:07,391 basehttp 7344 13692 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2020-12-30 10:33:07,394 basehttp 7344 14800 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2020-12-30 10:33:07,395 basehttp 7344 16684 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2020-12-30 10:33:07,425 basehttp 7344 7668 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:33:07,482 basehttp 7344 16684 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-30 10:33:07,500 basehttp 7344 16684 "GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+INFO 2020-12-30 10:33:07,644 basehttp 7344 16684 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-30 10:33:07,645 basehttp 7344 14800 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:07,655 basehttp 7344 16684 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-30 10:33:07,702 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:07,703 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:07,703 basehttp 7344 7668 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-30 10:33:07,770 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:33:07,771 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:33:07,844 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:07,845 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:07,848 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 10:33:24,420 basehttp 7344 25880 "POST /admin/fx/livepostmodel/add/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:33:24,708 basehttp 7344 16684 "GET /admin/fx/livepostmodel/ HTTP/1.1" 200 16181
+INFO 2020-12-30 10:33:24,783 basehttp 7344 14800 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-30 10:33:24,784 basehttp 7344 16684 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-30 10:33:24,804 basehttp 7344 16684 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-30 10:33:24,805 basehttp 7344 14764 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2020-12-30 10:33:24,806 basehttp 7344 14800 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2020-12-30 10:33:24,814 basehttp 7344 25880 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2020-12-30 10:33:24,820 basehttp 7344 14800 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2020-12-30 10:33:24,821 basehttp 7344 14764 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2020-12-30 10:33:24,821 basehttp 7344 16684 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2020-12-30 10:33:24,826 basehttp 7344 25880 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2020-12-30 10:33:24,831 basehttp 7344 14800 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-30 10:33:24,835 basehttp 7344 13692 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2020-12-30 10:33:24,835 basehttp 7344 16684 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2020-12-30 10:33:24,880 basehttp 7344 7668 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:33:24,930 basehttp 7344 13692 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-30 10:33:25,026 basehttp 7344 16684 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:25,033 basehttp 7344 13692 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2020-12-30 10:33:25,035 basehttp 7344 16684 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2020-12-30 10:33:25,058 basehttp 7344 13692 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:25,060 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:25,061 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2020-12-30 10:33:25,108 log 7344 13692 Not Found: /favicon.ico
+WARNING 2020-12-30 10:33:25,109 basehttp 7344 13692 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:33:25,162 basehttp 7344 14800 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 10:33:25,162 basehttp 7344 16684 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 10:33:25,162 basehttp 7344 13692 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 10:33:33,568 basehttp 7344 25880 "GET /dashboard/ HTTP/1.1" 200 57318
+INFO 2020-12-30 10:33:33,706 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:33:34,626 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:33:35,428 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:33:35,429 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:33:48,132 basehttp 7344 16684 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 10:33:54,764 basehttp 7344 16684 "GET /admin/fx/membermodel/ HTTP/1.1" 200 16406
+INFO 2020-12-30 10:33:55,096 basehttp 7344 16684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:33:55,113 basehttp 7344 13692 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2020-12-30 10:34:02,204 basehttp 7344 16684 "GET /create_update/0/ HTTP/1.1" 200 67190
+INFO 2020-12-30 10:34:02,258 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:34:02,306 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:34:04,038 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:34:04,039 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:34:30,819 basehttp 7344 16684 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:34:31,117 basehttp 7344 16684 "GET /success/create_update_member_result/3/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 67797
+INFO 2020-12-30 10:34:31,249 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:34:31,336 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:34:33,444 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:34:33,445 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:34:38,241 basehttp 7344 16684 "GET /create_update/0/ HTTP/1.1" 200 67190
+INFO 2020-12-30 10:34:38,291 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:34:38,349 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:34:40,794 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:34:40,794 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:35:05,191 basehttp 7344 16684 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:35:05,644 basehttp 7344 16684 "GET /success/create_update_member_result/4/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 67780
+INFO 2020-12-30 10:35:05,694 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:35:05,741 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:35:08,219 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:35:08,221 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:35:12,303 basehttp 7344 16684 "GET /create_update/0/ HTTP/1.1" 200 67190
+INFO 2020-12-30 10:35:12,379 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:35:12,430 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:35:15,465 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:35:15,466 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:35:39,977 basehttp 7344 16684 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:35:40,420 basehttp 7344 16684 "GET /success/create_update_member_result/5/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 67783
+INFO 2020-12-30 10:35:40,454 basehttp 7344 16684 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 10:35:40,495 basehttp 7344 16684 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 10:35:41,313 log 7344 16684 Not Found: /favicon.ico
+WARNING 2020-12-30 10:35:41,313 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:35:47,129 basehttp 7344 16684 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 10:35:47,178 basehttp 7344 13692 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-30 10:35:47,179 basehttp 7344 15500 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-30 10:35:47,184 basehttp 7344 26100 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-30 10:35:47,186 basehttp 7344 21324 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-30 10:35:47,192 basehttp 7344 16684 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+WARNING 2020-12-30 10:35:50,527 log 7344 16684 Not Found: /favicon.ico
+INFO 2020-12-30 10:35:50,527 basehttp 7344 13692 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 10:35:50,529 basehttp 7344 16684 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 10:35:51,066 basehttp 7344 16684 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-30 10:36:36,330 basehttp 7344 13692 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-30 10:36:36,462 basehttp 7344 13692 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-30 10:36:36,610 basehttp 7344 13692 "GET /user/2/ HTTP/1.1" 200 103339
+INFO 2020-12-30 10:36:36,723 basehttp 7344 21324 "GET /static/css/user/member-page.css HTTP/1.1" 200 19413
+INFO 2020-12-30 10:36:36,729 basehttp 7344 26100 "GET /static/js/user/jquery.js HTTP/1.1" 200 89476
+INFO 2020-12-30 10:36:36,731 basehttp 7344 15500 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150727
+INFO 2020-12-30 10:36:36,744 basehttp 7344 13692 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938544
+INFO 2020-12-30 10:36:36,755 basehttp 7344 15500 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 10:36:38,125 log 7344 13692 Not Found: /favicon.ico
+WARNING 2020-12-30 10:36:38,125 basehttp 7344 13692 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 10:37:04,034 basehttp 7344 13692 "GET /user/2/ HTTP/1.1" 200 103340
+INFO 2020-12-30 10:37:04,058 basehttp 7344 15500 "GET /static/css/user/member-page.css HTTP/1.1" 200 19413
+INFO 2020-12-30 10:37:04,069 basehttp 7344 15500 "GET /static/js/user/jquery.js HTTP/1.1" 200 89476
+INFO 2020-12-30 10:37:04,070 basehttp 7344 21324 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150727
+INFO 2020-12-30 10:37:04,073 basehttp 7344 13692 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938544
+INFO 2020-12-30 10:37:04,082 basehttp 7344 13692 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 10:37:05,271 log 7344 13692 Not Found: /favicon.ico
+WARNING 2020-12-30 10:37:05,272 basehttp 7344 13692 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 10:38:05,378 log 7344 13692 Forbidden (Permission denied): /admin/fx/daytransactionmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1690, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2020-12-30 10:38:05,391 basehttp 7344 13692 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 403 135
+WARNING 2020-12-30 10:38:10,990 log 7344 13692 Forbidden (Permission denied): /admin/fx/daytransactionmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1690, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2020-12-30 10:38:10,991 basehttp 7344 13692 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 403 135
+INFO 2020-12-30 10:38:19,906 basehttp 7344 13692 "GET /admin/login/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:38:20,031 basehttp 7344 13692 "GET /admin/ HTTP/1.1" 200 2278
+INFO 2020-12-30 10:38:25,847 basehttp 7344 13692 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 10:38:32,940 basehttp 7344 13692 "GET /admin/ HTTP/1.1" 200 2278
+INFO 2020-12-30 10:38:35,485 basehttp 7344 13692 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:38:35,621 basehttp 7344 13692 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 10:38:43,521 basehttp 7344 13692 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:38:43,655 basehttp 7344 13692 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2192
+INFO 2020-12-30 10:38:47,177 basehttp 7344 13692 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-30 10:38:47,378 basehttp 7344 13692 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 10:38:49,889 basehttp 7344 13692 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 13784
+INFO 2020-12-30 10:38:50,029 basehttp 7344 13692 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:38:52,843 basehttp 7344 13692 "GET /admin/fx/daytransactionmodel/add/ HTTP/1.1" 200 19965
+INFO 2020-12-30 10:38:53,027 basehttp 7344 15500 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2020-12-30 10:38:53,027 basehttp 7344 21324 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2020-12-30 10:38:53,075 basehttp 7344 13692 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 10:38:53,153 basehttp 7344 13692 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2020-12-30 12:52:47,261 autoreload 7344 15544 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:52:47,903 autoreload 12328 19292 Watching for file changes with StatReloader
+INFO 2020-12-30 12:52:51,320 autoreload 12328 19292 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:52:51,903 autoreload 21960 29344 Watching for file changes with StatReloader
+INFO 2020-12-30 12:52:58,400 autoreload 21960 29344 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:52:58,961 autoreload 5200 18556 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:02,240 autoreload 5200 18556 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:02,757 autoreload 24920 18000 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:07,117 autoreload 24920 18000 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:07,710 autoreload 26892 29516 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:11,010 autoreload 26892 29516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:11,643 autoreload 29588 26732 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:13,956 autoreload 29588 26732 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:14,520 autoreload 19196 24416 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:17,932 autoreload 19196 24416 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:19,349 autoreload 17636 22792 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:21,833 autoreload 17636 22792 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:22,401 autoreload 14092 19436 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:24,650 autoreload 14092 19436 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:25,943 autoreload 5252 29128 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:30,494 autoreload 5252 29128 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:31,666 autoreload 17664 20960 Watching for file changes with StatReloader
+INFO 2020-12-30 12:53:37,250 autoreload 17664 20960 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:53:37,918 autoreload 26128 24732 Watching for file changes with StatReloader
+INFO 2020-12-30 12:54:55,045 autoreload 26128 24732 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:54:55,732 autoreload 22564 17200 Watching for file changes with StatReloader
+INFO 2020-12-30 12:55:04,181 autoreload 22564 17200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:55:04,852 autoreload 6132 28028 Watching for file changes with StatReloader
+INFO 2020-12-30 12:57:21,933 autoreload 6132 28028 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:57:22,480 autoreload 23472 32 Watching for file changes with StatReloader
+INFO 2020-12-30 12:57:28,996 autoreload 23472 32 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 12:57:29,563 autoreload 27796 21556 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:18,518 autoreload 27796 21556 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:19,074 autoreload 12868 6744 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:25,698 autoreload 12868 6744 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:26,391 autoreload 16844 26656 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:28,650 autoreload 16844 26656 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:29,180 autoreload 25980 29568 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:35,523 autoreload 25980 29568 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:36,074 autoreload 21688 24408 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:40,377 autoreload 21688 24408 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:40,886 autoreload 11308 19196 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:44,142 autoreload 11308 19196 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:44,775 autoreload 16784 21824 Watching for file changes with StatReloader
+INFO 2020-12-30 13:02:47,805 autoreload 16784 21824 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:02:48,394 autoreload 28516 6788 Watching for file changes with StatReloader
+INFO 2020-12-30 13:03:01,102 autoreload 28516 6788 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:03:01,623 autoreload 3556 5032 Watching for file changes with StatReloader
+INFO 2020-12-30 13:03:40,017 autoreload 3556 5032 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:03:40,554 autoreload 11400 27664 Watching for file changes with StatReloader
+INFO 2020-12-30 13:03:49,077 autoreload 11400 27664 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:03:49,609 autoreload 23120 11676 Watching for file changes with StatReloader
+INFO 2020-12-30 13:03:51,994 autoreload 23120 11676 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:03:52,536 autoreload 29176 27892 Watching for file changes with StatReloader
+INFO 2020-12-30 13:03:56,929 autoreload 29176 27892 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:03:57,452 autoreload 13704 13156 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:00,713 autoreload 13704 13156 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:01,229 autoreload 29404 20624 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:03,528 autoreload 29404 20624 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:04,227 autoreload 21296 29312 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:05,502 autoreload 21296 29312 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:06,331 autoreload 10000 19644 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:10,722 autoreload 10000 19644 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:11,352 autoreload 13256 26132 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:13,873 autoreload 13256 26132 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:15,213 autoreload 24084 25972 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:20,928 autoreload 24084 25972 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:21,657 autoreload 10004 15748 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:23,070 autoreload 10004 15748 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:23,785 autoreload 26308 29396 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:27,093 autoreload 26308 29396 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:28,044 autoreload 24364 29264 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:30,538 autoreload 24364 29264 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:31,854 autoreload 15816 7344 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:33,914 autoreload 15816 7344 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:34,815 autoreload 5200 29456 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:37,366 autoreload 5200 29456 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:38,326 autoreload 2916 5092 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:42,814 autoreload 2916 5092 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:43,758 autoreload 19476 19368 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:47,250 autoreload 19476 19368 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:48,303 autoreload 26160 29124 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:49,655 autoreload 26160 29124 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:50,474 autoreload 29548 19648 Watching for file changes with StatReloader
+INFO 2020-12-30 13:04:58,225 autoreload 29548 19648 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:04:58,788 autoreload 22036 11832 Watching for file changes with StatReloader
+INFO 2020-12-30 13:05:00,021 autoreload 22036 11832 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:05:00,800 autoreload 2032 18204 Watching for file changes with StatReloader
+INFO 2020-12-30 13:05:14,680 autoreload 2032 18204 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 13:05:15,262 autoreload 8700 7956 Watching for file changes with StatReloader
+INFO 2020-12-30 13:09:27,342 autoreload 8700 7956 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:09:28,031 autoreload 4384 27752 Watching for file changes with StatReloader
+INFO 2020-12-30 13:09:34,517 autoreload 4384 27752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:09:35,117 autoreload 21380 24044 Watching for file changes with StatReloader
+INFO 2020-12-30 13:09:42,669 autoreload 21380 24044 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:09:43,435 autoreload 27712 25040 Watching for file changes with StatReloader
+INFO 2020-12-30 13:09:51,042 autoreload 27712 25040 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:09:51,599 autoreload 28620 28280 Watching for file changes with StatReloader
+INFO 2020-12-30 13:09:56,031 autoreload 28620 28280 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:09:56,760 autoreload 19952 10612 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:02,289 autoreload 19952 10612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:02,872 autoreload 11516 29092 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:05,192 autoreload 11516 29092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:05,779 autoreload 29068 29248 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:41,710 autoreload 29068 29248 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:42,315 autoreload 8364 28436 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:44,583 autoreload 8364 28436 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:45,203 autoreload 26892 12668 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:50,606 autoreload 26892 12668 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:51,193 autoreload 8568 26996 Watching for file changes with StatReloader
+INFO 2020-12-30 13:10:56,631 autoreload 8568 26996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:10:57,175 autoreload 23140 11504 Watching for file changes with StatReloader
+INFO 2020-12-30 13:11:38,250 autoreload 23140 11504 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:11:39,018 autoreload 11840 26620 Watching for file changes with StatReloader
+INFO 2020-12-30 13:11:43,366 autoreload 11840 26620 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:11:44,022 autoreload 19488 21780 Watching for file changes with StatReloader
+INFO 2020-12-30 13:11:47,395 autoreload 19488 21780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:11:48,005 autoreload 7532 2976 Watching for file changes with StatReloader
+INFO 2020-12-30 13:12:26,711 autoreload 7532 2976 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:12:27,246 autoreload 28052 24088 Watching for file changes with StatReloader
+INFO 2020-12-30 13:12:29,609 autoreload 28052 24088 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:12:30,154 autoreload 20576 18900 Watching for file changes with StatReloader
+INFO 2020-12-30 13:12:35,671 autoreload 20576 18900 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:12:36,547 autoreload 20340 29080 Watching for file changes with StatReloader
+INFO 2020-12-30 13:12:50,467 autoreload 20340 29080 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:12:51,022 autoreload 29280 14032 Watching for file changes with StatReloader
+INFO 2020-12-30 13:12:56,449 autoreload 29280 14032 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:12:57,043 autoreload 29316 15228 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:01,486 autoreload 29316 15228 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:02,087 autoreload 22112 24956 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:04,365 autoreload 22112 24956 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:04,976 autoreload 19284 12784 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:08,335 autoreload 19284 12784 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:08,994 autoreload 25660 28560 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:11,384 autoreload 25660 28560 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:12,085 autoreload 20744 22716 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:18,612 autoreload 20744 22716 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:19,200 autoreload 20952 22768 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:39,381 autoreload 20952 22768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:39,981 autoreload 6104 22788 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:52,822 autoreload 6104 22788 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:53,415 autoreload 23524 14224 Watching for file changes with StatReloader
+INFO 2020-12-30 13:13:58,850 autoreload 23524 14224 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:13:59,388 autoreload 15720 23980 Watching for file changes with StatReloader
+INFO 2020-12-30 13:14:02,717 autoreload 15720 23980 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:14:03,378 autoreload 140 17048 Watching for file changes with StatReloader
+INFO 2020-12-30 13:14:10,880 autoreload 140 17048 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:14:11,474 autoreload 13136 16076 Watching for file changes with StatReloader
+INFO 2020-12-30 13:14:14,879 autoreload 13136 16076 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:14:15,484 autoreload 18140 25448 Watching for file changes with StatReloader
+INFO 2020-12-30 13:14:19,854 autoreload 18140 25448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:14:20,515 autoreload 28248 22768 Watching for file changes with StatReloader
+INFO 2020-12-30 13:15:44,274 autoreload 28248 22768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:15:44,830 autoreload 14104 28832 Watching for file changes with StatReloader
+INFO 2020-12-30 13:15:47,084 autoreload 14104 28832 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:15:47,645 autoreload 14244 11544 Watching for file changes with StatReloader
+INFO 2020-12-30 13:15:50,997 autoreload 14244 11544 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:15:51,730 autoreload 12996 28804 Watching for file changes with StatReloader
+INFO 2020-12-30 13:15:55,102 autoreload 12996 28804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:15:55,642 autoreload 28360 23144 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:01,139 autoreload 28360 23144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:01,751 autoreload 27752 13488 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:23,265 autoreload 27752 13488 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:23,835 autoreload 10028 20744 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:26,139 autoreload 10028 20744 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:26,704 autoreload 24128 16052 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:28,973 autoreload 24128 16052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:29,505 autoreload 15352 16548 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:34,890 autoreload 15352 16548 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:35,560 autoreload 19664 29164 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:38,909 autoreload 19664 29164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:39,465 autoreload 19356 6404 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:50,210 autoreload 19356 6404 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:50,815 autoreload 25376 28928 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:53,102 autoreload 25376 28928 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:53,668 autoreload 27900 27156 Watching for file changes with StatReloader
+INFO 2020-12-30 13:16:56,941 autoreload 27900 27156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:16:57,620 autoreload 26160 21136 Watching for file changes with StatReloader
+INFO 2020-12-30 13:17:01,023 autoreload 26160 21136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:17:01,609 autoreload 26216 8720 Watching for file changes with StatReloader
+INFO 2020-12-30 13:17:05,986 autoreload 26216 8720 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:17:06,516 autoreload 25532 24364 Watching for file changes with StatReloader
+INFO 2020-12-30 13:37:19,592 autoreload 25532 24364 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:37:20,108 autoreload 13028 28748 Watching for file changes with StatReloader
+INFO 2020-12-30 13:39:01,833 autoreload 13028 28748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:39:02,349 autoreload 27672 5308 Watching for file changes with StatReloader
+INFO 2020-12-30 13:39:06,760 autoreload 27672 5308 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:39:07,389 autoreload 28188 7844 Watching for file changes with StatReloader
+INFO 2020-12-30 13:39:12,880 autoreload 28188 7844 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:39:13,599 autoreload 2180 28344 Watching for file changes with StatReloader
+INFO 2020-12-30 13:40:24,368 autoreload 2180 28344 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:40:24,972 autoreload 19592 18100 Watching for file changes with StatReloader
+INFO 2020-12-30 13:40:27,247 autoreload 19592 18100 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:40:27,805 autoreload 21072 17048 Watching for file changes with StatReloader
+INFO 2020-12-30 13:40:53,238 autoreload 21072 17048 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:40:53,782 autoreload 23892 10604 Watching for file changes with StatReloader
+INFO 2020-12-30 13:41:03,437 autoreload 23892 10604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:41:04,005 autoreload 24912 21200 Watching for file changes with StatReloader
+INFO 2020-12-30 13:41:06,266 autoreload 24912 21200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:41:06,867 autoreload 16452 10144 Watching for file changes with StatReloader
+INFO 2020-12-30 13:43:13,033 autoreload 16452 10144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:43:13,653 autoreload 21156 26172 Watching for file changes with StatReloader
+INFO 2020-12-30 13:43:16,952 autoreload 21156 26172 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:43:17,495 autoreload 15548 11508 Watching for file changes with StatReloader
+INFO 2020-12-30 13:43:19,809 autoreload 15548 11508 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:43:20,720 autoreload 9456 19040 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:22,003 autoreload 9456 19040 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:22,530 autoreload 25456 23088 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:31,062 autoreload 25456 23088 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:31,700 autoreload 12980 19492 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:33,975 autoreload 12980 19492 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:34,593 autoreload 26212 7696 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:37,877 autoreload 26212 7696 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:38,572 autoreload 26064 28188 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:40,859 autoreload 26064 28188 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:41,399 autoreload 28636 5828 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:45,779 autoreload 28636 5828 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:46,319 autoreload 24180 21960 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:57,065 autoreload 24180 21960 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:46:57,667 autoreload 26536 19856 Watching for file changes with StatReloader
+INFO 2020-12-30 13:46:59,938 autoreload 26536 19856 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:00,630 autoreload 8548 18112 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:02,951 autoreload 8548 18112 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:04,063 autoreload 22616 3304 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:07,804 autoreload 22616 3304 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:08,708 autoreload 29364 11780 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:12,283 autoreload 29364 11780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:13,562 autoreload 22612 29008 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:17,112 autoreload 22612 29008 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:18,120 autoreload 22844 14520 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:22,618 autoreload 22844 14520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:23,241 autoreload 17688 25060 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:26,600 autoreload 17688 25060 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:27,124 autoreload 16220 12492 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:43,243 autoreload 16220 12492 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:43,816 autoreload 16604 16760 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:46,084 autoreload 16604 16760 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:46,652 autoreload 25832 15604 Watching for file changes with StatReloader
+INFO 2020-12-30 13:47:56,254 autoreload 25832 15604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:47:56,780 autoreload 12668 12488 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:00,087 autoreload 12668 12488 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:00,789 autoreload 29312 488 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:03,105 autoreload 29312 488 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:03,793 autoreload 8144 18420 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:06,048 autoreload 8144 18420 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:06,582 autoreload 21960 16472 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:13,089 autoreload 21960 16472 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:13,610 autoreload 14216 9772 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:18,105 autoreload 14216 9772 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:18,720 autoreload 23960 28908 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:25,272 autoreload 23960 28908 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:25,865 autoreload 26836 28056 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:31,328 autoreload 26836 28056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:31,963 autoreload 22460 12944 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:54,245 autoreload 22460 12944 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:54,884 autoreload 27056 11604 Watching for file changes with StatReloader
+INFO 2020-12-30 13:48:57,317 autoreload 27056 11604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:48:57,919 autoreload 10872 18860 Watching for file changes with StatReloader
+INFO 2020-12-30 13:49:04,288 autoreload 10872 18860 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:49:04,911 autoreload 20964 26504 Watching for file changes with StatReloader
+INFO 2020-12-30 13:49:32,442 autoreload 20964 26504 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:49:32,992 autoreload 21160 13756 Watching for file changes with StatReloader
+INFO 2020-12-30 13:49:40,558 autoreload 21160 13756 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:49:41,095 autoreload 24412 11136 Watching for file changes with StatReloader
+INFO 2020-12-30 13:50:25,493 autoreload 24412 11136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:50:26,102 autoreload 22676 10256 Watching for file changes with StatReloader
+INFO 2020-12-30 13:50:57,639 autoreload 22676 10256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:50:58,241 autoreload 17712 21740 Watching for file changes with StatReloader
+INFO 2020-12-30 13:51:04,776 autoreload 17712 21740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:51:06,249 autoreload 14608 25936 Watching for file changes with StatReloader
+INFO 2020-12-30 13:51:13,053 autoreload 14608 25936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:51:13,831 autoreload 28664 15564 Watching for file changes with StatReloader
+INFO 2020-12-30 13:51:20,563 autoreload 28664 15564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:51:21,508 autoreload 6868 20968 Watching for file changes with StatReloader
+INFO 2020-12-30 13:51:47,990 autoreload 6868 20968 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:51:48,568 autoreload 16140 29516 Watching for file changes with StatReloader
+INFO 2020-12-30 13:53:16,542 basehttp 16140 13452 "GET /dashboard/ HTTP/1.1" 200 57318
+INFO 2020-12-30 13:53:16,679 basehttp 16140 13452 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:53:17,904 basehttp 16140 19980 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 13:53:18,878 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:53:18,878 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 13:53:28,956 log 16140 13452 Not Found: /finance_venture/
+WARNING 2020-12-30 13:53:28,956 basehttp 16140 13452 "GET /finance_venture/ HTTP/1.1" 404 13878
+WARNING 2020-12-30 13:53:29,021 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:53:29,029 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:54:14,726 views 16140 13452 >>>>>>>>>>>>>> init cuv!
+WARNING 2020-12-30 13:54:14,731 views 16140 13452 def cuv @exception,e:MemberModel matching query does not exist.
+ERROR 2020-12-30 13:54:14,985 log 16140 13452 Internal Server Error: /create_update_venture/2/0/venture/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1092, in create_update_venture
+    ventureForm.staff = staff_info.name
+AttributeError: 'str' object has no attribute 'name'
+ERROR 2020-12-30 13:54:14,992 basehttp 16140 13452 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 500 74479
+WARNING 2020-12-30 13:54:15,028 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:54:15,028 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:54:29,254 basehttp 16140 13452 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 13:54:29,342 basehttp 16140 13452 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2020-12-30 13:54:29,346 basehttp 16140 19980 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2020-12-30 13:54:29,347 basehttp 16140 22228 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2020-12-30 13:54:29,348 basehttp 16140 26116 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2020-12-30 13:54:29,351 basehttp 16140 17692 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2020-12-30 13:54:29,382 basehttp 16140 19980 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2020-12-30 13:54:29,414 basehttp 16140 19980 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2020-12-30 13:54:29,415 basehttp 16140 26116 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2020-12-30 13:54:29,416 basehttp 16140 17692 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2020-12-30 13:54:29,427 basehttp 16140 17692 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 13:54:29,428 basehttp 16140 26116 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 13:54:29,428 basehttp 16140 19980 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+WARNING 2020-12-30 13:54:29,481 log 16140 26116 Not Found: /favicon.ico
+WARNING 2020-12-30 13:54:29,482 basehttp 16140 26116 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:54:29,513 basehttp 16140 26116 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2020-12-30 13:54:29,514 basehttp 16140 17692 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2020-12-30 13:54:29,514 basehttp 16140 19980 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2020-12-30 13:54:32,229 basehttp 16140 13452 "GET /admin/logout/ HTTP/1.1" 302 0
+INFO 2020-12-30 13:54:32,363 basehttp 16140 13452 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 13:54:32,490 basehttp 16140 17692 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-30 13:54:32,495 basehttp 16140 19980 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-30 13:54:32,496 basehttp 16140 22228 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-30 13:54:32,499 basehttp 16140 13452 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-30 13:54:32,513 basehttp 16140 26116 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-30 13:54:32,524 basehttp 16140 26116 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 13:54:33,481 basehttp 16140 26116 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+WARNING 2020-12-30 13:54:33,875 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:54:33,875 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:54:38,267 basehttp 16140 13452 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-30 13:54:38,362 basehttp 16140 13452 "GET /user/2 HTTP/1.1" 301 0
+INFO 2020-12-30 13:54:38,452 basehttp 16140 13452 "GET /user/2/ HTTP/1.1" 200 103340
+INFO 2020-12-30 13:54:38,527 basehttp 16140 17692 "GET /static/css/user/member-page.css HTTP/1.1" 200 19413
+INFO 2020-12-30 13:54:38,529 basehttp 16140 22228 "GET /static/js/user/jquery.js HTTP/1.1" 200 89476
+INFO 2020-12-30 13:54:38,530 basehttp 16140 13452 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150727
+INFO 2020-12-30 13:54:38,535 basehttp 16140 19980 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938544
+INFO 2020-12-30 13:54:38,544 basehttp 16140 22228 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 13:54:39,804 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:54:39,805 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:54:57,329 views 16140 19980 >>>>>>>>>>>>>> init cuv!
+INFO 2020-12-30 13:54:57,598 basehttp 16140 19980 "GET /create_update_venture/2/0/venture/ HTTP/1.1" 200 99854
+INFO 2020-12-30 13:54:57,672 basehttp 16140 19980 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 13:54:57,676 basehttp 16140 18968 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 13:54:57,678 basehttp 16140 17692 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 13:54:57,679 basehttp 16140 13452 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 13:54:57,682 basehttp 16140 22228 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:55:01,937 basehttp 16140 19980 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 13:55:02,151 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:55:02,152 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:55:02,507 basehttp 16140 19980 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:55:02,510 basehttp 16140 19980 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:55:17,291 views 16140 19980 --def get customer details
+WARNING 2020-12-30 13:55:17,348 views 16140 19980 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2020-12-30 13:55:17,349 basehttp 16140 19980 "GET /get_customer_details/?customer_id=DA1212-1&password=Ollimreb2&from=manual HTTP/1.1" 200 40
+INFO 2020-12-30 13:55:41,649 basehttp 16140 19980 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47130
+INFO 2020-12-30 13:55:41,840 basehttp 16140 19980 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 13:55:41,844 basehttp 16140 22228 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:55:41,852 basehttp 16140 17692 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 13:55:41,854 basehttp 16140 19980 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 13:55:41,855 basehttp 16140 22228 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 13:55:43,822 basehttp 16140 19980 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 13:55:44,321 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:55:44,322 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:55:44,555 basehttp 16140 22228 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:55:44,556 basehttp 16140 19980 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+ERROR 2020-12-30 13:55:59,526 log 16140 19980 Internal Server Error: /finance/wallet/2/0/D/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2634, in finance_venture
+    category = depos
+NameError: name 'depos' is not defined
+ERROR 2020-12-30 13:55:59,526 basehttp 16140 19980 "POST /finance/wallet/2/0/D/ HTTP/1.1" 500 69670
+WARNING 2020-12-30 13:55:59,639 log 16140 19980 Not Found: /favicon.ico
+WARNING 2020-12-30 13:55:59,640 basehttp 16140 19980 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:56:55,891 autoreload 16140 29516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 13:56:57,235 autoreload 27656 15920 Watching for file changes with StatReloader
+INFO 2020-12-30 13:57:00,771 basehttp 27656 29104 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47130
+INFO 2020-12-30 13:57:01,337 basehttp 27656 16724 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 13:57:01,337 basehttp 27656 29104 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 13:57:01,339 basehttp 27656 28024 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 13:57:01,340 basehttp 27656 17104 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 13:57:01,340 basehttp 27656 24756 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:57:03,838 basehttp 27656 24756 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47130
+INFO 2020-12-30 13:57:03,895 basehttp 27656 24756 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 13:57:03,897 basehttp 27656 17104 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 13:57:03,899 basehttp 27656 29104 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 13:57:03,902 basehttp 27656 16724 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 13:57:03,903 basehttp 27656 28024 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:57:08,086 basehttp 27656 24756 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 13:57:08,578 log 27656 28024 Not Found: /favicon.ico
+WARNING 2020-12-30 13:57:08,578 basehttp 27656 28024 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:57:08,843 basehttp 27656 24756 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:57:08,843 basehttp 27656 28024 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:57:18,632 basehttp 27656 24756 "POST /finance/wallet/2/0/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 13:57:18,889 basehttp 27656 28024 "GET /success/finance_venture_result/wallet/2/1/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 47233
+INFO 2020-12-30 13:57:18,968 basehttp 27656 24756 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 13:57:18,970 basehttp 27656 29104 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 13:57:18,973 basehttp 27656 16724 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 13:57:18,974 basehttp 27656 17104 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 13:57:18,976 basehttp 27656 28024 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 13:57:20,749 basehttp 27656 24756 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 13:57:21,244 log 27656 28024 Not Found: /favicon.ico
+WARNING 2020-12-30 13:57:21,245 basehttp 27656 28024 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 13:57:21,575 basehttp 27656 24756 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 13:57:21,576 basehttp 27656 28024 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+WARNING 2020-12-30 13:57:46,003 log 27656 24756 Forbidden (Permission denied): /admin/fx/daytransactionmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1690, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2020-12-30 13:57:46,007 basehttp 27656 24756 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 403 135
+INFO 2020-12-30 13:57:57,621 basehttp 27656 7224 "GET /admin/ HTTP/1.1" 302 0
+INFO 2020-12-30 13:57:57,737 basehttp 27656 7224 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2192
+INFO 2020-12-30 13:58:04,607 basehttp 27656 7224 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2020-12-30 13:58:04,800 basehttp 27656 7224 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 13:58:07,521 basehttp 27656 7224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 15795
+INFO 2020-12-30 13:58:07,638 basehttp 27656 7224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 13:58:51,496 autoreload 27656 15920 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 13:58:52,113 autoreload 23924 23956 Watching for file changes with StatReloader
+INFO 2020-12-30 13:59:05,956 autoreload 23924 23956 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 13:59:07,257 autoreload 18764 26116 Watching for file changes with StatReloader
+INFO 2020-12-30 13:59:09,556 basehttp 18764 25076 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 16014
+INFO 2020-12-30 13:59:09,669 basehttp 18764 25076 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 13:59:44,896 autoreload 18764 26116 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 13:59:45,527 autoreload 26892 25580 Watching for file changes with StatReloader
+INFO 2020-12-30 13:59:46,981 autoreload 26892 25580 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 13:59:48,362 autoreload 20216 26500 Watching for file changes with StatReloader
+INFO 2020-12-30 13:59:49,661 basehttp 20216 19276 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 16205
+INFO 2020-12-30 13:59:49,770 basehttp 20216 19276 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:00:10,071 autoreload 20216 26500 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:00:10,670 autoreload 18120 21740 Watching for file changes with StatReloader
+INFO 2020-12-30 14:00:19,239 autoreload 18120 21740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:00:19,812 autoreload 27556 4304 Watching for file changes with StatReloader
+INFO 2020-12-30 14:00:21,204 autoreload 27556 4304 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:00:21,988 autoreload 19780 9204 Watching for file changes with StatReloader
+INFO 2020-12-30 14:00:31,742 basehttp 19780 29436 "GET /finance/wallet/2/1/D/ HTTP/1.1" 200 47105
+INFO 2020-12-30 14:00:32,583 basehttp 19780 29436 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:00:32,589 basehttp 19780 24080 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:00:32,590 basehttp 19780 22172 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:00:32,590 basehttp 19780 1968 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:00:32,593 basehttp 19780 25848 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:00:34,559 basehttp 19780 25848 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:00:35,216 log 19780 25848 Not Found: /favicon.ico
+WARNING 2020-12-30 14:00:35,217 basehttp 19780 25848 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:00:35,614 basehttp 19780 25848 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:00:35,615 basehttp 19780 1968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:00:39,237 basehttp 19780 25848 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47127
+INFO 2020-12-30 14:00:39,285 basehttp 19780 25848 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:00:39,286 basehttp 19780 29436 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:00:39,290 basehttp 19780 22172 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:00:39,290 basehttp 19780 24080 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:00:39,292 basehttp 19780 1968 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:00:40,467 basehttp 19780 25848 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:00:41,038 log 19780 1968 Not Found: /favicon.ico
+WARNING 2020-12-30 14:00:41,038 basehttp 19780 1968 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:00:41,298 basehttp 19780 25848 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:00:41,299 basehttp 19780 1968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:00:49,459 basehttp 19780 25848 "POST /finance/wallet/2/0/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 14:00:49,750 basehttp 19780 1968 "GET /success/finance_venture_result/wallet/2/2/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 47227
+INFO 2020-12-30 14:00:49,808 basehttp 19780 25848 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:00:49,822 basehttp 19780 24080 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:00:49,824 basehttp 19780 1968 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:00:49,825 basehttp 19780 22172 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:00:49,828 basehttp 19780 25848 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:01:02,574 basehttp 19780 1968 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:01:03,079 log 19780 25848 Not Found: /favicon.ico
+WARNING 2020-12-30 14:01:03,079 basehttp 19780 25848 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:01:03,422 basehttp 19780 1968 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:01:03,422 basehttp 19780 25848 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:01:10,552 basehttp 19780 1968 "GET /finance/wallet/2/2/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:01:10,624 basehttp 19780 25848 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:01:10,627 basehttp 19780 29436 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:01:10,629 basehttp 19780 22172 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:01:10,632 basehttp 19780 24080 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:01:10,634 basehttp 19780 1968 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:01:13,708 basehttp 19780 25848 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:01:14,254 log 19780 1968 Not Found: /favicon.ico
+WARNING 2020-12-30 14:01:14,254 basehttp 19780 1968 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:01:14,604 basehttp 19780 25848 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:01:14,605 basehttp 19780 1968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:01:24,250 basehttp 19780 27076 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 16706
+INFO 2020-12-30 14:01:24,503 basehttp 19780 27076 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:02:24,638 autoreload 19780 9204 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:25,343 autoreload 24956 28400 Watching for file changes with StatReloader
+INFO 2020-12-30 14:02:26,710 autoreload 24956 28400 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:27,479 autoreload 27212 15596 Watching for file changes with StatReloader
+INFO 2020-12-30 14:02:30,868 autoreload 27212 15596 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:31,496 autoreload 29096 21448 Watching for file changes with StatReloader
+INFO 2020-12-30 14:02:36,923 autoreload 29096 21448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:37,508 autoreload 27800 25248 Watching for file changes with StatReloader
+INFO 2020-12-30 14:02:42,953 autoreload 27800 25248 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:43,565 autoreload 19952 23556 Watching for file changes with StatReloader
+INFO 2020-12-30 14:02:46,947 autoreload 19952 23556 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:02:47,565 autoreload 26716 10604 Watching for file changes with StatReloader
+INFO 2020-12-30 14:03:25,731 autoreload 26716 10604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:03:26,320 autoreload 29224 14396 Watching for file changes with StatReloader
+INFO 2020-12-30 14:03:32,753 autoreload 29224 14396 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:03:33,297 autoreload 18172 19576 Watching for file changes with StatReloader
+INFO 2020-12-30 14:03:44,094 autoreload 18172 19576 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:03:44,660 autoreload 28980 24496 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:11,049 autoreload 28980 24496 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:11,643 autoreload 25660 8416 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:15,071 autoreload 25660 8416 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:15,671 autoreload 29548 25768 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:19,114 autoreload 29548 25768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:19,787 autoreload 21108 29444 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:33,872 autoreload 21108 29444 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:34,476 autoreload 27904 24436 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:43,074 autoreload 27904 24436 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:43,698 autoreload 22888 21880 Watching for file changes with StatReloader
+INFO 2020-12-30 14:04:50,205 autoreload 22888 21880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:04:50,783 autoreload 15560 3088 Watching for file changes with StatReloader
+INFO 2020-12-30 14:05:09,784 autoreload 15560 3088 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:05:10,602 autoreload 22932 20912 Watching for file changes with StatReloader
+INFO 2020-12-30 14:05:13,260 autoreload 22932 20912 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:05:14,949 autoreload 8244 13340 Watching for file changes with StatReloader
+INFO 2020-12-30 14:05:16,485 autoreload 8244 13340 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:05:17,220 autoreload 15496 29132 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:23,174 autoreload 15496 29132 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:23,720 autoreload 23548 16408 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:33,357 autoreload 23548 16408 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:33,911 autoreload 2976 18952 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:40,445 autoreload 2976 18952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:41,233 autoreload 8872 24232 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:44,856 autoreload 8872 24232 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:45,589 autoreload 15540 22212 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:49,188 autoreload 15540 22212 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:50,161 autoreload 24512 20148 Watching for file changes with StatReloader
+INFO 2020-12-30 14:06:57,009 autoreload 24512 20148 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:06:57,724 autoreload 20740 16116 Watching for file changes with StatReloader
+INFO 2020-12-30 14:07:02,469 autoreload 20740 16116 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:07:03,382 autoreload 18404 21132 Watching for file changes with StatReloader
+INFO 2020-12-30 14:07:06,985 autoreload 18404 21132 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:07:07,915 autoreload 17588 15432 Watching for file changes with StatReloader
+INFO 2020-12-30 14:07:28,098 autoreload 17588 15432 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:07:28,669 autoreload 11936 2624 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:21,078 autoreload 11936 2624 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:21,691 autoreload 29372 13984 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:30,372 autoreload 29372 13984 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:30,946 autoreload 28300 19020 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:33,210 autoreload 28300 19020 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:33,902 autoreload 24200 17256 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:36,287 autoreload 24200 17256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:36,823 autoreload 24852 10144 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:41,334 autoreload 24852 10144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:41,942 autoreload 24900 14872 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:45,352 autoreload 24900 14872 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:45,910 autoreload 16220 14816 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:52,455 autoreload 16220 14816 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:53,427 autoreload 16784 13644 Watching for file changes with StatReloader
+INFO 2020-12-30 14:09:56,349 autoreload 16784 13644 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:09:57,228 autoreload 21108 22468 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:08,176 autoreload 21108 22468 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:10:09,105 autoreload 8452 29180 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:16,075 autoreload 8452 29180 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:10:16,866 autoreload 28452 9144 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:20,591 autoreload 28452 9144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:10:21,698 autoreload 28664 25720 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:23,356 autoreload 28664 25720 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:10:24,393 autoreload 4992 20340 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:53,229 autoreload 4992 20340 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:10:53,788 autoreload 26616 16856 Watching for file changes with StatReloader
+INFO 2020-12-30 14:10:57,146 autoreload 26616 16856 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:10:57,652 autoreload 24852 14204 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:00,944 autoreload 24852 14204 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:01,597 autoreload 26076 11824 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:08,260 autoreload 26076 11824 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:08,847 autoreload 15692 13072 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:12,238 autoreload 15692 13072 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:12,826 autoreload 12920 13920 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:19,396 autoreload 12920 13920 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:20,043 autoreload 29344 6508 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:25,630 autoreload 29344 6508 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:26,357 autoreload 11244 27756 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:32,860 autoreload 11244 27756 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:33,566 autoreload 18584 17140 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:34,866 autoreload 18584 17140 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:35,421 autoreload 10384 10636 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:37,751 autoreload 10384 10636 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:38,700 autoreload 19600 23668 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:43,301 autoreload 19600 23668 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:43,986 autoreload 18128 19592 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:47,284 autoreload 18128 19592 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:48,013 autoreload 11400 16140 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:50,390 autoreload 11400 16140 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:50,978 autoreload 16692 26292 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:55,337 autoreload 16692 26292 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:11:56,004 autoreload 23956 19780 Watching for file changes with StatReloader
+INFO 2020-12-30 14:11:59,545 autoreload 23956 19780 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:00,821 autoreload 22768 13616 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:03,463 autoreload 22768 13616 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:04,354 autoreload 11836 20736 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:05,826 autoreload 11836 20736 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:06,702 autoreload 28468 14204 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:11,365 autoreload 28468 14204 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:12,245 autoreload 18964 17176 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:15,784 autoreload 18964 17176 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:16,978 autoreload 23776 22660 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:18,458 autoreload 23776 22660 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:19,327 autoreload 11796 15892 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:27,085 autoreload 11796 15892 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:27,678 autoreload 15056 12468 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:31,201 autoreload 15056 12468 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:32,357 autoreload 28664 24376 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:34,954 autoreload 28664 24376 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:35,916 autoreload 27100 22468 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:40,544 autoreload 27100 22468 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:41,399 autoreload 10604 15692 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:50,225 autoreload 10604 15692 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:50,809 autoreload 18072 29040 Watching for file changes with StatReloader
+INFO 2020-12-30 14:12:57,461 autoreload 18072 29040 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:12:58,070 autoreload 18116 24732 Watching for file changes with StatReloader
+INFO 2020-12-30 14:13:04,827 autoreload 18116 24732 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:13:05,408 autoreload 14016 26312 Watching for file changes with StatReloader
+INFO 2020-12-30 14:13:06,642 autoreload 14016 26312 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:13:07,414 autoreload 27704 28288 Watching for file changes with StatReloader
+INFO 2020-12-30 14:13:57,524 autoreload 27704 28288 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:13:58,066 autoreload 26780 28776 Watching for file changes with StatReloader
+INFO 2020-12-30 14:13:59,289 autoreload 26780 28776 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:13:59,761 autoreload 25768 7844 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:05,197 autoreload 25768 7844 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:05,752 autoreload 19276 23012 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:06,957 autoreload 19276 23012 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:07,539 autoreload 27512 14092 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:13,044 autoreload 27512 14092 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:13,589 autoreload 25076 16100 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:16,867 autoreload 25076 16100 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:17,355 autoreload 25152 28872 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:20,618 autoreload 25152 28872 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:21,344 autoreload 25900 12948 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:24,652 autoreload 25900 12948 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:25,425 autoreload 19664 13480 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:34,021 autoreload 19664 13480 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:34,777 autoreload 16264 25340 Watching for file changes with StatReloader
+INFO 2020-12-30 14:14:37,099 autoreload 16264 25340 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:14:38,146 autoreload 23228 28592 Watching for file changes with StatReloader
+INFO 2020-12-30 14:15:00,690 autoreload 23228 28592 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:15:01,189 autoreload 16752 6636 Watching for file changes with StatReloader
+INFO 2020-12-30 14:15:07,635 autoreload 16752 6636 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:15:08,250 autoreload 24824 26856 Watching for file changes with StatReloader
+INFO 2020-12-30 14:15:11,617 autoreload 24824 26856 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:15:12,198 autoreload 256 17336 Watching for file changes with StatReloader
+INFO 2020-12-30 14:15:14,425 autoreload 256 17336 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:15:14,950 autoreload 19284 16804 Watching for file changes with StatReloader
+INFO 2020-12-30 14:23:34,396 autoreload 19284 16804 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:23:35,917 autoreload 22256 15632 Watching for file changes with StatReloader
+INFO 2020-12-30 14:23:37,291 autoreload 22256 15632 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:23:38,429 autoreload 18224 12456 Watching for file changes with StatReloader
+INFO 2020-12-30 14:24:22,734 autoreload 18224 12456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:24:23,463 autoreload 15672 14644 Watching for file changes with StatReloader
+INFO 2020-12-30 14:24:59,041 autoreload 15672 14644 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:24:59,658 autoreload 15848 16764 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:04,143 autoreload 15848 16764 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:04,933 autoreload 2324 26116 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:10,522 autoreload 2324 26116 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:11,682 autoreload 26132 13480 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:15,043 autoreload 26132 13480 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:15,966 autoreload 8700 25332 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:18,491 autoreload 8700 25332 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:19,781 autoreload 19420 22756 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:27,597 autoreload 19420 22756 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:28,298 autoreload 1540 23588 Watching for file changes with StatReloader
+INFO 2020-12-30 14:25:31,854 autoreload 1540 23588 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:25:32,741 autoreload 19660 26972 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:04,942 autoreload 19660 26972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:05,665 autoreload 27776 10384 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:38,769 autoreload 27776 10384 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:39,601 autoreload 16264 17524 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:41,930 autoreload 16264 17524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:42,969 autoreload 29372 28592 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:46,326 autoreload 29372 28592 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:47,412 autoreload 13156 11932 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:48,898 autoreload 13156 11932 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:49,544 autoreload 12480 20276 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:51,978 autoreload 12480 20276 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:53,110 autoreload 26348 7972 Watching for file changes with StatReloader
+INFO 2020-12-30 14:26:57,495 autoreload 26348 7972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:26:58,387 autoreload 16252 29152 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:06,312 autoreload 16252 29152 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:07,932 autoreload 17472 22532 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:11,989 autoreload 17472 22532 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:13,063 autoreload 23212 29000 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:14,765 autoreload 23212 29000 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:16,256 autoreload 29344 28788 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:17,803 autoreload 29344 28788 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:18,782 autoreload 29484 14224 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:20,359 autoreload 29484 14224 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:21,293 autoreload 24360 20180 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:23,085 autoreload 24360 20180 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:24,115 autoreload 11884 19508 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:25,767 autoreload 11884 19508 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:27,591 autoreload 14892 25740 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:42,151 autoreload 14892 25740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:43,258 autoreload 19632 18820 Watching for file changes with StatReloader
+INFO 2020-12-30 14:27:58,702 autoreload 19632 18820 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:27:59,881 autoreload 18100 12060 Watching for file changes with StatReloader
+INFO 2020-12-30 14:28:06,771 autoreload 18100 12060 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:28:08,595 autoreload 14180 2032 Watching for file changes with StatReloader
+INFO 2020-12-30 14:28:41,728 autoreload 14180 2032 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 14:28:43,099 autoreload 20116 12540 Watching for file changes with StatReloader
+INFO 2020-12-30 14:29:15,319 autoreload 20116 12540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:29:15,936 autoreload 20148 16148 Watching for file changes with StatReloader
+INFO 2020-12-30 14:29:18,341 autoreload 20148 16148 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:29:19,082 autoreload 13264 21160 Watching for file changes with StatReloader
+INFO 2020-12-30 14:29:52,282 autoreload 19920 16652 Watching for file changes with StatReloader
+WARNING 2020-12-30 14:30:13,020 log 19920 18992 Not Found: /finance/wallet/2/0
+WARNING 2020-12-30 14:30:13,021 basehttp 19920 18992 "GET /finance/wallet/2/0 HTTP/1.1" 404 13884
+WARNING 2020-12-30 14:30:13,205 log 19920 18992 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:13,206 basehttp 19920 18992 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 14:30:18,668 log 19920 18992 Not Found: /finance/wallet/2/0/
+WARNING 2020-12-30 14:30:18,668 basehttp 19920 18992 "GET /finance/wallet/2/0/ HTTP/1.1" 404 13887
+WARNING 2020-12-30 14:30:18,733 log 19920 18992 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:18,733 basehttp 19920 18992 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 14:30:30,677 log 19920 18992 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:30,678 basehttp 19920 18992 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 14:30:31,580 log 19920 18992 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:31,580 basehttp 19920 18992 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 14:30:32,578 log 19920 18992 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:32,580 basehttp 19920 18992 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:30:34,509 basehttp 19920 18992 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47139
+INFO 2020-12-30 14:30:36,372 basehttp 19920 18992 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:30:36,374 basehttp 19920 24080 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:30:36,377 basehttp 19920 16140 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:30:36,379 basehttp 19920 14920 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:30:36,381 basehttp 19920 28404 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:30:37,816 basehttp 19920 28404 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:30:38,516 log 19920 28404 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:38,518 basehttp 19920 28404 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:30:39,108 basehttp 19920 28404 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:30:39,108 basehttp 19920 14920 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:30:39,893 basehttp 19920 28404 "GET /finance/wallet/2/0/D/ HTTP/1.1" 200 47139
+INFO 2020-12-30 14:30:39,998 basehttp 19920 28404 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:30:40,002 basehttp 19920 18992 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:30:40,005 basehttp 19920 16140 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:30:40,007 basehttp 19920 24080 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:30:40,010 basehttp 19920 14920 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:30:42,176 basehttp 19920 28404 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:30:42,807 log 19920 14920 Not Found: /favicon.ico
+WARNING 2020-12-30 14:30:42,808 basehttp 19920 14920 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:30:43,119 basehttp 19920 28404 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:30:43,120 basehttp 19920 14920 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:31:01,247 basehttp 19920 28404 "POST /finance/wallet/2/0/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 14:31:01,578 basehttp 19920 14920 "GET /success/finance_venture_result/wallet/2/3/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 47233
+INFO 2020-12-30 14:31:01,672 basehttp 19920 28404 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:31:01,683 basehttp 19920 18992 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:31:01,690 basehttp 19920 24080 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:31:01,692 basehttp 19920 16140 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:31:01,693 basehttp 19920 14920 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:31:03,494 basehttp 19920 28404 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:31:04,113 log 19920 14920 Not Found: /favicon.ico
+WARNING 2020-12-30 14:31:04,113 basehttp 19920 14920 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:31:04,515 basehttp 19920 14920 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:31:04,515 basehttp 19920 28404 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:31:17,020 basehttp 19920 15208 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17206
+INFO 2020-12-30 14:31:17,183 basehttp 19920 15208 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:31:33,172 autoreload 19920 16652 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 14:31:33,814 autoreload 7972 17688 Watching for file changes with StatReloader
+INFO 2020-12-30 14:31:35,068 autoreload 7972 17688 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 14:31:35,874 autoreload 28248 21556 Watching for file changes with StatReloader
+INFO 2020-12-30 14:31:39,322 autoreload 28248 21556 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2020-12-30 14:31:40,696 autoreload 10624 2936 Watching for file changes with StatReloader
+INFO 2020-12-30 14:31:41,823 basehttp 10624 17820 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17519
+INFO 2020-12-30 14:31:41,934 basehttp 10624 17820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:32:02,540 autoreload 10624 2936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:03,201 autoreload 27148 25696 Watching for file changes with StatReloader
+INFO 2020-12-30 14:32:06,743 autoreload 27148 25696 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:07,556 autoreload 16140 14920 Watching for file changes with StatReloader
+INFO 2020-12-30 14:32:13,005 autoreload 16140 14920 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:13,671 autoreload 3192 16300 Watching for file changes with StatReloader
+INFO 2020-12-30 14:32:21,337 autoreload 3192 16300 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:22,127 autoreload 22888 26780 Watching for file changes with StatReloader
+INFO 2020-12-30 14:32:24,543 autoreload 22888 26780 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:25,294 autoreload 21300 16336 Watching for file changes with StatReloader
+INFO 2020-12-30 14:32:42,313 autoreload 21300 16336 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:32:43,319 autoreload 17848 5156 Watching for file changes with StatReloader
+INFO 2020-12-30 14:33:01,527 autoreload 17848 5156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:33:02,803 autoreload 22408 14128 Watching for file changes with StatReloader
+INFO 2020-12-30 14:33:05,153 autoreload 22408 14128 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:33:05,797 autoreload 25368 17688 Watching for file changes with StatReloader
+INFO 2020-12-30 14:33:10,545 autoreload 25368 17688 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:33:11,270 autoreload 22136 26892 Watching for file changes with StatReloader
+INFO 2020-12-30 14:33:44,159 autoreload 22136 26892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:33:44,795 autoreload 2916 24320 Watching for file changes with StatReloader
+INFO 2020-12-30 14:33:47,079 autoreload 2916 24320 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:33:47,765 autoreload 18556 25524 Watching for file changes with StatReloader
+INFO 2020-12-30 14:34:22,558 autoreload 18556 25524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:34:23,215 autoreload 29284 27540 Watching for file changes with StatReloader
+INFO 2020-12-30 14:34:25,693 autoreload 29284 27540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:34:26,347 autoreload 12008 19120 Watching for file changes with StatReloader
+INFO 2020-12-30 14:34:55,767 basehttp 12008 26012 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:34:58,342 basehttp 12008 26012 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:34:58,358 basehttp 12008 21456 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:34:58,369 basehttp 12008 14224 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:34:58,371 basehttp 12008 18016 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:34:58,371 basehttp 12008 27772 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:35:07,031 basehttp 12008 18016 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:35:07,610 log 12008 18016 Not Found: /favicon.ico
+WARNING 2020-12-30 14:35:07,611 basehttp 12008 18016 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:35:08,028 basehttp 12008 27772 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:35:08,028 basehttp 12008 18016 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+ERROR 2020-12-30 14:35:33,329 log 12008 18016 Internal Server Error: /finance/wallet/2/3/D/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2721, in finance_venture
+    saveTransHistory(account_code,0,0,source_id,amount,EDIT_RECORD)
+UnboundLocalError: local variable 'amount' referenced before assignment
+ERROR 2020-12-30 14:35:33,337 basehttp 12008 18016 "POST /finance/wallet/2/3/D/ HTTP/1.1" 500 70521
+WARNING 2020-12-30 14:35:33,464 log 12008 18016 Not Found: /favicon.ico
+WARNING 2020-12-30 14:35:33,470 basehttp 12008 18016 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:36:20,372 autoreload 12008 19120 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:36:20,999 autoreload 28664 28432 Watching for file changes with StatReloader
+INFO 2020-12-30 14:38:04,083 basehttp 28664 22788 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:38:04,836 basehttp 28664 22788 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:38:04,837 basehttp 28664 17888 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:38:04,839 basehttp 28664 23012 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:38:04,840 basehttp 28664 18756 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:38:04,840 basehttp 28664 24428 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:38:06,670 basehttp 28664 24428 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:38:07,420 log 28664 24428 Not Found: /favicon.ico
+WARNING 2020-12-30 14:38:07,421 basehttp 28664 24428 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:38:07,921 basehttp 28664 24428 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:38:07,922 basehttp 28664 18756 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2020-12-30 14:38:13,789 log 28664 24428 Internal Server Error: /finance/wallet/2/3/D/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2721, in finance_venture
+    saveTransHistory(account_code,0,0,source_id,amount,EDIT_RECORD)
+TypeError: saveTransHistory() missing 1 required positional argument: 'code'
+ERROR 2020-12-30 14:38:13,794 basehttp 28664 24428 "POST /finance/wallet/2/3/D/ HTTP/1.1" 500 70680
+WARNING 2020-12-30 14:38:13,922 log 28664 24428 Not Found: /favicon.ico
+WARNING 2020-12-30 14:38:13,922 basehttp 28664 24428 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:52:18,803 autoreload 28664 28432 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:52:19,354 autoreload 29688 28276 Watching for file changes with StatReloader
+INFO 2020-12-30 14:52:29,931 autoreload 29688 28276 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:52:30,514 autoreload 29072 2836 Watching for file changes with StatReloader
+INFO 2020-12-30 14:52:37,376 basehttp 29072 12572 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:52:37,880 basehttp 29072 15276 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:52:37,880 basehttp 29072 21272 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:52:37,880 basehttp 29072 12572 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:52:37,880 basehttp 29072 13628 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:52:37,888 basehttp 29072 14296 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:52:44,351 basehttp 29072 14296 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:52:46,648 log 29072 14296 Not Found: /favicon.ico
+WARNING 2020-12-30 14:52:46,649 basehttp 29072 14296 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:52:47,159 basehttp 29072 14296 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:52:47,160 basehttp 29072 15276 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:52:58,335 autoreload 29072 2836 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:52:58,937 autoreload 10624 24612 Watching for file changes with StatReloader
+INFO 2020-12-30 14:53:03,365 autoreload 10624 24612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:53:04,061 autoreload 15676 18776 Watching for file changes with StatReloader
+INFO 2020-12-30 14:53:20,214 autoreload 15676 18776 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:53:20,980 autoreload 24248 28332 Watching for file changes with StatReloader
+INFO 2020-12-30 14:53:25,625 autoreload 24248 28332 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:53:26,456 autoreload 13680 25948 Watching for file changes with StatReloader
+INFO 2020-12-30 14:53:34,285 autoreload 13680 25948 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:53:35,679 autoreload 17524 20736 Watching for file changes with StatReloader
+INFO 2020-12-30 14:53:39,172 basehttp 17524 22120 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:53:39,875 basehttp 17524 22120 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:53:39,879 basehttp 17524 20316 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:53:39,880 basehttp 17524 14380 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:53:39,881 basehttp 17524 4196 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:53:39,884 basehttp 17524 9224 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:53:51,882 basehttp 17524 4196 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:53:53,146 log 17524 4196 Not Found: /favicon.ico
+WARNING 2020-12-30 14:53:53,147 basehttp 17524 4196 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:53:53,503 basehttp 17524 4196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:53:53,503 basehttp 17524 20316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:54:26,767 basehttp 17524 4196 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 14:54:27,063 basehttp 17524 4196 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47236
+INFO 2020-12-30 14:54:27,123 basehttp 17524 4196 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:54:27,126 basehttp 17524 22120 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:54:27,130 basehttp 17524 9224 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:54:27,132 basehttp 17524 14380 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:54:27,133 basehttp 17524 20316 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:54:30,121 basehttp 17524 4196 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:54:31,013 log 17524 20316 Not Found: /favicon.ico
+WARNING 2020-12-30 14:54:31,014 basehttp 17524 20316 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:54:31,358 basehttp 17524 4196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:54:31,359 basehttp 17524 20316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:54:44,592 basehttp 17524 19580 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17519
+INFO 2020-12-30 14:54:44,759 basehttp 17524 19580 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:54:50,071 basehttp 17524 19580 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17519
+INFO 2020-12-30 14:54:50,241 basehttp 17524 19580 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 14:54:57,709 basehttp 17524 4196 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:54:57,773 basehttp 17524 20316 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:54:57,785 basehttp 17524 9224 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:54:57,787 basehttp 17524 14380 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:54:57,790 basehttp 17524 4196 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:54:57,792 basehttp 17524 20316 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:55:00,388 basehttp 17524 4196 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:55:01,112 log 17524 20316 Not Found: /favicon.ico
+WARNING 2020-12-30 14:55:01,112 basehttp 17524 20316 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:55:01,367 basehttp 17524 4196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:55:01,368 basehttp 17524 20316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:55:49,946 autoreload 17524 20736 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:55:50,606 autoreload 15852 24856 Watching for file changes with StatReloader
+INFO 2020-12-30 14:55:53,225 autoreload 15852 24856 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:55:53,928 autoreload 23548 3504 Watching for file changes with StatReloader
+INFO 2020-12-30 14:56:01,532 autoreload 23548 3504 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:56:02,209 autoreload 25528 16892 Watching for file changes with StatReloader
+INFO 2020-12-30 14:56:07,797 autoreload 25528 16892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:56:08,513 autoreload 28664 28744 Watching for file changes with StatReloader
+INFO 2020-12-30 14:56:15,025 autoreload 28664 28744 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:56:15,775 autoreload 18112 16300 Watching for file changes with StatReloader
+INFO 2020-12-30 14:56:46,830 autoreload 18112 16300 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:56:47,559 autoreload 19380 27932 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:15,029 autoreload 19380 27932 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:15,883 autoreload 11904 20868 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:18,161 autoreload 11904 20868 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:18,902 autoreload 29404 12572 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:20,364 autoreload 29404 12572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:21,401 autoreload 29092 23652 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:23,002 autoreload 29092 23652 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:24,156 autoreload 18016 25052 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:26,766 autoreload 18016 25052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:27,583 autoreload 17956 18052 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:32,308 autoreload 17956 18052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:33,298 autoreload 27924 13568 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:36,134 autoreload 27924 13568 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:37,109 autoreload 25396 20360 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:38,684 autoreload 25396 20360 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:39,843 autoreload 24216 28360 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:44,663 autoreload 24216 28360 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:45,426 autoreload 1312 1564 Watching for file changes with StatReloader
+INFO 2020-12-30 14:57:53,447 autoreload 1312 1564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:57:54,496 autoreload 22856 16120 Watching for file changes with StatReloader
+INFO 2020-12-30 14:58:19,358 autoreload 22856 16120 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:58:20,051 autoreload 11796 2908 Watching for file changes with StatReloader
+INFO 2020-12-30 14:58:37,171 autoreload 11796 2908 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 14:58:37,789 autoreload 10864 1760 Watching for file changes with StatReloader
+INFO 2020-12-30 14:58:40,978 basehttp 10864 28912 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 14:58:41,512 basehttp 10864 28912 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:58:41,513 basehttp 10864 23200 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:58:41,515 basehttp 10864 6688 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:58:41,517 basehttp 10864 23748 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:58:41,518 basehttp 10864 5580 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:58:50,032 basehttp 10864 5580 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:58:51,124 log 10864 5580 Not Found: /favicon.ico
+WARNING 2020-12-30 14:58:51,125 basehttp 10864 5580 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:58:51,378 basehttp 10864 5580 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:58:51,378 basehttp 10864 23748 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:59:10,288 basehttp 10864 5580 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 14:59:10,547 basehttp 10864 5580 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47240
+INFO 2020-12-30 14:59:10,579 basehttp 10864 5580 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 14:59:10,593 basehttp 10864 23200 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 14:59:10,595 basehttp 10864 23748 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 14:59:10,595 basehttp 10864 6688 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 14:59:10,596 basehttp 10864 5580 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 14:59:14,383 basehttp 10864 5580 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 14:59:15,019 log 10864 5580 Not Found: /favicon.ico
+WARNING 2020-12-30 14:59:15,019 basehttp 10864 5580 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 14:59:15,888 basehttp 10864 5580 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 14:59:15,888 basehttp 10864 23748 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:00:02,129 autoreload 10864 1760 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:00:02,774 autoreload 15556 3192 Watching for file changes with StatReloader
+INFO 2020-12-30 15:00:05,136 autoreload 15556 3192 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:00:05,768 autoreload 8884 12540 Watching for file changes with StatReloader
+INFO 2020-12-30 15:00:11,172 autoreload 8884 12540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:00:11,691 autoreload 18104 20428 Watching for file changes with StatReloader
+INFO 2020-12-30 15:00:52,929 autoreload 18104 20428 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:00:53,525 autoreload 4396 16108 Watching for file changes with StatReloader
+INFO 2020-12-30 15:01:39,919 autoreload 4396 16108 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:01:40,490 autoreload 25540 14532 Watching for file changes with StatReloader
+INFO 2020-12-30 15:01:51,283 autoreload 25540 14532 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:01:52,102 autoreload 17240 21740 Watching for file changes with StatReloader
+INFO 2020-12-30 15:02:14,643 autoreload 17240 21740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:02:15,959 autoreload 9296 20572 Watching for file changes with StatReloader
+INFO 2020-12-30 15:02:22,884 autoreload 9296 20572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:02:24,062 autoreload 25856 6868 Watching for file changes with StatReloader
+INFO 2020-12-30 15:02:27,868 autoreload 25856 6868 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:02:29,362 autoreload 9132 10716 Watching for file changes with StatReloader
+INFO 2020-12-30 15:02:32,286 autoreload 9132 10716 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:02:33,921 autoreload 27480 14904 Watching for file changes with StatReloader
+INFO 2020-12-30 15:02:36,943 basehttp 27480 23224 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:02:38,428 basehttp 27480 23224 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:02:38,430 basehttp 27480 17980 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:02:38,434 basehttp 27480 7292 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:02:38,435 basehttp 27480 25728 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:02:38,439 basehttp 27480 27460 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:02:38,967 basehttp 27480 27460 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:02:39,023 basehttp 27480 27460 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:02:39,026 basehttp 27480 23224 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:02:39,030 basehttp 27480 25728 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:02:39,033 basehttp 27480 17980 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:02:39,035 basehttp 27480 7292 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:02:41,201 basehttp 27480 27460 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:02:43,345 log 27480 7292 Not Found: /favicon.ico
+WARNING 2020-12-30 15:02:43,346 basehttp 27480 7292 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:02:43,721 basehttp 27480 27460 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:02:43,721 basehttp 27480 7292 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:02:50,609 basehttp 27480 27460 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:02:50,864 basehttp 27480 7292 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47236
+INFO 2020-12-30 15:02:50,947 basehttp 27480 27460 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:02:50,950 basehttp 27480 23224 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:02:50,953 basehttp 27480 17980 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:02:50,961 basehttp 27480 7292 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:02:50,961 basehttp 27480 25728 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:02:53,003 basehttp 27480 27460 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:02:55,213 log 27480 7292 Not Found: /favicon.ico
+WARNING 2020-12-30 15:02:55,214 basehttp 27480 7292 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:02:55,665 basehttp 27480 27460 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:02:55,666 basehttp 27480 7292 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:03:01,263 basehttp 27480 24436 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17519
+INFO 2020-12-30 15:03:01,409 basehttp 27480 24436 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:04:30,777 autoreload 27480 14904 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:04:31,998 autoreload 26536 21952 Watching for file changes with StatReloader
+INFO 2020-12-30 15:05:34,593 autoreload 25156 24248 Watching for file changes with StatReloader
+INFO 2020-12-30 15:06:59,233 autoreload 25156 24248 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:07:00,549 autoreload 13984 29184 Watching for file changes with StatReloader
+INFO 2020-12-30 15:07:10,809 basehttp 13984 14904 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 15:07:12,169 basehttp 13984 14904 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:07:12,171 basehttp 13984 11932 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:07:12,175 basehttp 13984 15860 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:07:12,178 basehttp 13984 21488 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:07:12,181 basehttp 13984 20468 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:07:14,231 basehttp 13984 20468 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:07:17,152 log 13984 20468 Not Found: /favicon.ico
+WARNING 2020-12-30 15:07:17,153 basehttp 13984 20468 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:07:17,860 basehttp 13984 20468 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:17,861 basehttp 13984 21488 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:23,893 basehttp 13984 20468 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:07:24,165 basehttp 13984 20468 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47240
+INFO 2020-12-30 15:07:24,252 basehttp 13984 20468 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:07:24,263 basehttp 13984 11932 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:07:24,267 basehttp 13984 21488 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:07:24,271 basehttp 13984 20468 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:07:24,273 basehttp 13984 15860 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:07:26,122 basehttp 13984 21488 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:07:27,236 log 13984 20468 Not Found: /favicon.ico
+WARNING 2020-12-30 15:07:27,236 basehttp 13984 20468 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:07:29,284 basehttp 13984 21488 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:29,285 basehttp 13984 20468 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:48,123 basehttp 13984 7764 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 15:07:48,213 basehttp 13984 7764 "GET /static/css/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:48,242 basehttp 13984 19300 "GET /static/js/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:48,244 basehttp 13984 7764 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-30 15:07:48,244 basehttp 13984 16984 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:48,245 basehttp 13984 13100 "GET /static/js/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-30 15:07:50,914 basehttp 13984 13100 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 15:07:51,508 basehttp 13984 13100 "GET /admin/ HTTP/1.1" 200 19165
+INFO 2020-12-30 15:07:57,059 basehttp 13984 13100 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17520
+INFO 2020-12-30 15:07:57,212 basehttp 13984 13100 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:09:46,038 autoreload 13984 29184 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:09:47,383 autoreload 11400 9212 Watching for file changes with StatReloader
+INFO 2020-12-30 15:09:50,356 autoreload 11400 9212 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:09:51,634 autoreload 5252 2468 Watching for file changes with StatReloader
+INFO 2020-12-30 15:09:53,467 autoreload 5252 2468 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:09:54,917 autoreload 22092 12572 Watching for file changes with StatReloader
+INFO 2020-12-30 15:09:59,825 autoreload 22092 12572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:10:01,320 autoreload 20344 18752 Watching for file changes with StatReloader
+INFO 2020-12-30 15:10:53,648 autoreload 20344 18752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:10:54,343 autoreload 27556 18572 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:13,219 autoreload 27556 18572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:14,245 autoreload 26100 25972 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:21,325 autoreload 26100 25972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:22,407 autoreload 15364 17604 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:24,151 autoreload 15364 17604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:25,066 autoreload 17588 29564 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:41,263 autoreload 17588 29564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:42,002 autoreload 26312 25228 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:45,646 autoreload 26312 25228 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:46,626 autoreload 28236 24848 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:54,226 autoreload 28236 24848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:55,001 autoreload 27428 3128 Watching for file changes with StatReloader
+INFO 2020-12-30 15:11:56,513 autoreload 27428 3128 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:11:57,341 autoreload 29012 1616 Watching for file changes with StatReloader
+INFO 2020-12-30 15:12:01,941 autoreload 29012 1616 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:12:02,644 autoreload 29132 17980 Watching for file changes with StatReloader
+INFO 2020-12-30 15:12:04,147 autoreload 29132 17980 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:12:04,946 autoreload 14728 26812 Watching for file changes with StatReloader
+INFO 2020-12-30 15:12:10,418 autoreload 14728 26812 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:12:11,316 autoreload 20752 27704 Watching for file changes with StatReloader
+INFO 2020-12-30 15:12:15,661 autoreload 20752 27704 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:12:16,516 autoreload 17776 18724 Watching for file changes with StatReloader
+INFO 2020-12-30 15:12:17,929 autoreload 17776 18724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:12:18,953 autoreload 26212 21540 Watching for file changes with StatReloader
+INFO 2020-12-30 15:13:29,275 autoreload 26212 21540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:13:29,868 autoreload 25396 14252 Watching for file changes with StatReloader
+INFO 2020-12-30 15:13:38,400 autoreload 25396 14252 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:13:38,984 autoreload 4788 25032 Watching for file changes with StatReloader
+INFO 2020-12-30 15:13:45,479 autoreload 4788 25032 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:13:46,067 autoreload 29516 25320 Watching for file changes with StatReloader
+INFO 2020-12-30 15:13:55,595 autoreload 29516 25320 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:13:56,146 autoreload 28420 12060 Watching for file changes with StatReloader
+INFO 2020-12-30 15:13:57,495 autoreload 28420 12060 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:13:58,052 autoreload 16876 17824 Watching for file changes with StatReloader
+INFO 2020-12-30 15:14:03,496 autoreload 16876 17824 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:14:04,121 autoreload 13152 18336 Watching for file changes with StatReloader
+INFO 2020-12-30 15:14:29,303 autoreload 13152 18336 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:14:29,879 autoreload 23348 14980 Watching for file changes with StatReloader
+INFO 2020-12-30 15:14:35,313 autoreload 23348 14980 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:14:35,909 autoreload 21256 28368 Watching for file changes with StatReloader
+INFO 2020-12-30 15:14:37,237 autoreload 21256 28368 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:14:37,885 autoreload 23436 20684 Watching for file changes with StatReloader
+INFO 2020-12-30 15:15:23,437 basehttp 23436 27520 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:15:23,907 basehttp 23436 27520 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:15:23,910 basehttp 23436 24708 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:15:23,911 basehttp 23436 24728 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:15:23,915 basehttp 23436 16048 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:15:23,922 basehttp 23436 24832 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:15:24,576 basehttp 23436 16048 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:15:25,725 log 23436 16048 Not Found: /favicon.ico
+WARNING 2020-12-30 15:15:25,726 basehttp 23436 16048 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:15:25,995 basehttp 23436 16048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:15:25,996 basehttp 23436 24832 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:15:26,653 basehttp 23436 16048 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:15:26,683 basehttp 23436 16048 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:15:26,685 basehttp 23436 27520 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:15:26,688 basehttp 23436 24728 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:15:26,689 basehttp 23436 24708 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:15:26,691 basehttp 23436 24832 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:15:27,520 basehttp 23436 16048 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:15:28,711 log 23436 24832 Not Found: /favicon.ico
+WARNING 2020-12-30 15:15:28,712 basehttp 23436 24832 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:15:28,929 basehttp 23436 16048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:15:28,929 basehttp 23436 24832 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2020-12-30 15:15:31,495 log 23436 16048 Internal Server Error: /finance/wallet/2/3/D/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 2729, in finance_venture
+    saveTransHistory(account_code,0,0,0,source_id,data,EDIT_RECORD)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 954, in saveTransHistory
+    print(f"amount: {amount},code ={code},source id :{source_id},account_code:{account_code}")
+NameError: name 'amount' is not defined
+ERROR 2020-12-30 15:15:31,499 basehttp 23436 16048 "POST /finance/wallet/2/3/D/ HTTP/1.1" 500 75890
+WARNING 2020-12-30 15:15:31,575 log 23436 24832 Not Found: /favicon.ico
+WARNING 2020-12-30 15:15:31,575 basehttp 23436 24832 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:16:27,645 autoreload 23436 20684 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:16:28,284 autoreload 28044 27056 Watching for file changes with StatReloader
+INFO 2020-12-30 15:16:29,647 autoreload 28044 27056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:16:30,305 autoreload 10692 26620 Watching for file changes with StatReloader
+INFO 2020-12-30 15:16:31,648 autoreload 10692 26620 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:16:32,186 autoreload 16300 18052 Watching for file changes with StatReloader
+INFO 2020-12-30 15:16:42,758 autoreload 16300 18052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:16:43,348 autoreload 24376 9804 Watching for file changes with StatReloader
+INFO 2020-12-30 15:16:44,878 basehttp 24376 26272 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:16:45,307 basehttp 24376 13336 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:16:45,308 basehttp 24376 26272 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:16:45,309 basehttp 24376 22968 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:16:45,309 basehttp 24376 22256 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:16:45,311 basehttp 24376 21596 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:16:48,085 basehttp 24376 21596 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:16:48,518 log 24376 21596 Not Found: /favicon.ico
+WARNING 2020-12-30 15:16:48,520 basehttp 24376 21596 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:16:48,741 basehttp 24376 22256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:16:48,741 basehttp 24376 21596 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:16:54,881 basehttp 24376 21596 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:16:55,024 basehttp 24376 21596 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47240
+INFO 2020-12-30 15:16:55,060 basehttp 24376 21596 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:16:55,066 basehttp 24376 22256 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:16:55,075 basehttp 24376 22968 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:16:55,076 basehttp 24376 21596 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:16:55,078 basehttp 24376 22256 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:16:56,006 basehttp 24376 21596 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:16:57,638 log 24376 22256 Not Found: /favicon.ico
+WARNING 2020-12-30 15:16:57,638 basehttp 24376 22256 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:16:57,996 basehttp 24376 21596 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:16:57,996 basehttp 24376 22256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:02,473 basehttp 24376 25064 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17520
+INFO 2020-12-30 15:17:02,528 basehttp 24376 25064 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:17:20,196 autoreload 24376 9804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:17:20,807 autoreload 21736 1368 Watching for file changes with StatReloader
+INFO 2020-12-30 15:17:28,843 basehttp 21736 19464 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:17:29,377 basehttp 21736 19464 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:17:29,380 basehttp 21736 27504 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:17:29,383 basehttp 21736 11496 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:17:29,399 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:17:29,401 basehttp 21736 22360 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:17:29,747 basehttp 21736 24180 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:17:31,214 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:17:31,214 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:17:31,481 basehttp 21736 11496 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:31,481 basehttp 21736 24180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:36,570 basehttp 21736 24180 "POST /finance/wallet/2/3/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:17:36,698 basehttp 21736 24180 "GET /success/finance_venture_result/wallet/2/3/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47236
+INFO 2020-12-30 15:17:36,743 basehttp 21736 24180 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:17:36,745 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:17:36,749 basehttp 21736 22360 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:17:36,754 basehttp 21736 27504 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:17:36,757 basehttp 21736 11496 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:17:37,363 basehttp 21736 24180 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:17:38,702 log 21736 11496 Not Found: /favicon.ico
+WARNING 2020-12-30 15:17:38,703 basehttp 21736 11496 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:17:38,947 basehttp 21736 24180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:38,948 basehttp 21736 11496 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:40,616 basehttp 21736 24180 "GET /finance/wallet/2/3/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 15:17:40,663 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:17:40,666 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:17:40,668 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:17:40,670 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:17:40,670 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:17:41,312 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:17:42,766 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:17:42,766 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:17:42,949 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:42,949 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:17:46,104 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17519
+INFO 2020-12-30 15:17:46,269 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:18:14,242 basehttp 21736 11496 "GET /finance/wallet/2/2/D/ HTTP/1.1" 200 47111
+INFO 2020-12-30 15:18:14,279 basehttp 21736 24180 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:18:14,280 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:18:14,281 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:18:14,282 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:18:14,283 basehttp 21736 11496 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:18:15,085 basehttp 21736 24180 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:18:16,549 log 21736 11496 Not Found: /favicon.ico
+WARNING 2020-12-30 15:18:16,550 basehttp 21736 11496 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:18:16,773 basehttp 21736 24180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:16,773 basehttp 21736 11496 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:25,714 basehttp 21736 11496 "POST /finance/wallet/2/2/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:18:25,856 basehttp 21736 24180 "GET /success/finance_venture_result/wallet/2/2/Following%20record%20has%20been%20successfully%20updated! HTTP/1.1" 200 47240
+INFO 2020-12-30 15:18:25,901 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:18:25,903 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:18:25,905 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:18:25,906 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:18:25,907 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:18:27,211 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:18:28,615 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:18:28,615 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:18:28,840 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:28,841 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:30,483 basehttp 21736 24180 "GET /finance/wallet/2/2/D/ HTTP/1.1" 200 47115
+INFO 2020-12-30 15:18:30,518 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:18:30,521 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:18:30,524 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:18:30,525 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:18:30,526 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:18:31,996 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:18:33,536 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:18:33,537 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:18:33,724 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:33,724 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:18:36,277 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 17520
+INFO 2020-12-30 15:18:36,334 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:19:21,466 basehttp 21736 24180 "GET /finance/saving/2/0/W/ HTTP/1.1" 200 47140
+INFO 2020-12-30 15:19:21,501 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:19:21,506 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:19:21,507 basehttp 21736 11496 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:19:21,508 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:19:21,508 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:19:22,484 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:19:23,999 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:19:24,000 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:19:24,206 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:19:24,206 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:19:47,537 basehttp 21736 11496 "GET /finance/saving/2/0/D/ HTTP/1.1" 200 47086
+INFO 2020-12-30 15:19:47,574 basehttp 21736 24180 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:19:47,575 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:19:47,577 basehttp 21736 22360 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:19:47,577 basehttp 21736 27504 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:19:47,578 basehttp 21736 11496 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:19:48,317 basehttp 21736 24180 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:19:49,882 log 21736 11496 Not Found: /favicon.ico
+WARNING 2020-12-30 15:19:49,883 basehttp 21736 11496 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:19:50,138 basehttp 21736 11496 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:19:50,139 basehttp 21736 24180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:19:55,367 basehttp 21736 11496 "POST /finance/saving/2/0/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:19:55,496 basehttp 21736 24180 "GET /success/finance_venture_result/saving/2/1/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 47189
+INFO 2020-12-30 15:19:55,541 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:19:55,545 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:19:55,547 basehttp 21736 22360 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:19:55,549 basehttp 21736 27504 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:19:55,550 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:19:56,232 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:19:57,615 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:19:57,616 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:19:58,281 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:19:58,281 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:20:01,382 basehttp 21736 24180 "GET /finance/saving/2/1/D/ HTTP/1.1" 200 47067
+INFO 2020-12-30 15:20:01,417 basehttp 21736 11496 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:20:01,419 basehttp 21736 19464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:20:01,421 basehttp 21736 22360 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:20:01,421 basehttp 21736 27504 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:20:01,422 basehttp 21736 24180 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:20:02,110 basehttp 21736 11496 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:20:03,795 log 21736 24180 Not Found: /favicon.ico
+WARNING 2020-12-30 15:20:03,795 basehttp 21736 24180 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:20:03,999 basehttp 21736 24180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:20:03,999 basehttp 21736 11496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:20:05,070 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18060
+INFO 2020-12-30 15:20:05,132 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:24:35,194 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18060
+INFO 2020-12-30 15:24:35,252 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:25:10,725 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18060
+INFO 2020-12-30 15:25:10,802 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:25:13,474 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/4/change/ HTTP/1.1" 200 20969
+INFO 2020-12-30 15:25:13,533 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:27:25,344 basehttp 21736 29224 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 17998
+INFO 2020-12-30 15:27:25,410 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:27:29,754 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18060
+INFO 2020-12-30 15:27:29,808 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:27:33,930 basehttp 21736 29224 "GET /admin/fx/daytransactionmodel/4/change/ HTTP/1.1" 200 20969
+INFO 2020-12-30 15:27:33,987 basehttp 21736 29224 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:28:34,285 autoreload 21736 1368 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 15:28:34,874 autoreload 6788 16392 Watching for file changes with StatReloader
+INFO 2020-12-30 15:28:53,402 autoreload 23512 26744 Watching for file changes with StatReloader
+INFO 2020-12-30 15:28:58,191 basehttp 23512 10076 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18070
+INFO 2020-12-30 15:28:58,247 basehttp 23512 10076 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 15:31:47,384 autoreload 23512 26744 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 15:31:47,911 autoreload 18040 3588 Watching for file changes with StatReloader
+INFO 2020-12-30 15:31:50,144 autoreload 18040 3588 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 15:31:50,695 autoreload 19768 23916 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:00,865 autoreload 19768 23916 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:01,423 autoreload 21756 13036 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:18,154 autoreload 21756 13036 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:18,703 autoreload 13984 17848 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:21,138 autoreload 13984 17848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:21,734 autoreload 29040 20672 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:26,120 autoreload 29040 20672 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:26,760 autoreload 11508 18100 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:29,149 autoreload 11508 18100 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:29,769 autoreload 15644 25348 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:31,134 autoreload 15644 25348 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:31,862 autoreload 19368 5156 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:50,760 autoreload 19368 5156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:51,322 autoreload 24140 15716 Watching for file changes with StatReloader
+INFO 2020-12-30 15:33:58,837 autoreload 24140 15716 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:33:59,439 autoreload 1632 15256 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:02,172 autoreload 1632 15256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:02,754 autoreload 5032 17808 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:07,218 autoreload 5032 17808 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:08,004 autoreload 25696 17456 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:09,334 autoreload 25696 17456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:09,880 autoreload 26564 20816 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:17,250 autoreload 26564 20816 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:17,823 autoreload 22364 13536 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:23,180 autoreload 22364 13536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:23,763 autoreload 15716 13976 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:27,024 autoreload 15716 13976 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:27,581 autoreload 25112 17448 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:32,904 autoreload 25112 17448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:33,495 autoreload 17768 16544 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:37,798 autoreload 17768 16544 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:38,429 autoreload 2644 23512 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:40,689 autoreload 2644 23512 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:41,284 autoreload 2668 15804 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:45,572 autoreload 2668 15804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:46,172 autoreload 792 25796 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:55,731 autoreload 792 25796 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:56,307 autoreload 16084 7872 Watching for file changes with StatReloader
+INFO 2020-12-30 15:35:57,668 autoreload 16084 7872 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:35:58,240 autoreload 10892 28468 Watching for file changes with StatReloader
+INFO 2020-12-30 15:36:04,783 autoreload 10892 28468 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 15:36:05,491 autoreload 2328 19848 Watching for file changes with StatReloader
+INFO 2020-12-30 15:36:22,347 basehttp 2328 15860 "GET /finance/saving/2/1/D/ HTTP/1.1" 200 47067
+INFO 2020-12-30 15:36:22,860 basehttp 2328 13736 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:36:22,863 basehttp 2328 29312 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:36:22,863 basehttp 2328 17668 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:36:22,865 basehttp 2328 15860 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:36:22,865 basehttp 2328 4196 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:36:24,796 basehttp 2328 4196 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:36:26,086 log 2328 4196 Not Found: /favicon.ico
+WARNING 2020-12-30 15:36:26,086 basehttp 2328 4196 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:36:26,768 basehttp 2328 17668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:36:26,768 basehttp 2328 4196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:36:34,825 basehttp 2328 4196 "GET /finance/saving/2/0/D/ HTTP/1.1" 200 47095
+INFO 2020-12-30 15:36:34,853 basehttp 2328 4196 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:36:34,866 basehttp 2328 13736 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:36:34,868 basehttp 2328 17668 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:36:34,869 basehttp 2328 29312 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:36:34,870 basehttp 2328 4196 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:36:35,785 basehttp 2328 4196 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:36:37,533 log 2328 4196 Not Found: /favicon.ico
+WARNING 2020-12-30 15:36:37,534 basehttp 2328 4196 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:36:37,803 basehttp 2328 4196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:36:37,804 basehttp 2328 17668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:36:44,304 basehttp 2328 4196 "POST /finance/saving/2/0/D/ HTTP/1.1" 302 0
+INFO 2020-12-30 15:36:44,430 basehttp 2328 4196 "GET /success/finance_venture_result/saving/2/2/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 47189
+INFO 2020-12-30 15:36:44,480 basehttp 2328 4196 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2020-12-30 15:36:44,490 basehttp 2328 13736 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2020-12-30 15:36:44,495 basehttp 2328 29312 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2020-12-30 15:36:44,495 basehttp 2328 4196 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2020-12-30 15:36:44,496 basehttp 2328 17668 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2020-12-30 15:36:46,197 basehttp 2328 29312 "GET /static/img/load.gif HTTP/1.1" 200 79271
+WARNING 2020-12-30 15:36:47,942 log 2328 4196 Not Found: /favicon.ico
+WARNING 2020-12-30 15:36:47,942 basehttp 2328 4196 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 15:36:48,245 basehttp 2328 4196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:36:48,246 basehttp 2328 29312 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2020-12-30 15:37:09,066 basehttp 2328 13772 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 18620
+INFO 2020-12-30 15:37:09,130 basehttp 2328 13772 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2020-12-30 15:37:58,978 log 2328 4196 Not Found: /favicon.ico
+WARNING 2020-12-30 15:37:58,979 basehttp 2328 4196 "GET /favicon.ico HTTP/1.1" 404 13863
+INFO 2020-12-30 16:47:58,719 basehttp 2328 2768 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 16:48:03,136 basehttp 2328 2768 "POST /sign-in/ HTTP/1.1" 200 56
+INFO 2020-12-30 16:48:03,269 basehttp 2328 2768 "GET /user/2/ HTTP/1.1" 200 103301
+INFO 2020-12-30 16:48:03,308 basehttp 2328 15892 "GET /static/css/user/nicepage.css HTTP/1.1" 304 0
+INFO 2020-12-30 16:48:03,310 basehttp 2328 2768 "GET /static/css/user/member-page.css HTTP/1.1" 304 0
+INFO 2020-12-30 16:48:03,312 basehttp 2328 4936 "GET /static/js/user/jquery.js HTTP/1.1" 304 0
+INFO 2020-12-30 16:48:03,312 basehttp 2328 21036 "GET /static/js/user/nicepage.js HTTP/1.1" 304 0
+INFO 2020-12-30 16:52:32,799 basehttp 2328 25300 "GET /user/2/ HTTP/1.1" 200 103352
+WARNING 2020-12-30 16:54:09,336 log 2328 25300 Not Found: /payment/
+WARNING 2020-12-30 16:54:09,336 basehttp 2328 25300 "GET /payment/ HTTP/1.1" 404 13854
+WARNING 2020-12-30 16:54:13,504 log 2328 25300 Not Found: /payment/2
+WARNING 2020-12-30 16:54:13,504 basehttp 2328 25300 "GET /payment/2 HTTP/1.1" 404 13857
+INFO 2020-12-30 16:54:18,848 basehttp 2328 25300 "GET /payment/2/0/ HTTP/1.1" 200 51687
+INFO 2020-12-30 17:01:39,044 autoreload 2328 19848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:01:39,837 autoreload 23784 11164 Watching for file changes with StatReloader
+INFO 2020-12-30 17:01:52,633 autoreload 23784 11164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:01:53,463 autoreload 13336 16392 Watching for file changes with StatReloader
+INFO 2020-12-30 17:01:56,019 autoreload 13336 16392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:01:56,682 autoreload 14792 16608 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:03,305 autoreload 14792 16608 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:04,057 autoreload 29228 19412 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:06,552 autoreload 29228 19412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:07,362 autoreload 25344 29048 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:12,954 autoreload 25344 29048 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:13,720 autoreload 15376 10384 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:15,235 autoreload 15376 10384 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:16,131 autoreload 17368 14016 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:23,798 autoreload 17368 14016 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:24,481 autoreload 3416 22312 Watching for file changes with StatReloader
+INFO 2020-12-30 17:02:52,902 autoreload 3416 22312 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:02:53,549 autoreload 12208 13632 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:01,473 autoreload 12208 13632 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:02,011 autoreload 21384 22484 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:04,515 autoreload 21384 22484 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:05,083 autoreload 17864 18668 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:06,282 autoreload 17864 18668 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:06,860 autoreload 21992 23656 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:15,399 autoreload 21992 23656 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:15,979 autoreload 15632 27516 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:19,350 autoreload 15632 27516 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:20,096 autoreload 27572 29528 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:28,836 autoreload 27572 29528 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:29,546 autoreload 23088 16188 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:30,921 autoreload 23088 16188 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:31,699 autoreload 29180 16112 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:33,087 autoreload 29180 16112 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:33,783 autoreload 2180 25152 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:38,336 autoreload 2180 25152 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:39,149 autoreload 13780 29392 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:40,587 autoreload 13780 29392 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:41,354 autoreload 6452 28864 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:43,857 autoreload 6452 28864 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:44,692 autoreload 5092 27036 Watching for file changes with StatReloader
+INFO 2020-12-30 17:05:46,129 autoreload 5092 27036 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:05:46,922 autoreload 28988 16084 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:07,280 autoreload 28988 16084 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:08,174 autoreload 18080 23348 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:11,710 autoreload 18080 23348 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:12,435 autoreload 9696 17676 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:29,719 autoreload 9696 17676 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:30,448 autoreload 10460 16952 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:34,017 autoreload 10460 16952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:34,644 autoreload 10864 25660 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:42,249 autoreload 10864 25660 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:43,096 autoreload 17956 10748 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:44,683 autoreload 17956 10748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:45,556 autoreload 8924 9144 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:47,150 autoreload 8924 9144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:47,885 autoreload 2836 11448 Watching for file changes with StatReloader
+INFO 2020-12-30 17:06:50,518 autoreload 2836 11448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:06:51,360 autoreload 25320 3368 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:12,578 autoreload 25320 3368 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:07:13,284 autoreload 18488 4992 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:14,729 autoreload 18488 4992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:07:15,612 autoreload 26972 13996 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:17,046 autoreload 26972 13996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 17:07:17,759 autoreload 27004 16016 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:47,653 autoreload 27004 16016 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:07:48,253 autoreload 28868 27756 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:51,590 autoreload 28868 27756 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:07:52,187 autoreload 27544 26000 Watching for file changes with StatReloader
+INFO 2020-12-30 17:07:54,031 autoreload 27544 26000 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 17:07:54,658 autoreload 26272 27240 Watching for file changes with StatReloader
+INFO 2020-12-30 18:03:42,605 autoreload 26272 27240 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:03:43,992 autoreload 28060 17692 Watching for file changes with StatReloader
+INFO 2020-12-30 18:03:48,389 basehttp 28060 11244 "GET /payment/3/0/ HTTP/1.1" 200 51673
+INFO 2020-12-30 18:04:09,340 basehttp 28060 11244 "POST /payment/3/0/ HTTP/1.1" 302 0
+INFO 2020-12-30 18:04:09,769 basehttp 28060 11244 "GET /success/payment_venture_result/cash/3/5/New%20payment%20has%20been%20successfully%20added! HTTP/1.1" 200 51759
+INFO 2020-12-30 18:04:13,174 basehttp 28060 11244 "GET /payment/3/5/ HTTP/1.1" 200 52033
+INFO 2020-12-30 18:04:38,262 basehttp 28060 17056 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 19222
+INFO 2020-12-30 18:04:38,376 basehttp 28060 17056 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:04:56,365 basehttp 28060 17056 "GET /admin/fx/paymentmodel/ HTTP/1.1" 200 18523
+INFO 2020-12-30 18:04:56,531 basehttp 28060 17056 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:05:03,777 basehttp 28060 17056 "GET /admin/fx/paymentmodel/ HTTP/1.1" 200 18523
+INFO 2020-12-30 18:05:03,953 basehttp 28060 17056 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:51:58,100 basehttp 28060 28100 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 19222
+INFO 2020-12-30 18:51:58,153 basehttp 28060 28100 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:54:53,040 autoreload 28060 17692 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:54:53,744 autoreload 21660 4996 Watching for file changes with StatReloader
+INFO 2020-12-30 18:54:55,053 autoreload 21660 4996 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:54:55,674 autoreload 25448 8872 Watching for file changes with StatReloader
+INFO 2020-12-30 18:54:59,071 autoreload 25448 8872 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:54:59,697 autoreload 28180 20848 Watching for file changes with StatReloader
+INFO 2020-12-30 18:55:01,013 autoreload 28180 20848 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:55:01,660 autoreload 27296 13612 Watching for file changes with StatReloader
+INFO 2020-12-30 18:55:03,013 autoreload 27296 13612 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:55:03,566 autoreload 26752 26484 Watching for file changes with StatReloader
+INFO 2020-12-30 18:55:07,686 basehttp 26752 12340 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 19225
+INFO 2020-12-30 18:55:07,828 basehttp 26752 12340 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:58:47,443 basehttp 26752 12340 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 19225
+INFO 2020-12-30 18:58:47,554 basehttp 26752 12340 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 18:59:37,843 autoreload 26752 26484 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:38,448 autoreload 19656 20584 Watching for file changes with StatReloader
+INFO 2020-12-30 18:59:40,803 autoreload 19656 20584 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:41,345 autoreload 19536 24428 Watching for file changes with StatReloader
+INFO 2020-12-30 18:59:43,587 autoreload 19536 24428 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:44,224 autoreload 25144 26816 Watching for file changes with StatReloader
+INFO 2020-12-30 18:59:45,493 autoreload 25144 26816 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:46,097 autoreload 29672 28376 Watching for file changes with StatReloader
+INFO 2020-12-30 18:59:48,461 autoreload 29672 28376 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:49,154 autoreload 23256 29604 Watching for file changes with StatReloader
+INFO 2020-12-30 18:59:54,663 autoreload 23256 29604 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2020-12-30 18:59:55,240 autoreload 16924 24496 Watching for file changes with StatReloader
+INFO 2020-12-30 19:00:10,719 basehttp 16924 28684 "GET /admin/fx/daytransactionmodel/ HTTP/1.1" 200 19236
+INFO 2020-12-30 19:00:10,819 basehttp 16924 28684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2020-12-30 19:00:24,088 basehttp 16924 28932 "GET / HTTP/1.1" 200 171716
+INFO 2020-12-30 19:00:24,795 basehttp 16924 22408 "GET /static/css/page-1.css HTTP/1.1" 200 24700
+INFO 2020-12-30 19:00:24,797 basehttp 16924 17968 "GET /static/js/jquery.js HTTP/1.1" 200 92660
+INFO 2020-12-30 19:00:24,799 basehttp 16924 23604 "GET /static/js/nicepage.js HTTP/1.1" 200 150693
+INFO 2020-12-30 19:00:24,799 basehttp 16924 28732 "GET /static/js/custom.js HTTP/1.1" 200 5421
+INFO 2020-12-30 19:00:24,803 basehttp 16924 28932 "GET /static/css/nicepage.css HTTP/1.1" 200 937934
+INFO 2020-12-30 19:00:25,096 basehttp 16924 23604 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2020-12-30 19:00:27,147 log 16924 23604 Not Found: /favicon.ico
+WARNING 2020-12-30 19:00:27,147 basehttp 16924 23604 "GET /favicon.ico HTTP/1.1" 404 13863
+WARNING 2020-12-30 19:00:28,453 basehttp 16924 23604 "GET /static/js/jquery.min.map HTTP/1.1" 404 1677
+INFO 2020-12-30 19:01:08,200 basehttp 16924 28932 "GET /member/3/ HTTP/1.1" 200 212673
+INFO 2020-12-30 19:01:08,285 basehttp 16924 17968 "GET /static/img/female.png HTTP/1.1" 200 21494
+INFO 2020-12-30 19:01:19,626 basehttp 16924 28932 "GET /payment/3/5/ HTTP/1.1" 200 52033
+INFO 2020-12-30 19:03:06,701 autoreload 16924 24496 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:03:07,317 autoreload 17580 11136 Watching for file changes with StatReloader
+INFO 2020-12-30 19:04:02,443 autoreload 17580 11136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:04:03,019 autoreload 10896 20056 Watching for file changes with StatReloader
+INFO 2020-12-30 19:04:07,503 autoreload 10896 20056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:04:08,075 autoreload 5816 4916 Watching for file changes with StatReloader
+INFO 2020-12-30 19:04:24,873 autoreload 5816 4916 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:04:25,583 autoreload 28380 2388 Watching for file changes with StatReloader
+INFO 2020-12-30 19:05:45,268 autoreload 28380 2388 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:05:45,858 autoreload 29188 5140 Watching for file changes with StatReloader
+INFO 2020-12-30 19:05:47,316 autoreload 29188 5140 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:05:47,971 autoreload 10112 25308 Watching for file changes with StatReloader
+INFO 2020-12-30 19:05:53,490 autoreload 10112 25308 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:05:54,109 autoreload 5032 29344 Watching for file changes with StatReloader
+INFO 2020-12-30 19:05:55,468 autoreload 5032 29344 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2020-12-30 19:05:56,021 autoreload 29184 9772 Watching for file changes with StatReloader
