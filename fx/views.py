@@ -12,13 +12,13 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel
+from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,livePostModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
 from fx.models import WalletModel,CodeGeneratorModel,UserPreferenceModel
 from datetime import  date
-
+from datetime import datetime, timedelta 
 from django.contrib.auth.decorators import login_required
 import random
 from django.views.generic import ListView
@@ -50,7 +50,7 @@ from django.apps import apps
 from .tables import myTable
 from django.contrib.auth.models import  Group
 
-
+from datetime import timedelta
 #test
 from django.views.generic import View
 from time import time
@@ -77,7 +77,8 @@ model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
 CREATE,UPDATE,DELETE =(0,1,2)
-PAYMENT,LOAN_PAYMENT,VENTURE,TRANSACTION,DEPOSIT,WITHRAWAL,GROCERY,SERVICES=(0,1,2,3,4,5,6,7)
+TX_PAYMENT,TX_LOAN_PAYMENT,TX_VENTURE,TX_TRANSACTION,TX_DEPOSIT,TX_WITHRAWAL,TX_GROCERY,TX_SERVICES=(0,1,2,3,4,5,6,7)
+
 NEW_RECORD, EDIT_RECORD, DELETE_RECORD =(0,1,2)
 SOURCE_TRADING,SOURCE_VENTURE,SOURCE_REGULAR =(1,2,3)
 ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
@@ -91,9 +92,20 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
         member = MemberModel.objects.get(id = id)
+        tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk")   #.values('createdate').annotate(count=Count('id'))
+       
+        
+        
+        #employees = Employee.objects.all().values('id','name','company__name')
+        live = livePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+        
+        for value in live:
+            print(f" value: {value}")
         
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member,
+                  "tx":tx,
+                  'live':live,
                   'asset_liabities':get_all_balances(id)}
         return render(request, "fx/users/main/member_index.html",context)  
         
@@ -105,7 +117,8 @@ class LoginView(View):
     def post(self, request, *args, **kwargs):
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print (f"password:  {password}")
+        print (f"--password:  {password}")
+        print(f" user: {username}")
 
         if username == "" or password=="":
             return JsonResponse({"type": "error", "message": "Please input both username & password"})
@@ -2536,7 +2549,10 @@ def my_home_page(request):
          context ={'message':" Welcome to Fair Exchange!"}
          
         # return render(request, "fx/underconstruction.html",context) 
-         #return render(request, "fx/users/main/member-page.html",context) 
+         #return render(request, "fx/users/main/member-page.html",context)
+        #  items = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer = 2)   #.values('createdate').annotate(count=Count('id'))
+        #  print(f"items: {items}")
+        #  return
          return render(request, "fx/users/index.html",context) 
               
 
@@ -2662,17 +2678,17 @@ def finance_venture(request,account_name,member_id,account_id,transType):
                                 account.save()  #todo now {uncomment}
                                 source_id = account.id
                                 if transType == 'W': 
-                                    category = WITHRAWAL
+                                    category = TX_WITHRAWAL
                                     
                                 else:
-                                   category = DEPOSIT
+                                   category = TX_DEPOSIT
                                 if account_name == "wallet":
                                      account_code = ACCOUNT_WALLET
                                 else:
                                      account_code = ACCOUNT_SAVINGS
                                 amount = debit + credit
                                 saveTransHistory(account_code,request.user.id,member_id,category,source_id,amount,NEW_RECORD)
-                                print("deposit money")
+                                print(f"tx money: {transType}")
                                 # account = dayTransactionMode((date_entered=date_entered,transaction_type=transType ,description=description,credit=credit,debit=debit ,member_id=member_id,category=category)
 
                                 
@@ -3395,7 +3411,7 @@ def payment_venture(request,member_id,payment_id):
                                             # save to history
                                             #pv,.
                                              
-                                            saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,LOAN_PAYMENT,payment_qs.id,amount,NEW_RECORD)
+                                            saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,TX_LOAN_PAYMENT,payment_qs.id,amount,NEW_RECORD)
                                             print ("edit savetrans")
                                             msg ="New payment has been successfully added!"
                                             return redirect(f'/success/payment_venture_result/{account_name}/{member_id}/{payment_qs.id}/{msg}')
@@ -3538,7 +3554,8 @@ def payment_venture(request,member_id,payment_id):
                                                         
                                             
                                     print(f"last. succcess in writing additional loan:additonal_loan:{additional_loan}")
-                                    saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,LOAN_PAYMENT,payment_id,data,EDIT_RECORD)
+                                    data = {"amount":debit}
+                                    saveTransHistory(ACCOUNT_PAYMENT,0,0,0,payment_id,data,EDIT_RECORD)
 
                                     msg ="New payment has been successfully added!"
                                     return redirect(f'/success/payment_venture_result/{account_name}/{member_id}/{payment_id}/{msg}')

@@ -1,4 +1,7 @@
 {% load static %}
+{% load humanize %}
+{% load app_filters %}
+{% load custom_tags%}
 
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -34,6 +37,14 @@
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="index.html">
     <meta property="og:url" content="index.html">
+
+    <style>
+      th {
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.8); */
+}
+    </style>
   </head>
   <body data-home-page="Member-Page.html" data-home-page-title="Member Page" class="u-body"><header 
     class="u-clearfix u-header u-header" id="sec-cb5e"><div class="u-clearfix u-sheet u-sheet-1">
@@ -118,8 +129,8 @@
                             <label for="message-6797" class="u-label u-text-palette-1-base u-label-5">Address</label>
                             <textarea rows="4" cols="50" id="message-6797" value="{{member.address}}"  name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">{{member.name}}</textarea>
                           </div>
-                          <div class="u-align-left u-form-group u-form-submit">
-                            <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-btn-submit u-button-style u-none u-text-active-palette-2-base u-text-hover-black u-text-palette-1-base u-btn-1">Not You?<br>
+                          <div class="u-align-left u-form-group">
+                            <a href=" {% url 'fx:user_logout_url' %}" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-btn-submit u-button-style u-none u-text-active-palette-2-base u-text-hover-black u-text-palette-1-base u-btn-1">Not You?<br>
                             </a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                           </div>
@@ -170,6 +181,35 @@
                   <div class="u-container-style u-grey-10 u-layout-cell u-radius-23 u-shape-round u-size-30 u-layout-cell-3">
                     <div class="u-border-2 u-border-white u-container-layout u-container-layout-3">
                       <h2 class="u-align-center u-heading-font u-subtitle u-text u-text-default u-text-palette-1-base u-text-4">Transaction History</h2>
+
+                      <div style="height: 200px;overflow: scroll;">
+
+                          <table id="pos-table" class="table table-bordered"  style ="border:1px solid none;width: 100%;">
+                           
+                           </thead>
+                           <tbody>
+
+                            {% for obj in tx %}
+                              <tr>
+                           
+                                <td> {{obj.date_entered|get_due_date_string }} </td>
+                                
+                                <td> {{obj.category|convert_option}}</td>
+                                <td> {{obj.amount}} </td>
+                              
+                               
+                             </tr>
+                             {% endfor %}
+                             
+                              
+                           </tbody>
+                         </table>
+ 
+ 
+                       
+
+
+
                     </div>
                   </div>
                 </div>
@@ -213,8 +253,41 @@
                       <p class="u-align-left u-hidden-sm u-hidden-xs u-small-text u-text u-text-palette-1-base u-text-variant u-text-7">Delivery</p>
                     </div>
                   </div>
-                  <div class="u-container-style u-grey-15 u-layout-cell u-radius-36 u-shape-round u-size-30 u-layout-cell-2">
+                  <div style="max-height: 280px;" class="u-container-style u-grey-15 u-layout-cell u-radius-36 u-shape-round u-size-30 u-layout-cell-2">
                     <div class="u-border-2 u-border-white u-container-layout u-container-layout-2">
+
+                      <div style="height: 230px;overflow: scroll;">
+
+                        <table id="live-table"    style ="border:1px solid none;width: 100%;">
+                          <thead style ="background-color:none ;">
+                            <tr class="green">
+                            <th scope="col">Username</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Remark</th>
+                             
+                           
+                          </tr>
+                        </thead>
+                         <tbody>
+
+                          {% for obj in live %}
+                            <tr>
+                         
+                              <td> {{obj.customer__member_id|upper }} </td>
+                              
+                              <td> {{obj.status}}</td>
+                              <td> {{obj.remarks}} </td>
+                            
+                             
+                           </tr>
+                           {% endfor %}
+                           
+                            
+                         </tbody>
+                       </table>
+                      </div>
+
+                      
                       <p class="u-align-center u-small-text u-text u-text-font u-text-variant u-text-8">
                         <span style="font-weight: 700; font-size: 0.75rem;" class="u-text-body-alt-color">Please click the Services Icon to display Updated Status..</span>&nbsp;
                       </p>
@@ -301,7 +374,6 @@
         </div>
       </div>
     </section>
-    
     <section class="u-clearfix u-section-4" id="sec-8298">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-container-style u-group u-shape-rectangle u-group-1">

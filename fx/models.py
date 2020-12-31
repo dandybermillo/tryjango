@@ -52,10 +52,13 @@ class livePostModel(models.Model):
       
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='member' ) # todo null=False
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='expert' ) # todo null=False
-      incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
+      # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
       status =  models.PositiveIntegerField(default =NOT_READY, choices = STATUS_CODE)
       remarks =  models.CharField(max_length=300)
       category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
+      active =  models.BooleanField(default= False)
+
+      
       
 class JoinModel(models.Model):
     name = models.CharField(max_length=124)
@@ -138,8 +141,8 @@ class LoadModel(models.Model):
 # ----------------  services end --------------------
 
 class dayTransactionModel(models.Model):
-   PAYMENT,LOAN_PAYMENT,VENTURE,TRANSACTION,DEPOSIT,WITHRAWAL,GROCERY,SERVICES=(0,1,2,3,4,5,6,7)
-   cat =((TRANSACTION,"REGULAR TRANSACTION"),(PAYMENT,"PAYMENT"),(VENTURE,"VENTURE"),(DEPOSIT,"DEPOSIT"),(WITHRAWAL,'WITHRAWAL'),(GROCERY,'GROCERY'),(SERVICES,'SERVICES'),(LOAN_PAYMENT,"LOAN PAYMENT"))
+   TX_PAYMENT,TX_LOAN_PAYMENT,TX_VENTURE,TX_TRANSACTION,TX_DEPOSIT,TX_WITHRAWAL,TX_GROCERY,TX_SERVICES=(0,1,2,3,4,5,6,7)
+   cat =((TX_TRANSACTION,"REGULAR TRANSACTION"),(TX_PAYMENT,"PAYMENT"),(TX_VENTURE,"VENTURE"),(TX_DEPOSIT,"DEPOSIT"),(TX_WITHRAWAL,'WITHRAWAL'),(TX_GROCERY,'GROCERY'),(TX_SERVICES,'SERVICES'),(TX_LOAN_PAYMENT,"LOAN PAYMENT"))
    CASH,WALLET,SAVING=(0,1,2)
    source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
    ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
@@ -151,7 +154,7 @@ class dayTransactionModel(models.Model):
    in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='venture_in_charge' ) # todo null=False
 
    date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
-   source_type = models.CharField(max_length=1,default =CASH,choices = source_type_cat)  #c: cash,A Additional Loan, M max loan  
+   source_type = models.IntegerField(default =CASH,choices = source_type_cat)  #c: cash,A Additional Loan, M max loan  
    amount = models.FloatField(default =0 )       
    source_id = models.IntegerField(default =0) 
    account_code =    models.PositiveIntegerField(default = 1 ,choices = account_cat)   

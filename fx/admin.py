@@ -92,7 +92,7 @@ class tmpVariablesModelAdmin(admin.ModelAdmin):
 ]
     
 class dayTransactionModelAdmin(admin.ModelAdmin):
-    list_display = ['account_code','category','customer','in_charge','date_entered','source_type','amount','source_id'
+    list_display = ['id','account_code','category','customer','in_charge','date_entered','source_type','amount','source_id'
 ]
 class JoinModelAdmin(admin.ModelAdmin):
     list_display = ['name','birthday','phone','address','email'
@@ -118,7 +118,7 @@ class DeliveryModelAdmin(admin.ModelAdmin):
 ]    
 
 class livePostModelAdmin(admin.ModelAdmin):
-    list_display = ['incharge','status','remarks','category','customer','in_charge'
+    list_display = ['status','remarks','category','customer','in_charge','active'
 ]  
 admin.site.register(livePostModel,livePostModelAdmin)  
 
