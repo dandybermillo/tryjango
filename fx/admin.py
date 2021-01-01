@@ -4,7 +4,7 @@ from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,Ventu
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
-from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,livePostModel
+from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -117,10 +117,10 @@ class DeliveryModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message'
 ]    
 
-class livePostModelAdmin(admin.ModelAdmin):
+class LivePostModelAdmin(admin.ModelAdmin):
     list_display = ['status','remarks','category','customer','in_charge','active'
 ]  
-admin.site.register(livePostModel,livePostModelAdmin)  
+admin.site.register(LivePostModel,LivePostModelAdmin)  
 
 admin.site.register(DeliveryModel,DeliveryModelAdmin)  
 

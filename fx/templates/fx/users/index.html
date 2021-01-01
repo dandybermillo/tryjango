@@ -131,8 +131,29 @@
                       </p>
                     </div>
                   </div>
-                  <div class="u-container-style u-grey-15 u-layout-cell u-radius-24 u-shape-round u-size-30 u-layout-cell-2">
+                  <div style="max-height: 280px;"  class="u-container-style u-grey-15 u-layout-cell u-radius-24 u-shape-round u-size-30 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
+                      <div style="height: 230px;overflow: scroll;">
+
+                        <table id="livePost-table"    style ="border:1px solid none;width: 100%;">
+                          <thead style ="background-color:none ;">
+                            <tr class="green">
+                            <th scope="col">#</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Remark</th>
+                             
+                           
+                          </tr>
+                        </thead>
+                         <tbody id="display">
+
+                          
+                           
+                            
+                         </tbody>
+                       </table>
+                      </div>
                       <p class="u-align-center u-small-text u-text u-text-body-alt-color u-text-default u-text-font u-text-variant u-text-8">Please click the Services Icon to display Updated Status.. </p>
                     </div>
                   </div>
@@ -304,7 +325,7 @@
                   <div class="u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-4">
                       <div class="u-form u-form-1">
-                          .,
+                          
                         
                         <form id ="message-form" action="" method="POST" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form needs-validation"  style="padding: 0px;" source="custom" name="form">
                           {% csrf_token %}

@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,livePostModel
+from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -70,7 +70,7 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 model_list= {"venture":"VentureModel","trade":"TradingModel"}
-Model_data_list ={"message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","construction":"ConstructionModel"}
+Model_data_list ={"profile":"ProfileModel","message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","construction":"ConstructionModel"}
 model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
@@ -97,10 +97,9 @@ def user_login_success(request,id):
         
         
         #employees = Employee.objects.all().values('id','name','company__name')
-        live = livePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+        live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
         
-        for value in live:
-            print(f" value: {value}")
+        
         
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member,
@@ -112,7 +111,29 @@ def user_login_success(request,id):
   
 
     # return HttpResponse(f"<h1 >Login success. logged in username: { request.user.username }</h1>")
+def livePost(request,id):
+   # print("livePost")
+    try:
+                    # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+                #print(id)
+                if id == 0:
+                        fields = {"active":True}
+                else:
+                        fields = {"active":True,'customer_id':id}
+               # print(f" fields: {fields}")
+                qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
+                
+                data=[]
+                for row in qs:
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    #  print(f"row:{row}")
+                    data.append(row) 
+                return JsonResponse({"live":data},status =200) 
+    except Exception as e:
 
+       print(f"LivePost: e:{e}")
+       return JsonResponse({"live":{}},status =400) 
+    
 class LoginView(View):
     def post(self, request, *args, **kwargs):
         username = request.POST.get('username')
@@ -143,11 +164,14 @@ class LoginView(View):
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
 
         
-        
+
+    
+    
+       
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
         print("processing data!")
-        lists =["name","address","phone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
+        lists =["firstname","lastname","middlename","name","address","phone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
         for key, value in request.POST.items():
@@ -158,7 +182,7 @@ class Process_Data_View(View):
                 print('Value %s' % (value) )
                 # print(f'Value: {value}') in Python >= 3.7
         print(f"filter fields: {filter_fields}")
-        # return
+        return
         # print("process data....")
         # name = request.POST.get('name')
         # phone = request.POST.get('phone')

@@ -17,7 +17,28 @@ class CodeGeneratorModel(models.Model):
       sender_id =models.IntegerField(default = 0)
       code = models.PositiveIntegerField(default =0)
 
+class ProfileModel (models.Model):   # Subject for Approval, the same as MemberModel
+     MR,MS,MRS =("Mr.","Ms.","Mrs.")
+    
+     gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))
+     gender = models.CharField(max_length=4,blank =False, null= False, default =MR, choices= gender_status)
+   #  user = models.OneToOneField(User,null =True, on_delete = models.CASCADE, unique =  True)
      
+     
+     firstname = models.CharField(max_length=50,blank =False, null =False)
+     middlename = models.CharField( max_length=50,blank =True, null =True )
+     lastname = models.CharField(max_length=50,blank =False, null =False)
+
+     address =  models.CharField(max_length=300,blank =True, null =True)
+     telephone =models.CharField(max_length=100,blank =True, null =True)
+     note =models.TextField(max_length =400,blank =True,null=True)
+     email= models.EmailField(max_length=254,blank= True,null =True)
+     birthday = models.DateField( blank= True, null =True)
+     active =  models.BooleanField(default= False)
+      
+     member_id = models.CharField(max_length=11,blank =True, null =True,default="DA1212-1", unique =  True)
+
+         
 
 class MemberModel (models.Model):
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
@@ -43,7 +64,7 @@ class MemberModel (models.Model):
      @property
      def name(self):
         return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
-class livePostModel(models.Model):
+class LivePostModel(models.Model):
       READY,NOT_READY,ALMOST_DONE =(0,1,2)
       STATUS_CODE = ((READY,"READY"),(NOT_READY,"NOT READY"),(ALMOST_DONE,"ALMOST DONE"))
       
@@ -53,8 +74,8 @@ class livePostModel(models.Model):
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='member' ) # todo null=False
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='expert' ) # todo null=False
       # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
-      status =  models.PositiveIntegerField(default =NOT_READY, choices = STATUS_CODE)
-      remarks =  models.CharField(max_length=300)
+      status =   models.CharField(max_length=50)
+      remarks =  models.CharField(max_length=300,default="In Progress")
       category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
       active =  models.BooleanField(default= False)
 

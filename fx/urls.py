@@ -87,6 +87,7 @@ urlpatterns = [
   # path('message/', views.MessageView.as_view(), name="message_url"), 
 
 
+  path('live/<int:id>', views.livePost, name="live_url"), 
 
    
   #end test

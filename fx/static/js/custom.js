@@ -1,5 +1,48 @@
 (function () {
+   var ready =true;
    
+  setInterval(function(){
+
+    console.log("SetInterval");
+
+    if (ready == true){ 
+                ready=false;
+              $.ajax({
+              type: "GET",
+              url:  "/live/0",
+              
+              success: function (response) {
+                $("#display").empty();
+                $("#display").append
+                ready=true;
+                
+                row_ctr =0;
+                response["live"].forEach(function (item) {
+                            //console.log("....item:",item);
+                            row_ctr = row_ctr + 1;
+                            //fill_table(item, row_ctr );
+                          var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +item.customer__member_id+ "</th> <td>"+item.status+"</td><td>"+item.remarks+"</td></tr>"
+                            $("#display").append(temp);
+
+                    });
+                  
+
+                
+              },
+              error: function (response) {
+                // do something with response
+                console.log("Error");
+                ready=true;
+                
+              },
+            });
+            ready=true;
+            }
+
+
+}, 10000);
+
+
 
   var code ="";
   //   Handle Login
@@ -60,8 +103,9 @@
   });
   // validate form button
   $(".validate-form-btn").click(function(e){
-
-       id = $(this).attr("code");
+      console.log("validate is cliked");
+      id = $(this).attr("code");
+      console.log("id: "+id);
       var form = document.querySelector("#"+id  +"-form");
 
       var reportVal = form.checkValidity();
@@ -84,6 +128,7 @@
           //$("[code='mobile-btn']")[0].show();
           
           $("#"+id+"-btn").submit();
+          console.log(" submit btn is cliked on other button");
           
          
  
@@ -109,13 +154,15 @@
          console.log("Selected form: " +selected_form + " " +code);
        
          e.preventDefault();
+         console.log("initiating ajax call");
      //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
          $.ajax({
            type: "POST",
            url: "/process-form/",
            data: $("#"+selected_form).serialize(),
            success: function (response) {
-             // do something with response
+             // do something with1 response
+             console.log("success!");
              response["result"]; // equals 'Success or failed';
              response["message"]; // equals 'you"re logged in or You messed up';
      

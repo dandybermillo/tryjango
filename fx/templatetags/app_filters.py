@@ -36,9 +36,5 @@ def convert_option(value):
   
    TX_PAYMENT,TX_LOAN_PAYMENT,TX_VENTURE,TX_TRANSACTION,TX_DEPOSIT,TX_WITHRAWAL,TX_GROCERY,TX_SERVICES=(0,1,2,3,4,5,6,7)
    cat ={TX_TRANSACTION:"REGULAR TRANSACTION",TX_PAYMENT:"PAYMENT",TX_VENTURE:"VENTURE",TX_DEPOSIT:"DEPOSIT",TX_WITHRAWAL:'WITHRAWAL',TX_GROCERY:'GROCERY',TX_SERVICES:'SERVICES',TX_LOAN_PAYMENT:"LOAN PAYMENT"}
-   print(f"cat 1: { cat.get(1)}")
-   print(f"cat 2: { cat.get(2)}")
-   print(f"cat 5: { cat.get(5)}")
-   print(f"TX_DEPOSIT: { cat.get(TX_DEPOSIT)}")
-   print(f"value : {value}")
+   
    return  cat.get(value)
