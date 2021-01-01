@@ -170,6 +170,9 @@
                //$("#" +code+"-form").trigger("reset");
                //$("#" +code+"-dialog").show();
                 
+               $("#profile-success-alert").fadeIn();  // alert message
+               closeSnoAlertBox("success");
+
                $("#"+code+"-success").text(response["message"]);
                $("#"+code+"-success").css({ display: "block" });
                console.log("data saved");
@@ -177,6 +180,8 @@
               //window.location.replace("/user/2/");
              } else if (response["type"] === "error") {
               // console.log("Something went wrong! Try again.");
+              $("#profile-danger-alert").fadeIn();  // alert message
+              closeSnoAlertBox("danger");
                $("#"+code+"-error").text(response["message"]);
                $("#" +code+"-error").css({ display: "block" });
                console.log("saving denied");
@@ -184,7 +189,9 @@
              }
            },
            error: function (response) {
-             // do something with response
+             // do something with response'
+             $("#profile-danger-alert").fadeIn();  // alert message
+             closeSnoAlertBox("danger");
              console.log("Something went wrong! Try again.");
              $("#"+code+ "-error").text("Something went wrong! Try again.");
              $("#"+code+"-error").css({ display: "block" });
@@ -202,7 +209,21 @@
         });
 
 
- 
+
+        function closeSnoAlertBox(message){
+          window.setTimeout(function () {
+            $("#profile-"+ message+"-alert").fadeOut(300)
+          }, 10000);
+          } 
+          
+          
+          $(".hide-modal-btn").click(function(e) {
+            code= $(this).attr("code");
+            console.log(" code::"+ code);
+            $("#"+code).modal('hide');
+
+            
+           });         
 
 
 })();

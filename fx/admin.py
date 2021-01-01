@@ -3,7 +3,7 @@ from django.core.exceptions import PermissionDenied
 from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,VentureWalletModel
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
-from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table
+from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel
 from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
 import decimal, csv
 from django.db.models import Count
@@ -22,7 +22,11 @@ class MemberAdmin(admin.ModelAdmin):
     def member(self,obj):
 
         return '{} {} {} {}'.format(obj.gender,obj.firstname,obj.middlename,obj.lastname)
+class ProfileModelAdmin(admin.ModelAdmin):
+
+    list_display = ['id','firstname','middlename','lastname','source_id','address','telephone','active','birthday']
    
+    
 class WalletAdmin(admin.ModelAdmin):
     list_display = ['id','date_entered','debit','credit','description','transaction_type','category','source_id'
 ]
@@ -120,10 +124,12 @@ class DeliveryModelAdmin(admin.ModelAdmin):
 class LivePostModelAdmin(admin.ModelAdmin):
     list_display = ['status','remarks','category','customer','in_charge','active'
 ]  
+    
+
+admin.site.register(ProfileModel,ProfileModelAdmin)  
+
 admin.site.register(LivePostModel,LivePostModelAdmin)  
-
 admin.site.register(DeliveryModel,DeliveryModelAdmin)  
-
 admin.site.register(ConstructionModel,ConstructionModelAdmin)  
 admin.site.register(RepairModel,RepairModelAdmin)
 
@@ -160,6 +166,7 @@ admin.site.register(PendingLoanModel,PendingLoanAdmin)
 admin.site.register(NoteModel,NoteAdmin)
 admin.site.register(IdRepositoryModel,IdRepositoryModelAdmin)
 admin.site.register(Change_Table,Change_TableAdmin)
+
 
 
 

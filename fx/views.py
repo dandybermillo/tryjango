@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel
+from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -91,7 +91,13 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
-        member = MemberModel.objects.get(id = id)
+        try:
+              member_qs = ProfileModel.objects.get(source_id = id)
+              member_qs.id  = id
+        except Exception as e:
+              print("no data yet at profileModel")
+              member_qs = MemberModel.objects.get(id = id)
+        
         tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk")   #.values('createdate').annotate(count=Count('id'))
        
         
@@ -102,7 +108,7 @@ def user_login_success(request,id):
         
         
         context ={'message':" Welcome to Fair Exchange!",
-                  "member":member,
+                  "member":member_qs,
                   "tx":tx,
                   'live':live,
                   'asset_liabities':get_all_balances(id)}
@@ -120,7 +126,7 @@ def livePost(request,id):
                         fields = {"active":True}
                 else:
                         fields = {"active":True,'customer_id':id}
-               # print(f" fields: {fields}")
+                print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
                 
                 data=[]
@@ -171,7 +177,7 @@ class LoginView(View):
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
         print("processing data!")
-        lists =["firstname","lastname","middlename","name","address","phone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
+        lists =["source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
         for key, value in request.POST.items():
@@ -182,7 +188,7 @@ class Process_Data_View(View):
                 print('Value %s' % (value) )
                 # print(f'Value: {value}') in Python >= 3.7
         print(f"filter fields: {filter_fields}")
-        return
+         
         # print("process data....")
         # name = request.POST.get('name')
         # phone = request.POST.get('phone')
@@ -191,24 +197,55 @@ class Process_Data_View(View):
         # address = request.POST.get('address')
         print(f"request.post: {request.POST}")
         code = request.POST.get('code').strip()
-        print(f"code :{code}")
+        source_id = request.POST.get('source_id',"0").strip()
+       # source_id = int(source_id)
+        
+        
+         
         model_name =Model_data_list.get(code) 
+        
         Model = apps.get_model('fx', model_name)
-       # filter_fields ={"name":name,"message":message,"email":email}
-        #filter_fields ={"name":name,"phone":phone,"email":email,"birthday":birthday,"address":address}
+        source_id = int(source_id)
+        print(f"code :{code}, source_id: {source_id} ,type: {type(source_id)} , modelname: {model_name}")
+        if source_id <= 0:
+            
+                    try:
+                        print("ADDING...........")
+                            #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
+                        process_data = Model( **filter_fields) #name=name,phone=phone,email=email,birthday =birthday,address = address)
+                        process_data.save() 
+                        print("success writing")
+                        return JsonResponse({"type":'success', "message":"Your data has been saved!"})
+                    except Exception as e:
+                        print(f"@ exception e:{e}")
+                    # logger.warning(f"@ exception e:{e}")
+                        return JsonResponse({"type": "error", "message": "unable to save this data"})#test
+        else:
+            
+                    try:
+                          print("UPDATING...........")
+                          update_qs = Model.objects.filter(source_id = source_id).update( **filter_fields) 
+                          print(f" update_qs: {update_qs}")
+                          if update_qs <=0:
+                                    try:
+                                        process_data = Model( **filter_fields) #name=name,phone=phone,email=email,birthday =birthday,address = address)
+                                        process_data.save() 
+                                        print("success writing 2")
+                                        return JsonResponse({"type":'success', "message":"Your data has been saved  for approval!"})
+                                    except Exception as e:
+                                        print(f"@ exception e:{e}")
+                                    # logger.warning(f"@ exception e:{e}")
+                                        return JsonResponse({"type": "error", "message": "unable to save this data"})#test
+                          else:
+                              return JsonResponse({"type":'success', "message":"Your data has been updated  for approval!"})
+                              
+                                
+                    except  Exception as e:
+                            print(f"Process Data: e: {e}")
+                            #todo log here
+                 
 
-        try:
-                #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
-            process_data = Model( **filter_fields) #name=name,phone=phone,email=email,birthday =birthday,address = address)
-            process_data.save() 
-            print("sccuess writing")
-            return JsonResponse({"type":'success', "message":"Your data has been saved!"})
-        except Exception as e:
-            print(f"@ exception e:{e}")
-           # logger.warning(f"@ exception e:{e}")
-            return JsonResponse({"type": "error", "message": "unable to save this data"})#test
-        print(f"request.POST :{request.POST}")
- 
+    
 class MobileView(View):
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
@@ -1473,7 +1510,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                      
                                 if Success: #save day transaction for the cashier
                                      pass
-                                     #,..
+                                    
                                      # saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
                                 
                                 
