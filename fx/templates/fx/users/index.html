@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="{% static './css/nicepage.css' %}" >
     <link rel="stylesheet" href="{% static './css/page-1.css' %}" >
     
-    <script class="u-script" type="text/javascript" src="{% static './js/jquery.js' %}" defer=""></script>
+    <script src="{% static 'js/jquery_3.5.1.js' %}"></script>
+
+    <!-- <script class="u-script" type="text/javascript" src="{% static './js/jquery.js' %}" defer=""></script> -->
     <script class="u-script" type="text/javascript" src="{% static 'js/custom.js' %}" defer=""></script>
 
     <script class="u-script" type="text/javascript" src="{% static './js/nicepage.js' %}" defer=""></script>
@@ -135,7 +137,7 @@
                     <div class="u-container-layout u-container-layout-2">
                       <div style="height: 230px;overflow: scroll;">
 
-                        <table id="livePost-table"    style ="border:1px solid none;width: 100%;">
+                        <table id="livePost-table"    style ="border:1px solid none;width: 100%;border:1px solid none;width: 100%;font-family:Calibri, Trebuchet, Arial, sans serif; font-size:15px; line-height:20px;color:#777777;padding:20px"> 
                           <thead style ="background-color:none ;">
                             <tr class="green">
                             <th scope="col">#</th>
@@ -153,8 +155,9 @@
                             
                          </tbody>
                        </table>
+                       <p class="u-align-center u-small-text u-text u-text-body-alt-color u-text-default u-text-font u-text-variant u-text-8">Please click the Services Icon to display Updated Status.. </p>
+
                       </div>
-                      <p class="u-align-center u-small-text u-text u-text-body-alt-color u-text-default u-text-font u-text-variant u-text-8">Please click the Services Icon to display Updated Status.. </p>
                     </div>
                   </div>
                 </div>
@@ -1963,28 +1966,59 @@
   }
 }</style>
 
-<!-- <script>
- (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            console.log(forms);
-            console.log(",,,,,,,,,,,,,,,,,,,,,,,,,,,");
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
-                    console.log("submitting......");
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script> -->
+<script>
+  
+  $(document).ready(function () {
+        var ready = true;
+         
+        
+        setInterval(function(){
+
+         // console.log("SetInterval");
+
+          if (ready == true){ 
+            ready=false;
+         // var  id = "{{member.id}}";
+         // console.log("id: "+id);
+          $.ajax({
+           type: "GET",
+           url:  "{% url 'fx:live_url' 0 %}",
+          
+           success: function (response) {
+             //console.log("success")
+             $("#display").empty();
+             $("#display").append
+             ready=true;
+             
+             row_ctr =0;
+             response["live"].forEach(function (item) {
+                        //console.log("....item:",item);
+                        row_ctr = row_ctr + 1;
+                        //fill_table(item, row_ctr );
+                      var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +item.customer__member_id+ "</th> <td>"+item.status+"</td><td>"+item.remarks+"</td></tr>"
+                        $("#display").append(temp);
+
+                });
+              
+
+            
+           },
+           error: function (response) {
+             // do something with response
+             console.log("Error");
+             ready=true;
+             
+           },
+         });
+         ready=true;
+        }
+  
+
+}, 10000);
+
+  });
+
+</script>
 
 </body>
 </html>

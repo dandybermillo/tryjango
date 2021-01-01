@@ -1,46 +1,46 @@
 (function () {
-   var ready =true;
+ //  var ready =true;
    
-  setInterval(function(){
+//   setInterval(function(){
 
-    console.log("SetInterval");
+//     console.log("SetInterval");
 
-    if (ready == true){ 
-                ready=false;
-              $.ajax({
-              type: "GET",
-              url:  "/live/0",
+//     if (ready == true){ 
+//                 ready=false;
+//               $.ajax({
+//               type: "GET",
+//               url:  "{% url 'fx:live_url' member.id %}",
               
-              success: function (response) {
-                $("#display").empty();
-                $("#display").append
-                ready=true;
+//               success: function (response) {
+//                 $("#display").empty();
+//                 $("#display").append
+//                 ready=true;
                 
-                row_ctr =0;
-                response["live"].forEach(function (item) {
-                            //console.log("....item:",item);
-                            row_ctr = row_ctr + 1;
-                            //fill_table(item, row_ctr );
-                          var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +item.customer__member_id+ "</th> <td>"+item.status+"</td><td>"+item.remarks+"</td></tr>"
-                            $("#display").append(temp);
+//                 row_ctr =0;
+//                 response["live"].forEach(function (item) {
+//                             //console.log("....item:",item);
+//                             row_ctr = row_ctr + 1;
+//                             //fill_table(item, row_ctr );
+//                           var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +item.customer__member_id+ "</th> <td>"+item.status+"</td><td>"+item.remarks+"</td></tr>"
+//                             $("#display").append(temp);
 
-                    });
+//                     });
                   
 
                 
-              },
-              error: function (response) {
-                // do something with response
-                console.log("Error");
-                ready=true;
+//               },
+//               error: function (response) {
+//                 // do something with response
+//                 console.log("Error");
+//                 ready=true;
                 
-              },
-            });
-            ready=true;
-            }
+//               },
+//             });
+//             ready=true;
+//             }
 
 
-}, 10000);
+// }, 10000);
 
 
 
