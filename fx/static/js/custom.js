@@ -140,7 +140,7 @@
      });
       
 
-     
+    
      $(".close-form-btn").click(function(e) {
       code= $(this).attr("code");
       $("#"+code+"-x-ico").click();
@@ -156,7 +156,7 @@
          console.log("Selected form: " +selected_form + " " +code);
        
          e.preventDefault();
-         console.log("initiating ajax call");
+         console.log("initiating ajax call!!!!!!");
      //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
          $.ajax({
            type: "POST",
@@ -171,21 +171,22 @@
              if (response["type"] === "success") {
                //$("#" +code+"-form").trigger("reset");
                //$("#" +code+"-dialog").show();
-                
-               $("#profile-success-alert").fadeIn();  // alert message
-               closeSnoAlertBox("success");
+              console.log("----");
+              console.log(" code::"+"#"+code+"-success-alert" );
+               $("#"+code+"-success-alert").css({ display: "block" });//.fadeIn();  // alert message
+               closeSnoAlertBox(code,"success");
 
-               $("#"+code+"-success").text(response["message"]);
-               $("#"+code+"-success").css({ display: "block" });
+              //  $("#"+code+"-success").text(response["message"]);
+              //  $("#"+code+"-success").css({ display: "block" });
                console.log("data saved");
                
               //window.location.replace("/user/2/");
              } else if (response["type"] === "error") {
               // console.log("Something went wrong! Try again.");
-              $("#profile-danger-alert").fadeIn();  // alert message
-              closeSnoAlertBox("danger");
-               $("#"+code+"-error").text(response["message"]);
-               $("#" +code+"-error").css({ display: "block" });
+              $("#"+ code+"-danger-alert").fadeIn();  // alert message
+              closeSnoAlertBox(code,"danger");
+              //  $("#"+code+"-error").text(response["message"]);
+              //  $("#" +code+"-error").css({ display: "block" });
                console.log("saving denied");
      
              }
@@ -214,7 +215,9 @@
 
         function closeSnoAlertBox(message){
           window.setTimeout(function () {
-            $("#profile-"+ message+"-alert").fadeOut(300)
+            $("#"+code+"-"+ message+"-alert").fadeOut(300)
+            $("#"+code+"-"+ message+"-alert").css({ display: "none" });
+
           }, 10000);
           } 
           
