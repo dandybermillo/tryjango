@@ -126,7 +126,7 @@ def livePost(request,id):
                         fields = {"active":True}
                 else:
                         fields = {"active":True,'customer_id':id}
-                print(f"id: {id} fields: {fields}")
+               # print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
                 
                 data=[]

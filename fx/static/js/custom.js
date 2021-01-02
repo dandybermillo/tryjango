@@ -107,10 +107,12 @@
       id = $(this).attr("code");
       console.log("id: "+id);
       var form = document.querySelector("#"+id  +"-form");
+      console.log("form");
+      console.log(form);
 
       var reportVal = form.checkValidity();
       if (reportVal == false) {
-          console.log("validating...... mobile from validate -form - btn");
+          console.log("validating...... forl from validate -form - btn");
           // $("#venture-payment-failed-alert").show();
           form.reportValidity();
           return
