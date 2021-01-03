@@ -117,8 +117,12 @@ def user_login_success(request,id):
   
 
     # return HttpResponse(f"<h1 >Login success. logged in username: { request.user.username }</h1>")
-def livePost(request,id):
+def livePost(request,id,code):
    # print("livePost")
+   # live_code = request.GET.get("live_code", -1).strip()
+    #live_code =int(live_code)
+    print(f" live_code: {code}, {type(code) }")
+
     try:
                     # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
                 #print(id)
@@ -126,7 +130,9 @@ def livePost(request,id):
                         fields = {"active":True}
                 else:
                         fields = {"active":True,'customer_id':id}
-               # print(f"id: {id} fields: {fields}")
+                if code > 0:
+                    fields['category']=code
+                print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
                 
                 data=[]
@@ -137,7 +143,7 @@ def livePost(request,id):
                 return JsonResponse({"live":data},status =200) 
     except Exception as e:
 
-       print(f"LivePost: e:{e}")
+       print(f"ERROR,LivePost: e:{e}")
        return JsonResponse({"live":{}},status =400) 
     
 class LoginView(View):
