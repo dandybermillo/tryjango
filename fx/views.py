@@ -121,7 +121,7 @@ def livePost(request,id,code):
    # print("livePost")
    # live_code = request.GET.get("live_code", -1).strip()
     #live_code =int(live_code)
-    print(f" live_code: {code}, {type(code) }")
+   # print(f" live_code: {code}, {type(code) }")
 
     try:
                     # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
@@ -132,7 +132,7 @@ def livePost(request,id,code):
                         fields = {"active":True,'customer_id':id}
                 if code > 0:
                     fields['category']=code
-                print(f"id: {id} fields: {fields}")
+               # print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
                 
                 data=[]
