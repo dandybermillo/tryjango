@@ -17,6 +17,7 @@
 
 <script src="{% static 'js/jquery_3.5.1.js' %}"></script>
     <!-- <script class="u-script" type="text/javascript" src="{% static './js/user/jquery.js' %}" defer=""></script> -->
+    <script type="text/javascript" src="{% static '/js/qrcode.js' %}"></script>
     <script class="u-script" type="text/javascript" src="{% static '/js/custom.js' %}" defer=""></script>
 
     <script class="u-script" type="text/javascript" src="{% static './js/user/nicepage.js' %}" defer=""></script>
@@ -118,7 +119,7 @@ ul {
   height: 100%;
   z-index: 1;
   color: #fff;
-  background: #000;
+  background: #2e4ead;
   font-size: 60px;
   padding-top: 9px;
   font-weight:bolder;
@@ -127,7 +128,7 @@ ul {
  
  
 .box-close a {
-  background: #000;
+  background: #2e4ead;
   position: absolute;
   top: 0;
   left: -90px;
@@ -143,7 +144,7 @@ ul {
 }
 .wrap .mobileNav {
   width: 100%;
-  background-color: #000;
+  background-color: #2e4ead;
   padding: 20px 30px;
   overflow-y: scroll;
 }
@@ -158,10 +159,10 @@ ul {
 }
 
 .wrap .mobile-menu h4 a {
-  color: #d9262c;  
+  color: white;  
 }
 .wrap .mobile-menu h4 a:hover {
-  color: #d9262c;
+  color: grayc;
   text-decoration: underline;
 }
 
@@ -230,7 +231,7 @@ ul {
 .wrap .search-form input {
   height: 59px;
   width: 100%;
-  background-color: #221f20;
+  background-color: white;
   color: #fff;
   padding-left: 30px;
   padding-right: 57px;
@@ -241,7 +242,7 @@ ul {
 .wrap .search-form button {
   height: 59px;
   width: 67px;
-  background-color: #d9262c;
+  background-color: gray;
   position: absolute;
   top: 0;
   right: 0;
@@ -255,7 +256,7 @@ ul {
 }
 
 .wrap .search-form button:hover {
-  background-color: #fff;
+  background-color: gray;
 }
 
 .wrap .search-form button:hover i {
@@ -439,8 +440,11 @@ ul {
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-cfda" data-page-id="60820478" style="padding: 10px; text-shadow: 0 2px 8px rgba(128,128,128,1);">Services</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-8298" data-page-id="60820478" style="padding: 10px; text-shadow: 0 2px 8px rgba(128,128,128,1);">About Us</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-1d89" data-page-id="60820478" style="padding: 10px; text-shadow: 0 2px 8px rgba(128,128,128,1);">Contact Us</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-9545" data-page-id="60820478" style="padding: 10px; text-shadow: 0 2px 8px rgba(128,128,128,1);">Welcome</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a href="{% url 'fx:change_password_url' %}" class="u-button-style u-nav-link">Change Password</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">My QR Code</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-9545" data-page-id="60820478" style="padding: 10px; text-shadow: 0 2px 8px rgba(128,128,128,1);">Welcome</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
+  <!-- <li class="u-nav-item"><a href="{% url 'fx:change_password_url' %}" class="u-button-style u-nav-link">Change Password</a>
+</li> -->
+<li class="u-nav-item"><a class="u-button-style u-nav-link">My QR Code</a>
+  {% url 'fx:change_password_url' %}
 </li><li class="u-nav-item"><a  href=" {% url 'fx:user_logout_url' %}" class="u-button-style u-nav-link">Logout</a>
 </li></ul>
 </div>
@@ -469,7 +473,7 @@ ul {
       </div>
       <div class="box-mobile-menu mobile-menu" >
         <div class="row">
-          <div class="col">
+          <div id="col-menu" style="display: none;"  class="col">
             <h4><a href="">Menu</a></h4>
             <ul>
               <li><a class="fxmenu" href="#sec-a32c">Home</a></li>
@@ -485,8 +489,8 @@ ul {
             <h4><a href="">Misc</a></h4>
             <ul>
               <li><a href="">History</a></li>
-              <li><a href="">My QRcode</a></li>
-              <li><a href="{% url 'fx:change_password_url' %}">Change Password</a></li>
+              <li><a  id ="qrcode-lnk" >My QRcode</a></li>
+              <!-- <li><a href="{% url 'fx:change_password_url' %}">Change Password</a></li> -->
               <li><a href="{% url 'fx:user_logout_url' %}">Logout/Signout</a></li>
               
             </ul>
@@ -523,8 +527,7 @@ ul {
 <!-- ----------------------------- burger end ----------------------------------- -->
 
 
-      
-    <section class="u-align-center u-clearfix u-section-1" id="sec-9545">
+     <section class="u-align-center u-clearfix u-section-1" id="sec-9545">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1   class="one-line u-heading-font u-text u-text-palette-1-base u-title u-text-1">Member Information</h1>
         <div class="u-clearfix u-gutter-6 u-layout-wrap u-layout-wrap-1">
@@ -538,7 +541,7 @@ ul {
                         <form action=""class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="">
                           
                          
-                          
+                           
                           <div class="u-form-group">
                             <label for="name-6797" class="u-label u-text-palette-1-base u-label-1">Name</label>
                             <input  readonly id="name-6797" value="{{member.name}}" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" type="text">
@@ -1050,7 +1053,15 @@ ul {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 776px) {
+  #col-menu{
+    display: block !important;
+
+  }
+  #fxlogo{
+  font-size: 30px;
+
+  }
   .u-cookies-consent .u-sheet-1 {
     min-height: 225px;
   }
@@ -1075,7 +1086,10 @@ ul {
 }
 
 @media (max-width: 575px) {
+  #col-menu{
+    display: block !important;
 
+  }
   #fxlogo{
   font-size: 30px;
 
@@ -1701,8 +1715,30 @@ ul {
 
 
 
-            
+
        </div>
+  </div>
+</div>
+
+<div id ="qrcode-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">QRCODE GENERATOR</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="justify-content: center;">
+        <p>{{member.member_id}} QRCODE</p>
+        
+        <div   id="qrcode"  ></div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1711,12 +1747,39 @@ ul {
 <script>
 $(document).ready(function () {
          var member_id ="{{member.id}}";
+         console.log("member_id:"+"{{member.member_id}}");
          var rIndex =0;  // use by the table save the selected row
          selected_live_code =0;
          console.log("member id:"+ member_id);
          var live_code = {'mobile':1, 'repair':2, 'mechanic':3, 'construction':4,'delivery':5 };
-        
-        
+         
+
+
+
+         function createQrCode()
+    {
+      $("#qrcode").empty();
+        var userInput =   "{{member.qrcode}}";
+       // for (i = 0; i < 2; i++) {  // can be removed
+        var qrcode = new QRCode("qrcode", {
+            text: userInput,
+            width: 200,
+            height: 200,
+            colorDark: "black",
+            colorLight: "white",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    
+    }
+    
+         // qrcode generator
+         $("#qrcode-lnk").click(function () {
+          createQrCode();
+          $('.overlay').toggleClass('hidden');
+            $("#qrcode-modal").modal('show');
+        });
+        // 
+
          // services link
          $(".services-span-lnk").click(function () {
              console.log("==================================================");

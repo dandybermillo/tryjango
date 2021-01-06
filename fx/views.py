@@ -91,9 +91,11 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 @login_required(login_url='/login/')
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
+        
         try:
               member_qs = ProfileModel.objects.get(source_id = id)
               member_qs.id  = id
+              member_qs.member_id =  MemberModel.objects.get(id = id).values("member_id")
         except Exception as e:
               print("no data yet at profileModel")
               member_qs = MemberModel.objects.get(id = id)
@@ -105,8 +107,17 @@ def user_login_success(request,id):
         #employees = Employee.objects.all().values('id','name','company__name')
         live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
         
-        
-        
+        try:
+                    pwd = Tmp_PasswordModel.objects.get(member_id = id).pwd
+                    pwd = base64.b64decode(pwd)
+                    pwd =pwd.decode("utf-8")
+                    print (f"....pwd: {pwd}")
+        except Exception as e:
+                    print (f"{e}, {type(e)}")
+                    
+        print(f" qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
+        # print(f"member_qs. member_id: {member_qs.member_id}")
+        member_qs.qrcode =create_qrcode_code(member_qs.member_id,pwd)
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member_qs,
                   "tx":tx,
@@ -402,6 +413,7 @@ def create_qrcode_code(username,save_pwd):
    # print("decoding")
    # decoded = decode(code)
    # decoded = decode("9da1212-0121210")
+
     return code
     #return f"username:{decoded['username']} ,pass:{decoded['password']}"
     
@@ -2474,7 +2486,7 @@ def services(request,id):
 @login_required(login_url='/login/')
 def dashboard(request):
     print("......dashboard.....")
- 
+   
     
     class obj:
         pass
@@ -2486,7 +2498,10 @@ def dashboard(request):
     table.cards.append({"name":"store","card_name":"store","id":1})
     table.cards.append({"name":"Cash On Hand","card_name":"COH","id":0})
     table.template_name = "fx/card_template.html"
+    
     member_info={"id":0}
+    member_info["user_id"] = MemberModel.objects.get(user = request.user.id).id
+    print(f" member_info.user_id: {member_info}")
     context={
       "member_info":member_info,
       "table":table,
@@ -2499,7 +2514,10 @@ def dash(request,message):
 
     return render(request, "fx/pagenotfound.html", {"message":message})
 
-
+def admin(request):
+    print('admin_request')
+    
+    return redirect("/admin/")
 def user_logout_request(request):
     print('logout_request')
     logout(request)
@@ -2509,6 +2527,10 @@ def logout_request(request): #venture
     print('logout_request')
     logout(request)
     return redirect("/venture_main_request/")
+def staff_logout_request(request): #venture
+    print('logout_request')
+    logout(request)
+    return redirect("/login/")
     
 def venture_main_request(request):
     context={}
@@ -2564,7 +2586,7 @@ def venture_login_request(request):
 def login_request(request):
     print("login request:----------")
     if request.method == 'GET' and request.user.is_authenticated is True and request.user.is_active is True:
-        return redirect('/logout/')
+        return redirect('/staff_logout/')
     user = None
     nextl = request.GET.get('next')
     print(f"....next:{nextl}")

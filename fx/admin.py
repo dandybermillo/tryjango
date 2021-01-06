@@ -11,7 +11,9 @@ from django.db.models import Count
 #  same dir
 # Register your models here. 
 #from django.contrib.admin.actions import delete_selected as delete_selected_
-admin.site.site_header ="Fair Exchange Admin"
+admin.site.site_header ="FX Admin"
+admin.site.site_url = "/dashboard"
+
 
 class MemberAdmin(admin.ModelAdmin):
 

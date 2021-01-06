@@ -48,7 +48,8 @@ urlpatterns = [
   path('fx/accounts/', include('django.contrib.auth.urls')),
   path('login/', views.login_request, name="login"),
   path("logout/", LogoutView.as_view(), name="logout"),
-  path("logouts/",views.logout_request, name="logouts_url"),
+  path("staff_logout/",views.staff_logout_request, name="staff_logout_url"),
+  path("staff_admin/",views.admin, name="staff_admin_url"),
   path("user_logout/",views.user_logout_request, name="user_logout_url"),
 
   

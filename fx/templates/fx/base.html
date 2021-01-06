@@ -790,6 +790,7 @@
 
             </div>
         </div>
+        
         {% if user.is_authenticated and user.is_staff %}
         <div class="vertical_wrap">
             <div class="backdrop"></div>
@@ -1074,11 +1075,14 @@
                     </button>
 
                     {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'fx:user_dashboard_url' 0 %}"
+                    {% if member_info.user_id > 1 %}
+                    <a href="{% url 'fx:user_login_success_url' member_info.user_id %}"
                         class="list-group-item list-group-item-action">Personal Profile</a>
+                        {% endif %}
+                    <a href="{% url 'fx:staff_admin_url' %}" class="list-group-item list-group-item-action">Admin</a>
                     <a href="{% url 'password_change' %}" class="list-group-item list-group-item-action">Change Password
                     </a>
-                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">Log out</a>
+                    <a href="{% url 'fx:staff_logout_url' %}" class="list-group-item list-group-item-action">Log out</a>
                     {%else %}
 
                     <a class="btn btn-info" href="{% url 'fx:login' %}">Log In</a>
