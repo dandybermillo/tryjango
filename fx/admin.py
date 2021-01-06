@@ -106,23 +106,23 @@ class MessageModelAdmin(admin.ModelAdmin):
 ]
 
 class LoadModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','carrier','amount'
+    list_display = ['name','phone','carrier','amount','source_id'
 ]  
 class RepairModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description','email'
+    list_display = ['name','phone','description','email','source_id'
 ] 
 class MechanicModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description','email','category'
+    list_display = ['name','phone','description','email','category','source_id'
 ]
 class ConstructionModelAdmin(admin.ModelAdmin):
     list_display = ['name','phone','category','message','email','source_id'
 ]
 class DeliveryModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message'
+    list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message','source_id'
 ]    
 
 class LivePostModelAdmin(admin.ModelAdmin):
-    list_display = ['status','remarks','category','customer','in_charge','active'
+    list_display = ['status','remarks','category','customer','in_charge','active',"date_entered"
 ]  
     
 

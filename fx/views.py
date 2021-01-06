@@ -70,7 +70,7 @@ limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
 
 
 model_list= {"venture":"VentureModel","trade":"TradingModel"}
-Model_data_list ={"profile":"ProfileModel","message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","construction":"ConstructionModel"}
+Model_data_list ={"live":"LivePostModel","profile":"ProfileModel","message":"MessageModel","join":"JoinModel","mobile":"LoadModel","repair":"RepairModel","mechanic":"MechanicModel","delivery":"DeliveryModel","construction":"ConstructionModel"}
 model_list_change= {"WALLET ACCT":"WalletModel","SAVING ACCT":"SavingModel"}
 
 
@@ -88,7 +88,7 @@ source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletMode
 #21
 TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 
-
+@login_required(login_url='/login/')
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
         try:
@@ -145,7 +145,22 @@ def livePost(request,id,code):
 
        print(f"ERROR,LivePost: e:{e}")
        return JsonResponse({"live":{}},status =400) 
-    
+def worker_task(request,id):
+    print(f"id:: {id}")
+    try:
+ 
+                qs = LivePostModel.objects.all().values("in_charge","status","remarks","customer__member_id","customer__gender","customer__lastname","customer__firstname",).filter( in_charge = id)
+                
+                data=[]
+                for row in qs:
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    #  print(f"row:{row}")
+                    data.append(row) 
+                return JsonResponse({"worker_task":data},status =200) 
+    except Exception as e:
+
+       print(f"ERROR,LivePost: e:{e}")
+       return JsonResponse({"live":{}},status =400) 
 class LoginView(View):
     def post(self, request, *args, **kwargs):
         username = request.POST.get('username')
@@ -183,7 +198,7 @@ class LoginView(View):
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
         print("processing data!")
-        lists =["source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address"]
+        lists =["source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address","remarks","status","member_id"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
         for key, value in request.POST.items():
@@ -194,7 +209,7 @@ class Process_Data_View(View):
                 print('Value %s' % (value) )
                 # print(f'Value: {value}') in Python >= 3.7
         print(f"filter fields: {filter_fields}")
-         
+          
         # print("process data....")
         # name = request.POST.get('name')
         # phone = request.POST.get('phone')
@@ -213,6 +228,7 @@ class Process_Data_View(View):
         Model = apps.get_model('fx', model_name)
         source_id = int(source_id)
         print(f"code :{code}, source_id: {source_id} ,type: {type(source_id)} , modelname: {model_name}")
+         
         if source_id <= 0:
             
                     try:
@@ -234,6 +250,7 @@ class Process_Data_View(View):
                           print(f" update_qs: {update_qs}")
                           if update_qs <=0:
                                     try:
+                                        print(f" add instead of editing..... atttention")
                                         process_data = Model( **filter_fields) #name=name,phone=phone,email=email,birthday =birthday,address = address)
                                         process_data.save() 
                                         print("success writing 2")
@@ -2433,6 +2450,27 @@ def  abbrNum(number, decPlaces):
     
         
     return number  
+def services(request,id):
+    print("......services.....")
+ 
+    try:
+        member_info = MemberModel.objects.get(user = request.user.id)
+    except Exception as e:
+        print(f"member_info: {e}")
+   # member_info={"id":0}
+    try:
+               # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+
+                qs = LivePostModel.objects.all().values("id","in_charge","status","remarks","customer__member_id","customer__gender","customer__firstname","customer__lastname").filter( in_charge = id)
+    except Exception as e:
+               print(f"services: member_info: {e}")
+
+    context={
+      "member_info":member_info,
+      "data":qs,
+    }   
+    return render(request, "fx/services.html", context)
+
 @login_required(login_url='/login/')
 def dashboard(request):
     print("......dashboard.....")
@@ -2505,6 +2543,7 @@ def venture_login_request(request):
                             print("success login in venture")
                              
                             if nextl:
+                               print(f"redirect to {nextl}")
                             
                                return redirect(nextl)  
                             else:    

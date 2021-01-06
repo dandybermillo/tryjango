@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User, Group
+import datetime
 # tutorial/models.py
  
 # Create your models here.
@@ -42,7 +43,7 @@ class MemberModel (models.Model):
 
      @property
      def name(self):
-        return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()
+        return self.gender +" "+self.firstname+ " "+ self.lastname
 
 
 class ProfileModel (models.Model):   # Subject for Approval, the same as MemberModel
@@ -83,6 +84,10 @@ class LivePostModel(models.Model):
       remarks =  models.CharField(max_length=300,default="In Progress")
       category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
       active =  models.BooleanField(default= False)
+     # date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
+      date_entered = models.DateTimeField(auto_now_add=True, blank=True,null =True)
+
+      
 
       
       
@@ -163,7 +168,9 @@ class LoadModel(models.Model):
     phone = models.CharField(max_length=124)
     carrier = models.PositiveIntegerField(default = SMART ,choices = cat) 
     email= models.EmailField(max_length=250,blank= True,null =True)
-    amount = models.FloatField(default =0 )    
+    amount = models.FloatField(default =0 )   
+    source_id = models.IntegerField(default =0) 
+ 
        
 
 

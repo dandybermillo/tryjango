@@ -214,7 +214,9 @@
 
 
         function closeSnoAlertBox(message){
+          console.log("closeSnoalertBox===================");
           window.setTimeout(function () {
+            console.log("------------------:"+"#"+code+"-"+ message+"-alert");
             $("#"+code+"-"+ message+"-alert").fadeOut(300)
             $("#"+code+"-"+ message+"-alert").css({ display: "none" });
 

@@ -62,7 +62,11 @@ tr{
 
   white-space: nowrap;
 }
-
+/* highlight when row is selected */
+.selected {
+    color: red;
+    background-color: yellow;
+}
 /* ------------------------- side bar menu ------------------------------ */
 body {
   max-width: 100%;
@@ -473,6 +477,8 @@ ul {
               <li><a  class="fxmenu" href="#sec-8298">About Us</a></li>
               <li><a  class="fxmenu" href="#sec-1d89">Contact Us</a></li>
               <li><a  class="fxmenu" href="#sec-9545">Welcome</a></li>
+              <li><a id="my-task" class="fxmenu">My Tasks</a></li>
+
             </ul>
           </div>
           <div class="col">
@@ -653,6 +659,8 @@ ul {
         </div>
       </div>
     </section>
+
+
     <section class="u-clearfix u-section-2" id="sec-a32c">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -880,10 +888,15 @@ ul {
                         <button id = "message-btn" form="message-form" code ="message" value ="Submit" name="submit" type="submit" hidden class="submit-btn" >Submit</button>
                       </div>
 
+                      <div id="message-success-alert"  style="display:none;"   class="alert alert-success" role="alert">
+                        Your message has been submitted. Thank You.
+                      </div>
+                      <div id="message-danger-alert" style="display:none;"  class="alert alert-danger" role="alert">
+                        Error: Unable to submit your message.
+                      </div>
                           
-                          
-                          <div id="message-success" class="u-form-send-success"></div>
-                          <div id="message-error" class="u-form-send-error u-form-send-message"></div>
+                          <!-- <div id="message-success" class="u-form-send-success"></div>
+                          <div id="message-error" class="u-form-send-error u-form-send-message"></div> -->
 
                           <!-- <div class="u-form-group u-form-submit">
                             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
@@ -1110,6 +1123,7 @@ ul {
               <form id="profile-form" action="" method="POST" class="needs-validation" style="padding: 15px;" source="custom" name="profile-form">
                 {% csrf_token %}
                 <input type="hidden" name="code" value="profile">
+                
                 <input type="hidden" name="source_id"  value ={{member.id}} value="profile">
                 <div class="u-form-group u-form-select u-form-group-1">
                   <label for="gender-select" class="u-label">Gender</label>
@@ -1221,32 +1235,17 @@ ul {
               <form id="construction-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="construction-form">
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="construction">
-
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                     <label for="name-3e72" class="col-form-label">Name</label>
-                <input placeholder="Enter your name" required type="text" name="name" class ="form-control">
-
-                </div></div>
+                <input  hidden  name="source_id" required type="number" value="{{member.id}}" class ="form-control">
                 
-                <div class="form-row">
-                  <label for="phone-356a" class="col-form-label">Phone</label>
-                       <div class="form-group col-md-12">
-                 
-                  <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required>
-                </div> </div>
-
-                <div class="form-row">
-                   <label for="email-3e72" class="col-form-label">Email</label>
-                  <div class="form-group col-md-12">
-                 
-                  <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control" >
-                </div></div>
-
+               
+                   
+                 <input hidden value="{{member.name}}" required type="text" name="name" class ="form-control">
+                  <input hidden type="text"  value="{{member.telephone}}" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required>
+                  <input hidden type="text"  value="{{member.email}}" id="email-3e72" name="email" class="form-control" >
                 <div class="form-row">
                   <label for="message-3e72" class="col-form-label">Message</label>
                   <div class="form-group col-md-12"> 
-                  <textarea placeholder="Brief problem description... " rows="4" cols="50" id="message-3e72" name="message" class="form-control" required=""></textarea>
+                  <textarea placeholder="Brief problem description... " rows="4" cols="50" id="message-3e72" name="message" class="form-control" required></textarea>
                 </div> </div>
   
                  
@@ -1291,30 +1290,23 @@ ul {
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="mechanic">
 
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                     <label for="name-3e72" class="col-form-label">Name</label>
-                <input placeholder="Enter your name" name="name" required type="text"  class ="form-control">
+                <input hidden name="source_id" required type="number" value="{{member.id}}" class ="form-control">
+                <input hidden name="name" required type="text" value="{{member.name}}" class ="form-control">
 
-                </div></div>
-
+ 
                  
 
 
                 
-                <div class="form-row">
-                  <label for="phone-356a" class="col-form-label">Phone</label>
-                       <div class="form-group col-md-12">
+               
                  
-                  <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
-                </div> </div>
 
-                <div class="form-row">
-                   <label for="email-3e72" class="col-form-label">Email</label>
-                  <div class="form-group col-md-12">
+                  <input type="text"  hidden value={{member.telephone}} id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+ 
+               
                  
-                  <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control" >
-                </div></div>
+                  <input hidden type="text" value={{member.email}}  id="email-3e72" name="email" class="form-control" >
+               
 
                 <div class="form-row">
                   <label for="message-3e72" class="col-form-label">Description</label>
@@ -1386,26 +1378,11 @@ ul {
 
                 
 
-                <div class="form-row">
-                  <label for="name-3e72" class="col-form-label">Name</label>
-                  <div class="form-group col-md-12">
-                  <input required type="text" placeholder="Enter your name" id="name-3e72" name="name" class="form-control" required>
-                </div>
-                </div>
-
-                <label for="phone-356a" class="col-form-label">Phone</label>
-                <div class="form-row">
-                       <div class="form-group col-md-12">
                  
-                  <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
-                </div> </div>
-
-                <div class="form-row">
-                   <label for="email-3e72" class="col-form-label">Email</label>
-                  <div class="form-group col-md-12">
-                 
-                  <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control" >
-                </div></div>
+                  <input  hidden type="text" value="{{member.name}}"  id="name-3e72" name="name" class="form-control" required>
+                  <input hidden type="txt" value="{{member.telephone}}"  id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                  <input hidden type="email" value="{{member.email}}"  id="email-3e72" name="email" class="form-control" >
+                
 
                 <div class="form-row">
                   <label for="message-3e72" class="col-form-label">Description</label>
@@ -1471,28 +1448,15 @@ ul {
               <form id="mobile-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="mobile-form">
                 {% csrf_token %}
                 <input type="hidden"  name="code" value="mobile">
-
-                <div class="form-row">
-                  <div class="form-group col-md-12">  
-                    <label  required for="name-3e72" class="col-form-label">Name</label>
-
-                  <input type="text" placeholder ="Enter your name" id="name-3e72" name="name" class="form-control" required>
-                </div>
-                </div>
-               
-                <div class="form-row">
+                  <input type="text" hidden id="name-3e72" value="{{member.name}}" name="name" class="form-control" required>
+                <div class="form-row" >
                    <label for="phone-356a" class="col-form-label">Phone</label>
                        <div class="form-group col-md-12">
                  
-                  <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
+                  <input type="text" readonly value="{{member.telephone}}" id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
                 </div> </div>
-
-                <div class="form-row">
-                   <label for="email-3e72" class="col-form-label">Email</label>
-                  <div class="form-group col-md-12">
                  
-                  <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
-                </div></div>
+                  <input hidden type="text"  value="{{member.email}}" id="email-3e72" name="email" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
 
                 <div class="form-row">
                         <div class="form-group col-md-12">
@@ -1520,10 +1484,11 @@ ul {
             
                 
                  
-                  <input type ="button" class="validate-form-btn btn btn-primary" code ="mobile" value ="Submit"></input>
+                  <input type ="button" class="validate-form-btn btn btn-primary" code ="mobile" value ="Submit Now"></input>
     
                   <button id = "mobile-btn" form="mobile-form" code ="mobile" value ="Submit" name="submit" type="submit" hidden class="submit-btn">Submit</button>
-                  <button id = "mobile-hide-btn"  code ="mobile-modal"  name="close-modal" type="button"  class="hide-modal-btn btn btn-info">Hide</button>
+                  <button id = "mobile-hide-btn"  code ="mobile-modal"  name="close-modal" type="button"  class="hide-modal-btn btn btn-secondary">Close</button>
+                 
                 
                   <!-- <input type ="button" class="validate-form-btn" code ="mobile" value ="Submit"></input>
                   <input  type ="button" form="mobile-form" class="close-form-btn" code ="mobile"  id="close-mobile-btn"  value ="Close" ></input>
@@ -1577,33 +1542,18 @@ ul {
               <form id="delivery-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="delivery-form">
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="delivery">
+                <input  hidden  name="source_id" required type="number" value="{{member.id}}" class ="form-control">
                
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                     <label for="name-3e72" class="col-form-label">Name</label>
-                <input placeholder="Enter you name" required type="text" name="name"  class="form-control">
-                </div>
-              </div>
-
                  
-                <div class="form-row">
-                       <div class="form-group col-md-12">
-                 <label for="phone-356a" class="col-form-label">Phone</label>
-                  <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-356a" name="phone" class="form-control " required="">
-                </div> </div>
+                <input hidden value="{{member.name}}" required type="text" name="name"  class="form-control">
+               
 
-                <div class="form-row">
-                   <label for="email-3e72" class="col-form-label">Email</label>
-                  <div class="form-group col-md-12">
-                  <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control" >
-                </div></div>
-
-                <div class="form-row">
-
-                  <div class="form-group col-md-12">
-                  <label  class="col-form-label">Address</label>
-                <input type="text" placeholder="Enter your address" id="address-27ba" name="address" class="form-control" required>
-                </div><div>
+                  <input hidden type="text" value="{{member.telephone}}" id="phone-356a" name="phone" class="form-control " required="">
+                 
+                  <input hidden type="email" value="{{member.email}}" id="email-3e72" name="email" class="form-control" >
+                   
+                <input hidden type="text" value="{{member.address}}" id="address-27ba" name="address" class="form-control" required>
+               
               
             
 
@@ -1661,17 +1611,112 @@ ul {
 </div>
 
 
+<!-- ------------------------ worker view ----------------------------- -->
+
+<div id="worker-view-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+          <div class="modal-body">
+
+              <button data-dismiss="modal" class="close">&times;</button>
+              <h4>My Special Tasks</h4>
+             
+
+
+              <div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="pos-product-code-txt" class="col-form-label"> ID  </label>
+                        <input readonly id="member-id-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pos-product-name-txt" class="col-form-label">Status<span
+                            class="asteriskField">*</span> </label>
+                        <input id="status-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="pos-product-name-txt" class="col-form-label">Remark<span
+                          class="asteriskField">*</span> </label>
+                      <input id="remark-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control" >
+                  </div>
+                    
+              
+                </div>
+            
+                    <div class="row justify-content-between">
+                        <div class ="form-group col-md-6" >
+                            <input disabled id="task-add-btn" class="btn btn-success btn-md" type="button"
+                            value="SAVE CHANGES" />
+                        
+                            <input  id="task-cancel-btn" class="btn btn-secondary btn-md" type="button"
+                        value="CLEAR" /> 
+                        </div>
+                        <div class ="form-group col-md-4" >
+                            
+                        <input  disabled style="float: right;" id="task-delete-btn" class="btn btn-danger btn-md" type="button"
+                        value="DELETE" />
+                       </div>
+
+                    </div> 
+                    </div>
+                     
+                   
+                    
+                    
+            </div>
+
+
+
+
+              <div style="height: 350px;overflow: scroll;">
+                <table id="worker-task-table"class="table table-bordered">
+                   <thead>
+                       <tr class="green">
+                      <th scope="col">#</th>
+                       <th scope="col">ID</th>
+                       <th scope="col">Name</th>
+                       <th scope="col">Status</th>
+                       <th scope="col">Remark</th>
+                     
+                      
+                     </tr>
+                   </thead>
+                   <tbody  id="worker-task-table-body">
+                       
+                     
+                      
+                   </tbody>
+                 </table>
+               </div>
+        
+        
+        
+        
+            </div>
+
+
+
+
+            
+       </div>
+  </div>
+</div>
+
 
 
 <script>
 $(document).ready(function () {
          var member_id ="{{member.id}}";
+         var rIndex =0;  // use by the table save the selected row
          selected_live_code =0;
          console.log("member id:"+ member_id);
          var live_code = {'mobile':1, 'repair':2, 'mechanic':3, 'construction':4,'delivery':5 };
         
-
-
+        
          // services link
          $(".services-span-lnk").click(function () {
              console.log("==================================================");
@@ -1752,10 +1797,151 @@ $(document).ready(function () {
   
  }
 
+ function worker_task(){
+         console.log("task");
+         if (ready == true){ 
+            ready=false;
+         // var  id = "{{member.id}}";
+         console.log("init worker task");
+         // url ="{ url 'fx:live_url' "+member_id + " }";
+          url ="/my_task/"+ member_id+"/";
+          $.ajax({
+           type: "GET",
+           url:  url,
+           
+           success: function (response) {
+             console.log("success")
+             $("#worker-task-table-body").empty();
+             $("#worker-task-table-body").append
+             ready=true;
+             
+             row_ctr =0;
+             response["worker_task"].forEach(function (item) {
+                        //console.log("....item:",item);
+                        row_ctr = row_ctr + 1;
+                        //fill_table(item, row_ctr );
+                      var temp = "<tr><td>"+ row_ctr+"</td>  <td scope='row'>" +item.customer__member_id+ "</td> <td> "+ item.customer__gender +" "+ item.customer__firstname + " "+item.customer__lastname+"</td> <td>"+item.status+"</td><td>"+item.remarks+"</td></tr>"
+                        $("#worker-task-table-body").append(temp);
 
- 
+                });
+              
 
-      });
+            
+           },
+           error: function (response) {
+             // do something with response
+             console.log("Error");
+             ready=true;
+             
+           },
+         });
+         ready=true;
+        }
+  
+ }
+  // show worker-view
+        $("#my-task").click(function () {
+                  console.log("--------------------------s");
+                  worker_task();
+                  $("#worker-view-modal").modal('show');
+              });
+
+
+
+
+
+           
+              $("#task-cancel-btn").click(function () {
+                $("#task-add-btn").prop("disabled",true);
+                $("#task-delete-btn").prop("disabled",true);
+                  clear_pos_top();
+              });
+
+  $("#task-add-btn").click(function () {
+        // pcode = $("#pos-product-code-txt").val().trim();
+        // console.log("pcode:"+pcode);
+        // pqty =  parseInt($("#pos-qty-txt").val());
+        // console.log("pqty:"+pqty);
+        // if (pcode =="" ||  isNaN( pqty) ){
+        //     return;
+        // }
+        action =  $(this).val().trim();
+        console.log("---------------- action:"+ action); 
+        // if (action =="ADD") { 
+        // console.log("---------------- add"); 
+        // pcode =$("#pos-product-code-txt").val();
+        // pname = $("#pos-product-name-txt").val();
+        // pqty = $("#pos-qty-txt").val();
+        // pprice =  $("#pos-price-txt").val();
+        // pcmoney =  $("#pos-c-money-txt").val();
+        // ptotal =  $("#pos-total-txt").val();
+
+
+        // var newRow = "<tr  id=c-"+ pcode +"><td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
+        //    $("#pos-table > tbody").prepend(newRow);
+        // }else
+        // {
+          console.log(">>>>> edit is selected");
+          table = document.getElementById("worker-task-table");
+          table.rows[rIndex].cells[1].innerHTML =  $("#member-id-txt").val();
+          table.rows[rIndex].cells[3].innerHTML = $("#status-txt").val();
+          table.rows[rIndex].cells[4].innerHTML =  $("#remark-txt").val();
+          
+         // $(this).val("ADD");
+          
+                     
+
+
+
+      //  }
+        clear_pos_top();
+
+});
+function clear_pos_top(){
+         $("#member-id-txt").val("");
+          $("#status-txt").val("");
+          $("#remark-txt").val("");
+          $("#task-add-btn").prop("disabled",true);
+          $("#task-delete-btn").prop("disabled",true);
+          
+  };
+
+      $('#worker-task-table tbody').on('click', 'tr', function() {
+                    //get row contents into an array
+
+                   
+                    $(this).addClass('selected').siblings().removeClass('selected');    
+                    var value=$(this).find('td:first').html();
+
+                    rIndex = this.rowIndex;
+                    console.log(">>>>>>>>>>row index:"+rIndex);
+                    var tableData = $(this).children("td").map(function() {
+                        return $(this).text();
+                    }).get();
+                    var td=tableData[0] +  '*' +  tableData[1] + '*' + tableData[2] + '*' +  tableData[3] + '*' + tableData[4];
+                    console.log(td);
+                    pcode =  tableData[0].trim();
+
+                    if (pcode ==""){
+                        return;
+                    }
+                    product_code = tableData[0].trim();
+                    $("#member-id-txt").val( tableData[1] );
+                    $("#status-txt").val(tableData[3] );
+                    $("#remark-txt").val(tableData[4] );
+                     
+
+                    $("#task-add-btn").val("SAVE CHANGES");
+                     
+
+                    $("#task-add-btn").prop("disabled",false);
+                    $("#task-delete-btn").prop("disabled",false);
+
+
+                });
+
+              }); 
+
 </script>
 
 

@@ -17,6 +17,12 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />  -->
    
+      {% block style%}
+
+      {% endblock style%}
+
+     
+
 
   <!-- <link href="{% static 'css/bootstrap.min.css' %}" >  
   <script src="{% static 'js/bootstrap.min.js' %}"></script>  
@@ -439,8 +445,8 @@
 
     }
 
-    table th,
-    td {
+    table th.center,
+    td.center{
 
         text-align: center;
     }
@@ -658,13 +664,13 @@
             display: inline-block;
         }
 
-        table tr {
+        table tr.responsive {
             display: list-item;
             border: none;
             border-top: 2px solid gray;
         }
 
-        table th {
+        table th.responsive {
             display: inline-block;
             border: solid thin gray;
 
@@ -673,13 +679,13 @@
         }
 
 
-        table tbody,
-        thead,
+        table tbody.responsive,
+        thead.responsive,
         tfoot {
             display: block;
         }
 
-        tbody td {
+        tbody td.responsive {
             display: inline-block;
             border: solid thin rgb(133, 119, 119);
             margin-right: 0.2rem;

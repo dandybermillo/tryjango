@@ -34,6 +34,9 @@ urlpatterns = [
   path('transfer/<str:account_name>/<int:sender>/',views.transfer, name = 'transfer_url'),
   path("dashboard/", views.dashboard, name="dashboard_url"),
   path("dash/<str:message>", views.dash, name="dash_url"),
+  
+      ## -------------------- SERVICES --------------------
+  path("services/<int:id>/", views.services, name="services_url"),
 
   
 
@@ -75,6 +78,8 @@ urlpatterns = [
   #test
     path('demo/',AjaxHandlerView.as_view(), name='AjaxHandlerView_url'),
     path('create/',views.create_post, name='create_url'),
+    
+    
 
 
 
@@ -88,6 +93,7 @@ urlpatterns = [
 
 
   path('live/<int:id>/<int:code>/', views.livePost, name="live_url"), 
+  path('my_task/<int:id>/', views.worker_task, name="worker_task_url"), 
 
    
   #end test
