@@ -48,7 +48,7 @@
   //   Handle Login
   $("#login-btn").click(function(e) {
 
-
+    code="login";
     //var form =  document.querySelector(".needs-validation");
     var form = document.querySelector('#login-form');
     var reportVal = form.checkValidity();
@@ -59,7 +59,7 @@
         return;
     }
  // $("#login-form").submit(function (e) {
-    console.log("submit form inis");
+    console.log("submit form init");
     e.preventDefault();
 //  url: "/sign_in_url/",url: "{% url 'fx:sign_in_url' %}",
     $.ajax({
@@ -81,18 +81,20 @@
           id = response["id"];
           window.location.replace("/user/"+id);
         } else if (response["type"] === "error") {
-         // console.log("Something went wrong! Try again.");
-          $("#login-error").text(response["message"]);
-          $("#login-error").css({ display: "block" });
+         
+          $("#login-danger-alert").fadeIn();  // alert message
+          closeSnoAlertBox("login","danger");
+           
           console.log("Acccess denied");
 
         }
       },
       error: function (response) {
         // do something with response
-        console.log("Something went wrong! Try again.");
-        $("#login-error").text("Something went wrong! Try again.");
-        $("#login-error").css({ display: "block" });
+        console.log("Something went wrong! Try again..");
+     //   $("#login-error").text("Something went wrong! Try again.");
+     $("#login-danger-alert").fadeIn();  // alert message
+     closeSnoAlertBox("login","danger");
       },
     });
 
@@ -194,10 +196,10 @@
            error: function (response) {
              // do something with response'
              $("#profile-danger-alert").fadeIn();  // alert message
-             closeSnoAlertBox("danger");
+             closeSnoAlertBox(code,"danger");
              console.log("Something went wrong! Try again.");
-             $("#"+code+ "-error").text("Something went wrong! Try again.");
-             $("#"+code+"-error").css({ display: "block" });
+            //  $("#"+code+ "-error").text("Something went wrong! Try again.");
+            //  $("#"+code+"-error").css({ display: "block" });
            },
          });
      
@@ -213,10 +215,10 @@
 
 
 
-        function closeSnoAlertBox(message){
+        function closeSnoAlertBox(code,message){
           console.log("closeSnoalertBox===================");
           window.setTimeout(function () {
-            console.log("------------------:"+"#"+code+"-"+ message+"-alert");
+            console.log("line:"+"#"+code+"-"+ message+"-alert");
             $("#"+code+"-"+ message+"-alert").fadeOut(300)
             $("#"+code+"-"+ message+"-alert").css({ display: "none" });
 

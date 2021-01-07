@@ -41,7 +41,7 @@
 
             <form action="" class="needs-validation" id="form_member" method='POST'>
                 {% csrf_token %}
-               <div hidden> {{form.member_id}}</div>
+               <div hidden > {{form.member_id}}</div>
                 <div hidden> {{form.birthday}}</div>
                 <div class="form-row">
 
@@ -321,7 +321,7 @@
             }
             member_id = firstname_part +month_part+day_part+ "-"+gender_part;
             $("#review-username").val(member_id);
-            $("#id_member_id").val(member_id);
+           // $("#id_member_id").val(member_id);
 
 
             

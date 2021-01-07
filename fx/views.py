@@ -91,7 +91,14 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 @login_required(login_url='/login/')
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
-        
+        print(f"--- id: {id}")
+        try:
+                id = MemberModel.objects.get(user_id = id).id
+                print(f"--- member id: {id}")
+                print(" successfull!")
+        except Exception as e: 
+                #todo
+                print(f"LoginView e: {e} ")
         try:
               member_qs = ProfileModel.objects.get(source_id = id)
               member_qs.id  = id
@@ -1106,7 +1113,10 @@ def getLoanPayment(member_id):
 #cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
-  
+    
+    v =ValidateUsername("DA1212-1")
+    print(f"v: {v}")
+    return
     logger.info('>>>>>>>>>>>>>> init cuv!')
     print('>>>>>>>>>>>>>> init cuv!')
     
@@ -4514,6 +4524,7 @@ def create_update_member(request, id=id):
                          max_loan = tmpVariables.objects.values("max_loan").get(id = 1)["max_loan"]
                          print(f"----- max: {max_loan}")
                     except Exception as e:
+                                max_loan =  300
                                 print(f"------ Error in reading max_loan")
                                 
                    # return
@@ -4521,34 +4532,45 @@ def create_update_member(request, id=id):
                     #ed loan to new member initialize
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
-                        
-                            
                             print('pass member form valid!Y')
-                            # firstname = memberForm.cleaned_data['firstname'].strip()
-                            # lastname= memberForm.cleaned_data['lastname'].strip()
                             newUsername= memberForm.cleaned_data['member_id'].strip()
                             
-                           # newUsername = ValidateUsername(member_id)
+                            newUsername = ValidateUsername(newUsername)
                             newUsername = newUsername.lower()
                             newPassword = gen_password()
                             print(f"...newpassword: {newPassword} new username:{newUsername}")
-                             
-                            user = User.objects.create_user( newUsername, email = None,password= newPassword)
-                            pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = newPassword )
+                            Success = True
+                            try:
+                                 
+                                user = User.objects.create_user( newUsername, email = None,password= newPassword)
+                            except Exception as e:
+                                 Success = False
+                                 print (f" Error creating user at cum: {e}") #todo here
                             print(f"newUsername:{newUsername}")
                             
                             print("saving new member(valid).......")
-                            qs = memberForm.save(commit= False)
-                            qs.user = user   #todo unquote 'user'
-                            qs.member_id = newUsername
-                            
+                            if Success:
+                                    try:
+                                            qs = memberForm.save(commit = False)
+                                            qs.user = user   #todo unquote 'user'
+                                            qs.member_id = newUsername
+                                            updated_Member = qs.save()  #todo uncomment
+                                    except Exception as e:
+                                        Success = False
+                                        print (f" Error writinf temp pass at cum: {e}") #todo here
+                                
                             print("---- memberid: {memberid}")
-                            
-                            updated_Member = qs.save()  #todo uncomment
+                            if Success:
+                                    try:
+                                        pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = newPassword )
+                                    except Exception as e:
+                                        Success = False
+                                        print (f" Error writinf temp pass at cum: {e}") #todo here
+                           
                             print(f"---- qs.id: {qs.id}")
                             memberid = qs.id
                             ## add Loan to new member
-                            Success = True
+                            
                             category = CAT_LOAN
                             if  Success:
                                     try:
@@ -4600,11 +4622,68 @@ def create_update_member(request, id=id):
                             member_info = MemberModel.objects.get(id=id)
                         except  MemberModel.DoesNotExist:
                             print('error reading Member info.')
-                            
+                        old_firstname= member_info.firstname
+                        old_birthday = member_info.birthday
+                        old_gender = member_info.gender.strip().lower()
+                        old_user_id = member_info.user_id
+                        
+                        firstname = request.POST.get("firstname","")
+                        bday = request.POST.get("birthday","")
+                        gender =  request.POST.get("gender","").strip().lower()
+                        print(f"gender: {gender},old user id: {old_user_id}")
+                        
+                        print(f"firstname: {old_firstname},old_bday: {old_birthday}, type: {type(old_birthday)}")   
+                        print(f"POST firstname: {firstname},old_bday: {bday}, type: {type(bday)}")   
+                        arr_bday = bday.split("/")
+                        month = old_birthday.strftime("%m")
+                        day = old_birthday.strftime("%d")
+                        print(f"OLD month:{month}, day: {day}")
+                        print(f"farr bday:[{arr_bday},{arr_bday[0]},{arr_bday[1]}")
+                        
+                         
                         memberForm = MemberForm(request.POST , instance=member_info)
-                    
+                        
+                        HasChange =False
+                        if firstname[0:2] != old_firstname[0:2]:
+                            HasChange = True
+                            print("change name")
+                        if month != arr_bday[0] or day != arr_bday[1]:
+                             HasChange = True 
+                             print("change month or day")
+                        if old_gender != gender:
+                             HasChange = True
+                             print("gender change")
+                        print(f"firstname[0,2]:{firstname[0:2]}, arr_bday[0]:{arr_bday[0]}, has Changed:{HasChange}")
+                        code =-1
+                        if HasChange:
+                                if gender == "mr.":
+                                    code = 1
+                                else:
+                                     code = 0
+                                     
+                                     
+                                
+                        print (f" gender code: {code}") 
+                        member_id = firstname[0:2] +arr_bday[0]+arr_bday[1] +"-"+str(code).strip()
+                        if HasChange:
+                                print(f" member id: {member_id}")
+                                member_id = ValidateUsername(member_id)
+
                         if memberForm.is_valid():
-                            updated_Member= memberForm.save()
+                            if HasChange:
+                                try:
+                                    user = User.objects.filter( id = old_user_id).update (username = member_id)
+
+                                except Exception as e: #todo here
+                                    print(f"update user member_id error: {e}")
+                            qs = memberForm.save(commit=False)
+                            if HasChange:
+                                qs.member_id = member_id
+                                print("saving successful while changing the user id")
+                            else:
+                                print("saving successful w/o changing the user id")
+                            qs.save()
+                            print("success editing")
                             msg ="The following has been successfully updated!"
                             return redirect(f'/success/create_update_member_result/{id}/{msg}')
                         else:  #invalid form  for existing record
@@ -4615,6 +4694,17 @@ def create_update_member(request, id=id):
                                     'State':{"new_member":"active" }
                                 }
                         return render(request, "fx/create_update_member.html", context)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
  
  

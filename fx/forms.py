@@ -170,6 +170,7 @@ class MemberForm(forms.ModelForm):
         
         return email
    def ValidateUsername(self,username):
+    print("validating-------------")
     codeCtr=1
     qs = User.objects.filter(username__iexact = username) 
     if qs.count() == 0:
@@ -199,12 +200,14 @@ class MemberForm(forms.ModelForm):
     
    def clean_member_id(self,*args, **kwargs):
         print(".....clean_ member_id")
-        member_id = self.cleaned_data.get('member_id')
+        member_id = self.cleaned_data.get('member_id').strip().lower()
+        if member_id == "default":
+              member_id = self.ValidateUsername(member_id)
+            
         
         
         
-        
-        member_id = self.ValidateUsername(member_id)
+       
         # validator = EmailValidator()
         # email =email.strip()
         # if(len(email )> 0):
