@@ -762,9 +762,9 @@
 
                     <li><a class="current-user" href="{% url 'fx:display_member_info_url' member_info.id  %}">
                             {% if member_info.reserve %}
-                            {{member_info.firstname|upper}}
+                            Admin:  {{member_info.firstname|upper}}
                             {%else%}
-                             {{member_info.name|upper}}
+                            Member: {{member_info.name|upper}}
 
 
                             {%endif%}

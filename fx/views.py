@@ -92,20 +92,24 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
         print(f"--- id: {id}")
-        try:
-                id = MemberModel.objects.get(user_id = id).id
-                print(f"--- member id: {id}")
-                print(" successfull!")
-        except Exception as e: 
-                #todo
-                print(f"LoginView e: {e} ")
+        # try:
+        #         id = MemberModel.objects.get(user_id = id).id
+        #         print(f"--- member id: {id}")
+        #         print(" successfull!")
+        # except Exception as e: 
+        #         #todo
+        #         print(f"LoginView e: {e} ")
         try:
               member_qs = ProfileModel.objects.get(source_id = id)
               member_qs.id  = id
               member_qs.member_id =  MemberModel.objects.get(id = id).values("member_id")
         except Exception as e:
               print("no data yet at profileModel")
-              member_qs = MemberModel.objects.get(id = id)
+              print(f"user_login_success: {e} ")
+              try:
+                 member_qs = MemberModel.objects.get(id = id)
+              except Exception as e:
+                   print(f"user_login_success: {e}")
         
         tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk")   #.values('createdate').annotate(count=Count('id'))
        
@@ -113,14 +117,16 @@ def user_login_success(request,id):
         
         #employees = Employee.objects.all().values('id','name','company__name')
         live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
-        
+        pwd=""
         try:
-                    pwd = Tmp_PasswordModel.objects.get(member_id = id).pwd
+                    pwd = Tmp_PasswordModel.objects.get(member_id = id).pwd.strip()
+                    print(f"------------:{pwd} , len: {len(pwd)}")
                     pwd = base64.b64decode(pwd)
+                    print(f"second------------{pwd} , len: {len(pwd)}")
                     pwd =pwd.decode("utf-8")
-                    print (f"....pwd: {pwd}")
+                    print (f"...retrieve.pwd from Tmp_PasswordModel : {pwd}")
         except Exception as e:
-                    print (f"{e}, {type(e)}")
+                    print (f"decode pass at login success: {e}, {type(e)}")
                     
         print(f" qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
         # print(f"member_qs. member_id: {member_qs.member_id}")
@@ -1110,15 +1116,15 @@ def getLoanPayment(member_id):
 
          
 
-#cuv
+#def cuv
 @login_required(login_url='/login/')
 def create_update_venture(request,member_id,venture_id,request_action ):
     
-    v =ValidateUsername("DA1212-1")
-    print(f"v: {v}")
-    return
-    logger.info('>>>>>>>>>>>>>> init cuv!')
-    print('>>>>>>>>>>>>>> init cuv!')
+    # v =ValidateUsername("DA1212-1")
+    # print(f"v: {v}")
+    # return
+    # logger.info('>>>>>>>>>>>>>> init cuv!')
+    # print('>>>>>>>>>>>>>> init cuv!')
     
   #  saveTransHistory(11,2,TRANS_VENTURE,111,"test",100,NEW_RECORD)
     
@@ -2510,7 +2516,11 @@ def dashboard(request):
     table.template_name = "fx/card_template.html"
     
     member_info={"id":0}
-    member_info["user_id"] = MemberModel.objects.get(user = request.user.id).id
+    print(f"dashboard-------------id:{request.user.id}")
+    try: 
+        member_info["user_id"] = MemberModel.objects.get(user = request.user.id).id
+    except Exception as e:
+         print("dashboard:error: {e}")
     print(f" member_info.user_id: {member_info}")
     context={
       "member_info":member_info,
@@ -4533,7 +4543,23 @@ def create_update_member(request, id=id):
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
                             print('pass member form valid!Y')
-                            newUsername= memberForm.cleaned_data['member_id'].strip()
+                            firstname= memberForm.cleaned_data['firstname'].strip().lower()
+                            bday= memberForm.cleaned_data['birthday']
+                            gender= memberForm.cleaned_data['gender'].strip().lower()
+                             
+                            
+                            month = bday.strftime("%m")
+                            print(f"month type: {type(month)}")
+                            day = bday.strftime("%d")
+                            if gender == "mr.":
+                                    code = 1
+                            else:
+                                     code = 0
+                        
+                            newUsername = firstname[0:2] +month+day +"-"+str(code).strip()
+
+                            
+                            print(f" new username: {newUsername}")
                             
                             newUsername = ValidateUsername(newUsername)
                             newUsername = newUsername.lower()
@@ -4562,7 +4588,11 @@ def create_update_member(request, id=id):
                             print("---- memberid: {memberid}")
                             if Success:
                                     try:
-                                        pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = newPassword )
+                                        
+                                        newPassword = newPassword.encode("utf-8")
+                                        encoded = base64.b64encode(newPassword).decode("utf-8")
+                                        
+                                        pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = encoded )
                                     except Exception as e:
                                         Success = False
                                         print (f" Error writinf temp pass at cum: {e}") #todo here

@@ -492,7 +492,7 @@
               <div class="tab-pane fade show active" id="nav-wallet" role="tabpanel" aria-labelledby="nav-wallete-tab">
 
                 <!-- --------------wallet------- -->
-                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                <div class="" style="width: 50;height: 100;">
 
 
                   {% include 'fx/member/templates/table.html' with code="wallet" preference=wallet_transaction.user_preference.financial_transaction data_source=wallet_transaction  %}
@@ -504,7 +504,7 @@
 
 
               <div class="tab-pane fade" id="nav-cc" role="tabpanel" aria-labelledby="nav-cc-tab">
-                <div class="" style="border:1px solid green;width: 50;min-height: 100;">
+                <div class="" style="border:width: 50;min-height: 100;">
 
                   {% include 'fx/member/templates/table.html' with code="cc" preference=Cc_transaction.user_preference.financial_transaction data_source=Cc_transaction  %}
 
@@ -513,7 +513,7 @@
               </div>
 
               <div class="tab-pane fade" id="nav-saving" role="tabpanel" aria-labelledby="nav-saving-tab">
-                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                <div class="" style="border:width: 50;height: 100;">
 
 
 
@@ -523,13 +523,13 @@
               </div>
 
               <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab">
-                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                <div class="" style="width: 50;height: 100;">
                   {% include 'fx/member/templates/table.html' with code="payment" preference=Payment_transaction.user_preference.financial_transaction data_source=Payment_transaction  %}
                 </div>
               </div>
 
               <div class="tab-pane fade" id="nav-loan" role="tabpanel" aria-labelledby="nav-loan-tab">
-                <div class="" style="border:1px solid green;width: 50;height: 100;">
+                <div class="" style="width: 50;height: 100;">
                   {% include 'fx/member/templates/data_loader_table.html' with code="loan" preference=Loan_transaction.user_preference.financial_transaction data_source=Loan_transaction  %}
 
 

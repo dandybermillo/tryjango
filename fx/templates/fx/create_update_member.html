@@ -44,11 +44,23 @@
                <div hidden > {{form.member_id}}</div>
                 <div hidden> {{form.birthday}}</div>
                 <div class="form-row">
-
                     <div class="form-group col-md-2">
-                        {{ form.gender|as_crispy_field  }} </div>
-                </div>
+                        <label for="mid" style="margin-top: -30px;" class="col-form-label">Member ID</label>
+                      <input type="text" id="mid-27ba" value=" {{form.member_id.value}}" class="form-control" readonly>
+                      </div>
+                 </div>
 
+
+
+                 <div class="form-row">
+                    <div class="form-group col-md-2">
+                        {{ form.gender|as_crispy_field  }} 
+                    </div>
+
+
+                   
+ 
+            </div>
 
                 <div class="form-row">
 
@@ -65,6 +77,9 @@
                         {{ form.lastname |as_crispy_field }}
                     </div>
                 </div>
+                
+                  
+                  </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="member-month-txt" class="col-form-label">MONTH<span

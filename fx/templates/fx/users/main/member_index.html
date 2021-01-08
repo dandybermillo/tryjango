@@ -417,7 +417,7 @@ ul {
           <img src="/static/img/image/logo1.jpg" class="u-logo-image u-logo-image-1" data-image-width="111">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+          <div id ="burger-menu-collapse" class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-black u-text-hover-palette-2-base u-text-palette-1-base" href="#" style="text-shadow: 0 2px 8px rgba(128,128,128,1);">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -929,13 +929,13 @@ ul {
     
     
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/templates" target="_blank">
+      <a class="u-link" href="" target="_blank">
         <span>Templates</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
+      <a class="u-link"  target="_blank">
         <span>Website Design Software</span>
       </a>. 
     </section>
@@ -1054,6 +1054,11 @@ ul {
 }
 
 @media (max-width: 776px) {
+  #burger-menu-collapse{
+
+    width:0px;
+    height:0px;
+  }
   #col-menu{
     display: block !important;
 
@@ -1086,6 +1091,10 @@ ul {
 }
 
 @media (max-width: 575px) {
+#burger-menu-collapse{
+  width:0px;
+  height:0px;
+}
   #col-menu{
     display: block !important;
 
@@ -1627,7 +1636,7 @@ ul {
 
 <!-- ------------------------ worker view ----------------------------- -->
 
-<div id="worker-view-modal" class="modal fade" role="dialog">
+<!-- <div id="worker-view-modal" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-lg">
       <div class="modal-content">
           <div class="modal-body">
@@ -1718,8 +1727,10 @@ ul {
 
        </div>
   </div>
-</div>
+</div> -->
 
+
+<!-- ---------------------------------- qr code generator ----------------------- -->
 <div id ="qrcode-modal" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -1859,6 +1870,9 @@ $(document).ready(function () {
         }
   
  }
+
+
+// ------------------ my task --------------------------
 
  function worker_task(){
          console.log("task");

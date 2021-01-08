@@ -125,7 +125,7 @@ th {
     div.preview {
 
         float:left;
-        border:1px solid green;
+        
     }
 
     /* end qrcode */
@@ -805,32 +805,39 @@ th {
         // this is document ready start
 
 
-        // qrcode scanner
+        // qrcode scanner. this works
 
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview')
-            }
-        );
-        scanner.addListener('scan', function (content) {
+        // let scanner = new Instascan.Scanner(
+        //     {
+        //         video: document.getElementById('preview')
+        //     }
+        // );
+        // scanner.addListener('scan', function (content) {
 
-            //x document.getElementById("venture-customer_id-txt").value = content;
-            //x $("#venture-customer_id-txt").val(username);
-            search_member(content, "","qrcode");
-            beep();
-            //xThis is working program
-            //x alert('SucceessDo you want to open this page?: ' + content);
-            console.log("code: " + content)
-            //x window.open(content, "_blank");
-        });
+        //     //x document.getElementById("venture-customer_id-txt").value = content;
+        //     //x $("#venture-customer_id-txt").val(username);
+        //     search_member(content, "","qrcode");
+        //     beep();
+        //     //xThis is working program
+        //     //x alert('SucceessDo you want to open this page?: ' + content);
+        //     console.log("code: " + content)
+        //     //x window.open(content, "_blank");
+        // });
 
-        Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error("Please enable Camera!");
-            }
-        });
+        // Instascan.Camera.getCameras().then(function (cameras) {
+        //     if (cameras.length > 0) {
+        //         scanner.start(cameras[0]);
+        //     } else {
+        //         console.error("Please enable Camera!");
+        //     }
+        // });
+    // end qrcode scanner. this works
+
+
+
+
+
+
         //qrcode scanner
     // //     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
     // //   Instascan.Camera.getCameras().then(cameras => {
@@ -1703,7 +1710,22 @@ th {
 
         });
     });
+//---------------------------------- barcode scanner
+(function () {
+			onScan.attachTo(document, {
+				suffixKeyCodes: [13],
+				reactToPaste: true,
+				onScan: function (sCode, iQty) {
+					console.log('Scanned: ' + iQty + 'x ' + sCode);
+				},
+				onKeyDetect: function (iKeyCode) {
+					console.log('Pressed: ' + iKeyCode);
+				}
+			});
 
+			// Test scanner is initialized
+			onScan.simulate(document, '1234567890123');
+		})()
 </script>
 
 
