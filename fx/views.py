@@ -91,18 +91,26 @@ TRANS_PAYMENT,TRANS_VENTURE,TRANSACTION=(0,1,2)
 @login_required(login_url='/login/')
 def user_login_success(request,id):
       #  return render(request, 'fx/users/user_page.html', {'posts':"posts"})  
-        print(f"--- id: {id}")
-        # try:
-        #         id = MemberModel.objects.get(user_id = id).id
-        #         print(f"--- member id: {id}")
-        #         print(" successfull!")
-        # except Exception as e: 
-        #         #todo
-        #         print(f"LoginView e: {e} ")
+        print(f"--- user id: {id}")
+        user_id =id
+        member_id=""
+        try:
+                qs = MemberModel.objects.get(user_id = user_id)
+                id = qs.id
+                member_id = qs.member_id
+                print(f"id: {id}--- member id: {member_id}")
+                print(" successfull!")
+        except Exception as e: 
+                #todo
+                print(f"LoginView e: {e} ")
+        print(f" id : {id}")
+        
         try:
               member_qs = ProfileModel.objects.get(source_id = id)
+             
               member_qs.id  = id
-              member_qs.member_id =  MemberModel.objects.get(id = id).values("member_id")
+              member_qs.member_id =member_id
+              print(f"passs try,member_qs.id:{id} ")
         except Exception as e:
               print("no data yet at profileModel")
               print(f"user_login_success: {e} ")
@@ -202,14 +210,14 @@ class LoginView(View):
         if user is not None:
             
             login(request, user)
-            try:
-                id = MemberModel.objects.get(user_id = user.id).id
-                print(f"--- id: {id}")
-                print(" successfull!")
-            except Exception as e: 
-                #todo
-                print(f"LoginView e: {e} ")
-            return JsonResponse({"type":'success', "message":"Login Success","id":id})
+            # try:
+            #     id = MemberModel.objects.get(user_id = user.id).id
+            #     print(f"--- id: {id}")
+            #     print(" successfull!")
+            # except Exception as e: 
+            #     #todo
+            #     print(f"LoginView e: {e} ")
+            return JsonResponse({"type":'success', "message":"Login Success","id":user.id})
         else:
             print(" access denied!")
             return JsonResponse({"type": "error", "message": "Invalid Credentials"})#test
