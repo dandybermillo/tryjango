@@ -148,7 +148,7 @@ class MemberForm(forms.ModelForm):
    firstname = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'First name'}))
    lastname = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Last name'}))
    middlename = forms.CharField(required = False,widget=forms.TextInput(attrs={'placeholder': 'Middle name'}))
-   member_id = forms.CharField(required = True,widget=forms.TextInput(attrs={'placeholder': 'Middle name'}))
+   member_id = forms.CharField(required = True,widget=forms.TextInput())
    address = forms.CharField(
         label='Address',required =True,
         widget=forms.TextInput(attrs={'placeholder': 'Current Address'})

@@ -272,7 +272,7 @@ class Process_Data_View(View):
                         return JsonResponse({"type":'success', "message":"Your data has been saved!"})
                     except Exception as e:
                         print(f"@ exception e:{e}")
-                    # logger.warning(f"@ exception e:{e}")
+                        logger.warning(f"Process_Data_View(View): exception e:{e}")
                         return JsonResponse({"type": "error", "message": "unable to save this data"})#test
         else:
             
@@ -289,7 +289,7 @@ class Process_Data_View(View):
                                         return JsonResponse({"type":'success', "message":"Your data has been saved  for approval!"})
                                     except Exception as e:
                                         print(f"@ exception e:{e}")
-                                    # logger.warning(f"@ exception e:{e}")
+                                        logger.warning(f"Process_Data_View(View): 'update_qs <=0', try: e:{e}")
                                         return JsonResponse({"type": "error", "message": "unable to save this data"})#test
                           else:
                               return JsonResponse({"type":'success', "message":"Your data has been updated  for approval!"})
@@ -297,6 +297,8 @@ class Process_Data_View(View):
                                 
                     except  Exception as e:
                             print(f"Process Data: e: {e}")
+                            logger.warning(f"Process_Data_View(View): 'update_qs = Model.objects.filter', try: e:{e}")
+
                             #todo log here
                  
 
@@ -4520,9 +4522,9 @@ def create_update_member(request, id=id):
                   member_info={"id":0}
             if request.method == "GET":
                         if id == 0:
-                            initial_data ={'birthday':date.today()}
+                            initial_data ={'birthday':date.today(),'member_id':'default'}
                             print(f"initial_data: {initial_data}")
-                            form = MemberForm()   
+                            form = MemberForm(initial=initial_data)   
                         else:
 
                             form = MemberForm(instance = member_info)
@@ -4544,6 +4546,7 @@ def create_update_member(request, id=id):
                     except Exception as e:
                                 max_loan =  300
                                 print(f"------ Error in reading max_loan")
+                                logger.warning(f"cum,else,if ==0: e:{e}")
                                 
                    # return
                         
@@ -4574,17 +4577,18 @@ def create_update_member(request, id=id):
                             newPassword = gen_password()
                             print(f"...newpassword: {newPassword} new username:{newUsername}")
                             Success = True
-                            try:
+                            try: #uoc
                                  
                                 user = User.objects.create_user( newUsername, email = None,password= newPassword)
                             except Exception as e:
                                  Success = False
                                  print (f" Error creating user at cum: {e}") #todo here
+                                 logger.warning(f"cum,uoc e:{e}")
                             print(f"newUsername:{newUsername}")
                             
                             print("saving new member(valid).......")
                             if Success:
-                                    try:
+                                    try: #qsm
                                             qs = memberForm.save(commit = False)
                                             qs.user = user   #todo unquote 'user'
                                             qs.member_id = newUsername
@@ -4592,10 +4596,11 @@ def create_update_member(request, id=id):
                                     except Exception as e:
                                         Success = False
                                         print (f" Error writinf temp pass at cum: {e}") #todo here
+                                        logger.warning(f"cum,qsm e:{e}")
                                 
                             print("---- memberid: {memberid}")
                             if Success:
-                                    try:
+                                    try:#new
                                         
                                         newPassword = newPassword.encode("utf-8")
                                         encoded = base64.b64encode(newPassword).decode("utf-8")
@@ -4604,6 +4609,8 @@ def create_update_member(request, id=id):
                                     except Exception as e:
                                         Success = False
                                         print (f" Error writinf temp pass at cum: {e}") #todo here
+                                        logger.warning(f"cum,new e:{e}")
+                                        
                            
                             print(f"---- qs.id: {qs.id}")
                             memberid = qs.id
@@ -4611,7 +4618,7 @@ def create_update_member(request, id=id):
                             
                             category = CAT_LOAN
                             if  Success:
-                                    try:
+                                    try: #st
                                         source_type ="M" # additional loan
                                         payment_additional_qs = PaymentModel(source_type=source_type,source_id =0 ,date_entered=date.today(),transaction_type='D' ,credit=max_loan,debit=0 ,member_id=memberid,category=category)
                                         payment_additional_qs.save()   
@@ -4619,8 +4626,9 @@ def create_update_member(request, id=id):
                                     except Exception as e:
                                         Success = False
                                         print (f"Error: recording additional loan (Bonus), {e}, {type(e)}")
+                                        logger.warning(f"cum,st e:{e}")
                                     if Success:
-                                        try:
+                                        try:#dal
                                                     
                                                 description = "Additional Loan (Bonus)"
                                                  #loan
@@ -4631,14 +4639,16 @@ def create_update_member(request, id=id):
                                         except Exception as e:
                                                 Success= False
                                                 print (f"error result in adding addional loan (bonus):{e}, {type(e)}")
+                                                logger.warning(f"cum,dal e:{e}")
                                         # Add new 
                                         if  Success:
-                                                try:
+                                                try:#ll
                                                             loanSummary_qs = LoanSummaryModel (member_id = memberid, max_loan =300,date_entered = date.today())
                                                             loanSummary_qs.save() 
                                                 except Exception as e:
                                                             print(f" creating new entry for new member e:{e}")
                                                             Success = False
+                                                            logger.warning(f"cum,ll e:{e}")
                                             
                                          
                             ## end of loan to new member
@@ -4709,11 +4719,12 @@ def create_update_member(request, id=id):
 
                         if memberForm.is_valid():
                             if HasChange:
-                                try:
+                                try:#uob1
                                     user = User.objects.filter( id = old_user_id).update (username = member_id)
 
                                 except Exception as e: #todo here
                                     print(f"update user member_id error: {e}")
+                                    logger.warning(f"cum,uob1 e:{e}")
                             qs = memberForm.save(commit=False)
                             if HasChange:
                                 qs.member_id = member_id

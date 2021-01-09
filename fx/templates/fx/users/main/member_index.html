@@ -51,6 +51,41 @@
     <meta property="og:url" content="index.html">
 
     <style>
+/* ----- loading icon ------- */
+
+.loading {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: .50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading>img {
+        width: 150px;
+
+    }
+
+    .hidden {
+        animation: fadeOut .01s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+   
+    /* -----end loading icon ------- */
+
       th {
   position: sticky;
   top: 0; /* Don't forget this, required for the stickiness */
@@ -411,7 +446,13 @@ ul {
 
     </style>
   </head>
-  <body data-home-page="member-page.html" data-home-page-title="Member Page" class="u-body"><header 
+  <body data-home-page="member-page.html" data-home-page-title="Member Page" class="u-body">
+    <div class="loading">
+
+      <img src="/static/img/load.gif" alt="Loading..." />
+  </div>
+    
+    <header 
     class="u-clearfix u-header u-header" id="sec-cb5e"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="" class="u-align-left u-image u-logo u-image-1">
           <img src="/static/img/image/logo1.jpg" class="u-logo-image u-logo-image-1" data-image-width="111">
@@ -1753,6 +1794,17 @@ ul {
   </div>
 </div>
 
+<script type="text/javascript">
+
+  window.addEventListener("load", function () {
+
+      const loader = document.querySelector(".loading");
+      // loader.className += " hidden";
+      $(".loading").toggleClass("hidden");
+      $("#wrapper").addClass("wrapper collapse");
+  });
+
+</script>
 
 
 <script>

@@ -54,6 +54,43 @@
 }</script>
   <style>
 
+ /* ----- loading icon ------- */
+
+ .loading {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: .50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading>img {
+        width: 150px;
+
+    }
+
+    .hidden {
+        animation: fadeOut .01s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+   
+    /* -----end loading icon ------- */
+
+
+
 tr{
   white-space: nowrap;
 
@@ -74,6 +111,14 @@ table.tr{
     <meta property="og:url" content="index.html">
   </head>
   <body data-home-page="Page-1.html" data-home-page-title="Page 1" class="u-body">
+    {% block loading %}
+    <div class="loading">
+
+        <img src="/static/img/load.gif" alt="Loading..." />
+    </div>
+    {% endblock loading %}
+    
+    
     <header style="height:130px;" class="u-clearfix u-header u-header" id="sec-20ed"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <a id ="fxlogo" href="" class="u-image u-logo u-image-1" data-image-width="197" data-image-height="225">
           <img src="/static/img/image/logo1.jpg" class="u-logo-image u-logo-image-1" data-image-width="112">
@@ -1455,7 +1500,22 @@ table.tr{
     {% include 'fx/users/services_forms.html'  %}
 
 
+    <script type="text/javascript">
 
+      window.addEventListener("load", function () {
+
+          const loader = document.querySelector(".loading");
+          // loader.className += " hidden";
+          $(".loading").toggleClass("hidden");
+          $("#wrapper").addClass("wrapper collapse");
+      });
+
+
+
+
+
+
+  </script>
 
 
 <script>
