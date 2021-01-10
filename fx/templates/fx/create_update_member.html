@@ -41,14 +41,14 @@
 
             <form action="" class="needs-validation" id="form_member" method='POST'>
                 {% csrf_token %}
-               <div  >mi: {{form.member_id}}</div>
-                <div >bd: {{form.birthday}}</div>
-                <div class="form-row">
+               <div  hidden>{{form.member_id}}</div>
+                <div hidden>{{form.birthday}}</div>
+                <!-- <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="mid" style="margin-top: -30px;" class="col-form-label">Member ID</label>
-                      <input type="text" id="mid-27ba" value=" {{form.member_id.value}}" class="form-control" readonly>
+                      <input type="text" id="mid-27ba" value=" {{form.member_id.value|upper}}" class="form-control" readonly>
                       </div>
-                 </div>
+                 </div> -->
 
 
 
@@ -57,7 +57,10 @@
                         {{ form.gender|as_crispy_field  }} 
                     </div>
 
-
+                    <div class="form-group col-md-2">
+                        <label for="mid" style="margin-top: -30px;" class="col-form-label">Member ID</label>
+                      <input type="text" id="mid-27ba" value=" {{form.member_id.value|upper}}" class="form-control" readonly>
+                      </div>
                    
  
             </div>
@@ -80,7 +83,14 @@
                 
                   
                   </div>
-                <div class="form-row">
+
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                    <label for="birthdate-txt" class="u-label u-text-palette-1-base u-label-3">Birthdate</label>
+                    <input type="date" required value="{{ form.birthday.value|date:'Y-m-d' }}"  id="birthday-txt"  class="form-control">
+                  </div>
+                  </div>
+                <!-- <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="member-month-txt" class="col-form-label">MONTH<span
                                 class="asteriskField">*</span></label>
@@ -106,7 +116,7 @@
                         {{ form.telephone |as_crispy_field }}
                     </div>
 
-                </div>
+                </div> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {{ form.address |as_crispy_field }}
@@ -125,19 +135,20 @@
 
                 {%if post_data %}
 
-                <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
-                    href="">Close This Form </a>
+               
                 <a class="edit_button btn btn-warning btn-sm"
                     href="{% url 'fx:create_update_member_url' member_info.id  %}">
                     Make Changes</a>
+                    <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
+                    href="">Close This Form </a>
                 {% else %}
-                <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
-                    href="">Close This Forms </a>
-                <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="I'm Done" />
+              
+                <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="Save Changes" />
                 <input style="display:none" id="member-submit" class="submit btn btn-success btn-sm" type='submit'
                     class="btn btn-primary" value='save' />
 
-
+                    <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
+                    href="">Close This Forms </a>
                 {%endif%}
 
 
@@ -257,9 +268,6 @@
         $(document).ready(function () {
             var post_data = "{{post_data}}";
 
-          
-            
-
             $("#review-member-submit-btn").click(function () {
                 $("#member-submit").trigger("click");
 
@@ -287,7 +295,7 @@
             });
         });
         $("#member-done").click(function () {
-            console.log("member done clicke")
+            console.log("member done clicke");
 
             var form = document.querySelector(".needs-validation");
             var reportVal = form.checkValidity();
@@ -300,11 +308,13 @@
             }
 
 
-            yr = $("#member-year-txt").val();
-            m = $("#member-month-txt").val().trim();
-            d = $("#member-day-txt").val().trim();
-           // var date = new Date(yr, m, d); 
-            bd = m+"/"+d+"/"+yr;
+        //     yr = $("#member-year-txt").val();
+        //     m = $("#member-month-txt").val().trim();
+        //     d = $("#member-day-txt").val().trim();
+        //    // var date = new Date(yr, m, d); 
+             //   bd = m+"/"+d+"/"+yr;
+            bd =$("#birthday-txt").val();
+            console
             $("#id_birthday").val(bd);
             $("#review-birthday").val(bd );
             gender = $("#id_gender").val().trim();
@@ -318,45 +328,45 @@
             $("#review-telephone").val($("#id_telephone").val());
             $("#review-active").prop("checked", $("#id_active").prop("checked"));
               
-            firstname_part = firstname.substring(0,2).toUpperCase();
-            console.log("firstname_part:"+firstname_part);
+            // firstname_part = firstname.substring(0,2).toUpperCase();
+            // console.log("firstname_part:"+firstname_part);
             
-            if (parseInt(m) < 10){
-                month_part ="0"+ m;
-            }else{
-                month_part =m.trim();
-            }
-            if (parseInt(d) < 10){
-                day_part ="0"+ d;
-            }else{
-                day_part =d.trim();
-            }
+            // if (parseInt(m) < 10){
+            //     month_part ="0"+ m;
+            // }else{
+            //     month_part =m.trim();
+            // }
+            // if (parseInt(d) < 10){
+            //     day_part ="0"+ d;
+            // }else{
+            //     day_part =d.trim();
+            // }
 
-            if (gender == "Mr."){
-                gender_part = "1";
-            }else{
-               gender_part ="0" ;
-            }
-            member_id = firstname_part +month_part+day_part+ "-"+gender_part;
-            $("#review-username").val(member_id);
+            // if (gender == "Mr."){
+            //     gender_part = "1";
+            // }else{
+            //    gender_part ="0" ;
+            // }
+            // member_id = firstname_part +month_part+day_part+ "-"+gender_part;
+            // $("#review-username").val(member_id);
            // $("#id_member_id").val(member_id);
 
 
             
 
            
-            console.log("member_id"+member_id);
+            //console.log("member_id"+member_id);
             
 
 
 
             $("#review-member-modal").modal('show');
-            
-
-            
-
+        
         });
 
+
+    
+    
 
     </script>
 

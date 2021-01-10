@@ -101,7 +101,7 @@ class dayTransactionModelAdmin(admin.ModelAdmin):
     list_display = ['id','account_code','category','customer','in_charge','date_entered','source_type','amount','source_id'
 ]
 class JoinModelAdmin(admin.ModelAdmin):
-    list_display = ['name','birthday','phone','address','email'
+    list_display = ['gender','name','birthday','phone','address','email'
 ]
 class MessageModelAdmin(admin.ModelAdmin):
     list_display = ['name','email','message'
@@ -124,8 +124,10 @@ class DeliveryModelAdmin(admin.ModelAdmin):
 ]    
 
 class LivePostModelAdmin(admin.ModelAdmin):
-    list_display = ['status','remarks','category','customer','in_charge','active',"date_entered"
-]  
+    list_display = ["date_entered",'code','status','remarks','category','customer','in_charge']
+    list_filter = ("code","category","in_charge" )
+    
+    
     
 
 admin.site.register(ProfileModel,ProfileModelAdmin)  

@@ -44,6 +44,8 @@ class MemberModel (models.Model):
      @property
      def name(self):
         return self.gender +" "+self.firstname+ " "+ self.lastname
+     def __str__(self):
+        return f"{self.gender} {self.firstname} {self.lastname}"
 
 
 class ProfileModel (models.Model):   # Subject for Approval, the same as MemberModel
@@ -71,8 +73,8 @@ class ProfileModel (models.Model):   # Subject for Approval, the same as MemberM
      def name(self):
             return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()   
 class LivePostModel(models.Model):
-      READY,NOT_READY,ALMOST_DONE =(0,1,2)
-      STATUS_CODE = ((READY,"READY"),(NOT_READY,"NOT READY"),(ALMOST_DONE,"ALMOST DONE"))
+      FOR_APPROVAL,NOT_READY,APPROVED,DISPOSED =(0,1,2,3)
+      STATUS_CODE = ((FOR_APPROVAL,"WAITING FOR APPROVAL"),(APPROVED,"APPROVED"),(NOT_READY,"NOT READY"),(DISPOSED,"READY FOR DISPOSAL"))
       
       MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
       CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
@@ -81,9 +83,10 @@ class LivePostModel(models.Model):
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='expert' ) # todo null=False
       # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
       status =   models.CharField(max_length=50)
+      code = models.PositiveIntegerField(default =FOR_APPROVAL, choices = STATUS_CODE)
       remarks =  models.CharField(max_length=300,default="In Progress")
       category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
-      active =  models.BooleanField(default= False)
+     # active =  models.BooleanField(default= False)
      # date_entered = models.DateField(verbose_name ="Date", blank= True, null =True) #auto_now_add = True
       date_entered = models.DateTimeField(auto_now_add=True, blank=True,null =True)
 
@@ -92,6 +95,11 @@ class LivePostModel(models.Model):
       
       
 class JoinModel(models.Model):
+      
+    MR,MS,MRS =("Mr.","Ms.","Mrs.")
+    
+    gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))
+    gender = models.CharField(max_length=4,blank =False, null= False, default =MR, choices= gender_status)
     name = models.CharField(max_length=124)
     phone = models.CharField(max_length=124,blank= True,null =True)
     email= models.EmailField(max_length=254,blank= True,null =True)
@@ -125,7 +133,7 @@ class MessageModel(models.Model):  #contact
     name = models.CharField(max_length=124)
     email= models.EmailField(max_length=254,blank= True,null =True)
     message = models.CharField(max_length=300,blank= False,null =False)
-    source_id = models.IntegerField(default =0) 
+    source_id = models.IntegerField(default =0) #could be member id
 
 # ----------------  services --------------------
 class ConstructionModel(models.Model):

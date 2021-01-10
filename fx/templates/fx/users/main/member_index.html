@@ -538,10 +538,10 @@ ul {
           </div>
         </div>
       </div><!--.mobile-menu-->
-    <form class="search-form hidden-xs" action="/search/">
+    <form class="search-form hidden-xs" action="">
         <label for="searchBox" class="sr-only">Search</label>              
-        <input id="searchBox" name="q" type="search">
-        <button class="submit" type="submit" value="" aria-label="Search"><i class="fa fa-search" aria-hidden="true">&nbsp;</i></button>
+        <input id="searchBox" name="q" type="search" style="color: black;" value="Under construction">
+        <button class="submit" type="submit" value="" aria-label="Search"><i  style="color: white;" class="fa fa-search" aria-hidden="true">&nbsp;</i></button>
       </form>
       <div class="box-social text-center">
         <ul>
@@ -1068,6 +1068,11 @@ ul {
 }
 
 @media (max-width: 991px) {
+  #burger-menu-collapse{
+  display: none;
+  width:0px;
+  height:0px;
+}
   .u-cookies-consent .u-sheet-1 {
     min-height: 106px;
   }
@@ -1096,7 +1101,7 @@ ul {
 
 @media (max-width: 776px) {
   #burger-menu-collapse{
-
+    display: none;
     width:0px;
     height:0px;
   }
@@ -1133,6 +1138,7 @@ ul {
 
 @media (max-width: 575px) {
 #burger-menu-collapse{
+  display: none;
   width:0px;
   height:0px;
 }
@@ -1231,12 +1237,8 @@ ul {
                    </div>
                 </div>
 
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                  <label for="date-txt" class="u-label u-text-palette-1-base u-label-3">Birthdate</label>
-                  <input type="date" required value="{{ member.birthday|date:'Y-m-d' }}"  id="date-txt" name="birthday" class="form-control">
-                </div>
-                </div>
+         
+                
 
                  <div class="form-row">
                   <div class="form-group col-md-12">

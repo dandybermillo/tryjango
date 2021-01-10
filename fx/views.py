@@ -158,13 +158,14 @@ def livePost(request,id,code):
     try:
                     # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
                 #print(id)
-                if id == 0:
-                        fields = {"active":True}
+                APPROVED = 2
+                if id == 0: # 1 means ready 
+                        fields = {"code":APPROVED}
                 else:
-                        fields = {"active":True,'customer_id':id}
+                        fields = {"code":APPROVED,'customer_id':id}
                 if code > 0:
                     fields['category']=code
-               # print(f"id: {id} fields: {fields}")
+                print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
                 
                 data=[]
@@ -4522,7 +4523,7 @@ def create_update_member(request, id=id):
                   member_info={"id":0}
             if request.method == "GET":
                         if id == 0:
-                            initial_data ={'birthday':date.today(),'member_id':'default'}
+                            initial_data ={'member_id':'default'}
                             print(f"initial_data: {initial_data}")
                             form = MemberForm(initial=initial_data)   
                         else:
@@ -4682,11 +4683,11 @@ def create_update_member(request, id=id):
                         
                         print(f"firstname: {old_firstname},old_bday: {old_birthday}, type: {type(old_birthday)}")   
                         print(f"POST firstname: {firstname},old_bday: {bday}, type: {type(bday)}")   
-                        arr_bday = bday.split("/")
+                        arr_bday = bday.split("-")
                         month = old_birthday.strftime("%m")
                         day = old_birthday.strftime("%d")
                         print(f"OLD month:{month}, day: {day}")
-                        print(f"farr bday:[{arr_bday},{arr_bday[0]},{arr_bday[1]}")
+                        print(f"farr bday:[{arr_bday},{arr_bday[1]},{arr_bday[2]}")
                         
                          
                         memberForm = MemberForm(request.POST , instance=member_info)
@@ -4695,13 +4696,13 @@ def create_update_member(request, id=id):
                         if firstname[0:2] != old_firstname[0:2]:
                             HasChange = True
                             print("change name")
-                        if month != arr_bday[0] or day != arr_bday[1]:
+                        if month != arr_bday[1] or day != arr_bday[2]:
                              HasChange = True 
                              print("change month or day")
                         if old_gender != gender:
                              HasChange = True
                              print("gender change")
-                        print(f"firstname[0,2]:{firstname[0:2]}, arr_bday[0]:{arr_bday[0]}, has Changed:{HasChange}")
+                        print(f"firstname[0,2]:{firstname[0:2]}, arr_bday[0]:{arr_bday[1]}, has Changed:{HasChange}")
                         code =-1
                         if HasChange:
                                 if gender == "mr.":
@@ -4712,7 +4713,7 @@ def create_update_member(request, id=id):
                                      
                                 
                         print (f" gender code: {code}") 
-                        member_id = firstname[0:2] +arr_bday[0]+arr_bday[1] +"-"+str(code).strip()
+                        member_id = firstname[0:2] +arr_bday[1]+arr_bday[2] +"-"+str(code).strip()
                         if HasChange:
                                 print(f" member id: {member_id}")
                                 member_id = ValidateUsername(member_id)
