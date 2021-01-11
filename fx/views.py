@@ -167,7 +167,7 @@ def livePost(request,id,code):
                 if code > 0:
                     fields['category']=code
                 print(f"id: {id} fields: {fields}")
-                qs = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter( **fields)
+                qs = LivePostModel.objects.all().values("status","remarks","customer__member_id","category").filter( **fields)
                 
                 data=[]
                 for row in qs:
