@@ -3,7 +3,7 @@ from django.core.exceptions import PermissionDenied
 from .models import PersonalLoanModel,WalletModel,MemberModel,VentureModel,VentureWalletModel
 from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
-from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel
+from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel,TeamMemberModel,SkillCategoryModel
 from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
 import decimal, csv
 from django.db.models import Count
@@ -125,10 +125,30 @@ class DeliveryModelAdmin(admin.ModelAdmin):
 
 class LivePostModelAdmin(admin.ModelAdmin):
     list_display = ["date_entered",'code','status','remarks','category','customer','in_charge']
-    list_filter = ("code","category","in_charge" )
+    list_filter = ("code","category","in_charge")
     
+    # def code(self, obj):
+    #     if obj.APPROVED:
+    #          color_code = '00FF00'
+    #     else:
+    #         color_code = 'FF0000'
+    #         html = '<span style="color: #{};">{}</span>'.format(color_code, obj.name)
+    #         print(f"html")
+    #         return format_html(html)
+     
+class TeamMemberModelAdmin(admin.ModelAdmin):
+    list_display = ["member","category"]
+    # class Meta:
+    #     model = SkillCategoryModel
+    def get_category(self, obj):
+        return obj.category
     
-    
+class SkillCategoryModelAdmin(admin.ModelAdmin):
+    list_display = ["category"]
+
+admin.site.register(SkillCategoryModel,SkillCategoryModelAdmin)  
+
+admin.site.register(TeamMemberModel,TeamMemberModelAdmin)  
 
 admin.site.register(ProfileModel,ProfileModelAdmin)  
 

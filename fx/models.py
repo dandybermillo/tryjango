@@ -46,7 +46,21 @@ class MemberModel (models.Model):
         return self.gender +" "+self.firstname+ " "+ self.lastname
      def __str__(self):
         return f"{self.gender} {self.firstname} {self.lastname}"
+class SkillCategoryModel (models.Model):   #
+      category =models.CharField(max_length=100,blank =True, null =True)
 
+class TeamMemberModel (models.Model):   #
+     MR,MS,MRS =("Mr.","Ms.","Mrs.")
+    
+     gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))     
+     member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+     category = models.ForeignKey(SkillCategoryModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+     def __str__(self):
+       
+        return f"{self.member.gender} {self.member.firstname} {self.member.lastname}"
+     
+
+     
 
 class ProfileModel (models.Model):   # Subject for Approval, the same as MemberModel
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
@@ -79,8 +93,8 @@ class LivePostModel(models.Model):
       MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
       CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
       
-      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='member' ) # todo null=False
-      in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='expert' ) # todo null=False
+      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+      in_charge = models.ForeignKey(TeamMemberModel,null =False,default=  1, on_delete =models.SET_DEFAULT  ) # todo null=False
       # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
       status =   models.CharField(max_length=50)
       code = models.PositiveIntegerField(default =FOR_APPROVAL, choices = STATUS_CODE)

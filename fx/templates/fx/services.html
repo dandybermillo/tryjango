@@ -220,7 +220,7 @@
                      <th scope="col">Name</th>
                      <th scope="col">Status</th>
                      <th scope="col">Remark</th>
-                     <th scope="col">Active</th>
+                     <th scope="col">Code</th>
  
                    </tr>
                  </thead>
@@ -235,7 +235,8 @@
                         <td  class="left">{{obj.customer__gender}}  {{obj.customer__firstname|title}}  {{obj.customer__lastname|title}}</td>
                         <td  class="left">{{obj.status}} </td>
                         <td   class="left">{{obj.remarks}} </td>
-                        <td  class="left">{% if obj.active %}  <i class="bi bi-play-circle"></i> {%else%}  <i class="bi bi-pause-circle"></i> {%endif%}
+                        <!-- <td  class="left">{% if obj.active %}  <i class="bi bi-play-circle"></i> {%else%}  <i class="bi bi-pause-circle"></i> {%endif%} -->
+                        <td   class="left">{{obj.code}} </td>
                         <td hidden  class="left">{{obj.id}} </td> 
                     </tr>
             
@@ -425,7 +426,7 @@
                             //console.log("....item:",item);
                             row_ctr = row_ctr + 1;
                             //fill_table(item, row_ctr );
-                          var temp = "<tr><td>"+ row_ctr+"</td>  <td scope='row'>" +item.customer__member_id+ "</td> <td> "+ item.customer__gender +" "+ item.customer__firstname + " "+item.customer__lastname+"</td> <td>"+item.status+"</td><td>"+item.remarks+"</td><td>"+item.active+"</td><td>"+item.id+"</td></tr>"
+                          var temp = "<tr><td>"+ row_ctr+"</td>  <td scope='row'>" +item.customer__member_id+ "</td> <td> "+ item.customer__gender +" "+ item.customer__firstname + " "+item.customer__lastname+"</td> <td>"+item.status+"</td><td>"+item.remarks+"</td><td>"+item.code+"</td><td>"+item.id+"</td></tr>"
                             $("#worker-task-table-body").append(temp);
     
                     });

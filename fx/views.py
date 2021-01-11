@@ -124,7 +124,8 @@ def user_login_success(request,id):
         
         
         #employees = Employee.objects.all().values('id','name','company__name')
-        live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+        APPROVED = 2
+        live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,code =APPROVED)
         pwd=""
         try:
                     pwd = Tmp_PasswordModel.objects.get(member_id = id).pwd.strip()
@@ -2500,7 +2501,7 @@ def services(request,id):
     try:
                # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
 
-                qs = LivePostModel.objects.all().values("id","in_charge","status","remarks","customer__member_id","customer__gender","customer__firstname","customer__lastname").filter( in_charge = id)
+                qs = LivePostModel.objects.all().values("code","id","in_charge","status","remarks","customer__member_id","customer","customer__gender","customer__firstname","customer__lastname").filter( in_charge = id)
     except Exception as e:
                print(f"services: member_info: {e}")
 
@@ -2712,6 +2713,16 @@ def my_home_page(request):
         #  items = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer = 2)   #.values('createdate').annotate(count=Count('id'))
         #  print(f"items: {items}")
         #  return
+        
+        #  try:
+        #         delete_source_qs_result = LivePostModel.objects.get(in_charge_id=3).delete() #todo: if delete_source_qs_result <= 0 Success is False
+        #         print (f"success..delete_source_qs_result: {delete_source_qs_result}")
+        #  except Exception as e:
+        #         Success = False
+        #         print (f"deleting source: {account_name}, {e}, {type(e)}") 
+        
+        
+        
          return render(request, "fx/users/index.html",context) 
               
 
