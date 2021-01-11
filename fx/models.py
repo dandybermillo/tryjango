@@ -93,8 +93,8 @@ class LivePostModel(models.Model):
       MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
       CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
       
-      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
-      in_charge = models.ForeignKey(TeamMemberModel,null =False,default=  1, on_delete =models.SET_DEFAULT  ) # todo null=False
+      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='cus'  ) # todo null=False
+      in_charge = models.ForeignKey(TeamMemberModel,null =True,default=  1, on_delete =models.CASCADE ,related_name='inc'  ) # todo null=False
       # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
       status =   models.CharField(max_length=50)
       code = models.PositiveIntegerField(default =FOR_APPROVAL, choices = STATUS_CODE)
