@@ -1130,8 +1130,8 @@ def getLoanPayment(member_id):
 
 #def cuv
 @login_required(login_url='/login/')
-def create_update_venture(request,member_id,venture_id,request_action ):
-    
+def create_update_venture(request,customer_id,venture_id ):
+    member_id =customer_id
     # v =ValidateUsername("DA1212-1")
     # print(f"v: {v}")
     # return
@@ -1157,26 +1157,22 @@ def create_update_venture(request,member_id,venture_id,request_action ):
             return redirect('/unauthorized_user/') #
 
   
-    request_action =request_action.strip().lower()
-    model_name =model_list.get(request_action) 
-    Model = apps.get_model('fx', model_name)
+    ##request_action =request_action.strip().lower()
+    ##model_name =model_list.get(request_action) 
+    Model = apps.get_model('fx', "VentureModel")
     all_valid = True 
     default_percentage = 95  #
     member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
    # print(f"model_name:{model_name}")
     #return
+    request_action = "venture"
     if  request_action == "venture":
             category = CAT_VENTURE
             description ="GROCERY"
             customer_source_fund = SOURCE_REGULAR
             seller_dest_fund =SOURCE_VENTURE
-    elif request_action == "trade":
-            category = CAT_TRADE
-            description ="TRADE"
-            customer_source_fund = SOURCE_REGULAR
-            seller_dest_fund =SOURCE_REGULAR
-           
-    seller = member_info.id
+     
+   ## seller = member_info.id
     if venture_id > 0: #edit
         venture_qs= get_object_or_404(Model, id=venture_id)
     customer_id = 0
@@ -1193,12 +1189,12 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                             if  request_action == "venture":
                                     customer = venture_qs.customer_id
                                     ventureForm = VentureForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
-                            else:
-                                    if   venture_qs.role_type == "S": #here the the default seller becomes the buyer or customer
-                                            customer = venture_qs.seller_id
-                                    else:
-                                            customer = venture_qs.customer_id
-                                    ventureForm = TradeForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
+                            # else:
+                            #         if   venture_qs.role_type == "S": #here the the default seller becomes the buyer or customer
+                            #                 customer = venture_qs.seller_id
+                            #         else:
+                            #                 customer = venture_qs.customer_id
+                            #         ventureForm = TradeForm( instance=venture_qs) # instance=saving bcoz editing process, none when new record
                             #print(f"........ventureForm.id: {venture_qs.id}")
                             customer_info = get_member_info( customer,"#create_update_venture. 1") #create_update_venture. 1
                             ventureForm.id= venture_qs.id
@@ -1228,15 +1224,15 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                     print(f"cresate_update_venture:change_table: {e}")
                 else:  # NEW VENTURE 
                     if  request_action == "venture":
-                            initial_data ={'in_charge':1,'transaction_type':'W', 'seller':member_id,'customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
+                            initial_data ={'in_charge':member_id,'transaction_type':'W','customer':member_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage}  
                             ventureForm = VentureForm(initial =initial_data)
-                    else:
-                            initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} 
-                            ventureForm = TradeForm(initial =initial_data)
+                    # else:
+                    #         initial_data ={'transaction_type':'W', 'seller':member_id,'customer':customer_id, 'cc':'','source_type':'K','date_entered': date.today(),'percent':default_percentage} 
+                    #         ventureForm = TradeForm(initial =initial_data)
                     
                    # ventureForm = VentureForm(initial =initial_data)
-                    ventureForm.request_action = request_action
-                    print(f"request_action: {ventureForm.request_action}")
+                    # ventureForm.request_action = request_action
+                    # print(f"request_action: {ventureForm.request_action}")
                     ventureForm.note = "" #delete
                     customer_info=""
                     
@@ -1277,7 +1273,7 @@ def create_update_venture(request,member_id,venture_id,request_action ):
         note = request.POST.get("venture_note", "").strip()
 
         print(f".......note: {note}")
-        print(f"...seller:{seller}, customer:{customer}..note:{note},cc: {cc} ,amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
+        print(f" , customer:{customer}..note:{note},cc: {cc} ,amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
          
         running_balance =-1
         old_amount = 0
@@ -1352,16 +1348,14 @@ def create_update_venture(request,member_id,venture_id,request_action ):
     # EDIT EXISTING RECORD (POST)---------------------------------------------------------------
         if venture_id >  0:
                         
-                        if  request_action == "venture":
-                            ventureForm = VentureForm(request.POST,request.POST,instance=venture_qs )
-                        else:
-                            ventureForm = TradeForm(request.POST,request.POST,instance=venture_qs )
+                       
+                        ventureForm = VentureForm(request.POST,request.POST,instance=venture_qs )
                         form_valid = ventureForm.is_valid()
                         if all_valid and form_valid:
                                 Success = True
                                 amount = ventureForm.cleaned_data['amount']
                                 customer = ventureForm.cleaned_data['customer']
-                                seller = ventureForm.cleaned_data['seller']
+                                # # seller = ventureForm.cleaned_data['seller']
                                 cc = ventureForm.cleaned_data['cc']  
                                 percent = ventureForm.cleaned_data['percent']
                                 source_type = ventureForm.cleaned_data['source_type'] 
@@ -1369,20 +1363,20 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                 filter_fields = {"amount":amount,"cc":cc,"percent":percent,"in_charge":staff_info.id}
                                 update_venture_qs ="" #delete
                                 #+
-                                if request_action == "trade":
-                                    role_type = ventureForm.cleaned_data['role_type'] 
-                                    if old_role_type != role_type: # indent to the right
-                                        filter_fields["role_type"] = role_type
+                                # if request_action == "trade":
+                                #     role_type = ventureForm.cleaned_data['role_type'] 
+                                #     if old_role_type != role_type: # indent to the right
+                                #         filter_fields["role_type"] = role_type
 
                                 if source_type != old_source_type:
                                         filter_fields["source_type"] = source_type
                                 if source_type == 'K':
-                                        filter_fields['customer_source_id'] = 0
-                                        filter_fields['seller_source_id'] = 0
+                                        # filter_fields['customer_source_id'] = 0
+                                        # filter_fields['seller_source_id'] = 0
                                         if old_source_type == 'W':
                                                 Success = account_manager_delete(venture_qs.customer_source_id,customer_source_fund,"@customer:if old_source_type == 'W'")
-                                                if Success:
-                                                     Success = account_manager_delete(venture_qs.seller_source_id,seller_dest_fund,"@seller:if old_source_type == 'W'")
+                                                # if Success:
+                                                #      Success = account_manager_delete(venture_qs.seller_source_id,seller_dest_fund,"@seller:if old_source_type == 'W'")
                                 else:  #source_type == old_source_type:
                                         if old_source_type != 'W': 
                                                 return_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"@customer:old_source_type != 'W'")
@@ -1390,16 +1384,16 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                                         Success = False
                                                 else:
                                                         filter_fields['customer_source_id'] = return_id
-                                                if Success:
-                                                        return_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"@customer:old_source_type != 'W'")
-                                                        if return_id <=0:
-                                                               Success = False
-                                                        else:
-                                                              filter_fields['seller_source_id'] = return_id
+                                                # if Success:
+                                                #         return_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"@customer:old_source_type != 'W'")
+                                                #         if return_id <=0:
+                                                #                Success = False
+                                                #         else:
+                                                #               filter_fields['seller_source_id'] = return_id
                                         else:    
                                                 Success = account_manager_update(venture_qs.customer_source_id, amount,0,customer_source_fund,"@customer:account_manager_update:")
-                                                if Success:
-                                                      Success = account_manager_update(venture_qs.seller_source_id, 0,amount,seller_dest_fund,"@customer:account_manager_update:")
+                                                # if Success:
+                                                #       Success = account_manager_update(venture_qs.seller_source_id, 0,amount,seller_dest_fund,"@customer:account_manager_update:")
                                 
                                 if old_customer_cc_id <=0: # save new record if there is not existing cc yet
                                         if cc > 0: 
@@ -1407,23 +1401,23 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                                                 filter_fields["customer_cc_id"] = cc_id
                                                 if cc_id <= 0:
                                                         Success = False
-                                                if Success:
-                                                        cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"@seller:cc_manager_create" )
-                                                        filter_fields["seller_cc_id"] = cc_id
-                                                        if cc_id <= 0:
-                                                            Success = False
+                                                # if Success:
+                                                #         cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"@seller:cc_manager_create" )
+                                                #         filter_fields["seller_cc_id"] = cc_id
+                                                #         if cc_id <= 0:
+                                                #             Success = False
                                 else:
                                         if cc <=0:
                                                 Success = cc_manager_delete(venture_qs.customer_cc_id,customer_source_fund,"@customer:cc_manager_delete") 
                                                 filter_fields["customer_cc_id"] = 0
-                                                if  Success:
-                                                        Success = cc_manager_delete(venture_qs.seller_cc_id,seller_dest_fund,"@seller:cc_manager_delete" )
-                                                        filter_fields["seller_cc_id"] = 0
+                                                # if  Success:
+                                                #         Success = cc_manager_delete(venture_qs.seller_cc_id,seller_dest_fund,"@seller:cc_manager_delete" )
+                                                #         filter_fields["seller_cc_id"] = 0
                                         else:
                                                 if old_cc != cc:
                                                         Success = cc_manager_update(venture_qs.customer_cc_id,cc,0, customer_source_fund,"@customer:cc_manager_update:")
-                                                        if Success:
-                                                                Success = cc_manager_update(venture_qs.seller_cc_id,0,cc,seller_dest_fund,"@seller:cc_manager_update:")
+                                                        # if Success:
+                                                        #         Success = cc_manager_update(venture_qs.seller_cc_id,0,cc,seller_dest_fund,"@seller:cc_manager_update:")
                                 response ={}
                                 if old_note != note:
                                         if note =="":
@@ -1464,38 +1458,28 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                     if  request_action == "venture":
                             ventureForm = VentureForm(request.POST)
                             form_valid = ventureForm.is_valid()
-                    else:
-                            ventureForm = TradeForm(request.POST)
-                            form_valid = ventureForm.is_valid()
+                   
                     if all_valid and form_valid:
                         print(".....ventureForm is valid!")
                         amount = ventureForm.cleaned_data['amount']
                         customer = ventureForm.cleaned_data['customer']
                         print(f">>>>>>>>>>>>>> customer id: {customer.member_id} ,{customer.id}")
-                       # return
-                        seller = ventureForm.cleaned_data['seller']
+                    
                         transaction_type = ventureForm.cleaned_data['transaction_type']
                         date_entered = ventureForm.cleaned_data['date_entered']
                         source_type = ventureForm.cleaned_data['source_type']
                         cc =  ventureForm.cleaned_data['cc']
                         percent = ventureForm.cleaned_data['percent']
-                        if request_action == "trade":
-                            role_type = ventureForm.cleaned_data['role_type']
-                            if role_type == "S":
-                                    temp = seller
-                                    seller = customer
-                                    customer =temp
+                     
                                       
                         Success = True
                         venture_id_change =venture_id
                         venture_id = 0
                         try:
                                 if request_action == "trade":
-                                        venture_qs = Model(seller = seller,customer = customer,category =category,
-                                        amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
-                                        source_type =source_type,percent =percent,role_type=role_type)
+                                      pass
                                 else:
-                                        venture_qs = Model(seller = seller,customer = customer,category =category,
+                                        venture_qs = Model(customer = customer,category =category,
                                         amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
                                         source_type =source_type,percent =percent)
 
@@ -1505,37 +1489,46 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                             Success = False
                             print(f"creating venture transaction: {e}")
                         filter_fields = {"flag":1,'in_charge':staff_info.id} 
+                       
+                                 
+                                 
                         if source_type =="W": #create new record. A
                                 customer_source_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"#create new record. A")
                                 filter_fields["customer_source_id"] =customer_source_id
                                 if customer_source_id <=0:
                                        Success = False
-                                if Success: #create new record. B
-                                       # filter_fields["customer_source_id"] =customer_source_id
-                                        seller_source_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"create new record. B")
-                                        if seller_source_id <=0:
-                                            Success = False
-                                        if Success:
-                                            filter_fields["seller_source_id"] =seller_source_id
+                                # if Success: #create new record. B
+                                #        # filter_fields["customer_source_id"] =customer_source_id
+                                #         seller_source_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"create new record. B")
+                                #         if seller_source_id <=0:
+                                #             Success = False
+                                #         if Success:
+                                #             filter_fields["seller_source_id"] =seller_source_id
                                          
-                        print(f"...seller:{seller},customer:{customer}, customer: {customer} ,source_type:{source_type} ")
-                        print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
+                        # print(f"...seller:,customer:{customer}, customer: {customer} ,source_type:{source_type} ")
+                        # print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
                         
                         if cc > 0: #create new record. C
                                 customer_cc_id = cc_manager_create(venture_id,description,"W",cc,0,customer,category,date.today(),customer_source_fund,"create new record. C")
                                 filter_fields["customer_cc_id"]= customer_cc_id
                                 if customer_cc_id <= 0:
                                     Success = False
-                                if Success: #create new record. D
-                                    seller_cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"create new record. D")
-                                    filter_fields["seller_cc_id"]= seller_cc_id
-                                    if seller_cc_id <= 0:
-                                        Success = False
+                                # if Success: #create new record. D
+                                #     seller_cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"create new record. D")
+                                #     filter_fields["seller_cc_id"]= seller_cc_id
+                                #     if seller_cc_id <= 0:
+                                #         Success = False
 
                         else:
-                           filter_fields["customer_cc_id"] = filter_fields["seller_cc_id"] = 0
+                           filter_fields["customer_cc_id"] =0
                         note_id = 0
-                        response = {}
+                        response = {}    
+                        print(f"today filter_fields: {filter_fields} ")
+                                 
+                                 
+                                 
+                                         
+                      
                         if note != "":
                             response = create_or_update_venture_note(0,note,2) #todo 
                             if response["Success"] and response["result"] > 0 :
@@ -1543,9 +1536,12 @@ def create_update_venture(request,member_id,venture_id,request_action ):
                         else:
                               note_id = 0  
                         filter_fields["note_id"] = note_id
-                        if response:
-                             print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
-                        print(f"filter_fields: {filter_fields}")
+                        # if response:
+                        #      print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
+                        # print(f"filter_fields: {filter_fields}")
+                        
+                        
+                        
                         
                         
                         
@@ -2707,6 +2703,7 @@ def unauthorized_user(request):
 def my_home_page(request):
          print("initiating home page")
          context ={'message':" Welcome to Fair Exchange!"}
+         #deleteModel=LivePostModel.objects.get(in_charge_id = 6).delete()
          
         # return render(request, "fx/underconstruction.html",context) 
          #return render(request, "fx/users/main/member-page.html",context)

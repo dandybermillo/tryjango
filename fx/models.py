@@ -446,7 +446,6 @@ class VentureModel(models.Model):
       CASH,WALLET,SAVING =('K','W','S')
       sources =((WALLET,"WALLET ACCOUNT"),
         (CASH,"CASH"),(SAVING,"SAVINGS ACCOUNT"))
-      seller = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Seller' ) # todo null=False
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Customer' ) # todo null=False
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='in_charge' ) # todo null=False
       transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
@@ -455,10 +454,8 @@ class VentureModel(models.Model):
       cc = models.FloatField(verbose_name ="CO. MONEY",default =0)
       percent = models.FloatField(default =95)
       source_type = models.CharField(max_length=1,default = 'K',choices = sources)  #c: cash
-      customer_source_id = models.IntegerField(default = 0)
-      seller_source_id = models.IntegerField(default = 0)
-      customer_cc_id = models.IntegerField(default = 0)
-      seller_cc_id = models.IntegerField(default = 0)
+      customer_source_id = models.IntegerField(default = 0) # for wallet
+      customer_cc_id = models.IntegerField(default = 0) # for cc or cmoney
       date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
       flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       note_id = models.IntegerField(default =0)

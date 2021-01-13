@@ -71,15 +71,23 @@
     </div>
 
 
-
-     <div class="form-row" style="border-bottom:1px solid #ced4da">
+     
+     <div class="form-row" >
         <div class="form-group col-md-6">
             <label for="account-member-name" style="padding-left:2px">Member:</label>
 
-            <input id="account-member-name" type="text" readonly class="form-control-plaintext"
-                style="border:1px solid #ced4da;font-weight: bolder;"
+            <input id="account-member-name" type="text" readonly class="form-control"
+                style="font-weight: bolder;"
                 value="{{member_info.gender|upper}} {{member_info.firstname|upper}} {{member_info.lastname|upper}}">
         </div>
+        <div class="form-group col-md-6">
+            
+            <label style="padding-bottom: 0px;" for="member-id-txt" class="col-form-label">ID</label>
+            <input style ="font-weight: bolder;" id="member-id-txt" type="text" readonly class="form-control"
+                value="{{member_info.member_id|upper}}">
+       
+
+    </div>
     </div>
     
 
@@ -88,48 +96,66 @@
             {% csrf_token %}
             <div style="display: none;">{{ payment.credit}} {{ payment.date_entered }}{{payment.transaction_type}} {{payment.source_type}}
             </div>
+            
             <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="payment-max" class="col-form-label">MAX:</label>
-                    <input id="payment-max" type="text" readonly class="form-control-plaintext"
-                        style="border:1px solid #ced4da" value="{{payment.max}}">
+                <div class="form-group col-md-6">
+                    <!-- <label for="payment-balance" class="col-form-label">Loan Owing:</label> -->
+                    <input id="payment-balance" type="text" readonly class="form-control"
+                        style="padding-left:0px;border:none;font-size: 35px;" value="{{asset_liabities.loan}}"  >  </input>  
                 </div>
-                <div class="form-group col-md-3">
-                    <label for="payment-paid" class="col-form-label">PAID</label>
-                    <input id="payment-paid" type="text" readonly class="form-control-plaintext"
+               
+                <div class="form-group col-md-2">
+                    <label for="payment-paid" class="col-form-label">Total Paid</label>
+                    <input id="payment-paid" type="text" readonly class="form-control"
                     style="border:1px solid #ced4da" value="{{payment.paid}}">
                 </div>
-                <!-- <div class="form-group col-md-6">
-                    <label for="payment-percent" class="col-form-label">PERCENT</label>
-                    <input id="payment-percent" type="text" readonly class="form-control-plaintext"
-                    style="border:1px solid #ced4da" value="{{payment.percent}}">
-                </div> -->
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="payment-balance" class="col-form-label">Loan Owing:</label>
-                    <input id="payment-balance" type="text" readonly class="form-control-plaintext"
-                        style="border:1px solid #ced4da" value="{{asset_liabities.loan}}">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="id-date_entered" class="col-form-label">Date</label>
-                    <input id="id-date_entered" type="text" readonly class="form-control-plaintext"
-                        style="border:1px solid #ced4da"
-                        value="{%if payment.payment_id > 0 %}{{ payment.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today {%endif%}">
-                </div>
+
+               
+                    <div class="form-group col-md-2">
+                        <label for="payment-max" class="col-form-label">Max. Loan</label>
+                        <input id="payment-max" type="text" readonly class="form-control"
+                            style="border:1px solid #ced4da" value="{{payment.max}}">
+                    </div>
+                    
+                 
+                    <div class="form-group col-md-2">
+                        <label for="id-date_entered" class="col-form-label">Date Entered</label>
+                        <input id="id-date_entered" type="text" readonly class="form-control"
+                            style="border:1px solid #ced4da"
+                            value="{%if payment.payment_id > 0 %}{{ payment.date_entered.value|naturalday }} {%else%}{% now 'SHORT_DATETIME_FORMAT' %} Today {%endif%}">
+                    </div>
+                    <!-- <div class="form-group col-md-6">
+                        <label for="payment-percent" class="col-form-label">PERCENT</label>
+                        <input id="payment-percent" type="text" readonly class="form-control-plaintext"
+                        style="border:1px solid #ced4da" value="{{payment.percent}}">
+                    </div> -->
+            
+
+
+
+
+
+
+
+
+
+
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-3">
+                
+
+                <div class="form-group col-md-4" >
                     {{ payment.debit|as_crispy_field}}
                      
                 </div>
-                <div class="form-group col-md-3">
-                    <label for="main-source-drop" class="col-form-label">Source: </label>
+
+                <div class="form-group col-md-2">
+                    <label style="padding-top: 0px;width: 100px;" for="main-source-drop" class="col-form-label">Source: </label>
                     <div class="dropdown" id="main-source-drop">
                         <button class="btn btn-light dropdown-toggle" type="button" id="source-cash-drop"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="border:1px solid #ced4da">
+                            style="border:1px solid #ced4da;width:100%;font-size:30px" >
 
                             {% ifequal payment.source_type.value 'C' %} CASH {%else%}
                             {% ifequal payment.source_type.value 'W' %} WALLET ACCOUNT {%else%} {% ifequal payment.source_type.value 'S' %} SAVING ACCOUNT {%else%} COMM-COIN ACCOUNT  {%endifequal%}  {%endifequal%}
@@ -143,7 +169,9 @@
                         </div>
                     </div>
                 </div>
-
+                
+               
+                
                 <div class="form-group col-md-6 mb-0">
                     <div class="container-finance-account">
                         <label for="payment-assets-table" class="col-form-label">FINANCE</label>
@@ -189,18 +217,18 @@
             {%endif%}
            
 
- 
+
             <div>
                 {%if post_data %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
-                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
+                    href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">Close This Form </a>
                 <a class="edit_button btn btn-warning btn-md"
                     href="{% url 'fx:payment_venture_url'  member_info.id payment.payment_id   %}">
                     Make Changes</a>
                 {% else %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
-                    href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
-                <input id="payment-done-btn" class="done btn btn-primary btn-md" type="button" value="I am Done" />
+                    href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">Close This Form </a>
+                <input id="payment-done-btn" class="done btn btn-primary btn-md" type="button" value="Save Changes" />
               <div hidden>   <input id="payment-submit-btn" class="submit btn btn-primary btn-md" type="submit" name="Submit"
                     value="SAVE" /></div>
                 {%endif%}
@@ -411,23 +439,14 @@
         keys['SAVING-BALANCE'] = parseFloat("{{asset_liabities.saving}}".replace(',', ''));
         keys['CC-BALANCE'] = parseFloat("{{asset_liabities.cc}}".replace(',', ''));
         keys['CASH-BALANCE'] = parseFloat("{{asset_liabities.loan}}".replace(',', ''));
-        // if (account_name){
-        //     var payment_id = parseInt("{{payment.payment_id}}");
-        //     if (payment_id > 0)
-        //     {
-        //         keys[account_name+'-BALANCE'] =keys[account_name+'-BALANCE'] + parseFloat("{{payment.debit.value}}".replace(',', ''));
-        //         console.log(".....keys[account_name+'-BALANCE']: "+ keys[account_name+'-BALANCE']);
-        //     }
-        //     console.log(".....edit time" + "{{payment.debit.value}}");
-        //   //  keys[account_name+'-BALANCE'] =keys[account_name+'-BALANCE'] + parseFloat("{{payment.debit.value}}".replace(',', ''));
-        // }
+       
+        
 
-        console.log("source_type:" + source_type);
         $("#payment-login-lnk").css("color", "white");
         $("#payment-login-lnk").attr("disabled", "disabled");
          
 
-
+        
         if (keys['CASH-BALANCE'] < min) {
             min = keys['CASH-BALANCE'];
         }
@@ -440,6 +459,8 @@
         }else if (source_type == "K") {
             max = keys['CC-BALANCE'];
         }
+
+        $("#id_payment-debit").css("font-size", "30px");
 
         $("#id_payment-debit").prop("class", "form-control");
         $("#id_payment-debit").prop("min", min);

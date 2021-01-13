@@ -239,7 +239,7 @@ th {
             </div>
                <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
-                    <div hidden>
+                    <div >
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
                         {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
@@ -441,37 +441,37 @@ th {
         <div class="form-group col-md-1">
             <label for="pos-product-code-txt" class="col-form-label"> CODE<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-product-code-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control">
         </div>
         <div class="form-group col-md-4">
             <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-product-name-txt" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-product-name-txt"  type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control" >
         </div>
         <div class="form-group col-md-2">
             <label for="pos-qty-txt" class="col-form-label">QTY<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-qty-txt" required type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-qty-txt"  type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control" value="{{member_info.member_id|upper}}">
         </div>
         <div class="form-group col-md-2">
             <label for="pos-price-txt" class="col-form-label">PRICE<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-price-txt" required type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-price-txt"  type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control" >
         </div>
         <div class="form-group col-md-1">
             <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-c-money-txt" required type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-c-money-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control" >
         </div>
         <div class="form-group col-md-2">
             <label for="pos-total-txt" class="col-form-label">TOTAL<span
                 class="asteriskField">*</span> </label>
-            <input id="pos-total-txt" required type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+            <input id="pos-total-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                 class="mid-size form-control" >
         </div>
   
@@ -534,14 +534,14 @@ th {
 
                         {%if post_data %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:create_update_venture_url' member_info.id 0 venture.request_action   %}">Clear This Form </a>
+                            href="{% url 'fx:create_update_venture_url' member_info.id 0    %}">Clear This Form </a>
 
                         <a class="edit_button btn btn-warning btn-md"
-                            href="{% url 'fx:create_update_venture_url' member_info.id venture.id venture.request_action   %}">
+                            href="{% url 'fx:create_update_venture_url' member_info.id venture.id    %}">
                             Make Changes</a>
                         {% else %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{%  url 'fx:create_update_venture_url' member_info.id 0 venture.request_action   %}">Clear This Form </a>
+                            href="{%  url 'fx:create_update_venture_url' member_info.id 0    %}">Clear This Form </a>
                         <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
                         <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
                         {% if venture.id > 0 %}
@@ -947,6 +947,15 @@ th {
 });
 
 
+$("#payment-login-lnk").click(function () {
+ $('#modal-search-member').modal('toggle');
+
+// console.log("payment-login-lnk");
+// $("#login").modal('show');
+  videoCode = 1;
+
+});
+
 
   function clear_pos_top(){
          $("#pos-product-code-txt").val("");
@@ -974,6 +983,7 @@ th {
                     console.log(">>>>>>>>>>row index:"+rIndex);
                     var tableData = $(this).children("td").map(function() {
                         return $(this).text();
+
                     }).get();
                     var td=tableData[0] +  '*' +  tableData[1] + '*' + tableData[2] + '*' +  tableData[3] + '*' + tableData[4];
                     console.log(td);

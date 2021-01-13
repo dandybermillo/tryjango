@@ -123,7 +123,7 @@ ul {
             {% if member_info.id > 0 %} 
             <a id ="payment-login-lnk-hidden"  hidden href="/payment/1/0/" ></a> 
            <ul> 
-            <li><a id ="main-venture"  href="{% url 'fx:create_update_venture_url' member_info.id 0 'VENTURE'  %}">VENTURE </a>
+            <li><a id ="main-venture"  href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">VENTURE </a>
             </li>
             <li class="lingk"> <a id ="payment-login-lnk"  style="color:blue" >PAYMENT ACCOUNT</a></li>
                 <li class="lingk-a"> WALLET ACCOUNT
@@ -369,13 +369,13 @@ $("#search_div").click(function () {
             });
 
 
-$("#payment-login-lnk").click(function () {
+// $("#payment-login-lnk").click(function () {
 
-console.log("payment-login-lnk");
-$("#login").modal('show');
-  videoCode = 1;
+// console.log("payment-login-lnk");
+// $("#login").modal('show');
+//   videoCode = 1;
 
-});
+// });
 
 
 

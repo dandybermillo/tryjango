@@ -123,8 +123,8 @@ urlpatterns = [
   path('create_update_payment/<int:member_id>/<int:payment_id>/',views.create_update_payment, name='create_update_payment_url'),
 
   #-------------------- VENTURE ------------------------
-  path('create_update_venture/<int:member_id>/<int:venture_id>/<str:request_action>/', views.create_update_venture, name = "create_update_venture_url"), 
-  path('delete_venture/<int:member_id>/<int:venture_id>//<str:request_action>/', views.delete_venture, name = "delete_venture_url"), 
+  path('pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture, name = "create_update_venture_url"), 
+  path('delete_venture/<int:member_id>/<int:venture_id>/<str:request_action>/', views.delete_venture, name = "delete_venture_url"), 
   path('venture_main_request/', views.venture_main_request, name = "venture_main_request_url"), 
   path('payment/<int:member_id>/<int:payment_id>/',views.payment_venture, name='payment_venture_url'),
   path('finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.finance_venture, name='finance_venture_url'),

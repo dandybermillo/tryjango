@@ -75,7 +75,7 @@ class NoteAdmin(admin.ModelAdmin):
 ]
 
 class VentureAdmin(admin.ModelAdmin):
-    list_display = ['id','seller','customer','transaction_type','date_entered','source_type','amount','seller_source_id','customer_source_id','cc','category','percent','flag']
+    list_display = ['id','customer','transaction_type','date_entered','source_type','amount','cc','category','percent','flag']
 class TradingModelAdmin(admin.ModelAdmin):
     list_display = ['id','seller','customer','transaction_type','date_entered','source_type','amount','seller_source_id','customer_source_id','cc','percent','flag']
 

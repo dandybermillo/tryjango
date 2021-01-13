@@ -109,16 +109,16 @@
 
                 <div class="form-group col-md-6">
 
-                    <label for="type-of-transaction" class="col-form-label">Transaction:</label>
+                    <!-- <label for="type-of-transaction" class="col-form-label">Transaction:</label> -->
                     <!-- <span
                     style="font-size:medium;font-weight:600 ;color:{% ifequal member_info.requested_action  'D' %} green {%else%} red {%endifequal%}">
                 </span> -->
                     <input id="type-of-transaction" type="text" readonly class="form-control-plaintext"
-                        style="border:1px solid #ced4da"
+                        style="border:none;font-size: 35px;"
                         value="{% ifequal account.requested_action  'D' %} DEPOSIT {%else%} WITHDRAWAL{%endifequal%}">
                 </div>
 
-                <div class="form-group col-md-6">
+                <div hidden class="form-group col-md-6">
                     <label for="id-date_entered" class="col-form-label">Date</label>
                     <input id="id-date_entered" type="text" readonly class="small-size form-control-plaintext"
                         style="border:1px solid #ced4da"
@@ -178,6 +178,10 @@
            
             <br>
             <div>
+                
+
+                <!-- <li><a id ="main-venture"  href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">VENTURE </a> -->
+
                 {%if post_data %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
                     href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
@@ -187,7 +191,7 @@
                 {% else %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
                     href="{% url 'fx:display_member_info_url' member_info.id  %}">Close This Form </a>
-                <input id="account-done" class="done btn btn-primary btn-md" type="button" value="I am Done" />
+                <input id="account-done" class="done btn btn-primary btn-md" type="button" value="Save Changes" />
                 <input id="account-submit-btn" class="submit btn btn-primary btn-md" type="submit" name="Submit"
                     value="SAVE" />
                 {%endif%}

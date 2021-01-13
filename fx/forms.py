@@ -397,7 +397,7 @@ class SavingForm(forms.ModelForm):
 class VentureForm(forms.ModelForm):
     class Meta:
       model = VentureModel
-      fields=['seller','customer',"in_charge",'transaction_type','date_entered','source_type','amount','customer_source_id','seller_source_id','cc','category','percent']  
+      fields=['customer',"in_charge",'transaction_type','date_entered','source_type','amount','cc','category','percent']  
 
     def clean_amount(self,*args, **kwargs):
         amount = self.cleaned_data.get('amount')

@@ -53,7 +53,7 @@
     <style>
 /* ----- loading icon ------- */
 
-.loading_hidden {
+.loading {
         position: fixed;
         z-index: 1000;
         top: 0;
@@ -67,7 +67,7 @@
         align-items: center;
     }
 
-    .loading_hidden>img {
+    .loading>img {
         width: 150px;
 
     }
@@ -522,7 +522,7 @@ ul {
               <li><a  class="fxmenu" href="#sec-8298">About Us</a></li>
               <li><a  class="fxmenu" href="#sec-1d89">Contact Us</a></li>
               <li><a  class="fxmenu" href="#sec-9545">Welcome</a></li>
-              <li><a id="my-task" class="fxmenu">My Tasks</a></li>
+               
 
             </ul>
           </div>
@@ -1233,6 +1233,14 @@ ul {
                   
                  </div>
                    
+
+                 <div class="form-row">
+                  <div class="form-group col-md-12">
+                  <label for="birthdate-txt" class="u-label u-text-palette-1-base u-label-3">Birthdate</label>
+                  <input type="date" required value="{{ member.birthday|date:'Y-m-d' }}"  id="birthday-txt" name="birthday" class="form-control">
+                </div>
+                </div>
+
                 <div class="form-row">
                   <div class="form-group col-md-12">
                   <label for="phone-txt" class="u-label u-text-palette-1-base u-label-2">Phone Number</label>
