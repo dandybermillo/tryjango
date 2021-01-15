@@ -276,7 +276,7 @@
                     <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
                     {% if venture.id > 0 %}
                     <a hidden id="venture-delete"
-                        href="{% url 'fx:delete_venture_url' member_info.id  venture.id venture.request_action %}"></a>
+                        href="{% url 'fx:delete_venture_url' member_info.id  venture.id %}"></a>
 
                     <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
                         value="Delete this" />

@@ -157,7 +157,7 @@
                 edit_btn = "<a class='btn btn-sm btn-primary' data-category='" + item.category + "'' href='/create_update_member_finance/{{code}}/" + member_id + "/" + item.id + "/" + item.transaction_type + "/' >{{data_source.button_edit}}</a>";
             } else if (item.category == 6 && "{{data_source.category.loan_payment}}") {
                  
-                    edit_btn = "<a class='btn btn-sm btn-primary' data-category='" + item.category + "'' href='/create_update_payment/" + member_id + "/" + item.id + "/' >{{data_source.button_edit}}</a>";
+                    edit_btn = "<a class='btn btn-sm btn-primary' data-category='" + item.category + "'' href='/payment/" + member_id + "/" + item.id + "/' >{{data_source.button_edit}}</a>";
               
             }
 

@@ -54,7 +54,7 @@ urlpatterns = [
 
   
    # --------------- store authentication staff -----------------
-  path('venture_login/', views.venture_login_request, name="venture_login"),
+  path('venture_login/', views.venture_login_request, name="venture_login_url"),
 
    #------------------- Loan ------------------------- 
   path('loan_application/<int:member_id>/<int:loan_id>/', views.loan_application, name = "loan_application_url"), #0 - new,1 edit
@@ -88,6 +88,11 @@ urlpatterns = [
   path('sign-in/', views.LoginView.as_view(), name="sign_in"), 
   path('user/<int:id>/', views.user_login_success, name="user_login_success_url"), 
   
+  
+  path('post_test/', views.pos_test.as_view(), name = "post_test_url"), 
+
+  path('po/', views.po, name = "po_url"), 
+
   path('process-form/', views.Process_Data_View.as_view(), name="process_form_url"), 
   # path('mobile/', views.MobileView.as_view(), name="mobile_url"), 
   # path('message/', views.MessageView.as_view(), name="message_url"), 
@@ -120,10 +125,12 @@ urlpatterns = [
   path('create_update_member_finance/<str:account_name>/<int:member_id>/<int:account_id>/<str:transType>/',views.create_update_member_finance, name='create_update_member_finance_url'),
   
   #---------PAYMENT--------------
-  path('create_update_payment/<int:member_id>/<int:payment_id>/',views.create_update_payment, name='create_update_payment_url'),
+  path('payment/<int:member_id>/<int:payment_id>/',views.create_update_payment, name='create_update_payment_url'),
 
   #-------------------- VENTURE ------------------------
   path('pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture, name = "create_update_venture_url"), 
+  # path('post_test/', views.pos_test.as_view(), name = "post_test_url"), 
+
   path('delete_venture/<int:member_id>/<int:venture_id>/<str:request_action>/', views.delete_venture, name = "delete_venture_url"), 
   path('venture_main_request/', views.venture_main_request, name = "venture_main_request_url"), 
   path('payment/<int:member_id>/<int:payment_id>/',views.payment_venture, name='payment_venture_url'),

@@ -186,11 +186,11 @@
                             </thead>
                             <tbody>
                                 <tr class="table-primary">
-
-                                    <td id="WALLET" class="{{payment.account.wallet}}">{{asset_liabities.wallet}}</td>
+                                     
+                                    <td id="WALLET" class="{{payment.account.wallet}}"> {% if asset_liabities.wallet  > 1000 %} 1000+ {%else%} {{asset_liabities.wallet}} {%endif%} </td>
                                     <td id="CC" class="{{payment.account.cc}}">{{asset_liabities.cc}}</td>
-                                    <td id="SAVING" class="{{payment.account.saving}}">{{asset_liabities.saving}}</td>
-                                    <td>{{asset_liabities.loan}}</td>
+                                    <td id="SAVING" class="{{payment.account.saving}}">{% if asset_liabities.saving  > 1000 %} 1000+ {%else%} {{asset_liabities.saving}} {%endif%} </td>
+                                    <td>{% if asset_liabities.loan  > 1000 %} 1000+ {%else%} {{asset_liabities.loan}} {%endif%}</td>
                                 </tr>
                             </tbody>
                         </table>

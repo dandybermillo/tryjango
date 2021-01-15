@@ -64,7 +64,7 @@ th {
 
     .modal-content {
         font-weight: bold;
-        background: linear-gradient(to bottom right, #F87E7B, #B05574);
+        background: linear-gradient(to bottom right, white, white);
     }
 
     /* .form-control {
@@ -239,7 +239,7 @@ th {
             </div>
                <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
-                    <div >
+                    <div hidden>
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
                         {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
@@ -262,7 +262,7 @@ th {
                         <div class="form-group col-md-6">
                             <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
                                     class="asteriskField">*</span> </label>
-                            <input id="venture-total-txt" required type="number" step='any' min=5 max="10000"
+                            <input style="font-size:30px" id="venture-total-txt" required type="number" step='any' min=5 max="10000"
                                 class="mid-size form-control" value="{{venture.totalCost}}">
                         </div>
 
@@ -434,95 +434,95 @@ th {
 
 
 
+ <div hidden class="container" style="border:1px solid green;width: 100%;">
 
- <div>
+            <div>
 
-    <div class="form-row">
-        <div class="form-group col-md-1">
-            <label for="pos-product-code-txt" class="col-form-label"> CODE<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-product-name-txt"  type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control" >
-        </div>
-        <div class="form-group col-md-2">
-            <label for="pos-qty-txt" class="col-form-label">QTY<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-qty-txt"  type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control" value="{{member_info.member_id|upper}}">
-        </div>
-        <div class="form-group col-md-2">
-            <label for="pos-price-txt" class="col-form-label">PRICE<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-price-txt"  type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control" >
-        </div>
-        <div class="form-group col-md-1">
-            <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-c-money-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control" >
-        </div>
-        <div class="form-group col-md-2">
-            <label for="pos-total-txt" class="col-form-label">TOTAL<span
-                class="asteriskField">*</span> </label>
-            <input id="pos-total-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                class="mid-size form-control" >
-        </div>
-  
-    </div>
-
-    <div class="row">
-        <div class ="form-group col-md-8" style="padding-left:12px">
-            <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
-            value="ADD" />
-        
-            <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
-        value="CANCEL" /> 
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="pos-product-code-txt" class="col-form-label"> CODE<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-product-name-txt"  type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-qty-txt" class="col-form-label">QTY<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-qty-txt"  type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" value="{{member_info.member_id|upper}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-price-txt" class="col-form-label">PRICE<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-price-txt"  type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-c-money-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-total-txt" class="col-form-label">TOTAL<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-total-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
             
-            
-        <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
-        value="DELETE" />
-    </div> 
-    </div>
+                </div>
 
-       
-        
-        
+                <div class="row">
+                    <div class ="form-group col-md-8" style="padding-left:12px">
+                        <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
+                        value="ADD" />
+                    
+                        <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                    value="CANCEL" /> 
+                        
+                        
+                    <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
+                    value="DELETE" />
+                </div> 
+                </div>
+                    
+            </div>
+            <div style="height: 350px;overflow: scroll;">
+            <table id="pos-table" class="table table-bordered">
+                <thead>
+                    <tr class="green">
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">CM</th>
+                    <th scope="col">Total</th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                </tr>
+                
+                
+                </tbody>
+            </table>
+            </div>
 </div>
-<div style="height: 350px;overflow: scroll;">
- <table id="pos-table" class="table table-bordered">
-    <thead>
-        <tr class="green">
-        <th scope="col">Item ID</th>
-        <th scope="col">Product name</th>
-        <th scope="col">Qty</th>
-        <th scope="col">Price</th>
-        <th scope="col">CM</th>
-        <th scope="col">Total</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-       <tr>
-        <th></th>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        
-      </tr>
-      
-       
-    </tbody>
-  </table>
-</div>
+
 
   <!-- ------------------- pos end --------------------- -->
 
@@ -546,7 +546,7 @@ th {
                         <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
                         {% if venture.id > 0 %}
                         <a hidden id="venture-delete"
-                            href="{% url 'fx:delete_venture_url' member_info.id  venture.id venture.request_action %}"></a>
+                            href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
 
                         <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
                             value="Delete this" />
@@ -739,6 +739,7 @@ th {
     var videoCode =0; //1-payment 2-venture
     var ID_Info = new Object();
     ID_Info.id = "";
+    ID_Info.customer_id=0;
     ID_Info.ON_SEARCH = false;
     ID_Info.is_name_blank = true;
 
@@ -783,6 +784,7 @@ th {
 
         //
         $("#pos-delete-btn").prop("disabled",true);
+        $("#id_amount").css("font-size","30px")
 
 
         // set customer id text fixed
@@ -948,6 +950,8 @@ th {
 
 
 $("#payment-login-lnk").click(function () {
+
+
  $('#modal-search-member').modal('toggle');
 
 // console.log("payment-login-lnk");
@@ -1147,7 +1151,7 @@ $("#payment-login-lnk").click(function () {
                 success: function (response) {
                     ID_Info.ON_SEARCH = false;
                     console.log("videoCode:  >"+videoCode );
-                    if( videoCode == 2) {  // venture
+                    if( videoCode == 2) {  // pos
 
                             if (response['data'] == "Success") {
                                 console.log("response['data'] == 'Success' passed" );
@@ -1156,7 +1160,18 @@ $("#payment-login-lnk").click(function () {
                                 $("#venture-payment-transaction-modal").modal('show');
 
                                 name = response["member_info"]['name'].toUpperCase();
-                                $("#id_customer").val(response["member_info"]['id']);
+                                customer_id = response["member_info"]["member_id"];
+                                $("#current-customer-lnk").text(name); 
+                                $("#current-customer-id-lnk").text(customer_id); 
+
+                                
+                                var id = response["member_info"]['id'];
+                                 $("#payment-login-lnk-hidden").attr("href", "/payment/"+id.toString()+"/0/");
+
+
+                                
+                                
+                                $("#id_customer").val(id);
                                 console.log("id customer: " + $("#id_customer").val());
                                 $("#customer-name").val(name); //change to: appear in summary form
                                 cm_balance = response["cm_balance"]
@@ -1165,7 +1180,7 @@ $("#payment-login-lnk").click(function () {
                                 }
                                 $("#id_cc").prop("max", cm_balance);
 
-                                customer_id = response["member_info"]["member_id"];
+                                
                                 console.log("member_info..")
                                 console.log(response["member_info"])
                                 ID_Info.id = customer_id;
@@ -1719,9 +1734,12 @@ $("#payment-login-lnk").click(function () {
 
 
         });
-    });
-//---------------------------------- barcode scanner
-(function () {
+
+
+
+
+
+        (function () {
 			onScan.attachTo(document, {
 				suffixKeyCodes: [13],
 				reactToPaste: true,
@@ -1729,13 +1747,16 @@ $("#payment-login-lnk").click(function () {
 					console.log('Scanned: ' + iQty + 'x ' + sCode);
 				},
 				onKeyDetect: function (iKeyCode) {
-					console.log('Pressed: ' + iKeyCode);
+				//	console.log('Pressed: ' + iKeyCode);
 				}
 			});
 
 			// Test scanner is initialized
 			onScan.simulate(document, '1234567890123');
 		})()
+    }); //end of doc ready
+//---------------------------------- barcode scanner
+
 </script>
 
 

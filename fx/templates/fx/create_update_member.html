@@ -53,13 +53,26 @@
 
 
                  <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         {{ form.gender|as_crispy_field  }} 
                     </div>
 
-                    <div class="form-group col-md-2">
-                        <label for="mid" style="margin-top: -30px;" class="col-form-label">Member ID</label>
-                      <input type="text" id="mid-27ba" value=" {{form.member_id.value|upper}}" class="form-control" readonly>
+                      
+                      <div class="form-group col-md-4 offset-md-3">
+                       
+                        <div class="custom-control custom-checkbox my-1 mr-md-5">
+                            <input id="apply-check" checked name="agree" type="checkbox" class="custom-control-input" >
+                            <label class="custom-control-label"  style="font-weight: bolder;color: red;" for="apply-check">Apply for community money</label>
+                          </div>
+                        <div id="mid">
+                       
+                            <input name="apply" type="number" id="apply-cc-txt" value="{{form.max_loan}}" class="form-control"  min="1" max="{{form.max_loan}}">
+                           
+                        </div>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="member-id-txt" style="margin-top: -30px;" class="col-form-label">Member ID</label>
+                        <input type="text" id="member-id-txt" value=" {{form.member_id.value|upper}}" class="form-control" readonly>
                       </div>
                    
  
@@ -112,11 +125,16 @@
                             class="birthday-txt form-control" value="{{form.birthday.value|date:'Y'}}" min="1920" max="2020">
 
                     </div>
-                    <div class="form-group col-md-6">
-                        {{ form.telephone |as_crispy_field }}
-                    </div>
+                  
 
                 </div> -->
+                <div class="form-row">
+
+                        <div class="form-group col-md-12">
+                            {{ form.telephone |as_crispy_field }}
+                        </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {{ form.address |as_crispy_field }}
@@ -128,7 +146,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-0">
+                    <div class="form-group col-md-12">
                         {{ form.active|as_crispy_field  }}
                     </div>
                 </div>
@@ -142,13 +160,13 @@
                     <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
                     href="">Close This Form </a>
                 {% else %}
-              
-                <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="Save Changes" />
+                
+                <input id="member-done" class="done btn btn-primary btn-sm" type="button" value="Done Editing" />
                 <input style="display:none" id="member-submit" class="submit btn btn-success btn-sm" type='submit'
                     class="btn btn-primary" value='save' />
 
-                    <a id="wallet-hide" class="hide btn btn-secondary btn-sm"
-                    href="">Close This Forms </a>
+                    <a id="wallet-hide" style="float:right;" class="hide btn btn-secondary btn-sm"
+                    href="{% url 'fx:dashboard_url'   %}">Close This Form </a>
                 {%endif%}
 
 
@@ -162,7 +180,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Data Entry</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Member Profile  Review</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -173,13 +191,12 @@
                 <div id="review-member-form">
 
                     <form>
-                        <h4>Please review the following before submitting. Thanks.</h4>
-                        <div class="form-row">
+                         <div class="form-row">
 
-
-                            <div class="form-group col-md-1">
-                                <label for="review-gender" class="col-form-label">Name</label>
-                                <input id="review-name" type="text" readonly class="review form-control" value="">
+                            <label for="review-gender" class="col-sm-1 col-form-label">Full Name</label>
+                            <div class="form-group col-md-11">
+                                
+                                <input id="review-name" style ="font-weight: bolder;" type="text" readonly class="review form-control" value="">
                             </div>
                             
 
@@ -212,6 +229,10 @@
                             <label for="review-telephone" class="col-sm-1 col-form-label">Telephone</label>
                             <div class="form-group col-sm-5">
                                 <input type="text" readonly class="review form-control" id="review-telephone" value="">
+                            </div>
+                            <label for="review-new-loan" class="col-sm-1 col-form-label">New Loan</label>
+                            <div class="form-group col-sm-5">
+                                <input type="text" readonly class="review form-control" id="review-new-loan" value="">
                             </div>
 
                         </div>
@@ -252,7 +273,17 @@
 
         $(document).ready(function () {
             var post_data = "{{post_data}}";
+           
 
+            $("#apply-check").click(function(){
+                    if($(this).prop("checked") == true){
+                        $("#apply-cc-txt").css("display", "block");
+                        console.log("Checkbox is checked.");
+                    }
+                    else if($(this).prop("checked") == false){
+                        $("#apply-cc-txt").css("display", "none");
+                    }
+           });
             $("#review-member-submit-btn").click(function () {
                 $("#member-submit").trigger("click");
 
@@ -274,7 +305,7 @@
             }
             // add class names to form elements:
             $("#id_gender").prop("class", "form-control");
-            $("#id_active").prop("class", "form-control");
+          //  $("#id_active").prop("class", "form-control");
             $("#form_member").find("input[type='text']").each(function () {
                 $(this).prop("class", "form-control");
             });
@@ -299,22 +330,29 @@
         //    // var date = new Date(yr, m, d); 
              //   bd = m+"/"+d+"/"+yr;
             bd =$("#birthday-txt").val();
-            console
+            $("#review-username").val( $("#member-id-txt").val().trim())
             $("#id_birthday").val(bd);
             $("#review-birthday").val(bd );
-            gender = $("#id_gender").val().trim();
-            $("#review-gender").val(gender);
-            firstname =$("#id_firstname").val().trim();
-            $("#review-firstname").val(firstname);
-            $("#review-middlename").val($("#id_middlename").val());
-            $("#review-lastname").val($("#id_lastname").val());
+             
+            fullname = $("#id_gender").val().trim()+" "+$("#id_firstname").val().trim() +" "+ $("#id_middlename").val() +" "+ $("#id_lastname").val().trim();
+            $("#review-name").val(fullname);
+            
             $("#review-address").val($("#id_address").val());
             $("#review-e-address").val($("#id_email").val());
             $("#review-telephone").val($("#id_telephone").val());
+            if($("#apply-check").prop("checked") == true){
+                $("#review-new-loan").val($("#apply-cc-txt").val() +" Community Money");
+            }else
+            {
+                $("#review-new-loan").val("");
+            }
+           
+
             $("#review-active").prop("checked", $("#id_active").prop("checked"));
+
               
             // firstname_part = firstname.substring(0,2).toUpperCase();
-            // console.log("firstname_part:"+firstname_part);
+            // console.log("firstname_part:"+first"name_part);
             
             // if (parseInt(m) < 10){
             //     month_part ="0"+ m;

@@ -197,8 +197,8 @@ def worker_task(request,id):
        return JsonResponse({"live":{}},status =400) 
 class LoginView(View):
     def post(self, request, *args, **kwargs):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get('username').strip()
+        password = request.POST.get('password').strip()
         print (f"--password:  {password}")
         print(f" user: {username}")
 
@@ -685,14 +685,17 @@ def delete_venture(request,member_id,venture_id,request_action ):
 # Physical Money
     if venture_qs.source_type == "W":                        #delete_venture 1
             Success = account_manager_delete(venture_qs.customer_source_id,customer_source_fund,"#delete_venture 1")
-            if Success:                                         #delete_venture 2
-                    Success = account_manager_delete(venture_qs.seller_source_id,seller_dest_fund,"#delete_venture 2")
+            if Success == False:
+               logger.warning(f">>> Unable to delete pthysical money payment of member_id: {member_id}, venture_id :{venture_id}, customer_source_fund:{customer_source_fund}")
+    print(f"=================success 1: {Success}")
+           
 # Virtual Money  
-    print(f"@delete_venture venture_qs.customer_cc_id:{venture_qs.customer_cc_id}, seller_cc_id:{venture_qs.seller_cc_id}")
     if Success and venture_qs.customer_cc_id:                    #delete_venture 3
                     Success = cc_manager_delete(venture_qs.customer_cc_id,customer_source_fund ,"#delete_venture 3") 
-                    if  Success:                                #delete_venture 4
-                            Success = cc_manager_delete(venture_qs.seller_cc_id,seller_dest_fund,"#delete_venture 4" )
+                    if Success == False:
+                        logger.warning(f"Unable to delete cc payment of member_id: {member_id}, venture_id :{venture_id}")
+    print(f"=================success 2: {Success}")
+                   
 # notes:    
     if Success:
         note_id = venture_qs.note_id
@@ -703,7 +706,7 @@ def delete_venture(request,member_id,venture_id,request_action ):
          
     if Success:
             messages.success(request, f"Message: {customer_info.name}'s payment  has been successfully deleted.")
-            return redirect(f'/create_update_venture/{member_id}/{0}/{request_action}/')
+            return redirect(f'/pos/{member_id}/{0}/')
     else:
             member_info = get_member_info(member_id,"#delete_venture @else. 1") #delete_venture @else. 1
             if  request_action == "venture":
@@ -729,7 +732,7 @@ def delete_venture(request,member_id,venture_id,request_action ):
                     'customer_info':customer_info,
                     }
             messages.error(request, f"Message: Sorry. This record  can't be deleted this time.")
-            return render(request, 'fx/venture/venture.html', context)
+            return render(request, 'fx/venture/pos.html', context)
 def account_manager_delete(source_id,sourceFund,code):
             model_name =source_funds_pm.get(sourceFund) 
             Model = apps.get_model('fx', model_name)
@@ -863,7 +866,7 @@ def create_update_venture_result(request,member_id,venture_id,msg,request_action
             }
          
         messages.success(request, msg)
-        return render(request, 'fx/venture/venture.html', context)
+        return render(request, 'fx/venture/pos.html', context)
 
  # date_time_str = '19/09/01 01:55:19'
     # date_time_obj = datetime.strptime(date_time_str, '%y/%m/%d %H:%M:%S')
@@ -1126,10 +1129,71 @@ def getLoanPayment(member_id):
     return {"max_loan":max_loan,"percent":percent}
 
 
-         
+
+
+def po(request):
+    
+    context ={}
+                   
+        
+    return render(request, 'fx/venture/venture_test.html', context)
+    
+     
+     
+# @login_required(login_url='/venture_login/')
+class pos_test(View):
+    def post(self, request, *args, **kwargs):
+            username = request.POST.get('username').strip()
+            password = request.POST.get('password').strip()
+ 
+            member_id =customer_id
+            
+            print (f"user: {request.user}")
+            if request.user.is_staff and request.user.is_active:
+                print (f"user: {request.user}")
+                staff_info=""
+                try:
+                    staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                    print(f"..staff_info:{staff_info.name}")
+                except Exception as e:
+                # raise Http404("Sorry. User id does not exist!")
+                    print(f"def cuv @exception, id: None , e:{e}")
+                    logger.warning(f"def cuv @exception,e:{e}" ) 
+            else:
+                    print("going to unauthorized user page")  
+                    return redirect('/venture_login/') #
+                # return redirect('/unauthorized_user/') #
+
+        
+            ##request_action =request_action.strip().lower()
+            ##model_name =model_list.get(request_action) 
+            Model = apps.get_model('fx', "VentureModel")
+            all_valid = True 
+            default_percentage = 95  #
+            member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
+        # print(f"model_name:{model_name}")
+            #return
+            return
+            request_action = "venture"
+            if  request_action == "venture":
+                    category = CAT_VENTURE
+                    description ="GROCERY"
+                    customer_source_fund = SOURCE_REGULAR
+                    seller_dest_fund =SOURCE_VENTURE
+            
+        ## seller = member_info.id
+            if venture_id > 0: #edit
+                venture_qs= get_object_or_404(Model, id=venture_id)
+            customer_id = 0
+            asset_balance={}
+            print(f"venture_id:{venture_id}, category:{category}")
+
+       
+
+            
 
 #def cuv
-@login_required(login_url='/login/')
+@login_required(login_url='/venture_login/')
 def create_update_venture(request,customer_id,venture_id ):
     member_id =customer_id
     # v =ValidateUsername("DA1212-1")
@@ -1154,7 +1218,8 @@ def create_update_venture(request,customer_id,venture_id ):
             logger.warning(f"def cuv @exception,e:{e}" ) 
     else:
             print("going to unauthorized user page")  
-            return redirect('/unauthorized_user/') #
+            return redirect('/venture_login/') #
+           # return redirect('/unauthorized_user/') #
 
   
     ##request_action =request_action.strip().lower()
@@ -1245,7 +1310,7 @@ def create_update_venture(request,customer_id,venture_id ):
                     'member_info':member_info,
                     'customer_info':customer_info,
                 }
-                return render(request, 'fx/venture/venture.html', context)
+                return render(request, 'fx/venture/pos.html', context)
 
     else:   # request.method == 'POST':
         
@@ -1371,7 +1436,7 @@ def create_update_venture(request,customer_id,venture_id ):
                                 if source_type != old_source_type:
                                         filter_fields["source_type"] = source_type
                                 if source_type == 'K':
-                                        # filter_fields['customer_source_id'] = 0
+                                        filter_fields['customer_source_id'] = 0
                                         # filter_fields['seller_source_id'] = 0
                                         if old_source_type == 'W':
                                                 Success = account_manager_delete(venture_qs.customer_source_id,customer_source_fund,"@customer:if old_source_type == 'W'")
@@ -1452,7 +1517,7 @@ def create_update_venture(request,customer_id,venture_id ):
                         print("not valid..")
                         ventureForm.totalCost = venture_qs.total_cost #float(amount) + float(cc)
                         context = {'asset_balance':asset_balance,'venture': ventureForm,'limits':limits,'customer_info':customer_info,'member_info':member_info}   
-                        return render(request, 'fx/venture/venture.html', context)
+                        return render(request, 'fx/venture/pos.html', context)
         else: #venture_id == 0:              ----  P O S T  ----
                     
                     if  request_action == "venture":
@@ -1598,7 +1663,7 @@ def create_update_venture(request,customer_id,venture_id ):
                                     'customer_info':customer_info,
                                     'member_info':member_info,
                                 }
-                        return render(request, 'fx/venture/venture.html', context)
+                        return render(request, 'fx/venture/pos.html', context)
 
 def get_due_date_string(value):
     month={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"June",7:"Jul",8: "Aug",9:"Sept",10:"Oct", 11:"Nov",12:"Dec"}
@@ -2556,9 +2621,9 @@ def logout_request(request): #venture
     logout(request)
     return redirect("/venture_main_request/")
 def staff_logout_request(request): #venture
-    print('logout_request')
+    print('staff logout_request')
     logout(request)
-    return redirect("/login/")
+    return redirect("/venture_main_request/")
     
 def venture_main_request(request):
     context={}
@@ -2573,7 +2638,7 @@ def main_page_request(request):
 def venture_login_request(request):
     print("venture_login_request:----------")
     if request.method == 'GET' and request.user.is_authenticated is True and request.user.is_active is True:
-        return redirect('/logouts/')
+        return redirect('/logout/')
     user = None
     nextl = request.GET.get('next')
     print(f"....next:{nextl}")
@@ -2588,7 +2653,7 @@ def venture_login_request(request):
                     if user.is_staff:
                             print("success login in venture. staff")
                             member_info = MemberModel.objects.get(user = request.user.id)
-                            return redirect(f'/create_update_venture/{member_info.id}/{0}/{"venture"}')
+                            return redirect(f'/pos/{member_info.id}/{0}/')
                     else:
                             print("success login in venture")
                              
@@ -4524,11 +4589,18 @@ def create_update_member_result(request,id,msg):
 #cum
 @login_required(login_url='/login/')
 def create_update_member(request, id=id):
-            
+            max_loan = 0
             if id > 0 :
                   member_info = get_member_info(id,"#create_update_member.1") #create_update_member.1
             else:
                   member_info={"id":0}
+            try: 
+                         max_loan = tmpVariables.objects.values("max_loan").get(id = 1)["max_loan"]
+                         print(f"----- max: {max_loan}")
+            except Exception as e:
+                                max_loan =  300
+                                print(f"------ Error in reading max_loan")
+                                logger.warning(f"cum,else,if ==0: e:{e}")
             if request.method == "GET":
                         if id == 0:
                             initial_data ={'member_id':'default'}
@@ -4537,6 +4609,7 @@ def create_update_member(request, id=id):
                         else:
 
                             form = MemberForm(instance = member_info)
+                        form.max_loan =max_loan
                         context = {
                             'form': form,
                             'member_info': member_info,
@@ -4548,16 +4621,19 @@ def create_update_member(request, id=id):
                     
                     
                     username = request.POST.get("member_id","")
+                    agree = request.POST.get("agree","").strip()
+                    if agree =="on":
+                         agree =True
+                         max_loan = request.POST.get("apply",0)
+                    else:
+                         agree =False
+                    
+                    print(f"apply: {apply},aggree: {agree} , type:{ type(agree )}")
+                    
                     # add Loan to new member initialize
-                    try: 
-                         max_loan = tmpVariables.objects.values("max_loan").get(id = 1)["max_loan"]
-                         print(f"----- max: {max_loan}")
-                    except Exception as e:
-                                max_loan =  300
-                                print(f"------ Error in reading max_loan")
-                                logger.warning(f"cum,else,if ==0: e:{e}")
+                  
                                 
-                   # return
+                    return
                         
                     #ed loan to new member initialize
                     memberForm = MemberForm(request.POST) 
@@ -4626,7 +4702,7 @@ def create_update_member(request, id=id):
                             ## add Loan to new member
                             
                             category = CAT_LOAN
-                            if  Success:
+                            if  Success and agree:  #user has agreed to receive cc
                                     try: #st
                                         source_type ="M" # additional loan
                                         payment_additional_qs = PaymentModel(source_type=source_type,source_id =0 ,date_entered=date.today(),transaction_type='D' ,credit=max_loan,debit=0 ,member_id=memberid,category=category)

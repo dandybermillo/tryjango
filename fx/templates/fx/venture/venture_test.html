@@ -237,7 +237,7 @@ th {
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*). Thank you.
             </div>
-               <form action="" class="needs-validation" id="form_venture" method="POST">
+               <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
                     <div hidden>
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
@@ -331,12 +331,17 @@ th {
                     </div>
 
                     <div class="form-row">
+                      
                         <div class="form-group col-md-6">
+                            <label for="id_amount" class="col-form-label">Php </label>
                             <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
-                            {{ venture.amount|as_crispy_field}}
+                            <input type="number" name="amount" step="any" class="numberinput form-control" required="" id="id_amount" style="font-size: 30px;" min="0" max="10000">
+                            
                         </div>
+                        {{ venture.amount}}
                         <div class="form-group col-md-6">
-                            {{ venture.cc|as_crispy_field}}
+                            <label for="id_cc" class="col-form-label">Co. Money </label>
+                            <input type="number" name="cc" step="any" class="form-control" required="" id="id_cc" min="0" max="5000">
                         </div>
 
                     </div>
@@ -534,14 +539,14 @@ th {
 
                         {%if post_data %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:create_update_venture_url' member_info.id 0    %}">Clear This Form </a>
+                            href="{% url 'fx:po_url'    %}">Clear This Form </a>
 
                         <a class="edit_button btn btn-warning btn-md"
-                            href="{% url 'fx:create_update_venture_url' member_info.id venture.id    %}">
+                            href="{% url 'fx:po_url'  %}">
                             Make Changes</a>
                         {% else %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{%  url 'fx:create_update_venture_url' member_info.id 0    %}">Clear This Form </a>
+                            href="{%  url 'fx:po_url'   %}">Clear This Form </a>
                         <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
                         <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
                         {% if venture.id > 0 %}
@@ -776,10 +781,20 @@ th {
 
         console.log("----- ventyreid:" + venture_id);
         var post_data = "{{post_data}}";
+
+
+
+
+
+
         if (isNaN(venture_id)) {
             venture_id = 0;
          }
          console.log("----- ventyreid:" + venture_id);
+
+
+
+
 
         //
         $("#pos-delete-btn").prop("disabled",true);
@@ -803,6 +818,67 @@ th {
        
 
 
+
+
+
+
+
+            $("#login-btn").click(function(e) {
+
+                code="login";
+                //var form =  document.querySelector(".needs-validation");
+                var form = document.querySelector('#pos-form');
+                var reportVal = form.checkValidity();
+                if (reportVal == false) {
+                    console.log("validating......login");
+                    // $("#venture-payment-failed-alert").show();
+                    form.reportValidity();
+                    return;
+                }
+                // $("#login-form").submit(function (e) {
+                console.log("submit form init");
+                e.preventDefault();
+                 $.ajax({
+                type: "POST",
+                url: "/pos_test/",
+
+                data: $("#pos-form").serialize(),
+                success: function (response) {
+                    // do something with response
+                    response["result"]; // equals 'Success or failed';
+                    response["message"]; // equals 'you"re logged in or You messed up';
+
+                    if (response["type"] === "success") {
+                    $("#login-form").trigger("reset");
+                    // $("#login-success").text(response["message"]);
+                    // $("#login-success").css({ display: "block" });
+                    console.log("Acccess granted");
+                    // $("#user-page-lnk").click();
+                    id = response["id"];
+                    window.location.replace("/user/"+id);
+                    } else if (response["type"] === "error") {
+                    
+                    $("#login-danger-alert").fadeIn();  // alert message
+                    closeSnoAlertBox("login","danger");
+                    
+                    console.log("Acccess denied");
+
+                    }
+                },
+                error: function (response) {
+                    // do something with response
+                    console.log("Something went wrong! Try again..");
+                //   $("#login-error").text("Something went wrong! Try again.");
+                $("#login-danger-alert").fadeIn();  // alert message
+                closeSnoAlertBox("login","danger");
+                },
+                });
+
+                setTimeout(function () {
+                $("#login-success").css({ display: "none" });
+                $("#login-error").css({ display: "none" });
+                }, 10000);
+                });
         // this is document ready start
 
 

@@ -99,12 +99,18 @@
             console.log("...total_no_of_row_per_page: ", total_no_of_row_per_page);
 
             if (receiver_username.length < 3) {
+                console.log("------------------------")
                 initialize();
+               // container-alert-not-found-search-member
+                console.log("----code--------{{code}}:");
+                console.log(code)
                 $(".container-alert-not-found-{{code}}").show();
                 // setTimeout();
                 $("div .alert-not-found-{{code}}").text("Must be at least 3 characters long.");
                 $('#txt-{{code}}').focus();
+
                 event.preventDefault();
+                $(".loading").toggleClass("hidden");
                 return 0;
             }
            // $(".loading-{{code}}").toggleClass("hidden");
@@ -132,7 +138,9 @@
                     $(".container-alert-found-{{code}}").hide();
 
                     if (properties.total_record <= 0) {
+                        console.log(":::::::::::::::::::::::::::::")
                         initialize();
+                        
                         $(".container-alert-not-found-{{code}}").show();
                         $("div .alert-not-found-{{code}}").text("Keyword " + receiver_username + " does not exist!");
                         $('#txt-{{code}}').focus();
