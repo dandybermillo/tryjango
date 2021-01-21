@@ -57,7 +57,7 @@ class TeamMemberModel (models.Model):   #
      category = models.ForeignKey(SkillCategoryModel,null =True, on_delete =models.SET_NULL ) # todo null=False
      def __str__(self):
        
-        return f"{self.member.gender} {self.member.firstname} {self.member.lastname}"
+        return f"{self.member.firstname} {self.member.lastname}"
      
 
      
@@ -87,8 +87,8 @@ class ProfileModel (models.Model):   # Subject for Approval, the same as MemberM
      def name(self):
             return self.gender.title() +" "+self.firstname.title() + " "+ self.lastname.title()   
 class LivePostModel(models.Model):
-      FOR_APPROVAL,NOT_READY,APPROVED,DISPOSED =(0,1,2,3)
-      STATUS_CODE = ((FOR_APPROVAL,"WAITING FOR APPROVAL"),(APPROVED,"APPROVED"),(NOT_READY,"NOT READY"),(DISPOSED,"READY FOR DISPOSAL"))
+      FOR_APPROVAL,NOT_READY,APPROVED,DISPOSED,DELETED =(0,1,2,3,4)
+      STATUS_CODE = ((FOR_APPROVAL,"WAITING FOR APPROVAL"),(APPROVED,"APPROVED"),(NOT_READY,"NOT READY"),(DISPOSED,"READY FOR DISPOSAL"),(DELETED,"DELETED"))
       
       MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
       CATEGORY_CODE = ((MOBILE,"MOBILE TOP UP"),(COMPUTER_REPAIR,"COMPUTER REPAIR"),(MECHANIC,"MECHANIC"),(CONSTRUCTION,"CONSTRUCTION"),(DELIVERY,"DELIVERY"))
@@ -218,7 +218,7 @@ class dayTransactionModel(models.Model):
    source_type = models.IntegerField(default =CASH,choices = source_type_cat)  #c: cash,A Additional Loan, M max loan  
    amount = models.FloatField(default =0 )       
    source_id = models.IntegerField(default =0) 
-   account_code =    models.PositiveIntegerField(default = 1 ,choices = account_cat)   
+   account_code = models.PositiveIntegerField(default = 1 ,choices = account_cat)   
 
                                                                                                                                         
 

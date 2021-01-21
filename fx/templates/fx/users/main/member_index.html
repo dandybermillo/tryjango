@@ -53,6 +53,11 @@
     <style>
 /* ----- loading icon ------- */
 
+div > img{
+display: inline;
+
+}
+
 .loading {
         position: fixed;
         z-index: 1000;
@@ -1794,10 +1799,10 @@ ul {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="justify-content: center;">
+      <div class="modal-body" style="text-align: center;">
         <p>{{member.member_id}} QRCODE</p>
         
-        <div   id="qrcode"  ></div>
+        <div style="text-align: center;"   id="qrcode"  ></div>
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->

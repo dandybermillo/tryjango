@@ -982,7 +982,7 @@
                                 {%else%}
 
                                 <a class="finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
-                                title="Withraw From Saving ACcount"
+                                title="Withraw From Saving Account"
                                 href="">
                                 WITHDRAW
                             </a>
@@ -1035,12 +1035,24 @@
                         <div class="form-group row">
                             <label for="loan-payment" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
+
+                                {% if member_info.id > 0 %}
                                 <a class="loan-payment finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
                                     title="Loan Payment Transaction"
-                                    href="{% url 'fx:create_update_payment_url' 2 0  %}">
+                                    href="{% url 'fx:create_update_payment_url' member_info.id 0  %}">
                                     LOAN PAYMENT
 
                                 </a>
+                                {%else%}
+
+                                <a class="loan-payment finance-sub-lnk" data-toggle=" tooltip" data-placement="top"
+                                title="Loan Payment Transaction"
+                                href="">
+                                LOAN PAYMENT
+
+                            </a>
+
+                                {%endif%}
                             </div>
                         </div>
                         
@@ -1048,8 +1060,8 @@
                         </div>
                         <div class="form-group row">
                             <label for="venture-done-here" class="col-sm-2 col-form-label"></label>
-                            <!-- <input id="modal-finance-container-menu-done" class="venture-done-here btn btn-secondary btn-md" type="button"
-                            value="DONE HERE" /> -->
+                            <input id="modal-finance-container-menu-done" class="venture-done-here btn btn-secondary btn-md" type="button"
+                            value="DONE HERE" />
                         </div>
 
                     </div><!-- -end of loan's menu  -->

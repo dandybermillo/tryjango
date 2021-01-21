@@ -166,7 +166,7 @@ def livePost(request,id,code):
                         fields = {"code":APPROVED,'customer_id':id}
                 if code > 0:
                     fields['category']=code
-                print(f"id: {id} fields: {fields}")
+                #print(f"id: {id} fields: {fields}")
                 qs = LivePostModel.objects.all().values("status","remarks","customer__member_id","category").filter( **fields)
                 
                 data=[]
@@ -232,9 +232,10 @@ class LoginView(View):
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
         print("processing data!")
-        lists =["source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address","remarks","status","member_id"]
+        lists =["customer__member_id","source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address","remarks","status","member_id"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
+        id=0 # use id instead of source_id or vice versa
         for key, value in request.POST.items():
                 if key in lists:
                      filter_fields[key] = value
@@ -243,7 +244,7 @@ class Process_Data_View(View):
                 print('Value %s' % (value) )
                 # print(f'Value: {value}') in Python >= 3.7
         print(f"filter fields: {filter_fields}")
-          
+        return
         # print("process data....")
         # name = request.POST.get('name')
         # phone = request.POST.get('phone')
@@ -252,7 +253,15 @@ class Process_Data_View(View):
         # address = request.POST.get('address')
         print(f"request.post: {request.POST}")
         code = request.POST.get('code').strip()
+        
         source_id = request.POST.get('source_id',"0").strip()
+        source_id = int(source_id)
+        if source_id <=0:
+             id =  request.POST.get('id',"0").strip()
+             id = int(id)
+             source_id = id
+        
+       # if code=- "live"
        # source_id = int(source_id)
         
         
@@ -260,10 +269,12 @@ class Process_Data_View(View):
         model_name =Model_data_list.get(code) 
         
         Model = apps.get_model('fx', model_name)
-        source_id = int(source_id)
-        print(f"code :{code}, source_id: {source_id} ,type: {type(source_id)} , modelname: {model_name}")
-         
-        if source_id <= 0:
+       
+        print(f"id= {id} code :{code}, source_id: {source_id} ,type: {type(source_id)} , modelname: {model_name}")
+        
+        if source_id  <=0:
+             return
+        elif source_id == 0:
             
                     try:
                         print("ADDING...........")
@@ -276,11 +287,15 @@ class Process_Data_View(View):
                         print(f"@ exception e:{e}")
                         logger.warning(f"Process_Data_View(View): exception e:{e}")
                         return JsonResponse({"type": "error", "message": "unable to save this data"})#test
+        
         else:
             
                     try:
                           print("UPDATING...........")
-                          update_qs = Model.objects.filter(source_id = source_id).update( **filter_fields) 
+                          if id > 0:
+                              update_qs = Model.objects.filter(id = id).update( **filter_fields)
+                          else:
+                              update_qs = Model.objects.filter(source_id = source_id).update( **filter_fields) 
                           print(f" update_qs: {update_qs}")
                           if update_qs <=0:
                                     try:
@@ -3215,6 +3230,8 @@ def create_update_payment(request,member_id,payment_id):
                                                             Success= False
                                                             print (f"error result:{e}, {type(e)}") 
                                     if Success:
+                                        
+                                            saveTransHistory(ACCOUNT_PAYMENT,request.user.id,member_id,TX_LOAN_PAYMENT,payment_qs.id,amount,NEW_RECORD)
                                             msg ="New payment has been successfully added!"
                                             return redirect(f'/success/create_update_payment_result/{account_name}/{member_id}/{payment_qs.id}/{msg}')
                                 if not Success:
@@ -3355,7 +3372,8 @@ def create_update_payment(request,member_id,payment_id):
                                                         
                                             
                                     print(f"last. succcess in writing additional loan:additonal_loan:{additional_loan}")
-
+                                    data ={"amount":debit}
+                                    saveTransHistory(ACCOUNT_PAYMENT,0,0,0,payment_id,data,EDIT_RECORD)
                                     msg ="New payment has been successfully added!"
                                     return redirect(f'/success/create_update_payment_result/{account_name}/{member_id}/{payment_id}/{msg}')
                                 else:
@@ -3979,6 +3997,22 @@ def create_update_member_finance(request,account_name,member_id,account_id,trans
                                 #walletTransaction_id = memberTrans.id  
                                 account = Model(date_entered=date_entered,transaction_type=transType ,description=description,credit=credit,debit=debit ,member_id=member_id,category=category)
                                 account.save()  #todo now {uncomment}
+                                
+                                
+                                source_id = account.id
+                                if transType == 'W': 
+                                    category = TX_WITHRAWAL
+                                    
+                                else:
+                                   category = TX_DEPOSIT
+                                if account_name == "wallet":
+                                     account_code = ACCOUNT_WALLET
+                                else:
+                                     account_code = ACCOUNT_SAVINGS
+                                amount = debit + credit
+                                saveTransHistory(account_code,request.user.id,member_id,category,source_id,amount,NEW_RECORD)
+                                print(f"tx money: {transType}")
+                                
                                 #print("after saving wallet id:",wallet.id)
                               #  parameters["wallet_id"] = wallet.id
                                 
@@ -4000,14 +4034,16 @@ def create_update_member_finance(request,account_name,member_id,account_id,trans
                 else: # update existing record in  wallet database
 
 
-                    
                             #print(f"......... else of if wallet_id == 0: ")
                             account= get_object_or_404(Model, id=account_id)
                             # wallet_transaction_type =  wallet.transaction_type
                             if account_name == "wallet":
+                                account_code = ACCOUNT_WALLET # used by savehistory
+
                                  #accountForm = WalletForm(request.POST,prefix="deposit_withdraw")
                                 accountForm = WalletForm(request.POST , instance=account,prefix="deposit_withdraw")
                             else:
+                                account_code = ACCOUNT_SAVINGS  # used by savehistory
                                 accountForm = SavingForm(request.POST , instance=account,prefix="deposit_withdraw")
                             accountForm.account = {account_name:"selected_account"} #to mark the remaining balance of an account
                             accountForm.account_id=account_id
@@ -4015,6 +4051,22 @@ def create_update_member_finance(request,account_name,member_id,account_id,trans
                             if valid and accountForm.is_valid():
                                # print(f"......past <if valid and walletForm.is_valid()>:")
                                 account =accountForm.save()
+                                source_id = account_id
+                                if transType == 'W': 
+                                    category = WITHRAWAL
+                                    amount =account.debit
+                                else:
+                                    category = DEPOSIT
+                                    amount =account.credit
+                                
+                                if account_name == "wallet":
+                                     new_account_code = ACCOUNT_WALLET
+                                     
+                                else:
+                                     new_account_code = ACCOUNT_SAVINGS
+                                data = {'amount':amount}
+                                saveTransHistory(account_code,0,0,0,source_id,data,EDIT_RECORD)
+                                print ("edit savetrans")
                                 context = { 
                                            'asset_liabities':get_all_balances(member_id),
                                             'member_info':member_info, 
@@ -4628,12 +4680,12 @@ def create_update_member(request, id=id):
                     else:
                          agree =False
                     
-                    print(f"apply: {apply},aggree: {agree} , type:{ type(agree )}")
+                    print(f"aggree: {agree} , type:{ type(agree )}")
                     
                     # add Loan to new member initialize
                   
                                 
-                    return
+                     
                         
                     #ed loan to new member initialize
                     memberForm = MemberForm(request.POST) 

@@ -285,6 +285,7 @@
                     }
            });
             $("#review-member-submit-btn").click(function () {
+                $(this).prop("disabled", true);
                 $("#member-submit").trigger("click");
 
             });
