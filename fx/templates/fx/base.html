@@ -1192,7 +1192,7 @@
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
                     console.log(x);
-                    console.log(""+ sCode);
+                    console.log("---- qrcode:"+ sCode);
                    
                     search_member_by_qrcode(sCode, "","qrcode");
 					//console.log('Scanned: ' + iQty + 'x ' + sCode);
@@ -1348,6 +1348,10 @@ function search_member_by_qrcode(customer_id, qrpassword, code) {
 
                             if (response['data'] == "Success") {
                                 console.log("response['data'] == 'Success' passed" );
+                                id = response["member_info"]["id"];
+
+                    
+                                window.location.replace("/member/"+id);
                                 // $("#venture-payment-failed-alert").hide();
                                 // $("#login").modal('hide');
                                 // $("#venture-payment-transaction-modal").modal('show');

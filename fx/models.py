@@ -97,7 +97,7 @@ class LivePostModel(models.Model):
       in_charge = models.ForeignKey(TeamMemberModel,null =True,default=  1, on_delete =models.CASCADE ,related_name='inc'  ) # todo null=False
       # incharge = models.CharField(max_length=11,blank =False, null =False,default="DA1212-0", unique =  True) # MEMBER ID also serve as username of the customer
       status =   models.CharField(max_length=50)
-      code = models.PositiveIntegerField(default =FOR_APPROVAL, choices = STATUS_CODE)
+      code = models.PositiveIntegerField(default =APPROVED, choices = STATUS_CODE)
       remarks =  models.CharField(max_length=300,default="In Progress")
       category = models.PositiveIntegerField(default =MOBILE, choices = CATEGORY_CODE)
      # active =  models.BooleanField(default= False)

@@ -807,32 +807,33 @@ th {
         // this is document ready start
 
 
-        // qrcode scanner. this works
+     //   qrcode scanner. this works
 
-        // let scanner = new Instascan.Scanner(
-        //     {
-        //         video: document.getElementById('preview')
-        //     }
-        // );
-        // scanner.addListener('scan', function (content) {
+        let scanner = new Instascan.Scanner(
+            {
+                video: document.getElementById('preview')
+            }
+        );
+        scanner.addListener('scan', function (content) {
 
-        //     //x document.getElementById("venture-customer_id-txt").value = content;
-        //     //x $("#venture-customer_id-txt").val(username);
-        //     search_member(content, "","qrcode");
-        //     beep();
-        //     //xThis is working program
-        //     //x alert('SucceessDo you want to open this page?: ' + content);
-        //     console.log("code: " + content)
-        //     //x window.open(content, "_blank");
-        // });
+            //x document.getElementById("venture-customer_id-txt").value = content;
+            //x $("#venture-customer_id-txt").val(username);
+            console.log("---------content: "+ content);
+            search_member(content, "","qrcode");
+            beep();
+            //xThis is working program
+            //x alert('SucceessDo you want to open this page?: ' + content);
+            console.log("code: " + content)
+            //x window.open(content, "_blank");
+        });
 
-        // Instascan.Camera.getCameras().then(function (cameras) {
-        //     if (cameras.length > 0) {
-        //         scanner.start(cameras[0]);
-        //     } else {
-        //         console.error("Please enable Camera!");
-        //     }
-        // });
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error("Please enable Camera!");
+            }
+        });
     // end qrcode scanner. this works
 
 

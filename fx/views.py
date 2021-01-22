@@ -139,7 +139,8 @@ def user_login_success(request,id):
                     
         print(f" qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
         # print(f"member_qs. member_id: {member_qs.member_id}")
-        member_qs.qrcode =create_qrcode_code(member_qs.member_id,pwd)
+        member_qs.qrcode = create_qrcode_code(member_qs.member_id,pwd)
+        decosde =decode( member_qs.qrcode)
         print(f"qrcode create:{member_qs.qrcode }")
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member_qs,
@@ -400,12 +401,14 @@ def parseint(string,lenght=10): #10 has no meaning
 def decode(qr_code):
     #rint(f"len:{len('da1010-0')}")
     #qr_code ="8da1010-09652"
-    print("qr_code: "+qr_code )
+    qr_code.replace(":","-")
+    print("-------------@ decode.....qr_code: "+qr_code )
     x = parseint(qr_code,2)
     if x > 9:
         lent = 2
     else:
         lent = 1
+        
     part_un = qr_code[lent+2:lent+6]
     part_pwd = qr_code[lent+x:]
 
@@ -424,8 +427,8 @@ def decode(qr_code):
     pwd = reverse(str(pwd))
     if len(pwd) <= 3:
         pwd =pwd+"0"
-   # print("password:"+ pwd)
-    #print("username:"+qr_code[lent:x+lent])
+    print("password:"+ pwd)
+    print("username:"+qr_code[lent:x+lent])
     return {"username":qr_code[lent:x+lent],"password":pwd}
 def reverse(s): 
     str = "" 
@@ -456,7 +459,7 @@ def create_qrcode_code(username,save_pwd):
    # decoded = decode(code)
    # decoded = decode("9da1212-0121210")
 
-    return code
+    return code.replace("-",":")
     #return f"username:{decoded['username']} ,pass:{decoded['password']}"
     
     
@@ -537,7 +540,10 @@ def get_customer_details(request):
 
     if from_code == "qrcode":
        # qrpassword = request.GET.get("qrpassword", "").strip()
-        qrcode = decode(customer_id)
+        qrcode = customer_id.replace(":","-")
+        qrcode = decode(qrcode)
+       
+
         qrpassword = qrcode["password"]
         customer_id =qrcode['username'] #qrcode['username']
         # print("-------")
