@@ -140,6 +140,7 @@ def user_login_success(request,id):
         print(f" qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
         # print(f"member_qs. member_id: {member_qs.member_id}")
         member_qs.qrcode =create_qrcode_code(member_qs.member_id,pwd)
+        print(f"qrcode create:{member_qs.qrcode }")
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member_qs,
                   "tx":tx,
@@ -414,7 +415,7 @@ def decode(qr_code):
     customer_id = qr_code[lent:x+lent]
     save_pwd = get_temp_pass(customer_id)
     #save_pwd =pwd.decode("utf-8")
-    #print(f"save pwd: {save_pwd} , username: {qr_code[lent:x+lent]}")
+    print(f"save pwd: {save_pwd} , customer_id: {customer_id}")
    # save_pwd = "1010"
     pwd = parseint(reverse(save_pwd))
     subtrahend = parseint(part_un) + pwd
@@ -438,18 +439,19 @@ def reverse(s):
 
 def create_qrcode_code(username,save_pwd):
    # username ="da1212-01"
+    print(f"at create_qrcode_code: {username}, pwd: {save_pwd} ")
     part_un = username[2:6].strip()
     lent = str(len(username)).strip()
-   # print(f"encode, lent:{lent}, partun:{part_un}")
+    print(f"encode, lent:{lent}, partun:{part_un}")
    # save_pwd = "1359"
     pwd =parseint( reverse(save_pwd))
     part_username = parseint(part_un)
     subtrahend = part_username + pwd
     pwd =  pwd + subtrahend
     
-   ## print(f"{lent}{username}{pwd}")
+    print(f"{lent},{username},{pwd}")
     code =f"{lent}{username}{pwd}"
- #   print(f"code:{code}")
+    print(f"code:{code}")
    # print("decoding")
    # decoded = decode(code)
    # decoded = decode("9da1212-0121210")
@@ -468,11 +470,17 @@ def create_qrcode_code(username,save_pwd):
 
 def get_temp_pass(username):
     try:   
+            username="da1212-1"
+            print(f"username:>{username}")
+           
             message ="xusername"  #invalid username
+          
             member_qs = MemberModel.objects.get(member_id=username)
+            print(f"member_qs.id:{member_qs.id}")
             pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
             pwd = base64.b64decode(pwd)
             pwd =pwd.decode("utf-8")
+            print(f"at get_temp_pass,pwd: {pwd} ,username:{username}")
             return pwd
     except Exception as e:
             print (f"def get_temp_pass: {e}, {type(e)}")
@@ -533,7 +541,7 @@ def get_customer_details(request):
         qrpassword = qrcode["password"]
         customer_id =qrcode['username'] #qrcode['username']
         # print("-------")
-        # print(f"username:{qrcode['username']}, pwd: {qrcode['password']}")
+        print(f"----username:{qrcode['username']}, pwd: {qrcode['password']}")
     else:
         password = request.GET.get("password", "").strip()
     if request.is_ajax and request.method == "GET":
@@ -4690,7 +4698,7 @@ def create_update_member(request, id=id):
                     #ed loan to new member initialize
                     memberForm = MemberForm(request.POST) 
                     if   memberForm.is_valid():
-                            print('pass member form valid!Y')
+                            print('pass member form valid!')
                             firstname= memberForm.cleaned_data['firstname'].strip().lower()
                             bday= memberForm.cleaned_data['birthday']
                             gender= memberForm.cleaned_data['gender'].strip().lower()
@@ -4724,6 +4732,7 @@ def create_update_member(request, id=id):
                             print(f"newUsername:{newUsername}")
                             
                             print("saving new member(valid).......")
+                            
                             if Success:
                                     try: #qsm
                                             qs = memberForm.save(commit = False)
@@ -4742,7 +4751,7 @@ def create_update_member(request, id=id):
                                         newPassword = newPassword.encode("utf-8")
                                         encoded = base64.b64encode(newPassword).decode("utf-8")
                                         
-                                        pwd = Tmp_PasswordModel.objects.create(member_id= id, pwd = encoded )
+                                        pwd = Tmp_PasswordModel.objects.create(member_id= qs.id, pwd = encoded )
                                     except Exception as e:
                                         Success = False
                                         print (f" Error writinf temp pass at cum: {e}") #todo here

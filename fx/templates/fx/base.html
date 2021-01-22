@@ -8,6 +8,8 @@
 
     <!-- <script src="{% static 'js/instascan.min-2.js' %}"></script> -->
     <script src="{% static 'jquery/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'js/onscan.min.js' %}"></script>
+
 
     <!-- <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
 
@@ -1182,7 +1184,27 @@
     <script>
         $(document).ready(function () {
             var member_id = "{{member_info.id}}";
+            var x=90;
 
+            (function () {
+			onScan.attachTo(document, {
+				suffixKeyCodes: [13],
+				reactToPaste: true,
+				onScan: function (sCode, iQty) {
+                    console.log(x);
+                    console.log(""+ sCode);
+                   
+                    search_member_by_qrcode(sCode, "","qrcode");
+					//console.log('Scanned: ' + iQty + 'x ' + sCode);
+				},
+				onKeyDetect: function (iKeyCode) {
+				//	console.log('Pressed: ' + iKeyCode);
+				}
+			});
+
+			// Test scanner is initialized
+			onScan.simulate(document, '1234567890123');
+		})()
 
             $(".venture-done-here").click(function (event) {
 
@@ -1275,6 +1297,127 @@
                 $(".wrapper").toggleClass("collapse");
                 $(".wrapper").css("display", "block");
             });
+
+//search_member(content, "","qrcode");
+function search_member_by_qrcode(customer_id, qrpassword, code) {
+            console.log("on search_member func");
+            console.log("customer_id: " + customer_id)
+            console.log("qrpassword: " + qrpassword)
+            customer_id = customer_id.trim().toUpperCase();
+           // var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
+
+            // var match = customer_id.match($regexname);
+            // if (match == null || match != customer_id) {
+            //     console.log("not match");
+            //     if (!ID_Info.is_name_blank) {
+            //         $("#customer-name").val("");
+            //         ID_Info.is_name_blank = true;
+            //     }
+            //     return
+            // }
+
+            // if (ID_Info.id == customer_id) {
+            //     console.log(" equal... not reading");
+            //     return;
+
+            // } else {
+            //     console.log("not equal...");
+            // }
+          //  keys["PREVIOUS-INPUT"] = "";
+          //  ID_Info.id = customer_id;
+            var data = {}
+            data['customer_id'] = customer_id;
+            if (code == "qrcode") {
+                data['from'] = 'qrcode';
+                //data['qrpassword'] = qrpassword;
+            } else {
+                data['password'] = qrpassword;
+                data['from'] = 'manual';
+            }
+            console.log("reading nowss..:" + data['from']);
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:get_customer_details_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                   // ID_Info.ON_SEARCH = false;
+                  //  console.log("videoCode:  >"+videoCode );
+                    var videoCode = 2;
+                    if( videoCode == 2) {  // pos
+
+                            if (response['data'] == "Success") {
+                                console.log("response['data'] == 'Success' passed" );
+                                // $("#venture-payment-failed-alert").hide();
+                                // $("#login").modal('hide');
+                                // $("#venture-payment-transaction-modal").modal('show');
+
+                                // name = response["member_info"]['name'].toUpperCase();
+                                // customer_id = response["member_info"]["member_id"];
+                                // $("#current-customer-lnk").text(name); 
+                                // $("#current-customer-id-lnk").text(customer_id); 
+
+                                
+                                // var id = response["member_info"]['id'];
+                                //  $("#payment-login-lnk-hidden").attr("href", "/payment/"+id.toString()+"/0/");
+
+
+                                
+                                
+                                // $("#id_customer").val(id);
+                                // console.log("id customer: " + $("#id_customer").val());
+                                // $("#customer-name").val(name); //change to: appear in summary form
+                                // cm_balance = response["cm_balance"]
+                                // if (minimum_deposit > cm_balance) {
+                                //     cm_balance = minimum_deposit;
+                                // }
+                                // $("#id_cc").prop("max", cm_balance);
+
+                                
+                                // console.log("member_info..")
+                                // console.log(response["member_info"])
+                                // ID_Info.id = customer_id;
+                                // ID_Info.is_name_blank = false;
+                                // $("#review-venture-balance-txt").val(cm_balance);
+                                // $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
+                                // $("#review-venture-customer-txt").val(name); //change to: appear in summary form
+                                // $("#venture-total-txt").focus();
+                                // changeHrefValues(response["member_info"]['id']);
+                          
+
+                            } else {
+                                console.log("else of response['data'] == 'Success' passed" );
+                            //     console.log("changeHrefValues(response[member_info]['id'])");
+                            //    // changeHrefValues(response["member_info"]['id']);
+                            //     ID_Info.id = "";
+                            //     ID_Info.is_name_blank = true;
+                            //     $("#venture-customer_id-txt").focus();
+                            //     $("#customer-name").val("");
+                            //     message = response['message'];
+                            //     //if (message == "xusername") {
+                            //     //added 4
+                            //     //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
+                            //     //} else {
+                            //     //added 4
+                            //     $("#authenticate-alert").text("Message: " + message);
+                            //     //  }
+                            //     //added 4
+                            //     $("#authenticate-alert").show();
+
+                                         }
+                    } 
+                },
+                error: function (response) {
+                     console.log("error reach:");
+                    // console.log(response);
+                }
+            });
+        }
+        //23
+
+
+
+
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
