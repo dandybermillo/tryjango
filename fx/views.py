@@ -403,6 +403,8 @@ def decode(qr_code):
     #qr_code ="8da1010-09652"
     qr_code.replace(":","-")
     print("-------------@ decode.....qr_code: "+qr_code )
+    logger.info(f" decode #1: {qr_code}") #1
+    
     x = parseint(qr_code,2)
     if x > 9:
         lent = 2
@@ -413,13 +415,19 @@ def decode(qr_code):
     part_pwd = qr_code[lent+x:]
 
     print(f"-----x:{x}, lent:{lent}, part_un:{part_un}, part_pwd:{part_pwd}") 
+    logger.info(f"#2-----x:{x}, lent:{lent}, part_un:{part_un}, part_pwd:{part_pwd}") #2
+    
     #get pass
     #print(f"------ username:   {qr_code[lent:x+lent]}")
     customer_id = qr_code[lent:x+lent]
     save_pwd = get_temp_pass(customer_id)
+    print(f"save type: {type(save_pwd)}")
+    #save_pwd =3590
     #save_pwd =pwd.decode("utf-8")
     print(f"save pwd: {save_pwd} , customer_id: {customer_id}")
+    logger.info(f"#4 save pwd: {save_pwd} , customer_id: {customer_id}") #4
    # save_pwd = "1010"
+    print("xxxxx")
     pwd = parseint(reverse(save_pwd))
     subtrahend = parseint(part_un) + pwd
     #print(f"subtrahend:{subtrahend}, pwd:{pwd}")
@@ -429,6 +437,7 @@ def decode(qr_code):
         pwd =pwd+"0"
     print("password:"+ pwd)
     print("username:"+qr_code[lent:x+lent])
+    logger.info(f"#5 username {qr_code[lent:x+lent]} , password : {pwd}") #5
     return {"username":qr_code[lent:x+lent],"password":pwd}
 def reverse(s): 
     str = "" 
@@ -532,6 +541,7 @@ def check_user(request):
    
 
 def get_customer_details(request):
+    print("--def get customer details")
     logger.info("--def get customer details")
     customer_id = request.GET.get("customer_id", "").strip().lower()
     from_code = request.GET.get("from", "manual").strip()
@@ -547,7 +557,8 @@ def get_customer_details(request):
         qrpassword = qrcode["password"]
         customer_id =qrcode['username'] #qrcode['username']
         # print("-------")
-        print(f"----username:{qrcode['username']}, pwd: {qrcode['password']}")
+        print(f",,----username:{qrcode['username']}, pwd: {qrcode['password']}")
+        logger.info(f" ,,----username:{qrcode['username']}, pwd: {qrcode['password']} ")
     else:
         password = request.GET.get("password", "").strip()
     if request.is_ajax and request.method == "GET":
@@ -563,11 +574,14 @@ def get_customer_details(request):
                     pwd = Tmp_PasswordModel.objects.get(member_id = member_qs.id).pwd
                     pwd = base64.b64decode(pwd)
                     pwd = pwd.decode("utf-8")
+                    logger.info(f"pwd: {pwd}, qrpassword: {qrpassword}")
+                    logger.info(f"pwd: {parseint(pwd)}, qrpassword: {parseint(qrpassword)}")
                     print (f"pwd: {pwd}, qrpassword: {qrpassword}")
                     print (f"pwd: {parseint(pwd)}, qrpassword: {parseint(qrpassword)}")
                     if  parseint(pwd) != parseint(qrpassword):
                          print (f"pwd not matched")
-                         logger.info(f"--if from_code == 'qrcode': password not matched")
+                         logger.warning(f"pwd not matched at parseint(pwd) != parseint(qrpassword)")
+                        
                          return JsonResponse({"message":message}, status = 200)  
             else:
                     member_id = customer_id  # request.POST.get("customer_id", "").strip().upper()

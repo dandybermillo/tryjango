@@ -1192,9 +1192,11 @@
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
                     console.log(x);
-                    console.log("---- qrcode:"+ sCode);
                    
+                    if (sCode != "121279") { 
                     search_member_by_qrcode(sCode, "","qrcode");
+                    }
+                    console.log("---- qrcode:"+ sCode);
 					//console.log('Scanned: ' + iQty + 'x ' + sCode);
 				},
 				onKeyDetect: function (iKeyCode) {
@@ -1203,7 +1205,7 @@
 			});
 
 			// Test scanner is initialized
-			onScan.simulate(document, '1234567890123');
+			onScan.simulate(document, '121279');
 		})()
 
             $(".venture-done-here").click(function (event) {
