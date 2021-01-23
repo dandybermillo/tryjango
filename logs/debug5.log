@@ -31,3 +31,4 @@ INFO 2021-01-23 21:08:34,544 views 11492 12604 pwd: 6085, qrpassword: 6085
 INFO 2021-01-23 21:08:34,544 views 11492 12604 pwd: 6085, qrpassword: 6085
 INFO 2021-01-23 21:08:34,551 basehttp 11492 12604 "GET /get_customer_details/?customer_id=8DA1212%3A112824&from=qrcode HTTP/1.1" 200 119
 INFO 2021-01-23 21:08:34,821 basehttp 11492 12604 "GET /member/2/ HTTP/1.1" 200 219806
+INFO 2021-01-23 21:20:55,011 autoreload 22852 23588 Watching for file changes with StatReloader
