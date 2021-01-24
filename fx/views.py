@@ -484,7 +484,7 @@ def create_qrcode_code(username,save_pwd):
 
 def get_temp_pass(username):
     try:   
-            username="da1212-1"
+             
             print(f"username:>{username}")
            
             message ="xusername"  #invalid username
@@ -495,6 +495,8 @@ def get_temp_pass(username):
             pwd = base64.b64decode(pwd)
             pwd =pwd.decode("utf-8")
             print(f"at get_temp_pass,pwd: {pwd} ,username:{username}")
+            logger.info(f"at get_temp_pass,pwd: {pwd} ,username:{username}")
+            
             return pwd
     except Exception as e:
             print (f"def get_temp_pass: {e}, {type(e)}")
