@@ -402,7 +402,7 @@ def parseint(string,lenght=10): #10 has no meaning
 def decode(qr_code):
     #rint(f"len:{len('da1010-0')}")
     #qr_code ="8da1010-09652"
-    qr_code.replace(":","-")
+    qr_code=qr_code.replace("x","-")
     print("-------------@ decode.....qr_code: "+qr_code )
     logger.info(f" decode #1: {qr_code}") #1
     
