@@ -109,7 +109,8 @@ class LivePostModel(models.Model):
       
       
 class JoinModel(models.Model):
-      
+    FOR_APPROVAL,APPROVED,PENDING,DELETE =(0,1,2,3)
+    STATUS_CODE = ((FOR_APPROVAL,"WAITING FOR APPROVAL"),(APPROVED,"APPROVED"),(PENDING,"PENDING"),(DELETE,"DELETED"))
     MR,MS,MRS =("Mr.","Ms.","Mrs.")
     
     gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))
@@ -120,6 +121,7 @@ class JoinModel(models.Model):
 
     birthday = models.DateField(  blank= True, null =True)
     address =  models.CharField(max_length=300,blank =True, null =True)
+    code = models.PositiveIntegerField(default =FOR_APPROVAL, choices = STATUS_CODE)
     
 
     def __str__(self):

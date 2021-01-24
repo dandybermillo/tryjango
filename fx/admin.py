@@ -101,7 +101,7 @@ class dayTransactionModelAdmin(admin.ModelAdmin):
     list_display = ['id','account_code','category','customer','in_charge','date_entered','source_type','amount','source_id'
 ]
 class JoinModelAdmin(admin.ModelAdmin):
-    list_display = ['gender','name','birthday','phone','address','email'
+    list_display = ['code','gender','name','birthday','phone','address','email'
 ]
 class MessageModelAdmin(admin.ModelAdmin):
     list_display = ['name','email','message'

@@ -2622,6 +2622,7 @@ def services(request,id):
 
 @login_required(login_url='/login/')
 def dashboard(request):
+    #note:  removed tale from context menu
     print("......dashboard.....")
    
     
@@ -2631,10 +2632,10 @@ def dashboard(request):
     table.cards=[]
       
      
-    table.cards.append({"name":"Reserve","card_name":"reserve","id":1})
-    table.cards.append({"name":"store","card_name":"store","id":1})
-    table.cards.append({"name":"Cash On Hand","card_name":"COH","id":0})
-    table.template_name = "fx/card_template.html"
+    # table.cards.append({"name":"Reserve","card_name":"reserve","id":1})
+    # table.cards.append({"name":"store","card_name":"store","id":1})
+    # table.cards.append({"name":"Cash On Hand","card_name":"COH","id":0})
+    # table.template_name = "fx/card_template.html"
     
     member_info={"id":0}
     print(f"dashboard-------------id:{request.user.id}")
@@ -2645,11 +2646,11 @@ def dashboard(request):
     print(f" member_info.user_id: {member_info}")
     context={
       "member_info":member_info,
-      "table":table,
+    #  "table":table,  
       "State":{"dashboard":"active"}
     }   
     
-    return render(request, "fx/dashboard.html", context)
+    return render(request, "fx/base.html", context)
 
 def dash(request,message):
 

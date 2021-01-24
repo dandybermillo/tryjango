@@ -806,12 +806,13 @@
                             <span class="'modal-menu icon"><i class="fa fa-user"></i></span>
                             <span class="'modal-menu title">MEMBER</span>
                         </a></li>
-
-                    <li><a id="finance-lnk" href="#modal-finance-container-menu">
+                        {% if  member_info.id > 0 %}
+                     <li><a id="finance-lnk" href="#modal-finance-container-menu">
                             <span class="icon"><i class="fa fa-money"></i></span>
                             <span class="title">FINANCE</span>
                         </a></li>
                     
+                        {% endif %}
                   
                 </ul>
             </div>
@@ -856,8 +857,7 @@
                                 <a class="menu-lnk" href="{% url 'fx:create_update_member_url' member_info.id   %}">EDIT
                                     {{member_info.gender|upper}} {{member_info.firstname|upper}}
                                     {{member_info.lastname|upper}}'S PROFILE</a>
-                                {% else%}
-                                <a class="edit-member-sub-lnk menu-lnk" style="color:#0056b3">EDIT MEMBER'S PROFILE</a>
+                                
                                 {%endif %}
                             </div>
                         </div>
@@ -878,6 +878,26 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="invalid-credential" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">QR CODE</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Invalid Credentials! </h4>
+            </div>
+            <div class="modal-footer">
+               
+            </div>
+          </div>
+        </div>
+      </div>
 
     {% if user.is_authenticated and user.is_staff %}
 
@@ -1140,10 +1160,24 @@
                         </button>
                     </div>
 
-                    <div class="form-group" style="display:block">
 
-                        <label for="recipient-name" class="col-form-label">Type name or username:</label>
-                        <input type="text" id="txt-search-member" required minlength="3"></input>
+                    <!-- <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationServer01">First name</label>
+                          <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div> -->
+
+                    <div class="form-row" style="display:block">
+                       
+                                <label for="recipient-name" class="col-form-label">Type name or username:</label>
+                                <input type="text" id="txt-search-member" required minlength="3" placeholder=""></input>
+                                <div class="valid-feedback" style="display: inline-flex;">
+                                   <span  style="float:right"> Minimum of 3 characters.  </span>
+                                </div>
+                       
                     </div>
                     <br>
 
@@ -1184,6 +1218,7 @@
     <script>
         $(document).ready(function () {
             var member_id = "{{member_info.id}}";
+            var curr_qrcode="";
             var x=90;
 
             (function () {
@@ -1207,6 +1242,10 @@
 			// Test scanner is initialized
 			onScan.simulate(document, '121279');
 		})()
+
+      
+
+
 
             $(".venture-done-here").click(function (event) {
 
@@ -1302,10 +1341,23 @@
 
 //search_member(content, "","qrcode");
 function search_member_by_qrcode(customer_id, qrpassword, code) {
+            
             console.log("on search_member func");
-            console.log("--customer_id: " + customer_id)
+            console.log("--- customer_id: " + customer_id)
             console.log("--qrpassword: " + qrpassword)
             customer_id = customer_id.trim().toUpperCase();
+            console.log("---curr_qrcode: " + curr_qrcode)
+            if (customer_id == curr_qrcode){
+                console.log(" the same customer_id")
+                return;
+            }
+            
+
+            curr_qrcode = customer_id;
+           // return;
+
+
+
            // var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
 
             // var match = customer_id.match($regexname);
@@ -1355,60 +1407,13 @@ function search_member_by_qrcode(customer_id, qrpassword, code) {
                     
                                 window.location.replace("/member/"+id);
                                 // $("#venture-payment-failed-alert").hide();
-                                // $("#login").modal('hide');
-                                // $("#venture-payment-transaction-modal").modal('show');
-
-                                // name = response["member_info"]['name'].toUpperCase();
-                                // customer_id = response["member_info"]["member_id"];
-                                // $("#current-customer-lnk").text(name); 
-                                // $("#current-customer-id-lnk").text(customer_id); 
-
                                 
-                                // var id = response["member_info"]['id'];
-                                //  $("#payment-login-lnk-hidden").attr("href", "/payment/"+id.toString()+"/0/");
-
-
-                                
-                                
-                                // $("#id_customer").val(id);
-                                // console.log("id customer: " + $("#id_customer").val());
-                                // $("#customer-name").val(name); //change to: appear in summary form
-                                // cm_balance = response["cm_balance"]
-                                // if (minimum_deposit > cm_balance) {
-                                //     cm_balance = minimum_deposit;
-                                // }
-                                // $("#id_cc").prop("max", cm_balance);
-
-                                
-                                // console.log("member_info..")
-                                // console.log(response["member_info"])
-                                // ID_Info.id = customer_id;
-                                // ID_Info.is_name_blank = false;
-                                // $("#review-venture-balance-txt").val(cm_balance);
-                                // $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
-                                // $("#review-venture-customer-txt").val(name); //change to: appear in summary form
-                                // $("#venture-total-txt").focus();
-                                // changeHrefValues(response["member_info"]['id']);
                           
 
                             } else {
-                                console.log("else of response['data'] == 'Success' passed" );
-                            //     console.log("changeHrefValues(response[member_info]['id'])");
-                            //    // changeHrefValues(response["member_info"]['id']);
-                            //     ID_Info.id = "";
-                            //     ID_Info.is_name_blank = true;
-                            //     $("#venture-customer_id-txt").focus();
-                            //     $("#customer-name").val("");
-                            //     message = response['message'];
-                            //     //if (message == "xusername") {
-                            //     //added 4
-                            //     //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
-                            //     //} else {
-                            //     //added 4
-                            //     $("#authenticate-alert").text("Message: " + message);
-                            //     //  }
-                            //     //added 4
-                            //     $("#authenticate-alert").show();
+                                console.log("invalid credential" );
+                                $("#invalid-credential").modal('show');
+                                closeSnoAlertBox("","");
 
                                          }
                     } 
@@ -1422,8 +1427,15 @@ function search_member_by_qrcode(customer_id, qrpassword, code) {
         //23
 
 
+        closeSnoAlertBox("login","danger");
 
+        function closeSnoAlertBox(code,message){
+          console.log("closeSnoalertBox===================");
+          window.setTimeout(function () {
+            $("#invalid-credential").modal('hide');
 
+          }, 10000);
+          } 
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
