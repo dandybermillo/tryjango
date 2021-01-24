@@ -137,11 +137,12 @@ def user_login_success(request,id):
         except Exception as e:
                     print (f"decode pass at login success: {e}, {type(e)}")
                     
-        print(f" qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
+        print(f"----qrcode : {create_qrcode_code(member_qs.member_id,pwd)}")
         # print(f"member_qs. member_id: {member_qs.member_id}")
         member_qs.qrcode = create_qrcode_code(member_qs.member_id,pwd)
-        decosde =decode( member_qs.qrcode)
-        print(f"qrcode create:{member_qs.qrcode }")
+        decosde = decode( member_qs.qrcode)
+        print(f"----- decosde: {decosde}")
+        print(f"------------- qrcode create:{member_qs.qrcode }")
         context ={'message':" Welcome to Fair Exchange!",
                   "member":member_qs,
                   "tx":tx,
@@ -462,13 +463,14 @@ def create_qrcode_code(username,save_pwd):
     pwd =  pwd + subtrahend
     
     print(f"{lent},{username},{pwd}")
+    username = username.replace("-","x")
     code =f"{lent}{username}{pwd}"
-    print(f"code:{code}")
+    print(f"--- code:{code}")
    # print("decoding")
    # decoded = decode(code)
    # decoded = decode("9da1212-0121210")
 
-    return code.replace("-",":")
+    return code   #.replace("-",":")
     #return f"username:{decoded['username']} ,pass:{decoded['password']}"
     
     
@@ -556,6 +558,7 @@ def get_customer_details(request):
 
         qrpassword = qrcode["password"]
         customer_id =qrcode['username'] #qrcode['username']
+        customer_id =customer_id.replace("x","-")
         # print("-------")
         print(f",,----username:{qrcode['username']}, pwd: {qrcode['password']}")
         logger.info(f" ,,----username:{qrcode['username']}, pwd: {qrcode['password']} ")
