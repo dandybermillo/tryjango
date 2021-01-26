@@ -11,6 +11,9 @@
                 <form id="construction-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="construction-form">
                   {% csrf_token %}
                   <input   type="hidden"  name="code" value="construction">
+                  <input type="hidden"  name="source_id" value="4">
+                  <input type="hidden"  name="id" value="0">
+                  
   
                   <div class="form-row">
                     <div class="form-group col-md-12">
@@ -84,6 +87,8 @@
                 <form id="mechanic-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="mechanic-form">
                   {% csrf_token %}
                   <input   type="hidden"  name="code" value="mechanic">
+                  <input type="hidden"  name="source_id" value="4">
+                  <input type="hidden"  name="id" value="0">
   
                   <div class="form-row">
                     <div class="form-group col-md-12">
@@ -177,7 +182,9 @@
                 <form id="repair-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="repair-form">
                   {% csrf_token %}
                   <input  required type="hidden"  name="code" value="repair">
-  
+                 
+                  <input type="hidden"  name="source_id" value="4">
+                  <input type="hidden"  name="id" value="0">
                   
   
                   <div class="form-row">
@@ -265,7 +272,10 @@
                 <form id="mobile-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="mobile-form">
                   {% csrf_token %}
                   <input type="hidden"  name="code" value="mobile">
-  
+
+                  <input type="hidden"  name="source_id" value="4">
+                  <input type="hidden"  name="id" value="0">
+
                   <div class="form-row">
                     <div class="form-group col-md-12">  
                       <label  required for="name-3e72" class="col-form-label">Name</label>
@@ -287,6 +297,12 @@
                    
                     <input type="email" placeholder="Enter a valid email address (optional)" id="email-3e72" name="email" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" >
                   </div></div>
+
+                  <div class="form-row">
+                    <label for="message-3e72" class="col-form-label">Description</label>
+                    <div class="form-group col-md-12"> 
+                    <textarea placeholder="Brief problem description... " rows="4" cols="50" id="message-3e72" name="description" class="form-control" required=""></textarea>
+                  </div> </div>
   
                   <div class="form-row">
                           <div class="form-group col-md-12">
@@ -371,6 +387,8 @@
                 <form id="delivery-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="delivery-form">
                   {% csrf_token %}
                   <input   type="hidden"  name="code" value="delivery">
+                  <input type="hidden"  name="source_id" value="4">
+                  <input type="hidden"  name="id" value="0">
                  
                   <div class="form-row">
                     <div class="form-group col-md-12">

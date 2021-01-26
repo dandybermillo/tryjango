@@ -1317,8 +1317,9 @@ ul {
               <form id="construction-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="construction-form">
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="construction">
-                <input  hidden  name="source_id" required type="number" value="{{member.id}}" class ="form-control">
-                
+ 
+                <input type="hidden"  name="source_id" value={{member.id}}>
+                <input type="hidden"  name="id" value="0">
                
                    
                  <input hidden value="{{member.name}}" required type="text" name="name" class ="form-control">
@@ -1371,17 +1372,12 @@ ul {
               <form id="mechanic-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="mechanic-form">
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="mechanic">
-
-                <input hidden name="source_id" required type="number" value="{{member.id}}" class ="form-control">
+                <input type="hidden"  name="source_id" value={{member.id}}>
+                <input type="hidden"  name="id" value="0">
+ 
                 <input hidden name="name" required type="text" value="{{member.name}}" class ="form-control">
 
- 
-                 
-
-
-                
-               
-                 
+         
 
                   <input type="text"  hidden value={{member.telephone}} id="phone-356a" name="phone" class="form-control u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-5" required="">
  
@@ -1458,7 +1454,8 @@ ul {
                 {% csrf_token %}
                 <input  required type="hidden"  name="code" value="repair">
 
-                
+                 <input type="hidden"  name="source_id" value={{member.id}}>
+                 <input type="hidden"  name="id" value="0">
 
                  
                   <input hidden type="text" value="{{member.name}}"  id="name-3e72" name="name" class="form-control" required>
@@ -1530,6 +1527,8 @@ ul {
               <form id="mobile-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="mobile-form">
                 {% csrf_token %}
                 <input type="hidden"  name="code" value="mobile">
+                <input type="hidden"  name="source_id" value={{member.id}}>
+                <input type="hidden"  name="id" value="0">
                   <input type="text" hidden id="name-3e72" value="{{member.name}}" name="name" class="form-control" required>
                 <div class="form-row" >
                    <label for="phone-356a" class="col-form-label">Phone</label>
@@ -1557,7 +1556,12 @@ ul {
                   </div>
                   
                 </div></div>
-  
+                <div class="form-row">
+                  <label for="message-3e72" class="col-form-label">Description</label>
+                  <div class="form-group col-md-12"> 
+                  <textarea placeholder="" rows="3" cols="50" id="message-3e72" name="description" class="form-control" required=""></textarea>
+                </div> </div>
+
                 <div class="form-row">
                   <div class="form-group col-md-12">
                 <label for="amount-3e72" class="col-form-label">Amount</label>
@@ -1582,10 +1586,10 @@ ul {
                 </div> -->
 
                 <div id="mobile-success-alert"  style="display:none;"   class="alert alert-success" role="alert">
-                  Your profile has been submitted for approval. Thank You.
+                  Your request has been submitted. Thank You.
                 </div>
                 <div id="mobile-danger-alert" style="display:none;"  class="alert alert-danger" role="alert">
-                  Error: Unable to submit this profile for approval.
+                  Sorry, we encountered technical problem.
                 </div>
                 <!-- <div class="u-align-left u-form-group u-form-submit u-form-group-5">
                   <button id = "mobile-btn" code ="mobile" name="submit" type="submit" class="u-btn u-btn-submit u-button-style u-btn-1 submit-btn">Submit</button>
@@ -1624,8 +1628,9 @@ ul {
               <form id="delivery-form"   action ="" method="POST" class="needs-validation" style="padding: 0px;" source="custom" name="delivery-form">
                 {% csrf_token %}
                 <input   type="hidden"  name="code" value="delivery">
-                <input  hidden  name="source_id" required type="number" value="{{member.id}}" class ="form-control">
-               
+ 
+                <input type="hidden"  name="source_id" value={{member.id}}>
+                <input type="hidden"  name="id" value="0">
                  
                 <input hidden value="{{member.name}}" required type="text" name="name"  class="form-control">
                
@@ -1902,7 +1907,7 @@ $(document).ready(function () {
 
  function live_update(){
         var live_post_data ={1:0,2:0,3:0,4:0,5:0};
-         console.log("liv");
+   // console.log("liv");
          if (ready == true){ 
             ready=false;
          // var  id = "{{member.id}}";
@@ -1932,8 +1937,8 @@ $(document).ready(function () {
                 });
                 
                 var i;
-                console.log("live_post_data:"+live_post_data);
-                console.log(live_post_data);
+               // console.log("live_post_data:"+live_post_data);
+               // console.log(live_post_data);
 
                 for (i = 1; i < 6; i++) {
                  
@@ -1958,6 +1963,7 @@ $(document).ready(function () {
   
  }
 
+//  --------------------------- live services --------------------------------
 
 // ------------------ my task --------------------------
 

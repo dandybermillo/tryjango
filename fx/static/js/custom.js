@@ -155,7 +155,7 @@
          console.log("---------- fom id:"+$(this).attr("form"));
          selected_form = $(this).attr("form");
          code = $(this).attr("code");
-         console.log("Selected form: " +selected_form + " " +code);
+         console.log(">>>Selected form: " +selected_form + " " +code);
        
          e.preventDefault();
          console.log("initiating ajax call!!!!!!");
@@ -197,7 +197,8 @@
              // do something with response'
              $("#profile-danger-alert").fadeIn();  // alert message
              closeSnoAlertBox(code,"danger");
-             console.log("Something went wrong! Try again.");
+             console.log("Something went wrong! Try again.response:");
+             console.log(response);
             //  $("#"+code+ "-error").text("Something went wrong! Try again.");
             //  $("#"+code+"-error").css({ display: "block" });
            },

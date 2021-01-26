@@ -2,10 +2,246 @@
 
 
 
-<!-- {% load table_tag%} -->
+ 
 
 
 <!-- collapsable -->
 {% block sub_content%}
-<!-- {%render_table table%} -->
-{% endblock sub_content%}
+   <div class ="container">
+    <div style="height: 230px;overflow: scroll;">
+
+        <table id="livePost-table"  class="table table-hover"   style ="width: 100%;border:none;width: 100%;color:#777777;padding:20px"> 
+          <thead style ="background-color:none ;">
+            <tr class="green">
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Status</th>
+            <th scope="col">Remark</th>
+            <th scope="col">Services</th>
+             
+           
+          </tr>
+        </thead>
+         <tbody id="display" style="border: none;">
+
+          
+           
+            
+         </tbody>
+       </table>
+      </div>
+
+
+   </div>
+
+   <br>
+
+   <div class="container">
+    <div style="height: 20%;overflow: scroll;">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">MEMBER ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">TEL</th>
+            <th scope="col">REMARKS / DESC</th>
+            <th scope="col">SERVICES</th>
+            
+          </tr>
+        </thead>
+        <tbody id="display-services" style="border: none;">
+
+          
+           
+            
+        </tbody>
+      </table>
+      
+      
+    </div>
+   </div>
+
+<script>
+
+
+$(document).ready(function () {
+     
+         
+     live_post_services={1:"Mobile",2:"PC Repair",3:"Mechanic",4:"Construction",5:"Delivery"}
+     var member_id ="{{member.id}}";
+     console.log("member_id:"+"{{member.member_id}}");
+     var rIndex =0;  // use by the table save the selected row
+     selected_live_code =0;
+     console.log("member id:"+ member_id);
+     var live_code = {'mobile':1, 'repair':2, 'mechanic':3, 'construction':4,'delivery':5 };
+     var ready =true,ready_services=true;
+    
+
+
+
+
+
+     setInterval(function(){
+
+       live_update();  
+
+
+       }, 10000);
+     function live_update(){
+        var live_post_data ={1:0,2:0,3:0,4:0,5:0};
+         console.log("liv");
+         if (ready == true){ 
+            ready=false;
+         // var  id = "{{member.id}}";
+         // console.log("id: "+id);
+         // url ="{ url 'fx:live_url' "+member_id + " }";
+          url ="/live/0/"+selected_live_code+"/"
+          $.ajax({
+           type: "GET",
+           url:  url,
+           
+           success: function (response) {
+             //console.log("success")
+             $("#display").empty();
+             $("#display").append
+             ready=true;
+             
+             row_ctr =0;
+            
+             response["live"].forEach(function (item) {
+                        //console.log("....item:",item);
+                        row_ctr = row_ctr + 1;
+                        //fill_table(item, row_ctr );
+                      var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +item.customer__member_id.toUpperCase()+ "</th> <td>"+item.status+"</td><td>"+item.remarks+"</td><td>"+ live_post_services[item.category] +"</td></tr>"
+                        $("#display").append(temp);
+                         live_post_data[item.category]=live_post_data[item.category]+1;
+
+                });
+                
+                var i;
+                console.log("live_post_data:"+live_post_data);
+                console.log(live_post_data);
+
+                for (i = 1; i < 6; i++) {
+                 
+                  if(live_post_data[i] > 0) {
+                     $("#"+live_post_services[i]+"-badge").text(live_post_data[i]);
+                  }else{ 
+                  $("#"+live_post_services[i]+"-badge").text("");
+                  }
+                }
+
+            
+           },
+           error: function (response) {
+             // do something with response
+             console.log("Error");
+             ready=true;
+             
+           },
+         });
+         ready=true;
+         ready_services =true;
+        }
+  
+ }
+
+
+
+
+ setInterval(function(){
+
+live_services();  
+
+
+}, 10000);
+
+
+function live_services(){
+      var live_post_data ={1:0,2:0,3:0,4:0,5:0};
+ 
+      var services={1:"MOBILE",2:"COMPUTER REPAIR",3:"MECHANIC",4:"CONSTRUCTION",5:"DELIVERY"}
+      console.log("liv");
+      if (ready_services == true){ 
+        ready_services=false;
+      // var  id = "{{member.id}}";
+      // console.log("id: "+id);
+      // url ="{ url 'fx:live_url' "+member_id + " }";
+      url ="/live_services/"
+      $.ajax({
+        type: "GET",
+        url:  url,
+        
+        success: function (response) {
+          //console.log("success")
+          $("#display-services").empty();
+          $("#display-services").append
+          ready=true;
+          
+          row_ctr =0;
+        
+          response["live"].forEach(function (item) {
+                   // console.log("....item:",item);
+                    row_ctr = row_ctr + 1;
+                    //fill_table(item, row_ctr );
+                  if (item.category == 4 || item.category == 5 ){
+                     var description =  item.message;
+
+                  }else {
+                      var description =  item.description;
+                  }
+                  var name=""
+                  console.log("source_id:  "+item.source_id);
+                  if (item.source_id == 4)
+                  {
+                     name =item.name
+                  }else
+                  {
+                     name = item.source__gender+" "+item.source__firstname+" "+item.source__lastname;
+                  }
+
+
+                  var temp = "<tr><td>"+ row_ctr+"</td> <th scope='row'>" +"<span class='fas fa-check'></span>"+ "</th>   <td>"+item.source__member_id.toUpperCase() +"</td> <td>"+ name +"</td><td>"+item.phone+"</td><td>"+description+"</td><td>"+ services[item.category]+"</td></td></tr>"
+
+                  $("#display-services").append(temp);
+                      live_post_data[item.category]=live_post_data[item.category]+1;
+
+            });
+            
+            var i;
+            console.log("live_post_data:"+live_post_data);
+            console.log(live_post_data);
+
+            for (i = 1; i < 6; i++) {
+              
+              if(live_post_data[i] > 0) {
+                  $("#"+live_post_services[i]+"-badge").text(live_post_data[i]);
+              }else{ 
+              $("#"+live_post_services[i]+"-badge").text("");
+              }
+            }
+
+        
+        },
+        error: function (response) {
+          // do something with response
+          console.log("Error");
+          ready=true;
+          
+        },
+      });
+      ready=true;
+      }
+
+}
+
+
+
+
+});
+</script>
+
+ {% endblock sub_content%}
+

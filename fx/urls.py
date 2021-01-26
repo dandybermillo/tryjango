@@ -99,6 +99,9 @@ urlpatterns = [
 
 
   path('live/<int:id>/<int:code>/', views.livePost, name="live_url"), 
+  path('live_services/', views.livePost_services, name="live_services_url"), 
+
+  
   path('my_task/<int:id>/', views.worker_task, name="worker_task_url"), 
 
    

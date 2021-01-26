@@ -108,19 +108,19 @@ class MessageModelAdmin(admin.ModelAdmin):
 ]
 
 class LoadModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','carrier','amount','source_id'
+    list_display = ['source','name','date_entered','phone','carrier','description','amount','source_id',"served","date_entered"
 ]  
 class RepairModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description','email','source_id'
+    list_display = ['name','phone','description','email','source',"served","date_entered"
 ] 
 class MechanicModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','description','email','category','source_id'
+    list_display = ['name','phone','description','email','category','source',"served","date_entered"
 ]
 class ConstructionModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','category','message','email','source_id'
+    list_display = ['name','phone','category','message','email','source',"served","date_entered"
 ]
 class DeliveryModelAdmin(admin.ModelAdmin):
-    list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message','source_id'
+    list_display = ['name','phone','address','recepient_address','recepient','recepient_phone','message','source_id',"served"
 ]    
 
 class LivePostModelAdmin(admin.ModelAdmin):

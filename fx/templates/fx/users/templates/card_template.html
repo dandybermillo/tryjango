@@ -78,14 +78,14 @@
  
 <div class="cards-container">
     {% for obj in table.cards%}
-    <div class="containers">
+    <div class="containers" style="max-width: 350px;">
         <article class="kard" style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
             <div class="left">
                  
                 <div class="title">{{obj.name}}</div>
                 {% getbalance obj.id True obj.model_name as balance %}
                 
-                <div class="value" > <button class="card-account" value="{{obj.model_name}}" style="border:none;color:blue;background-color: transparent;">
+                <div class="value" > <button class="card-account" value="{{obj.model_name}}" style="border:none;color:blue;background-color: transparent;font-size: 22px;">
                         {{balance.balance}} </button>
                         
                     <input type="hidden" id="{{obj.name}}-cash_in" value="{{balance.transaction.cash_in}}">

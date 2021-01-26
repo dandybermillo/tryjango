@@ -138,7 +138,11 @@ class DeliveryModel(models.Model):
     recepient_address = models.CharField(max_length=124,blank =False, null =False)
     recepient_phone = models.CharField(max_length=124 ,blank =True, null =True)
     message = models.CharField(max_length=300 ,blank =True, null =True)
-    source_id = models.IntegerField(default =0) 
+     
+    served =  models.BooleanField(default= False)
+    source = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+    date_entered = models.DateField(auto_now_add=True, blank= True, null =True) #auto_now_add = True
+    
     
 #     pickup =models.DateField(  blank= True, null =True)
 #     identification =models.PositiveIntegerField(default = DRIVER ,choices = cat)
@@ -150,6 +154,7 @@ class MessageModel(models.Model):  #contact
     email= models.EmailField(max_length=254,blank= True,null =True)
     message = models.CharField(max_length=300,blank= False,null =False)
     source_id = models.IntegerField(default =0) #could be member id
+    served =  models.BooleanField(default= False)
 
 # ----------------  services --------------------
 class ConstructionModel(models.Model):
@@ -160,7 +165,10 @@ class ConstructionModel(models.Model):
        email= models.EmailField(max_length=254,blank= True,null =True)
        category = models.PositiveIntegerField(default = WORKER ,choices = cat)
        message =  models.CharField(max_length=300,blank= False,null =False)
-       source_id = models.IntegerField(default =0) 
+         
+       served =  models.BooleanField(default= False)
+       source = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+       date_entered = models.DateField(auto_now_add=True, blank= True, null =True) #auto_now_add = True
 
        
  
@@ -173,7 +181,11 @@ class MechanicModel(models.Model):
        address = models.CharField(max_length=300)
        category = models.PositiveIntegerField(default = AUTO ,choices = cat)
        description =  models.CharField(max_length=300)
-       source_id = models.IntegerField(default =0) 
+       served =  models.BooleanField(default= False)
+       source = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+       date_entered = models.DateField(auto_now_add=True, blank= True, null =True) #auto_now_add = True
+        
+       
 
        
 
@@ -182,7 +194,11 @@ class RepairModel(models.Model):
        phone = models.CharField(max_length=124)
        email= models.EmailField(max_length=254,blank= True,null =True)
        description =  models.CharField(max_length=300)
-       source_id = models.IntegerField(default =0) 
+    #   source_id = models.IntegerField(default =0) 
+       served =  models.BooleanField(default= False)
+       source = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+
+       date_entered = models.DateField(auto_now_add=True, blank= True, null =True) #auto_now_add = True
       
  
 class LoadModel(models.Model):
@@ -192,8 +208,13 @@ class LoadModel(models.Model):
     phone = models.CharField(max_length=124)
     carrier = models.PositiveIntegerField(default = SMART ,choices = cat) 
     email= models.EmailField(max_length=250,blank= True,null =True)
+    description =  models.CharField(max_length=200,blank= True,null =True)
     amount = models.FloatField(default =0 )   
-    source_id = models.IntegerField(default =0) 
+  #  source_id = models.IntegerField(default =0) 
+    source = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL  ) # todo null=False
+    date_entered = models.DateField(auto_now_add=True, blank= True, null =True) #auto_now_add = True
+
+    served =  models.BooleanField(default= False)
  
        
 

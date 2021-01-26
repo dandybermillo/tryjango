@@ -9,6 +9,7 @@
     <!-- <script src="{% static 'js/instascan.min-2.js' %}"></script> -->
     <script src="{% static 'jquery/jquery-3.5.1.js' %}"></script>
     <script src="{% static 'js/onscan.min.js' %}"></script>
+    <script class="u-script" type="text/javascript" src="{% static '/js/custom.js' %}" defer=""></script>
 
 
     <!-- <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
@@ -1175,7 +1176,7 @@
                                 <label for="recipient-name" class="col-form-label">Type name or username:</label>
                                 <input type="text" id="txt-search-member" required minlength="3" placeholder=""></input>
                                 <div class="valid-feedback" style="display: inline-flex;">
-                                   <span  style="float:right"> Minimum of 3 characters.  </span>
+                                   <span  style="padding:5px"> Minimum of 3 characters.  </span>
                                 </div>
                        
                     </div>
@@ -1343,10 +1344,10 @@
 function search_member_by_qrcode(customer_id, qrpassword, code) {
             
             console.log("on search_member func");
-            console.log("--- customer_id: " + customer_id)
+            console.log("--- qr code: " + customer_id)
             console.log("--qrpassword: " + qrpassword)
             customer_id = customer_id.trim().toUpperCase();
-            console.log("---curr_qrcode: " + curr_qrcode)
+            console.log("--- previous _qrcode: " + curr_qrcode)
             if (customer_id == curr_qrcode){
                 console.log(" the same customer_id")
                 return;

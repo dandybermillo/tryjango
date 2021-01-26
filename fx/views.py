@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
-from fx.models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel
+from fx.models import MechanicModel,LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel,RepairModel,DeliveryModel,ConstructionModel,LoadModel
 from fx.models import Change_Table
 from .forms import WalletForm,SavingForm
 
@@ -182,6 +182,63 @@ def livePost(request,id,code):
 
        print(f"ERROR,LivePost: e:{e}")
        return JsonResponse({"live":{}},status =400) 
+def livePost_services(request):
+   # print("live services")
+      #    MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
+ 
+
+    try:
+                    # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
+                #print(id)
+                
+                data=[]
+                qs = RepairModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+                 
+               
+                for row in qs:
+                    row["category"] = 2
+                     
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    
+                    data.append(row)
+                qs = DeliveryModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","message").filter( served = False)
+                
+                
+                for row in qs:
+                    row["category"] = 5
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    
+                    data.append(row) 
+                qs = ConstructionModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","message").filter( served = False)
+                for row in qs:
+                    row["category"] = 4
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    data.append(row) 
+                
+                qs = MechanicModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+                for row in qs:
+                    row["category"] = 3
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    data.append(row) 
+
+                qs = LoadModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+                    
+                for row in qs:
+                    row["category"] = 1
+                    # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                   # print(f"row:{row}")
+                    data.append(row) 
+                
+                
+                 
+            
+            
+            
+                return JsonResponse({"live":data},status =200) 
+    except Exception as e:
+
+       print(f"ERROR,LivePost: e:{e}")
+       return JsonResponse({"live":{}},status =400) 
 def worker_task(request,id):
     print(f"id:: {id}")
     try:
@@ -235,7 +292,7 @@ class LoginView(View):
 class Process_Data_View(View):
     def post(self, request, *args, **kwargs):
         print("processing data!")
-        lists =["customer__member_id","source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address","remarks","status","member_id"]
+        lists =["customer__member_id","id","source_id","gender","firstname","lastname","middlename","name","address","phone","telephone","message","description","email","birthday","amount","carrier","amount","recepient_phone","recepient","recepient_address","remarks","status","member_id"]
         #request.post: <QueryDict: {'csrfmiddlewaretoken': ['e6zJhjN1iSYstCJmxrZ9kHM4VeEWB6SVlCFIQpPHA0stQEcWWPyd6sPeAtfuFMtP'], 'code': ['delivery'], 'name': ['da'], 'phone': ['232323232323'], 'email': ['dandybermillo@yahoo.com'], 'address': ['pili'], 'recepient': ['dad rec'], 'recepient_phone': ['232323232323'], 'recepient_address': ['asdfsf'], 'message': ['hi there']}>
         filter_fields ={}
         id=0 # use id instead of source_id or vice versa
@@ -247,7 +304,7 @@ class Process_Data_View(View):
                 print('Value %s' % (value) )
                 # print(f'Value: {value}') in Python >= 3.7
         print(f"filter fields: {filter_fields}")
-        return
+        
         # print("process data....")
         # name = request.POST.get('name')
         # phone = request.POST.get('phone')
@@ -259,15 +316,21 @@ class Process_Data_View(View):
         
         source_id = request.POST.get('source_id',"0").strip()
         source_id = int(source_id)
-        if source_id <=0:
-             id =  request.POST.get('id',"0").strip()
-             id = int(id)
-             source_id = id
+        
+        #just added
+        id =  request.POST.get('id',"0").strip()
+        id = int(id)
+        # if source_id == 0:
+        #      id =  request.POST.get('id',"0").strip()
+        #      id = int(id)
+        #      source_id = id
         
        # if code=- "live"
        # source_id = int(source_id)
-        
-        
+        del filter_fields["id"]
+        print(f"filter fields: {filter_fields}")
+       
+         
          
         model_name =Model_data_list.get(code) 
         
@@ -275,9 +338,10 @@ class Process_Data_View(View):
        
         print(f"id= {id} code :{code}, source_id: {source_id} ,type: {type(source_id)} , modelname: {model_name}")
         
-        if source_id  <=0:
-             return
-        elif source_id == 0:
+        # if source_id  < 0:
+        #      return JsonResponse({"type":'error', "message":"source_id  < 0"})
+             
+        if id <= 0:  
             
                     try:
                         print("ADDING...........")
@@ -2647,10 +2711,10 @@ def dashboard(request):
     context={
       "member_info":member_info,
     #  "table":table,  
-      "State":{"dashboard":"active"}
+     # "State":{"dashboard":"active"}
     }   
     
-    return render(request, "fx/base.html", context)
+    return render(request, "fx/dashboard.html", context)
 
 def dash(request,message):
 
@@ -4406,7 +4470,7 @@ def display_member_info(request, id):
         table_card =obj()
         table_card.cards=[]
         
-        table_card.cards.append({"name":"CC ACCT","card_name":"Cc","id":id,"model_name":"cc"})
+        table_card.cards.append({"name":"CM ACCT","card_name":"Cc","id":id,"model_name":"cc"})
         table_card.cards.append({"name":"WALLET ACCT","card_name":"E-Wallet","id":id,"model_name":"wallet"})
         table_card.cards.append({"name":"SAVINGS ACCT","card_name":"Saving","id":id,"model_name":"saving"})
         table_card.cards.append({"name":"LOAN BALANCE","card_name":"Payment","id":id,"model_name":"payment"})
