@@ -239,9 +239,10 @@ th {
             </div>
                <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
-                    <div hidden>
-                        {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
-                        {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
+                    <div >
+
+                        {{venture.in_charge}} {{venture.source_type}}cust{{venture.customer}}{{venture.percent}}
+                       {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
                     
 
@@ -258,9 +259,13 @@ th {
                         {%endif%}
                     </div>
                     
+                    <div id="customer-info-alert" class="alert alert-primary" role="alert">
+                      <span bold> Customer: </span> <span id="customer-info-alert-text">_</span> <span style="float:right" id="customer-info-alert-success-text">x</span>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
+                            <label for="venture-total-txt" class="col-form-label">SALES TOTAL<span
                                     class="asteriskField">*</span> </label>
                             <input style="font-size:30px" id="venture-total-txt" required type="number" step='any' min=5 max="10000"
                                 class="mid-size form-control" value="{{venture.totalCost}}">
@@ -270,6 +275,13 @@ th {
                             <label for="main-source-drop" class="col-form-label">SOURCE<span
                                     class="asteriskField">*</span></label>
                             <div class="dropdown" id="main-source-drop">
+
+                                <input type="type" id="source-type" name="source_type" value="{{venture.source_type}}">
+                                <input type="type" id="note" name="note" value="{{venture.note}}">
+                                <input type="type" id="customer" name="customer" value="{{venture.customer}}">
+                                <input type="type" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
+
+
                                 <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
@@ -290,7 +302,7 @@ th {
                                 <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
                                     id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     name="percent" style="border:1px solid #ced4da;width:100%;">
-                                    {{venture.percent.value}}%
+                                    {{venture.percent}}%
                                 </button>
                                 <!-- .custom {
                                     width: 78px !important;
@@ -335,13 +347,13 @@ th {
                         <div class="form-group col-md-6">
                             <label for="id_amount" class="col-form-label">Php </label>
                             <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
-                            <input type="number" name="amount" step="any" class="numberinput form-control" required="" id="id_amount" style="font-size: 30px;" min="0" max="10000">
+                            <input type="number" name="amount" step="any" class="numberinput form-control" required="" id="id_amount" name="amount" style="font-size: 30px;" min="0" max="10000">
                             
                         </div>
-                        {{ venture.amount}}
+                         
                         <div class="form-group col-md-6">
                             <label for="id_cc" class="col-form-label">Co. Money </label>
-                            <input type="number" name="cc" step="any" class="form-control" required="" id="id_cc" min="0" max="5000">
+                            <input type="number" name="cc" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
                         </div>
 
                     </div>
@@ -368,6 +380,14 @@ th {
                                 value="Others">
                             <label class="form-check-label" for="checkOther"> Other</label>
                         </div>
+
+
+                        <div>
+
+                            <textarea style="font-size: 1rem;display: none;" rows="1" name="venture_note" class="form-control"
+                                id="venture-description-txt" name="note" maxlength="100">{{venture.note}}</textarea>
+
+                        </div>
                         </div>
                          
 
@@ -376,7 +396,7 @@ th {
                             <label for="tender-txt" class="col-form-label">TENDERED</label>
                             <div  id="main-source-drop">
                                 <input type="text"   class="small-size  review form-control"
-                                id="tender-txt" value="{{venture.tender}}">
+                                id="tender-txt" name="tender" value="{{venture.tender}}">
                             </div>
                         </div>
                          
@@ -416,17 +436,7 @@ th {
                     </div>
 
                 
-                    <div class="form-row">
-
-
-                        <div class="form-group col-md-6">
-
-                            <textarea style="font-size: 1rem;display: none;" name="venture_note" class="form-control"
-                                id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
-
-                        </div>
-                    </div>
-
+                    
 
 
 
@@ -548,7 +558,7 @@ th {
                         <a class="hide btn btn-secondary btn-md"
                             href="{%  url 'fx:po_url'   %}">Clear This Form </a>
                         <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
-                        <input hidden id="venture-submit-btn" type="submit" name="Submit" value="SAVE" />
+                        <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="SUBMIT" />
                         {% if venture.id > 0 %}
                         <a hidden id="venture-delete"
                             href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
@@ -571,7 +581,58 @@ th {
     </div>
 
 
+<!-- here. -->
+<div id="report-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!-- <div id="report-info-alert" class="alert alert-primary" role="alert">
+                <span bold> : </span> <span id="report-alert-text">_</span> <span style="float:right" id="report-success-text">x</span>
+              </div> -->
 
+              <form>
+                <div class="form-group row">
+                    <label for="salestotal-reps" class="col-sm-3 col-form-label">Sales Total</label>
+                    <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="salestotal-reps" value="_">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tendered-reps" class="col-sm-3 col-form-label">Tendered</label>
+                    <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="tendered-reps" value="_">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="change-reps" class="col-sm-3 col-form-label">Change</label>
+                    <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="change-reps" value="_">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="deposit-reps" class="col-sm-3 col-form-label">Deposit</label>
+                    <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="deposit-reps" value="_">
+                    </div>
+                </div>
+                 
+        </form>
+         
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-primary">EDIT</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -715,8 +776,7 @@ th {
 
 
         </div>
-
-       
+        
  
 </body>
 
@@ -774,6 +834,8 @@ th {
     })();
 
     $(document).ready(function () {
+       
+
         var venture_id = parseInt("{{venture.id}}");
         
         var rIndex =0;  // use by the table save the selected row
@@ -855,7 +917,7 @@ th {
                     console.log("Acccess granted");
                     // $("#user-page-lnk").click();
                     id = response["id"];
-                    window.location.replace("/user/"+id);
+                  //  window.location.replace("/user/"+id);
                     } else if (response["type"] === "error") {
                     
                     $("#login-danger-alert").fadeIn();  // alert message
@@ -1179,6 +1241,74 @@ $("#payment-login-lnk").click(function () {
 
         }
 
+        $("#venture-submit-btn").click(function (e) {
+            
+            var form = document.querySelector('#pos-form');
+            var reportVal = form.checkValidity();
+            if (reportVal == false) {
+                console.log("validating......pos form");
+                // $("#venture-payment-failed-alert").show();
+                form.reportValidity();
+                return;
+            }
+        // $("#login-form").submit(function (e) {
+            console.log("------------submit form init-----------");
+            e.preventDefault();
+
+
+            $.ajax({
+                    type: "POST",
+                    url: "/post_test/",
+
+                    data: $("#pos-form").serialize(),
+                    success: function (response) {
+                        // do something with response
+                        response["result"]; // equals 'Success or failed';
+                        response["message"]; // equals 'you"re logged in or You messed up';
+                        data = response["data"];
+                        if (response["type"] === "success") {
+                        
+                        var sales_total  = $("#venture-total-txt").val();
+
+                       
+                        $("#salestotal-reps").val(sales_total);
+                        //$("#tender-txt").val()
+                        $("#tendered-reps").val($("#tender-txt").val().trim());
+                        $("#change-reps").val($("#change-txt").val().trim());
+                        $("#deposit-reps").val( $("#deposit-cash-drop").text());
+ 
+                        $("#pos-form").trigger("reset");
+                        $("#report-modal").modal('show');
+                        // $("#login-success").text(response["message"]);
+                        // $("#login-success").css({ display: "block" });
+                        console.log("Success!!!!");
+                        // $("#user-page-lnk").click();
+                      
+                        console.log("Data");
+                        console.log(data);
+                      //  window.location.replace("/user/"+id);
+                        } else if (response["type"] === "error") {
+                        
+                        $("#login-danger-alert").fadeIn();  // alert message
+                        //("login","danger");
+                        
+                        console.log("Acccess denied");
+
+                        }
+                    },
+                    error: function (response) {
+                        // do something with response
+                        console.log("Something went wrong! Try again..");
+                    //   $("#login-error").text("Something went wrong! Try again.");
+                    $("#login-danger-alert").fadeIn();  // alert message
+                   // closeSnoAlertBox("login","danger");
+                    },
+                    });
+
+
+
+         });
+
         function search_member(customer_id, qrpassword, code) {
             console.log("on search_member func");
             console.log("customer_id: " + customer_id)
@@ -1230,13 +1360,14 @@ $("#payment-login-lnk").click(function () {
                                 console.log("response['data'] == 'Success' passed" );
                                 $("#venture-payment-failed-alert").hide();
                                 $("#login").modal('hide');
-                                $("#venture-payment-transaction-modal").modal('show');
+                               // $("#venture-payment-transaction-modal").modal('show');
 
                                 name = response["member_info"]['name'].toUpperCase();
-                                $("#id_customer").val(response["member_info"]['id']);
+                                $("#customer").val(response["member_info"]['id']);
                                 console.log("id customer: " + $("#id_customer").val());
-                                $("#customer-name").val(name); //change to: appear in summary form
                                 cm_balance = response["cm_balance"]
+                                cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance;  
+                                $("#customer-info-alert-text").text(cust_info);
                                 if (minimum_deposit > cm_balance) {
                                     cm_balance = minimum_deposit;
                                 }
@@ -1247,10 +1378,11 @@ $("#payment-login-lnk").click(function () {
                                 console.log(response["member_info"])
                                 ID_Info.id = customer_id;
                                 ID_Info.is_name_blank = false;
-                                $("#review-venture-balance-txt").val(cm_balance);
-                                $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
-                                $("#review-venture-customer-txt").val(name); //change to: appear in summary form
-                                $("#venture-total-txt").focus();
+                                // $("#review-venture-balance-txt").val(cm_balance);
+                                // $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
+                                // $("#review-venture-customer-txt").val(name); //change to: appear in summary form
+                                // $("#venture-total-txt").focus();
+                                $("#venture-submit-btn").css({display:"block"});
                                 changeHrefValues(response["member_info"]['id']);
                           
 
@@ -1658,7 +1790,7 @@ $("#payment-login-lnk").click(function () {
 
             }
             keys["SOURCE"] = source_type;
-            $("#id_source_type").val(source_type);
+            $("#source-type").val(source_type);
 
             var previous_account_name = keys["previous-selected-account"]; // previous account  [wallet,cc,saving]
             console.log("account:" + previous_account_name);
@@ -1709,8 +1841,10 @@ $("#payment-login-lnk").click(function () {
        //
         
         $("#venture-done").click(function () {
+            // console.log(" tender:" +$("#tender-txt").val());
+            // console.log(" tender text:" +$("#tender-txt").text());
             videoCode = 2
-            value = $("#deposit-cash-drop").val();
+            value = $("#deposit-cash-drop").text();
             console.log("value:"+ value);
             var form = document.querySelector(".needs-validation");
             var reportVal = form.checkValidity();
@@ -1763,35 +1897,35 @@ $("#payment-login-lnk").click(function () {
 
             }
             console.log("after - desc value:" + desc);
-            $("#venture-description-txt").prop("desc", desc);
+            $("#note").val( desc);
 
             //$("#venture-description-txt").val().trim()
             $("#login").modal('show');
             $("#authenticate-alert").hide();
-            $("#review-venture-date-txt").val($("#venture-date-txt").val());
-            $("#review-venture-total-txt").val($("#venture-total-txt").val());
-            $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
-            $("#review-venture-cc-txt").val($("#id_cc").val());
-            $("#review-venture-amount-txt").val($("#id_amount").val());
-            $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
-            $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
-            $("#review-venture-description-txt").val(description);
-            $("#venture-payment-failed-alert").hide();
-            var change =parseFloat( $("#change-txt").val());
-            console.log("change: "+change);
-            if (change > 0 ) {
-                var saveOption =  $("#deposit-cash-drop").text().trim();
-                $("#review-change").text("P "+ change);
-                console.log("saveOption: "+saveOption);
-                if (saveOption != "SELECT OPTION") { 
+            // // $("#review-venture-date-txt").val($("#venture-date-txt").val());
+            // // $("#review-venture-total-txt").val($("#venture-total-txt").val());
+            // // $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
+            // // $("#review-venture-cc-txt").val($("#id_cc").val());
+            // // $("#review-venture-amount-txt").val($("#id_amount").val());
+            // // $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
+            // // $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
+            // // $("#review-venture-description-txt").val(description);
+            // // $("#venture-payment-failed-alert").hide();
+            // // var change =parseFloat( $("#change-txt").val());
+            // // console.log("change: "+change);
+            // // if (change > 0 ) {
+            // //     var saveOption =  $("#deposit-cash-drop").text().trim();
+            // //     $("#review-change").text("P "+ change);
+            // //     console.log("saveOption: "+saveOption);
+            // //     if (saveOption != "SELECT OPTION") { 
                      
-                       $("#review-saveOption").text(saveOption);
-                }else{
+            // //            $("#review-saveOption").text(saveOption);
+            // //     }else{
 
-                    $("#review-saveOption").text("");
-                }
+            // //         $("#review-saveOption").text("");
+            // //     }
 
-            }
+            // // }
 
 
 

@@ -9,7 +9,18 @@
 {% block css_style %}
 
 <style>
-   
+
+#venture-total-txt,#id_cc,#id_amount,#change-txt,#tender-txt,#source-cash-drop{
+ border:none;
+ border-bottom: 1px solid gray;
+ font-weight: 900;
+  
+
+}
+.hidden{
+
+ display: none;
+}
 td, th{
  
 height:55px !important;
@@ -237,9 +248,25 @@ th {
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*). Thank you.
             </div>
+            <div>
+                id: {{member_info.id}}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="customer-radio" id="member-radio"  value="member" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Member
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="customer-radio" id="walk-in-radio"  value="walk-in" {% if member_info.id == 4 %} checked {%endif%}>
+                    <label class="form-check-label" for="exampleRadios2">
+                      Walk-IN
+                    </label>
+                  </div>
+                  <br/>
+            </div>
                <form action="" class="needs-validation" id="form_venture" method="POST">
                     {% csrf_token %}
-                    <div hidden>
+                    <div  >
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}{{venture.seller_source_id}}
                         {{ venture.date_entered}}{{venture.seller}}{{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
@@ -262,11 +289,11 @@ th {
                         <div class="form-group col-md-6">
                             <label for="venture-total-txt" class="col-form-label">TOTAL COST<span
                                     class="asteriskField">*</span> </label>
-                            <input style="font-size:30px" id="venture-total-txt" required type="number" step='any' min=5 max="10000"
+                            <input  id="venture-total-txt" required type="number" step='any' min=5 max="10000"
                                 class="mid-size form-control" value="{{venture.totalCost}}">
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <div id="div-source" class="form-group col-md-3">
                             <label for="main-source-drop" class="col-form-label">SOURCE<span
                                     class="asteriskField">*</span></label>
                             <div class="dropdown" id="main-source-drop">
@@ -284,13 +311,13 @@ th {
                             </div>
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <div id="div-percent" class="form-group col-md-3">
                             <label for="main-percent-drop" class="col-form-label">PERCENTAGE </label>
                             <div class="dropdown" id="main-percent-drop">
                                 <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
                                     id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     name="percent" style="border:1px solid #ced4da;width:100%;">
-                                    {{venture.percent.value}}%
+                                    {% if member_info.id == 4 %} 100% {%else%}  {{venture.percent.value}}% {%endif%}
                                 </button>
                                 <!-- .custom {
                                     width: 78px !important;
@@ -335,7 +362,7 @@ th {
                             <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
                             {{ venture.amount|as_crispy_field}}
                         </div>
-                        <div class="form-group col-md-6">
+                        <div id="div-cc" class="form-group col-md-6">
                             {{ venture.cc|as_crispy_field}}
                         </div>
 
@@ -363,6 +390,13 @@ th {
                                 value="Others">
                             <label class="form-check-label" for="checkOther"> Other</label>
                         </div>
+
+                        <div>
+
+                            <textarea style="font-size: 1rem;display: none;" rows="2" name="venture_note" class="form-control"
+                                id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
+
+                        </div>
                         </div>
                          
 
@@ -383,7 +417,7 @@ th {
                         </div>
                         </div>
                           
-                        <div class="form-group col-md-2 has-change-group">
+                        <div id="div-deposit" class="form-group col-md-2 has-change-group">
                             <label for="main-source-drop" class="col-form-label">DEPOSIT CHANGE TO</label>
                             <div class="dropdown" id="main-source-drop">
                                 <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
@@ -414,12 +448,7 @@ th {
                     <div class="form-row">
 
 
-                        <div class="form-group col-md-6">
-
-                            <textarea style="font-size: 1rem;display: none;" name="venture_note" class="form-control"
-                                id="venture-description-txt" maxlength="100">{{venture.note}}</textarea>
-
-                        </div>
+                        
                     </div>
 
 
@@ -585,27 +614,28 @@ th {
                         <form>
                             <div class="form-row">
                             </div>
-                            <div class="form-row">
+                            <div class="review form-group row">
                                 <label id="review-venture-customer-lbl" for="review-venture-customer-txt"
-                                    class="col-form-label">Customer</label>
-                                <div class="form-group col-md-7">
+                                    class="col-sm-1 col-form-label">Customer</label>
+                                <div class="col-sm-5">
 
                                     <input id="review-venture-customer-txt" type="text" readonly
                                         class="mid-size  form-control">
                                 </div>
-                                <label for="review-venture-customer_id-txt" class="col-form-label">ID<span
+                                
+                                <label for="review-venture-customer_id-txt" class="col-sm-1 col-form-label non-member">ID<span
                                         class="asteriskField">*</span></label>
-                                <div class="form-group col-md-3">
+                                <div class="col-md-5 non-member">
 
                                     <input id="review-venture-customer_id-txt" type="text"
                                         name="venture-customer-member_id" readonly class="mid-size form-control"
                                         style="border:1px solid #ced4da;">
                                 </div>
                             </div>
-                            <div class="review form-group row">
+                            <div class="review form-group row non-member">
                                 <label for="review-venture-balance-txt" class="col-sm-1 col-form-label"
                                     style="padding-left: 8px">CM Balance:</label>
-                                <div class="form-group col-md-7">
+                                <div class="col-sm-5">
                                     <input id="review-venture-balance-txt" type="text" readonly
                                         class="mid-size form-control">
                                 </div>
@@ -618,10 +648,10 @@ th {
                                     <input type="text" readonly class="mid-size review form-control"
                                         id="review-venture-total-txt" value="">
                                 </div>
-                                <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
+                                <label for="review-venture-source-txt" class="col-sm-1 col-form-label non-member">Source<span
                                         class="asteriskField">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
+                                    <input type="text" readonly class="small-size  review form-control non-member"
                                         id="review-venture-source-txt" value="">
                                 </div>
 
@@ -638,38 +668,40 @@ th {
                             <div class="review form-group row">
 
 
-                                <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">PHP<span
+                                <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">AMOUNT (PHP)<span
                                         class="asteriskField">*</span></label>
                                 <div class="col-sm-5">
                                     <input type="text" readonly class="small-size  review form-control"
                                         id="review-venture-amount-txt" value="">
                                 </div>
-                                <label for="review-venture-cc-txt" class="col-sm-1 col-form-label">Comm. Money<span
+                                <label for="review-venture-cc-txt" class="col-sm-1 col-form-label non-member">Comm. Money<span
                                         class="asteriskField">*</span></label>
 
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 non-member">
                                     <input type="text" readonly class="small-size  review form-control"
                                         id="review-venture-cc-txt" value="">
                                 </div>
 
                             </div>
 
+                           
+
                             <div class="review form-group row">
                                 <label for="review-venture-description-txt"
                                     class="col-sm-1 col-form-label">Description</label>
-                                <div class="col-sm-11">
-                                    <input type="text" readonly class="small-size  review form-control"
-                                        id="review-venture-description-txt" value="">
+                                <div class="col-sm-5">
+                                    <textarea  readonly class="small-size  review form-control"
+                                       rows="3" cols="50" id="review-venture-description-txt" value=""> </textarea>
                                 </div>
+                                <!-- <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required=""></textarea> -->
 
 
 
                             </div>
                             <div class="review form-group row">
                                 <div class="col-sm-11">
-                                <br>
 
-                                <h3>CHANGE <span id ="review-change" class="badge badge-secondary">P 0.0</span> <span> </span>  <span id ="review-saveOption" class="badge badge-secondary"></span></h3>
+                                <h2 style="color: red">CHANGE <span id ="review-change" class="badge badge-secondary">P 0.0</span> <span> </span>  <span id ="review-saveOption" class="badge badge-secondary"></span></h2>
                                 </div>
 
 
@@ -677,7 +709,7 @@ th {
 
                             </div>
 
-                            <div class="review-venture-modal-footer" style="text-align:right">
+                            <div class="review-venture-modal-footer">
                                 <button id="review-back-venture-btn" type="button" class="btn btn-secondary">Go
                                     Back</button>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -771,6 +803,7 @@ th {
 
     $(document).ready(function () {
         var venture_id = parseInt("{{venture.id}}");
+        var walk_in = false;
         
         var rIndex =0;  // use by the table save the selected row
         var product_code ="";  // use by the table save the selected row
@@ -784,7 +817,7 @@ th {
 
         //
         $("#pos-delete-btn").prop("disabled",true);
-        $("#id_amount").css("font-size","30px")
+       // $("#id_amount").css("font-size","30px")
 
 
         // set customer id text fixed
@@ -809,31 +842,31 @@ th {
 
      //   qrcode scanner. this works
 
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview')
-            }
-        );
-        scanner.addListener('scan', function (content) {
+        // let scanner = new Instascan.Scanner(
+        //     {
+        //         video: document.getElementById('preview')
+        //     }
+        // );
+        // scanner.addListener('scan', function (content) {
 
-            //x document.getElementById("venture-customer_id-txt").value = content;
-            //x $("#venture-customer_id-txt").val(username);
-            console.log("---------content: "+ content);
-            search_member(content, "","qrcode");
-            beep();
-            //xThis is working program
-            //x alert('SucceessDo you want to open this page?: ' + content);
-            console.log("code: " + content)
-            //x window.open(content, "_blank");
-        });
+        //     //x document.getElementById("venture-customer_id-txt").value = content;
+        //     //x $("#venture-customer_id-txt").val(username);
+        //     console.log("---------content: "+ content);
+        //     search_member(content, "","qrcode");
+        //     beep();
+        //     //xThis is working program
+        //     //x alert('SucceessDo you want to open this page?: ' + content);
+        //     console.log("code: " + content)
+        //     //x window.open(content, "_blank");
+        // });
 
-        Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error("Please enable Camera!");
-            }
-        });
+        // Instascan.Camera.getCameras().then(function (cameras) {
+        //     if (cameras.length > 0) {
+        //         scanner.start(cameras[0]);
+        //     } else {
+        //         console.error("Please enable Camera!");
+        //     }
+        // });
     // end qrcode scanner. this works
 
 
@@ -1106,7 +1139,25 @@ $("#payment-login-lnk").click(function () {
 
 
         }
+
+
+       
+        $("#btn-auth-walk-in").click(function () {
+            $("#id_customer").val(4);
+            $("#percent-drop").prop("readonly",true);
+            $("#id_cc").prop("readonly",true);
+            $("#id_amount").prop("readonly",true);
+            $("#main-source-drop").prop("readonly",true);
+            var total_amount = parseFloat($("#venture-total-txt").val());
+            console.log("total amount: "+total_amount);
+            $("#id_amount").val(total_amount);
+
+
+
+        });
+
  //search_member(content, "","qrcode");
+      
         function search_member(customer_id, qrpassword, code) {
             console.log("on search_member func");
             console.log("customer_id: " + customer_id)
@@ -1234,8 +1285,71 @@ $("#payment-login-lnk").click(function () {
                 }
             });
         }
-        //23
+        //231
+        $('input[type=radio][name=customer-radio]').change(function () {
+            console.log("check radio");
+            res =$("#member-radio").attr("checked");
+
+            var radioValue = $("input[name='customer-radio']:checked").val();
+            console.log("radio value: "+ radioValue );
+
+             
+            source_type ="";
+            if(radioValue =="walk-in"){
+                walk_in =true;
+                source_type = "K";
+               
+                $("#source-cash-drop").text("CASH");
+                $("#source-cash-drop").prop('disabled', true);
+                $("#percent-drop").prop('disabled', true);
+                $("#id_cc").prop('readonly', true);
+                $("#percent-drop").text("100%");
+               $("#id_cc").val(0);
+              //  total_cost = parseFloat($("#venture-total-txt").val());
+              //  $("#id_amount").val(total_cost);
+
+                
+              //  $("#source-cash-drop").text("CASH");
+               // $("#id_cc").trigger("keyup");
+                $("#div-deposit").css('display','none');
+                // hide element on review form
+                $(".non-member").toggleClass("hidden"); 
+                $("#id_customer").val(4);
+                $("#review-venture-customer-txt").val("WALK-IN");
+
+
+
+
+            }else{
+                walk_in =false;
+                source_type = "W";
+              //  account_name = "WALLET ACCOUNT";
+                $("#source-cash-drop").prop('disabled', false);
+                $("#percent-drop").prop('disabled', false);
+                $("#id_cc").prop('disabled', false);
+                $("#percent-drop").text("95%");
+             //   $("#venture-total-txt").trigger("keyup");
+                $("#div-deposit").css('display','block');
+                $(".non-member").toggleClass("hidden");
+
+            }
+            $("#venture-total-txt").trigger("keyup");
+          
+            keys["SOURCE"] = source_type;
+            $("#id_source_type").val(source_type);
+            // console.log("check:  "+ res);
+           
+            // if (this.checked) {
+            //     $("#venture-description-txt").show();
+
+            // } else {
+            //     $("#venture-description-txt").val("");
+            //     $("#venture-description-txt").hide();
+            // }
+
+        });
         $('input[type=checkbox][name=checkOther]').change(function () {
+            console.log("check box");
             if (this.checked) {
                 $("#venture-description-txt").show();
 
@@ -1324,6 +1438,8 @@ $("#payment-login-lnk").click(function () {
             $("#id_amount").val(amount);
             cc = total_cost - amount;
             $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
+
+            console.log(">>>>> id_cc: "+ $("#id_cc").val());
             if (keys["SOURCE"] != 'W') {  //cash: K
                 console.log("in keys[SOURCE]: " + keys["SOURCE"]);
                 $("#venture-total_owing-txt").val("P " + amount);
@@ -1331,13 +1447,20 @@ $("#payment-login-lnk").click(function () {
                 $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
             }
             compute_change();
+            console.log("----- id_cc: "+$("#id_cc").val() );
         });
 
         $("#id_amount").on("keyup", function () {
+            console.log("amount..keyp");
             console.log(" #id_amount is on");
             amount = parseFloat($(this).val());
             if (isNaN(amount)) {
                 amount = 0;
+            }
+
+            
+            if (walk_in ==true){
+                return;
             }
             total_cost = parseFloat($("#venture-total-txt").val());
             var cc = total_cost - amount;  // Math.round(total_cost - amount);
@@ -1370,6 +1493,7 @@ $("#payment-login-lnk").click(function () {
 
         });
         $("#id_cc").on("keyup", function () {
+            console.log("id_cc keyup");
             var percent = parseFloat($("#percent-drop").text());
             if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
                 percent = 95;
@@ -1645,7 +1769,7 @@ $("#payment-login-lnk").click(function () {
 
 
         
-       //
+       //231
         
         $("#venture-done").click(function () {
             videoCode = 2
@@ -1705,7 +1829,14 @@ $("#payment-login-lnk").click(function () {
             $("#venture-description-txt").prop("desc", desc);
 
             //$("#venture-description-txt").val().trim()
-            $("#login").modal('show');
+             console.log("----- walk:"+walk_in);
+            if (walk_in == false)
+            {
+                $("#login").modal('show');
+            }else{
+                $("#venture-payment-transaction-modal").modal('show');
+            }
+           
             $("#authenticate-alert").hide();
             $("#review-venture-date-txt").val($("#venture-date-txt").val());
             $("#review-venture-total-txt").val($("#venture-total-txt").val());

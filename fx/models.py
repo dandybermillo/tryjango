@@ -229,7 +229,7 @@ class dayTransactionModel(models.Model):
    cat =((TX_TRANSACTION,"REGULAR TRANSACTION"),(TX_PAYMENT,"PAYMENT"),(TX_VENTURE,"VENTURE"),(TX_DEPOSIT,"DEPOSIT"),(TX_WITHRAWAL,'WITHRAWAL'),(TX_GROCERY,'GROCERY'),(TX_SERVICES,'SERVICES'),(TX_LOAN_PAYMENT,"LOAN PAYMENT"))
    CASH,WALLET,SAVING=(0,1,2)
    source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
-   ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
+   NO_ACCOUNT,ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4,5)
    account_cat =((ACCOUNT_SAVINGS,"SAVING ACCOUNT"),(ACCOUNT_WALLET,"WALLET ACCOUNT"),(ACCOUNT_CC,"CC ACCOUNT"),(ACCOUNT_VENTURE,"VENTURE ACCOUNT"),(ACCOUNT_PAYMENT,"PAYMENT ACCOUNT"))
 
 #    account_cat = source_type_cat =((CASH,"CASH"),(WALLET,"WALLET ACCOUNT"),(SAVING,"SAVING ACCOUNT"))
@@ -473,7 +473,7 @@ class VentureModel(models.Model):
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='in_charge' ) # todo null=False
       transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
       category = models.PositiveIntegerField(default = 2 ,choices = cat) # 0 means  debit or credit in general
-      amount = models.FloatField(verbose_name ="PHP",blank =False,null =False)
+      amount = models.FloatField(verbose_name ="AMOUNT (PHP)",blank =False,null =False)
       cc = models.FloatField(verbose_name ="CO. MONEY",default =0)
       percent = models.FloatField(default =95)
       source_type = models.CharField(max_length=1,default = 'K',choices = sources)  #c: cash

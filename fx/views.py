@@ -63,6 +63,7 @@ logger = logging.getLogger("django")
 #error logging end
 
 #register = template.Library()
+walk_in_id = 4
 minimum_deposit = 0
 maximum_deposit =10000
 limits ={"minimum_deposit":minimum_deposit,"maximum_deposit": maximum_deposit}
@@ -81,7 +82,7 @@ TX_PAYMENT,TX_LOAN_PAYMENT,TX_VENTURE,TX_TRANSACTION,TX_DEPOSIT,TX_WITHRAWAL,TX_
 
 NEW_RECORD, EDIT_RECORD, DELETE_RECORD =(0,1,2)
 SOURCE_TRADING,SOURCE_VENTURE,SOURCE_REGULAR =(1,2,3)
-ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4)
+NO_ACCOUNT,ACCOUNT_SAVINGS,ACCOUNT_WALLET,ACCOUNT_CC,ACCOUNT_VENTURE,ACCOUNT_PAYMENT =(0,1,2,3,4,5)
 CAT_REG_TRANSACTION,CAT_TRANSFER,CAT_GROCERY,CAT_LOAN,CAT_VENTURE,CAT_TRADE =(0,1,2,5,6,7)
 source_funds_cc= {SOURCE_VENTURE:"VentureCcModel",SOURCE_TRADING:"CcModel",SOURCE_REGULAR:"CcModel"}
 source_funds_pm= {SOURCE_VENTURE:"VentureWalletModel",SOURCE_TRADING:"WalletModel",SOURCE_REGULAR:"WalletModel"}
@@ -185,48 +186,77 @@ def livePost(request,id,code):
 def livePost_services(request):
    # print("live services")
       #    MOBILE,COMPUTER_REPAIR,MECHANIC,CONSTRUCTION,DELIVERY =(1,2,3,4,5)
- 
+    walk_in =4
 
     try:
                     # live = LivePostModel.objects.all().values("status","remarks","customer__member_id").filter(customer_id = id,active =True)
                 #print(id)
                 
                 data=[]
-                qs = RepairModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+               #         tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk")   #.values('createdate').annotate(count=Count('id'))
+                filter_fields = { }
+                qs = RepairModel.objects.all().values("source_id","served","name","source__id","source__member_id","source__gender","source__firstname","source__lastname","source__telephone","phone","description").filter( served = False,date_entered__lte=datetime.today(),date_entered__gt=datetime.today()-timedelta(days=2))
                  
                
                 for row in qs:
                     row["category"] = 2
+                    print(f"------id: {row['source__id']}")
+                    if row['source__id'] == walk_in :
+                        del row["source__firstname"]
+                        del row["source__lastname"]
+                        del row["source__gender"]
+                        del row["source__telephone"]
                      
                     # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
                     
                     data.append(row)
-                qs = DeliveryModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","message").filter( served = False)
+                qs = DeliveryModel.objects.all().values("source_id","served","name","source__id","source__member_id","source__gender","source__firstname","source__lastname","source__telephone","phone","message").filter(  served = False,date_entered__lte=datetime.today(),date_entered__gt=datetime.today()-timedelta(days=2))
                 
                 
                 for row in qs:
                     row["category"] = 5
+                    if row['source__id'] == walk_in :
+                        del row["source__firstname"]
+                        del row["source__lastname"]
+                        del row["source__gender"]
+                        del row["source__telephone"]
                     # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
                     
                     data.append(row) 
-                qs = ConstructionModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","message").filter( served = False)
+                qs = ConstructionModel.objects.all().values("source_id","served","name","source__id","source__member_id","source__gender","source__firstname","source__lastname","source__telephone","phone","message").filter(  served = False,date_entered__lte=datetime.today(),date_entered__gt=datetime.today()-timedelta(days=2))
                 for row in qs:
                     row["category"] = 4
                     # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    if row['source__id'] == walk_in :
+                        del row["source__firstname"]
+                        del row["source__lastname"]
+                        del row["source__gender"]
+                        del row["source__telephone"]
                     data.append(row) 
                 
-                qs = MechanicModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+                qs = MechanicModel.objects.all().values("source_id","served","name","source__id","source__member_id","source__gender","source__firstname","source__lastname","source__telephone","phone","description").filter(  served = False,date_entered__lte=datetime.today(),date_entered__gt=datetime.today()-timedelta(days=2))
                 for row in qs:
                     row["category"] = 3
                     # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
+                    if row['source__id'] == walk_in :
+                        del row["source__firstname"]
+                        del row["source__lastname"]
+                        del row["source__gender"]
+                        del row["source__telephone"]
                     data.append(row) 
 
-                qs = LoadModel.objects.all().values("source_id","served","name","source__member_id","source__gender","source__firstname","source__lastname","phone","description").filter( served = False)
+                qs = LoadModel.objects.all().values("source_id","served","name","source__id","source__member_id","source__gender","source__firstname","source__lastname","source__telephone","phone","description").filter(  served = False,date_entered__lte=datetime.today(),date_entered__gt=datetime.today()-timedelta(days=2))
                     
                 for row in qs:
                     row["category"] = 1
+                    
                     # row ={"id":row["customer__member_id"],"status":row.status,"remarks":qs.remarks}
                    # print(f"row:{row}")
+                    if row['source__id'] == walk_in :
+                        del row["source__firstname"]
+                        del row["source__lastname"]
+                        del row["source__gender"]
+                        del row["source__telephone"]
                     data.append(row) 
                 
                 
@@ -712,7 +742,7 @@ def get_customer_details(request):
 # def handler_404(request, exception):
 #    return page_not_found(request, exception, template_name="404.html")
 def get_member_info(id,code):
-      
+     print("--- at get_member_info")
      member_info = ""
      try:
             member_info =  MemberModel.objects.get(id = id) 
@@ -737,7 +767,7 @@ def cc_manager_create(source_id,description,transaction_type,debit,credit,member
         Model = apps.get_model('fx', model_name)
         try:
                 #create_update_cc("CREATE",amount,customer_id,0,"GROCERY")
-            create_cc_qs = Model(source_id=source_id,description = description ,transaction_type =transaction_type, debit =debit,credit =credit,member =member,category = category,date_entered = date.today())
+            create_cc_qs = Model(source_id=source_id,description = description ,transaction_type =transaction_type, debit =debit,credit =credit,member_id =member,category = category,date_entered = date.today())
             create_cc_qs.save() 
             id=create_cc_qs.id
             print(f"code:{code}, id:{id}")
@@ -1253,58 +1283,348 @@ def po(request):
      
      
 # @login_required(login_url='/venture_login/')
+#pos
 class pos_test(View):
     def post(self, request, *args, **kwargs):
-            username = request.POST.get('username').strip()
-            password = request.POST.get('password').strip()
- 
-            member_id =customer_id
-            
-            print (f"user: {request.user}")
-            if request.user.is_staff and request.user.is_active:
-                print (f"user: {request.user}")
-                staff_info=""
-                try:
-                    staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
-                    print(f"..staff_info:{staff_info.name}")
-                except Exception as e:
-                # raise Http404("Sorry. User id does not exist!")
-                    print(f"def cuv @exception, id: None , e:{e}")
-                    logger.warning(f"def cuv @exception,e:{e}" ) 
-            else:
-                    print("going to unauthorized user page")  
-                    return redirect('/venture_login/') #
-                # return redirect('/unauthorized_user/') #
+         
+                member = True
+                if request.user.is_staff and request.user.is_active:
+                            print (f"user: {request.user}")
+                            staff_info=""
+                            try:
+                                staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                                print(f"..staff_info:{staff_info.name}")
+                            except Exception as e:
+                            # raise Http404("Sorry. User id does not exist!")
+                                print(f"def cuv @exception, id: None , e:{e}")
+                                logger.warning(f"def cuv @exception,e:{e}" ) 
+                else:
+                                print("going to unauthorized user page")  
+                                return redirect('/venture_login/') #
+                            # return redirect('/unauthorized_user/') #
+                source_type = request.POST.get('source_type',"").strip()
+                amount =float(request.POST.get('amount',"0").strip())
+                cc = float(request.POST.get('cc','0').strip())
+                note = request.POST.get('note',"").strip()
+                customer =parseint(  request.POST.get('customer','0').strip())
+                print(f" type cust: {type(customer)}")
+                 
+                venture_id = parseint( request.POST.get('venture_id',"0").strip())
+                change_deposit_to  = request.POST.get("change_deposit_to","").strip()
+                
+                change_amount  = request.POST.get("change","0").strip()
+               
+                if change_amount == "":
+                        change_amount =0
+                else:
+                        change_amount =float(change_amount)
+                #----------------b
+                print(f"---source_type: {source_type} amount: {amount}, cc: {cc}, note: {note}, customer: {customer}, venture_id:{venture_id}, change_deposit_to: {change_deposit_to}")
+                print (f"--- user: {request.user}")
+                #-----------------e
+                
+                ##request_action =request_action.strip().lower()
+                ##model_name =model_list.get(request_action) 
+                Model = apps.get_model('fx', "VentureModel")
+                all_valid = True 
+                default_percentage = 95  #
+                member_id = customer
+                member_info= {}
+                print("1---------------1")
+                # if member_id > 0:
+                #        print("====")
+                #        member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
+                print("2---------------")
+                
+                category = CAT_VENTURE
+                description ="GROCERY"
+                customer_source_fund = SOURCE_REGULAR
+                seller_dest_fund =SOURCE_VENTURE
+                
+              # print(f"--- member_info: {member_info}")
+                
+                
+                
+            ## ??
+              
+                print(f"type venture_id: {type(venture_id)}")
+                if venture_id > 0:
+                    print(">>>>>>>>>>>>>>>")
+                    venture_qs= Model.objects.get(id=venture_id)
+                 
+              #  print(f"venture: {venture_qs}")
+                customer_id = 0
+                asset_balance={}
+               # customer_info = get_member_info(cust,"#request.method == 'POST'. 1") #request.method == 'POST'. 1
+                print(f"--------------")
+                
+                if venture_id > 0:
+                            old_venture_qs =  get_object_or_404(Model, id=venture_id)
+                            if  old_venture_qs.source_type =="W": #1
+                                    old_amount = old_venture_qs.amount
+                            old_source_type = old_venture_qs.source_type
+                            old_cc = old_venture_qs.cc
+                            old_customer_cc_id = old_venture_qs.customer_cc_id
+                            old_customer_id =  old_venture_qs.customer_id
+                            old_note_id = old_venture_qs.note_id
 
-        
-            ##request_action =request_action.strip().lower()
-            ##model_name =model_list.get(request_action) 
-            Model = apps.get_model('fx', "VentureModel")
-            all_valid = True 
-            default_percentage = 95  #
-            member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
-        # print(f"model_name:{model_name}")
-            #return
-            return
-            request_action = "venture"
-            if  request_action == "venture":
-                    category = CAT_VENTURE
-                    description ="GROCERY"
-                    customer_source_fund = SOURCE_REGULAR
-                    seller_dest_fund =SOURCE_VENTURE
+                            #+
+                            if request_action == "trade":
+                                old_role_type=  old_venture_qs.role_type
+                            else:
+                                old_role_type =""
+
+                            if old_note_id > 0:
+                                    try:
+                                        old_note = NoteModel.objects.get(id = old_note_id ).note
+                                    except Exception as e:
+                                        print(f"getting note: {e}")
+                            else:
+                                    old_note = ""
+                else:
+                            #old_amount = 0 
+                            old_customer_id = customer
+                            old_cc = 0
+                if old_customer_id != customer:
+                            all_valid = False
+                            print("Technical problem encountered while saving record.")
+                            messages.error(request, f"Message: Technical problem encountered while saving record.")
+                if member:
+                        cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
+                print("-=")
+                if member and  int(cc) > cc_running_balance + old_cc:
+                            all_valid = False
+                            if running_balance > 2000: ##?? y 2000
+                                messages.error(request, f"Message: Insufficient funds in  Community Coin(CC) Account!")
+                            else:
+                                running_balance ='{:,.2f}'.format(running_balance)
+                                messages.error(request, f"Message: Please enter an CC amount that is no more than {running_balance}")
+                print("xxx")
+                if member and source_type =="W":
+                        running_balance = get_running_finance_balance("wallet","member_id",customer)["running_balance"]
+                        if  amount > running_balance + old_amount:
+                                all_valid = False
+                            
+                                if running_balance > 2000:
+                                        messages.error(request, f"Message: Insufficient funds in Wallet Account!")
+                                else:
+                                        if running_balance > 0:
+                                                running_balance ='{:,.2f}'.format(running_balance)
+                                                messages.error(request, f"Message: Please enter an amount that is no more than P{running_balance}")
+                                        else:
+                                                messages.error(request, f"Message: Sorry. Wallet Account is empty!")
+                                print("..all_valid:",all_valid)
+                else:
+                         customer_source_id = 0
+                print(f"--- cc_running_balance: {cc_running_balance}")
+                print(f"-----customer_source_id:{customer_source_id} ")
+                
+                if venture_id <=0:
+                                
+                                    if all_valid:
+                                        print(".....ventureForm is valid!")
+                                        Success = True
+                                        venture_id_change =venture_id
+                                        venture_id = 0
+                                        #----------------b
+                                        #inside:[if venture_id <=0]
+                                        print(f" amount: {amount}, cc: {cc}, note: {note}, customer: {customer}, venture_id:{venture_id}, change_deposit_to: {change_deposit_to}")
+                                       # print(f"cateory: {cateory},transaction_type:{ transaction_type}, source_type: {source_type} percent: {percent}")
+                                        print (f"user: {request.user}")
+                                        
+                                        #-----------------e
+                                        
+                                        try:
+                                               
+                                                venture_qs = Model(customer_id = customer,category =category,
+                                                amount = amount,cc = cc,transaction_type ="W",date_entered = date.today(),
+                                                source_type =source_type,in_charge_id=staff_info.id,flag=1)
+
+                                                venture_qs.save()
+                                                venture_id =venture_qs.id
+                                                print("Success...")
+                                        except Exception as e:
+                                            Success = False
+                                            print(f"creating venture transaction: {e}")
+                                        filter_fields = {} 
+                                    
+                                                
+                                             
+                                        if source_type =="W": #create new record. A
+                                                customer_source_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"#create new record. A")
+                                                filter_fields["customer_source_id"] =customer_source_id
+                                                if customer_source_id <=0:
+                                                    Success = False
+                                                # if Success: #create new record. B
+                                                #        # filter_fields["customer_source_id"] =customer_source_id
+                                                #         seller_source_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"create new record. B")
+                                                #         if seller_source_id <=0:
+                                                #             Success = False
+                                                #         if Success:
+                                                #             filter_fields["seller_source_id"] =seller_source_id
+                                                        
+                                        # print(f"...seller:,customer:{customer}, customer: {customer} ,source_type:{source_type} ")
+                                        # print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
+                                        
+                                        if cc > 0: #create new record. C
+                                                customer_cc_id = cc_manager_create(venture_id,description,"W",cc,0,customer,category,date.today(),customer_source_fund,"create new record. C")
+                                                filter_fields["customer_cc_id"]= customer_cc_id
+                                                if customer_cc_id <= 0:
+                                                    Success = False
+                                                # if Success: #create new record. D
+                                                #     seller_cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"create new record. D")
+                                                #     filter_fields["seller_cc_id"]= seller_cc_id
+                                                #     if seller_cc_id <= 0:
+                                                #         Success = False
+                                                print(f"cc recording success:Success {Success}")
+
+                                        else:
+                                            filter_fields["customer_cc_id"] =0
+                                        note_id = 0
+                                        response = {}    
+                                        print(f"today filter_fields: {filter_fields} ")
+                                                
+                                                
+                                                
+                                                        
+                                    
+                                        if note != "":
+                                            response = create_or_update_venture_note(0,note,2) #todo 
+                                            if response["Success"] and response["result"] > 0 :
+                                                note_id  = response["result"]
+                                        else:
+                                            note_id = 0  
+                                        filter_fields["note_id"] = note_id
+                                        # if response:
+                                        #      print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
+                                        # print(f"filter_fields: {filter_fields}")
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        if Success:
+                                                Success = True
+                                                try:
+                                                    venture_result = Model.objects.filter(id = venture_id).update( **filter_fields)
+                                                    print(f"venture: filter_fields: {filter_fields} ,venture_result: {venture_result}")
+                                                    
+                                                except Exception as e:
+                                                        print (f"error result:{e}, {type(e)}")
+                                                        Success = False
+                                                #11-25
+                                                if Success and change_amount > 0:
+                                                        print(f"============ change amnt:{change_amount}")
+                                                        response = add_regular_transaction(0,change_deposit_to,customer,"Change Deposit","D",change_amount,0,venture_id)
+                                                        if response["Success"] :
+                                                        #  response = add_change_transaction(venture_id_change, response["id"],venture_id,amount)
+                                                               print("success................")
+                                                else:
+                                                    print(f"ELSE:  change_amount:{change_amount}")
+                                                    
+                                                if Success: #save day transaction for the cashier
+                                                   # pass
+                                                  # def saveTransHistory(account_code,user_id,member_id,category,source_id,data,code):
+                                                  
+                                                        if source_type =="W":
+                                                              acct_code = ACCOUNT_WALLET
+                                                        elif source_type =="S":
+                                                              acct_code =ACCOUNT_SAVINGS
+                                                        else: 
+                                                              acct_code = NO_ACCOUNT
+                                                        saveTransHistory(acct_code,request.user.id,member_id,category,venture_id,amount,NEW_RECORD)
+                                                     #   saveTransHistory(request.user.id,member_id,TRANS_VENTURE,venture_id,description, amount,NEW_RECORD) # new entry
+                                                        print("-----saveTransHistory updated")
+                                                
+                                                
+                                                
+                                                    
+                                            # if Success and source_id > 0:
+                                            #       wallet_qs = WalletModel.objects.filter( id = source_id).update(source_id = venture_id)
+                                            # if Success and cc_create_result > 0:
+                                            #    cc_qs = CcModel.objects.filter( id = cc_create_result).update(source_id = venture_id)
+                                        else:
+                                               print("Unable to complete the ventureModel update above") 
+                                               logger.warnin("Unable to complete the ventureModel update above")       
+                                        print(f"Success: {Success}")
+                                        msg ="Customer Payment has been successfully recorded!"
+                                        print("returnin...")
+                                        
+                                        #here
+                                        data ={"amount":venture_qs.amount,'cc':venture_qs.cc,"source":venture_qs.source_type}
+                                        return JsonResponse({"type":'success', "message":"Completed!","data":data})
+
+                                       # return redirect(f'/success/create_update_venture_result/{customer.id}/{venture_id}/{msg}/{request_action}')
+                                        
+
+                                    else:
+                                        print(".....ventureForm is not valid!")
+                                        print(f"all_valid: {all_valid}")
+                                        amount  = request.POST.get("amount",0) 
+                                        cc  = request.POST.get("cc",0) 
+                                        ventureForm.totalCost =  float(amount) + float(cc)
+                                        context = {
+                                                'asset_balance':asset_balance,
+                                                    'venture': ventureForm,   
+                                                    'limits':limits,
+                                                    'customer_info':customer_info,
+                                                    'member_info':member_info,
+                                                }
+                                        print("returnin...")
+                                        return render(request, 'fx/venture/pos.html', context)
+                
+    print("returnin... last")           
+             
             
-        ## seller = member_info.id
-            if venture_id > 0: #edit
-                venture_qs= get_object_or_404(Model, id=venture_id)
-            customer_id = 0
-            asset_balance={}
-            print(f"venture_id:{venture_id}, category:{category}")
+            
 
        
 
             
 
-#def cuv
+#def cuv2
+
+@login_required(login_url='/venture_login/')
+
+def create_update_venture1(request,customer_id,venture_id ):
+    print (f"user: {request.user}")
+    default_percentage = 95  #
+    if request.user.is_staff and request.user.is_active:
+        print (f"user: {request.user}")
+        staff_info=""
+        member_info={}
+        customer_info={}
+        try:
+            staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+            print(f"..staff_info:{staff_info.name}")
+        except Exception as e:
+           # raise Http404("Sorry. User id does not exist!")
+            print(f"def cuv @exception, id: None , e:{e}")
+            logger.warning(f"def cuv @exception,e:{e}" ) 
+    else:
+            print("going to unauthorized user page")  
+            return redirect('/venture_login/') #
+           # return redirect('/unauthorized_user/') #
+
+    asset_balance ={}
+    if  venture_id > 0:
+                cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+                if maximum_deposit < cc_balance: 
+                    cc_balance = maximum_deposit
+                asset_balance ={"cc_balance":cc_balance}
+    venture ={'transaction_type':'W','customer':0,'source_type':'K','percent':default_percentage,"venture_id":0}  
+
+    context = {
+                    'asset_balance':asset_balance,
+                    'venture': venture,  
+                   # 'limits':limits,
+                    'member_info':member_info,
+                    'customer_info':customer_info,
+                }
+    return render(request, 'fx/venture/venture_test.html', context)
+
 @login_required(login_url='/venture_login/')
 def create_update_venture(request,customer_id,venture_id ):
     member_id =customer_id
@@ -1337,6 +1657,16 @@ def create_update_venture(request,customer_id,venture_id ):
     ##request_action =request_action.strip().lower()
     ##model_name =model_list.get(request_action) 
     Model = apps.get_model('fx', "VentureModel")
+    customer = int(request.POST.get("customer",-1))
+    if customer == walk_in_id:
+        member = False
+    else:
+        member = True
+        
+    
+    
+    
+    print(f" customer: {customer}--- member: {member}")
     all_valid = True 
     default_percentage = 95  #
     member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
@@ -1356,7 +1686,7 @@ def create_update_venture(request,customer_id,venture_id ):
     asset_balance={}
     print(f"venture_id:{venture_id}, category:{category}")
 
-    if venture_id > 0:
+    if member and venture_id > 0:
                 cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
                 if maximum_deposit < cc_balance: 
                     cc_balance = maximum_deposit
@@ -1377,7 +1707,8 @@ def create_update_venture(request,customer_id,venture_id ):
                             ventureForm.id= venture_qs.id
                             ventureForm.totalCost = venture_qs.amount + venture_qs.cc
                             ventureForm.request_action =request_action
-                            asset_balance["cc_balance"]= asset_balance["cc_balance"] + venture_qs.cc
+                            if member:
+                                   asset_balance["cc_balance"] = asset_balance["cc_balance"] + venture_qs.cc
                             #print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
                             if venture_qs.note_id > 0: #note has been provided
                                     try:
@@ -1440,8 +1771,11 @@ def create_update_venture(request,customer_id,venture_id ):
         
         print(f"change_deposit_to:{change_deposit_to}, change_amount:{change_amount}")
         customer  = int(request.POST.get("customer",-1))
+         
+        
         amount  = request.POST.get("amount",0) 
-        cc  = request.POST.get("cc",0) 
+        cc  = request.POST.get("cc","00") 
+        print(f"---------- cc: {cc}")
         percent  = float(request.POST.get("percent",-1)) #delete
         # customer  = int(request.POST.get("customer",-1))
         seller  = int(request.POST.get("seller",-1))
@@ -1450,7 +1784,7 @@ def create_update_venture(request,customer_id,venture_id ):
         note = request.POST.get("venture_note", "").strip()
 
         print(f".......note: {note}")
-        print(f" , customer:{customer}..note:{note},cc: {cc} ,amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
+        print(f"--- customer:{customer},cust type: {type(customer)}..note:{note},cc: {cc} cc-type:{type(cc)} ,amount:{amount}, customer: {customer}, type: {type(customer)} ,source_type:{source_type} ")
          
         running_balance =-1
         old_amount = 0
@@ -1494,11 +1828,12 @@ def create_update_venture(request,customer_id,venture_id ):
                     old_cc = 0
         if old_customer_id != customer:
                     all_valid = False
+                    print("Technical problem encountered while saving record.")
                     messages.error(request, f"Message: Technical problem encountered while saving record.")
-
-        cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
+        if member:
+            cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
         
-        if  len(cc.strip()) > 0 and float(cc) > cc_running_balance + old_cc:
+        if member and len(cc.strip()) > 0 and float(cc) > cc_running_balance + old_cc:
                     all_valid = False
                     if running_balance > 2000:
                          messages.error(request, f"Message: Insufficient funds in  Community Coin(CC) Account!")
@@ -1506,7 +1841,7 @@ def create_update_venture(request,customer_id,venture_id ):
                         running_balance ='{:,.2f}'.format(running_balance)
                         messages.error(request, f"Message: Please enter an CC amount that is no more than {running_balance}")
 
-        if source_type =="W":
+        if member and source_type =="W":
             running_balance = get_running_finance_balance("wallet","member_id",customer)["running_balance"]
             if  len(amount.strip()) > 0 and float(amount) > running_balance + old_amount:
                 all_valid = False
@@ -1523,6 +1858,7 @@ def create_update_venture(request,customer_id,venture_id ):
         else:
             customer_source_id = 0
     # EDIT EXISTING RECORD (POST)---------------------------------------------------------------
+        ##here
         if venture_id >  0:
                         
                        
@@ -1572,7 +1908,7 @@ def create_update_venture(request,customer_id,venture_id ):
                                                 # if Success:
                                                 #       Success = account_manager_update(venture_qs.seller_source_id, 0,amount,seller_dest_fund,"@customer:account_manager_update:")
                                 
-                                if old_customer_cc_id <=0: # save new record if there is not existing cc yet
+                                if  old_customer_cc_id <=0: # save new record if there is not existing cc yet
                                         if cc > 0: 
                                                 cc_id = cc_manager_create(venture_id,description,"W",cc,0,customer,category,date.today(),customer_source_fund,"@customer:cc_manager_create")
                                                 filter_fields["customer_cc_id"] = cc_id
@@ -1769,7 +2105,7 @@ def create_update_venture(request,customer_id,venture_id ):
                         cc  = request.POST.get("cc",0) 
                         ventureForm.totalCost =  float(amount) + float(cc)
                         context = {
-                            'asset_balance':asset_balance,
+                                   'asset_balance':asset_balance,
                                     'venture': ventureForm,   
                                     'limits':limits,
                                     'customer_info':customer_info,

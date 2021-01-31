@@ -406,6 +406,7 @@ class VentureForm(forms.ModelForm):
         return amount 
     def clean_cc(self,*args, **kwargs):
         cc = self.cleaned_data.get('cc')
+        print(f">---- cc: {cc}")
         if cc == None:
             raise forms.ValidationError("Please enter an Community Coin (CC) that is more than zero.")
         if cc < minimum_deposit or cc >  maximum_deposit:
