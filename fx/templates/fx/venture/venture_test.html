@@ -549,16 +549,16 @@ th {
 
                         {%if post_data %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:po_url'    %}">Clear This Form </a>
+                            href="{% url 'fx:po_url'    %}">X</a>
 
                         <a class="edit_button btn btn-warning btn-md"
                             href="{% url 'fx:po_url'  %}">
                             Make Changes</a>
                         {% else %}
                         <a class="hide btn btn-secondary btn-md"
-                            href="{%  url 'fx:po_url'   %}">Clear This Form </a>
-                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="I'm Done" />
-                        <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="SUBMIT" />
+                            href="{%  url 'fx:po_url'   %}">X </a>
+                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Done Editing" />
+                        <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
                         {% if venture.id > 0 %}
                         <a hidden id="venture-delete"
                             href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
@@ -610,7 +610,7 @@ th {
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="change-reps" class="col-sm-3 col-form-label">Change</label>
+                    <label for="change-reps" class="col-sm-3 col-form-label" style="color: red;font-weight: bold;">Change</label>
                     <div class="col-sm-9">
                     <input type="text" readonly class="form-control-plaintext" id="change-reps" value="_">
                     </div>
@@ -1242,16 +1242,15 @@ $("#payment-login-lnk").click(function () {
         }
 
         $("#venture-submit-btn").click(function (e) {
-            
+          
             var form = document.querySelector('#pos-form');
             var reportVal = form.checkValidity();
             if (reportVal == false) {
                 console.log("validating......pos form");
-                // $("#venture-payment-failed-alert").show();
                 form.reportValidity();
                 return;
             }
-        // $("#login-form").submit(function (e) {
+            $(this).hide();
             console.log("------------submit form init-----------");
             e.preventDefault();
 
@@ -1269,13 +1268,15 @@ $("#payment-login-lnk").click(function () {
                         if (response["type"] === "success") {
                         
                         var sales_total  = $("#venture-total-txt").val();
-
-                       
                         $("#salestotal-reps").val(sales_total);
                         //$("#tender-txt").val()
                         $("#tendered-reps").val($("#tender-txt").val().trim());
                         $("#change-reps").val($("#change-txt").val().trim());
-                        $("#deposit-reps").val( $("#deposit-cash-drop").text());
+                        var option = $("#deposit-cash-drop").text().trim();
+                        if (option == "SELECT OPTION"){
+                            option ="";
+                        }
+                        $("#deposit-reps").val(option);
  
                         $("#pos-form").trigger("reset");
                         $("#report-modal").modal('show');

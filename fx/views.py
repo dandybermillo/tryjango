@@ -892,7 +892,7 @@ def account_manager_create(customer,sourceFund,source_id,description,category,tr
             model_name =source_funds_pm.get(sourceFund) 
             Model = apps.get_model('fx', model_name)
             try:
-                create_wallet_qs = Model(member = customer,source_id =source_id, description=description,category = category, transaction_type=transaction_type,date_entered =date_entered,debit =debit,credit =credit) #todo id = source_id
+                create_wallet_qs = Model(member_id = customer,source_id =source_id, description=description,category = category, transaction_type=transaction_type,date_entered =date_entered,debit =debit,credit =credit) #todo id = source_id
                 create_wallet_qs.save()
                 id = create_wallet_qs.id
                 print(f"code:{code}, id:{id}")
@@ -921,7 +921,7 @@ def account_manager_update(source_id,debit,credit,sourceFund,code):
 
 
 
-def create_or_update_venture_note(source_id,note,category=2):
+def create_or_update_venture_note(code, source_id,note,category=2):
         #-1 : no-action, 0:edit,1: create
     
         if note =="":
@@ -932,14 +932,14 @@ def create_or_update_venture_note(source_id,note,category=2):
                     return {"Success":False}
 
         else:
-            if source_id > 0:    
+            if code == EDIT_RECORD:    
                 try:  
                     result = NoteModel.objects.filter(id = source_id).update(note=note)
                     return {"Success":True,"result": result}
                 except Exception as e:
                     print (f"result notes {e}, {type(e)}")
                     return {"Success":False}
-            elif source_id == 0:   
+            else:  
                 try:
                     note_qs = NoteModel(source_id = source_id ,category=category ,note = note  )
                     note_qs.save() 
@@ -1122,6 +1122,7 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
             #         except Exception as e:
             #                 print (f"add_regular_transaction:not found:{e}, {type(e)}")
             #                 code = 0
+            print(">>")
             destination_acct_code = ""
             if target_table == "WALLET ACCT":
                           destination_acct_code ="W"
@@ -1130,14 +1131,14 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
             else:
                   target_table =""      
                   print("target_table is empty---------------")
-                  
+            print(">>>")     
             if target_table != "":
                     model_name = model_list_change.get(target_table) 
                     Model = apps.get_model('fx', model_name)
                     
                   
              
-                                     
+            print(">>>>")                         
             if code > 0:  # edit existing record
                     
                     # change = Change_Table.objects.get(venture_id=source_id)
@@ -1209,13 +1210,20 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
             else: # of code > 0:
                     wallet_id =0
                     if target_table != "":
-                        wallet = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
-                        wallet.save() 
-                        wallet_id = wallet.id
+                                try:
+                                        wallet = Model(member_id = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+                                        wallet.save() 
+                                        wallet_id = wallet.id
+                                        print("success saving change to the selected account")
+                                except Exception as e:
+                                            print (f"writing to selected account:{e}, {type(e)}")
+                                            logger.warning(f"error writing an amount of {credit}  to selected account:{e}, {type(e)}")
+                                            #return {"Success":False}
                     
                     try:    
                             change = Change_Table(destination_acct_id = wallet_id, date_entered=date.today(),venture_id=source_id ,change=credit,destination_acct_code = destination_acct_code)
                             change.save() 
+                            
                             return {"Success":True,"id":change.id}
                     
                     except Exception as e:
@@ -1302,6 +1310,7 @@ class pos_test(View):
                                 print("going to unauthorized user page")  
                                 return redirect('/venture_login/') #
                             # return redirect('/unauthorized_user/') #
+               
                 source_type = request.POST.get('source_type',"").strip()
                 amount =float(request.POST.get('amount',"0").strip())
                 cc = float(request.POST.get('cc','0').strip())
@@ -1382,7 +1391,7 @@ class pos_test(View):
                             else:
                                     old_note = ""
                 else:
-                            #old_amount = 0 
+                            old_amount = 0 
                             old_customer_id = customer
                             old_cc = 0
                 if old_customer_id != customer:
@@ -1402,7 +1411,7 @@ class pos_test(View):
                 print("xxx")
                 if member and source_type =="W":
                         running_balance = get_running_finance_balance("wallet","member_id",customer)["running_balance"]
-                        if  amount > running_balance + old_amount:
+                        if  int(amount) > running_balance + old_amount:
                                 all_valid = False
                             
                                 if running_balance > 2000:
@@ -1417,8 +1426,8 @@ class pos_test(View):
                 else:
                          customer_source_id = 0
                 print(f"--- cc_running_balance: {cc_running_balance}")
-                print(f"-----customer_source_id:{customer_source_id} ")
-                
+               # print(f"-----customer_source_id:{customer_source_id} ")
+              #  return
                 if venture_id <=0:
                                 
                                     if all_valid:
@@ -1431,15 +1440,11 @@ class pos_test(View):
                                         print(f" amount: {amount}, cc: {cc}, note: {note}, customer: {customer}, venture_id:{venture_id}, change_deposit_to: {change_deposit_to}")
                                        # print(f"cateory: {cateory},transaction_type:{ transaction_type}, source_type: {source_type} percent: {percent}")
                                         print (f"user: {request.user}")
-                                        
                                         #-----------------e
-                                        
                                         try:
-                                               
                                                 venture_qs = Model(customer_id = customer,category =category,
                                                 amount = amount,cc = cc,transaction_type ="W",date_entered = date.today(),
                                                 source_type =source_type,in_charge_id=staff_info.id,flag=1)
-
                                                 venture_qs.save()
                                                 venture_id =venture_qs.id
                                                 print("Success...")
@@ -1447,35 +1452,18 @@ class pos_test(View):
                                             Success = False
                                             print(f"creating venture transaction: {e}")
                                         filter_fields = {} 
-                                    
-                                                
                                              
                                         if source_type =="W": #create new record. A
                                                 customer_source_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"#create new record. A")
                                                 filter_fields["customer_source_id"] =customer_source_id
                                                 if customer_source_id <=0:
                                                     Success = False
-                                                # if Success: #create new record. B
-                                                #        # filter_fields["customer_source_id"] =customer_source_id
-                                                #         seller_source_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"create new record. B")
-                                                #         if seller_source_id <=0:
-                                                #             Success = False
-                                                #         if Success:
-                                                #             filter_fields["seller_source_id"] =seller_source_id
-                                                        
-                                        # print(f"...seller:,customer:{customer}, customer: {customer} ,source_type:{source_type} ")
-                                        # print(f"...transaction_type:{transaction_type}, date_entered: {date_entered} ,cc:{cc} , percent: {percent}")
                                         
                                         if cc > 0: #create new record. C
                                                 customer_cc_id = cc_manager_create(venture_id,description,"W",cc,0,customer,category,date.today(),customer_source_fund,"create new record. C")
                                                 filter_fields["customer_cc_id"]= customer_cc_id
                                                 if customer_cc_id <= 0:
                                                     Success = False
-                                                # if Success: #create new record. D
-                                                #     seller_cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"create new record. D")
-                                                #     filter_fields["seller_cc_id"]= seller_cc_id
-                                                #     if seller_cc_id <= 0:
-                                                #         Success = False
                                                 print(f"cc recording success:Success {Success}")
 
                                         else:
@@ -1483,26 +1471,14 @@ class pos_test(View):
                                         note_id = 0
                                         response = {}    
                                         print(f"today filter_fields: {filter_fields} ")
-                                                
-                                                
-                                                
-                                                        
-                                    
+#2121
                                         if note != "":
-                                            response = create_or_update_venture_note(0,note,2) #todo 
+                                            response = create_or_update_venture_note(NEW_RECORD,venture_id,note,2) #todo 
                                             if response["Success"] and response["result"] > 0 :
                                                 note_id  = response["result"]
                                         else:
                                             note_id = 0  
                                         filter_fields["note_id"] = note_id
-                                        # if response:
-                                        #      print(f".... note id: {note_id}, success:{response['Success']}, result:{response['result']} ")
-                                        # print(f"filter_fields: {filter_fields}")
-                                        
-                                        
-                                        
-                                        
-                                        
                                         
                                         
                                         if Success:

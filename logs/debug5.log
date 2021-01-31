@@ -16767,3 +16767,246 @@ INFO 2021-01-31 09:22:16,295 autoreload 6340 7676 C:\Users\dan\just_django\tryja
 INFO 2021-01-31 09:22:16,870 autoreload 13264 11596 Watching for file changes with StatReloader
 INFO 2021-01-31 09:22:18,300 autoreload 13264 11596 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
 INFO 2021-01-31 09:22:18,994 autoreload 22468 15456 Watching for file changes with StatReloader
+INFO 2021-01-31 09:22:42,968 basehttp 22468 3336 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 09:22:44,282 basehttp 22468 3248 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 09:22:44,283 basehttp 22468 14648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:20:33,362 basehttp 22468 18476 "GET /dashboard/ HTTP/1.1" 200 63979
+INFO 2021-01-31 10:20:33,571 basehttp 22468 18476 "GET /static/js/custom.js HTTP/1.1" 200 8279
+INFO 2021-01-31 10:20:33,586 basehttp 22468 14964 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 200 298500
+INFO 2021-01-31 10:20:41,484 basehttp 22468 14964 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-01-31 10:20:45,116 basehttp 22468 14964 "GET /member/3/ HTTP/1.1" 200 219298
+INFO 2021-01-31 10:20:45,132 basehttp 22468 14964 "GET /static/img/female.png HTTP/1.1" 200 21494
+INFO 2021-01-31 10:24:08,417 autoreload 22468 15456 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:24:09,033 autoreload 13372 18784 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:08,915 autoreload 13372 18784 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:09,630 autoreload 13104 22024 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:11,006 autoreload 13104 22024 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:11,584 autoreload 7604 14324 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:13,011 autoreload 7604 14324 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:13,594 autoreload 8848 1632 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:15,038 autoreload 8848 1632 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:15,615 autoreload 14400 11088 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:18,087 autoreload 14400 11088 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:18,889 autoreload 20200 15664 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:29,533 autoreload 20200 15664 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:30,247 autoreload 14404 20840 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:48,407 autoreload 14404 20840 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:49,034 autoreload 4332 18996 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:55,829 autoreload 4332 18996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:56,587 autoreload 13768 7748 Watching for file changes with StatReloader
+INFO 2021-01-31 10:25:58,219 autoreload 13768 7748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:25:59,076 autoreload 5956 14520 Watching for file changes with StatReloader
+INFO 2021-01-31 10:26:04,856 autoreload 5956 14520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:26:05,796 autoreload 21032 20804 Watching for file changes with StatReloader
+INFO 2021-01-31 10:26:30,476 autoreload 21032 20804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:26:31,124 autoreload 14856 15068 Watching for file changes with StatReloader
+INFO 2021-01-31 10:26:32,642 autoreload 14856 15068 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:26:33,306 autoreload 8124 2208 Watching for file changes with StatReloader
+INFO 2021-01-31 10:26:34,871 autoreload 8124 2208 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:26:35,630 autoreload 13912 18532 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:08,567 autoreload 13912 18532 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:09,105 autoreload 336 17864 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:14,662 autoreload 336 17864 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:15,231 autoreload 17936 17792 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:23,820 autoreload 17936 17792 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:24,534 autoreload 19600 11596 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:26,957 autoreload 19600 11596 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:27,893 autoreload 19216 10268 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:30,604 autoreload 19216 10268 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:31,511 autoreload 2908 11760 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:36,333 autoreload 2908 11760 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:37,263 autoreload 3800 13768 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:43,296 autoreload 3800 13768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:44,073 autoreload 18208 14564 Watching for file changes with StatReloader
+INFO 2021-01-31 10:31:53,878 autoreload 18208 14564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:31:54,808 autoreload 3708 20072 Watching for file changes with StatReloader
+INFO 2021-01-31 10:33:07,261 autoreload 3708 20072 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:33:07,890 autoreload 19392 8852 Watching for file changes with StatReloader
+INFO 2021-01-31 10:33:10,243 autoreload 19392 8852 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:33:10,850 autoreload 21880 15828 Watching for file changes with StatReloader
+INFO 2021-01-31 10:33:12,281 autoreload 21880 15828 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:33:12,797 autoreload 14552 19828 Watching for file changes with StatReloader
+INFO 2021-01-31 10:33:20,457 autoreload 14552 19828 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:33:21,011 autoreload 18380 16412 Watching for file changes with StatReloader
+INFO 2021-01-31 10:33:28,142 basehttp 18380 15936 "GET /member/3/ HTTP/1.1" 200 219298
+INFO 2021-01-31 10:33:32,045 basehttp 18380 15936 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 10:33:34,252 basehttp 18380 16132 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:33:34,252 basehttp 18380 21392 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:34:04,624 views 18380 15936 --def get customer details
+INFO 2021-01-31 10:34:04,755 views 18380 15936 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:34:05,215 basehttp 18380 15936 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+ERROR 2021-01-31 10:34:55,646 log 18380 15936 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1406, in post
+    if  amount > running_balance + old_amount:
+UnboundLocalError: local variable 'old_amount' referenced before assignment
+ERROR 2021-01-31 10:34:55,647 basehttp 18380 15936 "POST /post_test/ HTTP/1.1" 500 81514
+INFO 2021-01-31 10:36:37,218 autoreload 18380 16412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:36:37,992 autoreload 3540 18784 Watching for file changes with StatReloader
+INFO 2021-01-31 10:36:55,109 autoreload 3540 18784 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:36:55,723 autoreload 18396 9940 Watching for file changes with StatReloader
+INFO 2021-01-31 10:36:58,096 autoreload 18396 9940 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:36:59,249 autoreload 12380 18160 Watching for file changes with StatReloader
+INFO 2021-01-31 10:37:01,032 basehttp 12380 21324 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 10:37:02,554 basehttp 12380 10308 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:37:02,555 basehttp 12380 20000 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:37:09,628 autoreload 12380 18160 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:37:10,979 autoreload 22008 9688 Watching for file changes with StatReloader
+INFO 2021-01-31 10:37:12,631 basehttp 22008 8164 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 10:37:14,477 basehttp 22008 18236 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:37:14,478 basehttp 22008 16020 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:37:51,544 views 22008 8164 --def get customer details
+INFO 2021-01-31 10:37:51,691 views 22008 8164 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:37:52,146 basehttp 22008 8164 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+ERROR 2021-01-31 10:37:58,505 log 22008 8164 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1421, in post
+    print(f"-----customer_source_id:{customer_source_id} ")
+UnboundLocalError: local variable 'customer_source_id' referenced before assignment
+ERROR 2021-01-31 10:37:58,506 basehttp 22008 8164 "POST /post_test/ HTTP/1.1" 500 81555
+INFO 2021-01-31 10:38:54,681 autoreload 22008 9688 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:38:55,237 autoreload 20788 19348 Watching for file changes with StatReloader
+INFO 2021-01-31 10:38:56,760 autoreload 20788 19348 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:38:58,112 autoreload 8416 22460 Watching for file changes with StatReloader
+INFO 2021-01-31 10:38:59,035 basehttp 8416 17932 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 10:39:00,450 basehttp 8416 8884 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:39:00,451 basehttp 8416 9468 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:39:15,546 views 8416 17932 --def get customer details
+INFO 2021-01-31 10:39:15,631 views 8416 17932 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:39:16,196 basehttp 8416 17932 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+ERROR 2021-01-31 10:39:18,344 log 8416 17932 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1518, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-01-31 10:39:18,351 basehttp 8416 17932 "POST /post_test/ HTTP/1.1" 500 83188
+INFO 2021-01-31 10:40:44,487 autoreload 8416 22460 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 10:40:45,609 autoreload 12500 2724 Watching for file changes with StatReloader
+INFO 2021-01-31 10:42:18,943 basehttp 12500 6848 "GET /pos1/2/0/ HTTP/1.1" 200 108424
+INFO 2021-01-31 10:42:20,180 basehttp 12500 21372 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:42:20,182 basehttp 12500 21672 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:42:35,798 views 12500 6848 --def get customer details
+INFO 2021-01-31 10:42:35,900 views 12500 6848 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:42:36,258 basehttp 12500 6848 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+INFO 2021-01-31 10:42:39,689 basehttp 12500 6848 "POST /post_test/ HTTP/1.1" 200 96
+INFO 2021-01-31 10:45:59,429 basehttp 12500 4656 "GET /pos1/2/0/ HTTP/1.1" 200 108462
+INFO 2021-01-31 10:46:00,783 basehttp 12500 5296 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:46:00,784 basehttp 12500 19392 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:46:51,262 views 12500 4656 --def get customer details
+INFO 2021-01-31 10:46:51,420 views 12500 4656 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:46:51,824 basehttp 12500 4656 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+INFO 2021-01-31 10:49:16,691 basehttp 12500 12940 "GET /pos1/2/0/ HTTP/1.1" 200 108498
+INFO 2021-01-31 10:49:18,407 basehttp 12500 2984 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:49:18,407 basehttp 12500 14784 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 10:49:25,170 views 12500 12940 --def get customer details
+INFO 2021-01-31 10:49:25,302 views 12500 12940 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 10:49:25,683 basehttp 12500 12940 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+INFO 2021-01-31 10:49:32,411 basehttp 12500 12940 "POST /post_test/ HTTP/1.1" 200 96
+INFO 2021-01-31 12:33:58,019 basehttp 12500 12096 "GET /pos1/2/0/ HTTP/1.1" 200 108498
+INFO 2021-01-31 12:33:59,331 basehttp 12500 19472 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 12:33:59,331 basehttp 12500 20532 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-01-31 12:36:37,148 views 12500 10416 --def get customer details
+INFO 2021-01-31 12:36:37,263 views 12500 10416 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-01-31 12:36:37,667 basehttp 12500 10416 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 124
+ERROR 2021-01-31 12:36:39,987 log 12500 10416 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1488, in post
+    response = add_regular_transaction(0,change_deposit_to,customer,"Change Deposit","D",change_amount,0,venture_id)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1212, in add_regular_transaction
+    wallet = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related_descriptors.py", line 215, in __set__
+    raise ValueError(
+ValueError: Cannot assign "3": "WalletModel.member" must be a "MemberModel" instance.
+ERROR 2021-01-31 12:36:39,987 basehttp 12500 10416 "POST /post_test/ HTTP/1.1" 500 99889
+INFO 2021-01-31 12:39:20,098 autoreload 12500 2724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:39:20,771 autoreload 18772 13372 Watching for file changes with StatReloader
+INFO 2021-01-31 12:39:28,374 autoreload 18772 13372 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:39:28,962 autoreload 18048 8584 Watching for file changes with StatReloader
+INFO 2021-01-31 12:39:34,519 autoreload 18048 8584 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:39:35,055 autoreload 15564 20908 Watching for file changes with StatReloader
+INFO 2021-01-31 12:39:37,664 autoreload 15564 20908 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:39:38,568 autoreload 16920 11588 Watching for file changes with StatReloader
+INFO 2021-01-31 12:39:40,205 autoreload 16920 11588 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:39:41,034 autoreload 20300 16444 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:09,917 autoreload 20300 16444 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:10,527 autoreload 19068 20892 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:13,978 autoreload 19068 20892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:14,505 autoreload 18492 13836 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:20,092 autoreload 18492 13836 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:20,631 autoreload 1244 10736 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:40,897 autoreload 1244 10736 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:41,613 autoreload 15816 1368 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:49,258 autoreload 15816 1368 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:49,834 autoreload 19264 22048 Watching for file changes with StatReloader
+INFO 2021-01-31 12:41:53,239 autoreload 19264 22048 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:41:53,755 autoreload 19140 7184 Watching for file changes with StatReloader
+INFO 2021-01-31 12:42:26,714 autoreload 19140 7184 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:42:27,349 autoreload 11484 22196 Watching for file changes with StatReloader
+INFO 2021-01-31 12:42:54,754 autoreload 11484 22196 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:42:55,350 autoreload 14104 20944 Watching for file changes with StatReloader
+INFO 2021-01-31 12:42:57,949 autoreload 14104 20944 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:42:58,597 autoreload 14368 14612 Watching for file changes with StatReloader
+INFO 2021-01-31 12:43:00,188 autoreload 14368 14612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:43:01,136 autoreload 18840 10396 Watching for file changes with StatReloader
+INFO 2021-01-31 12:43:06,996 autoreload 18840 10396 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:43:07,649 autoreload 14236 19188 Watching for file changes with StatReloader
+INFO 2021-01-31 12:43:09,200 autoreload 14236 19188 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:43:09,984 autoreload 8528 8860 Watching for file changes with StatReloader
+INFO 2021-01-31 12:43:27,251 autoreload 8528 8860 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:43:28,050 autoreload 21976 4952 Watching for file changes with StatReloader
+INFO 2021-01-31 12:43:43,025 autoreload 21976 4952 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:43:43,528 autoreload 6984 20056 Watching for file changes with StatReloader
+INFO 2021-01-31 12:44:45,848 autoreload 6984 20056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:44:46,417 autoreload 19672 21700 Watching for file changes with StatReloader
+INFO 2021-01-31 12:44:55,074 autoreload 19672 21700 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:44:55,599 autoreload 6180 7796 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:01,122 autoreload 6180 7796 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:01,672 autoreload 9112 14204 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:07,325 autoreload 9112 14204 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:07,979 autoreload 9332 4772 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:20,071 autoreload 9332 4772 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:21,285 autoreload 1924 14612 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:24,357 autoreload 1924 14612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:25,137 autoreload 9688 4264 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:30,883 autoreload 9688 4264 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:31,573 autoreload 12332 22176 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:33,166 autoreload 12332 22176 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:33,846 autoreload 2208 7080 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:38,376 autoreload 2208 7080 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:38,884 autoreload 9592 18284 Watching for file changes with StatReloader
+INFO 2021-01-31 12:45:42,354 autoreload 9592 18284 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-01-31 12:45:43,024 autoreload 14876 14236 Watching for file changes with StatReloader
