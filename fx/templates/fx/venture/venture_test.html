@@ -1236,10 +1236,58 @@ th {
         var ctr=1;
         $("body").delegate(".history", "click", function(){
               venture_id = $(this).attr("id");
+              $("#venture_id").val(venture_id);
+              get_transaction();
 
 
-              
         });
+
+        function get_transaction(){
+                    var data={};
+                    data["venture_id"] =$("#venture_id").val();
+                    console.log("data");
+                    console.log(data);
+                    $.ajax({
+                        type: "GET",
+                        url: "/post_test/",
+                       
+                        data: data,
+                        
+                        success: function (response) {
+                            // do something with response
+                            response["result"]; // equals 'Success or failed';
+                            response["message"]; // equals 'you"re logged in or You messed up';
+
+                            if (response["type"] === "success") {
+
+                                  console.log("success:");
+                                  console.log(response["data"]);
+
+                        //     $("#login-form").trigger("reset");
+                        //     // $("#login-success").text(response["message"]);
+                        //     // $("#login-success").css({ display: "block" });
+                        //     console.log("Acccess granted");
+                        //     // $("#user-page-lnk").click();
+                        //     id = response["id"];
+                        // //  window.location.replace("/user/"+id);
+                            } else if (response["type"] === "error") {
+                            
+                            
+                            
+                            console.log("Acccess denied");
+
+                            }
+                        },
+                        error: function (response) {
+                            // do something with response
+                            console.log("Something went wrong! Try again..");
+                        //   $("#login-error").text("Something went wrong! Try again.");
+                        $("#login-danger-alert").fadeIn();  // alert message
+                      //  closeSnoAlertBox("login","danger");
+                        },
+                        });
+
+        }
         var venture_id = parseInt("{{venture.id}}");
         
         var rIndex =0;  // use by the table save the selected row

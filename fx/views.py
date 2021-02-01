@@ -1355,6 +1355,82 @@ def get_pos(request):
 # @login_required(login_url='/venture_login/')
 #pos
 class pos_test(View):
+    
+    def get(self, request, *args, **kwargs):
+        print("---get")
+        if  request.user.is_authenticated is True:  
+                 
+                 
+                
+                member = True
+                venture_id = parseint(request.GET.get('venture_id',"0").strip())
+                print(f"Vent:{venture_id}")
+                if venture_id > 0:
+                     
+                        try: 
+                                venture_qs= VentureModel.objects.get( id=venture_id)
+                        except Exception as e:
+                            print ("unable to retrieve transaction number")
+                            logger.warning ("unable to retrieve transaction number")
+                                
+                        customer_id = 0
+                        asset_balance={}
+                        
+                        print(f"venture_id:{venture_id},amount: {venture_qs.amount}")
+                        
+            # if venture_id > 0:
+                cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+               
+                if maximum_deposit < cc_balance: 
+                    cc_balance = maximum_deposit
+                asset_balance ={"cc_balance":cc_balance}
+                print("XXXX")          
+                customer_info = get_member_info( venture_qs.customer_id,"#create_update_venture. 1") #create_update_venture. 1
+                
+                totalCost = venture_qs.amount + venture_qs.cc
+            # ventureForm.request_action =request_action
+                if member:
+                        asset_balance["cc_balance"] = asset_balance["cc_balance"] + venture_qs.cc
+                print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
+                if venture_qs.note_id > 0: #note has been provided
+                        try:
+                                note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                        except Exception as e:
+                            print(f"loan app note: {e}")
+                else: 
+                        note =""
+               
+                try:
+                            change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+                            print("first")
+                            change = change_table_qs.change
+                            tender =  venture_qs.amount + change_table_qs.change
+                            destination_acct_code =change_table_qs.destination_acct_code
+                            print("Try")
+                             #print(f"venture form: {ventureForm}")
+                           # data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
+
+                            print(f"ventureForm.tender:{tender},change_table_qs.change:{change_table_qs.change},change_table_qs.destination_acct_code:{change_table_qs.destination_acct_code} ")
+                          #  return JsonResponse({"type":'success', "message":"Success","data":data})
+                except Exception as e:
+                        change =0
+                        tender =0
+                        destination_acct_code=""
+                        print(f"cresate_update_venture:change_table: {e}")     
+                        logger.warning(f" Technical error in def get pos: {e} ")
+                        print("XXX")
+                        #return JsonResponse({"type":'error', "message":"Technical error","data":{}})
+                data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
+                return JsonResponse({"type":'success', "message":"Success","data":data})
+            
+                        
+        else:
+                        return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+                    
+                    
+     
+     
+     
     def post(self, request, *args, **kwargs):
          
                 member = True
@@ -1667,6 +1743,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                     'member_info':member_info,
                     'customer_info':customer_info,
                 }
+    print(f"context:{context}")
     return render(request, 'fx/venture/venture_test.html', context)
 
 @login_required(login_url='/venture_login/')

@@ -18713,3 +18713,1006 @@ INFO 2021-02-01 16:27:34,831 autoreload 16940 23028 C:\Users\dan\just_django\try
 INFO 2021-02-01 16:27:35,451 autoreload 15036 8232 Watching for file changes with StatReloader
 INFO 2021-02-01 16:27:49,254 autoreload 15036 8232 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
 INFO 2021-02-01 16:27:49,809 autoreload 23744 4644 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:02,548 autoreload 23744 4644 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:03,135 autoreload 24424 20684 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:06,598 autoreload 24424 20684 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:07,201 autoreload 22116 20752 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:08,614 autoreload 22116 20752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:09,167 autoreload 16416 21788 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:20,836 autoreload 16416 21788 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:21,401 autoreload 1864 24196 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:23,703 autoreload 1864 24196 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:24,241 autoreload 9856 828 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:30,674 autoreload 9856 828 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:31,395 autoreload 1968 6536 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:35,722 autoreload 1968 6536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:36,361 autoreload 11872 23364 Watching for file changes with StatReloader
+INFO 2021-02-01 18:59:48,136 autoreload 11872 23364 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 18:59:49,348 autoreload 18784 24008 Watching for file changes with StatReloader
+INFO 2021-02-01 19:00:09,616 autoreload 18784 24008 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:00:10,126 autoreload 18048 24156 Watching for file changes with StatReloader
+INFO 2021-02-01 19:00:12,526 autoreload 18048 24156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:00:13,125 autoreload 21336 23104 Watching for file changes with StatReloader
+INFO 2021-02-01 19:00:18,469 autoreload 21336 23104 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:00:19,073 autoreload 22692 12412 Watching for file changes with StatReloader
+INFO 2021-02-01 19:00:24,398 autoreload 22692 12412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:00:24,961 autoreload 10272 21128 Watching for file changes with StatReloader
+INFO 2021-02-01 19:00:52,502 autoreload 10272 21128 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:00:53,078 autoreload 22780 24008 Watching for file changes with StatReloader
+INFO 2021-02-01 19:01:04,913 autoreload 22780 24008 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:01:05,881 autoreload 18888 12324 Watching for file changes with StatReloader
+INFO 2021-02-01 19:01:19,120 autoreload 18888 12324 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:01:20,334 autoreload 14564 20204 Watching for file changes with StatReloader
+INFO 2021-02-01 19:01:23,959 autoreload 14564 20204 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:01:25,269 autoreload 15384 23956 Watching for file changes with StatReloader
+INFO 2021-02-01 19:01:29,555 basehttp 15384 8036 "GET /pos1/2/0/ HTTP/1.1" 200 122840
+INFO 2021-02-01 19:01:32,389 basehttp 15384 20504 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:01:32,393 basehttp 15384 8016 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:01:32,880 basehttp 15384 20504 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:01:32,884 basehttp 15384 20504 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:01:40,979 log 15384 8036 Not Found: /pos_test/
+WARNING 2021-02-01 19:01:40,980 basehttp 15384 8036 "GET /pos_test/?csrfmiddlewaretoken=pdS7qtEo8nC1kQArjh0SxBMFKGP23DBpGOrXgdDxOcMnk2YhKY3Mg3wv2VqoGnbV&source_type=K&note=&customer=0&venture_id=1&amount=&cc=&venture_note=&tender=&change=&change_deposit_to=SELECT%20OPTION HTTP/1.1" 404 15947
+INFO 2021-02-01 19:03:22,361 autoreload 15384 23956 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:03:22,928 autoreload 24540 19568 Watching for file changes with StatReloader
+INFO 2021-02-01 19:03:25,171 autoreload 24540 19568 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:03:25,685 autoreload 21336 21540 Watching for file changes with StatReloader
+INFO 2021-02-01 19:03:30,208 autoreload 21336 21540 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:03:30,768 autoreload 18196 3524 Watching for file changes with StatReloader
+INFO 2021-02-01 19:04:00,452 basehttp 18196 14136 "GET /pos1/2/0/ HTTP/1.1" 200 122818
+INFO 2021-02-01 19:04:00,883 basehttp 18196 14104 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:04:00,888 basehttp 18196 15820 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:04:01,276 basehttp 18196 14104 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:04:01,279 basehttp 18196 14104 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:04:14,220 basehttp 18196 14136 "GET /pos1/2/0/ HTTP/1.1" 200 122818
+WARNING 2021-02-01 19:04:14,829 basehttp 18196 14104 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:04:14,869 basehttp 18196 12232 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:04:15,230 basehttp 18196 12232 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:04:15,234 basehttp 18196 12232 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:04:21,503 log 18196 14136 Not Found: /pos_test/
+WARNING 2021-02-01 19:04:21,503 basehttp 18196 14136 "GET /pos_test/ HTTP/1.1" 404 15702
+INFO 2021-02-01 19:04:54,287 autoreload 18196 3524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:04:54,871 autoreload 23172 5244 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:00,473 autoreload 23172 5244 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:05:01,130 autoreload 17452 17572 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:03,626 autoreload 17452 17572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:05:04,270 autoreload 12244 23424 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:17,105 autoreload 12244 23424 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:05:17,846 autoreload 18436 20516 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:21,227 autoreload 18436 20516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:05:21,910 autoreload 3640 14872 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:24,265 autoreload 3640 14872 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:05:25,038 autoreload 21780 10260 Watching for file changes with StatReloader
+INFO 2021-02-01 19:05:29,434 basehttp 21780 4044 "GET /pos1/2/0/ HTTP/1.1" 200 122818
+WARNING 2021-02-01 19:05:29,814 basehttp 21780 22660 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:05:30,026 basehttp 21780 6636 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:05:30,558 basehttp 21780 6636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:05:30,561 basehttp 21780 6636 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:05:35,366 log 21780 4044 Not Found: /pos_test/
+WARNING 2021-02-01 19:05:35,368 basehttp 21780 4044 "GET /pos_test/ HTTP/1.1" 404 15702
+INFO 2021-02-01 19:06:02,735 autoreload 21780 10260 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-01 19:06:03,351 autoreload 14164 8900 Watching for file changes with StatReloader
+INFO 2021-02-01 19:06:26,982 autoreload 14164 8900 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:06:27,682 autoreload 5892 23520 Watching for file changes with StatReloader
+INFO 2021-02-01 19:08:09,979 basehttp 5892 11404 "GET /pos1/2/0/ HTTP/1.1" 200 122819
+INFO 2021-02-01 19:08:10,512 basehttp 5892 18140 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:08:10,516 basehttp 5892 7992 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:08:10,889 basehttp 5892 18140 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:08:10,897 basehttp 5892 18140 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:08:17,017 log 5892 11404 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1380, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:08:17,017 basehttp 5892 11404 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:08:57,432 autoreload 5892 23520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:08:58,092 autoreload 23972 14112 Watching for file changes with StatReloader
+INFO 2021-02-01 19:09:15,215 autoreload 23972 14112 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:09:15,819 autoreload 3336 3120 Watching for file changes with StatReloader
+INFO 2021-02-01 19:09:21,065 basehttp 3336 10636 "GET /pos1/2/0/ HTTP/1.1" 200 122819
+INFO 2021-02-01 19:09:21,448 basehttp 3336 8324 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:09:21,462 basehttp 3336 3252 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:09:21,905 basehttp 3336 8324 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:09:21,912 basehttp 3336 8324 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:09:29,704 log 3336 10636 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1380, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:09:29,709 basehttp 3336 10636 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:10:05,988 autoreload 3336 3120 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:06,590 autoreload 10376 9940 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:14,277 autoreload 10376 9940 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:14,987 autoreload 6316 23944 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:16,578 autoreload 6316 23944 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:17,239 autoreload 18252 18996 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:19,734 autoreload 18252 18996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:20,383 autoreload 19372 9996 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:35,281 autoreload 19372 9996 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:36,117 autoreload 18260 3592 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:37,730 autoreload 18260 3592 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:38,459 autoreload 22832 23900 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:40,128 autoreload 22832 23900 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:10:41,446 autoreload 8308 24008 Watching for file changes with StatReloader
+INFO 2021-02-01 19:10:42,601 basehttp 8308 10076 "GET /pos1/2/0/ HTTP/1.1" 200 122819
+INFO 2021-02-01 19:10:43,026 basehttp 8308 14704 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:10:43,033 basehttp 8308 22784 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:10:43,483 basehttp 8308 14704 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:10:43,487 basehttp 8308 14704 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:10:49,745 log 8308 10076 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:10:49,753 basehttp 8308 10076 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:11:19,166 autoreload 8308 24008 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:19,754 autoreload 21788 3880 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:21,132 autoreload 21788 3880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:21,765 autoreload 20056 14776 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:23,178 autoreload 20056 14776 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:23,733 autoreload 24280 12296 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:25,158 autoreload 24280 12296 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:25,808 autoreload 20400 22328 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:27,369 autoreload 20400 22328 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:28,326 autoreload 23484 4136 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:31,257 autoreload 23484 4136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:11:32,583 autoreload 8328 14312 Watching for file changes with StatReloader
+INFO 2021-02-01 19:11:34,254 basehttp 8328 24376 "GET /pos1/2/0/ HTTP/1.1" 200 122819
+INFO 2021-02-01 19:11:34,963 basehttp 8328 9528 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:11:34,971 basehttp 8328 5808 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:11:35,581 basehttp 8328 9528 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:11:35,592 basehttp 8328 9528 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:11:41,307 log 8328 24376 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:11:41,319 basehttp 8328 24376 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:17:00,152 autoreload 8328 14312 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:17:00,807 autoreload 14476 19972 Watching for file changes with StatReloader
+INFO 2021-02-01 19:17:11,277 basehttp 14476 22604 "GET /pos1/2/0/ HTTP/1.1" 200 122939
+INFO 2021-02-01 19:17:11,813 basehttp 14476 24004 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:17:11,818 basehttp 14476 18820 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:17:12,290 basehttp 14476 24004 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:17:12,294 basehttp 14476 24004 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:17:19,788 log 14476 11972 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:17:19,792 basehttp 14476 11972 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:18:13,093 autoreload 14476 19972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:18:13,616 autoreload 23656 14000 Watching for file changes with StatReloader
+INFO 2021-02-01 19:18:17,829 basehttp 23656 22680 "GET /pos1/2/0/ HTTP/1.1" 200 122939
+INFO 2021-02-01 19:18:18,240 basehttp 23656 23700 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:18:18,245 basehttp 23656 23616 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:18:18,641 basehttp 23656 23700 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:18:18,647 basehttp 23656 23700 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:18:23,727 log 23656 22680 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:18:23,729 basehttp 23656 22680 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:20:12,408 autoreload 23656 14000 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:20:13,009 autoreload 15140 2984 Watching for file changes with StatReloader
+INFO 2021-02-01 19:20:42,440 autoreload 15140 2984 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:20:42,974 autoreload 22472 16052 Watching for file changes with StatReloader
+INFO 2021-02-01 19:20:45,452 basehttp 22472 24200 "GET /pos1/2/0/ HTTP/1.1" 200 122939
+INFO 2021-02-01 19:20:45,888 basehttp 22472 6204 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:20:45,893 basehttp 22472 3716 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:20:46,282 basehttp 22472 6204 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:20:46,330 basehttp 22472 6204 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:20:47,554 basehttp 22472 24200 "GET /pos1/2/0/ HTTP/1.1" 200 122939
+INFO 2021-02-01 19:20:47,913 basehttp 22472 17512 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:20:47,914 basehttp 22472 6204 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:20:48,292 basehttp 22472 17512 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:20:48,295 basehttp 22472 17512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:20:52,238 log 22472 24200 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:20:52,241 basehttp 22472 24200 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:22:21,689 basehttp 22472 24200 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+WARNING 2021-02-01 19:22:22,022 basehttp 22472 17512 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:22:22,040 basehttp 22472 5064 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:22:22,478 basehttp 22472 5064 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:22:22,480 basehttp 22472 5064 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:22:29,099 log 22472 13656 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1382, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:22:29,100 basehttp 22472 13656 "GET /post_test/ HTTP/1.1" 500 75488
+INFO 2021-02-01 19:23:25,593 autoreload 22472 16052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:23:26,267 autoreload 23980 14860 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:26,031 autoreload 23980 14860 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:24:26,637 autoreload 23104 24104 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:33,154 autoreload 23104 24104 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:24:33,710 autoreload 14776 23092 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:35,103 autoreload 14776 23092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:24:35,636 autoreload 23120 22188 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:39,969 autoreload 23120 22188 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:24:40,499 autoreload 6608 18028 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:46,824 autoreload 6608 18028 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:24:47,351 autoreload 24228 4624 Watching for file changes with StatReloader
+INFO 2021-02-01 19:24:48,065 basehttp 24228 11956 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+INFO 2021-02-01 19:24:48,528 basehttp 24228 22948 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:24:48,531 basehttp 24228 20824 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:24:48,971 basehttp 24228 22948 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:24:48,974 basehttp 24228 22948 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:24:53,677 log 24228 18984 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:24:53,679 basehttp 24228 18984 "GET /post_test/ HTTP/1.1" 500 75802
+INFO 2021-02-01 19:25:13,670 autoreload 24228 4624 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:25:14,234 autoreload 15972 13412 Watching for file changes with StatReloader
+INFO 2021-02-01 19:25:16,463 autoreload 15972 13412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:25:17,083 autoreload 13892 24176 Watching for file changes with StatReloader
+INFO 2021-02-01 19:25:18,407 basehttp 13892 16784 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+INFO 2021-02-01 19:25:18,747 basehttp 13892 1908 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:25:18,752 basehttp 13892 23172 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:25:19,213 basehttp 13892 1908 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:25:19,216 basehttp 13892 1908 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:25:33,029 log 13892 2296 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:25:33,032 basehttp 13892 2296 "GET /post_test/ HTTP/1.1" 500 75802
+INFO 2021-02-01 19:26:08,585 autoreload 13892 24176 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:26:09,158 autoreload 10312 5808 Watching for file changes with StatReloader
+INFO 2021-02-01 19:26:12,685 basehttp 10312 14476 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+INFO 2021-02-01 19:26:13,094 basehttp 10312 10348 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:26:13,098 basehttp 10312 19944 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:26:13,505 basehttp 10312 10348 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:26:13,507 basehttp 10312 10348 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:26:19,862 log 10312 20992 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:26:19,866 basehttp 10312 20992 "GET /post_test/ HTTP/1.1" 500 75802
+INFO 2021-02-01 19:26:36,435 autoreload 10312 5808 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:26:36,963 autoreload 5364 9412 Watching for file changes with StatReloader
+INFO 2021-02-01 19:26:42,303 autoreload 5364 9412 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:26:42,855 autoreload 22176 10004 Watching for file changes with StatReloader
+INFO 2021-02-01 19:26:44,264 autoreload 22176 10004 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:26:44,824 autoreload 23584 23708 Watching for file changes with StatReloader
+INFO 2021-02-01 19:26:45,530 basehttp 23584 17204 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+INFO 2021-02-01 19:26:45,944 basehttp 23584 24516 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:26:45,950 basehttp 23584 8428 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:26:46,557 basehttp 23584 24516 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:26:46,594 basehttp 23584 24516 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:26:52,085 log 23584 19992 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:26:52,087 basehttp 23584 19992 "GET /post_test/ HTTP/1.1" 500 75802
+INFO 2021-02-01 19:27:00,665 autoreload 23584 23708 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:27:01,245 autoreload 21252 23072 Watching for file changes with StatReloader
+INFO 2021-02-01 19:27:02,031 basehttp 21252 8944 "GET /pos1/2/0/ HTTP/1.1" 200 123019
+INFO 2021-02-01 19:27:02,420 basehttp 21252 14264 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:27:02,424 basehttp 21252 24040 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:27:03,086 basehttp 21252 14264 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:27:03,090 basehttp 21252 14264 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:27:19,944 log 21252 2892 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:27:19,947 basehttp 21252 2892 "GET /post_test/ HTTP/1.1" 500 75802
+INFO 2021-02-01 19:29:19,176 basehttp 21252 22432 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:29:19,493 basehttp 21252 22632 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:29:19,495 basehttp 21252 20096 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:29:19,909 basehttp 21252 22632 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:29:19,911 basehttp 21252 22632 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-01 19:29:25,713 log 21252 17672 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:29:25,713 basehttp 21252 17672 "GET /post_test/ HTTP/1.1" 500 75845
+INFO 2021-02-01 19:29:59,825 autoreload 23824 12100 Watching for file changes with StatReloader
+INFO 2021-02-01 19:30:02,593 basehttp 23824 7452 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:30:02,986 basehttp 23824 18460 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:30:02,992 basehttp 23824 18932 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:30:03,343 basehttp 23824 18460 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:30:03,346 basehttp 23824 18460 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:08,195 basehttp 23824 23932 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:31:08,617 basehttp 23824 22076 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:31:08,617 basehttp 23824 18460 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:31:08,733 basehttp 23824 20736 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2021-02-01 19:31:08,811 basehttp 23824 20736 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2021-02-01 19:31:08,954 basehttp 23824 22076 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:08,963 basehttp 23824 22076 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:14,547 autoreload 17104 20616 Watching for file changes with StatReloader
+INFO 2021-02-01 19:31:17,895 basehttp 17104 24520 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:31:18,303 basehttp 17104 7112 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:31:18,312 basehttp 17104 17944 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:31:18,636 basehttp 17104 7112 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:18,642 basehttp 17104 7112 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:27,807 basehttp 17104 24520 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+WARNING 2021-02-01 19:31:28,099 basehttp 17104 7112 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:31:28,225 basehttp 17104 24192 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:28,542 basehttp 17104 24192 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:28,545 basehttp 17104 24192 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:41,793 basehttp 17104 18996 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+WARNING 2021-02-01 19:31:42,086 basehttp 17104 24192 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:31:42,230 basehttp 17104 23728 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:42,754 basehttp 17104 23728 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:42,757 basehttp 17104 23728 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:50,492 autoreload 580 24560 Watching for file changes with StatReloader
+INFO 2021-02-01 19:31:54,356 basehttp 580 23952 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:31:54,739 basehttp 580 24316 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:31:54,744 basehttp 580 23184 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:31:55,084 basehttp 580 24316 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:31:55,090 basehttp 580 24316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:34:31,282 basehttp 580 10116 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:34:31,605 basehttp 580 2720 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:34:31,606 basehttp 580 23464 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:34:32,011 basehttp 580 2720 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:34:32,019 basehttp 580 2720 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:35:44,711 autoreload 580 24560 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:35:45,422 autoreload 5068 9720 Watching for file changes with StatReloader
+INFO 2021-02-01 19:35:46,804 basehttp 5068 14596 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+INFO 2021-02-01 19:35:47,274 basehttp 5068 6736 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:35:47,278 basehttp 5068 23172 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:35:47,894 basehttp 5068 6736 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:35:47,927 basehttp 5068 6736 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:36:25,030 basehttp 5068 1244 "GET /pos/2/0/ HTTP/1.1" 200 109523
+WARNING 2021-02-01 19:36:25,377 basehttp 5068 6736 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:36:25,388 basehttp 5068 3604 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:36:25,623 basehttp 5068 3604 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:36:25,624 basehttp 5068 3604 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:36:41,458 autoreload 8112 18628 Watching for file changes with StatReloader
+INFO 2021-02-01 19:36:44,605 basehttp 8112 6284 "GET /pos/2/0/ HTTP/1.1" 200 109523
+INFO 2021-02-01 19:36:44,963 basehttp 8112 21404 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 304 0
+WARNING 2021-02-01 19:36:44,968 basehttp 8112 16936 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:36:45,209 basehttp 8112 21404 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:36:45,211 basehttp 8112 21404 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-01 19:37:13,363 basehttp 8112 9112 "GET /pos/2/0/ HTTP/1.1" 200 109523
+INFO 2021-02-01 19:37:29,407 autoreload 14836 16416 Watching for file changes with StatReloader
+INFO 2021-02-01 19:37:32,682 basehttp 14836 12296 "GET /pos/2/0/ HTTP/1.1" 200 109523
+INFO 2021-02-01 19:37:42,330 basehttp 14836 12296 "GET /pos1/2/0/ HTTP/1.1" 200 123061
+WARNING 2021-02-01 19:37:59,241 basehttp 14836 12296 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:37:59,505 basehttp 14836 22776 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:37:59,509 basehttp 14836 16768 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 19:37:59,511 basehttp 14836 1140 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+ERROR 2021-02-01 19:38:11,419 log 14836 1140 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1392, in get
+    cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-01 19:38:11,422 basehttp 14836 1140 "GET /post_test/ HTTP/1.1" 500 77393
+INFO 2021-02-01 19:47:34,792 basehttp 14836 13944 "GET /pos1/2/0/ HTTP/1.1" 200 123063
+WARNING 2021-02-01 19:47:35,013 basehttp 14836 13944 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:47:35,015 basehttp 14836 15228 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:47:35,044 basehttp 14836 5836 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:47:35,045 basehttp 14836 15228 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:47:41,819 log 14836 15228 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1398, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:47:41,820 basehttp 14836 15228 "GET /post_test/?venture_id=1 HTTP/1.1" 500 79069
+INFO 2021-02-01 19:48:36,739 autoreload 14836 16416 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:48:37,229 autoreload 4620 8228 Watching for file changes with StatReloader
+INFO 2021-02-01 19:48:45,741 autoreload 4620 8228 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:48:46,423 autoreload 2080 14000 Watching for file changes with StatReloader
+INFO 2021-02-01 19:48:51,988 basehttp 2080 6988 "GET /pos1/2/0/ HTTP/1.1" 200 123063
+WARNING 2021-02-01 19:48:52,234 basehttp 2080 6988 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:48:52,511 basehttp 2080 23640 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:48:52,530 basehttp 2080 20208 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 19:48:52,532 basehttp 2080 6872 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+ERROR 2021-02-01 19:48:59,540 log 2080 6872 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1390, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:48:59,543 basehttp 2080 6872 "GET /post_test/?venture_id=1 HTTP/1.1" 500 78379
+INFO 2021-02-01 19:50:48,243 basehttp 2080 6872 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:50:48,344 basehttp 2080 6872 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:50:48,355 basehttp 2080 20208 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:50:48,383 basehttp 2080 20208 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:50:48,384 basehttp 2080 23640 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:50:54,827 log 2080 23640 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1390, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:50:54,828 basehttp 2080 23640 "GET /post_test/?venture_id=1 HTTP/1.1" 500 78336
+ERROR 2021-02-01 19:51:06,164 log 2080 23640 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1390, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:51:06,165 basehttp 2080 23640 "GET /post_test/?venture_id=2 HTTP/1.1" 500 78336
+INFO 2021-02-01 19:52:16,963 autoreload 2080 14000 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:17,420 autoreload 19424 12384 Watching for file changes with StatReloader
+INFO 2021-02-01 19:52:42,447 autoreload 19424 12384 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:42,981 autoreload 2096 13588 Watching for file changes with StatReloader
+INFO 2021-02-01 19:52:45,387 autoreload 2096 13588 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:45,897 autoreload 21920 8 Watching for file changes with StatReloader
+INFO 2021-02-01 19:52:54,403 autoreload 21920 8 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:55,124 autoreload 3480 7992 Watching for file changes with StatReloader
+INFO 2021-02-01 19:52:56,617 autoreload 3480 7992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:57,375 autoreload 20208 23640 Watching for file changes with StatReloader
+INFO 2021-02-01 19:52:58,946 autoreload 20208 23640 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:52:59,728 autoreload 24464 6528 Watching for file changes with StatReloader
+INFO 2021-02-01 19:53:05,984 basehttp 24464 12176 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:53:06,581 basehttp 24464 12176 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:53:06,956 basehttp 24464 15104 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:53:06,967 basehttp 24464 22008 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:53:06,983 basehttp 24464 24096 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 19:53:10,725 basehttp 24464 24096 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:53:10,891 basehttp 24464 24096 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:53:10,912 basehttp 24464 22008 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:53:10,967 basehttp 24464 22008 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:53:10,969 basehttp 24464 15104 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:53:19,635 log 24464 15104 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1391, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:53:19,637 basehttp 24464 15104 "GET /post_test/?venture_id=1 HTTP/1.1" 500 78336
+INFO 2021-02-01 19:53:31,260 autoreload 24464 6528 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:53:31,774 autoreload 20144 15364 Watching for file changes with StatReloader
+INFO 2021-02-01 19:53:34,156 autoreload 20144 15364 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:53:34,646 autoreload 18708 23284 Watching for file changes with StatReloader
+INFO 2021-02-01 19:53:42,095 autoreload 18708 23284 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:53:42,620 autoreload 24176 23736 Watching for file changes with StatReloader
+INFO 2021-02-01 19:53:51,236 autoreload 24176 23736 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:53:51,970 autoreload 7924 16684 Watching for file changes with StatReloader
+INFO 2021-02-01 19:54:04,984 autoreload 7924 16684 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:54:05,798 autoreload 16768 11320 Watching for file changes with StatReloader
+INFO 2021-02-01 19:54:07,262 basehttp 16768 22916 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:54:07,411 basehttp 16768 22916 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:54:07,761 basehttp 16768 13860 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:54:07,780 basehttp 16768 22648 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:54:07,785 basehttp 16768 19620 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:54:15,505 log 16768 19620 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1389, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:54:15,508 basehttp 16768 19620 "GET /post_test/?venture_id=2 HTTP/1.1" 500 78337
+INFO 2021-02-01 19:55:46,256 autoreload 16768 11320 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:55:46,749 autoreload 22016 7608 Watching for file changes with StatReloader
+INFO 2021-02-01 19:55:53,220 autoreload 22016 7608 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:55:53,723 autoreload 21668 15308 Watching for file changes with StatReloader
+INFO 2021-02-01 19:55:55,266 basehttp 21668 12824 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:55:55,374 basehttp 21668 12824 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:55:55,643 basehttp 21668 23144 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:55:55,659 basehttp 21668 5904 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:55:55,659 basehttp 21668 22828 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:56:01,528 log 21668 22828 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1390, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:56:01,531 basehttp 21668 22828 "GET /post_test/?venture_id=2 HTTP/1.1" 500 78228
+INFO 2021-02-01 19:56:10,559 autoreload 21668 15308 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:56:11,182 autoreload 5416 18120 Watching for file changes with StatReloader
+INFO 2021-02-01 19:56:20,833 autoreload 5416 18120 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:56:21,617 autoreload 828 22936 Watching for file changes with StatReloader
+INFO 2021-02-01 19:56:26,878 basehttp 828 20388 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:56:27,001 basehttp 828 20388 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:56:27,369 basehttp 828 22664 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:56:27,408 basehttp 828 16416 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:56:27,412 basehttp 828 12336 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:56:35,492 log 828 12336 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1390, in get
+    ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:56:35,495 basehttp 828 12336 "GET /post_test/?venture_id=2 HTTP/1.1" 500 78206
+INFO 2021-02-01 19:57:07,892 autoreload 828 22936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:08,382 autoreload 20524 10312 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:15,834 autoreload 20524 10312 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:16,316 autoreload 4480 11860 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:22,773 autoreload 4480 11860 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:23,269 autoreload 23852 5440 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:30,807 autoreload 23852 5440 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:31,396 autoreload 7080 18680 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:35,906 autoreload 7080 18680 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:36,620 autoreload 20848 9408 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:41,182 autoreload 20848 9408 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:41,753 autoreload 21924 23612 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:48,296 autoreload 21924 23612 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:48,873 autoreload 24072 24024 Watching for file changes with StatReloader
+INFO 2021-02-01 19:57:58,558 autoreload 24072 24024 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:57:59,048 autoreload 4656 16092 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:03,333 autoreload 4656 16092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:03,971 autoreload 10496 11972 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:05,446 autoreload 10496 11972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:06,153 autoreload 6832 20684 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:07,772 autoreload 6832 20684 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:08,608 autoreload 23464 20388 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:19,379 autoreload 23464 20388 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:20,164 autoreload 1520 24472 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:21,715 autoreload 1520 24472 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:22,496 autoreload 15168 12200 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:24,020 autoreload 15168 12200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:24,711 autoreload 14472 14476 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:29,067 autoreload 14472 14476 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:29,639 autoreload 12740 6536 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:31,086 autoreload 12740 6536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:31,767 autoreload 19012 20516 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:35,396 autoreload 19012 20516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:35,824 autoreload 19020 23284 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:39,069 autoreload 19020 23284 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:39,514 autoreload 10352 22536 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:41,746 autoreload 10352 22536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:42,206 autoreload 20524 11880 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:44,446 autoreload 20524 11880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:45,032 autoreload 11972 18924 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:46,503 autoreload 11972 18924 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:47,093 autoreload 21708 18196 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:50,493 autoreload 21708 18196 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:51,099 autoreload 21856 11420 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:55,427 autoreload 21856 11420 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:58:56,104 autoreload 22048 21160 Watching for file changes with StatReloader
+INFO 2021-02-01 19:58:59,647 autoreload 22048 21160 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:00,789 autoreload 6940 10392 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:03,252 autoreload 6940 10392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:03,907 autoreload 15088 24524 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:08,241 autoreload 15088 24524 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:08,903 autoreload 23396 1212 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:12,227 autoreload 23396 1212 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:12,735 autoreload 24060 23724 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:18,075 autoreload 24060 23724 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:18,530 autoreload 14000 19652 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:27,104 autoreload 14000 19652 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:27,800 autoreload 19332 8228 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:41,738 autoreload 19332 8228 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 19:59:42,470 autoreload 3196 23208 Watching for file changes with StatReloader
+INFO 2021-02-01 19:59:49,979 basehttp 3196 24332 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 19:59:50,297 basehttp 3196 24332 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 19:59:50,723 basehttp 3196 22232 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 19:59:50,732 basehttp 3196 12824 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 19:59:50,746 basehttp 3196 15652 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 19:59:58,824 log 3196 15652 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1403, in get
+    change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 429, in get
+    raise self.model.DoesNotExist(
+fx.models.Change_Table.DoesNotExist: Change_Table matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1412, in get
+    ventureForm.change =""
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 19:59:58,827 basehttp 3196 15652 "GET /post_test/?venture_id=2 HTTP/1.1" 500 95024
+INFO 2021-02-01 20:04:38,688 autoreload 3196 23208 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:04:39,221 autoreload 14972 19056 Watching for file changes with StatReloader
+INFO 2021-02-01 20:04:40,705 autoreload 14972 19056 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:04:41,246 autoreload 12000 18236 Watching for file changes with StatReloader
+INFO 2021-02-01 20:04:42,376 basehttp 12000 8992 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:04:42,603 basehttp 12000 8992 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:04:42,890 basehttp 12000 10388 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:04:42,894 basehttp 12000 1900 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 20:04:42,900 basehttp 12000 21400 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 20:04:47,947 log 12000 21400 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1404, in get
+    change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 429, in get
+    raise self.model.DoesNotExist(
+fx.models.Change_Table.DoesNotExist: Change_Table matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1413, in get
+    ventureForm.change =""
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 20:04:47,950 basehttp 12000 21400 "GET /post_test/?venture_id=2 HTTP/1.1" 500 95034
+INFO 2021-02-01 20:04:54,966 autoreload 12000 18236 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:04:55,472 autoreload 19076 19260 Watching for file changes with StatReloader
+INFO 2021-02-01 20:05:13,300 autoreload 19076 19260 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:05:13,845 autoreload 15632 21748 Watching for file changes with StatReloader
+INFO 2021-02-01 20:05:16,334 autoreload 15632 21748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:05:17,030 autoreload 23072 22804 Watching for file changes with StatReloader
+INFO 2021-02-01 20:05:21,574 basehttp 23072 10000 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:05:21,860 basehttp 23072 10000 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:05:22,207 basehttp 23072 23948 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:05:22,224 basehttp 23072 8128 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 20:05:22,225 basehttp 23072 764 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+ERROR 2021-02-01 20:05:26,950 log 23072 764 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1404, in get
+    change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 429, in get
+    raise self.model.DoesNotExist(
+fx.models.Change_Table.DoesNotExist: Change_Table matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1414, in get
+    ventureForm.change =""
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 20:05:26,956 basehttp 23072 764 "GET /post_test/?venture_id=2 HTTP/1.1" 500 94831
+INFO 2021-02-01 20:06:13,818 autoreload 23072 22804 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:06:14,428 autoreload 24196 1448 Watching for file changes with StatReloader
+INFO 2021-02-01 20:06:17,859 autoreload 24196 1448 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:06:18,383 autoreload 22900 9096 Watching for file changes with StatReloader
+INFO 2021-02-01 20:06:19,629 basehttp 22900 13900 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:06:19,746 basehttp 22900 13900 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:06:20,021 basehttp 22900 3224 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:06:20,031 basehttp 22900 21772 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 20:06:20,036 basehttp 22900 21612 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+ERROR 2021-02-01 20:06:27,061 log 22900 21612 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1404, in get
+    change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 429, in get
+    raise self.model.DoesNotExist(
+fx.models.Change_Table.DoesNotExist: Change_Table matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1415, in get
+    ventureForm.change =""
+NameError: name 'ventureForm' is not defined
+ERROR 2021-02-01 20:06:27,064 basehttp 22900 21612 "GET /post_test/?venture_id=2 HTTP/1.1" 500 94806
+INFO 2021-02-01 20:07:50,275 autoreload 22900 9096 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:07:50,754 autoreload 22172 14468 Watching for file changes with StatReloader
+INFO 2021-02-01 20:07:53,130 autoreload 22172 14468 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:07:53,635 autoreload 23840 17676 Watching for file changes with StatReloader
+INFO 2021-02-01 20:07:56,990 autoreload 23840 17676 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:07:57,457 autoreload 23452 19880 Watching for file changes with StatReloader
+INFO 2021-02-01 20:08:37,174 autoreload 23452 19880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:08:37,725 autoreload 19404 19824 Watching for file changes with StatReloader
+INFO 2021-02-01 20:08:45,197 autoreload 19404 19824 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:08:45,673 autoreload 1740 1140 Watching for file changes with StatReloader
+INFO 2021-02-01 20:08:48,932 autoreload 1740 1140 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:08:49,408 autoreload 9196 5720 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:00,039 autoreload 9196 5720 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:09:00,929 autoreload 22860 5352 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:02,651 autoreload 22860 5352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:09:03,400 autoreload 23812 10392 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:08,738 autoreload 23812 10392 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:09:09,210 autoreload 2408 17572 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:11,556 autoreload 2408 17572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:09:12,141 autoreload 22112 9768 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:19,810 autoreload 22112 9768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:09:20,559 autoreload 2984 2292 Watching for file changes with StatReloader
+INFO 2021-02-01 20:09:26,198 basehttp 2984 24228 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:09:26,325 basehttp 2984 24228 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:09:26,717 basehttp 2984 10416 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:09:26,723 basehttp 2984 8160 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 20:09:26,725 basehttp 2984 19652 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-01 20:09:31,699 views 2984 19652  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-01 20:09:31,699 basehttp 2984 19652 "GET /post_test/?venture_id=2 HTTP/1.1" 200 59
+INFO 2021-02-01 20:30:45,529 autoreload 2984 2292 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:30:46,035 autoreload 10040 16192 Watching for file changes with StatReloader
+INFO 2021-02-01 20:30:59,673 autoreload 10040 16192 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:31:00,157 autoreload 19260 12164 Watching for file changes with StatReloader
+INFO 2021-02-01 20:31:03,553 autoreload 19260 12164 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:31:04,085 autoreload 3912 22880 Watching for file changes with StatReloader
+INFO 2021-02-01 20:31:06,311 autoreload 3912 22880 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:31:06,803 autoreload 5068 18732 Watching for file changes with StatReloader
+INFO 2021-02-01 20:31:09,370 basehttp 5068 20984 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:31:09,614 basehttp 5068 20984 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:31:09,947 basehttp 5068 9112 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:31:09,971 basehttp 5068 16224 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 20:31:09,977 basehttp 5068 18876 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-01 20:31:17,601 views 5068 18876  Technical error in def get pos: Change_Table matching query does not exist. 
+ERROR 2021-02-01 20:31:17,721 log 5068 18876 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1420, in get
+    data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
+UnboundLocalError: local variable 'destination_acct_code' referenced before assignment
+ERROR 2021-02-01 20:31:17,724 basehttp 5068 18876 "GET /post_test/?venture_id=2 HTTP/1.1" 500 79274
+INFO 2021-02-01 20:33:01,100 autoreload 5068 18732 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:33:01,667 autoreload 24364 18972 Watching for file changes with StatReloader
+INFO 2021-02-01 20:33:02,987 autoreload 24364 18972 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:33:03,511 autoreload 19444 11872 Watching for file changes with StatReloader
+INFO 2021-02-01 20:33:07,983 autoreload 19444 11872 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:33:08,415 autoreload 22840 2408 Watching for file changes with StatReloader
+INFO 2021-02-01 20:33:12,653 autoreload 22840 2408 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:33:13,135 autoreload 13876 20124 Watching for file changes with StatReloader
+INFO 2021-02-01 20:33:16,510 autoreload 13876 20124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:33:17,032 autoreload 19620 22536 Watching for file changes with StatReloader
+INFO 2021-02-01 20:33:21,734 basehttp 19620 1688 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:33:22,002 basehttp 19620 1688 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:33:22,317 basehttp 19620 22648 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:33:22,332 basehttp 19620 5284 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-01 20:33:22,337 basehttp 19620 10280 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-01 20:33:27,213 views 19620 10280  Technical error in def get pos: Change_Table matching query does not exist. 
+ERROR 2021-02-01 20:33:27,336 log 19620 10280 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1422, in get
+    data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
+UnboundLocalError: local variable 'destination_acct_code' referenced before assignment
+ERROR 2021-02-01 20:33:27,339 basehttp 19620 10280 "GET /post_test/?venture_id=2 HTTP/1.1" 500 79274
+INFO 2021-02-01 20:37:25,546 autoreload 19620 22536 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:37:26,064 autoreload 792 828 Watching for file changes with StatReloader
+INFO 2021-02-01 20:37:26,819 basehttp 792 14812 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:37:28,516 basehttp 792 14812 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:37:28,765 basehttp 792 8064 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:37:28,776 basehttp 792 15036 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 20:37:28,779 basehttp 792 12688 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-01 20:37:33,787 views 792 12688  Technical error in def get pos: Change_Table matching query does not exist. 
+ERROR 2021-02-01 20:37:33,877 log 792 12688 Internal Server Error: /post_test/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1422, in get
+    data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
+UnboundLocalError: local variable 'destination_acct_code' referenced before assignment
+ERROR 2021-02-01 20:37:33,880 basehttp 792 12688 "GET /post_test/?venture_id=2 HTTP/1.1" 500 79296
+INFO 2021-02-01 20:38:01,501 autoreload 792 828 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:38:01,991 autoreload 17468 14884 Watching for file changes with StatReloader
+INFO 2021-02-01 20:38:05,225 autoreload 17468 14884 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:38:05,799 autoreload 24192 19244 Watching for file changes with StatReloader
+INFO 2021-02-01 20:38:23,534 autoreload 24192 19244 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:38:24,082 autoreload 8820 9760 Watching for file changes with StatReloader
+INFO 2021-02-01 20:38:25,473 autoreload 8820 9760 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:38:26,059 autoreload 21212 23132 Watching for file changes with StatReloader
+INFO 2021-02-01 20:38:29,383 autoreload 21212 23132 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:38:30,250 autoreload 6848 24084 Watching for file changes with StatReloader
+INFO 2021-02-01 20:38:33,495 basehttp 6848 22600 "GET /pos1/2/0/ HTTP/1.1" 200 123046
+WARNING 2021-02-01 20:38:33,810 basehttp 6848 22600 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-01 20:38:34,422 basehttp 6848 16876 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-01 20:38:34,428 basehttp 6848 17872 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-01 20:38:34,429 basehttp 6848 23544 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-01 20:38:39,057 views 6848 23544  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-01 20:38:39,058 basehttp 6848 23544 "GET /post_test/?venture_id=3 HTTP/1.1" 200 125
+INFO 2021-02-01 20:40:49,215 autoreload 6848 24084 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-01 20:40:49,688 autoreload 764 15104 Watching for file changes with StatReloader
