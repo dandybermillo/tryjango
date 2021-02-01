@@ -9,7 +9,347 @@
 {% block css_style %}
 
 <style>
+/* ------------------------- side bar menu ------------------------------ */
+body {
+  max-width: 100%;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+.navigation {
+  background: #000;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation img {
+  padding: 0 10px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+  
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(0);
+  transition: transform .35s ease-in-out;
+  height: 100%; 
+  
+
+}
+
+.overlay.hidden {
+  transform: translateX(100%);
+}
+
+.hidden .toggle-mobile::before{
+  content: "=";
+  font-family: "FontAwesome" !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: #fff;
+  background: #2e4ead;
+  font-size: 60px;
+  padding-top: 9px;
+  font-weight:bolder;
+  font-size: .8em;
+}
+ 
+ 
+.box-close a {
+  background: #2e4ead;
+  position: absolute;
+  top: 0;
+  left: -90px;
+  height: 90px;
+  width: 90px;
+  color: #fff;
+  display: block;
+  font-size: 90px;
+  font-weight: 100;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+}
+.wrap .mobileNav {
+  width: 100%;
+  background-color: #2e4ead;
+  padding: 20px 30px;
+  overflow-y: scroll;
+}
+.box-wrap,
+.wrap .mobileNav {
+  height: 100%;
+  background-color:rgba(0, 151, 19, 0.6) important;
+
+}
+.wrap .box-addres ul li:first-child {
+  padding-left: 15px;
+}
+
+.wrap .mobile-menu h4 a {
+  color: white;  
+}
+.wrap .mobile-menu h4 a:hover {
+  color: grayc;
+  text-decoration: underline;
+}
+
+.box-wrap {
+  background-color: #fff;
+  width: 497px;
+}
+
+.wrap nav {
+  width: 100%;
+  background-color: #000;
+  padding: 36px 58px 36px 70px;
+}
+  
+  
+.wrap .logo2 {
+  text-align: center;
+  padding-bottom: 39px;
+  width: 100%;
+  border-bottom: 1px solid #363636;
+}
+  
+.wrap .logo2 a {
+  display: inline-block;
+}
+
+.wrap .box-mobile-menu {
+  width: 100%;
+}
+
+.wrap .mobile-menu .col-md-6:first-child {
+  padding-left: 0;
+}
+
+.wrap .mobile-menu .col-md-6:last-child {
+  padding-right: 0;
+  padding-left: 52px;
+}
+
+.wrap .mobile-menu h4 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d9262c;
+  text-transform: capitalize;
+  margin-top: 37px;
+}
+
+.wrap .mobile-menu ul li a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.wrap .mobile-menu ul li a:hover {
+  color: #0479c3;
+}
+
+.wrap .search-form {
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+}
+  
+.wrap .search-form input {
+  height: 59px;
+  width: 100%;
+  background-color: white;
+  color: #fff;
+  padding-left: 30px;
+  padding-right: 57px;
+  border: none;
+  box-shadow: none;
+}
+
+.wrap .search-form button {
+  height: 59px;
+  width: 67px;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}
+  
+.wrap .search-form button i {
+  font-size: 25px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.wrap .search-form button:hover {
+  background-color: gray;
+}
+
+.wrap .search-form button:hover i {
+  color: #0479c3;
+}
+
+
+  
+
+.wrap .box-social {
+  width: 100%;
+  border-bottom: 1px solid #363636;
+}
+
+.wrap .box-social ul {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.wrap .box-social ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.wrap .box-social ul li:first-child {
+  margin-left: 0;
+}
+
+.wrap .box-social ul li:last-child {
+  margin-right: 0;
+}
+
+
+.wrap .box-social ul li a {
+  font-size: 26px;
+  font-size: 26px;
+}
+.fab {
+  transition: color .25s ease-in-out;
+}
+.fab:hover{
+  color: #726e6e !important;
+}
+
+.wrap .box-addres {
+  width: 100%;
+  background-size: 58px 41px;
+  margin-top: 44px;
+  border-bottom: 1px solid #363636;
+  padding-bottom: 31px;
+}
+
+
+
+
+.wrap .box-addres ul {
+  list-style: none;
+  margin-top: 33px;
+}
+
+.right-nav-logo {
+  width:100px;
+}
+.wrap .box-addres ul li {
+  font-family: "Helvetica", Arial, Verdana;
+  font-size: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}
+
+
+
+
+@media (max-width: 767px) {
+  
+  .box-close a {
+    left: 0;
+    top: -10px;
+    z-index: 2;
+    background: none;
+  }
+  .hidden .toggle-mobile:before{
+    left: -90px;
+    top: 10px;
+  }
+  .wrap .mobile-menu h4 {
+    margin-top: 50px;
+  }
+  
+  .box-wrap {
+    width: 100%;
+    max-width: 497px;
+  }
+  
+  .wrap nav {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .wrap .search-form button {
+    background-color: #221f20;
+    height: 74px;
+  }
+  .wrap .search-form button:hover {
+    background-color: #221f20;
+  }
+  .wrap .search-form {
+    margin-top: 0;
+  }
+  .wrap .mobile-menu {
+    border-bottom: 1px solid #363636;
+    padding-bottom: 40px;
+  }
+  .wrap .search-form {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #363636;
+  }
+  .wrap .search-form input {
+    height: 74px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 573px) {
+  
+  .wrap .search-form input {
+    padding-left: 70px;
+  }
+}
+
+
+@media (max-width: 479px) {
    
+  .wrap .box-social ul li {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .wrap .box-social ul li:first-child {
+    margin-left: 0;
+  }
+  .wrap .box-social ul li:last-child {
+    margin-right: 0;
+  }
+  .wrap nav {
+    padding: 0 15px 36px 15px;
+  }
+}
+
+
+/* ------------------------------end side bar menu style ---------------------------- */   
+
+
 td, th{
  
 height:55px !important;
@@ -234,8 +574,12 @@ th {
                 {{ message }}
             </div>
             {% endfor %}
+
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
-                Please fill in the box with asterisk sign(*). Thank you.
+                Please fill in the box with asterisk sign(*).
+            </div>
+            <div id="venture-pay-alert" class="alert alert-danger" role="alert" style="display:none">
+               <span id="venture-pay-alert-message"> </span>
             </div>
                <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
@@ -260,7 +604,7 @@ th {
                     </div>
                     
                     <div id="customer-info-alert" class="alert alert-primary" role="alert">
-                      <span bold> Customer: </span> <span id="customer-info-alert-text">_</span> <span style="float:right" id="customer-info-alert-success-text">x</span>
+                      <span bold> Customer: </span> <span id="customer-info-alert-text">_</span> <span style="float:right" id="transNumber">#{{venture.transId}}</span>
                     </div>
 
                     <div class="form-row">
@@ -309,14 +653,12 @@ th {
                                 } -->
                                 <div class="dropdown-menu" aria-labelledby="percent-drop">
                                     <button class="cc-percent dropdown-item" type="button">95% </button>
+                                    <button class="cc-percent dropdown-item" type="button">94% </button>
+                                    <button class="cc-percent dropdown-item" type="button">93% </button>
+                                    <button class="cc-percent dropdown-item" type="button">92% </button>
+                                    <button class="cc-percent dropdown-item" type="button">91% </button>
                                     <button class="cc-percent dropdown-item" type="button">90% </button>
-                                    <button class="cc-percent dropdown-item" type="button">85% </button>
-                                    <button class="cc-percent dropdown-item" type="button">80% </button>
-                                    <button class="cc-percent dropdown-item" type="button">75% </button>
-                                    <button class="cc-percent dropdown-item" type="button">70% </button>
-                                    <button class="cc-percent dropdown-item" type="button">65% </button>
-                                    <button class="cc-percent dropdown-item" type="button">60% </button>
-                                    <button class="cc-percent dropdown-item" type="button">50% </button>
+                                     
                                 </div>
                             </div>
                         </div>
@@ -557,7 +899,7 @@ th {
                         {% else %}
                         <a class="hide btn btn-secondary btn-md"
                             href="{%  url 'fx:po_url'   %}">X </a>
-                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Done Editing" />
+                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
                         <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
                         {% if venture.id > 0 %}
                         <a hidden id="venture-delete"
@@ -634,6 +976,62 @@ th {
     </div>
   </div>
 
+
+
+
+<!-- ------------------------- burger ----------------------------------- -->
+
+<div id="overlay" style= "z-index: 1000;" class="overlay hidden" role="navigation" >
+    <div class="wrap box-wrap">
+      <div class="mobileNav black;">        
+            <div class="box-close box-toggle open2" >
+          <a    href="#" class="toggle-mobile" aria-label="Menu Toggle">×</a>
+        </div>
+        <div class="box-mobile-menu mobile-menu" >
+          <div class="row">
+             
+            <div class="col">
+              <h4><a href=""> History</a></h4>
+               <button id="sample"> click</button>
+              <div id="history" class="list-group">
+                 
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div><!--.mobile-menu-->
+      <!-- <form class="search-form hidden-xs" action="">
+          <label for="searchBox" class="sr-only">Search</label>              
+          <input id="searchBox" name="q" type="search" style="color: black;" value="Under construction">
+          <button class="submit" type="submit" value="" aria-label="Search"><i  style="color: white;" class="fa fa-search" aria-hidden="true">&nbsp;</i></button>
+        </form> -->
+        <div class="box-social text-center">
+          <ul>
+            <li><a href="https://www.facebook.com/Solodev" aria-label="Facebook"><i class="fab fa-facebook-f text-white" aria-hidden="true">&nbsp;</i></a></li>
+            <li><a href="https://www.linkedin.com/company/solodev" aria-label="LinkedIn" class="fab fa-linkedin-in text-white"></a></li>
+            <li><a href="https://twitter.com/solodev?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" aria-label="Twitter"><i class="fab fa-twitter text-white" aria-hidden="true">&nbsp;</i></a></li>
+            <li><a href="https://medium.com/@solodev" aria-label="Medium"><i class="fab fa-medium-m text-white" aria-hidden="true">&nbsp;</i></a></li>
+            <li><a href="https://github.com/solodev" aria-label="Github"><i class="fab fa-github text-white" aria-hidden="true">&nbsp;</i></a></li>
+          </ul>
+        </div><!--.box-social-->
+        <div class="box-addres">
+           <p> <img src="/static/img/image/logo1.jpg" class="mx-auto d-block right-nav-logo"></p>
+          <ul class="row">
+          <li class="col-md-12 text-center">
+            <p style="margin-left: 0px;" class="u-text u-text-grey-50 u-text-2">Zone 8, San Jose, Pili, Camarines Sur 4418<br>Philippines<br>
+              <br><a href="mailto:fx.cc@mail.com">fx.cc@gmail.com</a>
+          </li>
+          </ul>
+        </div><!--.box-addres-->
+      </div>
+    </div>
+  <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+  
+  <!-- ----------------------------- burger end ----------------------------------- -->
 
 
     <div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
@@ -801,6 +1199,7 @@ th {
 
 <script>
     //okss
+  
     var videoCode =0; //1-payment 2-venture
     var ID_Info = new Object();
     ID_Info.id = "";
@@ -813,7 +1212,7 @@ th {
     keys["PREVIOUS-INPUT"] = "";
     // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
     //console.log("previous acct:" + keys["previous-selected-account"]);
-
+   
     (function () {
         'use strict';
         window.addEventListener('load', function () {
@@ -834,8 +1233,13 @@ th {
     })();
 
     $(document).ready(function () {
-       
+        var ctr=1;
+        $("body").delegate(".history", "click", function(){
+              venture_id = $(this).attr("id");
 
+
+              
+        });
         var venture_id = parseInt("{{venture.id}}");
         
         var rIndex =0;  // use by the table save the selected row
@@ -844,9 +1248,49 @@ th {
         console.log("----- ventyreid:" + venture_id);
         var post_data = "{{post_data}}";
 
+        function myFunction() { 
+                var date = new Date(); 
+                var hours = date.getHours(); 
+                var minutes = date.getMinutes(); 
+                
+                // Check whether AM or PM 
+                var newformat = hours >= 12 ? 'PM' : 'AM';  
+                
+                // Find current hour in AM-PM Format 
+                hours = hours % 12;  
+                
+                // To display "0" as "12" 
+                hours = hours ? hours : 12;  
+                minutes = minutes < 10 ? '0' + minutes : minutes; 
+                
+             return   hours + ':' + minutes + ' ' + newformat; 
+            } 
+            $("#sample").click(function() {
+                
+             fillHistory(ctr,"#"+ ctr+ " "+"grocery","hi");           
+             ctr =ctr + 1;  
+           });
 
+            
+            function fillHistory(id,title,desc){ 
+                    var tim =myFunction();
+                   
+                    $( "#history" ).prepend( "<button   id='"+id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
+                            "<div class='d-flex w-100 justify-content-between'>"+
+                                "<h5 class='mb-1'>"+title+"</h5>"+
+                                "<small>"+ tim +"</small></div>"+
+                            
+                            "<p class='mb-1'>"+desc+"</p>"+
+                            
+                            "</button>");
 
-
+                  }
+                 
+       $("#59").click(function() {
+   //  var id=   $(this).attr("id");
+   id =0;
+   console.log("id:"+id);
+       });
 
 
         if (isNaN(venture_id)) {
@@ -883,7 +1327,14 @@ th {
 
 
 
-
+            $('.toggle-mobile,.fxmenu,.fxusername').click(function() {
+            $('.overlay').toggleClass('hidden');
+           });
+           
+           $("#side-menu").click(function() {
+               console.log("hi")
+            $('.overlay').toggleClass('hidden');
+           });
 
             $("#login-btn").click(function(e) {
 
@@ -1204,7 +1655,7 @@ $("#payment-login-lnk").click(function () {
         if (minimum_deposit > keys['CC-BALANCE']) {
             keys['CC-BALANCE'] = minimum_deposit;
         }
-        $("#id_cc").prop("min", minimum_deposit);
+       // $("#id_cc").prop("min", minimum_deposit);
         if  (venture_id <=0){
             $("#id_cc").prop("max",5000);
         }else { 
@@ -1264,43 +1715,54 @@ $("#payment-login-lnk").click(function () {
                         // do something with response
                         response["result"]; // equals 'Success or failed';
                         response["message"]; // equals 'you"re logged in or You messed up';
-                        data = response["data"];
+                       
                         if (response["type"] === "success") {
                         
-                        var sales_total  = $("#venture-total-txt").val();
-                        $("#salestotal-reps").val(sales_total);
-                        //$("#tender-txt").val()
-                        $("#tendered-reps").val($("#tender-txt").val().trim());
-                        $("#change-reps").val($("#change-txt").val().trim());
-                        var option = $("#deposit-cash-drop").text().trim();
-                        if (option == "SELECT OPTION"){
-                            option ="";
-                        }
-                        $("#deposit-reps").val(option);
- 
-                        $("#pos-form").trigger("reset");
-                        $("#report-modal").modal('show');
-                        // $("#login-success").text(response["message"]);
-                        // $("#login-success").css({ display: "block" });
-                        console.log("Success!!!!");
-                        // $("#user-page-lnk").click();
-                      
-                        console.log("Data");
-                        console.log(data);
-                      //  window.location.replace("/user/"+id);
+                                        var sales_total  = $("#venture-total-txt").val();
+                                        data = response["data"];
+                                        $("#customer-info-alert-text").text("_");
+                                        $("#source-type").val("K");
+                                        $("#source-cash-drop").text("CASH");
+                                        id= response["data"]["venture_id"];
+                                        $("#transNumber").text("#"+id);
+                                        fillHistory(id,"#"+id+ " POS","Grocery");
+                                        $("#salestotal-reps").val(sales_total);
+                                        //$("#tender-txt").val()
+                                        $("#tendered-reps").val($("#tender-txt").val().trim());
+                                        $("#change-reps").val($("#change-txt").val().trim());
+                                      //  $("#venture_id").val(response["data"]['venture_id']);
+                                        var option = $("#deposit-cash-drop").text().trim();
+                                        if (option == "SELECT OPTION"){
+                                            option ="";
+                                        }
+                                        $("#deposit-reps").val(option);
+                
+                                        $("#pos-form").trigger("reset");
+                                        $("#report-modal").modal('show');
+                                        // $("#login-success").text(response["message"]);
+                                        // $("#login-success").css({ display: "block" });
+                                        console.log("Success!!!!");
+                                        // $("#user-page-lnk").click();
+                                    
+                                        console.log("Data");
+                                        console.log(data);
+                                    //  window.location.replace("/user/"+id);
                         } else if (response["type"] === "error") {
-                        
-                        $("#login-danger-alert").fadeIn();  // alert message
-                        //("login","danger");
-                        
-                        console.log("Acccess denied");
+                                    
+                                    $("#venture-pay-alert").fadeIn();  // alert message
+                                    //("login","danger");
+                                    $("#venture-pay-alert-message").text( response["message"]);
+                                   
+                                    console.log("message:" + response["message"]);
 
                         }
                     },
                     error: function (response) {
                         // do something with response
-                        console.log("Something went wrong! Try again..");
+                    console.log("Something went wrong! Try again..");
                     //   $("#login-error").text("Something went wrong! Try again.");
+                    $("#venture-pay-alert").fadeIn();  // alert message
+                     $("#venture-pay-alert-message").text("Something went wrong! Try again..");
                     $("#login-danger-alert").fadeIn();  // alert message
                    // closeSnoAlertBox("login","danger");
                     },
@@ -1366,8 +1828,38 @@ $("#payment-login-lnk").click(function () {
                                 name = response["member_info"]['name'].toUpperCase();
                                 $("#customer").val(response["member_info"]['id']);
                                 console.log("id customer: " + $("#id_customer").val());
-                                cm_balance = response["cm_balance"]
-                                cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance;  
+                                cm_balance = response["balances"]['cc'];
+                                $("#id_cc").prop("max",cm_balance);
+                                w_balance=  response["balances"]['wallet'];
+                                l_balance=  response["balances"]['loan'];
+                                
+                                if (w_balance > 1000){
+                                    w_balance= "1k+W"
+                                }else
+                                {
+                                    w_balance=w_balance+ "W"
+                                }
+                               
+                                s_balance =  response["balances"]['saving'];
+                                if (s_balance > 1000){
+                                    s_balance =   "1k+S"
+                                }
+                                else
+                                {
+                                    s_balance = s_balance + "S"
+                                }
+                                if (cm_balance > 1000) {
+                                    cm_balance = "1k+ C";
+                                }else{
+                                    cm_balance =cm_balance + "C";
+                                }
+                                if (l_balance > 1000) {
+                                    l_balance =l_balance + " Ln";
+                                }else{
+                                    l_balance =l_balance + "Ln";
+                                }
+
+                                cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance+" | "+ w_balance+" | "+s_balance+" | "+ l_balance;  
                                 $("#customer-info-alert-text").text(cust_info);
                                 if (minimum_deposit > cm_balance) {
                                     cm_balance = minimum_deposit;
@@ -1903,31 +2395,8 @@ $("#payment-login-lnk").click(function () {
             //$("#venture-description-txt").val().trim()
             $("#login").modal('show');
             $("#authenticate-alert").hide();
-            // // $("#review-venture-date-txt").val($("#venture-date-txt").val());
-            // // $("#review-venture-total-txt").val($("#venture-total-txt").val());
-            // // $("#review-venture-total_owing-txt").val($("#venture-total_owing-txt").val());
-            // // $("#review-venture-cc-txt").val($("#id_cc").val());
-            // // $("#review-venture-amount-txt").val($("#id_amount").val());
-            // // $("#review-venture-source-txt").val($("#source-cash-drop").text().trim());
-            // // $("#review-venture-percentage-txt").val($("#percent-drop").text().trim());
-            // // $("#review-venture-description-txt").val(description);
-            // // $("#venture-payment-failed-alert").hide();
-            // // var change =parseFloat( $("#change-txt").val());
-            // // console.log("change: "+change);
-            // // if (change > 0 ) {
-            // //     var saveOption =  $("#deposit-cash-drop").text().trim();
-            // //     $("#review-change").text("P "+ change);
-            // //     console.log("saveOption: "+saveOption);
-            // //     if (saveOption != "SELECT OPTION") { 
-                     
-            // //            $("#review-saveOption").text(saveOption);
-            // //     }else{
-
-            // //         $("#review-saveOption").text("");
-            // //     }
-
-            // // }
-
+            $("#venture-pay-alert").hide();
+           
 
 
         });

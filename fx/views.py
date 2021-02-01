@@ -729,8 +729,9 @@ def get_customer_details(request):
 
             member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
             print(f"member_info:{member_info}")
-            cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
-            return JsonResponse({"data":"Success","member_info":member_info,"cm_balance":round(cm_balance)}, status = 200)
+            #cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
+            balances =get_all_balances(member_qs.id)
+            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
       except Exception as e:
             print (f"{e}, {type(e)}")
             logger.warning(f"{e}, {type(e)}")
@@ -1289,7 +1290,68 @@ def po(request):
     return render(request, 'fx/venture/venture_test.html', context)
     
      
-     
+def get_pos(request):
+    if request.is_ajax and request.method == "GET"  and request.user.is_authenticated is True:  
+            member = true
+            venture_id = request.POST.get('venture_id',"0").strip()
+            if venture_id > 0:
+                    if venture_id > 0: #edit
+                        try:
+                           venture_qs= VentureModel.objects.et( id=venture_id)
+                           
+                        except Exception as e:
+                            print ("unable to retrieve transaction number")
+                            logger.warning ("unable to retrieve transaction number")
+                             
+                    customer_id = 0
+                    asset_balance={}
+                    print(f"venture_id:{venture_id}")
+                    
+
+           # if venture_id > 0:
+            cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
+            if maximum_deposit < cc_balance: 
+                cc_balance = maximum_deposit
+            asset_balance ={"cc_balance":cc_balance}
+                        
+            customer_info = get_member_info( venture_qs.customer_id,"#create_update_venture. 1") #create_update_venture. 1
+            ventureForm.totalCost = venture_qs.amount + venture_qs.cc
+           # ventureForm.request_action =request_action
+            if member:
+                    asset_balance["cc_balance"] = asset_balance["cc_balance"] + venture_qs.cc
+            #print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
+            if venture_qs.note_id > 0: #note has been provided
+                    try:
+                            ventureForm.note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                    except Exception as e:
+                        print(f"loan app note: {e}")
+            else: 
+                    ventureForm.note =""
+            try:
+                        change_table_qs = Change_Table.objects.get(venture_id= venture_id)
+                        ventureForm.change = change_table_qs.change
+                        ventureForm.tender =  venture_qs.amount + change_table_qs.change
+                        ventureForm.destination_acct_code =change_table_qs.destination_acct_code
+                        print(f"venture form: {ventureForm}")
+                        print(f"ventureForm.tender:{ventureForm.tender},change_table_qs.change:{change_table_qs.change},change_table_qs.destination_acct_code:{change_table_qs.destination_acct_code} ")
+                        return JsonResponse({"type":'success', "message":"Success","data":ventureForm})
+            except Exception as e:
+                    ventureForm.change =""
+                    ventureForm.tender =""
+                    print(f"cresate_update_venture:change_table: {e}")     
+                    logger.warning(f" Technical error in def get pos: {e} ")
+                    return JsonResponse({"type":'error', "message":"Technical error","data":{}})
+                           
+                        
+                        
+    else:
+                        return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+                    
+                    
+                    
+                    
+                    
+                    
 # @login_required(login_url='/venture_login/')
 #pos
 class pos_test(View):
@@ -1344,7 +1406,7 @@ class pos_test(View):
                 #        print("====")
                 #        member_info = get_member_info( member_id,"#create_update_venture. 1")  #create_update_venture. 1
                 print("2---------------")
-                
+                message= ""
                 category = CAT_VENTURE
                 description ="GROCERY"
                 customer_source_fund = SOURCE_REGULAR
@@ -1400,34 +1462,35 @@ class pos_test(View):
                             messages.error(request, f"Message: Technical problem encountered while saving record.")
                 if member:
                         cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
-                print("-=")
+                print("Community account side")
                 if member and  int(cc) > cc_running_balance + old_cc:
                             all_valid = False
-                            if running_balance > 2000: ##?? y 2000
-                                messages.error(request, f"Message: Insufficient funds in  Community Coin(CC) Account!")
+                            if cc_running_balance + old_cc <=0: ##?? y 2000
+                                     message= "Sorry. Community Money Account  is empty!"
                             else:
-                                running_balance ='{:,.2f}'.format(running_balance)
-                                messages.error(request, f"Message: Please enter an CC amount that is no more than {running_balance}")
-                print("xxx")
+                                     message= f"Please enter a number that is no more than {cc_running_balance+ old_cc}"
+                           
+                print("wallet accout side")
                 if member and source_type =="W":
                         running_balance = get_running_finance_balance("wallet","member_id",customer)["running_balance"]
                         if  int(amount) > running_balance + old_amount:
                                 all_valid = False
-                            
-                                if running_balance > 2000:
-                                        messages.error(request, f"Message: Insufficient funds in Wallet Account!")
+                                if running_balance + old_amount <=0:
+                                                message= "Sorry. Wallet Account is empty!"
+                                                print(f"Message: Sorry. Wallet Account is empty!")
+                                                logger.warning(f"Message: Sorry. Wallet Account is empty!")
+                                              #  messages.error(request, f"Message: Sorry. Wallet Account is empty!")
+                                    
                                 else:
-                                        if running_balance > 0:
-                                                running_balance ='{:,.2f}'.format(running_balance)
-                                                messages.error(request, f"Message: Please enter an amount that is no more than P{running_balance}")
-                                        else:
-                                                messages.error(request, f"Message: Sorry. Wallet Account is empty!")
+                                                running_balance ='{:,.2f}'.format(running_balance +old_amount)
+                                                message= f"Please enter an amount that is no more than P{running_balance}"
+                                                print(message)
+                                                logger.warning(message)
+                                               # messages.error(request, message)
                                 print("..all_valid:",all_valid)
                 else:
                          customer_source_id = 0
                 print(f"--- cc_running_balance: {cc_running_balance}")
-               # print(f"-----customer_source_id:{customer_source_id} ")
-              #  return
                 if venture_id <=0:
                                 
                                     if all_valid:
@@ -1474,7 +1537,7 @@ class pos_test(View):
 #2121
                                         if note != "":
                                             response = create_or_update_venture_note(NEW_RECORD,venture_id,note,2) #todo 
-                                            if response["Success"] and response["result"] > 0 :
+                                            if response["Success"] and response["result"] > 0:
                                                 note_id  = response["result"]
                                         else:
                                             note_id = 0  
@@ -1529,7 +1592,7 @@ class pos_test(View):
                                         print("returnin...")
                                         
                                         #here
-                                        data ={"amount":venture_qs.amount,'cc':venture_qs.cc,"source":venture_qs.source_type}
+                                        data ={"venture_id":venture_id,"amount":venture_qs.amount,'cc':venture_qs.cc,"source":venture_qs.source_type}
                                         return JsonResponse({"type":'success', "message":"Completed!","data":data})
 
                                        # return redirect(f'/success/create_update_venture_result/{customer.id}/{venture_id}/{msg}/{request_action}')
@@ -1538,18 +1601,20 @@ class pos_test(View):
                                     else:
                                         print(".....ventureForm is not valid!")
                                         print(f"all_valid: {all_valid}")
-                                        amount  = request.POST.get("amount",0) 
-                                        cc  = request.POST.get("cc",0) 
-                                        ventureForm.totalCost =  float(amount) + float(cc)
-                                        context = {
-                                                'asset_balance':asset_balance,
-                                                    'venture': ventureForm,   
-                                                    'limits':limits,
-                                                    'customer_info':customer_info,
-                                                    'member_info':member_info,
-                                                }
-                                        print("returnin...")
-                                        return render(request, 'fx/venture/pos.html', context)
+                                        return JsonResponse({"type":'error', "message":message,"data":{}})
+                                        # amount  = request.POST.get("amount",0) 
+                                        # cc  = request.POST.get("cc",0) 
+                                        # ventureForm.totalCost =  float(amount) + float(cc)
+                                        # context = {
+                                        #         'asset_balance':asset_balance,
+                                        #             'venture': ventureForm,   
+                                        #             'limits':limits,
+                                        #             'customer_info':customer_info,
+                                        #             'member_info':member_info,
+                                        #         }
+                                        # print("returnin...")
+                                        # return
+                                        #return render(request, 'fx/venture/pos.html', context)
                 
     print("returnin... last")           
              
@@ -1564,7 +1629,10 @@ class pos_test(View):
 
 @login_required(login_url='/venture_login/')
 
+
 def create_update_venture1(request,customer_id,venture_id ):
+    qs= VentureModel.objects.last()
+    print(f"---------- id:{qs.id}")
     print (f"user: {request.user}")
     default_percentage = 95  #
     if request.user.is_staff and request.user.is_active:
@@ -1590,7 +1658,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                 if maximum_deposit < cc_balance: 
                     cc_balance = maximum_deposit
                 asset_balance ={"cc_balance":cc_balance}
-    venture ={'transaction_type':'W','customer':0,'source_type':'K','percent':default_percentage,"venture_id":0}  
+    venture ={'transaction_type':'W','customer':0,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
 
     context = {
                     'asset_balance':asset_balance,
