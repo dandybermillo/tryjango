@@ -15,6 +15,13 @@ body {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
 }
+.red-color{
+    font-weight: bold;
+    color: red;
+}
+.bolder{
+    font-weight: bold;
+}
 .navigation {
   background: #000;
   width: 100%;
@@ -162,6 +169,7 @@ ul {
 .wrap .mobile-menu ul li a:hover {
   color: #0479c3;
 }
+
 
 .wrap .search-form {
   width: 100%;
@@ -515,33 +523,7 @@ th {
 
    
 
-
-    <!-- <div id="payment-login" class="modal fade" role="dialog">
-        <div class="modal-dialog  modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button data-dismiss="modal" class="close">&times;</button>
-                    <h4>Authenticate Member</h4>
-                    <div class="scanner">
-                        <video id="preview"></video></div>
-                    <div id="authenticate-alert" class="alert alert-danger" role="alert" style="display:none">
-                        Invalid username or password
-                    </div>
-                    <form>
-                        <br>
-                        <input type="text" name="customer_id" id="customer_id" class="customer-username form-control"
-                            placeholder="Username" />
-                        <input type="password" id="customer-password" name="password" class="password form-control"
-                            placeholder="password" />
-                        <br>
-
-                        <a class="btn login" id="btn-agree">AGREE</a>
-                        <a class="btn login" id="btn-auth-hide" type="cancel"> HIDE</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
+ 
 
     {% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
 
@@ -551,7 +533,7 @@ th {
             <div>
                 <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
             </div>
-            {% if venture.errors %}
+            <!-- {% if venture.errors %}
             {% for field in venture %}
             {% for error in field.errors %}
             <div class="alert alert-danger">
@@ -573,7 +555,7 @@ th {
                 <a class="close" href="#" data-dismiss="alert">×</a>
                 {{ message }}
             </div>
-            {% endfor %}
+            {% endfor %} -->
 
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*).
@@ -586,7 +568,7 @@ th {
                     <div >
 
                         {{venture.in_charge}} {{venture.source_type}}cust{{venture.customer}}{{venture.percent}}
-                       {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
+                        {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
                     </div>
                     
 
@@ -614,7 +596,7 @@ th {
                             <input style="font-size:30px" id="venture-total-txt" required type="number" step='any' min=5 max="10000"
                                 class="mid-size form-control" value="{{venture.totalCost}}">
                         </div>
-
+                        
                         <div class="form-group col-md-3">
                             <label for="main-source-drop" class="col-form-label">SOURCE<span
                                     class="asteriskField">*</span></label>
@@ -702,23 +684,23 @@ th {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="checkGrocery" value="Grocery">
+                            <input class="chek-services form-check-input" type="checkbox" id="checkGrocery" value="Grocery">
                             <label class="form-check-label" for="checkGrocery"> Grocery</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="checkLoad" value="Load">
+                            <input class="chek-services form-check-input" type="checkbox" id="checkLoad" value="Load">
                             <label class="form-check-label" for="checkLoad"> Load</label>
                         </div>
 
                         <div class="form-check form-check-inline">
 
-                            <input class="form-check-input" type="checkbox" id="checkServices" value="Services">
+                            <input class="chek-services form-check-input" type="checkbox" id="checkServices" value="Services">
                             <label class="form-check-label" for="checkServices"> Services</label>
                         </div>
                         <div class="form-check form-check-inline">
 
-                            <input class="form-check-input" type="checkbox" id="checkOther" name="checkOther"
+                            <input class="chek-services form-check-input" type="checkbox" id="checkOther" name="checkOther"
                                 value="Others">
                             <label class="form-check-label" for="checkOther"> Other</label>
                         </div>
@@ -735,23 +717,23 @@ th {
 
                         
                         <div class="form-group col-md-2 has-change-group">
-                            <label for="tender-txt" class="col-form-label">TENDERED</label>
+                            <label for="tender-txt" class="bolder col-form-label">TENDERED</label>
                             <div  id="main-source-drop">
-                                <input type="text"   class="small-size  review form-control"
+                                <input type="text"   class="bolder small-size  review form-control"
                                 id="tender-txt" name="tender" value="{{venture.tender}}">
                             </div>
                         </div>
                          
                         <div class="form-group col-md-2 has-change-group">
-                            <label for="change-txt" class="col-form-label">CHANGE</label>
+                            <label for="change-txt" class="bolder red-color col-form-label">CHANGE</label>
                         <div  id="main-source-drop">
-                            <input type="text" readonly   class="small-size  review form-control"
+                            <input type="text" readonly   class="red-color bolder small-size  review form-control"
                             id="change-txt" name="change" value="{{venture.change}}">
                         </div>
                         </div>
                           
                         <div class="form-group col-md-2 has-change-group">
-                            <label for="main-source-drop" class="col-form-label">DEPOSIT CHANGE TO</label>
+                            <label for="main-source-drop" class="bolder col-form-label">DEPOSIT CHANGE TO</label>
                             <div class="dropdown" id="main-source-drop">
                                 <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
@@ -889,16 +871,8 @@ th {
 
                     <div>
 
-                        {%if post_data %}
-                        <a class="hide btn btn-secondary btn-md"
-                            href="{% url 'fx:po_url'    %}">X</a>
-
-                        <a class="edit_button btn btn-warning btn-md"
-                            href="{% url 'fx:po_url'  %}">
-                            Make Changes</a>
-                        {% else %}
-                        <a class="hide btn btn-secondary btn-md"
-                            href="{%  url 'fx:po_url'   %}">X </a>
+                       
+                        <a id="reset-form" class="hide btn btn-secondary btn-md">Cancel</a>
                         <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
                         <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
                         {% if venture.id > 0 %}
@@ -908,7 +882,7 @@ th {
                         <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
                             value="Delete this" />
 
-                        {%endif%}
+                         
                         {%endif%}
                     </div>
 
@@ -952,9 +926,9 @@ th {
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="change-reps" class="col-sm-3 col-form-label" style="color: red;font-weight: bold;">Change</label>
+                    <label for="change-reps" class="red-color col-sm-3 col-form-label">Change</label>
                     <div class="col-sm-9">
-                    <input type="text" readonly class="form-control-plaintext" id="change-reps" value="_">
+                    <input type="text" readonly class="red-color form-control-plaintext" id="change-reps" value="_">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -1241,18 +1215,17 @@ th {
 
 
         });
-
         function get_transaction(){
+
                     var data={};
+                  //  $("#reset-form").trigger("click");
                     data["venture_id"] =$("#venture_id").val();
                     console.log("data");
                     console.log(data);
                     $.ajax({
                         type: "GET",
-                        url: "/post_test/",
-                       
+                        url: "/pos_view/",
                         data: data,
-                        
                         success: function (response) {
                             // do something with response
                             response["result"]; // equals 'Success or failed';
@@ -1262,7 +1235,88 @@ th {
 
                                   console.log("success:");
                                   console.log(response["data"]);
+                                  console.log(response["member_info"]);
+                                  console.log(response["balances"]);
+                                  amount =response["data"]['amount'];
+                                  cc = response["data"]['cc'];
+                                  total =  amount + cc;
+                                  $("#venture-total-txt").val(total);
+                                  $("#id_amount").val(amount);
+                                  $("#id_cc").val(cc);
+                                  $("#percent-drop").text( "95%"); //?95% r:variable
+                                  var deposit_to ="SELECT OPTION";
+                                  console.log("destination_acct_code:" + response["data"]["destination_acct_code"] );
+                                  if(response["data"]["destination_acct_code"] == 'S' )
+                                  {
+                                       deposit_to = "SAVING ACCT";
+                                  }else if ( response["data"]["destination_acct_code"] == 'W' ){
+                                       deposit_to = "WALLET ACCT";  
+                                  }
+                                      
+                                  $("#deposit-cash-drop").text(deposit_to);
+                                  $("#change_deposit_to").val(deposit_to); 
+                                 
+                                  var desc = response["data"]['desc'].trim();
+                                     // note = desc
+                                     console.log("desc:"+ desc);
+                                    if (desc.length > 0) {
+                                       trim_description(desc);
+                                    }else{
 
+                                      
+                                         $(".chek-services").prop("checked",false);    
+                                         $("#venture-description-txt").val("");
+                                    }
+
+                                  $("#note").val(desc);
+
+                                  if (response["data"]['change'] > 0){
+                                       tendered =  amount + response["data"]['change'];
+                                       $("#tender-txt").val(tendered);
+                                       $("#change-txt").val(response["data"]['change']);
+                                  }
+                                  $("#source-type").val(response["data"]["source_type"]);
+
+                                    name = response["member_info"]['name'].toUpperCase();
+                                    $("#customer").val(response["member_info"]['id']);
+                                   // console.log("id customer: " + $("#id_customer").val());
+                                    cm_balance = response["balances"]['cc'];
+                                    $("#id_cc").prop("max",cm_balance);
+                                    w_balance=  response["balances"]['wallet'];
+                                    l_balance=  response["balances"]['loan'];
+                                    
+                                    if (w_balance > 1000){
+                                        w_balance= "1k+W"
+                                    }else
+                                    {
+                                        w_balance=w_balance+ "W"
+                                    }
+                                
+                                    s_balance =  response["balances"]['saving'];
+                                    if (s_balance > 1000){
+                                        s_balance =   "1k+S"
+                                    }
+                                    else
+                                    {
+                                        s_balance = s_balance + "S"
+                                    }
+                                    if (cm_balance > 1000) {
+                                        cm_balance = "1k+ C";
+                                    }else{
+                                        cm_balance =cm_balance + "C";
+                                    }
+                                    if (l_balance > 1000) {
+                                        l_balance =l_balance + " Ln";
+                                    }else{
+                                        l_balance =l_balance + "Ln";
+                                    }
+
+                                    cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
+                                    $("#customer-info-alert-text").text(cust_info);
+                                    if (minimum_deposit > cm_balance) {
+                                        cm_balance = minimum_deposit;
+                                    }
+                                    $("#id_cc").prop("max", cm_balance);
                         //     $("#login-form").trigger("reset");
                         //     // $("#login-success").text(response["message"]);
                         //     // $("#login-success").css({ display: "block" });
@@ -1295,8 +1349,8 @@ th {
 
         console.log("----- ventyreid:" + venture_id);
         var post_data = "{{post_data}}";
-
-        function myFunction() { 
+        
+        function getTime() { 
                 var date = new Date(); 
                 var hours = date.getHours(); 
                 var minutes = date.getMinutes(); 
@@ -1314,14 +1368,14 @@ th {
              return   hours + ':' + minutes + ' ' + newformat; 
             } 
             $("#sample").click(function() {
-                
+              ctr=58;  
              fillHistory(ctr,"#"+ ctr+ " "+"grocery","hi");           
              ctr =ctr + 1;  
            });
 
             
             function fillHistory(id,title,desc){ 
-                    var tim =myFunction();
+                    var tim =getTime();
                    
                     $( "#history" ).prepend( "<button   id='"+id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
                             "<div class='d-flex w-100 justify-content-between'>"+
@@ -1333,11 +1387,19 @@ th {
                             "</button>");
 
                   }
-                 
-       $("#59").click(function() {
-   //  var id=   $(this).attr("id");
-   id =0;
-   console.log("id:"+id);
+       
+       $("#reset-form").click(function() {
+  
+
+           $("#pos-form").trigger("reset");
+           $("#customer-info-alert-text").text("");
+           $("#source-cash-drop").text("CASH");
+           $("#source-type").val("K");
+           $("#deposit-cash-drop").text("SELECT OPTION");
+          $("#change_deposit_to").val("SELECT OPTION");
+           $("#percent-drop").text(  "95%");
+           $(".chek-services").prop("checked",false);   
+          
        });
 
 
@@ -1756,7 +1818,7 @@ $("#payment-login-lnk").click(function () {
 
             $.ajax({
                     type: "POST",
-                    url: "/post_test/",
+                    url: "/pos_view/",
 
                     data: $("#pos-form").serialize(),
                     success: function (response) {
@@ -1777,6 +1839,7 @@ $("#payment-login-lnk").click(function () {
                                         $("#salestotal-reps").val(sales_total);
                                         //$("#tender-txt").val()
                                         $("#tendered-reps").val($("#tender-txt").val().trim());
+                                        var change
                                         $("#change-reps").val($("#change-txt").val().trim());
                                       //  $("#venture_id").val(response["data"]['venture_id']);
                                         var option = $("#deposit-cash-drop").text().trim();
@@ -1785,7 +1848,7 @@ $("#payment-login-lnk").click(function () {
                                         }
                                         $("#deposit-reps").val(option);
                 
-                                        $("#pos-form").trigger("reset");
+                                       
                                         $("#report-modal").modal('show');
                                         // $("#login-success").text(response["message"]);
                                         // $("#login-success").css({ display: "block" });
@@ -1794,6 +1857,9 @@ $("#payment-login-lnk").click(function () {
                                     
                                         console.log("Data");
                                         console.log(data);
+                                        $("#pos-form").trigger("reset");
+                                        $("#deposit-cash-drop").text("SELECT OPTION");
+                                        $("#change_deposit_to").val("SELECT OPTION"); 
                                     //  window.location.replace("/user/"+id);
                         } else if (response["type"] === "error") {
                                     

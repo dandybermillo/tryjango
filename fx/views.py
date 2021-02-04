@@ -921,32 +921,38 @@ def account_manager_update(source_id,debit,credit,sourceFund,code):
                     return False
 
 
-
+#333
 def create_or_update_venture_note(code, source_id,note,category=2):
         #-1 : no-action, 0:edit,1: create
-    
-        if note =="":
+        print(f"--------- code: {code},source_id:{source_id}, category: {category},note: {note}")
+        if code == DELETE_RECORD:
                 try:
                     delete_note_qs = NoteModel.objects.get(id = source_id ).delete()
+                    print("delete create_or_update_venture_note")
                     return {"Success":True, 'result': delete_note_qs}
                 except Exception as e:
+                    logger.warning("unable to delete note at Def create_or_update_venture_note ")
                     return {"Success":False}
 
         else:
-            if code == EDIT_RECORD:    
+            if code == EDIT_RECORD and source_id > 0:    
                 try:  
                     result = NoteModel.objects.filter(id = source_id).update(note=note)
+                    print("-- success editing note at create_or_update_venture_note")
                     return {"Success":True,"result": result}
                 except Exception as e:
                     print (f"result notes {e}, {type(e)}")
+                    logger.warning(f"result notes {e}, {type(e)} at Def create_or_update_venture_note ")
                     return {"Success":False}
             else:  
+                
+                print("-- success adding note at create_or_update_venture_note")       
                 try:
                     note_qs = NoteModel(source_id = source_id ,category=category ,note = note  )
                     note_qs.save() 
                     return {"Success":True,"result": note_qs.id} 
                 except Exception as e:
-                    
+                    logger.warning(f"Unable to save notes at Def create_or_update_venture_note ")
                     print (f"result notes {e}, {type(e)}")
                     return {"Success":False}
 
@@ -1161,7 +1167,7 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                                 try: 
                                         id =0
                                         if target_table !="":
-                                            destination_model = Model(member = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
+                                            destination_model = Model(member_id = member, date_entered=date.today(),transaction_type=transaction_type ,description=description,debit=0,credit=credit,source_id =source_id ,category =category )
                                             destination_model.save() 
                                             id = destination_model.id
                                         filter_fields = {"destination_acct_code": destination_acct_code,"destination_acct_id": id}
@@ -1170,7 +1176,7 @@ def add_regular_transaction(code, target_table ,member,description ="Change Depo
                                         change_deposit = Change_Table.objects.filter(venture_id = source_id).update( **filter_fields)
                                         return {"Success":True}
                                 except Exception as e:
-                                            print (f"destination_acct != old_destination_acct:adding rec{e}, {type(e)}")
+                                            print (f"destination_acct != old_destination_acct:adding rec: {e}, {type(e)}")
                                             return {"Success":False}
                     
                     print(f"source_id{source_id}, wallet_id:{destination_acct_id}, venture_id:{source_id}, credit:{credit}")
@@ -1354,17 +1360,15 @@ def get_pos(request):
                     
 # @login_required(login_url='/venture_login/')
 #pos
-class pos_test(View):
+class pos_view(View):
     
     def get(self, request, *args, **kwargs):
         print("---get")
         if  request.user.is_authenticated is True:  
-                 
-                 
-                
                 member = True
                 venture_id = parseint(request.GET.get('venture_id',"0").strip())
                 print(f"Vent:{venture_id}")
+               
                 if venture_id > 0:
                      
                         try: 
@@ -1373,10 +1377,15 @@ class pos_test(View):
                             print ("unable to retrieve transaction number")
                             logger.warning ("unable to retrieve transaction number")
                                 
-                        customer_id = 0
+                         
                         asset_balance={}
                         
                         print(f"venture_id:{venture_id},amount: {venture_qs.amount}")
+                        try:
+                                 member_qs = MemberModel.objects.get(id=venture_qs.customer_id) 
+                        except Exception as e:
+                                 print(f"pos error: {e}")
+                                 logger.warning(f" at pos: {e}")
                         
             # if venture_id > 0:
                 cc_balance = get_running_finance_balance("cc","member_id",venture_qs.customer_id)["running_balance"]
@@ -1386,7 +1395,7 @@ class pos_test(View):
                 asset_balance ={"cc_balance":cc_balance}
                 print("XXXX")          
                 customer_info = get_member_info( venture_qs.customer_id,"#create_update_venture. 1") #create_update_venture. 1
-                
+                print(f"customer name: {customer_info.name}")
                 totalCost = venture_qs.amount + venture_qs.cc
             # ventureForm.request_action =request_action
                 if member:
@@ -1394,34 +1403,45 @@ class pos_test(View):
                 print(f"........asset_balance['cc_balance'] {asset_balance['cc_balance']} ,") 
                 if venture_qs.note_id > 0: #note has been provided
                         try:
-                                note = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                                desc = NoteModel.objects.get(id=venture_qs.note_id).note #todo: handler
+                              
                         except Exception as e:
-                            print(f"loan app note: {e}")
+                            print(f"Pos description: {e}")
+                            logger.warning(f"Pos description: {e}")
+                            desc = ""
                 else: 
-                        note =""
+                        desc =""
                
                 try:
                             change_table_qs = Change_Table.objects.get(venture_id= venture_id)
                             print("first")
                             change = change_table_qs.change
-                            tender =  venture_qs.amount + change_table_qs.change
+                           # change =  venture_qs.amount + change_table_qs.change
                             destination_acct_code =change_table_qs.destination_acct_code
                             print("Try")
                              #print(f"venture form: {ventureForm}")
                            # data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
 
-                            print(f"ventureForm.tender:{tender},change_table_qs.change:{change_table_qs.change},change_table_qs.destination_acct_code:{change_table_qs.destination_acct_code} ")
+                            print(f"----change_table_qs.change:{change_table_qs.change},change_table_qs.destination_acct_code:{change_table_qs.destination_acct_code} ")
                           #  return JsonResponse({"type":'success', "message":"Success","data":data})
                 except Exception as e:
                         change =0
-                        tender =0
+                        tendered =0
                         destination_acct_code=""
                         print(f"cresate_update_venture:change_table: {e}")     
                         logger.warning(f" Technical error in def get pos: {e} ")
                         print("XXX")
                         #return JsonResponse({"type":'error', "message":"Technical error","data":{}})
-                data={"totalCost":totalCost,"change":change,"tender":tender,"destination_acct_code":destination_acct_code}
-                return JsonResponse({"type":'success', "message":"Success","data":data})
+                print(f" member qs: {member_qs}")
+                member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
+                print("X")
+                print(f"member_info:{member_info}")
+                #cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
+                balances =get_all_balances(member_qs.id)
+                print(f"balances: {balances}")
+               # return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
+                data={"source_type":venture_qs.source_type,"percent": venture_qs.percent,"amount":venture_qs.amount,"cc":venture_qs.cc,"change":change,"destination_acct_code":destination_acct_code,"desc":desc}
+                return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances})
             
                         
         else:
@@ -1449,6 +1469,8 @@ class pos_test(View):
                                 return redirect('/venture_login/') #
                             # return redirect('/unauthorized_user/') #
                
+                
+                print(f"------Post--------")
                 source_type = request.POST.get('source_type',"").strip()
                 amount =float(request.POST.get('amount',"0").strip())
                 cc = float(request.POST.get('cc','0').strip())
@@ -1460,7 +1482,7 @@ class pos_test(View):
                 change_deposit_to  = request.POST.get("change_deposit_to","").strip()
                 
                 change_amount  = request.POST.get("change","0").strip()
-               
+                
                 if change_amount == "":
                         change_amount =0
                 else:
@@ -1490,7 +1512,7 @@ class pos_test(View):
                 
               # print(f"--- member_info: {member_info}")
                 
-                
+                 
                 
             ## ??
               
@@ -1504,9 +1526,14 @@ class pos_test(View):
                 asset_balance={}
                # customer_info = get_member_info(cust,"#request.method == 'POST'. 1") #request.method == 'POST'. 1
                 print(f"--------------")
-                
+                 
                 if venture_id > 0:
-                            old_venture_qs =  get_object_or_404(Model, id=venture_id)
+                            try:
+                                 old_venture_qs =  VentureModel.objects.get(id=venture_id)
+                            except Exception as e:
+                                print("Error: venture > 0 at POST: {e}")
+                                logger.warning("Error: venture > 0 at POST: {e}")
+                                
                             if  old_venture_qs.source_type =="W": #1
                                     old_amount = old_venture_qs.amount
                             old_source_type = old_venture_qs.source_type
@@ -1514,12 +1541,13 @@ class pos_test(View):
                             old_customer_cc_id = old_venture_qs.customer_cc_id
                             old_customer_id =  old_venture_qs.customer_id
                             old_note_id = old_venture_qs.note_id
-
+                            print(f"old_venture_qs: {old_venture_qs}")
+                            
                             #+
-                            if request_action == "trade":
-                                old_role_type=  old_venture_qs.role_type
-                            else:
-                                old_role_type =""
+                            # if request_action == "trade":
+                            #     old_role_type=  old_venture_qs.role_type
+                            # else:
+                            #     old_role_type =""
 
                             if old_note_id > 0:
                                     try:
@@ -1528,14 +1556,19 @@ class pos_test(View):
                                         print(f"getting note: {e}")
                             else:
                                     old_note = ""
+                            
                 else:
                             old_amount = 0 
                             old_customer_id = customer
                             old_cc = 0
                 if old_customer_id != customer:
                             all_valid = False
-                            print("Technical problem encountered while saving record.")
-                            messages.error(request, f"Message: Technical problem encountered while saving record.")
+                            print("error old_customer_id != customer")
+                            logger.warn("at pos_view: old_customer_id != customer")
+                            return JsonResponse({"type":'error', "message":"Customer ID mismatched error","data":{}})
+
+                           # messages.error(request, f"Message: Technical problem encountered while saving record.")
+              
                 if member:
                         cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
                 print("Community account side")
@@ -1568,7 +1601,6 @@ class pos_test(View):
                          customer_source_id = 0
                 print(f"--- cc_running_balance: {cc_running_balance}")
                 if venture_id <=0:
-                                
                                     if all_valid:
                                         print(".....ventureForm is valid!")
                                         Success = True
@@ -1692,8 +1724,102 @@ class pos_test(View):
                                         # return
                                         #return render(request, 'fx/venture/pos.html', context)
                 
-    print("returnin... last")           
-             
+                else:   # for venture id > 0 --------------------------------------------------
+                          print("-----------POST begins ")
+                          if all_valid:
+                                Success = True
+                                percent = 95   ##?? rec:var
+                                filter_fields = {"amount":amount,"cc":cc,"percent":percent,"in_charge":staff_info.id}
+                                update_venture_qs ="" #delete
+                                
+                                if source_type != old_source_type:
+                                        filter_fields["source_type"] = source_type
+                                
+                                if source_type == 'K':
+                                        filter_fields['customer_source_id'] = 0
+                                        print("----source type is k")
+                                        # filter_fields['seller_source_id'] = 0
+                                        if old_source_type == 'W':
+                                                Success = account_manager_delete(venture_qs.customer_source_id,customer_source_fund,"@customer:if old_source_type == 'W'")
+                                                # if Success:
+                                                #      Success = account_manager_delete(venture_qs.seller_source_id,seller_dest_fund,"@seller:if old_source_type == 'W'")
+                                else:  #source_type == old_source_type:
+                                        
+                                        if old_source_type != 'W': 
+                                                return_id = account_manager_create(customer,customer_source_fund, venture_id,description,category,'W', date.today(),amount,0,"@customer:old_source_type != 'W'")
+                                                if return_id <=0:
+                                                        Success = False
+                                                else:
+                                                        filter_fields['customer_source_id'] = return_id
+                                                # if Success:
+                                                #         return_id = account_manager_create(seller,seller_dest_fund, venture_id,description,category,'D', date.today(),0,amount,"@customer:old_source_type != 'W'")
+                                                #         if return_id <=0:
+                                                #                Success = False
+                                                #         else:
+                                                #               filter_fields['seller_source_id'] = return_id
+                                        else:    
+                                                Success = account_manager_update(venture_qs.customer_source_id, amount,0,customer_source_fund,"@customer:account_manager_update:")
+                                                # if Success:
+                                                #       Success = account_manager_update(venture_qs.seller_source_id, 0,amount,seller_dest_fund,"@customer:account_manager_update:")
+                                
+                                if  old_customer_cc_id <=0: # save new record if there is not existing cc yet
+                                        if cc > 0: 
+                                                cc_id = cc_manager_create(venture_id,description,"W",cc,0,customer,category,date.today(),customer_source_fund,"@customer:cc_manager_create")
+                                                filter_fields["customer_cc_id"] = cc_id
+                                                if cc_id <= 0:
+                                                        Success = False
+                                                # if Success:
+                                                #         cc_id = cc_manager_create(venture_id,description,"D",0,cc,seller,category,date.today(),seller_dest_fund,"@seller:cc_manager_create" )
+                                                #         filter_fields["seller_cc_id"] = cc_id
+                                                #         if cc_id <= 0:
+                                                #             Success = False
+                                else:
+                                        if cc <=0:
+                                                Success = cc_manager_delete(venture_qs.customer_cc_id,customer_source_fund,"@customer:cc_manager_delete") 
+                                                filter_fields["customer_cc_id"] = 0
+                                                # if  Success:
+                                                #         Success = cc_manager_delete(venture_qs.seller_cc_id,seller_dest_fund,"@seller:cc_manager_delete" )
+                                                #         filter_fields["seller_cc_id"] = 0
+                                        else:
+                                                if old_cc != cc:
+                                                        Success = cc_manager_update(venture_qs.customer_cc_id,cc,0, customer_source_fund,"@customer:cc_manager_update:")
+                                                        # if Success:
+                                                        #         Success = cc_manager_update(venture_qs.seller_cc_id,0,cc,seller_dest_fund,"@seller:cc_manager_update:")
+                                response ={}
+                                 
+                                if old_note != note:
+                                        if note =="":
+                                                filter_fields["note_id"] = 0
+                                                if old_note_id > 0:
+                                                    response= create_or_update_venture_note(DELETE_RECORD,old_note_id,"",2) #delete note  
+                                        else:
+                                                #3334
+                                                print("-----------editing.....")
+                                                response= create_or_update_venture_note (EDIT_RECORD,venture_qs.note_id,note,2) #todo 
+                                                if response["Success"] and response["result"] > 0 and old_note_id <=0:
+                                                        filter_fields["note_id"] = response["result"]
+                                                        ##11-25
+                                if Success:
+                                        update_venture_qs = Model.objects.filter(id =venture_id).update( **filter_fields)
+                                        print(f"response:{response} update_venture_qs: {update_venture_qs}, filter_fields : {filter_fields}")
+                                        
+                                        if Success:
+                                            response = add_regular_transaction(1,change_deposit_to,customer,"Change Deposit","D",change_amount,0,venture_id) 
+                                        if response["Success"]:
+                                            # response = add_change_transaction(venture_id, response["id"],venture_id,amount)
+                                             print("success................")
+                                        #msg ="Customer Payment has been successfully recorded!"
+                                        data ={"venture_id":venture_id,"amount":venture_qs.amount,'cc':venture_qs.cc,"source":venture_qs.source_type}
+                                        return JsonResponse({"type":'success', "message":"Completed!","data":data})
+                                       # return redirect(f'/success/create_update_venture_result/{customer.id}/{venture_qs.id}/{msg}/{request_action}')
+                                else:
+                                    
+                                       print("Sorry. Technical error has been encountered!")
+                                       logger.warning ("Sorry. Technical error has been encountered at pos_view venture_id > 0!")
+                                       return JsonResponse({"type":'error', "message":"Unable to process this request!","data":{}})
+                    
+                    
+    
             
             
 

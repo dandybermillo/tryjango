@@ -89,7 +89,7 @@ urlpatterns = [
   path('user/<int:id>/', views.user_login_success, name="user_login_success_url"), 
   
   
-  path('post_test/', views.pos_test.as_view(), name = "post_test_url"), 
+ # path('post_test/', views.pos_test.as_view(), name = "post_test_url"), 
 
   path('po/', views.po, name = "po_url"), 
 
@@ -135,7 +135,7 @@ urlpatterns = [
   
   path('pos1/<int:customer_id>/<int:venture_id>/', views.create_update_venture1, name = "create_update_venture_url1"), 
 
-  path('post_test/', views.pos_test.as_view(), name = "post_test_url"), 
+  path('pos_view/', views.pos_view.as_view(), name = "pos_view_url"), 
   # path('get_pos/', views.get_pos, name = "get_pos_url"),   #ajax call to get  pos transactions
 
   path('delete_venture/<int:member_id>/<int:venture_id>/<str:request_action>/', views.delete_venture, name = "delete_venture_url"), 
