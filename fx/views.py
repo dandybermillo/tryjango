@@ -120,7 +120,7 @@ def user_login_success(request,id):
               except Exception as e:
                    print(f"user_login_success: {e}")
         
-        tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk")   #.values('createdate').annotate(count=Count('id'))
+        tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk") #.values('createdate').annotate(count=Count('id'))
        
         
         
@@ -1293,7 +1293,7 @@ def po(request):
     context ={}
                    
         
-    return render(request, 'fx/venture/venture_test.html', context)
+    return render(request, 'fx/venture/venture_pos.html', context)
     
      
 def get_pos(request):
@@ -1440,7 +1440,8 @@ class pos_view(View):
                 balances =get_all_balances(member_qs.id)
                 print(f"balances: {balances}")
                # return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
-                data={"source_type":venture_qs.source_type,"percent": venture_qs.percent,"amount":venture_qs.amount,"cc":venture_qs.cc,"change":change,"destination_acct_code":destination_acct_code,"desc":desc}
+                data={"venture_id":venture_id,"source_type":venture_qs.source_type,"percent": venture_qs.percent,"amount":venture_qs.amount,"cc":venture_qs.cc,"change":change,"destination_acct_code":destination_acct_code,"desc":desc}
+                print(f"--- source type: {venture_qs.source_type}")
                 return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances})
             
                         
@@ -1536,6 +1537,8 @@ class pos_view(View):
                                 
                             if  old_venture_qs.source_type =="W": #1
                                     old_amount = old_venture_qs.amount
+                            else:
+                                 old_amount =0
                             old_source_type = old_venture_qs.source_type
                             old_cc = old_venture_qs.cc
                             old_customer_cc_id = old_venture_qs.customer_cc_id
@@ -1582,6 +1585,7 @@ class pos_view(View):
                 print("wallet accout side")
                 if member and source_type =="W":
                         running_balance = get_running_finance_balance("wallet","member_id",customer)["running_balance"]
+                        print(f"runnin balance: {running_balance}, amount: {amount}, old_amount: {old_amount}")
                         if  int(amount) > running_balance + old_amount:
                                 all_valid = False
                                 if running_balance + old_amount <=0:
@@ -1860,22 +1864,29 @@ def create_update_venture1(request,customer_id,venture_id ):
                 if maximum_deposit < cc_balance: 
                     cc_balance = maximum_deposit
                 asset_balance ={"cc_balance":cc_balance}
+                
+    tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:5]   #.values('createdate').annotate(count=Count('id'))
+          
+                
     venture ={'transaction_type':'W','customer':0,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
 
     context = {
                     'asset_balance':asset_balance,
                     'venture': venture,  
-                   # 'limits':limits,
+                    'transactions':tx,
                     'member_info':member_info,
                     'customer_info':customer_info,
                 }
-    print(f"context:{context}")
-    return render(request, 'fx/venture/venture_test.html', context)
+    # print(f"transaction:{tx.query}")
+    # for  obj in tx:
+    #     print(f"key:, value : {obj.customer.member_id}")
+    
+    return render(request, 'fx/venture/venture_pos.html', context)
 
 @login_required(login_url='/venture_login/')
 def create_update_venture(request,customer_id,venture_id ):
     member_id =customer_id
-    # v =ValidateUsername("DA1212-1")
+    # v =ValidateUsername("DA1212-1") 
     # print(f"v: {v}")
     # return
     # logger.info('>>>>>>>>>>>>>> init cuv!')
@@ -3064,7 +3075,7 @@ def get_cash_on_hand_balance():
 
 #sr
 def search_receiver(request):
-    print("search_reciever.......")
+    print("search_reciever......>>>")
     if request.is_ajax and request.method == "GET":
         action_request = request.GET.get("action_request", "").strip()
         last_row = total_record =0

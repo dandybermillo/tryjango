@@ -15,7 +15,7 @@ body {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
 }
-.red-color{
+.red-color,.asteriskField{
     font-weight: bold;
     color: red;
 }
@@ -533,30 +533,7 @@ th {
             <div>
                 <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
             </div>
-            <!-- {% if venture.errors %}
-            {% for field in venture %}
-            {% for error in field.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-
-            {% for error in form.non_field_errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
-
-            {% for message in messages %}
-
-            <div id="payment-alert-messages" class="alert {{ message.tags }} alert-dismissible" role="alert">
-                <a class="close" href="#" data-dismiss="alert">×</a>
-                {{ message }}
-            </div>
-            {% endfor %} -->
-
+             
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*).
             </div>
@@ -565,10 +542,10 @@ th {
             </div>
                <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
-                    <div >
+                    <div hidden >
 
-                        {{venture.in_charge}} {{venture.source_type}}cust{{venture.customer}}{{venture.percent}}
-                        {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}}{{venture.flag}}
+                        {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}
+                        {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}} 
                     </div>
                     
 
@@ -586,7 +563,7 @@ th {
                     </div>
                     
                     <div id="customer-info-alert" class="alert alert-primary" role="alert">
-                      <span bold> Customer: </span> <span id="customer-info-alert-text">_</span> <span style="float:right" id="transNumber">#{{venture.transId}}</span>
+                      <span id="customer-info-alert-text">_</span> <span style="float:right" id="transNumber">#{{venture.transId}}</span>
                     </div>
 
                     <div class="form-row">
@@ -601,12 +578,12 @@ th {
                             <label for="main-source-drop" class="col-form-label">SOURCE<span
                                     class="asteriskField">*</span></label>
                             <div class="dropdown" id="main-source-drop">
-
-                                <input type="type" id="source-type" name="source_type" value="{{venture.source_type}}">
-                                <input type="type" id="note" name="note" value="{{venture.note}}">
-                                <input type="type" id="customer" name="customer" value="{{venture.customer}}">
-                                <input type="type" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
-
+                              
+                                <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
+                                <input type="hidden" id="note" name="note" value="{{venture.note}}">
+                                <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
+                                <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
+                          
 
                                 <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true"
@@ -966,15 +943,26 @@ th {
              
             <div class="col">
               <h4><a href=""> History</a></h4>
-               <button id="sample"> click</button>
+               <!-- <button id="sample"> click</button> -->
+
               <div id="history" class="list-group">
                  
-              </div>
-
-
-
-
-
+            
+<!-- --- -->
+             
+               {% for obj in transactions %}
+             
+             <button id="{{obj.id}}" class="history list-group-item list-group-item-action flex-column align-items-start ">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">POS #{{obj.id}}</h5>
+                  <small>.</small>
+                </div>
+                <p class="mb-1">Grocery: {{obj.customer.member_id|upper}}</p>
+                <small>A-Php{{obj.amount}} | CM-{{obj.cc}}</small>
+              </button>
+             {% endfor %} 
+<!-- ---- --> 
+             </div>
             </div>
           </div>
         </div><!--.mobile-menu-->
@@ -1005,6 +993,29 @@ th {
     </div>
   <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
   
+
+
+
+<!-- ---------------------- invalid credential -------------------------- -->
+
+  <div class="modal fade" id="invalid-credential" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">QR CODE</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4 style="color:black">Invalid Credentials! </h4>
+        </div>
+        <div class="modal-footer">
+           
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ----------------------------- burger end ----------------------------------- -->
 
 
@@ -1207,11 +1218,35 @@ th {
     })();
 
     $(document).ready(function () {
+        var curr_qrcode="";
         var ctr=1;
+
+
+        (function () {
+			onScan.attachTo(document, {
+				suffixKeyCodes: [13],
+				reactToPaste: true,
+				onScan: function (sCode, iQty) {
+                    console.log('Scanned: ' + iQty + 'x ' + sCode);
+                    if (sCode != "121279") { 
+                    search_member_by_qrcode(sCode, "","qrcode");
+                    }
+                },
+                
+				onKeyDetect: function (iKeyCode) {
+					console.log('Pressed: ' + iKeyCode);
+				}
+			});
+
+			// Test scanner is initialized
+			onScan.simulate(document, '121279');
+        })()
+        
         $("body").delegate(".history", "click", function(){
               venture_id = $(this).attr("id");
               $("#venture_id").val(venture_id);
               get_transaction();
+              $(this).addClass('active').siblings().removeClass('active');    
 
 
         });
@@ -1232,12 +1267,21 @@ th {
                             response["message"]; // equals 'you"re logged in or You messed up';
 
                             if (response["type"] === "success") {
-
+                             
                                   console.log("success:");
                                   console.log(response["data"]);
                                   console.log(response["member_info"]);
                                   console.log(response["balances"]);
                                   amount =response["data"]['amount'];
+                                  var source_type = response["data"]['source_type'];
+                                  if (source_type =="K"){ 
+                                       text = "CASH";
+                                  }else if  (source_type == "W"){ 
+                                        text = "WALLET ACCOUNT"
+                                  }else if  (source_type == "S"){ 
+                                        text = "SAVING ACCOUNT"
+                                  }
+                                  $("#source-cash-drop").text(text);
                                   cc = response["data"]['cc'];
                                   total =  amount + cc;
                                   $("#venture-total-txt").val(total);
@@ -1255,7 +1299,7 @@ th {
                                       
                                   $("#deposit-cash-drop").text(deposit_to);
                                   $("#change_deposit_to").val(deposit_to); 
-                                 
+                                  $("#transNumber").text("#"+response["data"]['venture_id']);
                                   var desc = response["data"]['desc'].trim();
                                      // note = desc
                                      console.log("desc:"+ desc);
@@ -1274,6 +1318,10 @@ th {
                                        tendered =  amount + response["data"]['change'];
                                        $("#tender-txt").val(tendered);
                                        $("#change-txt").val(response["data"]['change']);
+                                  } else{
+
+                                      $("#tender-txt").val("");
+                                       $("#change-txt").val("");
                                   }
                                   $("#source-type").val(response["data"]["source_type"]);
 
@@ -1285,33 +1333,28 @@ th {
                                     w_balance=  response["balances"]['wallet'];
                                     l_balance=  response["balances"]['loan'];
                                     
-                                    if (w_balance > 1000){
-                                        w_balance= "1k+W"
-                                    }else
-                                    {
-                                        w_balance=w_balance+ "W"
-                                    }
+                                    // if (w_balance > 1000){
+                                    // w_balance= "W-1k+"
+                                    // }else
+                                    // {
+                                    //     w_balance="W-"+w_balance
+                                    // }
                                 
-                                    s_balance =  response["balances"]['saving'];
-                                    if (s_balance > 1000){
-                                        s_balance =   "1k+S"
-                                    }
-                                    else
-                                    {
-                                        s_balance = s_balance + "S"
-                                    }
-                                    if (cm_balance > 1000) {
-                                        cm_balance = "1k+ C";
-                                    }else{
-                                        cm_balance =cm_balance + "C";
-                                    }
-                                    if (l_balance > 1000) {
-                                        l_balance =l_balance + " Ln";
-                                    }else{
-                                        l_balance =l_balance + "Ln";
-                                    }
+                                    // s_balance =  response["balances"]['saving'];
+                                    // if (s_balance > 1000){
+                                    //     s_balance =  "S-1k+"
+                                    // }
+                                    // else
+                                    // {
+                                    //     s_balance = "S"+s_balance 
+                                    // }
+                                    // if (cm_balance > 1000) {
+                                    //     cm_balance = "CM-1k+";
+                                    // }else{
+                                    //     cm_balance ="CM-"+cm_balance;
+                                    // }
 
-                                    cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
+                                    cust_info = name + " | "+response["member_info"]["member_id"] ; //+ " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
                                     $("#customer-info-alert-text").text(cust_info);
                                     if (minimum_deposit > cm_balance) {
                                         cm_balance = minimum_deposit;
@@ -1367,22 +1410,24 @@ th {
                 
              return   hours + ':' + minutes + ' ' + newformat; 
             } 
-            $("#sample").click(function() {
-              ctr=58;  
-             fillHistory(ctr,"#"+ ctr+ " "+"grocery","hi");           
-             ctr =ctr + 1;  
-           });
+        //     $("#sample").click(function() {
+        //       ctr=58;  
+        //      fillHistory(ctr,"#"+ ctr+ " "+"grocery","hi");           
+        //      ctr =ctr + 1;  
+        //    });
 
-            
-            function fillHistory(id,title,desc){ 
+
+            function fillHistory(customer_id,venture_id,title,desc,amount,cc){ 
                     var tim =getTime();
                    
-                    $( "#history" ).prepend( "<button   id='"+id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
+                    $( "#history" ).prepend( "<button   id='"+venture_id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
                             "<div class='d-flex w-100 justify-content-between'>"+
                                 "<h5 class='mb-1'>"+title+"</h5>"+
                                 "<small>"+ tim +"</small></div>"+
                             
-                            "<p class='mb-1'>"+desc+"</p>"+
+                            "<p class='mb-1'>"+desc+": "+ customer_id +"</p>"+
+
+                            "<small>"+"A-Php"+amount+ " | CM-" +cc+  "</small>"+
                             
                             "</button>");
 
@@ -1554,6 +1599,14 @@ th {
     // //      beep();
     // //   });
     
+          function closeSnoAlertBox(code,message){
+          console.log("closeSnoalertBox===================");
+          window.setTimeout(function () {
+            $("#invalid-credential").modal('hide');
+
+          }, 10000);
+          } 
+
         function beep() {
             (new
                 Audio(
@@ -1569,11 +1622,7 @@ th {
        // ------------------- pos table --------------
 
        $("#pos-qty-txt").on("keyup", function () {
-            // var percent = parseFloat($("#percent-drop").text());
-            // if (percent <= 0 || percent > 100 || isNaN(percent)) {
-            //     percent = 95;
-            //     $("#percent-drop").text(percent + "%");
-            // }
+             
             qty = parseFloat($(this).val());
             price = parseFloat($("#pos-price-txt").val());
             total = qty * price;
@@ -1781,7 +1830,7 @@ $("#payment-login-lnk").click(function () {
             //if (videoCode == 2) { 
             customer_id = $("#customer_id").val();
             pwd = $("#customer-password").val();
-            search_member(customer_id, pwd, "manual")
+            search_member_by_qrcode(customer_id, pwd, "manual")
             // }
             // else{
 
@@ -1835,7 +1884,9 @@ $("#payment-login-lnk").click(function () {
                                         $("#source-cash-drop").text("CASH");
                                         id= response["data"]["venture_id"];
                                         $("#transNumber").text("#"+id);
-                                        fillHistory(id,"#"+id+ " POS","Grocery");
+                                        if(  !$("#"+id).length){
+                                            fillHistory(ID_Info.id,id,"POS "+"#"+id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
+                                        }
                                         $("#salestotal-reps").val(sales_total);
                                         //$("#tender-txt").val()
                                         $("#tendered-reps").val($("#tender-txt").val().trim());
@@ -1886,13 +1937,19 @@ $("#payment-login-lnk").click(function () {
 
          });
 
-        function search_member(customer_id, qrpassword, code) {
+        function search_member_by_qrcode(customer_id, qrpassword, code) {
             console.log("on search_member func");
             console.log("customer_id: " + customer_id)
             console.log("qrpassword: " + qrpassword)
             customer_id = customer_id.trim().toUpperCase();
             var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
 
+
+            if (customer_id == curr_qrcode){
+                console.log(" the same customer_id")
+                return;
+            }
+            curr_qrcode = customer_id;
             // var match = customer_id.match($regexname);
             // if (match == null || match != customer_id) {
             //     console.log("not match");
@@ -1913,7 +1970,7 @@ $("#payment-login-lnk").click(function () {
             keys["PREVIOUS-INPUT"] = "";
             ID_Info.id = customer_id;
             var data = {}
-            ID_Info.ON_SEARCH = true;
+            //ID_Info.ON_SEARCH = true;
             data['customer_id'] = customer_id;
             if (code == "qrcode") {
                 data['from'] = 'qrcode';
@@ -1930,10 +1987,14 @@ $("#payment-login-lnk").click(function () {
                 dataType: "json",
                 success: function (response) {
                     ID_Info.ON_SEARCH = false;
+                    console.log("successx")
                     console.log("videoCode:  >"+videoCode );
+                    videoCode = 2;
                     if( videoCode == 2) {  // venture
-
+                             console.log("response['data']");
+                             console.log(response['data']);
                             if (response['data'] == "Success") {
+                                beep();
                                 console.log("response['data'] == 'Success' passed" );
                                 $("#venture-payment-failed-alert").hide();
                                 $("#login").modal('hide');
@@ -1948,32 +2009,32 @@ $("#payment-login-lnk").click(function () {
                                 l_balance=  response["balances"]['loan'];
                                 
                                 if (w_balance > 1000){
-                                    w_balance= "1k+W"
+                                    w_balance= "W-1k+"
                                 }else
                                 {
-                                    w_balance=w_balance+ "W"
+                                    w_balance="W-"+w_balance
                                 }
                                
                                 s_balance =  response["balances"]['saving'];
                                 if (s_balance > 1000){
-                                    s_balance =   "1k+S"
+                                    s_balance =  "S-1k+"
                                 }
                                 else
                                 {
-                                    s_balance = s_balance + "S"
+                                    s_balance = "S"+s_balance 
                                 }
                                 if (cm_balance > 1000) {
-                                    cm_balance = "1k+ C";
+                                    cm_balance = "CM-1k+";
                                 }else{
-                                    cm_balance =cm_balance + "C";
+                                    cm_balance ="CM-"+cm_balance;
                                 }
-                                if (l_balance > 1000) {
-                                    l_balance =l_balance + " Ln";
-                                }else{
-                                    l_balance =l_balance + "Ln";
-                                }
+                                // if (l_balance > 1000) {
+                                //     l_balance =l_balance + " Ln";
+                                // }else{
+                                //     l_balance =l_balance + "Ln";
+                                // }
 
-                                cust_info = name + " | "+response["member_info"]["member_id"] + " | "+cm_balance+" | "+ w_balance+" | "+s_balance+" | "+ l_balance;  
+                                cust_info = name + " | "+response["member_info"]["member_id"];// + " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
                                 $("#customer-info-alert-text").text(cust_info);
                                 if (minimum_deposit > cm_balance) {
                                     cm_balance = minimum_deposit;
@@ -1994,6 +2055,16 @@ $("#payment-login-lnk").click(function () {
                           
 
                             } else {
+
+
+                                if (code == "qrcode") {
+
+                                    console.log("invalid credential" );
+                                    $("#invalid-credential").modal('show');
+                                     closeSnoAlertBox("","");
+                                }
+                                else{  
+                              
                                 console.log("else of response['data'] == 'Success' passed" );
                                 console.log("changeHrefValues(response[member_info]['id'])");
                                // changeHrefValues(response["member_info"]['id']);
@@ -2002,17 +2073,11 @@ $("#payment-login-lnk").click(function () {
                                 $("#venture-customer_id-txt").focus();
                                 $("#customer-name").val("");
                                 message = response['message'];
-                                //if (message == "xusername") {
-                                //added 4
-                                //$("#authenticate-alert").text("Message: Customer ID in QRCODE doest not exist.");
-                                //} else {
-                                //added 4
-                                $("#authenticate-alert").text("Message: " + message);
-                                //  }
-                                //added 4
+                                 
                                 $("#authenticate-alert").show();
 
-                                         }
+                                 }
+                         }
                     }else // payment
                     {
                         var member_id = response["member_info"]['id'];
@@ -2516,21 +2581,7 @@ $("#payment-login-lnk").click(function () {
         });
     });
 //---------------------------------- barcode scanner
-(function () {
-			onScan.attachTo(document, {
-				suffixKeyCodes: [13],
-				reactToPaste: true,
-				onScan: function (sCode, iQty) {
-					console.log('Scanned: ' + iQty + 'x ' + sCode);
-				},
-				onKeyDetect: function (iKeyCode) {
-					console.log('Pressed: ' + iKeyCode);
-				}
-			});
 
-			// Test scanner is initialized
-			onScan.simulate(document, '1234567890123');
-		})()
 </script>
 
 

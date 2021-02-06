@@ -18,7 +18,17 @@ class CodeGeneratorModel(models.Model):
       sender_id =models.IntegerField(default = 0)
       code = models.PositiveIntegerField(default =0)
 
-
+class ItemModel(models.Model): 
+      PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
+      CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
+      title = models.CharField(max_length = 200) 
+      status =   models.CharField(max_length=50)
+      description =  models.CharField(max_length=300,default="")
+      category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)
+      qty = models.PositiveIntegerField(default =0)
+      price = models.FloatField(default =0 )
+      reg_price = models.FloatField(default =0 )
+      img = models.ImageField(blank =True, null =True) 
 
 class MemberModel (models.Model):
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
@@ -479,7 +489,7 @@ class VentureModel(models.Model):
       source_type = models.CharField(max_length=1,default = 'K',choices = sources)  #c: cash
       customer_source_id = models.IntegerField(default = 0) # for wallet
       customer_cc_id = models.IntegerField(default = 0) # for cc or cmoney
-      date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
+      date_entered = models.DateTimeField(verbose_name ="Date", blank= True, null =True)
       flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
       note_id = models.IntegerField(default =0)
       @property

@@ -5,6 +5,7 @@ from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel,TeamMemberModel,SkillCategoryModel
 from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
+from .models import ItemModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -145,6 +146,10 @@ class TeamMemberModelAdmin(admin.ModelAdmin):
     
 class SkillCategoryModelAdmin(admin.ModelAdmin):
     list_display = ["category"]
+class ItemModelAdmin(admin.ModelAdmin):
+    list_display = ["title",'img','description']
+    
+admin.site.register(ItemModel,ItemModelAdmin)  
 
 admin.site.register(SkillCategoryModel,SkillCategoryModelAdmin)  
 
