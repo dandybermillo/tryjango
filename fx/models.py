@@ -21,14 +21,15 @@ class CodeGeneratorModel(models.Model):
 class ItemModel(models.Model): 
       PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
       CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
-      title = models.CharField(max_length = 200) 
-      status =   models.CharField(max_length=50)
-      description =  models.CharField(max_length=300,default="")
+      title = models.CharField(max_length = 200,blank= True) 
+       
+      description =  models.CharField(max_length=300,blank =True) 
       category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)
       qty = models.PositiveIntegerField(default =0)
       price = models.FloatField(default =0 )
       reg_price = models.FloatField(default =0 )
       img = models.ImageField(blank =True, null =True) 
+      sku =  models.CharField(max_length = 20,blank= True) 
 
 class MemberModel (models.Model):
      MR,MS,MRS =("Mr.","Ms.","Mrs.")

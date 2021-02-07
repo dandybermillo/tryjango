@@ -145,9 +145,11 @@ class TeamMemberModelAdmin(admin.ModelAdmin):
         return obj.category
     
 class SkillCategoryModelAdmin(admin.ModelAdmin):
-    list_display = ["category"]
+      list_display = ["category"]
+    
+ 
 class ItemModelAdmin(admin.ModelAdmin):
-    list_display = ["title",'img','description']
+    list_display = ["title",'img','description','category','price','reg_price','qty']
     
 admin.site.register(ItemModel,ItemModelAdmin)  
 
