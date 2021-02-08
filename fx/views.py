@@ -13,7 +13,7 @@ from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,Venture
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
 from fx.models import MechanicModel,LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel,RepairModel,DeliveryModel,ConstructionModel,LoadModel
-from fx.models import Change_Table
+from fx.models import Change_Table,ItemModel
 from .forms import WalletForm,SavingForm
 
 from fx.models import WalletModel,CodeGeneratorModel,UserPreferenceModel
@@ -633,6 +633,42 @@ def check_user(request):
 
                  
          
+def get_product_details(request):
+    print("--def get customer details")
+    logger.info("--def get customer details")
+    item_id = request.GET.get("item_id", "").strip().upper()
+    print(f"product id: {item_id}")
+    
+    try:
+        
+         product_info_qs = ItemModel.objects.get(product_id  =item_id)  
+         product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+         print ("success readin prod detail")
+         return JsonResponse({"data":"Success","product_info":product_info}, status = 200)
+        
+    except Exception as e:
+        print(f"unable to retrieve product details: e: {e}")
+        logger.warning(f"unable to retrieve product details: e: {e}")
+        return JsonResponse({"data":""}, status = 200)
+        
+   
+   
+    # if from_code == "qrcode":
+    #    # qrpassword = request.GET.get("qrpassword", "").strip()
+    #     qrcode = customer_id.replace(":","-")
+    #     qrcode = decode(qrcode)
+       
+
+    #         member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
+    #         print(f"member_info:{member_info}")
+    #         #cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
+    #         balances =get_all_balances(member_qs.id)
+    #         return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
+    #   except Exception as e:
+    #         print (f"get customer detail error: {e}, {type(e)}")
+    #         logger.warning(f"{e}, {type(e)}")
+    #         return JsonResponse({"message":message}, status = 200)    
+    return JsonResponse({}, status = 400)
 
 
 
@@ -666,6 +702,7 @@ def get_customer_details(request):
             message ="This user does not exist!"  #invalid username
             print(f"---customer_id:{customer_id}")
             print("------->>>>>")
+            #customer_id = customer_id.upper()
             member_qs = MemberModel.objects.get(member_id=customer_id) 
             print(f"------id:{member_qs.id}")
             if from_code == "qrcode":
@@ -733,7 +770,7 @@ def get_customer_details(request):
             balances =get_all_balances(member_qs.id)
             return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
       except Exception as e:
-            print (f"{e}, {type(e)}")
+            print (f"get customer detail error: {e}, {type(e)}")
             logger.warning(f"{e}, {type(e)}")
             return JsonResponse({"message":message}, status = 200)    
     return JsonResponse({}, status = 400)

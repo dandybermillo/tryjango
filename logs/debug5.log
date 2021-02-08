@@ -2393,3 +2393,951 @@ INFO 2021-02-07 20:53:43,623 basehttp 17824 14884 "GET /live/0/0/ HTTP/1.1" 200 
 INFO 2021-02-07 20:53:53,602 basehttp 17824 14884 "GET /live/0/0/ HTTP/1.1" 200 330
 INFO 2021-02-07 20:53:59,958 basehttp 17824 14884 "GET /pos1/3/0/ HTTP/1.1" 200 132196
 INFO 2021-02-07 20:54:00,444 basehttp 17824 14884 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2021-02-07 22:11:40,597 basehttp 17824 19292 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-07 22:11:40,652 basehttp 17824 25232 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 304 0
+INFO 2021-02-07 22:11:40,652 basehttp 17824 12588 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-07 22:11:40,652 basehttp 17824 16820 "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2021-02-07 22:11:40,652 basehttp 17824 10236 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2021-02-07 22:11:40,668 basehttp 17824 2196 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+WARNING 2021-02-07 22:11:40,767 log 17824 2196 Not Found: /favicon.ico
+INFO 2021-02-07 22:11:46,878 basehttp 17824 10236 "GET /pos1/2/0/ HTTP/1.1" 200 132196
+INFO 2021-02-07 22:11:46,893 basehttp 17824 10236 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+INFO 2021-02-07 22:11:46,909 basehttp 17824 10236 "GET /static/js/onscan.min.js HTTP/1.1" 304 0
+INFO 2021-02-07 22:38:06,664 basehttp 17824 4696 "GET /pos1/2/0/ HTTP/1.1" 200 132191
+INFO 2021-02-07 23:02:59,411 basehttp 17824 21112 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:02:59,411 basehttp 17824 14684 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+ERROR 2021-02-07 23:04:39,127 log 17824 23760 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1701, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-02-07 23:04:39,142 basehttp 17824 23760 "POST /pos_view/ HTTP/1.1" 500 82691
+ERROR 2021-02-07 23:04:54,379 log 17824 23760 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1701, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-02-07 23:04:54,390 basehttp 17824 23760 "POST /pos_view/ HTTP/1.1" 500 82691
+INFO 2021-02-07 23:06:21,396 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132221
+INFO 2021-02-07 23:06:22,677 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:06:22,678 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:06:36,761 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132221
+INFO 2021-02-07 23:06:37,592 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:06:37,592 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:12,079 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132219
+INFO 2021-02-07 23:07:12,879 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:12,880 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:23,373 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132219
+INFO 2021-02-07 23:07:24,386 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:24,387 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:42,561 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132217
+INFO 2021-02-07 23:07:43,496 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:43,496 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:52,057 basehttp 17824 23760 "GET /pos1/2/0/ HTTP/1.1" 200 132217
+INFO 2021-02-07 23:07:52,821 basehttp 17824 12644 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:07:52,821 basehttp 17824 25056 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:10:03,268 basehttp 17824 19304 "GET /pos1/2/0/ HTTP/1.1" 200 132222
+INFO 2021-02-07 23:10:04,841 basehttp 17824 18280 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:10:04,844 basehttp 17824 24912 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:15:58,968 basehttp 17824 15032 "GET /pos1/2/0/ HTTP/1.1" 200 132223
+INFO 2021-02-07 23:16:00,080 basehttp 17824 5048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:16:00,080 basehttp 17824 6512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:16:23,976 basehttp 17824 15032 "GET /pos1/2/0/ HTTP/1.1" 200 132223
+INFO 2021-02-07 23:16:25,098 basehttp 17824 5048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:16:25,098 basehttp 17824 6512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:05,072 basehttp 17824 15032 "GET /pos1/2/0/ HTTP/1.1" 200 132223
+INFO 2021-02-07 23:17:06,122 basehttp 17824 5048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:06,122 basehttp 17824 6512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:14,977 basehttp 17824 15032 "GET /pos1/2/0/ HTTP/1.1" 200 132223
+INFO 2021-02-07 23:17:16,024 basehttp 17824 6512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:16,025 basehttp 17824 5048 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:18,033 basehttp 17824 15032 "GET /pos1/2/0/ HTTP/1.1" 200 132223
+INFO 2021-02-07 23:17:19,210 basehttp 17824 6512 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:17:19,210 basehttp 17824 5048 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:21:28,053 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132227
+INFO 2021-02-07 23:21:29,091 basehttp 17824 13968 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:21:29,091 basehttp 17824 14716 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:22:22,537 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132229
+INFO 2021-02-07 23:22:23,568 basehttp 17824 14716 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:22:23,568 basehttp 17824 13968 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:23:18,268 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132227
+INFO 2021-02-07 23:23:19,471 basehttp 17824 14716 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:23:19,471 basehttp 17824 13968 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:23:50,530 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132229
+INFO 2021-02-07 23:23:51,366 basehttp 17824 13968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:23:51,366 basehttp 17824 14716 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:24:44,468 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132229
+INFO 2021-02-07 23:24:45,683 basehttp 17824 14716 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:24:45,684 basehttp 17824 13968 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:25:35,403 basehttp 17824 24676 "GET /pos1/2/0/ HTTP/1.1" 200 132229
+INFO 2021-02-07 23:25:36,393 basehttp 17824 13968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:25:36,394 basehttp 17824 14716 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:29:43,979 basehttp 17824 4768 "GET /pos1/2/0/ HTTP/1.1" 200 132208
+INFO 2021-02-07 23:29:45,175 basehttp 17824 15260 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:29:45,175 basehttp 17824 20988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:30:52,617 basehttp 17824 4768 "GET /pos1/2/0/ HTTP/1.1" 200 132208
+INFO 2021-02-07 23:30:53,830 basehttp 17824 20988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:30:53,831 basehttp 17824 15260 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:36:03,151 basehttp 17824 22684 "GET /pos1/2/0/ HTTP/1.1" 200 132185
+INFO 2021-02-07 23:36:04,279 basehttp 17824 16320 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:36:04,280 basehttp 17824 18420 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:37:15,232 basehttp 17824 22684 "GET /pos1/2/0/ HTTP/1.1" 200 132187
+INFO 2021-02-07 23:37:16,408 basehttp 17824 16320 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:37:16,408 basehttp 17824 18420 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:37:58,322 basehttp 17824 22684 "GET /pos1/2/0/ HTTP/1.1" 200 132165
+INFO 2021-02-07 23:37:59,377 basehttp 17824 16320 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:37:59,377 basehttp 17824 18420 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:42:30,897 basehttp 17824 17672 "GET /pos1/2/0/ HTTP/1.1" 200 132149
+INFO 2021-02-07 23:42:32,287 basehttp 17824 22432 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:42:32,288 basehttp 17824 14400 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-07 23:57:21,215 views 17824 1364 --def get customer details
+INFO 2021-02-07 23:57:21,377 views 17824 1364 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-07 23:57:21,789 basehttp 17824 1364 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-08 00:05:53,638 basehttp 17824 25108 "GET /pos1/2/0/ HTTP/1.1" 200 132170
+INFO 2021-02-08 00:05:54,948 basehttp 17824 6628 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:05:54,949 basehttp 17824 24932 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:06:12,959 views 17824 25108 --def get customer details
+INFO 2021-02-08 00:06:13,061 views 17824 25108 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-08 00:06:13,467 basehttp 17824 25108 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-08 00:23:17,654 basehttp 17824 16368 "GET /pos1/2/0/ HTTP/1.1" 200 132247
+INFO 2021-02-08 00:23:20,221 basehttp 17824 2416 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:23:20,222 basehttp 17824 5908 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:25:30,144 basehttp 17824 7592 "GET /pos1/2/0/ HTTP/1.1" 200 132247
+INFO 2021-02-08 00:25:31,335 basehttp 17824 15948 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:25:31,335 basehttp 17824 256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:26:26,436 basehttp 17824 7592 "GET /pos1/2/0/ HTTP/1.1" 200 132247
+INFO 2021-02-08 00:26:27,857 basehttp 17824 15948 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:26:27,857 basehttp 17824 256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:28:26,903 basehttp 17824 23224 "GET /pos1/2/0/ HTTP/1.1" 200 132256
+INFO 2021-02-08 00:28:28,547 basehttp 17824 21392 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:28:28,548 basehttp 17824 25480 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:31:00,535 basehttp 17824 23196 "GET /pos1/2/0/ HTTP/1.1" 200 132259
+INFO 2021-02-08 00:31:01,893 basehttp 17824 22724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:31:01,893 basehttp 17824 19876 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:32:09,871 basehttp 17824 23196 "GET /pos1/2/0/ HTTP/1.1" 200 132261
+INFO 2021-02-08 00:32:11,492 basehttp 17824 19876 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:32:11,493 basehttp 17824 22724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:33:07,553 basehttp 17824 23196 "GET /pos1/2/0/ HTTP/1.1" 200 132260
+INFO 2021-02-08 00:33:09,005 basehttp 17824 19876 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:33:09,006 basehttp 17824 22724 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:34:13,710 basehttp 17824 23196 "GET /pos1/2/0/ HTTP/1.1" 200 132271
+INFO 2021-02-08 00:34:16,380 basehttp 17824 19876 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 00:34:16,380 basehttp 17824 22724 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 01:02:16,679 basehttp 17824 18444 "GET /pos1/2/0/ HTTP/1.1" 200 132271
+INFO 2021-02-08 01:02:18,655 basehttp 17824 16688 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 01:02:18,656 basehttp 17824 22240 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 01:04:40,843 basehttp 17824 4624 "GET /pos1/2/0/ HTTP/1.1" 200 132260
+INFO 2021-02-08 01:04:42,449 basehttp 17824 23652 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 01:04:42,450 basehttp 17824 11388 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:02:03,905 basehttp 17824 23508 "GET /pos1/2/0/ HTTP/1.1" 200 132260
+INFO 2021-02-08 08:02:07,375 basehttp 17824 18908 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:02:07,376 basehttp 17824 18016 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:02:07,535 basehttp 17824 23508 "GET /pos1/2/0/ HTTP/1.1" 200 132260
+INFO 2021-02-08 08:02:09,311 basehttp 17824 18016 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:02:09,311 basehttp 17824 18908 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:07:00,182 basehttp 17824 22280 "GET /pos1/2/0/ HTTP/1.1" 200 132262
+INFO 2021-02-08 08:07:01,784 basehttp 17824 24636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:07:01,784 basehttp 17824 14504 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 08:49:24,380 autoreload 18876 9116 Watching for file changes with StatReloader
+INFO 2021-02-08 14:23:20,062 autoreload 18876 9116 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 14:23:21,011 autoreload 15080 19836 Watching for file changes with StatReloader
+INFO 2021-02-08 14:23:23,373 autoreload 15080 19836 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 14:23:24,064 autoreload 10140 10432 Watching for file changes with StatReloader
+INFO 2021-02-08 15:35:33,574 autoreload 10140 10432 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:35:34,259 autoreload 2680 20124 Watching for file changes with StatReloader
+INFO 2021-02-08 15:35:35,498 autoreload 2680 20124 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:35:36,245 autoreload 12720 12292 Watching for file changes with StatReloader
+INFO 2021-02-08 15:35:43,606 autoreload 12720 12292 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:35:44,276 autoreload 16396 11696 Watching for file changes with StatReloader
+INFO 2021-02-08 15:35:56,953 autoreload 16396 11696 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:35:57,676 autoreload 25480 1756 Watching for file changes with StatReloader
+INFO 2021-02-08 15:36:11,428 autoreload 25480 1756 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:36:12,155 autoreload 3148 22080 Watching for file changes with StatReloader
+INFO 2021-02-08 15:36:14,567 autoreload 3148 22080 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:36:15,530 autoreload 20712 7880 Watching for file changes with StatReloader
+INFO 2021-02-08 15:36:18,123 autoreload 20712 7880 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:36:19,304 autoreload 4768 16528 Watching for file changes with StatReloader
+INFO 2021-02-08 15:36:20,681 autoreload 4768 16528 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 15:36:21,630 autoreload 9408 21472 Watching for file changes with StatReloader
+INFO 2021-02-08 16:01:56,067 autoreload 25136 22536 Watching for file changes with StatReloader
+INFO 2021-02-08 16:02:07,085 basehttp 25136 14716 "GET /admin/ HTTP/1.1" 200 20994
+INFO 2021-02-08 16:02:07,348 basehttp 25136 15452 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2021-02-08 16:02:07,366 basehttp 25136 15452 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2021-02-08 16:02:07,370 basehttp 25136 15032 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+ERROR 2021-02-08 16:02:13,931 log 25136 13720 Internal Server Error: /admin/fx/itemmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+ERROR 2021-02-08 16:02:13,946 basehttp 25136 13720 "GET /admin/fx/itemmodel/ HTTP/1.1" 500 151336
+INFO 2021-02-08 16:03:51,114 autoreload 7728 22368 Watching for file changes with StatReloader
+ERROR 2021-02-08 16:03:54,607 log 7728 25352 Internal Server Error: /admin/fx/itemmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+ERROR 2021-02-08 16:03:54,607 basehttp 7728 25352 "GET /admin/fx/itemmodel/ HTTP/1.1" 500 151186
+INFO 2021-02-08 16:04:00,544 basehttp 7728 25352 "GET /admin/fx/ HTTP/1.1" 200 17009
+INFO 2021-02-08 16:04:03,332 basehttp 7728 9720 "GET /admin/fx/joinmodel/ HTTP/1.1" 200 20548
+INFO 2021-02-08 16:04:03,424 basehttp 7728 14240 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 16:04:06,422 basehttp 7728 14240 "GET /admin/fx/ HTTP/1.1" 200 17009
+ERROR 2021-02-08 16:04:14,244 log 7728 14240 Internal Server Error: /admin/fx/itemmodel/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\contrib\admin\options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column fx_itemmodel.cm does not exist
+LINE 1: ...y", "fx_itemmodel"."qty", "fx_itemmodel"."price", "fx_itemmo...
+                                                             ^
+
+ERROR 2021-02-08 16:04:14,244 basehttp 7728 14240 "GET /admin/fx/itemmodel/ HTTP/1.1" 500 151339
+INFO 2021-02-08 16:04:27,370 autoreload 7728 22368 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 16:04:28,047 autoreload 22904 1544 Watching for file changes with StatReloader
+INFO 2021-02-08 16:12:18,869 autoreload 8164 2756 Watching for file changes with StatReloader
+INFO 2021-02-08 16:12:52,555 autoreload 8164 2756 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2021-02-08 16:12:53,322 autoreload 23420 2868 Watching for file changes with StatReloader
+INFO 2021-02-08 16:13:07,159 autoreload 23420 2868 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2021-02-08 16:13:08,001 autoreload 10964 25420 Watching for file changes with StatReloader
+WARNING 2021-02-08 16:13:12,841 log 10964 7356 Not Found: /admin/fx/itemmodel/
+WARNING 2021-02-08 16:13:12,857 basehttp 10964 7356 "GET /admin/fx/itemmodel/ HTTP/1.1" 404 22693
+INFO 2021-02-08 16:13:20,420 basehttp 10964 7356 "GET /admin/fx HTTP/1.1" 301 0
+INFO 2021-02-08 16:13:20,676 basehttp 10964 7356 "GET /admin/fx/ HTTP/1.1" 200 16585
+INFO 2021-02-08 16:14:12,429 autoreload 10964 25420 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 16:14:13,157 autoreload 15548 20736 Watching for file changes with StatReloader
+INFO 2021-02-08 16:15:46,546 autoreload 18608 22200 Watching for file changes with StatReloader
+INFO 2021-02-08 16:15:59,310 autoreload 18608 22200 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2021-02-08 16:15:59,971 autoreload 24572 15064 Watching for file changes with StatReloader
+INFO 2021-02-08 16:16:01,194 autoreload 24572 15064 C:\Users\dan\just_django\tryjango\fx\admin.py changed, reloading.
+INFO 2021-02-08 16:16:01,824 autoreload 11496 8460 Watching for file changes with StatReloader
+INFO 2021-02-08 16:16:20,315 basehttp 11496 6712 "GET /admin/fx/ HTTP/1.1" 200 17009
+INFO 2021-02-08 16:16:22,862 basehttp 11496 6712 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 18164
+INFO 2021-02-08 16:16:22,947 basehttp 11496 13120 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 16:16:35,893 autoreload 11496 8460 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 16:16:36,599 autoreload 25468 25352 Watching for file changes with StatReloader
+INFO 2021-02-08 16:16:38,960 autoreload 25468 25352 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 16:16:39,637 autoreload 17812 7592 Watching for file changes with StatReloader
+INFO 2021-02-08 16:17:02,826 autoreload 17812 7592 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 16:17:03,501 autoreload 3624 13324 Watching for file changes with StatReloader
+INFO 2021-02-08 16:18:14,358 autoreload 22696 18776 Watching for file changes with StatReloader
+INFO 2021-02-08 16:18:21,835 basehttp 22696 13772 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 18882
+INFO 2021-02-08 16:18:21,904 basehttp 22696 11204 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 16:23:39,412 basehttp 22696 24412 "GET /admin/fx/itemmodel/add/ HTTP/1.1" 200 20000
+INFO 2021-02-08 16:23:39,512 basehttp 22696 24412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 16:23:54,461 basehttp 22696 24412 "POST /admin/fx/itemmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-08 16:23:54,579 basehttp 22696 24412 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19607
+INFO 2021-02-08 16:23:54,677 basehttp 22696 24412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 16:23:58,009 basehttp 22696 24412 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20270
+INFO 2021-02-08 16:23:58,102 basehttp 22696 18216 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:00:19,024 basehttp 22696 10416 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:00:19,117 basehttp 22696 10416 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19610
+INFO 2021-02-08 17:00:19,209 basehttp 22696 10416 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:00:23,847 basehttp 22696 10416 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20271
+INFO 2021-02-08 17:00:23,930 basehttp 22696 6412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:00:49,409 basehttp 22696 10416 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:00:49,499 basehttp 22696 10416 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19610
+INFO 2021-02-08 17:00:49,588 basehttp 22696 6412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:00:54,170 basehttp 22696 10416 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20271
+INFO 2021-02-08 17:00:54,356 basehttp 22696 6412 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:07:28,610 basehttp 22696 13644 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:07:28,934 basehttp 22696 13644 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19735
+INFO 2021-02-08 17:07:29,081 basehttp 22696 13644 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:07:32,566 basehttp 22696 13644 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20580
+INFO 2021-02-08 17:07:32,755 basehttp 22696 13644 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:07:36,638 basehttp 22696 13644 "GET /img/lucky_me__jjamppon_instant_noodles.webp HTTP/1.1" 200 153210
+INFO 2021-02-08 17:07:41,957 basehttp 22696 13644 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19510
+INFO 2021-02-08 17:07:45,819 basehttp 22696 13644 "GET /img/lucky_me__jjamppon_instant_noodles.webp HTTP/1.1" 200 153210
+INFO 2021-02-08 17:10:00,120 basehttp 22696 19064 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20580
+INFO 2021-02-08 17:10:00,260 basehttp 22696 19064 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:10:09,695 basehttp 22696 19064 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:10:09,955 basehttp 22696 19064 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19751
+INFO 2021-02-08 17:10:10,150 basehttp 22696 19064 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:10:13,362 basehttp 22696 19064 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20596
+INFO 2021-02-08 17:10:13,501 basehttp 22696 2452 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:10:20,946 basehttp 22696 19064 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19526
+INFO 2021-02-08 17:10:23,191 basehttp 22696 19064 "GET /img/lucky_me__jjamppon_instant_noodles_okZvDWE.webp HTTP/1.1" 200 153210
+INFO 2021-02-08 17:13:16,072 basehttp 22696 2832 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20596
+INFO 2021-02-08 17:13:16,292 basehttp 22696 2832 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:13:39,815 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20782
+INFO 2021-02-08 17:13:39,969 basehttp 22696 2832 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:13:48,014 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:13:48,336 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19637
+INFO 2021-02-08 17:13:48,518 basehttp 22696 2832 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:13:51,251 basehttp 22696 2832 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20289
+INFO 2021-02-08 17:13:51,372 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:13:58,903 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:13:59,234 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19733
+INFO 2021-02-08 17:13:59,440 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:14:01,502 basehttp 22696 2832 "GET /img/lucky_me__jjamppon_instant_noodles.jpg HTTP/1.1" 200 13321
+INFO 2021-02-08 17:15:28,157 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19508
+INFO 2021-02-08 17:15:30,526 basehttp 22696 2832 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20578
+INFO 2021-02-08 17:15:30,692 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:16:38,436 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20764
+INFO 2021-02-08 17:16:38,592 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:16:50,388 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20764
+INFO 2021-02-08 17:16:50,500 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:17:04,261 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:17:04,482 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19637
+INFO 2021-02-08 17:17:04,661 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:17:06,426 basehttp 22696 2832 "GET /admin/fx/itemmodel/10/change/ HTTP/1.1" 200 20289
+INFO 2021-02-08 17:17:06,627 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:17:18,311 basehttp 22696 2832 "POST /admin/fx/itemmodel/10/change/ HTTP/1.1" 302 0
+INFO 2021-02-08 17:17:18,625 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19723
+INFO 2021-02-08 17:17:18,861 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:17:29,863 basehttp 22696 2832 "GET /img/LUCKY-ME-GO-CUP-JJAMPONG-70G.jpeg HTTP/1.1" 200 30520
+INFO 2021-02-08 17:17:33,516 basehttp 22696 2832 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19498
+INFO 2021-02-08 17:18:15,281 basehttp 22696 2832 "GET /admin/fx/itemmodel/9/change/ HTTP/1.1" 200 20509
+INFO 2021-02-08 17:18:15,378 basehttp 22696 23852 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 17:20:06,785 views 22696 2832 --def get customer details
+INFO 2021-02-08 17:20:06,785 views 22696 2832  decode #1: 4807770272653
+INFO 2021-02-08 17:20:06,785 views 22696 2832 #2-----x:48, lent:2, part_un:7702, part_pwd:
+INFO 2021-02-08 17:20:06,856 views 22696 2832 #4 save pwd:  , customer_id: 07770272653
+INFO 2021-02-08 17:20:06,857 views 22696 2832 #5 username 07770272653 , password : 2077-
+INFO 2021-02-08 17:20:06,857 views 22696 2832  ,,----username:07770272653, pwd: 2077- 
+WARNING 2021-02-08 17:20:06,859 views 22696 2832 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 17:20:06,859 basehttp 22696 2832 "GET /get_customer_details/?customer_id=4807770272653&from=qrcode HTTP/1.1" 200 40
+INFO 2021-02-08 17:23:06,982 basehttp 22696 3824 "GET /pos1/2/0/ HTTP/1.1" 200 132347
+INFO 2021-02-08 17:23:10,487 basehttp 22696 3824 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2021-02-08 17:23:10,634 basehttp 22696 16576 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 17:23:10,636 basehttp 22696 24504 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 17:26:46,251 basehttp 22696 17976 "GET /pos1/2/0/ HTTP/1.1" 200 133556
+INFO 2021-02-08 17:26:47,688 basehttp 22696 12492 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 17:26:47,688 basehttp 22696 16708 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 17:27:40,891 views 22696 17976 --def get customer details
+INFO 2021-02-08 17:27:41,000 views 22696 17976 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-08 17:27:41,474 basehttp 22696 17976 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-08 17:28:41,939 basehttp 22696 17976 "GET /pos1/2/0/ HTTP/1.1" 200 132481
+INFO 2021-02-08 17:28:43,773 basehttp 22696 8976 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 17:28:43,775 basehttp 22696 20936 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:09:50,220 basehttp 22696 14136 "GET /admin/ HTTP/1.1" 200 21337
+INFO 2021-02-08 19:09:55,897 basehttp 22696 14136 "GET /admin/fx/membermodel/ HTTP/1.1" 200 20095
+INFO 2021-02-08 19:09:55,957 basehttp 22696 14136 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2021-02-08 19:09:56,060 basehttp 22696 12504 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:09:59,766 basehttp 22696 14136 "GET /admin/fx/membermodel/?all= HTTP/1.1" 200 24133
+INFO 2021-02-08 19:09:59,964 basehttp 22696 12504 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:10:05,380 basehttp 22696 14136 "GET /admin/fx/membermodel/4/change/?_changelist_filters=all%3D HTTP/1.1" 200 22966
+INFO 2021-02-08 19:10:05,531 basehttp 22696 14136 "GET /static/admin/js/calendar.js HTTP/1.1" 200 7788
+INFO 2021-02-08 19:10:05,588 basehttp 22696 12504 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:10:05,622 basehttp 22696 23300 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19750
+INFO 2021-02-08 19:10:05,681 basehttp 22696 23300 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2021-02-08 19:10:33,331 basehttp 22696 14136 "GET /dashboard/ HTTP/1.1" 200 67467
+INFO 2021-02-08 19:10:33,410 basehttp 22696 23300 "GET /static/jquery/jquery-3.5.1.js HTTP/1.1" 304 0
+INFO 2021-02-08 19:10:39,569 basehttp 22696 14136 "GET /search_receiver/?action_request=search&filter_field_value=walk&total_no_of_row_per_page=5 HTTP/1.1" 200 192
+INFO 2021-02-08 19:10:42,560 basehttp 22696 14136 "GET /member/4/ HTTP/1.1" 200 222636
+INFO 2021-02-08 19:10:42,719 basehttp 22696 23300 "GET /static/img/male.png HTTP/1.1" 200 11721
+INFO 2021-02-08 19:10:51,885 basehttp 22696 14136 "GET /reset_show_password/?request_action=reset&member_id=4 HTTP/1.1" 200 35
+INFO 2021-02-08 19:11:01,803 basehttp 22696 14136 "GET /pos1/2/0/ HTTP/1.1" 200 132481
+INFO 2021-02-08 19:11:04,490 basehttp 22696 2072 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:11:04,490 basehttp 22696 6804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:11:25,058 views 22696 14136 --def get customer details
+INFO 2021-02-08 19:11:25,059 views 22696 14136  decode #1: walk-in
+INFO 2021-02-08 19:11:25,060 views 22696 14136 #2-----x:0, lent:1, part_un:k-in, part_pwd:alk-in
+INFO 2021-02-08 19:11:25,183 views 22696 14136 #4 save pwd:  , customer_id: 
+INFO 2021-02-08 19:11:25,185 views 22696 14136 #5 username  , password : 00
+INFO 2021-02-08 19:11:25,185 views 22696 14136  ,,----username:, pwd: 00 
+WARNING 2021-02-08 19:11:25,193 views 22696 14136 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 19:11:25,193 basehttp 22696 14136 "GET /get_customer_details/?customer_id=WALK-IN&from=qrcode HTTP/1.1" 200 40
+INFO 2021-02-08 19:12:01,468 basehttp 22696 14136 "GET /pos1/2/0/ HTTP/1.1" 200 132481
+INFO 2021-02-08 19:12:03,669 basehttp 22696 2072 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:12:03,669 basehttp 22696 6804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:12:36,303 views 22696 14136 --def get customer details
+WARNING 2021-02-08 19:12:36,429 views 22696 14136 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 19:12:36,429 basehttp 22696 14136 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 40
+INFO 2021-02-08 19:13:21,655 autoreload 22696 18776 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 19:13:22,584 autoreload 21744 17144 Watching for file changes with StatReloader
+INFO 2021-02-08 19:13:49,820 autoreload 14504 25200 Watching for file changes with StatReloader
+INFO 2021-02-08 19:14:08,599 basehttp 14504 24944 "GET /pos1/2/0/ HTTP/1.1" 200 132481
+INFO 2021-02-08 19:14:10,841 basehttp 14504 19676 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:14:10,842 basehttp 14504 22884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:14:32,602 basehttp 14504 24944 "GET /pos1/2/0/ HTTP/1.1" 200 132493
+INFO 2021-02-08 19:14:34,410 basehttp 14504 22884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:14:34,410 basehttp 14504 19676 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:15:50,377 basehttp 14504 24944 "GET /reset_show_password/?request_action=show&member_id=4 HTTP/1.1" 200 35
+INFO 2021-02-08 19:16:01,075 views 14504 24944 --def get customer details
+WARNING 2021-02-08 19:16:01,200 views 14504 24944 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 19:16:01,201 basehttp 14504 24944 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 40
+INFO 2021-02-08 19:16:32,389 autoreload 14504 25200 C:\Users\dan\just_django\tryjango\fx\models.py changed, reloading.
+INFO 2021-02-08 19:16:33,246 autoreload 23296 6564 Watching for file changes with StatReloader
+INFO 2021-02-08 19:16:54,420 autoreload 6628 22264 Watching for file changes with StatReloader
+INFO 2021-02-08 19:17:12,077 basehttp 6628 7612 "GET /pos1/2/0/ HTTP/1.1" 200 132493
+INFO 2021-02-08 19:17:14,230 basehttp 6628 25496 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:17:14,232 basehttp 6628 24304 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:17:54,848 views 6628 7612 --def get customer details
+WARNING 2021-02-08 19:17:54,988 views 6628 7612 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 19:17:54,989 basehttp 6628 7612 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 40
+INFO 2021-02-08 19:19:23,418 autoreload 6628 22264 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:19:24,248 autoreload 8632 18580 Watching for file changes with StatReloader
+INFO 2021-02-08 19:19:30,775 autoreload 8632 18580 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:19:31,533 autoreload 3624 19892 Watching for file changes with StatReloader
+INFO 2021-02-08 19:19:39,300 autoreload 3624 19892 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:19:40,050 autoreload 22756 22504 Watching for file changes with StatReloader
+INFO 2021-02-08 19:21:13,330 basehttp 22756 25076 "GET /admin HTTP/1.1" 301 0
+INFO 2021-02-08 19:21:13,815 basehttp 22756 25076 "GET /admin/ HTTP/1.1" 200 21337
+INFO 2021-02-08 19:21:14,005 basehttp 22756 25076 "GET /admin/ HTTP/1.1" 200 21337
+INFO 2021-02-08 19:21:15,290 basehttp 22756 22104 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2021-02-08 19:21:15,291 basehttp 22756 22888 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2021-02-08 19:21:15,305 basehttp 22756 22888 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2021-02-08 19:21:15,305 basehttp 22756 25560 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2021-02-08 19:21:15,306 basehttp 22756 22832 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2021-02-08 19:21:15,307 basehttp 22756 21356 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2021-02-08 19:21:15,322 basehttp 22756 22832 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2021-02-08 19:21:15,330 basehttp 22756 21356 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2021-02-08 19:21:15,373 basehttp 22756 21356 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2021-02-08 19:21:15,374 basehttp 22756 25560 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2021-02-08 19:21:15,375 basehttp 22756 22832 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2021-02-08 19:21:21,553 basehttp 22756 25560 "GET /admin/auth/user/ HTTP/1.1" 200 23750
+INFO 2021-02-08 19:21:21,621 basehttp 22756 25560 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2021-02-08 19:21:21,639 basehttp 22756 22888 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2021-02-08 19:21:21,649 basehttp 22756 22104 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2021-02-08 19:21:21,650 basehttp 22756 25076 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2021-02-08 19:21:21,658 basehttp 22756 25560 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2021-02-08 19:21:21,671 basehttp 22756 22104 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2021-02-08 19:21:21,678 basehttp 22756 22888 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2021-02-08 19:21:21,712 basehttp 22756 21356 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:21:21,733 basehttp 22756 25076 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2021-02-08 19:21:21,738 basehttp 22756 22832 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2021-02-08 19:21:21,742 basehttp 22756 22832 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2021-02-08 19:21:21,753 basehttp 22756 22832 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2021-02-08 19:21:21,755 basehttp 22756 25076 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2021-02-08 19:21:21,798 basehttp 22756 25076 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2021-02-08 19:21:21,801 basehttp 22756 22832 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2021-02-08 19:22:03,871 autoreload 22756 22504 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:04,658 autoreload 24816 6628 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:06,934 autoreload 24816 6628 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:07,622 autoreload 10128 23244 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:11,080 autoreload 10128 23244 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:12,017 autoreload 17584 24944 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:17,602 autoreload 17584 24944 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:18,367 autoreload 20976 18268 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:21,716 autoreload 20976 18268 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:22,390 autoreload 16800 8156 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:23,890 autoreload 16800 8156 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:22:25,469 autoreload 14076 18016 Watching for file changes with StatReloader
+INFO 2021-02-08 19:22:29,026 basehttp 14076 22500 "GET /pos1/2/0/ HTTP/1.1" 200 132493
+INFO 2021-02-08 19:22:30,846 basehttp 14076 9848 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:22:30,846 basehttp 14076 3152 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:22:55,678 views 14076 22500 --def get customer details
+INFO 2021-02-08 19:22:55,771 views 14076 22500 else of from_code == 'qrcode': member_id :WALK-IN
+INFO 2021-02-08 19:22:56,291 basehttp 14076 22500 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 158
+INFO 2021-02-08 19:23:36,550 views 14076 22500 --def get customer details
+WARNING 2021-02-08 19:23:36,637 views 14076 22500 MemberModel matching query does not exist., <class 'fx.models.MemberModel.DoesNotExist'>
+INFO 2021-02-08 19:23:36,639 basehttp 14076 22500 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 40
+INFO 2021-02-08 19:24:03,927 basehttp 14076 22500 "GET /admin/fx/membermodel/ HTTP/1.1" 200 20095
+INFO 2021-02-08 19:24:04,102 basehttp 14076 22500 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:24:07,025 basehttp 14076 22500 "GET /admin/fx/membermodel/?all= HTTP/1.1" 200 24133
+INFO 2021-02-08 19:24:07,206 basehttp 14076 16196 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:24:10,842 basehttp 14076 22500 "GET /admin/fx/membermodel/4/change/?_changelist_filters=all%3D HTTP/1.1" 200 22966
+INFO 2021-02-08 19:24:10,969 basehttp 14076 16196 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:24:19,867 basehttp 14076 22500 "POST /admin/fx/membermodel/4/change/?_changelist_filters=all%3D HTTP/1.1" 302 0
+INFO 2021-02-08 19:24:20,158 basehttp 14076 22500 "GET /admin/fx/membermodel/ HTTP/1.1" 200 20313
+INFO 2021-02-08 19:24:20,312 basehttp 14076 16196 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-08 19:24:35,337 autoreload 14076 18016 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-08 19:24:37,188 autoreload 13152 14804 Watching for file changes with StatReloader
+INFO 2021-02-08 19:24:38,250 basehttp 13152 20652 "GET /pos1/2/0/ HTTP/1.1" 200 132493
+INFO 2021-02-08 19:24:40,194 basehttp 13152 20192 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:24:40,194 basehttp 13152 23280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:24:48,070 views 13152 20652 --def get customer details
+INFO 2021-02-08 19:24:48,125 views 13152 20652 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-08 19:24:48,530 basehttp 13152 20652 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-08 19:25:05,311 views 13152 20652 --def get customer details
+INFO 2021-02-08 19:25:05,431 views 13152 20652 else of from_code == 'qrcode': member_id :walk-in
+INFO 2021-02-08 19:25:05,967 basehttp 13152 20652 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 158
+INFO 2021-02-08 19:36:53,343 basehttp 13152 17560 "GET /pos1/2/0/ HTTP/1.1" 200 133135
+INFO 2021-02-08 19:36:55,753 basehttp 13152 21832 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:36:55,753 basehttp 13152 24512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:37:14,350 basehttp 13152 17560 "GET /pos1/2/0/ HTTP/1.1" 200 133135
+INFO 2021-02-08 19:37:16,826 basehttp 13152 24512 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:37:16,826 basehttp 13152 21832 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:37:37,764 basehttp 13152 17560 "GET /pos1/2/0/ HTTP/1.1" 200 133135
+INFO 2021-02-08 19:37:40,105 basehttp 13152 21832 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:37:40,106 basehttp 13152 24512 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:50:34,822 basehttp 13152 2704 "GET /pos1/2/0/ HTTP/1.1" 200 133367
+INFO 2021-02-08 19:50:37,474 basehttp 13152 18148 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:50:37,474 basehttp 13152 24172 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:53:52,885 basehttp 13152 23556 "GET /pos1/2/0/ HTTP/1.1" 200 133550
+INFO 2021-02-08 19:53:55,427 basehttp 13152 15424 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:53:55,428 basehttp 13152 18868 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:57:17,470 autoreload 25124 12176 Watching for file changes with StatReloader
+INFO 2021-02-08 19:57:21,123 basehttp 25124 19900 "GET /pos1/2/0/ HTTP/1.1" 200 133468
+INFO 2021-02-08 19:57:23,712 basehttp 25124 8396 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 19:57:23,714 basehttp 25124 10896 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:04:02,666 basehttp 25124 8484 "GET /pos1/2/0/ HTTP/1.1" 200 133566
+INFO 2021-02-08 20:04:05,491 basehttp 25124 17888 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:04:05,491 basehttp 25124 21108 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:11:51,460 basehttp 25124 11856 "GET /pos1/2/0/ HTTP/1.1" 200 133568
+INFO 2021-02-08 20:11:55,143 basehttp 25124 17624 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:11:55,143 basehttp 25124 18560 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:19:52,370 basehttp 25124 16096 "GET /pos1/2/0/ HTTP/1.1" 200 133875
+INFO 2021-02-08 20:19:54,970 basehttp 25124 12624 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:19:54,970 basehttp 25124 23508 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:20:58,815 basehttp 25124 16096 "GET /pos1/2/0/ HTTP/1.1" 200 133855
+INFO 2021-02-08 20:21:01,825 basehttp 25124 12624 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:21:01,826 basehttp 25124 23508 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:24:30,113 basehttp 25124 6528 "GET /pos1/2/0/ HTTP/1.1" 200 133912
+INFO 2021-02-08 20:24:32,503 basehttp 25124 5396 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:24:32,504 basehttp 25124 24808 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:26:32,725 basehttp 25124 12992 "GET /pos1/2/0/ HTTP/1.1" 200 133919
+INFO 2021-02-08 20:26:35,467 basehttp 25124 14812 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:26:35,467 basehttp 25124 11880 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:30:00,326 basehttp 25124 7256 "GET /pos1/2/0/ HTTP/1.1" 200 134091
+INFO 2021-02-08 20:30:05,369 basehttp 25124 14532 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:30:05,369 basehttp 25124 17280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:30:42,478 basehttp 25124 7256 "GET /pos1/2/0/ HTTP/1.1" 200 134261
+INFO 2021-02-08 20:30:45,790 basehttp 25124 14532 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:30:45,790 basehttp 25124 17280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:31:53,024 basehttp 25124 7256 "GET /pos1/2/0/ HTTP/1.1" 200 134261
+INFO 2021-02-08 20:31:56,284 basehttp 25124 17280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:31:56,284 basehttp 25124 14532 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:35:30,328 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134261
+INFO 2021-02-08 20:35:33,643 basehttp 25124 19724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:35:33,643 basehttp 25124 10220 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:36:27,268 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134257
+INFO 2021-02-08 20:36:30,391 basehttp 25124 19724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:36:30,391 basehttp 25124 10220 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:36:37,362 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134257
+INFO 2021-02-08 20:36:41,372 basehttp 25124 19724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:36:41,372 basehttp 25124 10220 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:36:58,007 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134257
+INFO 2021-02-08 20:37:01,416 basehttp 25124 10220 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:37:01,416 basehttp 25124 19724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:37:20,604 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134234
+INFO 2021-02-08 20:37:23,811 basehttp 25124 19724 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:37:23,812 basehttp 25124 10220 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:38:38,661 basehttp 25124 11196 "GET /pos1/2/0/ HTTP/1.1" 200 134234
+INFO 2021-02-08 20:38:41,857 basehttp 25124 19724 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:38:41,858 basehttp 25124 10220 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:40:52,388 basehttp 25124 18332 "GET /pos1/2/0/ HTTP/1.1" 200 134247
+INFO 2021-02-08 20:40:55,962 basehttp 25124 19952 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:40:55,964 basehttp 25124 16376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:42:27,417 basehttp 25124 18332 "GET /pos1/2/0/ HTTP/1.1" 200 134311
+INFO 2021-02-08 20:42:30,760 basehttp 25124 19952 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:42:30,761 basehttp 25124 16376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:42:59,312 basehttp 25124 18332 "GET /pos1/2/0/ HTTP/1.1" 200 134313
+INFO 2021-02-08 20:43:03,515 basehttp 25124 19952 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:43:03,515 basehttp 25124 16376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:44:34,890 basehttp 25124 18332 "GET /pos1/2/0/ HTTP/1.1" 200 134313
+INFO 2021-02-08 20:44:38,457 basehttp 25124 16376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:44:38,457 basehttp 25124 19952 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:47:30,947 basehttp 25124 17236 "GET /pos1/2/0/ HTTP/1.1" 200 134312
+INFO 2021-02-08 20:47:34,543 basehttp 25124 16216 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:47:34,544 basehttp 25124 25012 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:48:48,702 basehttp 25124 17236 "GET /pos1/2/0/ HTTP/1.1" 200 134313
+INFO 2021-02-08 20:48:52,065 basehttp 25124 25012 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:48:52,066 basehttp 25124 16216 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:49:30,901 basehttp 25124 17236 "GET /pos1/2/0/ HTTP/1.1" 200 134313
+INFO 2021-02-08 20:49:34,829 basehttp 25124 25012 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:49:34,830 basehttp 25124 16216 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 20:51:50,969 views 25124 22884 --def get customer details
+INFO 2021-02-08 20:51:51,104 views 25124 22884 else of from_code == 'qrcode': member_id :walk-in
+INFO 2021-02-08 20:51:51,539 basehttp 25124 22884 "GET /get_customer_details/?customer_id=WALK-IN&password=5405&from=manual HTTP/1.1" 200 158
+INFO 2021-02-08 20:52:26,592 basehttp 25124 22884 "POST /pos_view/ HTTP/1.1" 200 114
+INFO 2021-02-08 21:12:16,491 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134310
+INFO 2021-02-08 21:12:20,900 basehttp 25124 17028 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:12:20,901 basehttp 25124 6184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:13:58,542 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134379
+INFO 2021-02-08 21:14:01,715 basehttp 25124 17028 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:14:01,715 basehttp 25124 6184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:14:21,110 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134449
+INFO 2021-02-08 21:14:25,109 basehttp 25124 17028 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:14:25,109 basehttp 25124 6184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:14:25,961 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134449
+INFO 2021-02-08 21:14:29,912 basehttp 25124 6184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:14:29,912 basehttp 25124 17028 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:20,800 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134449
+INFO 2021-02-08 21:15:25,009 basehttp 25124 6184 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:25,009 basehttp 25124 17028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:37,290 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134519
+INFO 2021-02-08 21:15:42,693 basehttp 25124 6184 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:42,695 basehttp 25124 17028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:48,206 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134544
+INFO 2021-02-08 21:15:57,604 basehttp 25124 6184 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:15:57,606 basehttp 25124 17028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:16:05,264 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134360
+INFO 2021-02-08 21:16:08,793 basehttp 25124 17028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:16:08,793 basehttp 25124 6184 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:17:22,637 basehttp 25124 13476 "GET /pos1/2/0/ HTTP/1.1" 200 134386
+INFO 2021-02-08 21:17:26,448 basehttp 25124 17028 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-08 21:17:26,449 basehttp 25124 6184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 05:55:32,611 basehttp 25124 12328 "GET /pos1/2/0/ HTTP/1.1" 200 134386
+INFO 2021-02-09 05:55:34,136 basehttp 25124 12888 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2021-02-09 05:55:38,014 basehttp 25124 5876 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 05:55:38,014 basehttp 25124 9604 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:01:48,135 basehttp 25124 8072 "GET /pos1/2/0/ HTTP/1.1" 200 134386
+INFO 2021-02-09 06:01:52,258 basehttp 25124 4924 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:01:52,259 basehttp 25124 23004 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:26:17,185 autoreload 25124 12176 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:26:18,304 autoreload 7148 21992 Watching for file changes with StatReloader
+INFO 2021-02-09 06:26:41,724 autoreload 7148 21992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:26:42,874 autoreload 13412 13692 Watching for file changes with StatReloader
+INFO 2021-02-09 06:27:34,262 autoreload 13412 13692 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:27:34,949 autoreload 22800 13004 Watching for file changes with StatReloader
+INFO 2021-02-09 06:27:41,492 autoreload 22800 13004 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:27:42,209 autoreload 10048 13600 Watching for file changes with StatReloader
+INFO 2021-02-09 06:27:49,963 autoreload 10048 13600 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:27:50,896 autoreload 16296 17196 Watching for file changes with StatReloader
+INFO 2021-02-09 06:27:58,787 autoreload 16296 17196 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:27:59,758 autoreload 7660 21628 Watching for file changes with StatReloader
+INFO 2021-02-09 06:28:27,654 autoreload 7660 21628 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:28:28,676 autoreload 25384 15988 Watching for file changes with StatReloader
+INFO 2021-02-09 06:28:30,968 autoreload 25384 15988 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:28:32,446 autoreload 1688 4020 Watching for file changes with StatReloader
+INFO 2021-02-09 06:28:44,380 autoreload 1688 4020 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:28:45,134 autoreload 13028 24988 Watching for file changes with StatReloader
+INFO 2021-02-09 06:28:52,779 autoreload 13028 24988 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-09 06:28:53,848 autoreload 1756 7896 Watching for file changes with StatReloader
+INFO 2021-02-09 06:28:59,723 autoreload 1756 7896 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-09 06:29:01,032 autoreload 8300 12224 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:05,029 autoreload 8300 12224 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-09 06:29:06,151 autoreload 21592 16208 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:11,894 autoreload 21592 16208 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-09 06:29:13,298 autoreload 18092 12232 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:21,256 autoreload 18092 12232 C:\Users\dan\just_django\tryjango\fx\urls.py changed, reloading.
+INFO 2021-02-09 06:29:22,032 autoreload 18540 5936 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:36,015 autoreload 18540 5936 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:29:36,879 autoreload 15276 18192 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:39,318 autoreload 15276 18192 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:29:40,144 autoreload 6596 18888 Watching for file changes with StatReloader
+INFO 2021-02-09 06:29:41,782 autoreload 6596 18888 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:29:42,630 autoreload 25176 20144 Watching for file changes with StatReloader
+INFO 2021-02-09 06:30:03,854 autoreload 25176 20144 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:30:04,880 autoreload 4276 11848 Watching for file changes with StatReloader
+INFO 2021-02-09 06:30:07,236 autoreload 4276 11848 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 06:30:08,066 autoreload 11996 16060 Watching for file changes with StatReloader
+INFO 2021-02-09 06:35:57,234 basehttp 11996 10908 "GET /member/4/ HTTP/1.1" 200 222635
+INFO 2021-02-09 06:35:57,383 basehttp 11996 7832 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-09 06:35:57,481 basehttp 11996 10908 "GET /pos1/2/0/ HTTP/1.1" 200 135201
+INFO 2021-02-09 06:36:02,469 basehttp 11996 5860 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:36:02,470 basehttp 11996 18120 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:36:22,573 basehttp 11996 10908 "GET /pos1/2/0/ HTTP/1.1" 200 135213
+INFO 2021-02-09 06:36:26,766 basehttp 11996 5860 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:36:26,767 basehttp 11996 18120 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:38:19,507 basehttp 11996 7984 "GET /pos1/2/0/ HTTP/1.1" 200 135328
+INFO 2021-02-09 06:38:24,465 basehttp 11996 23828 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 06:38:24,465 basehttp 11996 23624 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 07:25:54,853 autoreload 11996 16060 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:25:55,634 autoreload 16376 19552 Watching for file changes with StatReloader
+INFO 2021-02-09 07:26:04,206 basehttp 16376 7660 "GET /pos1/2/0/ HTTP/1.1" 200 136688
+INFO 2021-02-09 07:26:09,950 basehttp 16376 5364 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 07:26:09,950 basehttp 16376 21108 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 07:26:11,696 views 16376 7660 --def get customer details
+ERROR 2021-02-09 07:26:12,205 log 16376 7660 Internal Server Error: /get_product_details/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 307, in check_response
+    raise ValueError(
+ValueError: The view fx.views.get_product_details didn't return an HttpResponse object. It returned None instead.
+ERROR 2021-02-09 07:26:12,211 basehttp 16376 7660 "GET /get_product_details/?item_id=12345 HTTP/1.1" 500 66279
+INFO 2021-02-09 07:28:30,389 basehttp 16376 24192 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-09 07:28:30,443 basehttp 16376 24192 "GET /static/css/page-1.css HTTP/1.1" 304 0
+INFO 2021-02-09 07:28:30,453 basehttp 16376 24192 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-09 07:28:32,197 basehttp 16376 24192 "GET /admin/ HTTP/1.1" 200 21335
+INFO 2021-02-09 07:28:33,859 basehttp 16376 24192 "GET /admin/ HTTP/1.1" 200 21335
+INFO 2021-02-09 07:28:37,575 basehttp 16376 24192 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 19498
+INFO 2021-02-09 07:28:37,753 basehttp 16376 24192 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:28:41,460 basehttp 16376 24192 "GET /admin/fx/itemmodel/add/ HTTP/1.1" 200 20000
+INFO 2021-02-09 07:28:41,605 basehttp 16376 11640 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:28:42,080 basehttp 16376 24192 "GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+INFO 2021-02-09 07:28:42,082 basehttp 16376 8320 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2021-02-09 07:28:42,108 basehttp 16376 24192 "GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+INFO 2021-02-09 07:28:42,109 basehttp 16376 8320 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2021-02-09 07:29:18,179 basehttp 16376 8320 "POST /admin/fx/itemmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-09 07:29:18,494 basehttp 16376 8320 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 20218
+INFO 2021-02-09 07:29:18,620 basehttp 16376 8320 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:29:20,676 basehttp 16376 8320 "GET /admin/fx/itemmodel/add/ HTTP/1.1" 200 20000
+INFO 2021-02-09 07:29:20,809 basehttp 16376 8320 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:30:45,438 basehttp 16376 8320 "POST /admin/fx/itemmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-09 07:30:45,710 basehttp 16376 8320 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 20716
+INFO 2021-02-09 07:30:45,819 basehttp 16376 8320 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:30:48,113 basehttp 16376 8320 "GET /admin/fx/itemmodel/add/ HTTP/1.1" 200 20000
+INFO 2021-02-09 07:30:48,312 basehttp 16376 8320 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:31:21,380 basehttp 16376 8320 "POST /admin/fx/itemmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-09 07:31:21,699 basehttp 16376 8320 "GET /admin/fx/itemmodel/ HTTP/1.1" 200 21213
+INFO 2021-02-09 07:31:21,946 basehttp 16376 8320 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-09 07:31:29,737 autoreload 16376 19552 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:31:30,544 autoreload 2684 22748 Watching for file changes with StatReloader
+INFO 2021-02-09 07:31:44,422 autoreload 2684 22748 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:31:45,127 autoreload 25460 2868 Watching for file changes with StatReloader
+INFO 2021-02-09 07:31:47,470 autoreload 25460 2868 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:31:48,150 autoreload 23500 5896 Watching for file changes with StatReloader
+INFO 2021-02-09 07:31:52,554 autoreload 23500 5896 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:31:53,458 autoreload 23692 21516 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:27,248 autoreload 23692 21516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:28,282 autoreload 22140 2544 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:30,563 autoreload 22140 2544 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:31,561 autoreload 24840 11976 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:38,164 autoreload 24840 11976 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:38,940 autoreload 21268 24016 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:41,233 autoreload 21268 24016 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:42,232 autoreload 3788 12768 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:45,597 autoreload 3788 12768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:46,407 autoreload 8164 19520 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:48,651 autoreload 8164 19520 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:49,379 autoreload 4148 6564 Watching for file changes with StatReloader
+INFO 2021-02-09 07:33:53,820 autoreload 4148 6564 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:33:54,571 autoreload 2412 23844 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:00,068 autoreload 2412 23844 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:01,089 autoreload 19896 2868 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:04,552 autoreload 19896 2868 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:05,312 autoreload 17168 17560 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:08,669 autoreload 17168 17560 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:09,374 autoreload 14864 13652 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:11,593 autoreload 14864 13652 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:12,264 autoreload 17032 23832 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:21,939 autoreload 17032 23832 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:22,751 autoreload 22156 5912 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:27,275 autoreload 22156 5912 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:28,007 autoreload 12900 20884 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:33,387 autoreload 12900 20884 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:34,151 autoreload 23760 21912 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:42,726 autoreload 23760 21912 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:43,456 autoreload 17072 18976 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:46,976 autoreload 17072 18976 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:47,802 autoreload 19732 5364 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:51,153 autoreload 19732 5364 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:51,935 autoreload 13152 23316 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:54,226 autoreload 13152 23316 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:55,404 autoreload 20820 17680 Watching for file changes with StatReloader
+INFO 2021-02-09 07:34:58,786 autoreload 20820 17680 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:34:59,513 autoreload 2704 15896 Watching for file changes with StatReloader
+INFO 2021-02-09 07:35:01,804 autoreload 2704 15896 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:35:02,496 autoreload 25428 13256 Watching for file changes with StatReloader
+INFO 2021-02-09 07:35:33,461 autoreload 25428 13256 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:35:34,450 autoreload 15512 25200 Watching for file changes with StatReloader
+INFO 2021-02-09 07:35:44,162 autoreload 15512 25200 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:35:44,915 autoreload 13540 6768 Watching for file changes with StatReloader
+INFO 2021-02-09 07:35:49,324 autoreload 13540 6768 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:35:50,204 autoreload 24260 17680 Watching for file changes with StatReloader
+INFO 2021-02-09 07:35:58,761 autoreload 24260 17680 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:35:59,655 autoreload 21112 8052 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:20,805 autoreload 21112 8052 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:21,505 autoreload 6192 10556 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:27,983 autoreload 6192 10556 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:28,632 autoreload 10584 20752 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:37,162 autoreload 10584 20752 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:37,851 autoreload 15276 23832 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:40,229 autoreload 15276 23832 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:41,707 autoreload 1308 22292 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:52,618 autoreload 1308 22292 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:53,364 autoreload 8408 20216 Watching for file changes with StatReloader
+INFO 2021-02-09 07:36:55,677 autoreload 8408 20216 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:36:56,410 autoreload 16172 18388 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:00,759 autoreload 16172 18388 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:01,408 autoreload 6560 19740 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:04,743 autoreload 6560 19740 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:05,475 autoreload 16920 3604 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:07,917 autoreload 16920 3604 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:08,808 autoreload 6504 23244 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:18,409 autoreload 6504 23244 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:19,228 autoreload 24556 11348 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:23,535 autoreload 24556 11348 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:24,229 autoreload 22696 8212 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:32,789 autoreload 22696 8212 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:33,476 autoreload 17772 19988 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:45,058 autoreload 17772 19988 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:45,744 autoreload 11812 24876 Watching for file changes with StatReloader
+INFO 2021-02-09 07:37:51,189 autoreload 11812 24876 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:37:51,862 autoreload 5148 23652 Watching for file changes with StatReloader
+INFO 2021-02-09 07:38:01,545 autoreload 5148 23652 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:38:02,270 autoreload 3788 4800 Watching for file changes with StatReloader
+INFO 2021-02-09 07:38:06,614 autoreload 3788 4800 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:38:07,337 autoreload 17584 6528 Watching for file changes with StatReloader
+INFO 2021-02-09 07:38:11,922 autoreload 17584 6528 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:38:12,627 autoreload 13672 12092 Watching for file changes with StatReloader
+INFO 2021-02-09 07:38:17,991 autoreload 13672 12092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:38:18,803 autoreload 19572 6908 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:08,886 autoreload 19572 6908 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:09,863 autoreload 19548 5316 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:15,309 autoreload 19548 5316 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:16,152 autoreload 17820 11296 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:25,773 autoreload 17820 11296 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:26,505 autoreload 8052 19120 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:34,152 autoreload 8052 19120 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:35,170 autoreload 2548 15148 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:40,620 autoreload 2548 15148 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:41,446 autoreload 6844 24852 Watching for file changes with StatReloader
+INFO 2021-02-09 07:39:44,884 autoreload 6844 24852 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:39:46,029 autoreload 8396 1544 Watching for file changes with StatReloader
+INFO 2021-02-09 07:40:23,793 autoreload 8396 1544 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:40:24,560 autoreload 2684 11212 Watching for file changes with StatReloader
+INFO 2021-02-09 07:40:29,033 autoreload 2684 11212 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:40:29,772 autoreload 18688 25124 Watching for file changes with StatReloader
+INFO 2021-02-09 07:40:32,085 autoreload 18688 25124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:40:32,810 autoreload 14752 22060 Watching for file changes with StatReloader
+INFO 2021-02-09 07:40:43,592 autoreload 14752 22060 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:40:44,380 autoreload 8072 14500 Watching for file changes with StatReloader
+INFO 2021-02-09 07:41:11,872 autoreload 16348 25136 Watching for file changes with StatReloader
+INFO 2021-02-09 07:41:24,677 autoreload 16348 25136 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:41:25,336 autoreload 24352 2704 Watching for file changes with StatReloader
+INFO 2021-02-09 07:44:15,909 autoreload 24352 2704 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:44:16,595 autoreload 19200 25124 Watching for file changes with StatReloader
+INFO 2021-02-09 07:44:44,126 autoreload 19200 25124 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:44:44,854 autoreload 16772 9560 Watching for file changes with StatReloader
+INFO 2021-02-09 07:45:53,525 basehttp 16772 11416 "GET /pos1/2/0/ HTTP/1.1" 200 136737
+INFO 2021-02-09 07:45:58,295 basehttp 16772 19296 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 07:45:58,296 basehttp 16772 14952 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-09 07:46:00,992 views 16772 11416 --def get customer details
+WARNING 2021-02-09 07:46:01,092 views 16772 11416 unable to retrieve product details: e: ItemModel matching query does not exist.
+INFO 2021-02-09 07:46:01,092 basehttp 16772 11416 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 12
+INFO 2021-02-09 07:46:52,081 autoreload 16772 9560 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-09 07:46:53,103 autoreload 12712 12584 Watching for file changes with StatReloader

@@ -530,9 +530,9 @@ th {
 
     <div class="container" style="border:none;width: 90%;">
         <div class="tcard">
-            <div>
+            <!-- <div>
                 <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
-            </div>
+            </div> -->
              
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*).
@@ -570,7 +570,7 @@ th {
                         <div class="form-group col-md-6">
                             <label for="venture-total-txt" class="col-form-label">SALES TOTAL<span
                                     class="asteriskField">*</span> </label>
-                            <input style="font-size:30px" id="venture-total-txt" required type="number" step='any' min=5 max="10000"
+                            <input  id="venture-total-txt" required type="number" step='any' min=0 max="10000"
                                 class="mid-size form-control" value="{{venture.totalCost}}">
                         </div>
                         
@@ -648,7 +648,7 @@ th {
                         <div class="form-group col-md-6">
                             <label for="id_amount" class="col-form-label">Php </label>
                             <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
-                            <input type="number" name="amount" step="any" class="numberinput form-control" required="" id="id_amount" name="amount" style="font-size: 30px;" min="0" max="10000">
+                            <input type="number" name="amount" step="any" class="numberinput form-control" required="" id="id_amount" name="amount"   min="0" max="10000">
                             
                         </div>
                          
@@ -657,7 +657,106 @@ th {
                             <input type="number" name="cc" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
                         </div>
 
+                    </div>      
+
+                    <!-- ---- container begin --- -->
+
+ <div   class="container" style="width: 100%;height: 400px; margin-bottom: 1rem;">
+
+            <div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label for="pos-product-code-txt" class="col-form-label"> CODE<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control">
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-product-name-txt"  type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-qty-txt" class="col-form-label">QTY<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-qty-txt"  type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" value="{{member_info.member_id|upper}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-price-txt" class="col-form-label">PRICE<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-price-txt"  type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-c-money-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pos-total-txt" class="col-form-label">TOTAL<span
+                            class="asteriskField">*</span> </label>
+                        <input id="pos-total-txt"  type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                            class="mid-size form-control" >
+                    </div>
+            
+                </div>
+
+                <div class="row">
+                    <div class ="form-group col-md-8" style="padding-left:12px">
+                        <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
+                        value="ADD" />
+                    
+                        <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                    value="CANCEL" /> 
+                        
+                        
+                    <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
+                    value="DELETE" />
+                </div> 
+                </div>
+                    
+            </div>
+            <div style="max-height: 350px;overflow: scroll;">
+            <table id="pos-table" class="table table-bordered">
+                <thead>
+                    <tr class="green">
+                    <th scope="col">#</th>   
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">CM</th>
+                    <th scope="col">Total</th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                </tr>
+                
+                
+                </tbody>
+            </table>
+            </div>
+</div>
+
+
+                    <!-- --------- container ends ------------ -->
+                     <br>
+                     <br>
+                    <br>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <div class="form-check form-check-inline">
@@ -685,7 +784,7 @@ th {
 
                         <div>
 
-                            <textarea style="font-size: 1rem;display: none;" rows="1" name="venture_note" class="form-control"
+                            <textarea style="display: none;" rows="1" name="venture_note" class="form-control"
                                 id="venture-description-txt" name="note" maxlength="100">{{venture.note}}</textarea>
 
                         </div>
@@ -749,95 +848,8 @@ th {
  <!-- ------------------- pos ------------------- -->
 
 
-
- <div hidden class="container" style="border:1px solid green;width: 100%;">
-
-            <div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label for="pos-product-code-txt" class="col-form-label"> CODE<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-product-name-txt"  type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="pos-qty-txt" class="col-form-label">QTY<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-qty-txt"  type="number" step='any' min=1 max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control" value="{{member_info.member_id|upper}}">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="pos-price-txt" class="col-form-label">PRICE<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-price-txt"  type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control" >
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label for="pos-c-money-txt" class="col-form-label">C-MONEY<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-c-money-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="pos-total-txt" class="col-form-label">TOTAL<span
-                            class="asteriskField">*</span> </label>
-                        <input id="pos-total-txt"  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control" >
-                    </div>
-            
-                </div>
-
-                <div class="row">
-                    <div class ="form-group col-md-8" style="padding-left:12px">
-                        <input  id="pos-add-btn" class="btn btn-info btn-md" type="button"
-                        value="ADD" />
-                    
-                        <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
-                    value="CANCEL" /> 
-                        
-                        
-                    <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
-                    value="DELETE" />
-                </div> 
-                </div>
-                    
-            </div>
-            <div style="height: 350px;overflow: scroll;">
-            <table id="pos-table" class="table table-bordered">
-                <thead>
-                    <tr class="green">
-                    <th scope="col">Item ID</th>
-                    <th scope="col">Product name</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">CM</th>
-                    <th scope="col">Total</th>
-                
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th></th>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    
-                </tr>
-                
-                
-                </tbody>
-            </table>
-            </div>
-</div>
+<!-- --here. -->
+ 
 
 
   <!-- ------------------- pos end --------------------- -->
@@ -1064,7 +1076,7 @@ th {
                                 <label for="review-venture-total-txt" class="col-md-1 col-form-label">TOTAL COST<span
                                         class="asteriskField">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" readonly class="mid-size review form-control"
+                                    <input type="text" readonly class="review form-control"
                                         id="review-venture-total-txt" value="">
                                 </div>
                                 <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
@@ -1090,7 +1102,7 @@ th {
                                 <label for="review-venture-amount-txt" class="col-sm-1 col-form-label">PHP<span
                                         class="asteriskField">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" readonly class="small-size  review form-control"
+                                    <input type="text" readonly class="review form-control"
                                         id="review-venture-amount-txt" value="">
                                 </div>
                                 <label for="review-venture-cc-txt" class="col-sm-1 col-form-label">Comm. Money<span
@@ -1220,6 +1232,8 @@ th {
     $(document).ready(function () {
         var curr_qrcode="";
         var ctr=1;
+        var sales_total =0;
+        var amount_total =0;
 
 
         (function () {
@@ -1228,14 +1242,18 @@ th {
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
                     console.log('Scanned: ' + iQty + 'x ' + sCode);
-                    if (sCode != "121279") { 
-                    search_member_by_qrcode(sCode, "","qrcode");
+                    if (sCode != "121279")
+                     { 
+                       search_member_by_qrcode(sCode, "","qrcode");
+                       
                     }
                 },
                 
-				onKeyDetect: function (iKeyCode) {
-					console.log('Pressed: ' + iKeyCode);
-				}
+				// onKeyDetect: function (iKeyCode) 
+                // {
+
+				// 	console.log('Pressed: ' + iKeyCode);
+				// }
 			});
 
 			// Test scanner is initialized
@@ -1459,7 +1477,7 @@ th {
 
         //
         $("#pos-delete-btn").prop("disabled",true);
-        $("#id_amount").css("font-size","30px")
+      //  $("#id_amount").css("font-size","30px")
 
 
         // set customer id text fixed
@@ -1620,20 +1638,33 @@ th {
         });
 
        // ------------------- pos table --------------
-
+       // 
        $("#pos-qty-txt").on("keyup", function () {
-             
+
+            pcmoney =  $("#pos-c-money-txt").val();
+            
+            var cm = parseFloat(pcmoney)
+            if (isNaN(cm)) {
+                cm = 0
+                }
+
             qty = parseFloat($(this).val());
             price = parseFloat($("#pos-price-txt").val());
-            total = qty * price;
+            total = (qty * price) - cm;
             total = total.toFixed(2).replace('.00', '');
             $("#pos-total-txt").val(total);
-
-           
-
-
-
-
+       });
+       $("#pos-price-txt").on("keyup", function () {
+            pcmoney =  $("#pos-c-money-txt").val();
+            var cm = parseFloat(pcmoney)
+            if (isNaN(cm)) {
+                cm = 0
+                }
+            qty = parseFloat($("#pos-qty-txt").val());
+            price = parseFloat($(this).val());
+            total = (qty * price) - cm;
+            total = total.toFixed(2).replace('.00', '');
+            $("#pos-total-txt").val(total);
        });
  
        $("#pos-cancel-btn").click(function () {
@@ -1652,46 +1683,60 @@ th {
                $("#pos-add-btn").val("ADD");
 
        });
+//here
+       $("#pos-add-btn").click(function () {
+                    pcode = $("#pos-product-code-txt").val().trim();
+                    console.log("pcode:"+pcode);
+                    pqty =  parseInt($("#pos-qty-txt").val());
+                    console.log("pqty:"+pqty);
+                    if (pcode =="" ||  isNaN( pqty) ){
+                        return;
+                    }
+                    action =  $(this).val().trim();
+                    console.log("---------------- actionss:"+ action); 
+                    if (action =="ADD") { 
+                            console.log("---------------- add"); 
+                            pcode =$("#pos-product-code-txt").val();
+                            pname = $("#pos-product-name-txt").val();
+                            pqty = $("#pos-qty-txt").val();
+                            pprice =  $("#pos-price-txt").val();
+                            pcmoney =  $("#pos-c-money-txt").val();
+                            ptotal =  $("#pos-total-txt").val();
+                            var tot = parseFloat(ptotal);
+                           
+                            var cm = parseFloat(pcmoney)
+                            if (isNaN(cm)) {
+                                cm = 0
+                             }
 
-        $("#pos-add-btn").click(function () {
-        pcode = $("#pos-product-code-txt").val().trim();
-        console.log("pcode:"+pcode);
-        pqty =  parseInt($("#pos-qty-txt").val());
-        console.log("pqty:"+pqty);
-        if (pcode =="" ||  isNaN( pqty) ){
-            return;
-        }
-        action =  $(this).val().trim();
-        console.log("---------------- action:"+ action); 
-        if (action =="ADD") { 
-        console.log("---------------- add"); 
-        pcode =$("#pos-product-code-txt").val();
-        pname = $("#pos-product-name-txt").val();
-        pqty = $("#pos-qty-txt").val();
-        pprice =  $("#pos-price-txt").val();
-        pcmoney =  $("#pos-c-money-txt").val();
-        ptotal =  $("#pos-total-txt").val();
-
-
-        var newRow = "<tr  id=c-"+ pcode +"><td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
-           $("#pos-table > tbody").prepend(newRow);
-        }else
-        {
-          console.log(">>>>> edit is selected");
-          table = document.getElementById("pos-table");
-          table.rows[rIndex].cells[0].innerHTML =  $("#pos-product-code-txt").val();
-          table.rows[rIndex].cells[1].innerHTML = $("#pos-product-name-txt").val();
-          table.rows[rIndex].cells[2].innerHTML =  $("#pos-qty-txt").val();
-          table.rows[rIndex].cells[3].innerHTML =  $("#pos-price-txt").val();
-          table.rows[rIndex].cells[4].innerHTML = $("#pos-c-money-txt").val();
-          table.rows[rIndex].cells[5].innerHTML =  $("#pos-total-txt").val()
-          $(this).val("ADD");
-          
+                            sales_total = sales_total + (tot + cm) ;
+                           // amt = tot - cm;
+                            //sales_total = sales_total.toFixed(2).replace('.00', '');
+                            amount_total = amount_total + tot;
+                            console.log(" amount: "+ tot);
+                            $("#venture-total-txt").val(sales_total);
+                            $("#id_amount").val(amount_total);
 
 
+                    var newRow = "<tr  id=c-"+ pcode +"><td></td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
+                    $("#pos-table > tbody").prepend(newRow);
+                    }else
+                    {
+                    console.log(">>>>> edit is selected");
+                    table = document.getElementById("pos-table");
+                    // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                    table.rows[rIndex].cells[2].innerHTML = $("#pos-product-name-txt").val();
+                    table.rows[rIndex].cells[3].innerHTML =  $("#pos-qty-txt").val();
+                    table.rows[rIndex].cells[4].innerHTML =  $("#pos-price-txt").val();
+                    table.rows[rIndex].cells[5].innerHTML = $("#pos-c-money-txt").val();
+                    table.rows[rIndex].cells[6].innerHTML =  $("#pos-total-txt").val()
+                    $(this).val("ADD");
+                    
 
-        }
-        clear_pos_top();
+
+
+                    }
+                    clear_pos_top();
 
 });
 
@@ -1734,20 +1779,20 @@ $("#payment-login-lnk").click(function () {
                         return $(this).text();
 
                     }).get();
-                    var td=tableData[0] +  '*' +  tableData[1] + '*' + tableData[2] + '*' +  tableData[3] + '*' + tableData[4];
+                    var td=tableData[1] +  '*' +  tableData[2] + '*' + tableData[3] + '*' +  tableData[4] + '*' + tableData[5];
                     console.log(td);
-                    pcode =  tableData[0].trim();
+                    pcode =  tableData[1].trim();
 
                     if (pcode ==""){
                         return;
                     }
                     product_code = tableData[0].trim();
-                    $("#pos-product-code-txt").val( tableData[0] );
-                    $("#pos-product-name-txt").val(tableData[1] );
-                    $("#pos-qty-txt").val(tableData[2] );
-                    $("#pos-price-txt").val(tableData[3] );
-                    $("#pos-c-money-txt").val(tableData[4] );
-                    $("#pos-total-txt").val(tableData[5] );
+                    $("#pos-product-code-txt").val( tableData[1] );
+                    $("#pos-product-name-txt").val(tableData[2] );
+                    $("#pos-qty-txt").val(tableData[3] );
+                    $("#pos-price-txt").val(tableData[4] );
+                    $("#pos-c-money-txt").val(tableData[5] );
+                    $("#pos-total-txt").val(tableData[6] );
                     $("#pos-add-btn").val("EDIT");
                     $("#pos-delete-btn").prop("disabled",false);
 
@@ -1936,6 +1981,70 @@ $("#payment-login-lnk").click(function () {
 
 
          });
+//here..
+         $("#pos-product-code-txt").keyup(function (event) {
+            // if (event.target.id == "venture-customer_id-txt" || event.which == 13 && keys["PREVIOUS-INPUT"] == "venture-customer_id") {
+            //     console.log("inside event");
+            //     if (keys["PREVIOUS-INPUT"] == "") {
+            //         keys["PREVIOUS-INPUT"] = "venture-customer_id";
+            //     }
+            //     enter_key = false;
+            //     if (event.which === 13) {
+            //         customer_id = $("#venture-customer_id-txt").val().trim().toUpperCase();
+            //         enter_key = true;
+            //         console.log("inside event.which: 13");
+            //     } else { 
+            var item_id= $(this).val().trim();
+             
+            console.log("item id :" + item_id);
+            if (item_id.length >=5){
+                search_product_details(item_id);
+                console.log("Call ajax");
+            }
+
+        });
+        function search_product_details(item_id) {
+              
+            var data = {}
+            //ID_Info.ON_SEARCH = true;
+            data['item_id'] = item_id;
+           
+            console.log("s");
+          
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:get_product_details_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                   
+                             console.log("response['data']");
+                             console.log(response['data']);
+                            if (response['data'] == "Success") {
+                                    beep();
+                                    
+                                  //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+
+                                $("#pos-product-name-txt").val(response['product_info']['title'].trim())
+                                $("#pos-price-txt").val(response['product_info']['price']);
+                                  console.log("product_info ");
+                                  console.log(response['product_info'] );
+
+                                 
+                              }
+                     
+                },
+                error: function (response) {
+                    
+                    console.log("Unable to retrieve product info");
+                    console.log(response);
+                }
+            });
+
+        }
+
+
+
 
         function search_member_by_qrcode(customer_id, qrpassword, code) {
             console.log("on search_member func");
@@ -1945,10 +2054,10 @@ $("#payment-login-lnk").click(function () {
             var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
 
 
-            if (customer_id == curr_qrcode){
-                console.log(" the same customer_id")
-                return;
-            }
+            // if (customer_id == curr_qrcode){
+            //     console.log(" the same customer_id")
+            //     return;
+            // }
             curr_qrcode = customer_id;
             // var match = customer_id.match($regexname);
             // if (match == null || match != customer_id) {
@@ -2202,9 +2311,10 @@ $("#payment-login-lnk").click(function () {
             console.log(" #id_amount is on");
             amount = parseFloat($(this).val());
             if (isNaN(amount)) {
+    $          ("#venture-total-txt").val()
                 amount = 0;
             }
-            total_cost = parseFloat($("#venture-total-txt").val());
+            total_cost = parseFloat();
             var cc = total_cost - amount;  // Math.round(total_cost - amount);
             cc = cc.toFixed(2).replace('.00', '');
             $("#id_cc").val(cc);

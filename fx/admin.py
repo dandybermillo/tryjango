@@ -149,7 +149,7 @@ class SkillCategoryModelAdmin(admin.ModelAdmin):
     
  
 class ItemModelAdmin(admin.ModelAdmin):
-    list_display = ["title",'img','description','category','price','reg_price','qty']
+    list_display = ["title",'img','description','category','price','reg_price','qty','sku','product_id','cm']
     
 admin.site.register(ItemModel,ItemModelAdmin)  
 
