@@ -5436,3 +5436,1130 @@ INFO 2021-02-10 15:56:52,565 basehttp 6984 19776 "GET /static/css/bootstrap.css.
 INFO 2021-02-10 15:58:47,404 basehttp 6984 8936 "GET /pos1/2/0/ HTTP/1.1" 200 152638
 INFO 2021-02-10 15:58:51,786 basehttp 6984 16884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
 INFO 2021-02-10 15:58:51,787 basehttp 6984 22596 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:00:01,910 basehttp 6984 8936 "GET /pos1/2/0/ HTTP/1.1" 200 152638
+INFO 2021-02-10 16:00:06,237 basehttp 6984 22596 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:00:06,237 basehttp 6984 16884 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:01:38,595 basehttp 6984 8936 "GET /pos1/2/0/ HTTP/1.1" 200 152696
+INFO 2021-02-10 16:01:42,683 basehttp 6984 16884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:01:42,683 basehttp 6984 22596 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:02:10,808 basehttp 6984 8936 "GET /pos1/2/0/ HTTP/1.1" 200 152752
+INFO 2021-02-10 16:02:14,704 views 6984 8936 --def get customer details
+INFO 2021-02-10 16:02:14,742 basehttp 6984 8936 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:02:15,078 basehttp 6984 22596 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:02:15,079 basehttp 6984 16884 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:03:16,536 basehttp 6984 8936 "GET /pos1/2/0/ HTTP/1.1" 200 152946
+INFO 2021-02-10 16:03:20,750 basehttp 6984 16884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:03:20,751 basehttp 6984 22596 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:04:00,199 views 6984 8936 --def get customer details
+INFO 2021-02-10 16:04:00,265 basehttp 6984 8936 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:05:56,090 basehttp 6984 9340 "GET /pos1/2/0/ HTTP/1.1" 200 152769
+INFO 2021-02-10 16:06:00,517 basehttp 6984 14900 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:06:00,517 basehttp 6984 23376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:06:04,160 views 6984 9340 --def get customer details
+INFO 2021-02-10 16:06:04,244 basehttp 6984 9340 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:08:35,893 basehttp 6984 19468 "GET /pos1/2/0/ HTTP/1.1" 200 152809
+INFO 2021-02-10 16:08:40,582 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:08:40,583 basehttp 6984 24300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:09:42,412 basehttp 6984 19468 "GET /pos1/2/0/ HTTP/1.1" 200 152768
+INFO 2021-02-10 16:09:47,047 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:09:47,047 basehttp 6984 24300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:09:47,364 views 6984 19468 --def get customer details
+INFO 2021-02-10 16:09:47,407 basehttp 6984 19468 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:09:51,253 basehttp 6984 19468 "GET /pos1/2/0/ HTTP/1.1" 200 152768
+INFO 2021-02-10 16:09:56,481 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:09:56,481 basehttp 6984 24300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:10:27,455 basehttp 6984 19468 "GET /pos1/2/0/ HTTP/1.1" 200 152776
+INFO 2021-02-10 16:10:32,042 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:10:32,043 basehttp 6984 24300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:10:32,249 views 6984 19468 --def get customer details
+INFO 2021-02-10 16:10:32,309 basehttp 6984 19468 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:11:55,697 basehttp 6984 19468 "GET /pos1/2/0/ HTTP/1.1" 200 152816
+INFO 2021-02-10 16:12:00,398 basehttp 6984 24300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:12:00,398 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:12:00,970 views 6984 19468 --def get customer details
+INFO 2021-02-10 16:12:01,048 basehttp 6984 19468 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:16:59,876 basehttp 6984 22752 "GET /pos1/2/0/ HTTP/1.1" 200 152874
+INFO 2021-02-10 16:17:04,781 basehttp 6984 23032 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:17:04,782 basehttp 6984 24228 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:17:05,026 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:05,067 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:12,114 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:12,172 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:22,186 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:22,225 basehttp 6984 22752 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:27,653 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:27,719 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:30,807 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:30,867 basehttp 6984 22752 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:35,510 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:35,553 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:48,713 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:48,782 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:17:50,789 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:17:50,851 basehttp 6984 22752 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+INFO 2021-02-10 16:19:37,023 basehttp 6984 22752 "GET /pos1/2/0/ HTTP/1.1" 200 152888
+INFO 2021-02-10 16:19:41,639 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:19:41,686 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:19:41,958 basehttp 6984 22752 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2021-02-10 16:19:42,078 basehttp 6984 11196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:19:42,079 basehttp 6984 12984 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:20:04,723 basehttp 6984 22752 "GET /pos1/2/0/ HTTP/1.1" 200 152887
+INFO 2021-02-10 16:20:09,453 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:20:09,590 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:20:10,000 basehttp 6984 11196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:20:10,001 basehttp 6984 12984 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:21:35,564 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:21:35,610 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:22:20,017 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:22:20,054 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:23:04,703 basehttp 6984 22752 "GET /pos1/2/0/ HTTP/1.1" 200 152887
+INFO 2021-02-10 16:23:09,719 basehttp 6984 20676 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:23:09,719 basehttp 6984 18524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:23:13,594 views 6984 22752 --def get customer details
+INFO 2021-02-10 16:23:13,650 basehttp 6984 22752 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:23:25,540 views 6984 22752 --def get customer details
+WARNING 2021-02-10 16:23:25,592 views 6984 22752 unable to retrieve product details: e: ItemModel matching query does not exist.
+INFO 2021-02-10 16:23:25,593 basehttp 6984 22752 "GET /get_product_details/?item_id=A00000 HTTP/1.1" 200 12
+INFO 2021-02-10 16:23:49,490 basehttp 6984 22752 "GET /pos1/2/0/ HTTP/1.1" 200 152887
+INFO 2021-02-10 16:23:54,467 basehttp 6984 18524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:23:54,467 basehttp 6984 20676 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:26:31,527 basehttp 6984 5828 "GET /pos1/2/0/ HTTP/1.1" 200 152940
+INFO 2021-02-10 16:26:36,779 basehttp 6984 15944 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:26:36,780 basehttp 6984 16440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:26:45,286 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:26:45,325 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:26:46,101 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:26:46,136 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:26:49,516 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:26:49,550 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:26:56,140 basehttp 6984 5828 "GET /pos1/2/0/ HTTP/1.1" 200 152940
+INFO 2021-02-10 16:27:01,414 basehttp 6984 15944 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:27:01,414 basehttp 6984 16440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:27:03,299 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:03,345 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:27:27,838 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:27,874 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:27:29,273 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:29,307 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:27:33,225 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:33,258 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:27:34,273 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:34,306 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:27:55,282 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:27:55,318 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:00,516 basehttp 6984 5828 "GET /pos1/2/0/ HTTP/1.1" 200 152940
+INFO 2021-02-10 16:28:05,191 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:05,234 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:05,599 basehttp 6984 15944 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:28:05,600 basehttp 6984 16440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:28:08,523 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:08,559 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:36,402 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:36,441 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:37,455 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:37,490 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:40,125 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:40,159 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:41,028 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:41,062 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:28:48,525 basehttp 6984 5828 "GET /pos1/2/0/ HTTP/1.1" 200 152940
+INFO 2021-02-10 16:28:54,092 basehttp 6984 15944 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:28:54,092 basehttp 6984 16440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:28:55,827 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:28:55,864 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+ERROR 2021-02-10 16:29:33,766 log 6984 5828 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1738, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-02-10 16:29:33,766 basehttp 6984 5828 "POST /pos_view/ HTTP/1.1" 500 82693
+INFO 2021-02-10 16:30:00,890 basehttp 6984 5828 "GET /pos1/2/0/ HTTP/1.1" 200 152940
+INFO 2021-02-10 16:30:06,403 basehttp 6984 15944 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:30:06,405 basehttp 6984 16440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:30:14,692 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:14,733 basehttp 6984 5828 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:30:16,891 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:16,927 basehttp 6984 5828 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+INFO 2021-02-10 16:30:23,283 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:23,343 basehttp 6984 5828 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:30:52,468 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:52,504 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:30:55,201 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:55,235 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:30:58,348 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:58,381 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:30:59,563 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:30:59,597 basehttp 6984 5828 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 16:31:48,576 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:31:48,634 basehttp 6984 5828 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:32:39,780 views 6984 5828 --def get customer details
+INFO 2021-02-10 16:32:39,842 basehttp 6984 5828 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:35:47,016 basehttp 6984 11092 "GET /pos1/2/0/ HTTP/1.1" 200 152948
+INFO 2021-02-10 16:35:52,282 basehttp 6984 23976 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:35:52,282 basehttp 6984 18292 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:36:55,186 views 6984 11092 --def get customer details
+INFO 2021-02-10 16:36:55,226 basehttp 6984 11092 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:36:59,767 views 6984 11092 --def get customer details
+INFO 2021-02-10 16:36:59,823 basehttp 6984 11092 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:37:27,290 views 6984 11092 --def get customer details
+INFO 2021-02-10 16:37:27,351 basehttp 6984 11092 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:37:31,014 views 6984 11092 --def get customer details
+INFO 2021-02-10 16:37:31,079 basehttp 6984 11092 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+INFO 2021-02-10 16:37:58,381 views 6984 11092 --def get customer details
+INFO 2021-02-10 16:37:58,439 basehttp 6984 11092 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:40:50,161 basehttp 6984 19464 "GET /pos1/2/0/ HTTP/1.1" 200 152992
+INFO 2021-02-10 16:40:55,736 views 6984 19464 --def get customer details
+INFO 2021-02-10 16:40:55,780 basehttp 6984 19464 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:40:55,889 basehttp 6984 23936 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:40:55,890 basehttp 6984 5472 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:41:09,040 basehttp 6984 19464 "GET /pos1/2/0/ HTTP/1.1" 200 152995
+INFO 2021-02-10 16:41:14,524 views 6984 19464 --def get customer details
+INFO 2021-02-10 16:41:14,565 basehttp 6984 19464 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:41:14,906 basehttp 6984 23936 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:41:14,907 basehttp 6984 5472 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:43:11,972 basehttp 6984 23840 "GET /pos1/2/0/ HTTP/1.1" 200 153001
+INFO 2021-02-10 16:43:19,196 basehttp 6984 24540 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:43:19,196 basehttp 6984 17280 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:43:43,868 views 6984 23840 --def get customer details
+INFO 2021-02-10 16:43:43,923 basehttp 6984 23840 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 16:45:49,749 basehttp 6984 21000 "GET /pos1/2/0/ HTTP/1.1" 200 153001
+INFO 2021-02-10 16:45:55,745 basehttp 6984 23872 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:45:55,745 basehttp 6984 7792 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:50:59,600 basehttp 6984 12544 "GET /pos1/2/0/ HTTP/1.1" 200 152872
+INFO 2021-02-10 16:51:07,839 basehttp 6984 16804 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:51:07,841 basehttp 6984 21636 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:51:50,345 basehttp 6984 12544 "GET /pos1/2/0/ HTTP/1.1" 200 153025
+INFO 2021-02-10 16:52:03,910 basehttp 6984 16804 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:52:03,910 basehttp 6984 21636 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:52:24,509 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 153043
+INFO 2021-02-10 16:52:40,172 basehttp 6984 21636 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:52:40,172 basehttp 6984 16804 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:52:56,715 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 153004
+INFO 2021-02-10 16:53:09,265 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 153041
+INFO 2021-02-10 16:53:22,612 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 152894
+INFO 2021-02-10 16:53:33,573 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 152893
+INFO 2021-02-10 16:53:47,244 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:53:47,245 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:54:38,446 basehttp 6984 19884 "GET /pos1/2/0/ HTTP/1.1" 200 153316
+INFO 2021-02-10 16:54:52,605 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:54:52,606 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:54:53,933 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153317
+INFO 2021-02-10 16:55:05,279 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153317
+INFO 2021-02-10 16:55:13,538 basehttp 6984 21156 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2021-02-10 16:55:13,701 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:55:13,701 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:55:30,040 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153299
+INFO 2021-02-10 16:55:39,254 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:55:39,254 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:56:22,935 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153535
+INFO 2021-02-10 16:56:34,063 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:56:34,065 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:56:59,555 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153515
+INFO 2021-02-10 16:57:13,522 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:57:13,522 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:57:14,482 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153520
+INFO 2021-02-10 16:57:22,971 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:57:22,971 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:57:26,130 basehttp 6984 21156 "GET /pos1/2/0/ HTTP/1.1" 200 153520
+INFO 2021-02-10 16:57:39,212 basehttp 6984 21636 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:57:39,212 basehttp 6984 16804 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:59:35,107 basehttp 6984 20660 "GET /pos1/2/0/ HTTP/1.1" 200 153544
+INFO 2021-02-10 16:59:43,650 basehttp 6984 21096 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 16:59:43,651 basehttp 6984 14028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:01:29,788 basehttp 6984 20660 "GET /pos1/2/0/ HTTP/1.1" 200 153568
+INFO 2021-02-10 17:01:38,793 basehttp 6984 2768 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:01:38,794 basehttp 6984 11268 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:01:50,532 views 6984 20660 --def get customer details
+INFO 2021-02-10 17:01:50,640 basehttp 6984 20660 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:02:25,588 basehttp 6984 20660 "GET /pos1/2/0/ HTTP/1.1" 200 153596
+INFO 2021-02-10 17:02:34,561 views 6984 20660 --def get customer details
+INFO 2021-02-10 17:02:34,609 basehttp 6984 20660 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:02:35,246 basehttp 6984 11268 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:02:35,247 basehttp 6984 2768 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:03:16,319 views 6984 20660 --def get customer details
+INFO 2021-02-10 17:03:16,412 basehttp 6984 20660 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:04:48,047 basehttp 6984 20660 "GET /pos1/2/0/ HTTP/1.1" 200 153647
+INFO 2021-02-10 17:04:57,665 basehttp 6984 16780 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:04:57,666 basehttp 6984 20740 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:07:51,557 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154069
+INFO 2021-02-10 17:08:00,456 views 6984 1272 --def get customer details
+INFO 2021-02-10 17:08:00,504 basehttp 6984 1272 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:08:01,123 basehttp 6984 21164 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:08:01,124 basehttp 6984 18196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:08:07,975 views 6984 1272 --def get customer details
+INFO 2021-02-10 17:08:08,053 basehttp 6984 1272 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:09:02,768 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154083
+INFO 2021-02-10 17:09:06,691 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154083
+INFO 2021-02-10 17:09:18,687 basehttp 6984 21164 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:09:18,687 basehttp 6984 18196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:09:38,923 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154090
+INFO 2021-02-10 17:09:48,254 basehttp 6984 18196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:09:48,254 basehttp 6984 21164 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:10:41,852 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154215
+INFO 2021-02-10 17:10:54,513 views 6984 1272 --def get customer details
+INFO 2021-02-10 17:10:54,666 basehttp 6984 1272 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:10:54,960 basehttp 6984 18196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:10:54,961 basehttp 6984 21164 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:11:41,966 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154222
+INFO 2021-02-10 17:11:52,335 basehttp 6984 21164 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:11:52,335 basehttp 6984 18196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:12:40,369 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154255
+INFO 2021-02-10 17:12:49,281 views 6984 1272 --def get customer details
+INFO 2021-02-10 17:12:49,430 basehttp 6984 1272 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:12:49,955 basehttp 6984 18196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:12:49,955 basehttp 6984 21164 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:13:31,196 views 6984 1272 --def get customer details
+INFO 2021-02-10 17:13:31,280 basehttp 6984 1272 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:14:52,335 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154287
+INFO 2021-02-10 17:15:09,226 basehttp 6984 2440 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:15:09,227 basehttp 6984 4524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:15:25,711 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154306
+INFO 2021-02-10 17:15:40,451 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154307
+INFO 2021-02-10 17:15:54,009 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154306
+INFO 2021-02-10 17:15:58,207 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154306
+INFO 2021-02-10 17:16:19,899 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154305
+INFO 2021-02-10 17:16:33,963 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154304
+INFO 2021-02-10 17:16:50,855 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154304
+INFO 2021-02-10 17:17:03,118 basehttp 6984 2440 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:17:03,118 basehttp 6984 4524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:17:13,254 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154305
+INFO 2021-02-10 17:17:30,010 basehttp 6984 2440 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:17:30,011 basehttp 6984 4524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:17:30,741 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154303
+INFO 2021-02-10 17:17:43,337 basehttp 6984 1272 "GET /pos1/2/0/ HTTP/1.1" 200 154302
+INFO 2021-02-10 17:17:58,021 basehttp 6984 4524 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:17:58,022 basehttp 6984 2440 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:20:35,307 basehttp 6984 10212 "GET /pos1/2/0/ HTTP/1.1" 200 154382
+INFO 2021-02-10 17:20:46,840 basehttp 6984 18464 "GET /pos1/2/0/ HTTP/1.1" 200 154382
+INFO 2021-02-10 17:20:47,001 basehttp 6984 18464 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2021-02-10 17:20:47,003 basehttp 6984 12864 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2021-02-10 17:20:47,028 basehttp 6984 12864 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2021-02-10 17:20:47,038 basehttp 6984 12864 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2021-02-10 17:20:47,039 basehttp 6984 18464 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2021-02-10 17:20:47,058 basehttp 6984 12864 "GET /static/js/onscan.min.js HTTP/1.1" 200 6041
+INFO 2021-02-10 17:20:49,648 basehttp 6984 22432 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+INFO 2021-02-10 17:20:49,648 basehttp 6984 12864 "GET /static/img/load.gif HTTP/1.1" 200 79271
+INFO 2021-02-10 17:20:49,818 basehttp 6984 2996 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+WARNING 2021-02-10 17:20:54,567 log 6984 12864 Not Found: /favicon.ico
+WARNING 2021-02-10 17:20:54,567 basehttp 6984 12864 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 17:20:54,921 basehttp 6984 2996 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:21:09,181 views 6984 12864 --def get customer details
+INFO 2021-02-10 17:21:09,230 basehttp 6984 12864 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:23:15,949 basehttp 6984 16848 "GET /pos1/2/0/ HTTP/1.1" 200 154392
+INFO 2021-02-10 17:23:30,931 basehttp 6984 20624 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:23:30,931 basehttp 6984 8180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:24:08,398 basehttp 6984 16848 "GET /pos1/2/0/ HTTP/1.1" 200 154393
+INFO 2021-02-10 17:24:18,710 views 6984 16848 --def get customer details
+INFO 2021-02-10 17:24:18,840 basehttp 6984 16848 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:24:19,358 basehttp 6984 8180 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:24:19,358 basehttp 6984 20624 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:24:26,330 views 6984 16848 --def get customer details
+INFO 2021-02-10 17:24:26,386 basehttp 6984 16848 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:26:58,586 basehttp 6984 16536 "GET /pos1/2/0/ HTTP/1.1" 200 154521
+INFO 2021-02-10 17:27:08,989 views 6984 16536 --def get customer details
+INFO 2021-02-10 17:27:09,049 basehttp 6984 16536 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:27:09,920 basehttp 6984 15156 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:27:09,922 basehttp 6984 24288 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:27:38,796 views 6984 16536 --def get customer details
+INFO 2021-02-10 17:27:38,921 basehttp 6984 16536 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 17:29:00,617 basehttp 6984 21332 "GET /pos1/2/0/ HTTP/1.1" 200 154521
+INFO 2021-02-10 17:29:00,664 basehttp 6984 21332 "GET /static/js/popper.min.js HTTP/1.1" 200 25280
+INFO 2021-02-10 17:29:00,713 basehttp 6984 10412 "GET /static/js/onscan.min.js HTTP/1.1" 200 6041
+INFO 2021-02-10 17:29:00,715 basehttp 6984 7008 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 160398
+INFO 2021-02-10 17:29:00,716 basehttp 6984 17588 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 63246
+INFO 2021-02-10 17:29:00,717 basehttp 6984 4244 "GET /static/css/bootstrap.css HTTP/1.1" 200 208502
+INFO 2021-02-10 17:29:00,718 basehttp 6984 23864 "GET /static/js/jquery_3.5.1.js HTTP/1.1" 200 298500
+INFO 2021-02-10 17:29:05,783 basehttp 6984 23864 "GET /static/img/load.gif HTTP/1.1" 200 79271
+INFO 2021-02-10 17:29:05,792 basehttp 6984 23864 "GET /static/img/image/logo1.jpg HTTP/1.1" 200 40861
+WARNING 2021-02-10 17:29:10,691 log 6984 23864 Not Found: /favicon.ico
+WARNING 2021-02-10 17:29:10,691 basehttp 6984 23864 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 17:29:17,324 basehttp 6984 5532 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:29:17,325 basehttp 6984 17428 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 17:30:50,886 basehttp 6984 8256 "GET /pos1/2/0/ HTTP/1.1" 200 154521
+WARNING 2021-02-10 17:30:53,181 basehttp 6984 8256 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 17:30:53,182 basehttp 6984 23376 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 17:30:53,259 basehttp 6984 23376 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 17:30:53,262 basehttp 6984 692 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 17:32:49,681 basehttp 6984 692 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 17:32:49,684 basehttp 6984 23376 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 17:32:49,747 basehttp 6984 6648 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 17:32:49,748 basehttp 6984 23376 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 17:32:51,846 basehttp 6984 23376 "GET /pos1/2/0/ HTTP/1.1" 200 154532
+WARNING 2021-02-10 17:32:51,991 basehttp 6984 23376 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 17:32:51,992 basehttp 6984 6648 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 17:32:52,017 basehttp 6984 6648 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 17:32:52,020 basehttp 6984 21924 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 17:33:05,996 views 6984 21924 --def get customer details
+INFO 2021-02-10 17:33:06,156 basehttp 6984 21924 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 17:33:06,246 log 6984 21924 Not Found: /favicon.ico
+WARNING 2021-02-10 17:33:06,246 basehttp 6984 21924 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:32:25,007 views 6984 24160 --def get customer details
+INFO 2021-02-10 19:32:25,213 basehttp 6984 24160 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:32:28,578 views 6984 24160 --def get customer details
+INFO 2021-02-10 19:32:28,715 basehttp 6984 24160 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:33:19,255 basehttp 6984 19844 "GET /pos1/2/0/ HTTP/1.1" 200 154532
+WARNING 2021-02-10 19:33:20,460 basehttp 6984 7992 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:33:20,464 basehttp 6984 17332 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:33:20,476 basehttp 6984 17332 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:33:20,488 basehttp 6984 21236 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 19:33:39,118 log 6984 3460 Not Found: /favicon.ico
+WARNING 2021-02-10 19:33:39,118 basehttp 6984 3460 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:33:55,403 log 6984 16932 Not Found: /favicon.ico
+WARNING 2021-02-10 19:33:55,404 basehttp 6984 16932 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:35:40,168 basehttp 6984 15420 "GET /pos1/2/0/ HTTP/1.1" 200 154562
+WARNING 2021-02-10 19:35:40,914 basehttp 6984 15420 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:35:40,941 basehttp 6984 11168 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:35:40,974 basehttp 6984 11168 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:35:40,988 basehttp 6984 11168 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-10 19:35:44,705 log 6984 11168 Not Found: /favicon.ico
+WARNING 2021-02-10 19:35:44,709 basehttp 6984 11168 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:35:51,872 basehttp 6984 13272 "GET /pos1/2/0/ HTTP/1.1" 200 154562
+WARNING 2021-02-10 19:35:52,023 basehttp 6984 13272 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:35:52,044 basehttp 6984 9600 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:35:52,071 basehttp 6984 9600 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:35:52,079 basehttp 6984 9600 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-10 19:35:54,985 log 6984 9600 Not Found: /favicon.ico
+WARNING 2021-02-10 19:35:54,985 basehttp 6984 9600 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:36:33,800 basehttp 6984 24096 "GET /pos1/2/0/ HTTP/1.1" 200 154581
+WARNING 2021-02-10 19:36:34,119 basehttp 6984 24096 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:36:34,142 basehttp 6984 728 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:36:34,153 basehttp 6984 728 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:36:34,185 basehttp 6984 728 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-10 19:36:37,294 log 6984 728 Not Found: /favicon.ico
+WARNING 2021-02-10 19:36:37,297 basehttp 6984 728 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:36:48,193 log 6984 22172 Not Found: /favicon.ico
+WARNING 2021-02-10 19:36:48,194 basehttp 6984 22172 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:37:10,126 views 6984 8496 --def get customer details
+INFO 2021-02-10 19:37:10,277 views 6984 8496 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 19:37:10,827 basehttp 6984 8496 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 19:38:31,652 basehttp 6984 6760 "GET /pos1/2/0/ HTTP/1.1" 200 154586
+WARNING 2021-02-10 19:38:32,127 basehttp 6984 6760 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:38:32,172 basehttp 6984 23280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:38:32,217 basehttp 6984 23280 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:38:32,226 basehttp 6984 23280 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:38:44,543 views 6984 6596 --def get customer details
+INFO 2021-02-10 19:38:44,615 basehttp 6984 6596 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+WARNING 2021-02-10 19:38:55,782 log 6984 19844 Not Found: /favicon.ico
+WARNING 2021-02-10 19:38:55,782 basehttp 6984 19844 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:38:58,282 views 6984 19844 --def get customer details
+WARNING 2021-02-10 19:38:58,346 log 6984 23396 Not Found: /favicon.ico
+WARNING 2021-02-10 19:38:58,349 basehttp 6984 23396 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:38:58,372 basehttp 6984 19844 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:39:00,661 log 6984 2128 Not Found: /favicon.ico
+WARNING 2021-02-10 19:39:00,662 basehttp 6984 2128 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:39:24,070 basehttp 6984 18028 "GET /pos1/2/0/ HTTP/1.1" 200 154581
+WARNING 2021-02-10 19:39:24,270 basehttp 6984 18028 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:39:24,292 basehttp 6984 23592 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:39:24,307 basehttp 6984 23592 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:39:24,339 basehttp 6984 23592 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:39:31,269 views 6984 19324 --def get customer details
+INFO 2021-02-10 19:39:31,342 basehttp 6984 19324 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:40:21,660 basehttp 6984 16992 "GET /pos1/2/0/ HTTP/1.1" 200 154593
+WARNING 2021-02-10 19:40:21,977 basehttp 6984 16992 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:40:22,002 basehttp 6984 17460 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:40:22,031 basehttp 6984 17460 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:40:22,040 basehttp 6984 17460 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:40:25,078 views 6984 17460 --def get customer details
+INFO 2021-02-10 19:40:25,155 basehttp 6984 17460 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:40:26,761 views 6984 17460 --def get customer details
+INFO 2021-02-10 19:40:26,834 basehttp 6984 17460 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:41:15,391 views 6984 8072 --def get customer details
+WARNING 2021-02-10 19:41:15,597 log 6984 20928 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:15,599 basehttp 6984 20928 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:41:15,600 basehttp 6984 8072 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:41:16,875 log 6984 20928 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:16,876 basehttp 6984 20928 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:41:23,740 views 6984 13156 --def get customer details
+WARNING 2021-02-10 19:41:23,820 log 6984 7508 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:23,820 basehttp 6984 7508 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:41:23,877 basehttp 6984 13156 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:41:25,874 log 6984 13156 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:25,875 basehttp 6984 13156 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:41:29,561 views 6984 15044 --def get customer details
+WARNING 2021-02-10 19:41:29,656 log 6984 14004 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:29,657 basehttp 6984 14004 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:41:29,714 basehttp 6984 15044 "GET /get_product_details/?item_id=A0005 HTTP/1.1" 200 79
+WARNING 2021-02-10 19:41:46,899 log 6984 23048 Not Found: /favicon.ico
+WARNING 2021-02-10 19:41:46,900 basehttp 6984 23048 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:43:14,794 basehttp 6984 22852 "GET /pos1/2/0/ HTTP/1.1" 200 154640
+WARNING 2021-02-10 19:43:15,194 basehttp 6984 22852 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:43:15,217 basehttp 6984 16300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:43:15,230 basehttp 6984 16300 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:43:15,266 basehttp 6984 16300 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:43:25,129 views 6984 6476 --def get customer details
+INFO 2021-02-10 19:43:25,202 basehttp 6984 6476 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:43:35,002 views 6984 5404 --def get customer details
+INFO 2021-02-10 19:43:35,150 basehttp 6984 5404 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:43:35,196 log 6984 10708 Not Found: /favicon.ico
+WARNING 2021-02-10 19:43:35,198 basehttp 6984 10708 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:43:37,516 log 6984 10708 Not Found: /favicon.ico
+WARNING 2021-02-10 19:43:37,518 basehttp 6984 10708 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:46:35,546 basehttp 6984 17100 "GET /pos1/2/0/ HTTP/1.1" 200 154829
+WARNING 2021-02-10 19:46:35,719 basehttp 6984 17100 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:46:35,762 basehttp 6984 2788 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:46:35,815 basehttp 6984 2788 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:46:35,884 basehttp 6984 14892 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:46:39,080 views 6984 14892 --def get customer details
+INFO 2021-02-10 19:46:39,132 basehttp 6984 14892 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:46:40,078 views 6984 23512 --def get customer details
+INFO 2021-02-10 19:46:40,196 basehttp 6984 23512 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:46:41,100 views 6984 23512 --def get customer details
+INFO 2021-02-10 19:46:41,295 basehttp 6984 23512 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:47:06,546 basehttp 6984 7732 "GET /pos1/2/0/ HTTP/1.1" 200 154829
+WARNING 2021-02-10 19:47:06,787 basehttp 6984 7732 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:47:06,811 basehttp 6984 22072 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:47:06,838 basehttp 6984 21828 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:47:06,855 basehttp 6984 21828 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:47:11,539 views 6984 23424 --def get customer details
+INFO 2021-02-10 19:47:11,611 basehttp 6984 23424 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:47:12,541 views 6984 23424 --def get customer details
+INFO 2021-02-10 19:47:12,612 basehttp 6984 23424 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:00,052 basehttp 6984 11708 "GET /pos1/2/0/ HTTP/1.1" 200 154879
+WARNING 2021-02-10 19:55:00,347 basehttp 6984 11708 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:55:00,371 basehttp 6984 22592 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:55:00,404 basehttp 6984 22960 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:55:00,405 basehttp 6984 20044 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:55:08,007 views 6984 22592 --def get customer details
+INFO 2021-02-10 19:55:08,088 basehttp 6984 22592 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:08,767 views 6984 22592 --def get customer details
+INFO 2021-02-10 19:55:08,967 basehttp 6984 22592 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:09,445 views 6984 22592 --def get customer details
+INFO 2021-02-10 19:55:09,515 basehttp 6984 22592 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:49,254 basehttp 6984 22592 "GET /pos1/2/0/ HTTP/1.1" 200 154896
+WARNING 2021-02-10 19:55:49,982 basehttp 6984 22592 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:55:50,028 basehttp 6984 20044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:55:50,114 basehttp 6984 22960 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:55:50,116 basehttp 6984 20044 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:55:54,977 views 6984 20044 --def get customer details
+INFO 2021-02-10 19:55:55,039 basehttp 6984 20044 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:57,192 views 6984 20044 --def get customer details
+INFO 2021-02-10 19:55:57,261 basehttp 6984 20044 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:55:57,769 views 6984 20044 --def get customer details
+INFO 2021-02-10 19:55:57,841 basehttp 6984 20044 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 19:56:55,126 basehttp 6984 20044 "GET /pos1/2/0/ HTTP/1.1" 200 154909
+WARNING 2021-02-10 19:56:55,296 basehttp 6984 20044 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:56:55,344 basehttp 6984 22960 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:56:55,449 basehttp 6984 22960 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:56:55,452 basehttp 6984 21964 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 19:56:59,846 log 6984 21964 Not Found: /favicon.ico
+WARNING 2021-02-10 19:56:59,847 basehttp 6984 21964 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:57:05,545 log 6984 21964 Not Found: /favicon.ico
+WARNING 2021-02-10 19:57:05,545 basehttp 6984 21964 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:57:10,668 views 6984 21964 --def get customer details
+WARNING 2021-02-10 19:57:10,703 log 6984 22960 Not Found: /favicon.ico
+WARNING 2021-02-10 19:57:10,704 basehttp 6984 22960 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 19:57:10,742 basehttp 6984 21964 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:57:12,165 log 6984 21964 Not Found: /favicon.ico
+WARNING 2021-02-10 19:57:12,166 basehttp 6984 21964 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:57:22,102 log 6984 21964 Not Found: /favicon.ico
+WARNING 2021-02-10 19:57:22,103 basehttp 6984 21964 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:57:54,737 log 6984 21964 Not Found: /favicon.ico
+WARNING 2021-02-10 19:57:54,737 basehttp 6984 21964 "GET /favicon.ico HTTP/1.1" 404 15675
+ERROR 2021-02-10 19:57:58,830 log 6984 21964 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1738, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-02-10 19:57:58,834 basehttp 6984 21964 "POST /pos_view/ HTTP/1.1" 500 83936
+ERROR 2021-02-10 19:57:59,275 log 6984 21964 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1738, in post
+    logger.warnin("Unable to complete the ventureModel update above")
+AttributeError: 'Logger' object has no attribute 'warnin'
+ERROR 2021-02-10 19:57:59,280 basehttp 6984 21964 "POST /pos_view/ HTTP/1.1" 500 83936
+INFO 2021-02-10 19:59:20,854 basehttp 6984 21964 "GET /pos1/2/0/ HTTP/1.1" 200 154945
+WARNING 2021-02-10 19:59:21,289 basehttp 6984 21964 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 19:59:21,325 basehttp 6984 22960 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 19:59:21,407 basehttp 6984 22960 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 19:59:21,409 basehttp 6984 16668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 19:59:24,116 views 6984 16668 --def get customer details
+INFO 2021-02-10 19:59:24,228 basehttp 6984 16668 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 19:59:24,312 log 6984 16668 Not Found: /favicon.ico
+WARNING 2021-02-10 19:59:24,313 basehttp 6984 16668 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 19:59:27,305 log 6984 16668 Not Found: /favicon.ico
+WARNING 2021-02-10 19:59:27,305 basehttp 6984 16668 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:01:36,235 basehttp 6984 20076 "GET /pos1/2/0/ HTTP/1.1" 200 154945
+WARNING 2021-02-10 20:01:36,377 basehttp 6984 20076 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:01:36,395 basehttp 6984 1624 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:01:36,429 basehttp 6984 1624 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:01:36,429 basehttp 6984 21788 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 20:01:40,870 log 6984 21788 Not Found: /favicon.ico
+WARNING 2021-02-10 20:01:40,870 basehttp 6984 21788 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:02:44,360 views 6984 21788 --def get customer details
+INFO 2021-02-10 20:02:44,421 views 6984 21788 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:02:44,599 basehttp 6984 21788 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:04:32,420 basehttp 6984 21788 "GET /pos1/2/0/ HTTP/1.1" 200 154980
+WARNING 2021-02-10 20:04:32,841 basehttp 6984 21788 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:04:32,917 basehttp 6984 1624 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:04:33,069 basehttp 6984 7692 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:04:33,073 basehttp 6984 1624 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 20:04:39,249 log 6984 1624 Not Found: /favicon.ico
+WARNING 2021-02-10 20:04:39,253 basehttp 6984 1624 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:05:31,257 log 6984 1624 Not Found: /favicon.ico
+WARNING 2021-02-10 20:05:31,257 basehttp 6984 1624 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:05:33,916 basehttp 6984 1624 "GET /pos1/2/0/ HTTP/1.1" 200 155014
+WARNING 2021-02-10 20:05:34,264 basehttp 6984 1624 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:05:34,304 basehttp 6984 7692 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:05:34,359 basehttp 6984 19500 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:05:34,363 basehttp 6984 7692 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-10 20:05:46,352 log 6984 7692 Not Found: /favicon.ico
+WARNING 2021-02-10 20:05:46,354 basehttp 6984 7692 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:05:54,017 views 6984 7692 --def get customer details
+WARNING 2021-02-10 20:05:54,119 log 6984 19500 Not Found: /favicon.ico
+WARNING 2021-02-10 20:05:54,122 basehttp 6984 19500 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:05:54,178 views 6984 7692 unable to retrieve product details: e: ItemModel matching query does not exist.
+INFO 2021-02-10 20:05:54,179 basehttp 6984 7692 "GET /get_product_details/?item_id=A00001 HTTP/1.1" 200 12
+WARNING 2021-02-10 20:05:58,805 log 6984 7692 Not Found: /favicon.ico
+WARNING 2021-02-10 20:05:58,807 basehttp 6984 7692 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:06:01,847 views 6984 7692 --def get customer details
+WARNING 2021-02-10 20:06:01,914 log 6984 19500 Not Found: /favicon.ico
+WARNING 2021-02-10 20:06:01,915 basehttp 6984 19500 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:06:01,959 basehttp 6984 7692 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:06:12,479 log 6984 7692 Not Found: /favicon.ico
+WARNING 2021-02-10 20:06:12,480 basehttp 6984 7692 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:07:19,220 views 6984 7692 --def get customer details
+INFO 2021-02-10 20:07:19,363 views 6984 7692 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:07:19,939 basehttp 6984 7692 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:08:20,916 basehttp 6984 7692 "GET /pos1/2/0/ HTTP/1.1" 200 155139
+WARNING 2021-02-10 20:08:21,185 basehttp 6984 7692 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:08:21,209 basehttp 6984 19500 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:08:21,248 basehttp 6984 19500 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:08:21,249 basehttp 6984 18968 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:08:23,872 views 6984 18968 --def get customer details
+INFO 2021-02-10 20:08:23,920 basehttp 6984 18968 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:08:24,012 log 6984 18968 Not Found: /favicon.ico
+WARNING 2021-02-10 20:08:24,013 basehttp 6984 18968 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:08:25,922 log 6984 18968 Not Found: /favicon.ico
+WARNING 2021-02-10 20:08:25,923 basehttp 6984 18968 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:08:57,997 views 6984 18968 --def get customer details
+INFO 2021-02-10 20:08:58,118 views 6984 18968 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:08:58,552 basehttp 6984 18968 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+WARNING 2021-02-10 20:10:22,855 basehttp 6984 18968 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:10:22,857 basehttp 6984 19500 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:10:22,910 basehttp 6984 6924 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:10:22,911 basehttp 6984 19500 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:10:27,370 basehttp 6984 19500 "GET /pos1/2/0/ HTTP/1.1" 200 153750
+WARNING 2021-02-10 20:10:27,914 basehttp 6984 19500 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:10:27,918 basehttp 6984 6924 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:10:28,001 basehttp 6984 8044 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:10:28,003 basehttp 6984 6924 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:11:19,793 basehttp 6984 6924 "GET /pos1/2/0/ HTTP/1.1" 200 155148
+WARNING 2021-02-10 20:11:20,005 basehttp 6984 6924 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:11:20,029 basehttp 6984 8044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:11:20,078 basehttp 6984 8044 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:11:20,080 basehttp 6984 18396 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:11:50,214 basehttp 6984 18396 "GET /pos1/2/0/ HTTP/1.1" 200 155988
+WARNING 2021-02-10 20:11:50,552 basehttp 6984 18396 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:11:50,612 basehttp 6984 8044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:11:50,707 basehttp 6984 8044 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:11:50,708 basehttp 6984 23392 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:12:06,771 views 6984 23392 --def get customer details
+INFO 2021-02-10 20:12:06,983 basehttp 6984 23392 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:12:09,062 views 6984 23392 --def get customer details
+INFO 2021-02-10 20:12:09,126 basehttp 6984 23392 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:12:15,220 views 6984 23392 --def get customer details
+INFO 2021-02-10 20:12:15,288 basehttp 6984 23392 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+WARNING 2021-02-10 20:12:23,367 log 6984 23392 Not Found: /favicon.ico
+WARNING 2021-02-10 20:12:23,368 basehttp 6984 23392 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:16:02,669 basehttp 6984 23392 "GET /pos1/2/0/ HTTP/1.1" 200 156695
+WARNING 2021-02-10 20:16:03,110 basehttp 6984 23392 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:16:03,132 basehttp 6984 8044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:16:03,169 basehttp 6984 7588 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:16:03,169 basehttp 6984 8044 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:16:24,970 basehttp 6984 8044 "GET /pos1/2/0/ HTTP/1.1" 200 156653
+WARNING 2021-02-10 20:16:25,490 basehttp 6984 8044 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:16:25,561 basehttp 6984 7588 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:16:25,682 basehttp 6984 7588 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:16:25,689 basehttp 6984 16448 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:17:09,688 basehttp 6984 16448 "GET /pos1/2/0/ HTTP/1.1" 200 156626
+WARNING 2021-02-10 20:17:10,052 basehttp 6984 16448 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:17:10,091 basehttp 6984 7588 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:17:10,162 basehttp 6984 7588 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:17:10,165 basehttp 6984 16300 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:17:40,049 basehttp 6984 16300 "GET /pos1/2/0/ HTTP/1.1" 200 156694
+WARNING 2021-02-10 20:17:40,465 basehttp 6984 16300 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:17:40,529 basehttp 6984 7588 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:17:40,646 basehttp 6984 23396 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:17:40,648 basehttp 6984 7588 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:17:47,293 basehttp 6984 7588 "GET /pos1/2/0/ HTTP/1.1" 200 156694
+WARNING 2021-02-10 20:17:47,824 basehttp 6984 7588 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:17:47,892 basehttp 6984 23396 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:17:48,040 basehttp 6984 23396 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:17:48,045 basehttp 6984 1708 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:17:54,907 basehttp 6984 1708 "GET /pos1/2/0/ HTTP/1.1" 200 156694
+WARNING 2021-02-10 20:17:55,318 basehttp 6984 1708 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:17:55,367 basehttp 6984 23396 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:17:55,470 basehttp 6984 21524 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:17:55,475 basehttp 6984 23396 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:18:38,651 basehttp 6984 23396 "GET /pos1/2/0/ HTTP/1.1" 200 156549
+WARNING 2021-02-10 20:18:39,040 basehttp 6984 23396 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:18:39,058 basehttp 6984 21524 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:18:39,096 basehttp 6984 21524 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:18:39,098 basehttp 6984 16536 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:18:52,638 basehttp 6984 16536 "GET /pos1/2/0/ HTTP/1.1" 200 156051
+WARNING 2021-02-10 20:18:52,990 basehttp 6984 16536 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:18:53,034 basehttp 6984 21524 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:18:53,114 basehttp 6984 21524 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:18:53,116 basehttp 6984 23572 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-10 20:19:15,127 log 6984 21524 Not Found: /favicon.ico
+WARNING 2021-02-10 20:19:15,129 basehttp 6984 21524 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:19:20,564 log 6984 21524 Not Found: /favicon.ico
+WARNING 2021-02-10 20:19:20,566 basehttp 6984 21524 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:19:45,817 basehttp 6984 21524 "GET /pos1/2/0/ HTTP/1.1" 200 156051
+WARNING 2021-02-10 20:19:45,986 basehttp 6984 21524 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:19:46,003 basehttp 6984 23572 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:19:46,039 basehttp 6984 10252 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:19:46,041 basehttp 6984 23572 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:20:37,103 basehttp 6984 23572 "GET /pos1/2/0/ HTTP/1.1" 200 156041
+WARNING 2021-02-10 20:20:37,369 basehttp 6984 23572 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:20:37,438 basehttp 6984 10252 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:20:37,557 basehttp 6984 5628 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:20:37,559 basehttp 6984 10252 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:22:30,278 basehttp 6984 10252 "GET /pos1/2/0/ HTTP/1.1" 200 156056
+WARNING 2021-02-10 20:22:30,761 basehttp 6984 10252 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:22:30,965 basehttp 6984 5628 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:22:30,979 basehttp 6984 20076 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:22:30,980 basehttp 6984 3580 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:23:35,655 basehttp 6984 3580 "GET /pos1/2/0/ HTTP/1.1" 200 156086
+WARNING 2021-02-10 20:23:35,973 basehttp 6984 3580 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:23:36,082 basehttp 6984 20076 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:23:36,112 basehttp 6984 5628 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:23:36,116 basehttp 6984 24172 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:23:57,232 basehttp 6984 24172 "GET /pos1/2/0/ HTTP/1.1" 200 156086
+WARNING 2021-02-10 20:23:57,447 basehttp 6984 24172 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:23:57,602 basehttp 6984 5628 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:23:57,607 basehttp 6984 20076 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:23:57,610 basehttp 6984 6876 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:24:08,487 basehttp 6984 6876 "GET /pos1/2/0/ HTTP/1.1" 200 156086
+WARNING 2021-02-10 20:24:08,701 basehttp 6984 6876 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:24:08,740 basehttp 6984 20076 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:24:08,745 basehttp 6984 5628 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:24:08,748 basehttp 6984 20668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:24:20,917 basehttp 6984 20668 "GET /pos1/2/0/ HTTP/1.1" 200 156086
+WARNING 2021-02-10 20:24:21,151 basehttp 6984 20668 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:24:21,307 basehttp 6984 5628 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:24:21,326 basehttp 6984 20076 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:24:21,327 basehttp 6984 5628 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:24:45,560 basehttp 6984 20076 "GET /pos1/2/0/ HTTP/1.1" 200 156086
+WARNING 2021-02-10 20:24:45,891 basehttp 6984 20076 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:24:46,149 basehttp 6984 5628 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:24:46,155 basehttp 6984 6708 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:24:46,159 basehttp 6984 12404 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:24:58,509 views 6984 12404 --def get customer details
+INFO 2021-02-10 20:24:58,599 views 6984 12404 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:24:59,037 basehttp 6984 12404 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+WARNING 2021-02-10 20:25:13,884 log 6984 12404 Not Found: /favicon.ico
+WARNING 2021-02-10 20:25:13,885 basehttp 6984 12404 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:25:19,759 log 6984 12404 Not Found: /favicon.ico
+WARNING 2021-02-10 20:25:19,760 basehttp 6984 12404 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:25:28,611 views 6984 12404 --def get customer details
+INFO 2021-02-10 20:25:28,776 views 6984 12404 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:25:29,256 basehttp 6984 12404 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:26:38,841 basehttp 6984 12404 "GET /pos1/2/0/ HTTP/1.1" 200 156085
+WARNING 2021-02-10 20:26:39,230 basehttp 6984 12404 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:26:39,292 basehttp 6984 6708 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:26:39,405 basehttp 6984 6708 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:26:39,407 basehttp 6984 5628 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:26:51,605 views 6984 5628 --def get customer details
+INFO 2021-02-10 20:26:51,681 basehttp 6984 5628 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:26:52,932 views 6984 5628 --def get customer details
+INFO 2021-02-10 20:26:53,003 basehttp 6984 5628 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:27:18,672 views 6984 5628 --def get customer details
+INFO 2021-02-10 20:27:18,798 views 6984 5628 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:27:19,227 basehttp 6984 5628 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:46:56,172 basehttp 6984 22868 "GET /pos1/2/0/ HTTP/1.1" 200 156141
+WARNING 2021-02-10 20:46:57,459 basehttp 6984 22868 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:46:57,463 basehttp 6984 6032 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:46:57,535 basehttp 6984 19668 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:46:57,537 basehttp 6984 6032 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:47:18,925 views 6984 6032 --def get customer details
+INFO 2021-02-10 20:47:19,005 basehttp 6984 6032 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:47:19,039 log 6984 6032 Not Found: /favicon.ico
+WARNING 2021-02-10 20:47:19,040 basehttp 6984 6032 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:47:20,838 log 6984 6032 Not Found: /favicon.ico
+WARNING 2021-02-10 20:47:20,840 basehttp 6984 6032 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:47:45,500 views 6984 6032 --def get customer details
+INFO 2021-02-10 20:47:45,617 views 6984 6032 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:47:46,139 basehttp 6984 6032 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:50:28,894 basehttp 6984 6032 "GET /pos1/2/0/ HTTP/1.1" 200 156238
+WARNING 2021-02-10 20:50:29,449 basehttp 6984 6032 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:50:29,498 basehttp 6984 19668 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:50:29,573 basehttp 6984 19668 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:50:29,578 basehttp 6984 24092 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:50:33,114 views 6984 24092 --def get customer details
+INFO 2021-02-10 20:50:33,217 basehttp 6984 24092 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:50:33,269 log 6984 24092 Not Found: /favicon.ico
+WARNING 2021-02-10 20:50:33,270 basehttp 6984 24092 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:50:35,697 log 6984 24092 Not Found: /favicon.ico
+WARNING 2021-02-10 20:50:35,698 basehttp 6984 24092 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:50:39,260 views 6984 24092 --def get customer details
+WARNING 2021-02-10 20:50:39,322 log 6984 19668 Not Found: /favicon.ico
+WARNING 2021-02-10 20:50:39,323 basehttp 6984 19668 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:50:39,354 basehttp 6984 24092 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:50:40,858 log 6984 24092 Not Found: /favicon.ico
+WARNING 2021-02-10 20:50:40,860 basehttp 6984 24092 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:50:46,978 views 6984 24092 --def get customer details
+INFO 2021-02-10 20:50:47,077 views 6984 24092 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:50:47,584 basehttp 6984 24092 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:50:54,698 basehttp 6984 24092 "POST /pos_view/ HTTP/1.1" 200 114
+WARNING 2021-02-10 20:51:39,299 basehttp 6984 24092 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:51:39,301 basehttp 6984 19668 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:51:39,390 basehttp 6984 4632 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:51:39,391 basehttp 6984 19668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:51:40,638 basehttp 6984 19668 "GET /pos1/2/0/ HTTP/1.1" 200 156238
+WARNING 2021-02-10 20:51:41,307 basehttp 6984 19668 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:51:41,309 basehttp 6984 4632 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:51:41,343 basehttp 6984 4632 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:51:41,345 basehttp 6984 22316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:51:44,372 views 6984 22316 --def get customer details
+INFO 2021-02-10 20:51:44,461 basehttp 6984 22316 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:51:44,481 log 6984 22316 Not Found: /favicon.ico
+WARNING 2021-02-10 20:51:44,481 basehttp 6984 22316 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 20:51:46,172 log 6984 22316 Not Found: /favicon.ico
+WARNING 2021-02-10 20:51:46,173 basehttp 6984 22316 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:51:49,079 views 6984 22316 --def get customer details
+WARNING 2021-02-10 20:51:49,134 log 6984 4632 Not Found: /favicon.ico
+WARNING 2021-02-10 20:51:49,136 basehttp 6984 4632 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:51:49,158 basehttp 6984 22316 "GET /get_product_details/?item_id=A0002 HTTP/1.1" 200 82
+WARNING 2021-02-10 20:51:50,437 log 6984 22316 Not Found: /favicon.ico
+WARNING 2021-02-10 20:51:50,437 basehttp 6984 22316 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 20:51:55,761 views 6984 22316 --def get customer details
+INFO 2021-02-10 20:51:55,931 views 6984 22316 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:51:56,460 basehttp 6984 22316 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:52:19,037 basehttp 6984 22316 "GET /pos1/2/0/ HTTP/1.1" 200 156238
+WARNING 2021-02-10 20:52:19,377 basehttp 6984 22316 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:52:19,411 basehttp 6984 4632 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:52:19,483 basehttp 6984 19988 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:52:19,484 basehttp 6984 4632 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:52:32,384 views 6984 4632 --def get customer details
+INFO 2021-02-10 20:52:32,523 views 6984 4632 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:52:32,912 basehttp 6984 4632 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:54:12,123 basehttp 6984 4632 "GET /pos1/2/0/ HTTP/1.1" 200 156240
+WARNING 2021-02-10 20:54:12,514 basehttp 6984 4632 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:54:12,546 basehttp 6984 19988 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:54:12,582 basehttp 6984 19480 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:54:12,583 basehttp 6984 19988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:54:17,553 views 6984 19988 --def get customer details
+INFO 2021-02-10 20:54:17,715 views 6984 19988 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:54:18,343 basehttp 6984 19988 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:54:32,593 views 6984 19988 --def get customer details
+INFO 2021-02-10 20:54:32,666 basehttp 6984 19988 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:54:40,160 views 6984 19988 --def get customer details
+INFO 2021-02-10 20:54:40,314 views 6984 19988 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:54:40,813 basehttp 6984 19988 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:55:33,284 basehttp 6984 19988 "POST /pos_view/ HTTP/1.1" 200 114
+INFO 2021-02-10 20:56:27,219 basehttp 6984 19988 "GET /pos1/2/0/ HTTP/1.1" 200 156239
+WARNING 2021-02-10 20:56:27,422 basehttp 6984 19988 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:56:27,463 basehttp 6984 19480 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:56:27,554 basehttp 6984 19480 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:56:27,560 basehttp 6984 21256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:56:51,233 basehttp 6984 21256 "GET /pos1/2/0/ HTTP/1.1" 200 156239
+WARNING 2021-02-10 20:56:51,388 basehttp 6984 21256 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:56:51,404 basehttp 6984 19480 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:56:51,442 basehttp 6984 5212 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:56:51,443 basehttp 6984 19480 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:56:57,102 views 6984 19480 --def get customer details
+INFO 2021-02-10 20:56:57,208 basehttp 6984 19480 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:56:58,747 views 6984 19480 --def get customer details
+INFO 2021-02-10 20:56:58,817 basehttp 6984 19480 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:57:10,872 views 6984 19480 --def get customer details
+INFO 2021-02-10 20:57:11,028 views 6984 19480 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-10 20:57:11,507 basehttp 6984 19480 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 183
+INFO 2021-02-10 20:57:43,455 basehttp 6984 19480 "GET /pos1/2/0/ HTTP/1.1" 200 156239
+WARNING 2021-02-10 20:57:43,821 basehttp 6984 19480 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 20:57:43,844 basehttp 6984 5212 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 20:57:43,879 basehttp 6984 5212 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 20:57:43,880 basehttp 6984 22968 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 20:57:49,687 views 6984 22968 --def get customer details
+INFO 2021-02-10 20:57:49,769 basehttp 6984 22968 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:57:51,475 views 6984 22968 --def get customer details
+INFO 2021-02-10 20:57:51,547 basehttp 6984 22968 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 20:57:52,610 views 6984 22968 --def get customer details
+INFO 2021-02-10 20:57:52,674 basehttp 6984 22968 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+WARNING 2021-02-10 20:58:13,241 log 6984 22968 Not Found: /favicon.ico
+WARNING 2021-02-10 20:58:13,241 basehttp 6984 22968 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 21:06:23,775 basehttp 6984 2872 "GET /pos1/2/0/ HTTP/1.1" 200 156681
+WARNING 2021-02-10 21:06:24,264 basehttp 6984 2872 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:06:24,319 basehttp 6984 17988 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:06:24,404 basehttp 6984 17988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:06:24,406 basehttp 6984 23732 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:06:33,679 views 6984 23732 --def get customer details
+INFO 2021-02-10 21:06:33,757 basehttp 6984 23732 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:06:50,382 basehttp 6984 23732 "GET /pos1/2/0/ HTTP/1.1" 200 156682
+WARNING 2021-02-10 21:06:50,665 basehttp 6984 23732 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:06:50,691 basehttp 6984 17988 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:06:50,729 basehttp 6984 17988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:06:50,731 basehttp 6984 24496 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:06:52,733 views 6984 24496 --def get customer details
+INFO 2021-02-10 21:06:52,921 basehttp 6984 24496 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:09:24,213 basehttp 6984 24496 "GET /pos1/2/0/ HTTP/1.1" 200 156725
+WARNING 2021-02-10 21:09:24,664 basehttp 6984 24496 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:09:24,735 basehttp 6984 17988 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:09:24,819 basehttp 6984 20892 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:09:24,820 basehttp 6984 17988 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:09:29,910 views 6984 17988 --def get customer details
+INFO 2021-02-10 21:09:30,001 basehttp 6984 17988 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:12:22,473 basehttp 6984 17988 "GET /pos1/2/0/ HTTP/1.1" 200 156734
+WARNING 2021-02-10 21:12:22,896 basehttp 6984 17988 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:12:22,932 basehttp 6984 20892 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:12:22,991 basehttp 6984 10256 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:12:22,993 basehttp 6984 20892 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:12:30,163 views 6984 20892 --def get customer details
+INFO 2021-02-10 21:12:30,240 basehttp 6984 20892 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:13:21,367 basehttp 6984 20892 "GET /pos1/2/0/ HTTP/1.1" 200 156729
+WARNING 2021-02-10 21:13:21,868 basehttp 6984 20892 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:13:21,903 basehttp 6984 10256 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:13:21,944 basehttp 6984 10256 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:13:21,948 basehttp 6984 22284 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:13:24,072 views 6984 22284 --def get customer details
+INFO 2021-02-10 21:13:24,127 basehttp 6984 22284 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:14:55,780 basehttp 6984 22284 "GET /pos1/2/0/ HTTP/1.1" 200 156761
+WARNING 2021-02-10 21:14:56,002 basehttp 6984 22284 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:14:56,043 basehttp 6984 10256 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:14:56,139 basehttp 6984 7776 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:14:56,141 basehttp 6984 10256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:15:02,610 views 6984 10256 --def get customer details
+INFO 2021-02-10 21:15:02,679 basehttp 6984 10256 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:19:18,428 views 6984 11728 --def get customer details
+WARNING 2021-02-10 21:19:18,463 log 6984 22276 Not Found: /favicon.ico
+WARNING 2021-02-10 21:19:18,463 basehttp 6984 22276 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 21:19:18,483 basehttp 6984 11728 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 21:19:21,378 log 6984 11728 Not Found: /favicon.ico
+WARNING 2021-02-10 21:19:21,381 basehttp 6984 11728 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 21:21:00,126 basehttp 6984 11728 "GET /pos1/2/0/ HTTP/1.1" 200 156759
+WARNING 2021-02-10 21:21:00,587 basehttp 6984 11728 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:21:00,614 basehttp 6984 22276 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:21:00,653 basehttp 6984 22276 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:21:00,653 basehttp 6984 10320 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:21:12,597 views 6984 22276 --def get customer details
+INFO 2021-02-10 21:21:12,791 basehttp 6984 22276 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:21:24,954 basehttp 6984 22276 "GET /pos1/2/0/ HTTP/1.1" 200 156759
+WARNING 2021-02-10 21:21:25,679 basehttp 6984 22276 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:21:25,726 basehttp 6984 10320 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:21:25,803 basehttp 6984 10320 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:21:25,806 basehttp 6984 8144 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:21:28,229 views 6984 8144 --def get customer details
+INFO 2021-02-10 21:21:28,298 basehttp 6984 8144 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:25:07,042 basehttp 6984 8144 "GET /pos1/2/0/ HTTP/1.1" 200 156794
+WARNING 2021-02-10 21:25:07,442 basehttp 6984 8144 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:25:07,465 basehttp 6984 10320 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:25:07,507 basehttp 6984 10320 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:25:07,508 basehttp 6984 23224 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:25:15,770 views 6984 23224 --def get customer details
+INFO 2021-02-10 21:25:15,829 basehttp 6984 23224 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:27:38,014 basehttp 6984 23224 "GET /pos1/2/0/ HTTP/1.1" 200 156831
+WARNING 2021-02-10 21:27:38,472 basehttp 6984 23224 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:27:38,509 basehttp 6984 10320 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:27:38,585 basehttp 6984 21900 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:27:38,586 basehttp 6984 10320 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:27:44,273 views 6984 10320 --def get customer details
+INFO 2021-02-10 21:27:44,348 basehttp 6984 10320 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+WARNING 2021-02-10 21:34:54,584 log 6984 19500 Not Found: /favicon.ico
+WARNING 2021-02-10 21:34:54,585 basehttp 6984 19500 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 21:35:00,214 log 6984 19500 Not Found: /favicon.ico
+WARNING 2021-02-10 21:35:00,215 basehttp 6984 19500 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 21:36:11,462 basehttp 6984 19500 "GET /pos1/2/0/ HTTP/1.1" 200 156934
+WARNING 2021-02-10 21:36:11,928 basehttp 6984 19500 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:36:12,017 basehttp 6984 20864 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:36:12,100 basehttp 6984 2944 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:36:12,102 basehttp 6984 20864 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:36:23,562 views 6984 20864 --def get customer details
+INFO 2021-02-10 21:36:23,627 basehttp 6984 20864 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:36:50,358 basehttp 6984 20864 "GET /pos1/2/0/ HTTP/1.1" 200 156957
+WARNING 2021-02-10 21:36:50,747 basehttp 6984 20864 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 21:36:50,772 basehttp 6984 2944 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 21:36:50,809 basehttp 6984 7764 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 21:36:50,810 basehttp 6984 2944 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 21:36:53,474 views 6984 2944 --def get customer details
+INFO 2021-02-10 21:36:53,544 basehttp 6984 2944 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:56:51,680 basehttp 6984 20952 "GET /pos1/2/0/ HTTP/1.1" 200 157063
+WARNING 2021-02-10 21:57:03,480 log 6984 20952 Not Found: /favicon.ico
+INFO 2021-02-10 21:57:04,875 basehttp 6984 19388 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:57:04,877 basehttp 6984 22196 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:57:07,229 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:57:07,322 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:07,361 basehttp 6984 2440 "GET /pos1/2/0/ HTTP/1.1" 200 157062
+INFO 2021-02-10 21:58:18,805 basehttp 6984 19388 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:58:18,808 basehttp 6984 22196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:58:18,814 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:58:18,870 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:37,300 basehttp 6984 2440 "GET /pos1/2/0/ HTTP/1.1" 200 157061
+INFO 2021-02-10 21:58:47,209 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:58:47,273 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:47,440 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:58:47,481 views 6984 4640 --def get customer details
+INFO 2021-02-10 21:58:47,488 views 6984 16428 --def get customer details
+INFO 2021-02-10 21:58:47,489 views 6984 21572 --def get customer details
+INFO 2021-02-10 21:58:47,500 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:47,547 basehttp 6984 4640 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:47,559 basehttp 6984 16428 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:47,562 basehttp 6984 21572 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:58:48,010 basehttp 6984 19388 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:58:48,010 basehttp 6984 22196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:59:05,154 basehttp 6984 2440 "GET /pos1/2/0/ HTTP/1.1" 200 157061
+INFO 2021-02-10 21:59:16,220 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:59:16,224 views 6984 4640 --def get customer details
+INFO 2021-02-10 21:59:16,278 basehttp 6984 4640 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:59:16,370 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 21:59:16,726 basehttp 6984 19388 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:59:16,726 basehttp 6984 22196 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 21:59:20,509 views 6984 2440 --def get customer details
+INFO 2021-02-10 21:59:20,575 basehttp 6984 2440 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:06:58,221 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157145
+INFO 2021-02-10 22:07:10,293 basehttp 6984 21692 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:07:10,295 basehttp 6984 23896 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:07:12,687 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:07:12,740 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:07:43,096 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157166
+INFO 2021-02-10 22:07:53,373 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:07:53,403 views 6984 9176 --def get customer details
+INFO 2021-02-10 22:07:53,426 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:07:53,450 basehttp 6984 9176 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:07:54,072 basehttp 6984 21692 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:07:54,072 basehttp 6984 23896 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:08:49,005 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157268
+INFO 2021-02-10 22:08:59,937 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:09:00,091 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:09:00,399 basehttp 6984 21692 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:09:00,400 basehttp 6984 23896 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:09:01,892 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:09:01,963 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:09:23,664 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:09:23,767 basehttp 6984 22412 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 22:10:51,329 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157288
+INFO 2021-02-10 22:11:10,114 views 6984 20628 --def get customer details
+INFO 2021-02-10 22:11:10,181 basehttp 6984 20628 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:11:10,192 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157288
+INFO 2021-02-10 22:11:20,429 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:11:20,561 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:11:21,206 basehttp 6984 12348 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:11:21,209 basehttp 6984 4884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:11:23,427 basehttp 6984 22412 "GET /pos1/2/0/ HTTP/1.1" 200 157288
+INFO 2021-02-10 22:11:38,158 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:11:38,206 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:11:38,726 basehttp 6984 12348 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:11:38,726 basehttp 6984 4884 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:11:43,974 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:11:44,019 basehttp 6984 22412 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:11:54,423 views 6984 22412 --def get customer details
+INFO 2021-02-10 22:11:54,513 basehttp 6984 22412 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+INFO 2021-02-10 22:16:18,339 basehttp 6984 21952 "GET /pos1/2/0/ HTTP/1.1" 200 157496
+INFO 2021-02-10 22:16:30,456 views 6984 21952 --def get customer details
+INFO 2021-02-10 22:16:30,586 basehttp 6984 21952 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:16:30,646 basehttp 6984 2368 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:16:30,647 basehttp 6984 1432 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:16:47,689 views 6984 21952 --def get customer details
+INFO 2021-02-10 22:16:47,758 basehttp 6984 21952 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:18:08,259 basehttp 6984 21952 "GET /pos1/2/0/ HTTP/1.1" 200 157516
+INFO 2021-02-10 22:18:20,231 views 6984 21952 --def get customer details
+INFO 2021-02-10 22:18:20,242 views 6984 18020 --def get customer details
+INFO 2021-02-10 22:18:20,319 basehttp 6984 21952 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:18:20,322 basehttp 6984 18020 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:18:20,967 basehttp 6984 1432 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:18:20,967 basehttp 6984 2368 "GET /static/css/bootstrap.css.map HTTP/1.1" 304 0
+INFO 2021-02-10 22:25:24,416 basehttp 6984 20252 "GET /pos1/2/0/ HTTP/1.1" 200 158621
+WARNING 2021-02-10 22:25:25,726 basehttp 6984 20252 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:25:25,730 basehttp 6984 7128 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:25:25,810 basehttp 6984 4208 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:25:25,813 basehttp 6984 7128 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:25:38,017 views 6984 20844 --def get customer details
+INFO 2021-02-10 22:25:38,069 basehttp 6984 20844 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:29:05,210 basehttp 6984 24144 "GET /pos1/2/0/ HTTP/1.1" 200 158715
+WARNING 2021-02-10 22:29:05,968 basehttp 6984 24144 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:29:06,038 basehttp 6984 18560 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:29:06,170 basehttp 6984 18560 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:29:06,173 basehttp 6984 20880 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:29:11,608 views 6984 20880 --def get customer details
+INFO 2021-02-10 22:29:11,809 basehttp 6984 20880 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:29:46,998 basehttp 6984 20880 "GET /pos1/2/0/ HTTP/1.1" 200 158701
+WARNING 2021-02-10 22:29:47,832 basehttp 6984 20880 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:29:47,922 basehttp 6984 18560 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:29:48,042 basehttp 6984 18560 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:29:48,048 basehttp 6984 13228 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:29:51,675 views 6984 13228 --def get customer details
+INFO 2021-02-10 22:29:51,755 basehttp 6984 13228 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:37:52,197 basehttp 6984 20864 "GET /pos1/2/0/ HTTP/1.1" 200 158701
+WARNING 2021-02-10 22:37:52,447 basehttp 6984 20864 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:37:52,472 basehttp 6984 2800 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:37:52,509 basehttp 6984 3580 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:37:52,509 basehttp 6984 2800 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:37:56,147 views 6984 2800 --def get customer details
+WARNING 2021-02-10 22:37:56,175 log 6984 3580 Not Found: /favicon.ico
+WARNING 2021-02-10 22:37:56,175 basehttp 6984 3580 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 22:37:56,192 basehttp 6984 2800 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 22:37:59,230 log 6984 2800 Not Found: /favicon.ico
+WARNING 2021-02-10 22:37:59,232 basehttp 6984 2800 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 22:39:54,052 basehttp 6984 2800 "GET /pos1/2/0/ HTTP/1.1" 200 158780
+WARNING 2021-02-10 22:39:54,942 basehttp 6984 2800 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:39:54,999 basehttp 6984 3580 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:39:55,054 basehttp 6984 3580 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:39:55,056 basehttp 6984 21180 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:39:58,885 views 6984 21180 --def get customer details
+INFO 2021-02-10 22:39:58,992 basehttp 6984 21180 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 22:39:59,042 log 6984 21180 Not Found: /favicon.ico
+WARNING 2021-02-10 22:39:59,043 basehttp 6984 21180 "GET /favicon.ico HTTP/1.1" 404 15675
+WARNING 2021-02-10 22:40:05,518 log 6984 21180 Not Found: /favicon.ico
+WARNING 2021-02-10 22:40:05,519 basehttp 6984 21180 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 22:40:24,639 basehttp 6984 21180 "GET /pos1/2/0/ HTTP/1.1" 200 158778
+WARNING 2021-02-10 22:40:25,089 basehttp 6984 21180 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:40:25,126 basehttp 6984 3580 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:40:25,198 basehttp 6984 15920 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:40:25,200 basehttp 6984 3580 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:40:30,155 views 6984 3580 --def get customer details
+WARNING 2021-02-10 22:40:30,211 log 6984 15920 Not Found: /favicon.ico
+WARNING 2021-02-10 22:40:30,213 basehttp 6984 15920 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 22:40:30,250 basehttp 6984 3580 "GET /get_product_details/?item_id=A0001 HTTP/1.1" 200 82
+WARNING 2021-02-10 22:40:35,883 log 6984 3580 Not Found: /favicon.ico
+WARNING 2021-02-10 22:40:35,884 basehttp 6984 3580 "GET /favicon.ico HTTP/1.1" 404 15675
+INFO 2021-02-10 22:46:35,504 basehttp 6984 13844 "GET /pos1/2/0/ HTTP/1.1" 200 159195
+WARNING 2021-02-10 22:46:35,942 basehttp 6984 13844 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:46:35,992 basehttp 6984 24208 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:46:36,031 basehttp 6984 24208 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:46:36,033 basehttp 6984 24500 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:46:43,146 views 6984 24500 --def get customer details
+INFO 2021-02-10 22:46:43,216 basehttp 6984 24500 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:48:35,994 basehttp 6984 24500 "GET /pos1/2/0/ HTTP/1.1" 200 159174
+WARNING 2021-02-10 22:48:36,935 basehttp 6984 24500 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:48:37,017 basehttp 6984 24208 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:48:37,157 basehttp 6984 2340 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:48:37,158 basehttp 6984 24208 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:48:42,228 views 6984 24208 --def get customer details
+INFO 2021-02-10 22:48:42,314 basehttp 6984 24208 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:49:17,243 basehttp 6984 24208 "GET /pos1/2/0/ HTTP/1.1" 200 159176
+WARNING 2021-02-10 22:49:17,643 basehttp 6984 24208 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:49:17,659 basehttp 6984 2340 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:49:17,691 basehttp 6984 24216 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:49:17,693 basehttp 6984 15708 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:49:20,551 views 6984 2340 --def get customer details
+INFO 2021-02-10 22:49:20,753 basehttp 6984 2340 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85
+INFO 2021-02-10 22:53:18,379 basehttp 6984 2340 "GET /pos1/2/0/ HTTP/1.1" 200 159275
+WARNING 2021-02-10 22:53:18,799 basehttp 6984 2340 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-10 22:53:18,846 basehttp 6984 15708 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-10 22:53:18,922 basehttp 6984 15708 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-10 22:53:18,926 basehttp 6984 24216 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-10 22:53:38,588 views 6984 24216 --def get customer details
+INFO 2021-02-10 22:53:38,668 basehttp 6984 24216 "GET /get_product_details/?item_id=748485800431 HTTP/1.1" 200 85

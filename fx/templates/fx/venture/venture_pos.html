@@ -381,8 +381,8 @@ th {
 
 /* when row is selected */
 .selected {
-    color: red;
-    background-color: yellow;
+    color: white;
+    background-color: rgb(70, 70, 238);
 }
 /* -------------- */
     div.white {
@@ -419,11 +419,11 @@ th {
         margin: 1em 0;
     } */
 
-    .form-control:hover,
+    /* .form-control:hover,
     .form-control:focus {
         box-shadow: none;
         border-color: blue;
-    }
+    } */
 
     .username,
     .password {
@@ -561,9 +561,23 @@ th {
                        
                         {%endif%}
                     </div>
-                    
-                    <div id="customer-info-alert" class="alert alert-primary" role="alert">
-                      <span id="customer-info-alert-text">_</span> <span style="float:right" id="transNumber">#{{venture.transId}}</span>
+                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                            <div id="customer-info-alert" class="alert alert-primary" role="alert">
+                                <span id="transNumber">#{{venture.transId}}</span> <span id="customer-info-alert-text">_</span> 
+                            
+                            </div> 
+                        </div>
+                        <div class="form-group col-md-1">
+                            <input   id="press-me"   class="btn btn-secondary btn-md" type="button"
+                            value="WAKE UP" />
+                        </div> 
+                        
+                        <div class="form-group col-md-1">
+                            <input  style="margin-left:20px" id="refresh"   class="btn btn-success btn-md" type="button"
+                            value="REFRESH" />
+                        </div>
+
                     </div>
 
                     <div class="form-row">
@@ -601,9 +615,9 @@ th {
 
                         <div class="form-group col-md-3">
                             <label for="main-percent-drop" class="col-form-label">PERCENTAGE </label>
-                            <div class="dropdown" id="main-percent-drop">
+                            <div class="dropdown" id="main-percent-drop" >
                                 <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
-                                    id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled 
                                     name="percent" style="border:1px solid #ced4da;width:100%;">
                                     {{venture.percent}}%
                                 </button>
@@ -661,7 +675,7 @@ th {
 
                     <!-- ---- container begin --- -->
 
- <div   class="container" style="width: 100%;height: 400px; margin-bottom: 1rem;">
+ <div   class="container" style="width: 100%;height: 400px; margin-bottom: 1rem;padding:0px">
 
             <div>
 
@@ -702,10 +716,16 @@ th {
                         <input id="pos-total-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
+
+
+
+                    
             
                 </div>
 
                 <div class="row">
+
+
                     <div class ="form-group col-md-8" style="padding-left:12px">
                         <input  id="pos-add-btn" class="btn btn-success btn-md" type="button"
                         value="ADD" />
@@ -717,9 +737,47 @@ th {
                     <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
                     value="DELETE" />
 
-                    <input style="float:right" id="press-me"   class="btn btn-secondary btn-md" type="button"
-                    value="PRESS ME" />
+                   
                    </div> 
+
+                    <div class="form-group col-md-4">
+                        <div class="form-check form-check-inline">
+                            <input class="chek-services form-check-input" checked type="checkbox" id="checkGrocery" value="Grocery">
+                            <label class="form-check-label" for="checkGrocery"> Grocery</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="chek-services form-check-input" type="checkbox" id="checkLoad" value="Load">
+                            <label class="form-check-label" for="checkLoad"> Load</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+
+                            <input class="chek-services form-check-input" type="checkbox" id="checkServices" value="Services">
+                            <label class="form-check-label" for="checkServices"> Services</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="chek-services form-check-input" type="checkbox" id="checkOther" name="checkOther"
+                                value="Others">
+                            <label class="form-check-label" for="checkOther"> Other</label>
+                        </div>
+
+
+                        <div>
+
+                            <textarea style="display: none;" rows="1" name="venture_note" class="form-control"
+                                id="venture-description-txt" name="note" maxlength="100">{{venture.note}}</textarea>
+
+                        </div>
+                        </div>
+
+
+
+
+
+
+
                   
                 </div>
                     
@@ -749,6 +807,36 @@ th {
                     <td> </td>
                     
                 </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                </tr>
                 
                 
                 </tbody>
@@ -762,40 +850,10 @@ th {
                      <br>
                     <br>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                        <div class="form-check form-check-inline">
-                            <input class="chek-services form-check-input" type="checkbox" id="checkGrocery" value="Grocery">
-                            <label class="form-check-label" for="checkGrocery"> Grocery</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="chek-services form-check-input" type="checkbox" id="checkLoad" value="Load">
-                            <label class="form-check-label" for="checkLoad"> Load</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-
-                            <input class="chek-services form-check-input" type="checkbox" id="checkServices" value="Services">
-                            <label class="form-check-label" for="checkServices"> Services</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-
-                            <input class="chek-services form-check-input" type="checkbox" id="checkOther" name="checkOther"
-                                value="Others">
-                            <label class="form-check-label" for="checkOther"> Other</label>
-                        </div>
-
-
-                        <div>
-
-                            <textarea style="display: none;" rows="1" name="venture_note" class="form-control"
-                                id="venture-description-txt" name="note" maxlength="100">{{venture.note}}</textarea>
-
-                        </div>
-                        </div>
+                       
                          
 
-                        
+                      
                         <div class="form-group col-md-2 has-change-group">
                             <label for="tender-txt" class="bolder col-form-label">TENDERED</label>
                             <div  id="main-source-drop">
@@ -837,7 +895,28 @@ th {
                             </div>
                         </div>
 
-                    </div>
+                    
+                        <div class="form-group col-md-1">
+                        </div>
+                    
+                        <div class="form-group col-md-4">
+                       
+                            <a id="reset-form" class="hide btn btn-secondary btn-md">Cancel</a>
+                            <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
+                            <input   disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
+                            <!-- {% if venture.id > 0 %}
+                            <a hidden id="venture-delete"
+                                href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
+    
+                            <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
+                                value="Delete this" />
+    
+                             
+                            {%endif%} -->
+                        </div>
+                    
+                  
+                    </div>  
 
                 
                     
@@ -845,10 +924,7 @@ th {
 
 
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6 mb-0">
-                        </div>
-                    </div>
+                     
  <!-- ------------------- pos ------------------- -->
 
 
@@ -861,23 +937,7 @@ th {
 
  
 
-
-                    <div>
-
-                       
-                        <a id="reset-form" class="hide btn btn-secondary btn-md">Cancel</a>
-                        <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
-                        <input   style="float: right;display: none;" class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
-                        {% if venture.id > 0 %}
-                        <a hidden id="venture-delete"
-                            href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
-
-                        <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
-                            value="Delete this" />
-
-                         
-                        {%endif%}
-                    </div>
+ 
 
                     
                 </form>
@@ -1028,6 +1088,34 @@ th {
         </div>
         <div class="modal-footer">
            
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ <!-- -------------------- quantity editor--------------- -->
+  <div id ="quantity-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Quantity:</label>
+                  <input id="quantity-txt-modal" type="text" class="form-control">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button id="ok-quantity" type="button" class="btn btn-primary">Ok</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -1257,6 +1345,7 @@ th {
 				suffixKeyCodes: [13],
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
+                    $('#press-me').trigger('focus');
                     console.log('Scanned: ' + iQty + 'x ' + sCode);
                     if (sCode != "121279")
                      { 
@@ -1283,12 +1372,48 @@ th {
 			// Test scanner is initialized
 			onScan.simulate(document, '121279');
         })()
+        $("#refresh").click(function(){
+
+            location.reload(true);
+
+        });
+
+
         
+        $("#ok-quantity").click(function(){
+            table = document.getElementById("pos-table");
+            // table.row   s[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+               
+            $("#q"+rowIndex).val($("#quantity-txt-modal").val());
+            // table.rows[rIndex].cells[3] = $("#quantity-txt-modal").val();
+            console.log("qty----");
+            
+            $("#quantity-modal").modal('hide');
+            //   $("#venture_id").val(venture_id
+             
+
+        });
+
         $("body").delegate(".history", "click", function(){
               venture_id = $(this).attr("id");
               $("#venture_id").val(venture_id);
               get_transaction();
               $(this).addClass('active').siblings().removeClass('active');    
+
+
+        });
+
+        $("body").delegate(".quantity", "click", function(){
+              id = $(this).attr("id");
+              console.log("------ quantity id:"+id+ " rowindex: "+rIndex);
+
+            //  table = document.getElementById("pos-table");
+            // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+            //table.rows[rIndex].cells[3].innerHTML = "12";
+            $("#quantity-modal").modal('show');
+            //   $("#venture_id").val(venture_id);
+            //   get_transaction();
+           //   $(this).addClass('active').siblings().removeClass('active');    
 
 
         });
@@ -1832,15 +1957,17 @@ th {
             
 }
        $("#pos-cancel-btn").click(function () {
-            //     adjust_total();
-            //    return
-              // $("#pos-table tbody tr").remove();
+            
+               $("#q-748485800431").text("1111");
+               return;
                clear_pos_top();
                $("#pos-add-btn").val("ADD");
                $("#pos-delete-btn").prop("disabled",true);
                $("#pos-product-name-txt").prop("readonly",true);
                $("#pos-price-txt").prop("readonly",true);
                $("#pos-qty-txt").prop("readonly",true);
+
+
                
 
              //  $("#pos-product-code-txt").prop("readonly",false);
@@ -1865,21 +1992,44 @@ th {
        });
 //add
        $("#pos-add-btn").click(function () {
+                 
                     $("#pos-product-code-txt").attr("readonly",false);
                     pcode = $("#pos-product-code-txt").val().trim();
+                    pname = $("#pos-product-name-txt").val().trim();
                     console.log("pcode:"+pcode);
                     pqty =  parseInt($("#pos-qty-txt").val());
                     price = parseFloat( $("#pos-price-txt").val());   //redundant
-                    console.log("pqty:"+pqty);
-                    if (pcode =="" ||  isNaN( pqty) || price <=0  ){
+                    console.log("---- price:"+price);
+                    if (pcode =="" ||  isNaN( pqty) || price <=0 || isNaN( price) || pname =="" ){
+
+                        if (  isNaN( pname) || pname == "" ){
+
+                            $("#pos-product-name-txt").focus();
+                           
+                        }
+                       
+                       if( pcode =="" ){
+                            $("#pos-product-code-txt").focus();
+
+
+                        }
+                        if (  isNaN( pqty) || price <=0 ){
+                            $("#pos-qty-txt").focus();
+                        }
+                        if(price  <=0 || isNaN(price)){
+
+                            $("#pos-price-txt").focus();
+                        }
                         return;
                     }
+                    beep();
                     action =  $(this).val().trim();
                     console.log("---------------- actionss:"+ action); 
+                     
                     if (action =="ADD") { 
                                     console.log("---------------- add"); 
                                     pcode =$("#pos-product-code-txt").val();
-                                    pname = $("#pos-product-name-txt").val();
+                                   
                                     pqty = $("#pos-qty-txt").val();
                                     pprice =  $("#pos-price-txt").val();
                                     pcmoney =  $("#pos-c-money-txt").val();
@@ -1899,8 +2049,8 @@ th {
                                 //  $("#venture-total-txt").val(sales_total);
                                 // $("#id_amount").val(amount_total);
 
-
-                                        var newRow = "<tr  id=c-"+ pcode +"><td></td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+pqty+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
+                                        var btn = "<a   id=q-"+rowIndex+" class='quantity  btn btn-info'>"+pqty +"</a>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td></td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                     }else
                     {
@@ -1910,7 +2060,9 @@ th {
                                     table.rows[rIndex].cells[2].innerHTML = $("#pos-product-name-txt").val();
                                     table.rows[rIndex].cells[3].innerHTML =  $("#pos-qty-txt").val();
                                     table.rows[rIndex].cells[4].innerHTML =  $("#pos-price-txt").val();
-                                    table.rows[rIndex].cells[5].innerHTML = $("#pos-c-money-txt").val();
+                                    cmoney =parseFloat( $("#pos-c-money-txt").val());
+                                    cmoney = cmoney.toFixed(2)
+                                    table.rows[rIndex].cells[5].innerHTML = cmoney;
                                     table.rows[rIndex].cells[6].innerHTML =  $("#pos-total-txt").val()
                                     $(this).val("ADD");
                                     
@@ -1927,6 +2079,7 @@ th {
                     $("#pos-product-name-txt").prop("readonly",true);
                     $("#pos-price-txt").prop("readonly",true);
                     $("#pos-qty-txt").prop("readonly",true);
+                    $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
 
 });
 
@@ -1960,12 +2113,29 @@ $("#payment-login-lnk").click(function () {
    
 // });
 //row click
-                $('#pos-table tbody').on('click', 'tr', function() {
+        $('#pos-table tbody').on('click', 'tr', function(event) {
+                     console.log("click row");
+                     rIndex = this.rowIndex;
+                     $(this).addClass('selected').siblings().removeClass('selected');   
+                    // var value=$(this).find('td:first').html();
+                     var  value = $(this).children("td:eq(1)").text().trim().toUpperCase();
+                     if (value.length > 6){
+                         console.log("code: "+ value);
+                         event.preventDefault;
+                         return;  
+                     }
+                    
                     //get row contents into an array
-                    $(this).addClass('selected').siblings().removeClass('selected');    
+
+
+                   
                     var value=$(this).find('td:first').html();
-                    rIndex = this.rowIndex;
-                    console.log(">>>>>>>>>>row index:"+rIndex);
+                   
+
+                   // var val = $(this).find('td:eq(2)').text();
+
+                    console.log(">>>>>>>>>>  column val:");
+                    console.log(this);
                     var tableData = $(this).children("td").map(function() {
                         return $(this).text();
 
@@ -2112,13 +2282,15 @@ $("#payment-login-lnk").click(function () {
         }
 
         $("#venture-submit-btn").click(function (e) {
-
+            console.log("------------submit form init-----------");
             var total_sales= parseFloat($("#venture-total-txt").val());
-            if (  total_sales <=0 ||  isNaN(total_sales)){
+            if (  total_sales <=0 ||  isNaN(total_sales) || submit_now == false){
                 console.log("=============");
                 console.log("total sales:"+total_sales);
-                $("#venture-submit-btn").prop("disabled",true);
+                console.log("submit_now: "+submit_now);
+                $(this).prop("disabled",true);
                 e.preventDefault();
+                submit_now =true;
                 return;
             }
              
@@ -2130,7 +2302,7 @@ $("#payment-login-lnk").click(function () {
                 return;
             }
             $(this).hide();
-            console.log("------------submit form init-----------");
+           
             e.preventDefault();
 
 
@@ -2211,7 +2383,8 @@ $("#payment-login-lnk").click(function () {
                     submit_now =false;
                     $("#pos-add-btn").focus();
                     
-                    console.log("inside event.which: 13");
+                    console.log("id---");
+                    console.log($(this).prop("id"));
                     return;
                 }
                   
@@ -2227,6 +2400,7 @@ $("#payment-login-lnk").click(function () {
                 }
                   
             });
+//code
          $("#pos-product-code-txt").keyup(function (event) {
              
            
@@ -2242,6 +2416,7 @@ $("#payment-login-lnk").click(function () {
 
             if ( item_id.charAt(0) =='A' && item_id.trim().toUpperCase() ==  "A0000"){
                 console.log("------------");
+                beep();
                 $("#pos-product-name-txt").focus();
                $("#pos-product-name-txt").prop("readonly",false);
                $("#pos-qty-txt").val("1")
@@ -2268,8 +2443,10 @@ $("#payment-login-lnk").click(function () {
             if (item_id.charAt(0) =='A' &&   item_id.length >=5){
                /// beep();
                 curr_barcode =Barcode.MANUAL;
-                $("#pos-qty-txt").focus();
+                // $("#pos-qty-txt").focus();
+                $("#pos-qty-txt").select();
                 $("#pos-qty-txt").prop("readonly",false);
+                beep();
                 search_product_details(item_id);
                  
                 console.log("Call ajax");
@@ -2329,7 +2506,8 @@ $("#payment-login-lnk").click(function () {
                                   }
                                   if(curr_barcode == Barcode.POS){
 
-                                        var newRow = "<tr  id=c-"+ item_id +"><td></td>  <td>"+item_id+"</td><td>"+title+"</td><td>2</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                    var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
+                                        var newRow = "<tr  id=c-"+ item_id +"><td></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
@@ -2444,10 +2622,15 @@ $("#payment-login-lnk").click(function () {
                              console.log(response['data']);
                             if (response['data'] == "Success") {
                                 var total_sales= parseFloat($("#venture-total-txt").val());
-                                if (  total_sales <=0 ||  isNaN(total_sales)){
+                                if ( total_sales <=0 ||  isNaN(total_sales)){
                                         console.log("=============");
                                         console.log("total sales:"+total_sales);
                                         $("#venture-submit-btn").prop("disabled",true);
+                                        submit_now = false;
+                                }else{
+
+                                    $("#venture-submit-btn").prop("disabled",false);
+                                    submit_now = true;
                                 }
             
                                
@@ -2514,7 +2697,7 @@ $("#payment-login-lnk").click(function () {
                                 // $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
                                 // $("#review-venture-customer-txt").val(name); //change to: appear in summary form
                                 // $("#venture-total-txt").focus();
-                                $("#venture-submit-btn").css({display:"block"});
+                               // $("#venture-submit-btn").css({display:"block"});
                                 changeHrefValues(response["member_info"]['id']);
                                 adjust_total();
 
@@ -2990,7 +3173,8 @@ $("#payment-login-lnk").click(function () {
        //
         
         $("#venture-done").click(function () {
-            // console.log(" tender:" +$("#tender-txt").val());
+
+            console.log(" venture done click-----");
             // console.log(" tender text:" +$("#tender-txt").text());
             videoCode = 2
             value = $("#deposit-cash-drop").text();
