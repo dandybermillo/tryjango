@@ -653,7 +653,7 @@ def get_product_details(request):
         
    
    
-    # if from_code == "qrcode": 
+    # if from_code == "qrcode":
     #    # qrpassword = request.GET.get("qrpassword", "").strip()
     #     qrcode = customer_id.replace(":","-")
     #     qrcode = decode(qrcode)

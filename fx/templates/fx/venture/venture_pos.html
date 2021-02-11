@@ -210,6 +210,7 @@ ul {
 
 .wrap .search-form button:hover i {
   color: #0479c3;
+  
 }
 
 
@@ -686,30 +687,30 @@ th {
                         <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-4 pos-editor">
                         <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
                             class="asteriskField">*</span> </label>
                         <input id="pos-product-name-txt"  readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>  
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-1  pos-editor">
                         <label for="pos-qty-txt" class="col-form-label">QTY<span
                             class="asteriskField">*</span> </label>
                         <input id="pos-qty-txt" readonly type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" value="{{member_info.member_id|upper}}">
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-2  pos-editor">
                         <label for="pos-price-txt" class="col-form-label">PRICE<span
                             class="asteriskField">*</span> </label>
                         <input id="pos-price-txt"  readonly type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-1  pos-editor">
                         <label for="pos-c-money-txt" class="col-form-label">C-MONEY </label>
                         <input id="pos-c-money-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-2  pos-editor">
                         <label for="pos-total-txt" class="col-form-label"> TOTAL</label>
                         <input id="pos-total-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
@@ -721,7 +722,7 @@ th {
             
                 </div>
 
-                <div class="row">
+                <div class="row pos-editor">
 
 
                     <div class ="form-group col-md-8" style="padding-left:12px">
@@ -738,7 +739,7 @@ th {
                    
                    </div> 
 
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-4 pos-editor">
                         <div class="form-check form-check-inline">
                             <input class="chek-services form-check-input" checked type="checkbox" id="checkGrocery" value="Grocery">
                             <label class="form-check-label" for="checkGrocery"> Grocery</label>
@@ -1344,13 +1345,14 @@ th {
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
                     $('#press-me').trigger('focus');
-                    console.log('Scanned: ' + iQty + 'x ' + sCode);
+                    console.log('Scanned: ' + iQty + 'x ' + sCode +"  Barcode.POS: "+Barcode.POS);
                     if (sCode != "121279")
                      { 
                        /// beep();
-                       if (curr_barcode == Barcode.LOGIN) {
+                       if (sCode.indexOf("x")> 0) {
+                         console.log("search by barcode")
                          search_member_by_qrcode(sCode, "","qrcode");
-                       }else if(curr_barcode == Barcode.POS){
+                       }else {
                            console.log("---"+ sCode);
                            search_product_details(sCode);
 
@@ -1376,7 +1378,8 @@ th {
 
         });
 
-
+        // hide all pos-editor 
+        $(".pos-editor").hide();
         
         $("#ok-quantity").click(function(){
             table = document.getElementById("pos-table");
@@ -1397,6 +1400,12 @@ th {
 
         });
 
+        $("body").delegate(".del-row", "click", function(){
+            $("tr.selected").remove();
+            adjust_total();
+
+
+        });
         $("body").delegate(".history", "click", function(){
               venture_id = $(this).attr("id");
               $("#venture_id").val(venture_id);
@@ -2077,7 +2086,7 @@ th {
                                             btn = "<a   id=q-"+pcode+" class='quantity  btn btn-info'>"+pqty +"</a>";
                                         }
                                        
-                                        var newRow = "<tr  id=c-"+ pcode +"><td></td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a  class='del-row btn btn-info'><span class='red-color'>x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                     }else
                     {
@@ -2101,6 +2110,8 @@ th {
                     // $("#id_amount").val(total.total_sales);
                     // $("#venture-total-txt").val(total.total_sales + total.total_cm);
                     // $("#id_cc").val(total.total_cm);
+
+                    hide_pos_editor(0);
                     adjust_total();
                     clear_pos_top();
                     $("#pos-product-name-txt").prop("readonly",true);
@@ -2110,7 +2121,13 @@ th {
 
 });
 
-
+function hide_pos_editor(value){
+    if (value > 0) {
+      $(".pos-editor").show();
+    }else{
+        $(".pos-editor").hide();
+    }
+}
 $("#payment-login-lnk").click(function () {
  $('#modal-search-member').modal('toggle');
 
@@ -2146,23 +2163,15 @@ $("#payment-login-lnk").click(function () {
                      $(this).addClass('selected').siblings().removeClass('selected');   
                     // var value=$(this).find('td:first').html();
                      var  value = $(this).children("td:eq(1)").text().trim().toUpperCase();
-                     if (value.length > 6){
+                     if (value.length > 6 || value != "A0000"){
                          console.log("code: "+ value);
+                         clear_pos_top();
+                         hide_pos_editor(0);
                          event.preventDefault;
                          return;  
-                     }
+                     } 
                     
-                    //get row contents into an array
-
-
-                   
-                    var value=$(this).find('td:first').html();
-                   
-
-                   // var val = $(this).find('td:eq(2)').text();
-
-                    console.log(">>>>>>>>>>  column val:");
-                    console.log(this);
+                    
                     var tableData = $(this).children("td").map(function() {
                         return $(this).text();
 
@@ -2207,7 +2216,7 @@ $("#payment-login-lnk").click(function () {
                     $("#pos-total-txt").val(tableData[6] );
                     $("#pos-add-btn").val("SAVE CHANGES");
                     $("#pos-delete-btn").prop("disabled",false);
-
+                     hide_pos_editor(1);
 
 
 
@@ -2441,6 +2450,9 @@ $("#payment-login-lnk").click(function () {
                 }
             //     } else { 
             var item_id= $(this).val().trim().toUpperCase();
+            if (item_id.length > 0){
+                hide_pos_editor(1);
+            }
 
             if ( item_id.charAt(0) =='A' && item_id.trim().toUpperCase() ==  "A0000"){
                 console.log("------------");
@@ -2464,6 +2476,7 @@ $("#payment-login-lnk").click(function () {
                     $("#pos-price-txt").val("");
                     $("#pos-c-money-txt").val("");
                     $("#pos-total-txt").val("")
+                    
                 return
             }
             console.log("item id :" + item_id);
@@ -2490,10 +2503,8 @@ $("#payment-login-lnk").click(function () {
             item_id =item_id.trim().toUpperCase();
             len = $("#c-"+item_id).length;
             if (len > 0 ){
-
                 return;
             }
-           
             var data = {}
             //ID_Info.ON_SEARCH = true;
             data['item_id'] = item_id;
@@ -2513,6 +2524,7 @@ $("#payment-login-lnk").click(function () {
                                    
                                     
                                   //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+                                  $("#pos-product-code-txt").css("background-color","white")
                                   title =response['product_info']['title'].trim();
                                   price = parseFloat( response['product_info']['price']);
                                   cmoney = parseFloat(response['product_info']['cm']);
@@ -2541,7 +2553,7 @@ $("#payment-login-lnk").click(function () {
                                   if(curr_barcode == Barcode.POS){
 
                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
-                                        var newRow = "<tr  id=c-"+ item_id +"><td></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                        var newRow = "<tr  id=c-"+ item_id +"><td><a  class='del-row btn btn-info'><span class='red-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
@@ -2581,8 +2593,21 @@ $("#payment-login-lnk").click(function () {
 
                                  
                               }else{
+                                if(curr_barcode == Barcode.POS){
+                                    $("#pos-product-code-txt").val(item_id);
 
-                                 console.log("error retrieving product details");
+                                }
+                                $("#pos-product-code-txt").css("background-color","red");
+                                setTimeout(function () {
+                                    if(curr_barcode == Barcode.POS){
+                                        $("#pos-product-code-txt").val("");
+
+                                     }
+                                    $("#pos-product-code-txt").css("background-color","white");
+                                    
+                                }, 10000);
+                                
+                                 console.log("error retrieving product detail.");
                               }
                      
                 },
