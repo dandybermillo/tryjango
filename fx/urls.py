@@ -134,7 +134,7 @@ urlpatterns = [
   #-------------------- VENTURE ------------------------
   path('pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture, name = "create_update_venture_url"), 
   
-  path('pos1/<int:customer_id>/<int:venture_id>/', views.create_update_venture1, name = "create_update_venture_url1"), 
+  path('fx_pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture1, name = "fx_pos_url"), 
 
   path('pos_view/', views.pos_view.as_view(), name = "pos_view_url"), 
   # path('get_pos/', views.get_pos, name = "get_pos_url"),   #ajax call to get  pos transactions

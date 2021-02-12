@@ -1904,8 +1904,8 @@ def create_update_venture1(request,customer_id,venture_id ):
                 
     tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:5]   #.values('createdate').annotate(count=Count('id'))
           
-                
-    venture ={'transaction_type':'W','customer':0,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
+    print(f"--- customer: {walk_in_id}")
+    venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
 
     context = {
                     'asset_balance':asset_balance,
@@ -3397,7 +3397,7 @@ def venture_login_request(request):
                     if user.is_staff:
                             print("success login in venture. staff")
                             member_info = MemberModel.objects.get(user = request.user.id)
-                            return redirect(f'/pos/{member_info.id}/{0}/')
+                            return redirect(f'/fx_pos/{member_info.id}/{0}/')
                     else:
                             print("success login in venture")
                              

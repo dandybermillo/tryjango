@@ -221,13 +221,13 @@
             <div>
                 {%if post_data %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
-                    href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">Close This Form </a>
+                    href="{% url 'fx:fx_pos_url' member_info.id 0  %}">Close This Form </a>
                 <a class="edit_button btn btn-warning btn-md"
                     href="{% url 'fx:payment_venture_url'  member_info.id payment.payment_id   %}">
                     Make Changes</a>
                 {% else %}
                 <a id="account-hide" class="hide btn btn-secondary btn-md"
-                    href="{% url 'fx:create_update_venture_url' member_info.id 0  %}">Close This Form </a>
+                    href="{% url 'fx:fx_pos_url' member_info.id 0  %}">Close This Form </a>
                 <input id="payment-done-btn" class="done btn btn-primary btn-md" type="button" value="Save Changes" />
               <div hidden>   <input id="payment-submit-btn" class="submit btn btn-primary btn-md" type="submit" name="Submit"
                     value="SAVE" /></div>

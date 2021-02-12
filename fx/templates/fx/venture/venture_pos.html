@@ -528,7 +528,7 @@ th {
 
     {% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
 
-
+ 
     <div class="container" style="border:none;width: 90%;">
         <div class="tcard">
             <!-- <div>
@@ -565,7 +565,7 @@ th {
                     <div class="form-row">
                         <div class="form-group col-md-9">
                             <div id="customer-info-alert" class="alert alert-primary" role="alert">
-                                <span id="transNumber">#{{venture.transId}}</span> <span id="customer-info-alert-text">_</span> 
+                                <span class="bolder" id="customer-info-alert-text">_</span>  <span id="transNumber">#{{venture.transId}}</span>
                             
                             </div> 
                         </div>
@@ -576,7 +576,7 @@ th {
                         
                         <div class="form-group col-md-1">
                             <input  style="margin-left:20px" id="refresh"   class="btn btn-success btn-md" type="button"
-                            value="REFRESH" />
+                            value="RESTART" />
                         </div>
 
                     </div>
@@ -682,8 +682,8 @@ th {
 
                 <div class="form-row">
                     <div class="form-group col-md-2">
-                        <label for="pos-product-code-txt" class="col-form-label"> CODE<span
-                            class="asteriskField">*</span> </label>
+                        <label for="pos-product-code-txt" class="col-form-label">  CODE <span
+                            id="code-message" class="red-color"></span> </label>
                         <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control">
                     </div>
@@ -787,7 +787,7 @@ th {
                     <tr class="green">
                     <th scope="col">#</th>   
                     <th scope="col">Item ID</th>
-                    <th scope="col">Product name</th>
+                    <th scope="col">Product Name</th>
                     <th scope="col">Qty</th>
                     <th scope="col">Price</th>
                     <th scope="col">CM</th>
@@ -1329,7 +1329,9 @@ th {
             POS:0,
           LOGIN : 1,
           MANUAL:2
-   
+        // POS means usin barcode reader to search the product detail
+        //LOGIN means authenticate member
+        //MANUAL means type the code from "pos-product-code"  textfield
 }            
         var curr_barcode = Barcode.POS;
         var curr_qrcode="";
@@ -1337,7 +1339,12 @@ th {
         var ctr=1;
         var sales_total =0;
         var amount_total =0;
-
+        var customer = parseInt("{{venture.customer}}");
+        var walk_in_id =customer;
+        console.log("customer: "+customer);
+        //set to walkin by default
+         
+         $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
 
         (function () {
 			onScan.attachTo(document, {
@@ -1373,7 +1380,7 @@ th {
 			onScan.simulate(document, '121279');
         })()
         $("#refresh").click(function(){
-
+            $(".loading").toggleClass("hidden");
             location.reload(true);
 
         });
@@ -1410,7 +1417,9 @@ th {
               venture_id = $(this).attr("id");
               $("#venture_id").val(venture_id);
               get_transaction();
-              $(this).addClass('active').siblings().removeClass('active');    
+              $(this).addClass('active').siblings().removeClass('active');   
+             clear_pos_table();
+
 
 
         });
@@ -1606,6 +1615,9 @@ th {
 
             function fillHistory(customer_id,venture_id,title,desc,amount,cc){ 
                     var tim =getTime();
+                    if (customer_id.trim().length < 2){
+                         customer_id ="WALK-IN";
+                    } 
                    
                     $( "#history" ).prepend( "<button   id='"+venture_id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
                             "<div class='d-flex w-100 justify-content-between'>"+
@@ -1643,10 +1655,22 @@ th {
            $(".chek-services").prop("checked",false);   
 
            clear_pos_table();
+           walk_in =true;
+           customer = walk_in_id;
+           customer_id ="WALK-IN";
+           $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
 
           
        });
+       $("#btn-auth-walk-in").click(function() {
 
+           walk_in =true;
+           customer = walk_in_id;
+           customer_id ="WALK-IN";
+           $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
+           $("#login").modal('hide');
+       });
+       
 
         if (isNaN(venture_id)) {
             venture_id = 0;
@@ -1970,8 +1994,10 @@ th {
                              
                         }
                         console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
-                        currentRow.find("td:eq(6)").text(tot);
-                       
+                        if (tot >0){ 
+
+                           currentRow.find("td:eq(6)").text(tot);
+                        }
                         total_sales = total_sales + tot;
 
                 });
@@ -1981,6 +2007,13 @@ th {
                     
                     $("#venture-total-txt").val(total_sales + total_cm);
                     $("#id_cc").val(total_cm);
+                    if(total_sales > 0){
+                        submit_now =true;
+                      $("#venture-submit-btn").prop("disabled",false);
+                    }else{
+                        submit_now =false;
+                        $("#venture-submit-btn").prop("disabled",true);
+                    }
             
 }
 //cancel
@@ -1988,6 +2021,7 @@ th {
               
               
                clear_pos_top();
+               hide_pos_editor(0);
                $("#pos-add-btn").val("ADD");
                $("#pos-delete-btn").prop("disabled",true);
                $("#pos-product-name-txt").prop("readonly",true);
@@ -2011,10 +2045,10 @@ th {
                clear_pos_top();
                $('#press-me').trigger('focus')
                $(this).focus();
-            //    var total= compute_total_sales();
-            //         $("#id_amount").val(total.total_sales);
-            //         $("#venture-total-txt").val(total.total_sales + total.total_cm);
-            //         $("#id_cc").val(total.total_cm);
+             setTimeout(function () {
+                
+                hide_pos_editor(0);
+                }, 1000);
 
        });
 //add
@@ -2049,7 +2083,7 @@ th {
                         }
                         return;
                     }
-                    beep();
+                    ///beep();
                     action =  $(this).val().trim();
                     console.log("---------------- actionss:"+ action); 
                      
@@ -2111,7 +2145,10 @@ th {
                     // $("#venture-total-txt").val(total.total_sales + total.total_cm);
                     // $("#id_cc").val(total.total_cm);
 
-                    hide_pos_editor(0);
+                    setTimeout(function () {
+                        hide_pos_editor(0);
+                   }, 10000);
+                  
                     adjust_total();
                     clear_pos_top();
                     $("#pos-product-name-txt").prop("readonly",true);
@@ -2127,6 +2164,8 @@ function hide_pos_editor(value){
     }else{
         $(".pos-editor").hide();
     }
+   // $("#pos-product-code-txt").val("");
+    $("#pos-product-code-txt").css("background-color","white");
 }
 $("#payment-login-lnk").click(function () {
  $('#modal-search-member').modal('toggle');
@@ -2320,6 +2359,7 @@ $("#payment-login-lnk").click(function () {
         $("#venture-submit-btn").click(function (e) {
             console.log("------------submit form init-----------");
             var total_sales= parseFloat($("#venture-total-txt").val());
+            
             if (  total_sales <=0 ||  isNaN(total_sales) || submit_now == false){
                 console.log("=============");
                 console.log("total sales:"+total_sales);
@@ -2389,6 +2429,11 @@ $("#payment-login-lnk").click(function () {
                                         $("#deposit-cash-drop").text("SELECT OPTION");
                                         $("#change_deposit_to").val("SELECT OPTION"); 
                                         clear_pos_table();
+
+                                        walk_in =true;
+                                        customer = walk_in_id;
+                                        customer_id ="WALK-IN";
+                                        $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
                                     //  window.location.replace("/user/"+id);
                         } else if (response["type"] === "error") {
                                     
@@ -2439,24 +2484,39 @@ $("#payment-login-lnk").click(function () {
             });
 //code
          $("#pos-product-code-txt").keyup(function (event) {
-             
+            
+                 $(this).val($(this).val().toUpperCase());
+                var item_id= $(this).val().trim().toUpperCase();
                 
                 if (event.which === 13) {
+                  
                     submit_now =false;
-                    $("#pos-product-name-txt").focus();
-                    
+                   if (item_id.length >=5){
+                       console.log("13 is hitted");
+                      ///  beep();
+                       search_product_details(item_id);
+                   }else{
+                   
+                    $("#code-message").text(" 5 or more character long");
+                    $(this).focus();
+                     setTimeout(function () {
+                    $("#code-message").text("");
+                   }, 10000);
                     console.log("inside event.which: .13");
+                   }
+
                     return;
                 }
             //     } else { 
-            var item_id= $(this).val().trim().toUpperCase();
-            if (item_id.length > 0){
-                hide_pos_editor(1);
-            }
+          
+            // if (item_id.length > 0){
+            //     hide_pos_editor(1);
+            // }
 
             if ( item_id.charAt(0) =='A' && item_id.trim().toUpperCase() ==  "A0000"){
                 console.log("------------");
-                beep();
+               /// beep();
+                hide_pos_editor(1);
                $("#pos-product-name-txt").focus();
                $("#pos-product-name-txt").prop("readonly",false);
                $("#pos-qty-txt").val("1")
@@ -2464,6 +2524,7 @@ $("#payment-login-lnk").click(function () {
                $("#pos-price-txt").prop("readonly",false)
                 return;
             }else{
+
                 $("#pos-product-name-txt").prop("readonly",true);
                 $("#pos-qty-txt").prop("readonly",true)
                $("#pos-price-txt").prop("readonly",true)
@@ -2482,14 +2543,14 @@ $("#payment-login-lnk").click(function () {
             console.log("item id :" + item_id);
             if (item_id.charAt(0) =='A' &&   item_id.length >=5){
                /// beep();
-                curr_barcode =Barcode.MANUAL;
+                curr_barcode = Barcode.MANUAL;
                 // $("#pos-qty-txt").focus();
                 $("#pos-qty-txt").select();
                 $("#pos-qty-txt").prop("readonly",false);
-                beep();
+               /// beep();
                 search_product_details(item_id);
                  
-                console.log("Call ajax");
+                console.log("searching....");
             }
 
             if ( event.which == 13) {
@@ -2499,10 +2560,23 @@ $("#payment-login-lnk").click(function () {
            }
 
         });
+        //search
         function search_product_details(item_id) {
+            console.log("searching begins");
             item_id =item_id.trim().toUpperCase();
             len = $("#c-"+item_id).length;
+            if(curr_barcode == Barcode.POS){
+                clear_pos_top();
+                hide_pos_editor(0);
+            }
+           // hide_pos_editor(0);
             if (len > 0 ){
+                console.log("existin....");
+                $("#code-message").text(" Existing!");
+                setTimeout(function () {
+                    $("#code-message").text("");
+                   }, 10000);
+                hide_pos_editor(0);
                 return;
             }
             var data = {}
@@ -2531,9 +2605,7 @@ $("#payment-login-lnk").click(function () {
                                   if (isNaN(cmoney)) {
                                         cmoney = 0;
                                     }
-                                  
-                                //   cm = .05 * price;
-                                //   console.log("---cm: "+cm);
+                                
                                  
                                   if (isNaN(price)) {
                                         price = 0;
@@ -2587,6 +2659,15 @@ $("#payment-login-lnk").click(function () {
                                                 console.log("product_info ");
                                                 console.log(response['product_info'] );
                                                 $("#pos-total-txt").val(total);
+                                                hide_pos_editor(1);
+                                                if (item_id == "A0000"){
+
+                                                    $("#pos-product-name-txt").focus();
+                                                }else{
+
+                                                    $("#pos-qty-txt").focus();
+                                                }
+                                               
 
 
                                   }
@@ -2599,10 +2680,7 @@ $("#payment-login-lnk").click(function () {
                                 }
                                 $("#pos-product-code-txt").css("background-color","red");
                                 setTimeout(function () {
-                                    if(curr_barcode == Barcode.POS){
-                                        $("#pos-product-code-txt").val("");
-
-                                     }
+                                     
                                     $("#pos-product-code-txt").css("background-color","white");
                                     
                                 }, 10000);
@@ -2629,30 +2707,9 @@ $("#payment-login-lnk").click(function () {
             console.log("qrpassword: " + qrpassword)
             customer_id = customer_id.trim().toUpperCase();
             var $regexname = /[A-Za-z]{2}[0-9]{2,4}[-]{1}[0-9]{1,4}/g;
-
-
-            // if (customer_id == curr_qrcode){
-            //     console.log(" the same customer_id")
-            //     return;
-            // }
+ 
             curr_qrcode = customer_id;
-            // var match = customer_id.match($regexname);
-            // if (match == null || match != customer_id) {
-            //     console.log("not match");
-            //     if (!ID_Info.is_name_blank) {
-            //         $("#customer-name").val("");
-            //         ID_Info.is_name_blank = true;
-            //     }
-            //     return
-            // }
-
-            // if (ID_Info.id == customer_id) {
-            //     console.log(" equal... not reading");
-            //     return;
-
-            // } else {
-            //     console.log("not equal...");
-            // }
+            
             keys["PREVIOUS-INPUT"] = "";
             ID_Info.id = customer_id;
             var data = {}
@@ -2665,7 +2722,7 @@ $("#payment-login-lnk").click(function () {
                 data['password'] = qrpassword;
                 data['from'] = 'manual';
             }
-            console.log("reading nowss..:" + data['from']);
+            console.log("reading :" + data['from']);
             $.ajax({
                 type: 'GET',
                 url: "{% url 'fx:get_customer_details_url' %}",
@@ -2758,7 +2815,8 @@ $("#payment-login-lnk").click(function () {
                                 // $("#venture-total-txt").focus();
                                // $("#venture-submit-btn").css({display:"block"});
                                 changeHrefValues(response["member_info"]['id']);
-                                adjust_total();
+
+                              adjust_total();
 
                             } else {
 
@@ -3215,16 +3273,16 @@ $("#payment-login-lnk").click(function () {
         });
         $("#id_date_entered").css("background-color", "transparent");
         // $("#venture-submit-btn").hide();
-        $("#review-venture-submit-btn").click(function () {
+        // $("#review-venture-submit-btn").click(function () {
 
 
-            desc = $("#venture-description-txt").prop("desc");
-            $("#venture-description-txt").val(desc);
-            // submit_now=false;
-            submit_now = true;
-            console.log("submit review-venture-submit-btn.... is clicked.");
-            $("#venture-submit-btn").trigger("click");
-        });
+        //     desc = $("#venture-description-txt").prop("desc");
+        //     $("#venture-description-txt").val(desc);
+        //     // submit_now=false;
+        //     submit_now = true;
+        //     console.log("submit review-venture-submit-btn.... is clicked.");
+        //     $("#venture-submit-btn").trigger("click");
+        // });
 
 
 
