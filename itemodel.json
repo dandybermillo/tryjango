@@ -1,0 +1,243 @@
+C:\Users\dan\just_django\tryjango
+[
+{
+  "model": "fx.itemmodel",
+  "pk": 7,
+  "fields": {
+    "title": "dan",
+    "product_id": "",
+    "description": "test",
+    "category": 4,
+    "qty": 0,
+    "price": 0.0,
+    "cm": 0.0,
+    "reg_price": 0.0,
+    "img": "myqrcode.png",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 8,
+  "fields": {
+    "title": "nescafe",
+    "product_id": "",
+    "description": "sample",
+    "category": 4,
+    "qty": 0,
+    "price": 0.0,
+    "cm": 0.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 9,
+  "fields": {
+    "title": "sample qr",
+    "product_id": "",
+    "description": "this a aqr code",
+    "category": 0,
+    "qty": 0,
+    "price": 0.0,
+    "cm": 0.0,
+    "reg_price": 0.0,
+    "img": "index_qrcode.png",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 10,
+  "fields": {
+    "title": "lucky me instant noodles jjampong",
+    "product_id": "4807770272653",
+    "description": "",
+    "category": 4,
+    "qty": 0,
+    "price": 0.0,
+    "cm": 0.0,
+    "reg_price": 0.0,
+    "img": "LUCKY-ME-GO-CUP-JJAMPONG-70G.jpeg",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 11,
+  "fields": {
+    "title": "pencil",
+    "product_id": "A0001",
+    "description": "",
+    "category": 4,
+    "qty": 2,
+    "price": 10.0,
+    "cm": 1.0,
+    "reg_price": 11.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 12,
+  "fields": {
+    "title": "garlic",
+    "product_id": "A0002",
+    "description": "",
+    "category": 4,
+    "qty": 21,
+    "price": 50.0,
+    "cm": 5.0,
+    "reg_price": 55.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 13,
+  "fields": {
+    "title": "maggi",
+    "product_id": "A0003",
+    "description": "",
+    "category": 4,
+    "qty": 55,
+    "price": 10.0,
+    "cm": 2.0,
+    "reg_price": 12.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 15,
+  "fields": {
+    "title": "argintina",
+    "product_id": "748485800431",
+    "description": "",
+    "category": 4,
+    "qty": 3,
+    "price": 26.0,
+    "cm": 2.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 16,
+  "fields": {
+    "title": "manzanilla",
+    "product_id": "4800011159041",
+    "description": "",
+    "category": 4,
+    "qty": 10,
+    "price": 20.0,
+    "cm": 2.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 17,
+  "fields": {
+    "title": "Load",
+    "product_id": "A0005",
+    "description": "",
+    "category": 4,
+    "qty": 1,
+    "price": 0.0,
+    "cm": 0.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 18,
+  "fields": {
+    "title": "lucky me instant noodles jjampong",
+    "product_id": "4800016552137",
+    "description": "",
+    "category": 4,
+    "qty": 11,
+    "price": 20.0,
+    "cm": 2.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 19,
+  "fields": {
+    "title": "lucky me instant pancit canton",
+    "product_id": "4807770273711",
+    "description": "",
+    "category": 4,
+    "qty": 10,
+    "price": 16.0,
+    "cm": 2.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 20,
+  "fields": {
+    "title": "bear brand swak",
+    "product_id": "4800361410816",
+    "description": "",
+    "category": 4,
+    "qty": 12,
+    "price": 10.0,
+    "cm": 2.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 21,
+  "fields": {
+    "title": "vicks small",
+    "product_id": "4987176601285",
+    "description": "",
+    "category": 4,
+    "qty": 20,
+    "price": 50.0,
+    "cm": 4.0,
+    "reg_price": 0.0,
+    "img": "",
+    "sku": ""
+  }
+},
+{
+  "model": "fx.itemmodel",
+  "pk": 22,
+  "fields": {
+    "title": "vicks inhaler",
+    "product_id": "4987176013491",
+    "description": "4987176013491",
+    "category": 0,
+    "qty": 1,
+    "price": 20.0,
+    "cm": 2.0,
+    "reg_price": 22.0,
+    "img": "",
+    "sku": ""
+  }
+}
+]

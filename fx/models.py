@@ -39,12 +39,9 @@ class MemberModel (models.Model):
      gender_status = ((MR,"Mr."),(MS,"Ms."),(MRS,"Mrs"))
      gender = models.CharField(max_length=4,blank =False, null= False,  choices= gender_status)
      user = models.OneToOneField(User,null =True, on_delete = models.CASCADE, unique =  True)
-     
-     
      firstname = models.CharField(max_length=50,blank =False, null =False)
      middlename = models.CharField(default="", max_length=50,blank =True, null =True )
      lastname = models.CharField(max_length=50,blank =False, null =False)
-
      address =  models.CharField(max_length=300,blank =True, null =True)
      telephone =models.CharField(max_length=100,blank =True, null =True)
      note =models.TextField(max_length =400,blank =True,null=True)
@@ -59,6 +56,17 @@ class MemberModel (models.Model):
         return self.gender +" "+self.firstname+ " "+ self.lastname
      def __str__(self):
         return f"{self.gender} {self.firstname} {self.lastname}"
+class ItemSold(models.Model): 
+      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      item = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      product_id = models.CharField(max_length=13,blank =True)
+      qty = models.PositiveIntegerField(default =0)
+      amount = models.FloatField(default =0 )
+      cm = models.FloatField(default =0 )
+      price = models.FloatField(default =0 )
+      transaction_id = models.PositiveIntegerField(default =0)
+
+      
 class SkillCategoryModel (models.Model):   #
       category =models.CharField(max_length=100,blank =True, null =True)
 

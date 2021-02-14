@@ -569,17 +569,17 @@ th {
                     <div class="form-row">
                         <div class="form-group col-md-9">
                             <div id="customer-info-alert" class="alert alert-primary" role="alert">
-                                <span class="bolder" id="customer-info-alert-text">_</span>  <span id="transNumber">#{{venture.transId}}</span>
+                                <span class="bolder" id="customer-info-alert-text">_</span>  <span data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
                             
                             </div> 
                         </div>
                         <div class="form-group col-md-1">
-                            <input   id="press-me"   class="btn btn-secondary btn-md" type="button"
+                            <input  data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md" type="button"
                             value="WAKE UP" />
                         </div> 
                         
                         <div class="form-group col-md-1">
-                            <input  style="margin-left:20px" id="refresh"   class="btn btn-success btn-md" type="button"
+                            <input   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased." style="margin-left:20px" id="refresh"   class="btn btn-success btn-md" type="button"
                             value="RESTART" />
                         </div>
 
@@ -687,8 +687,8 @@ th {
             <table id="pos-table" class="table table-bordered">
                 <thead>
                     <tr class="green">
-                    <th scope="col">#</th>   
-                    <th scope="col">Item ID</th>
+                    <th scope="col">#-<span data-toggle="tooltip" data-placement="top" title="Total Number of Units" id="units-total"> 0 </span></th>   
+                    <th scope="col">Product ID</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Qty</th>
                     <th scope="col">Price</th>
@@ -764,8 +764,8 @@ th {
             </table>
             
             </div>
-            <button type="button" id="other-product" class="btn btn-success">No Barcode Products</button>
-            <label  class='bolder float-right'>Number of Units:<span id="units-total"> 0 </span></label>
+            <button data-toggle="tooltip" data-placement="top" title="To display form for data entry for product without barcode" type="button" id="other-product" class="btn btn-success">No Barcode Products</button>
+            <!-- <label  class='bolder float-right'>Number of Units</label> -->
 
 </div>  
 
@@ -779,10 +779,10 @@ th {
                          
 
                       
-                        <div class="form-group col-md-2 has-change-group">
+                        <div class="form-group col-md-2">
                             <label for="tender-txt" class="bolder col-form-label">TENDERED</label>
                             <div  id="main-source-drop">
-                                <input type="text"   class="bolder small-size  review form-control"
+                                <input type="text"   class=" has-change-group bolder small-size  review form-control"
                                 id="tender-txt" name="tender" value="{{venture.tender}}">
                             </div>
                         </div>
@@ -790,15 +790,15 @@ th {
                         <div class="form-group col-md-2 has-change-group">
                             <label for="change-txt" class="bolder red-color col-form-label">CHANGE</label>
                         <div  id="main-source-drop">
-                            <input type="text" readonly   class="red-color bolder small-size  review form-control"
+                            <input type="text" readonly   class=" has-change-group red-color bolder small-size  review form-control"
                             id="change-txt" name="change" value="{{venture.change}}">
                         </div>
                         </div>
                           
                         <div class="form-group col-md-2 has-change-group">
-                            <label for="main-source-drop" class="bolder col-form-label">DEPOSIT CHANGE TO</label>
+                            <label for="main-source-drop" class=" has-change-group bolder col-form-label">DEPOSIT CHANGE TO</label>
                             <div class="dropdown" id="main-source-drop">
-                                <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
+                                <button data-toggle="tooltip" data-placement="top" title="To Deposit Change to Wallet or Saving Account" class=" has-change-group left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
                                     {% ifequal venture.destination_acct_code 'S' %} SAVING ACCT {%else%}  {% ifequal venture.destination_acct_code 'W' %}  WALLET ACCT
@@ -811,7 +811,7 @@ th {
                                 <input hidden type="hidden"  name="change_deposit_to"   value="SELECT OPTION"
                                 id="change_deposit_to"  >
 
-                                <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                                <div class=" has-change-group dropdown-menu" aria-labelledby="source-cash-drop">
                                     
                                     <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
                                     <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
@@ -826,9 +826,9 @@ th {
                     
                         <div style ="margin-top: 15px;" class="form-group col-md-4">
                        
-                            <a id="reset-form" class="hide btn btn-secondary btn-md">Cancel</a>
-                            <input id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
-                            <input   disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
+                            <a data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="hide btn btn-secondary btn-md">Cancel</a>
+                            <input data-toggle="tooltip" data-placement="top" title="Validate Member Customer or Switch to Walk-In Customer" id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
+                            <input data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
                             <!-- {% if venture.id > 0 %}
                             <a hidden id="venture-delete"
                                 href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
@@ -1034,15 +1034,18 @@ th {
         </div>
         <div class="modal-body">
          
-                <div class="form-group">
+                  <div>
                   <label for="recipient-name" class="col-form-label">Quantity:</label>
                   <input id="quantity-txt-modal" type="text" class="form-control">
+                  <button type="button" class="altera acrescimo">+</button>
+                  <button type="button" class="altera decrescimo">-</button>
                 </div>
+                
            
         </div>
         <div class="modal-footer">
           <button id="ok-quantity" type="button" class="btn btn-primary">Ok</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -1085,8 +1088,10 @@ th {
                     <div class="form-group col-md-1">
                         <label for="pos-qty-txt" class="col-form-label">QTY<span
                             class="asteriskField">*</span> </label>
+                      
                         <input id="pos-qty-txt" readonly type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" value="{{member_info.member_id|upper}}">
+                            
                     </div>
                     <div class="form-group col-md-2">
                         <label for="pos-price-txt" class="col-form-label">PRICE<span
@@ -1115,14 +1120,14 @@ th {
 
 
                     <div class ="form-group col-md-8" style="padding-left:12px">
-                        <input  id="pos-add-btn" class="btn btn-success btn-md" type="button"
+                        <input data-toggle="tooltip" data-placement="top" title="Add Item"  id="pos-add-btn" class="btn btn-success btn-md" type="button"
                         value="ADD" />
                     
-                        <input  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                        <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
                     value="CANCEL" /> 
                         
                         
-                    <input  id="pos-delete-btn" class="btn btn-info btn-md" type="button"
+                    <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
                     value="DELETE" />
 
                    
@@ -1175,9 +1180,14 @@ th {
 
 
         </div>
-        <div class="modal-footer">
-        
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+        <div class="modal-footer"  style="display: block;">
+            
+             
+                 
+                
+                    <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">CLOSE</button>
+              
+       
         </div>
       </div>
     </div>
@@ -1352,9 +1362,11 @@ th {
     //okss
   
     var videoCode =0; //1-payment 2-venture
-
+    var items;
     var ID_Info = new Object();
+    var customerInfo = new Object();
     var product_detail = new Object();
+    customerInfo.id =1;
     ID_Info.id = "";
     ID_Info.ON_SEARCH = false;
     ID_Info.is_name_blank = true;
@@ -1366,6 +1378,34 @@ th {
     // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
     //console.log("previous acct:" + keys["previous-selected-account"]);
    
+
+//--------------- retrieve items
+  $.ajax({
+       url: '/itemList/',
+       type: "GET",
+       dataType: 'JSON',
+       success: function(response){
+           console.log(response);
+           items = response.data;
+        //  console.log(items);
+        //  var car = items.find(items => items.product_id ===  "A0002");
+        //  car.product_id = car.product_id+"*";
+        //  console.log(car);
+
+       },
+       error: function (response) {
+                    // do something with response
+         console.log(response);
+            
+                },
+              
+
+
+      });
+
+//--------------- end items
+
+
     (function () {
         'use strict';
         window.addEventListener('load', function () {
@@ -1386,7 +1426,7 @@ th {
     })();
 
     $(document).ready(function () {
-       
+        var tender = 0;
         var walk_in =true;
         let Barcode = {
             POS:0,
@@ -1409,6 +1449,26 @@ th {
          
          $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
 
+
+            // inc dec for input quantity
+
+            var $input = $("#quantity-txt-modal");
+
+            // Colocar a 0 ao início
+            $input.val(0);
+
+            // Aumenta ou diminui o valor sendo 0 o mais baixo possível
+            $(".altera").click(function(){
+                if ($(this).hasClass('acrescimo'))
+                    $input.val(parseInt($input.val())+1);
+                else if ($input.val()>=1)
+                    val=   parseInt($input.val());
+                    if (val-1 > 0) { 
+                    $input.val(parseInt($input.val())-1);
+                    }
+            });
+
+               // inc dec for input quantity ends
         (function () {
 			onScan.attachTo(document, {
 				suffixKeyCodes: [13],
@@ -1416,13 +1476,15 @@ th {
 				onScan: function (sCode, iQty) {
                     $('#press-me').trigger('focus');
                     console.log('Scanned: ' + iQty + 'x ' + sCode +"  Barcode.POS: "+Barcode.POS);
+
                     if (sCode != "121279")
                      { 
-                       /// beep();
+                       beep();
                        if (sCode.indexOf("x")> 0) {
                          console.log("search by barcode")
                          search_member_by_qrcode(sCode, "","qrcode");
                        }else {
+                        beep();
                            console.log("---"+ sCode);
                            search_product_details(sCode);
 
@@ -1723,14 +1785,35 @@ th {
 
 
         });
-       
+       //reset
        $("#reset-form").click(function() {
   
 
+        
+     
+            var rows = [];
+            $('#pos-table tr').each(function(i, n){
+                var $row = $(n);
+                if( $row.find('td:eq(1)').text().trim().length >0){ 
+                rows.push({
+                    product_id: $row.find('td:eq(1)').text(),
+                    qty:   $row.find('td:eq(3)').text(),
+                    price:    $row.find('td:eq(4)').text(),
+                    cm:       $row.find('td:eq(5)').text(),
+                    total:         $row.find('td:eq(6)').text(),
+                    
+                    
+                });
+            }
+            });
+            console.log("rows");
+          
+            console.log(JSON.stringify(rows));
+         
  
-      
+ return;
             
-
+       
            $("#pos-form").trigger("reset");
            $("#customer-info-alert-text").text("");
            $("#source-cash-drop").text("CASH");
@@ -1745,6 +1828,9 @@ th {
            customer = walk_in_id;
            customer_id ="WALK-IN";
            $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
+           tender =0;
+           $(".has-change-group").prop("disabled", false);
+           $("#units-total").text("");
 
           
        });
@@ -2109,10 +2195,18 @@ th {
                         $("#venture-submit-btn").prop("disabled",true);
                     }
                     $("#units-total").text(ctr);
+                    var tender =  parseFloat($("#tender-txt").val());
+                    if ( !isNaN(tender) && tender > 0){
+
+                        compute_change();
+                    }
+
             
 }
 //cancel
        $("#pos-cancel-btn").click(function () {
+
+
                
                clear_pos_top();
                hide_pos_editor(0);
@@ -2213,8 +2307,10 @@ th {
                                         }else{
                                             btn = "<a   id=q-"+pcode+" class='quantity  btn btn-info'>"+pqty +"</a>";
                                         }
-                                       
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a  class='del-row btn btn-info'><span class='red-color'>x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
+                                        
+                                        var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
+
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                     }else
                     {
@@ -2474,7 +2570,7 @@ $("#payment-login-lnk").click(function () {
                 form.reportValidity();
                 return;
             }
-            $(this).hide();
+            $(this).prop("disabled",true);
            
             e.preventDefault();
 
@@ -2660,9 +2756,11 @@ $("#payment-login-lnk").click(function () {
            }
 
         });
-        //search
+
+
         function search_product_details(item_id) {
-            console.log("searching begins");
+    
+            console.log("searching begins for :"+item_id);
             item_id =item_id.trim().toUpperCase();
             len = $("#c-"+item_id).length;
             if(curr_barcode == Barcode.POS){
@@ -2671,7 +2769,7 @@ $("#payment-login-lnk").click(function () {
             }
            // hide_pos_editor(0);
             if (len > 0 ){
-                console.log("existin....");
+                console.log("existing....");
                 $("#code-message").text(" Existing!");
                 setTimeout(function () {
                     $("#code-message").text("");
@@ -2681,6 +2779,113 @@ $("#payment-login-lnk").click(function () {
             }
             var data = {}
             //ID_Info.ON_SEARCH = true;
+       //  console.log(items);
+           var item = items.find(items => items.product_id ===   item_id);
+
+        //  car.product_id = car.product_id+"*";
+        console.log(item);
+            if (item) {
+                                   
+                                    
+                                   //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+                                   $("#pos-product-code-txt").css("background-color","white")
+                                   title =item.title;//response['product_info']['title'].trim();
+                                   price =parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+                                   cmoney = parseFloat(item.cm) ;// (response['product_info']['cm']);
+                                   if (isNaN(cmoney)) {
+                                         cmoney = 0;
+                                     }
+                                 
+                                  
+                                   if (isNaN(price)) {
+                                         price = 0;
+                                     }
+ 
+                                   if( walk_in ) {
+                                       total = price * 1; 
+                                     
+                                   }else{
+                                       total = price - cmoney;
+                                   }
+                                   
+                                   if (price <=0){
+                                     $("#pos-price-txt").prop("readonly",false);
+ 
+                                   }
+                                   if(curr_barcode == Barcode.POS){
+ 
+                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
+                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
+                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                         $("#pos-table > tbody").prepend(newRow);
+                                         
+                                         console.log(">>>>> edit is selected");
+                                         // table = document.getElementById("pos-table");
+                                         // // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                                         // table.rows[rIndex].cells[1].innerHTML = $("#pos-product-name-txt").val();
+                                         // table.rows[rIndex].cells[2].innerHTML =  $("#pos-qty-txt").val();
+                                         // table.rows[rIndex].cells[3].innerHTML =  $("#pos-price-txt").val();
+                                         // table.rows[rIndex].cells[4].innerHTML = $("#pos-c-money-txt").val();
+                                         // table.rows[rIndex].cells[5].innerHTML =  $("#pos-total-txt").val()
+                                         
+                                         // var total= compute_total_sales();
+                                         // $("#id_amount").val(total.total_sales);
+ 
+                                         if(walk_in) {
+                                             total.total_cm =0;
+                                         }
+                                         // $("#venture-total-txt").val(total.total_sales + total.total_cm);
+                                         // $("#id_cc").val(total.total_cm);
+                                         adjust_total();
+ 
+                                     
+ 
+                                   //1
+                                   }else {
+                                                 curr_barcode = Barcode.POS;
+                                                 $("#pos-product-name-txt").val( item.title  );//response['product_info']['title'].trim())
+                                                 $("#pos-price-txt").val(price);
+                                                 $("#pos-c-money-txt").val(cmoney);
+                                                 $("#pos-qty-txt").val("1");
+                                                 console.log("product_info ");
+                                                  
+                                                 $("#pos-total-txt").val(total);
+                                                 hide_pos_editor(1);
+                                                 if (item_id == "A0000"){
+ 
+                                                     $("#pos-product-name-txt").focus();
+                                                 }else{
+ 
+                                                     $("#pos-qty-txt").focus();
+                                                 }
+                                                
+ 
+ 
+                                   }
+ 
+                                  
+                               }else{
+                                 if(curr_barcode == Barcode.POS){
+                                     $("#pos-product-code-txt").val(item_id);
+ 
+                                 }
+                                 $("#pos-product-code-txt").css("background-color","red");
+                                 setTimeout(function () {
+                                      
+                                     $("#pos-product-code-txt").css("background-color","white");
+                                     
+                                 }, 10000);
+                                 
+                                  console.log("error retrieving product detail.");
+                               }
+
+
+
+
+
+
+
+            return
             data['item_id'] = item_id;
            
             console.log("s");
@@ -2725,7 +2930,8 @@ $("#payment-login-lnk").click(function () {
                                   if(curr_barcode == Barcode.POS){
 
                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
-                                        var newRow = "<tr  id=c-"+ item_id +"><td><a  class='del-row btn btn-info'><span class='red-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                        var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
+                                        var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
@@ -2800,6 +3006,147 @@ $("#payment-login-lnk").click(function () {
 
 
 
+        //search
+        // function search_product_details(item_id) {
+        //     console.log("searching begins");
+        //     item_id =item_id.trim().toUpperCase();
+        //     len = $("#c-"+item_id).length;
+        //     if(curr_barcode == Barcode.POS){
+        //         clear_pos_top();
+        //         hide_pos_editor(0);
+        //     }
+        //    // hide_pos_editor(0);
+        //     if (len > 0 ){
+        //         console.log("existin....");
+        //         $("#code-message").text(" Existing!");
+        //         setTimeout(function () {
+        //             $("#code-message").text("");
+        //            }, 10000);
+        //         hide_pos_editor(0);
+        //         return;
+        //     }
+        //     var data = {}
+        //     //ID_Info.ON_SEARCH = true;
+        //     data['item_id'] = item_id;
+           
+        //     console.log("s");
+          
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: "{% url 'fx:get_product_details_url' %}",
+        //         data: data,
+        //         dataType: "json",
+        //         success: function (response) {
+                   
+        //                      console.log("response['data']");
+        //                      console.log(response['data']);
+        //                     if (response['data'] == "Success") {
+                                   
+                                    
+        //                           //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+        //                           $("#pos-product-code-txt").css("background-color","white")
+        //                           title =response['product_info']['title'].trim();
+        //                           price = parseFloat( response['product_info']['price']);
+        //                           cmoney = parseFloat(response['product_info']['cm']);
+        //                           if (isNaN(cmoney)) {
+        //                                 cmoney = 0;
+        //                             }
+                                
+                                 
+        //                           if (isNaN(price)) {
+        //                                 price = 0;
+        //                             }
+
+        //                           if( walk_in ) {
+        //                               total = price * 1; 
+                                    
+        //                           }else{
+        //                               total = price - cmoney;
+        //                           }
+                                  
+        //                           if (price <=0){
+        //                             $("#pos-price-txt").prop("readonly",false);
+
+        //                           }
+        //                           if(curr_barcode == Barcode.POS){
+
+        //                             var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
+        //                                 var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
+        //                                 var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+        //                                 $("#pos-table > tbody").prepend(newRow);
+                                        
+        //                                 console.log(">>>>> edit is selected");
+        //                                 // table = document.getElementById("pos-table");
+        //                                 // // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+        //                                 // table.rows[rIndex].cells[1].innerHTML = $("#pos-product-name-txt").val();
+        //                                 // table.rows[rIndex].cells[2].innerHTML =  $("#pos-qty-txt").val();
+        //                                 // table.rows[rIndex].cells[3].innerHTML =  $("#pos-price-txt").val();
+        //                                 // table.rows[rIndex].cells[4].innerHTML = $("#pos-c-money-txt").val();
+        //                                 // table.rows[rIndex].cells[5].innerHTML =  $("#pos-total-txt").val()
+                                        
+        //                                 // var total= compute_total_sales();
+        //                                 // $("#id_amount").val(total.total_sales);
+
+        //                                 if(walk_in) {
+        //                                     total.total_cm =0;
+        //                                 }
+        //                                 // $("#venture-total-txt").val(total.total_sales + total.total_cm);
+        //                                 // $("#id_cc").val(total.total_cm);
+        //                                 adjust_total();
+
+                                    
+
+        //                           //1
+        //                           }else {
+        //                                         curr_barcode = Barcode.POS;
+        //                                         $("#pos-product-name-txt").val(response['product_info']['title'].trim())
+        //                                         $("#pos-price-txt").val(price);
+        //                                         $("#pos-c-money-txt").val(cmoney);
+        //                                         $("#pos-qty-txt").val("1");
+        //                                         console.log("product_info ");
+        //                                         console.log(response['product_info'] );
+        //                                         $("#pos-total-txt").val(total);
+        //                                         hide_pos_editor(1);
+        //                                         if (item_id == "A0000"){
+
+        //                                             $("#pos-product-name-txt").focus();
+        //                                         }else{
+
+        //                                             $("#pos-qty-txt").focus();
+        //                                         }
+                                               
+
+
+        //                           }
+
+                                 
+        //                       }else{
+        //                         if(curr_barcode == Barcode.POS){
+        //                             $("#pos-product-code-txt").val(item_id);
+
+        //                         }
+        //                         $("#pos-product-code-txt").css("background-color","red");
+        //                         setTimeout(function () {
+                                     
+        //                             $("#pos-product-code-txt").css("background-color","white");
+                                    
+        //                         }, 10000);
+                                
+        //                          console.log("error retrieving product detail.");
+        //                       }
+                     
+        //         },
+        //         error: function (response) {
+                    
+        //             console.log("Unable to retrieve product info");
+        //             console.log(response);
+        //         }
+        //     });
+
+        // }
+
+
+
 //search
         function search_member_by_qrcode(customer_id, qrpassword, code) {
             console.log("on search_member func");
@@ -2858,6 +3205,7 @@ $("#payment-login-lnk").click(function () {
 
                                 name = response["member_info"]['name'].toUpperCase();
                                 $("#customer").val(response["member_info"]['id']);
+                                ID_Info.id =response["member_info"]['id'];
                                 console.log("id customer: " + $("#id_customer").val());
                                 cm_balance = response["balances"]['cc'];
                                 $("#id_cc").prop("max",cm_balance);
@@ -2931,7 +3279,7 @@ $("#payment-login-lnk").click(function () {
                                 console.log("else of response['data'] == 'Success' passed" );
                                 console.log("changeHrefValues(response[member_info]['id'])");
                                // changeHrefValues(response["member_info"]['id']);
-                                ID_Info.id = "";
+                                ID_Info.id = 0;
                                 ID_Info.is_name_blank = true;
                                 $("#venture-customer_id-txt").focus();
                                 $("#customer-name").val("");
@@ -3327,16 +3675,30 @@ $("#payment-login-lnk").click(function () {
                 account_name = "CASH";
             
             //25
-            $(".has-change-group").show();
+            $(".has-change-group").prop("disabled", false);
+            if (tender > 0) {
+
+                $("#tender-txt").val(tender);
+                compute_change();
+                console.log("---------->>>>>> cash")
+            }
             
 
 
-
+//wallet
             } else {
                 source_type = "W";
                 account_name = "WALLET";
                 keys['CC-BALANCE'] 
-                $(".has-change-group").hide();
+                $(".has-change-group").prop("disabled", true);
+                var tendered =  parseFloat($("#tender-txt").val());
+               
+                    if ( !isNaN(tendered)   &&  tendered > 0){
+                        tender =tendered;
+                        $("#change-txt").val("");
+                        $("#tender-txt").val("");
+                    }
+
 
 
             }

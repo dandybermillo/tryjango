@@ -134,6 +134,12 @@ urlpatterns = [
   #-------------------- VENTURE ------------------------
   path('pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture, name = "create_update_venture_url"), 
   
+  
+  #to be remove
+   path('itemList/', views.itemList, name='itemList'),
+
+  #end
+  
   path('fx_pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture1, name = "fx_pos_url"), 
 
   path('pos_view/', views.pos_view.as_view(), name = "pos_view_url"), 

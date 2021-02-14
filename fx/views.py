@@ -55,6 +55,7 @@ from datetime import timedelta
 from django.views.generic import View
 from time import time
 #end test
+from django.core import serializers
 
 #error logging
 import logging,traceback
@@ -97,6 +98,10 @@ def user_login_success(request,id):
         member_id=""
         try:
                 qs = MemberModel.objects.get(user_id = user_id)
+                
+                
+                
+                
                 id = qs.id
                 member_id = qs.member_id
                 print(f"id: {id}--- member id: {member_id}")
@@ -1862,8 +1867,24 @@ class pos_view(View):
                     
     
             
-            
+#to be removed
 
+       
+def itemList(request):
+    items = ItemModel.objects.all()
+   # item_list = serializers.serialize('json', items)
+ #  return HttpResponse(item_list, content_type="text/json-comment-filtered")
+    data = list(items.values())
+    return JsonResponse({"data":data})
+   #return HttpResponse(data, content_type="text/json-comment-filtered")
+    
+    
+    #other way
+    
+    # data = [{'name': 'Peter', 'email': 'peter@example.org'},
+    #         {'name': 'Julia', 'email': 'julia@example.org'}]
+
+    # return JsonResponse(data, safe=False)
        
 
             
@@ -1875,6 +1896,13 @@ class pos_view(View):
 
 def create_update_venture1(request,customer_id,venture_id ):
     qs= VentureModel.objects.last()
+    qs1= ItemModel.objects.all()
+    
+    post_list = serializers.serialize('json', qs1)
+    print("----------  to json")
+    print(post_list)
+    
+    
     print(f"---------- id:{qs.id}")
     print (f"user: {request.user}")
     default_percentage = 95  #
