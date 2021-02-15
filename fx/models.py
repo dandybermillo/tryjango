@@ -18,20 +18,33 @@ class CodeGeneratorModel(models.Model):
       sender_id =models.IntegerField(default = 0)
       code = models.PositiveIntegerField(default =0)
 
-class ItemModel(models.Model): 
+# class ProductModels(models.Model): 
+#       PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
+#       CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
+#       title = models.CharField(max_length = 200,blank= True) 
+#       #description =  models.CharField(max_length=300,blank =True) 
+#       category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)
+#       qty = models.PositiveIntegerField()
+#       price = models.FloatField()
+#       #cm = models.FloatField(default =0 )
+#       reg_price = models.FloatField()
+#       product_id = models.CharField(max_length=13,blank =True)
+#       img = models.ImageField(blank =True, null =True) 
+#       sku =  models.CharField(max_length = 20,blank= True) 
+class ProductModel(models.Model): 
       PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
       CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
       title = models.CharField(max_length = 200,blank= True) 
-      
-      product_id = models.CharField(max_length=13,blank =True)
-      description =  models.CharField(max_length=300,blank =True) 
+      #description =  models.CharField(max_length=300,blank =True) 
       category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)
-      qty = models.PositiveIntegerField(default =0)
-      price = models.FloatField(default =0 )
-      cm = models.FloatField(default =0 )
-      reg_price = models.FloatField(default =0 )
+      qty = models.PositiveIntegerField()
+      price = models.FloatField()
+      #cm = models.FloatField(default =0 )
+      reg_price = models.FloatField()
+      product_id = models.CharField(max_length=13,blank =True)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
+  
 
 class MemberModel (models.Model):
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
@@ -56,16 +69,40 @@ class MemberModel (models.Model):
         return self.gender +" "+self.firstname+ " "+ self.lastname
      def __str__(self):
         return f"{self.gender} {self.firstname} {self.lastname}"
-class ItemSold(models.Model): 
-      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-      item = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-      product_id = models.CharField(max_length=13,blank =True)
+# class ps(models.Model): 
+#       amount = models.FloatField(default =0 )
+#       cm = models.FloatField(default =0 )
+class ProductSold(models.Model): 
+      
+      member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      #product_id = models.CharField(max_length=13,blank =True)
       qty = models.PositiveIntegerField(default =0)
       amount = models.FloatField(default =0 )
       cm = models.FloatField(default =0 )
       price = models.FloatField(default =0 )
       transaction_id = models.PositiveIntegerField(default =0)
-
+      
+# class item(models.Model): 
+      
+#       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+#       items = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+     # product_id = models.CharField(max_length=13,blank =True)
+      # qty = models.PositiveIntegerField(default =0)
+      # amount = models.FloatField(default =0 )
+      # cm = models.FloatField(default =0 )
+      # price = models.FloatField(default =0 )
+      # transaction_id = models.PositiveIntegerField(default =0)
+# class productSold(models.Model): 
+      
+#       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+#       product = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+#      # product_id = models.CharField(max_length=13,blank =True)
+#       qty = models.PositiveIntegerField(default =0)
+#       amount = models.FloatField(default =0 )
+#       cm = models.FloatField(default =0 )
+#       price = models.FloatField(default =0 )
+#       transaction_id = models.PositiveIntegerField(default =0)
       
 class SkillCategoryModel (models.Model):   #
       category =models.CharField(max_length=100,blank =True, null =True)

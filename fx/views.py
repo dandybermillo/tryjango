@@ -3,6 +3,9 @@
 #3 wallet_new_transaction
 #4 create_update_member_wallet
 
+from django.views.decorators.csrf import csrf_exempt
+
+
 import ast, base64
 from datetime import date,datetime
 from django.http import HttpResponse, HttpResponseNotFound
@@ -10,10 +13,10 @@ from django.views.defaults import page_not_found
 
 from django.shortcuts import render, get_object_or_404, redirect, Http404
 from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,VentureForm,TradeForm
-from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel
+from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel 
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
 from fx.models import MechanicModel,LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel,RepairModel,DeliveryModel,ConstructionModel,LoadModel
-from fx.models import Change_Table,ItemModel
+from fx.models import Change_Table,ProductModel,ProductSold
 from .forms import WalletForm,SavingForm
 
 from fx.models import WalletModel,CodeGeneratorModel,UserPreferenceModel
@@ -646,7 +649,7 @@ def get_product_details(request):
     
     try:
         
-         product_info_qs = ItemModel.objects.get(product_id  =item_id)  
+         product_info_qs = ProductModel.objects.get(product_id  =item_id)  
          product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
          print ("success readin prod detail")
          return JsonResponse({"data":"Success","product_info":product_info}, status = 200)
@@ -1868,10 +1871,64 @@ class pos_view(View):
     
             
 #to be removed
+# @csrf_exemp
+class JsonRead(View):
+    template_name = 'MW_Etc/jsonpost.html'
+    def get(self,request):
+        return render(request, self.template_name)
+
+    def post(self,request):
+        print("---------------:post")
+       
+        items = json.loads(request.body)
+        print(f"---------------:{items }")
+        try:
+                for  obj in items:
+                    print(obj)
+                   # print(f"obj.customer :{}")
+                    customer = qty=obj["customer"]
+                    if customer == 1:
+                        customer =4
+                    itemsold= ProductSold (member_id= customer,qty=obj["qty"],cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"])
+                    itemsold.save()
+                  
+        except Exception as e:
+             print(f"error writin: {e}")
+             logger.waning(f"error at jsonRead: e: {e}")
+        
+        return JsonResponse({"type":"success"})
+        
+    #       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+    #   item = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+    #   product_id = models.CharField(max_length=13,blank =True)
+    #   qty = models.PositiveIntegerField(default =0)
+    #   amount = models.FloatField(default =0 )
+    #   cm = models.FloatField(default =0 )
+    #   price = models.FloatField(default =0 )
+    #   transaction_id = models.PositiveIntegerField(default =0)
+    
+    # venture_qs = Model(customer = customer,category =category,
+    #                                     amount = amount,cc = cc,transaction_type =transaction_type,date_entered =date_entered,
+    #                                     source_type =source_type,percent =percent)
+
+    #                             venture_qs.save()
+
+def post_itemSold(request):
+    print("-------------ok")
+    try:
+            items = json.loads(request.POST.get('data'))
+            print(items)
+    except Exception as e:
+         print(f" error: {e}")
+   # name = item['nameOfSchedule']['schedule_name']
+   # Schedule.objects.create(schedule_name = name)
+    return JsonResponse({"type":"success"})
+         
+
 
        
 def itemList(request):
-    items = ItemModel.objects.all()
+    items = ProductModel.objects.all()
    # item_list = serializers.serialize('json', items)
  #  return HttpResponse(item_list, content_type="text/json-comment-filtered")
     data = list(items.values())
@@ -1896,7 +1953,7 @@ def itemList(request):
 
 def create_update_venture1(request,customer_id,venture_id ):
     qs= VentureModel.objects.last()
-    qs1= ItemModel.objects.all()
+    qs1= ProductModel.objects.all()
     
     post_list = serializers.serialize('json', qs1)
     print("----------  to json")
