@@ -680,7 +680,31 @@ def get_product_details(request):
 
 
 
+def get_customer_details_bypass(request):
+    print("--def get customer details bypass")
+    logger.info("--def get customer details")
+    customer_id = request.GET.get("customer_id", "").strip().lower()
+    print(f"customer id: {customer_id} -----------------")
+
    
+    if request.is_ajax and request.method == "GET":
+      Message=""
+      try:   
+            message ="This user does not exist!"  #invalid username
+            print(f"---customer_id:{customer_id}")
+            print("------->>>>>")
+            #customer_id = customer_id.upper()
+            member_qs = MemberModel.objects.get(member_id=customer_id) 
+            member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
+            print(f"member_info:{member_info}")
+            #cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
+            balances =get_all_balances(member_qs.id)
+            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
+      except Exception as e:
+            print (f"get customer detail bypass error: {e}, {type(e)}")
+            logger.warning(f"get customer detail bypass error:  {e}, {type(e)}")
+            return JsonResponse({"message":message}, status = 200)    
+    return JsonResponse({}, status = 400)
 
 def get_customer_details(request):
     print("--def get customer details")

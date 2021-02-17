@@ -575,10 +575,10 @@ th {
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-9">
-                            <div id="customer-info-alert" class="alert alert-primary" role="alert">
+                            <div id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
                             <span id="assets"   style="margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="25 " height="25" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
                                 <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
-                              </svg> </span>    <span class="bolder" id="customer-info-alert-text">_</span>  <span data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
+                              </svg> </span>    <span class="bolder" id="customer-info-alert-text">_</span>  <span style="float:right" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
                             
                             </div> 
                         </div>
@@ -781,7 +781,7 @@ th {
 </svg> </span>No Barcode</button> <span
             id="code-message" class="red-color"></span> 
             <!-- <label  class='bolder float-right'>Number of Units</label> -->
-         <label class="bolder" style="float:right">Total Units: <span  data-toggle="tooltip" data-placement="top" title="Total Number of Units" id="units-total"> 0 </span>  </label> 
+         <label class="bolder" style="float:right;margin-right: 25px; font-size: 20px;">Units: <span  data-toggle="tooltip" data-placement="top" title="Total Number of Units" id="units-total"> 0 </span>  </label> 
 
 </div>  
 
@@ -811,11 +811,11 @@ th {
                             id="change-txt" name="change" value="{{venture.change}}">
                         </div>
                         </div>
-                          
-                        <div class="form-group col-md-2 has-change-group">
+                          <!-- i remve has-change-group from   <div class="form-group col-md-2 ">   -->
+                        <div class="form-group col-md-2 ">  
                             <label for="main-source-drop" class=" has-change-group bolder col-form-label">DEPOSIT CHANGE TO</label>
                             <div class="dropdown" id="main-source-drop">
-                                <button data-toggle="tooltip" data-placement="top" title="To Deposit Change to Wallet or Saving Account" class=" has-change-group left-position small-size btn btn-light dropdown-toggle" type="button"
+                                <button  class=" has-change-group left-position small-size btn btn-light dropdown-toggle" type="button"
                                     id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
                                     {% ifequal venture.destination_acct_code 'S' %} SAVING ACCT {%else%}  {% ifequal venture.destination_acct_code 'W' %}  WALLET ACCT
@@ -841,10 +841,10 @@ th {
                         <div class="form-group col-md-1">
                         </div>
                     
-                        <div style ="margin-top: 15px;" class="form-group col-md-4">
+                        <div style ="margin-top: 15px;" class="form-group col-md-5">
                        
-                            <a data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="btn btn-secondary btn-md">Cancel</a>
-                            <input data-toggle="tooltip" data-placement="top" title="Validate Member Customer or Switch to Walk-In Customer" id="venture-done" class="done btn btn-primary btn-md" type="button" value="Verify Member" />
+                            <a data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="btn btn-success btn-md">New Transaction</a>
+                            <input data-toggle="tooltip" data-placement="top" title="Validate Member Customer or Switch to Walk-In Customer" id="venture-done" class="done btn btn-primary btn-md" type="button" value="QR CODE" />
                             <input data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit" value="PAY NOW" />
                             <!-- {% if venture.id > 0 %}
                             <a hidden id="venture-delete"
@@ -1383,6 +1383,9 @@ th {
     var ID_Info = new Object();
     var customerInfo = new Object();
     var product_detail = new Object();
+    product_detail.units =0;
+    product_detail.previous_unit =0;
+
     customerInfo.id =1;
     ID_Info.id = "";
     ID_Info.ON_SEARCH = false;
@@ -1513,10 +1516,11 @@ th {
                 if ($(this).hasClass('acrescimo'))
                     $input.val(parseInt($input.val())+1);
                 else if ($input.val()>=1)
-                    val=   parseInt($input.val());
+                    var val=   parseInt($input.val());
                     if (val-1 > 0) { 
                     $input.val(parseInt($input.val())-1);
                     }
+
             });
 
                // inc dec for input quantity ends
@@ -1574,16 +1578,28 @@ th {
         });
 
         $("#ok-quantity").click(function(){
+            console.log("-----------:"+ $(this).text());
             table = document.getElementById("pos-table");
             // table.row   s[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
                
           //  $("#q"+rIndex).val($("#quantity-txt-modal").val());
-            // table.rows[rIndex].cells[3] = $("#quantity-txt-modal").val();
-            console.log("qty----");
-            console.log(table.rows[rIndex].cells[3]);
+            
+          //  console.log("qty----");
+           // console.log(table.rows[rIndex].cells[3]);
             var id = $("#quantity-txt-modal").attr("code");
             console.log("----id: "+id);
-            $("#"+id).text($("#quantity-txt-modal").val());
+            qty =$("#quantity-txt-modal").val();
+            table.rows[rIndex].cells[3] = $("#quantity-txt-modal").val();
+          //  table.rows[rIndex].cells[8] =$("#quantity-txt-modal").val();
+          //  console.log("================ : "+ qty);
+          //  console.log( table.rows[rIndex].cells[8]);
+            $("#"+id).text(qty);
+            qty = parseInt(pqty);
+            if (product_detail.previous_unit > 0 && product_detail.previous_unit != product_detail.unit){
+                product_detail.unit = (product_detail.unit - product_detail.previous_unit) + qty;
+
+            }
+
             adjust_total();
             $("#quantity-modal").modal('hide');
 
@@ -1596,6 +1612,12 @@ th {
             $("#product-modal").modal('hide');
             $("tr.selected").remove();
             adjust_total();
+
+
+        });
+        $("body").delegate(".make-receiver", "click", function(){
+          var id = $(this).attr("id");
+          console.log("=================== :"+ id);
 
 
         });
@@ -1614,6 +1636,8 @@ th {
               id = $(this).attr("id");
               qty = $(this).val();
               value =$(this).text();
+              qty= parseInt(qty);
+              product_detail.previous_unit =qty;
               console.log(" qyt: "+qty +" text" );
               $("#quantity-txt-modal").attr("code",id);
               console.log("------ quantity id:"+id+ " rowindex: "+rIndex);
@@ -1717,33 +1741,24 @@ th {
                                     // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
                                     console.log("--------------");
                                     console.log(response["balances"]);
+                                   
+
+
+                                    if (w_balance > 1000){
+                                    w_balance= "1000+"
+                                    } 
+                                
+                                    s_balance =  response["balances"]['saving'];
+                                    if (s_balance > 1000){
+                                        s_balance =  "1000+"
+                                    } 
+                                    if (cm_balance > 1000) {
+                                        cm_balance = "1000+";
+                                    } 
                                     table.rows[1].cells[1].innerHTML = cm_balance;
                                     table.rows[1].cells[2].innerHTML = w_balance;
                                     table.rows[1].cells[3].innerHTML = s_balance;
                                     table.rows[1].cells[4].innerHTML = l_balance;
-
-
-                                    // if (w_balance > 1000){
-                                    // w_balance= "W-1k+"
-                                    // }else
-                                    // {
-                                    //     w_balance="W-"+w_balance
-                                    // }
-                                
-                                    // s_balance =  response["balances"]['saving'];
-                                    // if (s_balance > 1000){
-                                    //     s_balance =  "S-1k+"
-                                    // }
-                                    // else
-                                    // {
-                                    //     s_balance = "S"+s_balance 
-                                    // }
-                                    // if (cm_balance > 1000) {
-                                    //     cm_balance = "CM-1k+";
-                                    // }else{
-                                    //     cm_balance ="CM-"+cm_balance;
-                                    // }
-
                                     cust_info = name + " | "+response["member_info"]["member_id"] ; //+ " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
                                     $("#customer-info-alert-text").text(cust_info);
                                   
@@ -1825,7 +1840,7 @@ th {
                             
                             "<p class='mb-1'>"+desc+": "+ customer_id +"</p>"+
 
-                            "<small>"+"A-Php"+amount+ " | CM-" +cc+  "</small>"+
+                            "<small>"+"A-Php"+amount+ " | " +cc+  "</small>"+
                             
                             "</button>");
 
@@ -1833,12 +1848,20 @@ th {
         function clear_pos_table(){
 
             $("#pos-table tbody tr").remove();
-            var newRow = "<tr ><td></td>  <td></td><td></td><td></td><td></td><td></td><td></td>  </tr>";
+            var newRow = "<tr class='bolder'><td></td>  <td></td><td></td><td></td><td></td><td></td><td></td>  </tr>";
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
 
+            
+            table = document.getElementById("assets-table");
+                                    // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+            table.rows[1].cells[1].innerHTML = "";
+            table.rows[1].cells[2].innerHTML = "";
+            table.rows[1].cells[3].innerHTML = "";
+            table.rows[1].cells[4].innerHTML =  "";
+            
         }
 
         
@@ -1855,61 +1878,61 @@ th {
        $("#reset-form").click(function() {
          
      
-            var rows = [];
-            $('#pos-table tr').each(function(i, n){
-                var $row = $(n);
-                if( $row.find('td:eq(1)').text().trim().length >0){ 
-                rows.push({
-                  //  product_id: $row.find('td:eq(1)').text(),
-                    qty:   $row.find('td:eq(3)').text(),
-                    price:    $row.find('td:eq(4)').text(),
-                    cm:       $row.find('td:eq(5)').text(),
-                    amount:   $row.find('td:eq(6)').text(),
-                    customer: customerInfo.id,
-                    item_id:  $row.find('td:eq(7)').text(),
+//             var rows = [];
+//             $('#pos-table tr').each(function(i, n){
+//                 var $row = $(n);
+//                 if( $row.find('td:eq(1)').text().trim().length >0){ 
+//                 rows.push({
+//                   //  product_id: $row.find('td:eq(1)').text(),
+//                     qty:   $row.find('td:eq(3)').text(),
+//                     price:    $row.find('td:eq(4)').text(),
+//                     cm:       $row.find('td:eq(5)').text(),
+//                     amount:   $row.find('td:eq(6)').text(),
+//                     customer: customerInfo.id,
+//                     item_id:  $row.find('td:eq(7)').text(),
                     
                     
-                });
-            }
-            });
-            console.log("rows");
+//                 });
+//             }
+//             });
+//             console.log("rows");
           
-            console.log(JSON.stringify(rows));
+//             console.log(JSON.stringify(rows));
          
-            $.ajax({
-                type: "POST",
-                url: "/post_itemSold/",
+//             $.ajax({
+//                 type: "POST",
+//                 url: "/post_itemSold/",
 
-                data: JSON.stringify(rows),
-                dataType: "json",
+//                 data: JSON.stringify(rows),
+//                 dataType: "json",
              
 
-                success: function (response) {
-                    // do something with response
-                    response["result"]; // equals 'Success or failed';
-                    response["message"]; // equals 'you"re logged in or You messed up';
+//                 success: function (response) {
+//                     // do something with response
+//                     response["result"]; // equals 'Success or failed';
+//                     response["message"]; // equals 'you"re logged in or You messed up';
 
-                    if (response["type"] === "success") {
-                       console.log(" success in postin items sold")
+//                     if (response["type"] === "success") {
+//                        console.log(" success in postin items sold")
 
-                    }
-                },
-                error: function (response) {
-                    // do something with response
-                    console.log("error:");
-                    console.log(response);
-                //   $("#login-error").text("Something went wrong! Try again.");
+//                     }
+//                 },
+//                 error: function (response) {
+//                     // do something with response
+//                     console.log("error:");
+//                     console.log(response);
+//                 //   $("#login-error").text("Something went wrong! Try again.");
                 
-                },
-                });
+//                 },
+//                 });
 
              
 
 
 
  
- return;
-            
+//  return;
+          
        
            $("#pos-form").trigger("reset");
            $("#customer-info-alert-text").text("");
@@ -2236,11 +2259,16 @@ th {
                 var unit=0;
                 $("#pos-table tbody tr").each(function(){
                         var currentRow=$(this);
-
+                        
                         var amount=parseFloat( currentRow.find("td:eq(6)").text());
+                        
+                        
                         var code= currentRow.find("td:eq(1)").text().trim();
+                      
                         if (code !="") {
-                            ctr =ctr + 1;
+                           // ctr =ctr + 1;
+                            unit = parseInt(  currentRow.find("td:eq(3) a").text());
+                            ctr =ctr +  unit;
                         }
 
 
@@ -2263,15 +2291,15 @@ th {
                          }
                         
                         if (walk_in) {
-                             console.log("---walk-in");
+                            // console.log("---walk-in");
                             tot =  price * qty;
                         }else{
-                            console.log("---member");
+                           // console.log("---member");
                              tot =(price * qty) - (cm * qty);
                              total_cm = total_cm +  (cm * qty); 
                              
                         }
-                        console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
+                       // console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
                         if (tot >0){ 
 
                            currentRow.find("td:eq(6)").text(tot);
@@ -2403,14 +2431,16 @@ th {
                                         if (pcode =="A0000") { 
                                             btn = pqty;
                                         }else{
-                                            btn = "<a   id=q-"+pcode+" class='quantity  btn btn-info'>"+pqty +"</a>";
+                                            btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+pqty +"</a>";
                                         }
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
                                         var item_id = $("#pos-product-code-txt").attr("item_id");
 
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td>   </tr>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
+                                        pqty = parseInt(pqty);
+                                        product_detail.units = product_detail.units + pqty;
                     }else
                     {
                                     console.log(">>>>> edit is selected");
@@ -2423,6 +2453,8 @@ th {
                                     cmoney = cmoney.toFixed(2)
                                     table.rows[rIndex].cells[5].innerHTML = cmoney;
                                     table.rows[rIndex].cells[6].innerHTML =  $("#pos-total-txt").val()
+                                    table.rows[rIndex].cells[7].innerHTML = $("#pos-qty-txt").val();
+
                                     $(this).val("ADD");
                                     
                     }
@@ -2934,7 +2966,7 @@ $("#payment-login-lnk").click(function () {
  
                                      var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                          var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
+                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td value='1'>"+btn+"</td><td>"+price+"</td><td>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                          $("#pos-table > tbody").prepend(newRow);
                                          
                                          console.log(">>>>> edit is selected");
@@ -3266,7 +3298,163 @@ $("#payment-login-lnk").click(function () {
         // }
 
 
+        function search_member_by_pass(member_id, code) {
+            keys["PREVIOUS-INPUT"] = "";
+            ID_Info.id = customer_id;
+            var data = {}
+            //ID_Info.ON_SEARCH = true;
+            data['customer_id'] = customer_id;
+            if (code == "qrcode") {
+                data['from'] = 'qrcode';
+                //data['qrpassword'] = qrpassword;
+            } else {
+                data['password'] = qrpassword;
+                data['from'] = 'manual';
+            }
+            console.log("reading :" + data['from']);
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'fx:get_customer_details_url' %}",
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    ID_Info.ON_SEARCH = false;
+                   
+                    videoCode = 2;
+                    if( videoCode == 2) {  // venture
+                             console.log("response['data']");
+                             console.log(response['data']);
+                            if (response['data'] == "Success") {
+                                var total_sales= parseFloat($("#venture-total-txt").val());
+                                if ( total_sales <=0 ||  isNaN(total_sales)){
+                                        console.log("=============");
+                                        console.log("total sales:"+total_sales);
+                                        $("#venture-submit-btn").prop("disabled",true);
+                                        submit_now = false;
+                                }else{
 
+                                    $("#venture-submit-btn").prop("disabled",false);
+                                    submit_now = true;
+                                }
+            
+                               
+                            ///    beep();
+                                console.log("response['data'] == 'Success' passed" );
+                                $("#venture-payment-failed-alert").hide();
+                                $("#login").modal('hide');
+                               // $("#venture-payment-transaction-modal").modal('show');
+
+                                name = response["member_info"]['name'].toUpperCase();
+                                $("#customer").val(response["member_info"]['id']);
+                                ID_Info.id =response["member_info"]['id'];
+                                customerInfo.id = ID_Info.id;
+                                console.log("id customer: " + $("#id_customer").val());
+                                cm_balance = response["balances"]['cc'];
+                                $("#id_cc").prop("max",cm_balance);
+                                w_balance=  response["balances"]['wallet'];
+                                l_balance=  response["balances"]['loan'];
+                                
+                                if (w_balance > 1000){
+                                    w_balance= "1,000+"
+                                } 
+                               
+                                s_balance =  response["balances"]['saving'];
+                                if (s_balance > 1000){
+                                    s_balance =  "1,000+"
+                                }
+                                 
+                                if (cm_balance > 1000) {
+                                    cm_balance = "1,000+";
+                                } 
+                                if (l_balance > 1000) {
+                                    l_balance ="1,000+"  ;
+                                } 
+                                table = document.getElementById("assets-table");
+                                    // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                                console.log("--------------");
+                                console.log(response["balances"]);
+                                table.rows[1].cells[1].innerHTML = cm_balance;
+                                table.rows[1].cells[2].innerHTML = w_balance;
+                                table.rows[1].cells[3].innerHTML = s_balance;
+                                table.rows[1].cells[4].innerHTML = l_balance;
+                                var member_id = response["member_info"]["member_id"].trim().toUpperCase();
+                                
+                                if(member_id =="WALK-IN"){
+                                         walk_in =true;
+                                }else{
+                                         walk_in =false;
+                                }
+                                cust_info = name + " | "+member_id;// + " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
+                                
+                                $("#customer-info-alert-text").text(cust_info);
+                                $("#assets").show();
+                                if (minimum_deposit > cm_balance) {
+                                    cm_balance = minimum_deposit;
+                                }
+                                $("#id_cc").prop("max", cm_balance);
+
+                                customer_id = response["member_info"]["member_id"];
+                                console.log("member_info..")
+                                console.log(response["member_info"])
+                                ID_Info.id = customer_id;
+                                ID_Info.is_name_blank = false;
+                                // $("#review-venture-balance-txt").val(cm_balance);
+                                // $("#review-venture-customer_id-txt").val(customer_id); //change to: appear in summary form
+                                // $("#review-venture-customer-txt").val(name); //change to: appear in summary form
+                                // $("#venture-total-txt").focus();
+                                 changeHrefValues(response["member_info"]['id']);
+
+                              adjust_total();
+
+                            } else {
+
+
+                                if (code == "qrcode") {
+
+                                    console.log("invalid credential" );
+                                    $("#invalid-credential").modal('show');
+                                     closeSnoAlertBox("","");
+                                }
+                                else{  
+                              
+                                console.log("else of response['data'] == 'Success' passed" );
+                                console.log("changeHrefValues(response[member_info]['id'])");
+                               // changeHrefValues(response["member_info"]['id']);
+                                ID_Info.id = 0;
+                                customerInfo.id =1;
+                                ID_Info.is_name_blank = true;
+                                $("#venture-customer_id-txt").focus();
+                                $("#customer-name").val("");
+                                message = response['message'];
+                                 
+                                $("#authenticate-alert").show();
+
+                                 }
+                         }
+                    }else // payment
+                    {
+                        var member_id = response["member_info"]['id'];
+                       if ( member_id > 0)
+                       {
+                                $("#payment-login-lnk-hidden").attr("href", "/payment/"+member_id.toString()+"/0/");
+                        // $("#main-venture").trigger("click");
+                        document.getElementById("payment-login-lnk-hidden").click();
+                       }
+                       console.log(".....success:" + response["member_info"]['id']);
+                       
+                    }
+                },
+                error: function (response) {
+                    customerInfo.id =1;
+                    walk_in =true;
+                    ID_Info.ON_SEARCH = false;
+                    cancel_dialog_hidden = false;
+                    console.log("error reach:");
+                    // console.log(response);
+                }
+            });
+        }
+        //23
 //search
         function search_member_by_qrcode(customer_id, qrpassword, code) {
             console.log("on search_member func");
@@ -3521,97 +3709,97 @@ $("#payment-login-lnk").click(function () {
 //            console.log("---------------change---");
 //            console.log($(this).val());
 //         });
-        $("#venture-total-txt").on("keyup", function (e) {
-            var percent = parseFloat($("#percent-drop").text());
-            if (percent <= 0 || percent > 100 || isNaN(percent)) {
-                percent = 95;
-                $("#percent-drop").text(percent + "%");
-            }
-            total_cost = parseFloat($(this).val());
-            if (isNaN(total_cost)) {
-                total_cost = 0;
-            }
-            var amount = total_cost * ((percent / 100))   //Math.round(total_cost * ((cc_percent / 100)));
-            amount = amount.toFixed(2).replace('.00', '');
-            $("#id_amount").val(amount);
-            cc = total_cost - amount;
-            $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
-            if (keys["SOURCE"] != 'W') {  //cash: K
-                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                $("#venture-total_owing-txt").val("P " + amount);
-            } else {
-                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-            }
-            compute_change();
-        });
+        // $("#venture-total-txt").on("keyup", function (e) {
+        //     var percent = parseFloat($("#percent-drop").text());
+        //     if (percent <= 0 || percent > 100 || isNaN(percent)) {
+        //         percent = 95;
+        //         $("#percent-drop").text(percent + "%");
+        //     }
+        //     total_cost = parseFloat($(this).val());
+        //     if (isNaN(total_cost)) {
+        //         total_cost = 0;
+        //     }
+        //     var amount = total_cost * ((percent / 100))   //Math.round(total_cost * ((cc_percent / 100)));
+        //     amount = amount.toFixed(2).replace('.00', '');
+        //     $("#id_amount").val(amount);
+        //     cc = total_cost - amount;
+        //     $("#id_cc").val(cc.toFixed(2).replace('.00', ''));
+        //     if (keys["SOURCE"] != 'W') {  //cash: K
+        //         console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+        //         $("#venture-total_owing-txt").val("P " + amount);
+        //     } else {
+        //         $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+        //     }
+        //     compute_change();
+        // });
 
-        $("#id_amount").on("keyup", function () {
-            console.log(" #id_amount is on");
-            amount = parseFloat($(this).val());
-            if (isNaN(amount)) {
-    $          ("#venture-total-txt").val()
-                amount = 0;
-            }
-            total_cost = parseFloat();
-            var cc = total_cost - amount;  // Math.round(total_cost - amount);
-            cc = cc.toFixed(2).replace('.00', '');
-            $("#id_cc").val(cc);
-            percent = (amount * 100) / total_cost // Math.round((amount * 100) / total_cost);
-            if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
-                percent = 95;
-                $("#percent-drop").text(percent + "%");
-            }
-            $("#id_percent").val(percent.toFixed(2))
-            percent = percent.toFixed(2).replace('.00', '');
-            if (isNaN(percent)) {
-                percent = 0;
-            }
-            $("#percent-drop").text(percent + "%");
-            console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-            if (keys["SOURCE"] != 'W') {  //cash: K
-                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                if (amount > 0) {
-                    $("#venture-total_owing-txt").val("P " + amount);
-                } else {
-                    $("#venture-total_owing-txt").val("");
-                }
-            } else {
+    //     $("#id_amount").on("keyup", function () {
+    //         console.log(" #id_amount is on");
+    //         amount = parseFloat($(this).val());
+    //         if (isNaN(amount)) {
+    // $          ("#venture-total-txt").val()
+    //             amount = 0;
+    //         }
+    //         total_cost = parseFloat();
+    //         var cc = total_cost - amount;  // Math.round(total_cost - amount);
+    //         cc = cc.toFixed(2).replace('.00', '');
+    //         $("#id_cc").val(cc);
+    //         percent = (amount * 100) / total_cost // Math.round((amount * 100) / total_cost);
+    //         if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+    //             percent = 95;
+    //             $("#percent-drop").text(percent + "%");
+    //         }
+    //         $("#id_percent").val(percent.toFixed(2))
+    //         percent = percent.toFixed(2).replace('.00', '');
+    //         if (isNaN(percent)) {
+    //             percent = 0;
+    //         }
+    //         $("#percent-drop").text(percent + "%");
+    //         console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+    //         if (keys["SOURCE"] != 'W') {  //cash: K
+    //             console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+    //             if (amount > 0) {
+    //                 $("#venture-total_owing-txt").val("P " + amount);
+    //             } else {
+    //                 $("#venture-total_owing-txt").val("");
+    //             }
+    //         } else {
 
-                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-            }
+    //             $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+    //         }
 
 
-        });
-        $("#id_cc").on("keyup", function () {
-            var percent = parseFloat($("#percent-drop").text());
-            if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
-                percent = 95;
-                console.log("changing percent");
-                $("#percent-drop").text(percent + "%");
-            }
-            cc = parseFloat($(this).val());
-            total_cost = parseFloat($("#venture-total-txt").val());
-            var amount = 0; //Math.round(total_cost - cc);
-            amount = total_cost - cc;
-            percent = (amount * 100) / total_cost; /// Math.round((amount * 100) / total_cost);
-            if (isNaN(percent)) {
-                percent = 0
-            }
-            if (isNaN(amount)) {
-                amount = 0
-            }
-            $("#id_amount").val(amount);
-            $("#id_percent").val(percent.toFixed(2))
-            percent = percent.toFixed(2).replace('.00', '');
-            $("#percent-drop").text(percent + "%");
-            if (keys["SOURCE"] != 'W') {  //cash: K
-                console.log("in keys[SOURCE]: " + keys["SOURCE"]);
-                $("#venture-total_owing-txt").val("P " + amount);
-            } else {
+    //     });
+        // $("#id_cc").on("keyup", function () {
+        //     var percent = parseFloat($("#percent-drop").text());
+        //     if (percent <= 0 || percent > 100 || isNaN(percent) == NaN) {
+        //         percent = 95;
+        //         console.log("changing percent");
+        //         $("#percent-drop").text(percent + "%");
+        //     }
+        //     cc = parseFloat($(this).val());
+        //     total_cost = parseFloat($("#venture-total-txt").val());
+        //     var amount = 0; //Math.round(total_cost - cc);
+        //     amount = total_cost - cc;
+        //     percent = (amount * 100) / total_cost; /// Math.round((amount * 100) / total_cost);
+        //     if (isNaN(percent)) {
+        //         percent = 0
+        //     }
+        //     if (isNaN(amount)) {
+        //         amount = 0
+        //     }
+        //     $("#id_amount").val(amount);
+        //     $("#id_percent").val(percent.toFixed(2))
+        //     percent = percent.toFixed(2).replace('.00', '');
+        //     $("#percent-drop").text(percent + "%");
+        //     if (keys["SOURCE"] != 'W') {  //cash: K
+        //         console.log("in keys[SOURCE]: " + keys["SOURCE"]);
+        //         $("#venture-total_owing-txt").val("P " + amount);
+        //     } else {
 
-                $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
-            }
-        });
+        //         $("#venture-total_owing-txt").val("DEDUCTED FROM WALLET ACCOUNT.");
+        //     }
+        // });
 
 
         $("#btn-auth-hide").click(function () {
@@ -3773,8 +3961,9 @@ $("#payment-login-lnk").click(function () {
         //     $("#id_role_type").val(role_type);
 
         // })
-
+//er
         $(".deposit-cash").click(function () {
+            
             var text = $(this).text().trim();
             // note: 2 bottom shud always together
             $("#deposit-cash-drop").text(text);
@@ -3786,6 +3975,7 @@ $("#payment-login-lnk").click(function () {
 
 
         $(".source-cash").click(function () {
+
             var text = $(this).text().trim();
             $("#source-cash-drop").text(text);
             var max = 0

@@ -21,6 +21,8 @@ urlpatterns = [
      path('get_payment_details/', views.get_payment_details, name = "get_payment_details_url"),
      #path('get_customer_details/', views.get_customer_details, name = "get_customer_details_url"),
      path('get_customer_details/', views.get_customer_details, name = "get_customer_details_url"),
+     path('get_customer_details_bypass/', views.get_customer_details_bypass, name = "get_customer_details_bypass_url"),
+
      path('get_product_details/', views.get_product_details, name = "get_product_details_url"),
      path('check_user/', views.check_user, name = "check_user_url"),#must be removed
 

@@ -196,7 +196,8 @@
             }else if (code == "member-partial-payment") {
                 // for payment on venture
                 button = "<td> <a class='btn btn-sm btn-info' href='/payment/" + item.id + "/0/' >Make Payment</a> </td>";
-                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td><span id='code'>" + item.id + "</span></td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td> <td class='left'>" + item.username + " </td> " + button + "</tr>";
+                btn_bypass = "<td><button id='"+ item.username+"'  name='make-receiver-extension' class='make-receiver btn btn-sm btn-warning'> By Pass </button></td>";
+                markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td><span id='code'>" + item.id + "</span></td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td> <td class='left'>" + item.username + " </td> " + button + " "+ btn_bypass+ "</tr>";
            } else {
                 markup = "<tr " + classname + " id=" + item.id + "> <th>" + row_ctr + "</th> <td><span id='code'>" + item.id + "</span></td> <td class='left' id='receiver'>" + fullname + "</td><td class='left'>" + item.address + "</td><td class='left'>" + item.telephone + "</td> <td class='left'>" + item.username + " </td> <td><button onclick='add_receiver(this)' name='make-receiver-extension' class='make-receiver btn btn-sm btn-info'> Make receiver </button></td></tr>";
             }
