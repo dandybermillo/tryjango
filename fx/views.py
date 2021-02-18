@@ -683,7 +683,7 @@ def get_product_details(request):
 def get_customer_details_bypass(request):
     print("--def get customer details bypass")
     logger.info("--def get customer details")
-    customer_id = request.GET.get("customer_id", "").strip().lower()
+    customer_id = request.GET.get("member_id", "").strip().lower()
     print(f"customer id: {customer_id} -----------------")
 
    
@@ -1956,14 +1956,16 @@ def itemList(request):
    # item_list = serializers.serialize('json', items)
  #  return HttpResponse(item_list, content_type="text/json-comment-filtered")
     data = list(items.values())
+    # data = [{'label': 'Peter', 'email': 'peter@example.org'},
+    #         {'label': 'Julia', 'email': 'julia@example.org'}]
     return JsonResponse({"data":data})
    #return HttpResponse(data, content_type="text/json-comment-filtered")
     
     
     #other way
     
-    # data = [{'name': 'Peter', 'email': 'peter@example.org'},
-    #         {'name': 'Julia', 'email': 'julia@example.org'}]
+    # data = [{'label': 'Peter', 'email': 'peter@example.org'},
+    #         {'label': 'Julia', 'email': 'julia@example.org'}]
 
     # return JsonResponse(data, safe=False)
        
@@ -1981,7 +1983,7 @@ def create_update_venture1(request,customer_id,venture_id ):
     
     post_list = serializers.serialize('json', qs1)
     print("----------  to json")
-    print(post_list)
+   # print(post_list)
     
     
     print(f"---------- id:{qs.id}")
