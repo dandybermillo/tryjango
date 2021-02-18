@@ -556,13 +556,7 @@ th {
  
 
     {% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
-    <!-- <div id="mssssain">
-       
-     
-        <input xtype=hidden name=theValue>
-
-
-        </div> -->
+   
  
     <div class="container" style="border:none;width: 90%;">
         <div class="tcard">
@@ -713,6 +707,16 @@ th {
                             <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
                         </div>
 
+                        <div  id="msain" class="form-row"> 
+                            <label for="autocomplete" class="col-form-label">  Search Items </label> 
+                            <div class="form-group col-md-8"  class="mid-size form-control"> 
+                               
+                              
+                             <input id="autocomplete">
+                            </div>
+                            <input type=hidden name=theValue>
+                        </div>
+
                     </div>      
 
                     <!-- ---- container begin --- -->
@@ -818,8 +822,8 @@ th {
                     <!-- --------- container ends ------------ -->
                      <br>
                      <br>
-                    <br>
-                    <div style="margin-top:10px;" class="form-row">
+                    
+                    <div style="margin-top:0px;" class="form-row">
                        
                          
 
@@ -1124,13 +1128,7 @@ th {
 
 
             <div>
-                <div  id="msain"> class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="pos-product-code-txtautocompleteautocomplete" class="col-form-label">  Search Items </label> 
-                        <input xtype=hidden name=theValue>
-                    <input id="autocomplete">
-                    </div>
-                </div>
+                
                
                 <div class="form-row">
                     <div class="form-group col-md-3">
@@ -1443,7 +1441,33 @@ th {
    
     
 
-var objs = [];
+
+//--------------- end items
+
+
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    console.log("submitting......");
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    $(document).ready(function () {
+
+
+         var objs = [];
 
  
 
@@ -1485,37 +1509,16 @@ var objs = [];
 	source: objs,
   select: function(e, ui) {
     console.log("value:");
-    $("#pos-product-code-txt").val(ui.item.theValue);
+
+    item_id = ui.item.theValue;
+    $("#pos-product-code-txt").val(item_id);
+    search_product_details(item_id);
+    $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
+     //$("#pos-add-btn").trigger("click");
   }
 });
 
 console.log(items);
-//--------------- end items
-
-
-    (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
-                    console.log("submitting......");
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-
-    $(document).ready(function () {
-
-
-         
 
         function getCookie(name) {
         var cookieValue = null;
@@ -1661,7 +1664,7 @@ console.log(items);
           //  console.log("================ : "+ qty);
           //  console.log( table.rows[rIndex].cells[8]);
             $("#"+id).text(qty);
-            qty = parseInt(pqty);
+            qty = parseInt(qty);
             if (product_detail.previous_unit > 0 && product_detail.previous_unit != product_detail.unit){
                 product_detail.unit = (product_detail.unit - product_detail.previous_unit) + qty;
 
@@ -2883,7 +2886,7 @@ $("#payment-login-lnk").click(function () {
             });
 //code
          $("#pos-product-code-txt").keyup(function (event) {
-            
+               console.log("-----code reach...");
                  $(this).val($(this).val().toUpperCase());
                 var item_id= $(this).val().trim().toUpperCase();
                 
@@ -3009,14 +3012,17 @@ $("#payment-login-lnk").click(function () {
 
                                    pric= parseFloat(item.price);
 
-                                   price =parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+                                   price = parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
                                    cmoney = price - pric;  
                                   // cmoney = parseFloat(item.cm) ;// (response['product_info']['cm']);
                                    if (isNaN(cmoney)) {
                                          cmoney = 0;
+                                     }else{
+
+                                      cmoney=  cmoney.toFixed(2)
                                      }
-                                 
                                   
+                                   
                                    if (isNaN(price)) {
                                          price = 0;
                                      }

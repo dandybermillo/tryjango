@@ -138,7 +138,10 @@ urlpatterns = [
   
   
   #to be remove
-   path('itemList/', views.itemList, name='itemList'),
+  path('itemList/', views.itemList, name='itemList'),
+   
+   #backup
+  path('backup/', views.backup, name='backup'),
    
    path('post_itemSold/', views.JsonRead.as_view(), name='post_itemSold'),
    #path('post_itemSold/', views.post_itemSold, name='post_itemSold'),

@@ -1973,6 +1973,31 @@ def itemList(request):
             
 
 #def cuv2
+def backup(request):
+   
+    items = MemberModel.objects.all()
+   # item_list = serializers.serialize('json', items)
+ #  return HttpResponse(item_list, content_type="text/json-comment-filtered")
+    data = list(items.values())
+    # data = [{'label': 'Peter', 'email': 'peter@example.org'},
+    #         {'label': 'Julia', 'email': 'julia@example.org'}]
+    #return JsonResponse({"data":data})
+   #return HttpResponse(data, content_type="text/json-comment-filtered")
+    
+    
+    #other way
+    
+    # data = [{'label': 'Peter', 'email': 'peter@example.org'},
+    #         {'label': 'Julia', 'email': 'julia@example.org'}]
+
+    # return JsonResponse(data, safe=False)
+       
+     
+
+    with open('data_2_18.txt', 'w') as outfile:
+        json.dump(data, outfile)
+                
+    return JsonResponse({"data":data})
 
 @login_required(login_url='/venture_login/')
 
