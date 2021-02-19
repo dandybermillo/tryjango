@@ -9,6 +9,9 @@
 {% block css_style %}
 
 <style>
+    .white-color{
+        color:white;
+    }
 ul.ui-autocomplete.ui-menu {
   z-index: 10000;
 }
@@ -593,23 +596,16 @@ th {
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-10">
-                            <div id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
+                            <div hidden id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
                             <span id="assets"   style="margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                              </svg> </span>    <span class="bolder" id="customer-info-alert-text">_</span>  <span style="float:right" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
+                              </svg> </span>    <span class="bolder" id="customer-info-alert-textx">_</span>  <span style="float:right" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
                             
                             </div> 
                         </div>
                         <div class="form-group col-md-2">
-                            <a  data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
-                            ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
-                                <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
-                              </svg></a>
-                              <a   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
-                              value="RESTART" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                 <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                                 <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                               </svg> </a>
+                  
+                            
                         </div> 
                         
                        
@@ -709,11 +705,26 @@ th {
 
                         <div  id="msain" class="form-row"> 
                             <label for="autocomplete" class="col-form-label">  Search Items </label> 
-                            <div class="form-group col-md-8"  class="mid-size form-control"> 
+                            <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
                                
                               
-                             <input id="autocomplete">
+                             <input id="autocomplete">  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
+                             ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+                                 <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
+                               </svg></a>
+                               <a   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
+                               value="RESTART" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                </svg> </a>
                             </div>
+
+                          
+                           
+                          
+
+
+
                             <input type=hidden name=theValue>
                         </div>
 
@@ -1730,8 +1741,10 @@ console.log(items);
                     var data={};
                   //  $("#reset-form").trigger("click");
                     data["venture_id"] =$("#venture_id").val();
-                    console.log("data");
+                    console.log("data:");
+                  
                     console.log(data);
+                   
                     $.ajax({
                         type: "GET",
                         url: "/pos_view/",
@@ -1947,64 +1960,75 @@ console.log(items);
 
 
         });
+
+     function saveTansactions(){
+
+        var rows = [];
+            $('#pos-table tr').each(function(i, n){
+                var $row = $(n);
+                var code = $row.find('td:eq(1)').text().trim();
+                if( code.length >0){ 
+                         
+
+                var desc;
+                rows.push({
+                  //  product_id: $row.find('td:eq(1)').text(),
+                    qty:   $row.find('td:eq(3)').text(),
+                    description:des,
+                    price:    $row.find('td:eq(4)').text(),
+                    cm:       $row.find('td:eq(5)').text(),
+                    amount:   $row.find('td:eq(6)').text(),
+                    customer: customerInfo.id,
+                    item_id:  $row.find('td:eq(7)').text(),
+                    
+                    
+                });
+            }
+            });
+            console.log("rows");
+          
+            console.log(JSON.stringify(rows));
+         
+            $.ajax({
+                type: "POST",
+                url: "/post_itemSold/",
+
+                data: JSON.stringify(rows),
+                dataType: "json",
+             
+
+                success: function (response) {
+                    // do something with response
+                    response["result"]; // equals 'Success or failed';
+                    response["message"]; // equals 'you"re logged in or You messed up';
+
+                    if (response["type"] === "success") {
+                       console.log(" success in postin items sold")
+
+                    }
+                },
+                error: function (response) {
+                    // do something with response
+                    console.log("error:");
+                    console.log(response);
+                //   $("#login-error").text("Something went wrong! Try again.");
+                
+                },
+                });
+
+             
+
+     }
+
        //reset
        $("#reset-form").click(function() {
-         
+          saveTansactions();
      
-//             var rows = [];
-//             $('#pos-table tr').each(function(i, n){
-//                 var $row = $(n);
-//                 if( $row.find('td:eq(1)').text().trim().length >0){ 
-//                 rows.push({
-//                   //  product_id: $row.find('td:eq(1)').text(),
-//                     qty:   $row.find('td:eq(3)').text(),
-//                     price:    $row.find('td:eq(4)').text(),
-//                     cm:       $row.find('td:eq(5)').text(),
-//                     amount:   $row.find('td:eq(6)').text(),
-//                     customer: customerInfo.id,
-//                     item_id:  $row.find('td:eq(7)').text(),
-                    
-                    
-//                 });
-//             }
-//             });
-//             console.log("rows");
-          
-//             console.log(JSON.stringify(rows));
-         
-//             $.ajax({
-//                 type: "POST",
-//                 url: "/post_itemSold/",
-
-//                 data: JSON.stringify(rows),
-//                 dataType: "json",
-             
-
-//                 success: function (response) {
-//                     // do something with response
-//                     response["result"]; // equals 'Success or failed';
-//                     response["message"]; // equals 'you"re logged in or You messed up';
-
-//                     if (response["type"] === "success") {
-//                        console.log(" success in postin items sold")
-
-//                     }
-//                 },
-//                 error: function (response) {
-//                     // do something with response
-//                     console.log("error:");
-//                     console.log(response);
-//                 //   $("#login-error").text("Something went wrong! Try again.");
-                
-//                 },
-//                 });
-
-             
-
+        
 
 
  
-//  return;
+ return;
           
        
            $("#pos-form").trigger("reset");
@@ -2341,6 +2365,13 @@ console.log(items);
                         if (code !="") {
                            // ctr =ctr + 1;
                             unit = parseInt(  currentRow.find("td:eq(3) a").text());
+                            if (isNaN(unit)) {
+                             
+                                unit = parseInt(  currentRow.find("td:eq(3)").text());  
+                                if (isNaN(unit)) {
+                                     unit = 0;
+                                }
+                                } 
                             ctr =ctr +  unit;
                         }
 
@@ -2380,11 +2411,13 @@ console.log(items);
                         total_sales = total_sales + tot;
 
                 });
-                    total_sales = total_sales ;
+                  //  total_sales = total_sales.toFixed(2) ;
                     
-                    $("#id_amount").val(total_sales);
-                    
-                    $("#venture-total-txt").val(total_sales + total_cm);
+
+                     
+                    $("#id_amount").val(total_sales.toFixed(2));
+                    tot= total_sales + total_cm
+                    $("#venture-total-txt").val(tot.toFixed(2));
                     $("#id_cc").val(total_cm);
                     if(total_sales > 0){
                         submit_now =true;
@@ -2509,8 +2542,8 @@ console.log(items);
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
                                         var item_id = $("#pos-product-code-txt").attr("item_id");
-
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td>    </tr>";
+                                        var no_barcode = 1;
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -2782,7 +2815,7 @@ $("#payment-login-lnk").click(function () {
            
             e.preventDefault();
 
-
+            $("#units-total").text(ctr);
             $.ajax({
                     type: "POST",
                     url: "/pos_view/",
@@ -2802,6 +2835,7 @@ $("#payment-login-lnk").click(function () {
                                         $("#source-cash-drop").text("CASH");
                                         id= response["data"]["venture_id"];
                                         $("#transNumber").text("#"+id);
+                                        console.log(" trans Number: "+ id);
                                         if(  !$("#"+id).length){
                                             fillHistory(ID_Info.id,id,"POS "+"#"+id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
                                         }
@@ -2834,6 +2868,7 @@ $("#payment-login-lnk").click(function () {
                                         walk_in =true;
                                         customer = walk_in_id;
                                         customer_id ="WALK-IN";
+                                        $("#units-total").text("");
                                         $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
                                     //  window.location.replace("/user/"+id);
                         } else if (response["type"] === "error") {
@@ -2843,6 +2878,10 @@ $("#payment-login-lnk").click(function () {
                                     $("#venture-pay-alert-message").text( response["message"]);
                                    
                                     console.log("message:" + response["message"]);
+
+                                    setTimeout(function () {
+                                            $("#venture-pay-alert").hide();
+                                        }, 5000);
 
                         }
                     },

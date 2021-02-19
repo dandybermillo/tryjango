@@ -21230,3 +21230,1626 @@ Traceback (most recent call last):
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type date is not JSON serializable
 ERROR 2021-02-18 20:01:28,478 basehttp 12208 19460 "GET /backup/ HTTP/1.1" 500 162752
+INFO 2021-02-18 22:53:59,844 autoreload 2408 7616 Watching for file changes with StatReloader
+INFO 2021-02-18 23:10:14,872 basehttp 2408 18548 "GET /fx_pos/2/0/ HTTP/1.1" 200 207724
+INFO 2021-02-18 23:10:14,963 basehttp 2408 18548 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+INFO 2021-02-18 23:10:14,963 basehttp 2408 18548 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+INFO 2021-02-18 23:10:18,724 basehttp 2408 8432 "GET /itemList/ HTTP/1.1" 200 23296
+WARNING 2021-02-18 23:10:18,791 basehttp 2408 18288 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-18 23:10:19,109 basehttp 2408 20648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-18 23:10:19,120 basehttp 2408 22000 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-18 23:10:19,122 basehttp 2408 14320 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 09:09:32,026 basehttp 2408 2244 "GET /search_receiver/?action_request=search&filter_field_value=mopan&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 09:09:34,835 views 2408 2244 --def get customer details
+INFO 2021-02-19 09:09:34,944 basehttp 2408 2244 "GET /get_customer_details_bypass/?member_id=ma0809-0 HTTP/1.1" 200 174
+WARNING 2021-02-19 09:09:48,449 basehttp 2408 2244 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 09:09:49,957 basehttp 2408 23328 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 10:38:54,003 basehttp 2408 20552 "GET /admin/ HTTP/1.1" 200 21459
+INFO 2021-02-19 10:38:57,819 basehttp 2408 27108 "GET /admin/fx/productmodel/ HTTP/1.1" 200 97196
+INFO 2021-02-19 10:38:58,024 basehttp 2408 27108 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:41:16,119 basehttp 2408 23584 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:41:16,370 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:42:45,962 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 10:42:46,069 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:43:41,525 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:43:42,318 basehttp 2408 23584 "GET /admin/fx/productmodel/ HTTP/1.1" 200 97596
+INFO 2021-02-19 10:43:42,415 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:43:48,725 basehttp 2408 23584 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:43:48,864 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:43:59,883 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 10:43:59,973 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-19 10:47:49,249 log 2408 23584 Not Found: /favicon.ico
+WARNING 2021-02-19 10:47:49,249 basehttp 2408 23584 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 10:47:51,666 log 2408 23584 Not Found: /favicon.ico
+WARNING 2021-02-19 10:47:51,666 basehttp 2408 23584 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 10:49:47,773 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:49:48,439 basehttp 2408 23584 "GET /admin/fx/productmodel/ HTTP/1.1" 200 97794
+INFO 2021-02-19 10:49:48,551 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:50:13,986 basehttp 2408 23584 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:50:14,091 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:50:19,961 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19366
+INFO 2021-02-19 10:50:20,050 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:51:11,101 basehttp 2408 23584 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:51:11,996 basehttp 2408 23584 "GET /admin/fx/productmodel/ HTTP/1.1" 200 97966
+INFO 2021-02-19 10:51:12,373 basehttp 2408 23584 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:52:32,336 basehttp 2408 3400 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:52:32,451 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:52:38,803 basehttp 2408 3400 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 10:52:38,973 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:54:29,021 basehttp 2408 3400 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:54:29,856 basehttp 2408 3400 "GET /admin/fx/productmodel/ HTTP/1.1" 200 98192
+INFO 2021-02-19 10:54:30,110 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:55:09,413 basehttp 2408 3400 "GET /fx_pos/2/0/ HTTP/1.1" 200 207724
+INFO 2021-02-19 10:55:09,467 basehttp 2408 3400 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+INFO 2021-02-19 10:55:09,470 basehttp 2408 17424 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+WARNING 2021-02-19 10:55:09,561 basehttp 2408 17424 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 10:55:09,596 basehttp 2408 3400 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 10:55:09,635 basehttp 2408 3400 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 10:55:09,653 basehttp 2408 3400 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 10:55:09,778 basehttp 2408 3400 "GET /itemList/ HTTP/1.1" 200 23925
+WARNING 2021-02-19 10:55:14,602 log 2408 3400 Not Found: /favicon.ico
+WARNING 2021-02-19 10:55:14,602 basehttp 2408 3400 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 10:55:15,453 log 2408 3400 Not Found: /favicon.ico
+WARNING 2021-02-19 10:55:15,454 basehttp 2408 3400 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 10:55:27,584 log 2408 3400 Not Found: /favicon.ico
+WARNING 2021-02-19 10:55:27,585 basehttp 2408 3400 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 10:55:29,932 log 2408 3400 Not Found: /favicon.ico
+WARNING 2021-02-19 10:55:29,935 basehttp 2408 3400 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 10:55:30,884 log 2408 3400 Not Found: /favicon.ico
+WARNING 2021-02-19 10:55:30,884 basehttp 2408 3400 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 10:55:41,682 basehttp 2408 3400 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:55:41,915 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:56:51,782 basehttp 2408 3400 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:56:52,385 basehttp 2408 3400 "GET /admin/fx/productmodel/ HTTP/1.1" 200 98405
+INFO 2021-02-19 10:56:52,593 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:57:11,216 basehttp 2408 3400 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 10:57:11,473 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:58:16,090 basehttp 2408 3400 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 10:58:16,982 basehttp 2408 3400 "GET /admin/fx/productmodel/ HTTP/1.1" 200 98582
+INFO 2021-02-19 10:58:17,350 basehttp 2408 3400 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 10:59:11,404 basehttp 2408 3400 "GET /fx_pos/2/0/ HTTP/1.1" 200 207724
+WARNING 2021-02-19 10:59:11,625 basehttp 2408 3400 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 10:59:11,759 basehttp 2408 10084 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 10:59:11,910 basehttp 2408 10084 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 10:59:11,912 basehttp 2408 17168 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 10:59:12,113 basehttp 2408 17168 "GET /itemList/ HTTP/1.1" 200 24239
+INFO 2021-02-19 11:00:19,816 basehttp 2408 17168 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 11:00:19,974 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:00:25,246 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 11:00:25,418 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:02:42,955 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 11:02:43,752 basehttp 2408 17168 "GET /admin/fx/productmodel/ HTTP/1.1" 200 98749
+INFO 2021-02-19 11:02:43,971 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:03:51,225 basehttp 2408 17168 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 11:03:51,530 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:03:56,271 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 11:03:56,607 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:04:40,675 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 11:04:41,386 basehttp 2408 17168 "GET /admin/fx/productmodel/ HTTP/1.1" 200 98862
+INFO 2021-02-19 11:04:41,487 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:05:04,338 basehttp 2408 17168 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 11:05:04,544 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:05:09,807 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 11:05:09,971 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:06:58,674 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 11:06:59,387 basehttp 2408 17168 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99079
+INFO 2021-02-19 11:06:59,668 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:07:13,536 basehttp 2408 17168 "GET /admin/fx/productmodel/153/change/ HTTP/1.1" 200 19356
+INFO 2021-02-19 11:07:13,635 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:08:03,713 basehttp 2408 17168 "POST /admin/fx/productmodel/153/change/ HTTP/1.1" 302 0
+INFO 2021-02-19 11:08:04,384 basehttp 2408 17168 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99161
+INFO 2021-02-19 11:08:04,612 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:08:34,625 basehttp 2408 17168 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 11:08:34,796 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:08:40,223 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 11:08:40,491 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 11:10:34,460 basehttp 2408 17168 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 11:10:35,106 basehttp 2408 17168 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99407
+INFO 2021-02-19 11:10:35,357 basehttp 2408 17168 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-19 11:16:33,560 basehttp 2408 27636 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 11:16:36,236 basehttp 2408 27160 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-19 11:25:13,988 log 2408 19540 Not Found: /favicon.ico
+WARNING 2021-02-19 11:25:13,988 basehttp 2408 19540 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 11:26:29,235 basehttp 2408 19540 "GET /search_receiver/?action_request=search&filter_field_value=mupan&total_no_of_row_per_page=5 HTTP/1.1" 200 66
+INFO 2021-02-19 12:26:17,268 basehttp 2408 13832 "GET /fx_pos/2/0/ HTTP/1.1" 200 207724
+INFO 2021-02-19 12:26:17,313 basehttp 2408 13832 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+WARNING 2021-02-19 12:26:17,405 basehttp 2408 13832 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 12:26:17,474 basehttp 2408 27212 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 12:26:17,556 basehttp 2408 23828 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 12:26:17,556 basehttp 2408 27212 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 12:26:17,821 basehttp 2408 27212 "GET /itemList/ HTTP/1.1" 200 24876
+INFO 2021-02-19 12:42:54,694 basehttp 2408 19220 "GET /admin/ HTTP/1.1" 200 21443
+INFO 2021-02-19 12:42:56,578 basehttp 2408 19220 "GET /admin/ HTTP/1.1" 200 21443
+INFO 2021-02-19 12:43:01,401 basehttp 2408 19220 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99173
+INFO 2021-02-19 12:43:01,479 basehttp 2408 19220 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:44:16,611 basehttp 2408 19220 "GET /search_receiver/?action_request=search&filter_field_value=ann&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 12:44:19,040 views 2408 19220 --def get customer details
+INFO 2021-02-19 12:44:19,211 basehttp 2408 19220 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+WARNING 2021-02-19 12:44:22,041 basehttp 2408 19220 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 12:44:22,652 basehttp 2408 14140 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 12:44:56,217 basehttp 2408 25912 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 12:45:07,398 basehttp 2408 25912 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 12:45:15,709 basehttp 2408 25912 "GET /dashboard/ HTTP/1.1" 200 67764
+INFO 2021-02-19 12:45:15,736 basehttp 2408 25912 "GET /static/js/moment.js HTTP/1.1" 304 0
+INFO 2021-02-19 12:45:23,060 basehttp 2408 25912 "GET /search_receiver/?action_request=search&filter_field_value=ann&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 12:45:26,101 basehttp 2408 25912 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 12:45:31,585 basehttp 2408 25912 "GET /create_update_member_finance/wallet/21/0/D/ HTTP/1.1" 200 78440
+INFO 2021-02-19 12:46:13,957 basehttp 2408 25912 "POST /create_update_member_finance/wallet/21/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-19 12:46:14,354 basehttp 2408 25912 "GET /success/create_update_result/wallet/21/47/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78563
+INFO 2021-02-19 12:46:17,974 basehttp 2408 25912 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 12:46:21,405 basehttp 2408 25912 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 559
+WARNING 2021-02-19 12:46:35,363 log 2408 25912 Not Found: /favicon.ico
+WARNING 2021-02-19 12:46:35,364 basehttp 2408 25912 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 12:46:38,507 basehttp 2408 25912 "GET /search_receiver/?action_request=search&filter_field_value=mopan&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 12:46:40,940 views 2408 25912 --def get customer details
+INFO 2021-02-19 12:46:41,031 basehttp 2408 25912 "GET /get_customer_details_bypass/?member_id=ma0809-0 HTTP/1.1" 200 174
+INFO 2021-02-19 12:47:45,575 basehttp 2408 25912 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 12:47:56,920 basehttp 2408 25912 "GET /search_receiver/?action_request=search&filter_field_value=mop&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 12:47:59,439 basehttp 2408 25912 "GET /member/18/ HTTP/1.1" 200 223086
+INFO 2021-02-19 12:48:04,519 basehttp 2408 25912 "GET /create_update_member_finance/wallet/18/0/D/ HTTP/1.1" 200 78461
+INFO 2021-02-19 12:48:23,228 basehttp 2408 25912 "POST /create_update_member_finance/wallet/18/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-19 12:48:23,653 basehttp 2408 25912 "GET /success/create_update_result/wallet/18/48/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78577
+INFO 2021-02-19 12:48:31,840 basehttp 2408 25912 "GET /member/18/ HTTP/1.1" 200 223088
+INFO 2021-02-19 12:56:31,749 basehttp 2408 11684 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 12:56:31,993 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:56:38,914 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19370
+INFO 2021-02-19 12:56:39,028 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:57:35,301 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 12:57:36,002 basehttp 2408 11684 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99597
+INFO 2021-02-19 12:57:36,209 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:57:38,856 basehttp 2408 11684 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 12:57:39,153 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:57:49,638 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19370
+INFO 2021-02-19 12:57:49,725 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:58:31,010 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 12:58:31,722 basehttp 2408 11684 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99797
+INFO 2021-02-19 12:58:31,860 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:58:51,077 basehttp 2408 11684 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 12:58:51,174 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:58:57,842 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 12:58:57,969 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:59:41,165 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 12:59:41,858 basehttp 2408 11684 "GET /admin/fx/productmodel/ HTTP/1.1" 200 99984
+INFO 2021-02-19 12:59:42,202 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 12:59:57,221 basehttp 2408 11684 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 12:59:57,466 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:00:01,316 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 13:00:01,419 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:00:38,741 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:00:39,443 basehttp 2408 11684 "GET /admin/fx/productmodel/ HTTP/1.1" 200 100175
+INFO 2021-02-19 13:00:39,656 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:00:47,910 basehttp 2408 11684 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 13:00:48,136 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:01:00,528 basehttp 2408 11684 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19392
+INFO 2021-02-19 13:01:00,667 basehttp 2408 11684 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:01:35,878 basehttp 2408 11684 "GET /fx_pos/2/0/ HTTP/1.1" 200 207721
+WARNING 2021-02-19 13:01:36,018 basehttp 2408 11684 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 13:01:36,064 basehttp 2408 23304 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 13:01:36,141 basehttp 2408 23304 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 13:01:36,146 basehttp 2408 18808 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 13:01:36,301 basehttp 2408 18808 "GET /itemList/ HTTP/1.1" 200 25493
+WARNING 2021-02-19 13:01:40,040 basehttp 2408 18808 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 13:01:41,117 basehttp 2408 23304 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 13:02:08,014 basehttp 2408 27492 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:02:08,925 basehttp 2408 27492 "GET /admin/fx/productmodel/ HTTP/1.1" 200 100336
+INFO 2021-02-19 13:02:09,222 basehttp 2408 27492 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:03:06,054 basehttp 2408 27492 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 13:03:06,157 basehttp 2408 27492 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:03:28,582 basehttp 2408 27492 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 13:03:28,790 basehttp 2408 27492 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:04:01,297 basehttp 2408 27492 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:04:01,940 basehttp 2408 27492 "GET /admin/fx/productmodel/ HTTP/1.1" 200 100465
+INFO 2021-02-19 13:04:02,041 basehttp 2408 27492 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:04:04,406 basehttp 2408 27492 "GET /admin/fx/productmodel/161/change/ HTTP/1.1" 200 19357
+INFO 2021-02-19 13:04:04,510 basehttp 2408 27492 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:04:33,583 basehttp 2408 27492 "POST /admin/fx/productmodel/161/change/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:04:34,091 basehttp 2408 26516 "POST /admin/fx/productmodel/161/change/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:04:35,341 basehttp 2408 26516 "GET /admin/fx/productmodel/ HTTP/1.1" 200 100770
+INFO 2021-02-19 13:04:35,495 basehttp 2408 26516 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:04:51,273 basehttp 2408 26516 "GET /admin/fx/productmodel/?all= HTTP/1.1" 200 137186
+INFO 2021-02-19 13:04:51,416 basehttp 2408 26516 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:07:07,092 basehttp 2408 22912 "GET /fx_pos/2/0/ HTTP/1.1" 200 207721
+WARNING 2021-02-19 13:07:07,167 basehttp 2408 22912 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 13:07:07,216 basehttp 2408 22144 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 13:07:07,250 basehttp 2408 22144 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 13:07:07,250 basehttp 2408 22252 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 13:07:07,379 basehttp 2408 22252 "GET /itemList/ HTTP/1.1" 200 25811
+WARNING 2021-02-19 13:07:09,628 basehttp 2408 22252 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 13:07:10,664 basehttp 2408 22144 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 13:07:26,779 basehttp 2408 26736 "GET /admin/fx/productmodel/?q=cloud&all= HTTP/1.1" 200 58955
+INFO 2021-02-19 13:07:26,855 basehttp 2408 26736 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:07:30,775 basehttp 2408 26736 "GET /admin/fx/productmodel/160/change/?_changelist_filters=q%3Dcloud%26all%3D HTTP/1.1" 200 19503
+INFO 2021-02-19 13:07:30,852 basehttp 2408 26736 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:07:37,765 basehttp 2408 26736 "POST /admin/fx/productmodel/160/change/?_changelist_filters=q%3Dcloud%26all%3D HTTP/1.1" 302 0
+INFO 2021-02-19 13:07:37,877 basehttp 2408 26736 "GET /admin/fx/productmodel/?q=cloud HTTP/1.1" 200 56219
+INFO 2021-02-19 13:07:37,941 basehttp 2408 26736 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:14:47,376 basehttp 2408 23348 "GET /create_update/0/ HTTP/1.1" 200 79166
+INFO 2021-02-19 13:16:31,990 basehttp 2408 23348 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2021-02-19 13:16:32,340 basehttp 2408 23348 "GET /success/create_update_member_result/23/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 80462
+INFO 2021-02-19 13:16:44,587 basehttp 2408 23348 "GET /member/23/ HTTP/1.1" 200 223056
+INFO 2021-02-19 13:17:36,887 basehttp 2408 23348 "GET /search_receiver/?action_request=search&filter_field_value=ann&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 13:17:39,481 basehttp 2408 23348 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 13:17:51,615 basehttp 2408 23348 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 559
+INFO 2021-02-19 13:18:46,879 basehttp 2408 23348 "GET /fx_pos/2/0/ HTTP/1.1" 200 207721
+WARNING 2021-02-19 13:18:47,081 basehttp 2408 23348 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 13:18:47,130 basehttp 2408 16932 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 13:18:47,178 basehttp 2408 16932 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 13:18:47,182 basehttp 2408 27096 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 13:18:47,327 basehttp 2408 27096 "GET /itemList/ HTTP/1.1" 200 25811
+INFO 2021-02-19 13:18:54,162 basehttp 2408 27096 "GET /search_receiver/?action_request=search&filter_field_value=loi&total_no_of_row_per_page=5 HTTP/1.1" 200 235
+INFO 2021-02-19 13:18:55,933 views 2408 27096 --def get customer details
+INFO 2021-02-19 13:18:56,100 basehttp 2408 27096 "GET /get_customer_details_bypass/?member_id=lo1122-0 HTTP/1.1" 200 168
+WARNING 2021-02-19 13:19:39,553 log 2408 27096 Not Found: /favicon.ico
+WARNING 2021-02-19 13:19:39,553 basehttp 2408 27096 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:26:23,465 log 2408 20828 Not Found: /favicon.ico
+WARNING 2021-02-19 13:26:23,465 basehttp 2408 20828 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:26:23,913 log 2408 20828 Not Found: /favicon.ico
+WARNING 2021-02-19 13:26:23,913 basehttp 2408 20828 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:28:05,920 log 2408 20828 Not Found: /favicon.ico
+WARNING 2021-02-19 13:28:05,921 basehttp 2408 20828 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:29:16,723 log 2408 18056 Not Found: /favicon.ico
+WARNING 2021-02-19 13:29:16,725 basehttp 2408 18056 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 13:32:22,495 views 2408 24152 --def get customer details
+INFO 2021-02-19 13:32:22,662 basehttp 2408 24152 "GET /get_customer_details_bypass/?member_id=lo1122-0 HTTP/1.1" 200 168
+INFO 2021-02-19 13:33:25,278 views 2408 24152 --def get customer details
+INFO 2021-02-19 13:33:25,465 basehttp 2408 24152 "GET /get_customer_details_bypass/?member_id=lo1122-0 HTTP/1.1" 200 168
+INFO 2021-02-19 13:34:53,480 views 2408 24152 --def get customer details
+INFO 2021-02-19 13:34:53,798 basehttp 2408 24152 "GET /get_customer_details_bypass/?member_id=lo1122-0 HTTP/1.1" 200 168
+WARNING 2021-02-19 13:46:44,017 log 2408 10324 Not Found: /favicon.ico
+WARNING 2021-02-19 13:46:44,017 basehttp 2408 10324 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:46:44,565 log 2408 10324 Not Found: /favicon.ico
+WARNING 2021-02-19 13:46:44,568 basehttp 2408 10324 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 13:46:56,308 basehttp 2408 10324 "GET /admin/fx/productmodel/?q=c2 HTTP/1.1" 200 54502
+INFO 2021-02-19 13:46:56,459 basehttp 2408 10324 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:56:54,463 basehttp 2408 3576 "GET /admin/fx/productmodel/101/change/?_changelist_filters=q%3Dc2 HTTP/1.1" 200 19474
+INFO 2021-02-19 13:56:54,619 basehttp 2408 3576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:57:04,398 basehttp 2408 3576 "POST /admin/fx/productmodel/101/change/?_changelist_filters=q%3Dc2 HTTP/1.1" 302 0
+INFO 2021-02-19 13:57:04,705 basehttp 2408 3576 "GET /admin/fx/productmodel/?q=c2 HTTP/1.1" 200 54770
+INFO 2021-02-19 13:57:04,864 basehttp 2408 3576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 13:57:19,673 basehttp 2408 3576 "GET /admin/fx/productmodel/?q=coffee HTTP/1.1" 200 56381
+INFO 2021-02-19 13:57:19,921 basehttp 2408 3576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-19 13:58:08,639 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:08,640 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:12,959 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:12,959 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:19,593 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:19,594 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:20,225 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:20,226 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:20,531 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:20,532 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:20,799 log 2408 3576 Not Found: /favicon.ico
+WARNING 2021-02-19 13:58:20,800 basehttp 2408 3576 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 13:58:45,020 basehttp 2408 3576 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-19 14:01:09,737 basehttp 2408 10424 "GET /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 200 19114
+INFO 2021-02-19 14:01:09,803 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:01:16,023 basehttp 2408 10424 "POST /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 200 19412
+INFO 2021-02-19 14:01:16,086 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:02:44,650 basehttp 2408 10424 "POST /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 302 0
+INFO 2021-02-19 14:02:44,748 basehttp 2408 10424 "GET /admin/fx/productmodel/?q=coffee HTTP/1.1" 200 56832
+INFO 2021-02-19 14:02:44,823 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:04:20,223 basehttp 2408 10424 "GET /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 200 19114
+INFO 2021-02-19 14:04:20,291 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:04:27,355 basehttp 2408 10424 "POST /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 200 19412
+INFO 2021-02-19 14:04:27,415 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:05:37,339 basehttp 2408 10424 "POST /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 302 0
+INFO 2021-02-19 14:05:37,435 basehttp 2408 10424 "GET /admin/fx/productmodel/?q=coffee HTTP/1.1" 200 57160
+INFO 2021-02-19 14:05:37,630 basehttp 2408 10424 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:06:18,382 basehttp 2408 10424 "GET /fx_pos/2/0/ HTTP/1.1" 200 207721
+INFO 2021-02-19 14:06:18,407 basehttp 2408 10424 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+WARNING 2021-02-19 14:06:18,461 basehttp 2408 10424 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:06:18,539 basehttp 2408 24132 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:06:18,551 basehttp 2408 25256 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:06:18,551 basehttp 2408 24664 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:06:18,667 basehttp 2408 24664 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:07:41,425 basehttp 2408 24664 "GET /fx_pos/2/0/ HTTP/1.1" 200 206855
+WARNING 2021-02-19 14:07:41,513 basehttp 2408 24664 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:07:41,537 basehttp 2408 25256 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:07:41,592 basehttp 2408 25256 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:07:41,620 basehttp 2408 25256 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:07:41,740 basehttp 2408 25256 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:09:12,985 basehttp 2408 25256 "GET /fx_pos/2/0/ HTTP/1.1" 200 207744
+WARNING 2021-02-19 14:09:13,063 basehttp 2408 25256 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:09:13,090 basehttp 2408 24132 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:09:13,113 basehttp 2408 24132 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:09:13,141 basehttp 2408 24132 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:09:13,246 basehttp 2408 24132 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:09:47,913 basehttp 2408 24132 "GET /fx_pos/2/0/ HTTP/1.1" 200 207875
+WARNING 2021-02-19 14:09:47,985 basehttp 2408 24132 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:09:48,008 basehttp 2408 25772 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:09:48,039 basehttp 2408 25772 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:09:48,057 basehttp 2408 25772 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:09:48,274 basehttp 2408 25772 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:10:11,533 basehttp 2408 25772 "GET /fx_pos/2/0/ HTTP/1.1" 200 207802
+WARNING 2021-02-19 14:10:11,595 basehttp 2408 25772 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:10:11,633 basehttp 2408 27156 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:10:11,662 basehttp 2408 27156 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:10:11,664 basehttp 2408 12112 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:10:11,784 basehttp 2408 12112 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:10:37,454 basehttp 2408 12112 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+WARNING 2021-02-19 14:10:37,520 basehttp 2408 12112 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:10:37,552 basehttp 2408 27156 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:10:37,586 basehttp 2408 23272 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:10:37,587 basehttp 2408 27156 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:10:37,718 basehttp 2408 27156 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:11:00,489 basehttp 2408 27156 "GET /fx_pos/2/0/ HTTP/1.1" 200 207849
+WARNING 2021-02-19 14:11:00,560 basehttp 2408 27156 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:11:00,583 basehttp 2408 23272 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:11:00,622 basehttp 2408 23272 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:11:00,646 basehttp 2408 23272 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:11:00,776 basehttp 2408 23272 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:11:18,521 basehttp 2408 23272 "GET /fx_pos/2/0/ HTTP/1.1" 200 207850
+WARNING 2021-02-19 14:11:18,590 basehttp 2408 23272 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:11:18,618 basehttp 2408 20040 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:11:18,619 basehttp 2408 22888 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:11:18,653 basehttp 2408 22888 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:11:18,765 basehttp 2408 22888 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:11:59,377 basehttp 2408 22888 "GET /fx_pos/2/0/ HTTP/1.1" 200 207858
+WARNING 2021-02-19 14:11:59,440 basehttp 2408 22888 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:11:59,474 basehttp 2408 20040 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:11:59,508 basehttp 2408 20040 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:11:59,509 basehttp 2408 26080 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:11:59,628 basehttp 2408 26080 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:12:52,599 basehttp 2408 26080 "GET /fx_pos/2/0/ HTTP/1.1" 200 207858
+WARNING 2021-02-19 14:12:52,662 basehttp 2408 26080 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:12:52,700 basehttp 2408 20040 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:12:52,734 basehttp 2408 20040 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:12:52,734 basehttp 2408 23412 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:12:52,863 basehttp 2408 23412 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:13:34,341 basehttp 2408 23412 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+WARNING 2021-02-19 14:13:34,407 basehttp 2408 23412 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:13:34,427 basehttp 2408 20040 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:13:34,458 basehttp 2408 20040 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:13:34,476 basehttp 2408 20040 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:13:34,597 basehttp 2408 20040 "GET /itemList/ HTTP/1.1" 200 26165
+INFO 2021-02-19 14:13:46,912 basehttp 2408 20040 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+WARNING 2021-02-19 14:13:46,975 basehttp 2408 20040 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:13:47,013 basehttp 2408 21340 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:13:47,047 basehttp 2408 21900 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:13:47,047 basehttp 2408 21340 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 14:13:47,177 basehttp 2408 21340 "GET /itemList/ HTTP/1.1" 200 26165
+WARNING 2021-02-19 14:13:54,071 basehttp 2408 21340 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-19 14:14:54,656 basehttp 2408 21900 "GET /search_receiver/?action_request=search&filter_field_value=mopa&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 14:14:57,327 views 2408 21900 --def get customer details
+INFO 2021-02-19 14:14:57,387 basehttp 2408 21900 "GET /get_customer_details_bypass/?member_id=ma0809-0 HTTP/1.1" 200 174
+WARNING 2021-02-19 14:15:12,151 basehttp 2408 21900 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 14:22:38,449 basehttp 2408 25052 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+INFO 2021-02-19 14:22:38,631 basehttp 2408 25052 "GET /itemList/ HTTP/1.1" 200 26165
+WARNING 2021-02-19 14:22:40,499 basehttp 2408 25052 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-19 14:22:46,935 basehttp 2408 16576 "GET /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 200 19114
+INFO 2021-02-19 14:22:46,997 basehttp 2408 16576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:24:07,203 basehttp 2408 16576 "POST /admin/fx/productmodel/add/?_changelist_filters=q%3Dcoffee HTTP/1.1" 302 0
+INFO 2021-02-19 14:24:07,296 basehttp 2408 16576 "GET /admin/fx/productmodel/?q=coffee HTTP/1.1" 200 57435
+INFO 2021-02-19 14:24:07,360 basehttp 2408 16576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:24:15,691 basehttp 2408 16576 "GET /admin/fx/productmodel/? HTTP/1.1" 200 101142
+INFO 2021-02-19 14:24:15,756 basehttp 2408 16576 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-19 14:24:33,383 log 2408 16576 Not Found: /favicon.ico
+WARNING 2021-02-19 14:24:33,384 basehttp 2408 16576 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 14:25:45,010 basehttp 2408 16576 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+INFO 2021-02-19 14:25:45,210 basehttp 2408 16576 "GET /itemList/ HTTP/1.1" 200 26336
+WARNING 2021-02-19 14:25:47,384 basehttp 2408 16576 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 14:28:22,588 basehttp 2408 24996 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 14:29:22,176 basehttp 2408 2820 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-19 14:29:22,246 basehttp 2408 2820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:29:27,513 basehttp 2408 2820 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19371
+INFO 2021-02-19 14:29:27,573 basehttp 2408 2820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:30:02,956 basehttp 2408 2820 "POST /admin/fx/productmodel/add/ HTTP/1.1" 200 19266
+INFO 2021-02-19 14:30:03,028 basehttp 2408 2820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:30:31,824 basehttp 2408 2820 "POST /admin/fx/productmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-19 14:30:32,056 basehttp 2408 2820 "GET /admin/fx/productmodel/ HTTP/1.1" 200 101531
+INFO 2021-02-19 14:30:32,280 basehttp 2408 2820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:30:55,551 basehttp 2408 2820 "GET /admin/fx/productmodel/?q=wipes HTTP/1.1" 200 56493
+INFO 2021-02-19 14:30:55,619 basehttp 2408 2820 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:31:02,854 basehttp 2408 2820 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+INFO 2021-02-19 14:31:03,022 basehttp 2408 2820 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 14:31:08,692 log 2408 2820 Not Found: /favicon.ico
+WARNING 2021-02-19 14:31:08,692 basehttp 2408 2820 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 14:33:57,068 log 2408 2820 Not Found: /favicon.ico
+WARNING 2021-02-19 14:33:57,069 basehttp 2408 2820 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 14:37:07,634 basehttp 2408 2820 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 14:38:06,444 basehttp 2408 2820 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+INFO 2021-02-19 14:38:06,593 basehttp 2408 2820 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 14:38:09,949 basehttp 2408 2820 "GET /fx_pos/2/0/ HTTP/1.1" 200 207831
+INFO 2021-02-19 14:38:10,092 basehttp 2408 2820 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 14:39:06,803 basehttp 2408 2820 "GET /search_receiver/?action_request=search&filter_field_value=francis&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-19 14:39:09,385 basehttp 2408 2820 "GET /member/20/ HTTP/1.1" 200 223039
+INFO 2021-02-19 14:39:13,774 basehttp 2408 2820 "GET /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 200 78432
+INFO 2021-02-19 14:39:38,665 basehttp 2408 2820 "POST /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-19 14:39:38,802 basehttp 2408 2820 "GET /success/create_update_result/wallet/20/49/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78568
+INFO 2021-02-19 14:39:42,345 basehttp 2408 2820 "GET /member/20/ HTTP/1.1" 200 223053
+INFO 2021-02-19 14:40:11,628 basehttp 2408 2820 "GET /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 200 78444
+INFO 2021-02-19 14:41:13,734 basehttp 2408 2820 "POST /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-19 14:41:13,834 basehttp 2408 2820 "GET /success/create_update_result/wallet/20/50/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78574
+INFO 2021-02-19 14:41:16,353 basehttp 2408 2820 "GET /member/20/ HTTP/1.1" 200 223055
+INFO 2021-02-19 14:41:22,765 basehttp 2408 2820 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 397
+INFO 2021-02-19 14:41:50,305 basehttp 2408 2820 "GET /pos_view/?venture_id=131 HTTP/1.1" 200 346
+INFO 2021-02-19 14:41:55,911 basehttp 2408 2820 "GET /pos_view/?venture_id=130 HTTP/1.1" 200 341
+INFO 2021-02-19 14:41:57,896 basehttp 2408 2820 "GET /pos_view/?venture_id=129 HTTP/1.1" 200 360
+INFO 2021-02-19 14:41:59,404 basehttp 2408 2820 "GET /pos_view/?venture_id=128 HTTP/1.1" 200 348
+WARNING 2021-02-19 14:42:47,535 basehttp 2408 2820 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:42:47,536 basehttp 2408 25160 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:42:47,557 basehttp 2408 25160 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:42:47,558 basehttp 2408 15124 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-19 14:43:55,373 basehttp 2408 15124 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 14:43:56,710 basehttp 2408 25160 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 14:44:09,967 basehttp 2408 144 "POST /pos_view/ HTTP/1.1" 200 117
+INFO 2021-02-19 14:45:02,322 basehttp 2408 144 "GET /admin/fx/venturemodel/ HTTP/1.1" 200 74939
+INFO 2021-02-19 14:45:02,390 basehttp 2408 144 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 14:53:12,906 basehttp 2408 26328 "POST /pos_view/ HTTP/1.1" 200 116
+INFO 2021-02-19 14:53:54,617 basehttp 2408 26328 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 14:54:22,557 basehttp 2408 26328 "GET /pos_view/?venture_id=129 HTTP/1.1" 200 360
+INFO 2021-02-19 14:56:07,571 autoreload 2408 7616 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:08,430 autoreload 19748 3708 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:11,836 autoreload 19748 3708 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:12,506 autoreload 1504 9092 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:13,875 autoreload 1504 9092 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:14,600 autoreload 19824 27268 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:20,092 autoreload 19824 27268 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:20,741 autoreload 17908 22184 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:22,114 autoreload 17908 22184 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:22,724 autoreload 24932 25992 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:24,110 autoreload 24932 25992 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:24,877 autoreload 26248 23352 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:27,409 autoreload 26248 23352 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:28,279 autoreload 6020 22572 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:30,580 autoreload 6020 22572 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:31,195 autoreload 5180 17516 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:36,817 autoreload 5180 17516 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:37,688 autoreload 11128 27444 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:43,331 autoreload 11128 27444 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:56:44,079 autoreload 25724 14816 Watching for file changes with StatReloader
+INFO 2021-02-19 14:56:51,592 basehttp 25724 27100 "GET /fx_pos/2/0/ HTTP/1.1" 200 207905
+WARNING 2021-02-19 14:56:51,919 basehttp 25724 27100 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 14:56:52,078 basehttp 25724 23564 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 14:56:52,440 basehttp 25724 13856 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 14:56:52,462 basehttp 25724 26504 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 14:56:52,477 basehttp 25724 20324 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-19 14:56:56,693 basehttp 25724 20324 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 14:56:57,266 basehttp 25724 26504 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 14:57:01,834 basehttp 25724 13856 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 14:57:58,222 autoreload 25724 14816 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:57:58,848 autoreload 17396 18012 Watching for file changes with StatReloader
+INFO 2021-02-19 14:58:03,289 autoreload 17396 18012 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:58:03,890 autoreload 5308 18608 Watching for file changes with StatReloader
+INFO 2021-02-19 14:58:05,257 autoreload 5308 18608 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-19 14:58:05,853 autoreload 14048 16864 Watching for file changes with StatReloader
+INFO 2021-02-19 15:02:33,868 basehttp 14048 18604 "GET /fx_pos/2/0/ HTTP/1.1" 200 207896
+WARNING 2021-02-19 15:02:33,941 basehttp 14048 18604 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:02:34,143 basehttp 14048 26836 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 15:02:34,283 basehttp 14048 25008 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:02:34,298 basehttp 14048 22908 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:02:34,300 basehttp 14048 22364 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-19 15:02:36,548 basehttp 14048 22364 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:02:37,458 basehttp 14048 22908 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 15:02:49,280 basehttp 14048 25008 "POST /pos_view/ HTTP/1.1" 200 115
+WARNING 2021-02-19 15:07:28,310 log 14048 25008 Not Found: / /
+WARNING 2021-02-19 15:07:28,310 basehttp 14048 25008 "GET /%20/?venture_id=131 HTTP/1.1" 404 16391
+INFO 2021-02-19 15:07:33,306 basehttp 14048 25008 "GET /fx_pos/2/0/ HTTP/1.1" 200 207895
+WARNING 2021-02-19 15:07:33,378 basehttp 14048 25008 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:07:33,422 basehttp 14048 26836 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:07:33,454 basehttp 14048 26836 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:07:33,456 basehttp 14048 22940 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:07:33,568 basehttp 14048 22940 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:07:54,688 basehttp 14048 22940 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:07:55,523 basehttp 14048 26836 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 15:08:00,395 basehttp 14048 26924 "POST /pos_view/ HTTP/1.1" 200 115
+WARNING 2021-02-19 15:08:11,243 log 14048 26924 Not Found: / /
+WARNING 2021-02-19 15:08:11,243 basehttp 14048 26924 "GET /%20/?venture_id=134 HTTP/1.1" 404 16391
+WARNING 2021-02-19 15:08:14,265 log 14048 26924 Not Found: / /
+WARNING 2021-02-19 15:08:14,265 basehttp 14048 26924 "GET /%20/?venture_id=134 HTTP/1.1" 404 16391
+WARNING 2021-02-19 15:09:17,368 log 14048 26924 Not Found: / /
+WARNING 2021-02-19 15:09:17,369 basehttp 14048 26924 "GET /%20/?venture_id=134 HTTP/1.1" 404 16391
+INFO 2021-02-19 15:11:05,258 basehttp 14048 26924 "GET /fx_pos/2/0/ HTTP/1.1" 200 207947
+WARNING 2021-02-19 15:11:05,337 basehttp 14048 26924 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:11:05,361 basehttp 14048 23036 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:11:05,388 basehttp 14048 23036 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:11:05,397 basehttp 14048 23036 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:11:05,507 basehttp 14048 10044 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 15:11:56,015 basehttp 14048 23036 "GET /fx_pos/2/0/ HTTP/1.1" 200 207940
+WARNING 2021-02-19 15:11:56,077 basehttp 14048 23036 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:11:56,107 basehttp 14048 10044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:11:56,137 basehttp 14048 10044 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:11:56,137 basehttp 14048 328 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:11:56,253 basehttp 14048 328 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:12:00,745 log 14048 328 Not Found: / /
+WARNING 2021-02-19 15:12:00,745 basehttp 14048 328 "GET /%20/?venture_id=134 HTTP/1.1" 404 16391
+INFO 2021-02-19 15:12:57,454 basehttp 14048 328 "GET /fx_pos/2/0/ HTTP/1.1" 200 207926
+WARNING 2021-02-19 15:12:57,523 basehttp 14048 328 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:12:57,552 basehttp 14048 10044 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:12:57,581 basehttp 14048 21764 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:12:57,582 basehttp 14048 10044 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:12:57,690 basehttp 14048 10044 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:13:02,282 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:02,294 basehttp 14048 10044 "GET /pos_view/?venture_id=134 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:06,072 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:06,087 basehttp 14048 10044 "GET /pos_view/?venture_id=133 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:08,858 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:08,872 basehttp 14048 10044 "GET /pos_view/?venture_id=134 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:10,282 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:10,294 basehttp 14048 10044 "GET /pos_view/?venture_id=133 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:11,868 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:11,880 basehttp 14048 10044 "GET /pos_view/?venture_id=132 HTTP/1.1" 200 327
+INFO 2021-02-19 15:13:12,781 basehttp 14048 10044 "GET /pos_view/?venture_id=131 HTTP/1.1" 200 346
+WARNING 2021-02-19 15:13:16,411 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:16,423 basehttp 14048 10044 "GET /pos_view/?venture_id=134 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:16,621 views 14048 10044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:13:16,633 basehttp 14048 10044 "GET /pos_view/?venture_id=134 HTTP/1.1" 200 327
+WARNING 2021-02-19 15:13:37,811 basehttp 14048 10044 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:13:38,826 basehttp 14048 21764 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 15:14:02,098 basehttp 14048 25660 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 15:15:50,791 basehttp 14048 25660 "GET /search_receiver/?action_request=search&filter_field_value=anne&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 15:15:54,570 basehttp 14048 8396 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 15:15:56,570 basehttp 14048 8396 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 746
+INFO 2021-02-19 15:16:04,981 basehttp 14048 8396 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 559
+INFO 2021-02-19 15:17:11,817 basehttp 14048 8396 "GET /admin/fx/productmodel/ HTTP/1.1" 200 101297
+INFO 2021-02-19 15:17:11,897 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:17:16,896 basehttp 14048 8396 "GET /admin/fx/productmodel/?all= HTTP/1.1" 200 140294
+INFO 2021-02-19 15:17:16,967 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:18:30,343 basehttp 14048 8396 "GET /admin/fx/productmodel/?q=choco&all= HTTP/1.1" 200 63211
+INFO 2021-02-19 15:18:30,414 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:18:35,028 basehttp 14048 8396 "GET /admin/fx/productmodel/?q=bear+bra&all= HTTP/1.1" 200 64372
+INFO 2021-02-19 15:18:35,093 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:18:43,397 basehttp 14048 8396 "GET /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbra%26all%3D HTTP/1.1" 200 19539
+INFO 2021-02-19 15:18:43,464 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:19:12,295 basehttp 14048 8396 "POST /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbra%26all%3D HTTP/1.1" 302 0
+INFO 2021-02-19 15:19:12,397 basehttp 14048 8396 "GET /admin/fx/productmodel/?q=bear+bra HTTP/1.1" 200 61517
+INFO 2021-02-19 15:19:12,464 basehttp 14048 8396 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:19:17,350 basehttp 14048 8396 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+INFO 2021-02-19 15:19:17,378 basehttp 14048 8396 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+WARNING 2021-02-19 15:19:17,426 basehttp 14048 8396 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:19:17,464 basehttp 14048 15900 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:19:17,496 basehttp 14048 15900 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:19:17,497 basehttp 14048 14232 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:19:17,624 basehttp 14048 14232 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:19:26,355 basehttp 14048 14232 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:19:27,179 basehttp 14048 15900 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 15:20:09,649 basehttp 14048 23564 "GET /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbra HTTP/1.1" 200 19512
+INFO 2021-02-19 15:20:09,816 basehttp 14048 23564 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:20:14,376 basehttp 14048 23564 "POST /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbra HTTP/1.1" 302 0
+INFO 2021-02-19 15:20:14,483 basehttp 14048 23564 "GET /admin/fx/productmodel/?q=bear+bra HTTP/1.1" 200 61517
+INFO 2021-02-19 15:20:14,550 basehttp 14048 23564 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:20:16,177 basehttp 14048 23564 "GET /admin/fx/productmodel/?product_id=014285000068&q=bear+bra HTTP/1.1" 200 59913
+INFO 2021-02-19 15:20:16,238 basehttp 14048 23564 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:20:24,491 basehttp 14048 23564 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+WARNING 2021-02-19 15:20:24,560 basehttp 14048 23564 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:20:24,574 basehttp 14048 18836 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:20:24,603 basehttp 14048 18836 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:20:24,626 basehttp 14048 18836 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:20:24,838 basehttp 14048 18836 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:20:27,238 basehttp 14048 18836 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:20:27,742 basehttp 14048 26832 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-19 15:20:46,433 log 14048 26840 Not Found: /favicon.ico
+WARNING 2021-02-19 15:20:46,433 basehttp 14048 26840 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 15:21:09,539 basehttp 14048 26840 "GET /admin/fx/productmodel/?product_id=014285000068&q=bear+bra HTTP/1.1" 200 59913
+INFO 2021-02-19 15:21:09,599 basehttp 14048 26840 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:21:13,654 basehttp 14048 26840 "GET /admin/fx/productmodel/ HTTP/1.1" 200 101297
+INFO 2021-02-19 15:21:13,720 basehttp 14048 26840 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:21:18,491 basehttp 14048 26840 "GET /admin/fx/productmodel/?q=bear+brand HTTP/1.1" 200 61961
+INFO 2021-02-19 15:21:18,558 basehttp 14048 26840 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:21:53,196 basehttp 14048 26840 "GET /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbrand HTTP/1.1" 200 19518
+INFO 2021-02-19 15:21:53,260 basehttp 14048 26840 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:22:01,624 basehttp 14048 26840 "POST /admin/fx/productmodel/52/change/?_changelist_filters=q%3Dbear%2Bbrand HTTP/1.1" 302 0
+INFO 2021-02-19 15:22:01,731 basehttp 14048 26840 "GET /admin/fx/productmodel/?q=bear+brand HTTP/1.1" 200 62195
+INFO 2021-02-19 15:22:01,911 basehttp 14048 26840 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:22:05,927 basehttp 14048 26840 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+WARNING 2021-02-19 15:22:06,003 basehttp 14048 26840 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 15:22:06,034 basehttp 14048 24228 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 15:22:06,064 basehttp 14048 23084 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 15:22:06,065 basehttp 14048 24228 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 15:22:06,188 basehttp 14048 24228 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 15:22:12,341 basehttp 14048 24228 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:22:13,400 basehttp 14048 23084 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-19 15:22:19,363 log 14048 21044 Not Found: /favicon.ico
+WARNING 2021-02-19 15:22:19,363 basehttp 14048 21044 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 15:22:52,068 basehttp 14048 21044 "GET /search_receiver/?action_request=search&filter_field_value=anne&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 15:22:54,034 views 14048 21044 --def get customer details
+INFO 2021-02-19 15:22:54,108 basehttp 14048 21044 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+INFO 2021-02-19 15:23:00,315 basehttp 14048 21044 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 15:23:15,510 basehttp 14048 21044 "GET /admin/fx/venturemodel/ HTTP/1.1" 200 74906
+INFO 2021-02-19 15:23:15,577 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:23:20,216 basehttp 14048 21044 "GET /admin/fx/venturemodel/?all= HTTP/1.1" 200 89261
+INFO 2021-02-19 15:23:20,291 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:23:34,969 basehttp 14048 21044 "POST /admin/fx/venturemodel/?all= HTTP/1.1" 200 15102
+INFO 2021-02-19 15:23:37,026 basehttp 14048 21044 "POST /admin/fx/venturemodel/?all= HTTP/1.1" 302 0
+INFO 2021-02-19 15:23:37,436 basehttp 14048 21044 "GET /admin/fx/venturemodel/?all= HTTP/1.1" 200 88815
+INFO 2021-02-19 15:23:37,496 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:23:39,292 basehttp 14048 21044 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 66048
+INFO 2021-02-19 15:23:39,360 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:23:47,693 basehttp 14048 21044 "POST /admin/fx/ccmodel/ HTTP/1.1" 200 15062
+INFO 2021-02-19 15:23:49,466 basehttp 14048 21044 "POST /admin/fx/ccmodel/ HTTP/1.1" 302 0
+INFO 2021-02-19 15:23:49,808 basehttp 14048 21044 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 66188
+INFO 2021-02-19 15:23:49,878 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:24:10,346 basehttp 14048 21044 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 15:24:10,377 basehttp 14048 21044 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-19 15:24:13,123 basehttp 14048 21044 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 746
+WARNING 2021-02-19 15:24:38,240 views 14048 21044 unable to retrieve transaction number
+ERROR 2021-02-19 15:24:38,286 log 14048 21044 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1453, in get
+    print(f"venture_id:{venture_id},amount: {venture_qs.amount}")
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-19 15:24:38,286 basehttp 14048 21044 "GET /pos_view/?venture_id=135 HTTP/1.1" 500 77539
+INFO 2021-02-19 15:26:07,233 basehttp 14048 21044 "GET /admin/fx/productmodel/ HTTP/1.1" 200 101297
+INFO 2021-02-19 15:26:07,305 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:26:12,539 basehttp 14048 21044 "GET /admin/fx/productmodel/?q=bear+brand HTTP/1.1" 200 61961
+INFO 2021-02-19 15:26:12,609 basehttp 14048 21044 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-19 15:27:13,096 views 14048 21044 unable to retrieve transaction number
+ERROR 2021-02-19 15:27:13,116 log 14048 21044 Internal Server Error: /pos_view/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1453, in get
+    print(f"venture_id:{venture_id},amount: {venture_qs.amount}")
+UnboundLocalError: local variable 'venture_qs' referenced before assignment
+ERROR 2021-02-19 15:27:13,116 basehttp 14048 21044 "GET /pos_view/?venture_id=135 HTTP/1.1" 500 77539
+WARNING 2021-02-19 15:27:17,479 views 14048 21044  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 15:27:17,492 basehttp 14048 21044 "GET /pos_view/?venture_id=134 HTTP/1.1" 200 328
+INFO 2021-02-19 15:28:46,907 basehttp 14048 24768 "GET /admin/fx/productmodel/?q=lana HTTP/1.1" 200 56128
+INFO 2021-02-19 15:28:46,970 basehttp 14048 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:33:24,265 basehttp 14048 24768 "GET /admin/fx/productmodel/ HTTP/1.1" 200 101297
+INFO 2021-02-19 15:33:24,337 basehttp 14048 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:33:27,912 basehttp 14048 24768 "GET /admin/fx/productmodel/?q=lana HTTP/1.1" 200 56128
+INFO 2021-02-19 15:33:27,976 basehttp 14048 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:33:30,067 basehttp 14048 24768 "GET /admin/fx/productmodel/116/change/?_changelist_filters=q%3Dlana HTTP/1.1" 200 19463
+INFO 2021-02-19 15:33:30,143 basehttp 14048 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:33:41,798 basehttp 14048 24768 "POST /admin/fx/productmodel/116/change/?_changelist_filters=q%3Dlana HTTP/1.1" 302 0
+INFO 2021-02-19 15:33:41,921 basehttp 14048 24768 "GET /admin/fx/productmodel/?q=lana HTTP/1.1" 200 56364
+INFO 2021-02-19 15:33:41,981 basehttp 14048 24768 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:34:00,059 basehttp 14048 24768 "GET /create_update_member_finance/wallet/21/0/D/ HTTP/1.1" 200 78440
+INFO 2021-02-19 15:34:59,164 basehttp 14048 24768 "POST /create_update_member_finance/wallet/21/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-19 15:34:59,280 basehttp 14048 24768 "GET /success/create_update_result/wallet/21/51/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78582
+INFO 2021-02-19 15:35:02,051 basehttp 14048 24768 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 15:35:03,778 basehttp 14048 24768 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 756
+INFO 2021-02-19 15:36:35,943 basehttp 14048 24768 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 746
+INFO 2021-02-19 15:37:45,637 basehttp 14048 24768 "GET /create_update_member_finance/wallet/21/0/D/ HTTP/1.1" 200 78440
+INFO 2021-02-19 15:39:25,317 basehttp 14048 24768 "GET /member/21/ HTTP/1.1" 200 223043
+INFO 2021-02-19 15:39:29,969 basehttp 14048 24768 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=20&last_row=0 HTTP/1.1" 200 756
+INFO 2021-02-19 15:46:35,875 basehttp 14048 25028 "GET /search_receiver/?action_request=search&filter_field_value=anne&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 15:46:41,614 views 14048 25028 --def get customer details
+INFO 2021-02-19 15:46:41,826 basehttp 14048 25028 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+WARNING 2021-02-19 15:50:11,019 log 14048 25028 Not Found: /favicon.ico
+WARNING 2021-02-19 15:50:11,020 basehttp 14048 25028 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 15:51:01,611 views 14048 25028 --def get customer details
+INFO 2021-02-19 15:51:01,728 basehttp 14048 25028 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+WARNING 2021-02-19 15:51:31,485 log 14048 25028 Not Found: /favicon.ico
+WARNING 2021-02-19 15:51:31,485 basehttp 14048 25028 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 15:57:14,877 basehttp 14048 24164 "GET /admin/fx/productmodel/116/change/?_changelist_filters=q%3Dlana HTTP/1.1" 200 19463
+INFO 2021-02-19 15:57:14,953 basehttp 14048 24164 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:57:23,529 basehttp 14048 24164 "POST /admin/fx/productmodel/116/change/?_changelist_filters=q%3Dlana HTTP/1.1" 302 0
+INFO 2021-02-19 15:57:23,819 basehttp 14048 24164 "GET /admin/fx/productmodel/?q=lana HTTP/1.1" 200 56364
+INFO 2021-02-19 15:57:23,919 basehttp 14048 24164 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 15:57:37,172 basehttp 14048 24164 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+INFO 2021-02-19 15:57:37,512 basehttp 14048 24164 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 15:57:42,788 basehttp 14048 24164 "GET /search_receiver/?action_request=search&filter_field_value=ann&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 15:57:45,269 views 14048 24164 --def get customer details
+INFO 2021-02-19 15:57:45,498 basehttp 14048 24164 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+WARNING 2021-02-19 15:57:47,950 basehttp 14048 24164 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 15:57:49,209 basehttp 14048 13816 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-19 16:01:17,989 log 14048 3832 Not Found: /favicon.ico
+WARNING 2021-02-19 16:01:17,989 basehttp 14048 3832 "GET /favicon.ico HTTP/1.1" 404 16401
+WARNING 2021-02-19 16:01:51,427 log 14048 3832 Not Found: /favicon.ico
+WARNING 2021-02-19 16:01:51,427 basehttp 14048 3832 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 16:03:58,381 basehttp 14048 3832 "GET /create_update/0/ HTTP/1.1" 200 79166
+INFO 2021-02-19 16:05:46,693 basehttp 14048 3832 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2021-02-19 16:05:47,217 basehttp 14048 3832 "GET /success/create_update_member_result/24/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 80430
+INFO 2021-02-19 16:05:50,300 basehttp 14048 3832 "GET /member/24/ HTTP/1.1" 200 223009
+INFO 2021-02-19 16:07:06,249 basehttp 14048 3832 "GET /reset_show_password/?request_action=show&member_id=24 HTTP/1.1" 200 35
+INFO 2021-02-19 16:07:16,312 basehttp 14048 3832 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 16:07:27,335 basehttp 14048 3832 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 16:07:37,307 basehttp 14048 3832 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 16:07:46,805 basehttp 14048 3832 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 16:07:55,004 basehttp 14048 3832 "POST /sign-in/ HTTP/1.1" 200 57
+INFO 2021-02-19 16:07:55,067 basehttp 14048 3832 "GET /user/41 HTTP/1.1" 301 0
+INFO 2021-02-19 16:07:55,272 views 14048 3832  decode #1: 8le0329-01533
+INFO 2021-02-19 16:07:55,272 views 14048 3832 #2-----x:8, lent:1, part_un:0329, part_pwd:1533
+INFO 2021-02-19 16:07:55,285 views 14048 3832 at get_temp_pass,pwd: 2060 ,username:le0329-0
+INFO 2021-02-19 16:07:55,287 views 14048 3832 #4 save pwd: 2060 , customer_id: le0329-0
+INFO 2021-02-19 16:07:55,289 views 14048 3832 #5 username le0329-0 , password : 2060
+INFO 2021-02-19 16:07:55,396 basehttp 14048 3832 "GET /user/41/ HTTP/1.1" 200 167352
+INFO 2021-02-19 16:07:55,477 basehttp 14048 21396 "GET /static/css/user/member-page.css HTTP/1.1" 200 19413
+INFO 2021-02-19 16:07:55,479 basehttp 14048 25044 "GET /static/js/qrcode.js HTTP/1.1" 200 33167
+INFO 2021-02-19 16:07:55,493 basehttp 14048 3832 "GET /static/css/user/nicepage.css HTTP/1.1" 200 938544
+INFO 2021-02-19 16:07:55,512 basehttp 14048 3832 "GET /static/js/user/nicepage.js HTTP/1.1" 200 150727
+INFO 2021-02-19 16:08:05,817 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:08:15,893 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:08:25,826 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:08:35,780 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:08:45,797 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:08:55,794 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:05,788 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:15,780 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:26,315 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:36,291 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:46,393 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:09:56,305 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:06,301 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:16,296 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:26,292 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:36,293 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:46,287 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:10:56,285 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:06,297 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:16,297 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:26,287 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:36,284 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:46,295 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:11:56,288 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:06,291 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:16,292 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:26,263 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:36,298 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:46,317 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:12:56,317 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:06,291 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:16,289 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:26,303 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:36,406 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:46,298 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:13:56,305 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:06,295 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:16,285 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:26,302 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:36,311 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:46,307 basehttp 14048 3832 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:14:59,758 basehttp 14048 18352 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:15:08,274 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:16:08,321 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:17:08,262 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:18:08,316 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:19:08,288 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:20:08,258 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:21:08,342 basehttp 14048 12648 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:23:38,630 basehttp 14048 22192 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:23:45,685 basehttp 14048 22192 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:23:56,890 basehttp 14048 23104 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:23:58,606 basehttp 14048 23104 "GET /search_receiver/?action_request=search&filter_field_value=anne&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-19 16:24:00,943 basehttp 14048 23104 "GET /member/21/ HTTP/1.1" 200 213715
+INFO 2021-02-19 16:24:03,300 basehttp 14048 23104 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=21&total_no_of_row=5&last_row=0 HTTP/1.1" 200 756
+INFO 2021-02-19 16:24:06,233 basehttp 14048 23104 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:24:16,217 basehttp 14048 23104 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:24:26,211 basehttp 14048 23104 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 16:24:36,197 basehttp 14048 23104 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:09:03,158 basehttp 14048 25928 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:09:08,197 basehttp 14048 25928 "GET /live/24/0/ HTTP/1.1" 200 12
+WARNING 2021-02-19 17:10:00,856 log 14048 16924 Not Found: /favicon.ico
+WARNING 2021-02-19 17:10:00,856 basehttp 14048 16924 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 17:10:08,194 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:11:08,362 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:11:49,647 basehttp 14048 16924 "GET /search_receiver/?action_request=search&filter_field_value=jenny&total_no_of_row_per_page=5 HTTP/1.1" 200 231
+INFO 2021-02-19 17:11:53,235 views 14048 16924 --def get customer details
+INFO 2021-02-19 17:11:53,467 basehttp 14048 16924 "GET /get_customer_details_bypass/?member_id=je0725-0 HTTP/1.1" 200 168
+INFO 2021-02-19 17:12:00,381 basehttp 14048 16924 "GET /fx_pos/2/0/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:00,499 basehttp 14048 16924 "GET /venture_login/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:00,637 basehttp 14048 16924 "GET /logout/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:00,742 basehttp 14048 16924 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 17:12:08,300 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:12:09,017 basehttp 14048 16924 "POST /sign-in/ HTTP/1.1" 200 57
+INFO 2021-02-19 17:12:09,054 basehttp 14048 16924 "GET /user/20 HTTP/1.1" 301 0
+INFO 2021-02-19 17:12:09,273 views 14048 16924  decode #1: 8sa1212-020230
+INFO 2021-02-19 17:12:09,273 views 14048 16924 #2-----x:8, lent:1, part_un:1212, part_pwd:20230
+INFO 2021-02-19 17:12:09,289 views 14048 16924 at get_temp_pass,pwd: 9059 ,username:sa1212-0
+INFO 2021-02-19 17:12:09,290 views 14048 16924 #4 save pwd: 9059 , customer_id: sa1212-0
+INFO 2021-02-19 17:12:09,290 views 14048 16924 #5 username sa1212-0 , password : 9059
+INFO 2021-02-19 17:12:09,412 basehttp 14048 16924 "GET /user/20/ HTTP/1.1" 200 174477
+INFO 2021-02-19 17:12:19,893 basehttp 14048 16924 "GET /live/3/0/ HTTP/1.1" 200 210
+INFO 2021-02-19 17:12:29,934 basehttp 14048 16924 "GET /live/3/0/ HTTP/1.1" 200 210
+INFO 2021-02-19 17:12:39,888 basehttp 14048 16924 "GET /live/3/0/ HTTP/1.1" 200 210
+INFO 2021-02-19 17:12:49,772 basehttp 14048 16924 "GET /fx_pos/2/0/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:49,940 basehttp 14048 16924 "GET /live/3/0/ HTTP/1.1" 200 210
+INFO 2021-02-19 17:12:49,948 basehttp 14048 3236 "GET /venture_login/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:50,119 basehttp 14048 3236 "GET /logout/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:12:50,269 basehttp 14048 3236 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 17:12:59,483 basehttp 14048 3236 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 17:13:08,273 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:14:08,282 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:14:35,394 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:14:35,745 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:14:46,285 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:14:56,337 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:06,283 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:12,947 basehttp 14048 3236 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 17:15:16,321 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:23,429 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:15:26,273 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:33,400 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:15:36,260 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:43,413 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:15:46,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:15:53,390 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:15:56,258 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:03,399 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:06,273 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:13,406 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:16,274 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:23,401 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:26,272 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:33,386 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:36,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:43,412 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:46,266 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:16:53,426 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:16:56,275 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:03,365 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:06,289 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:13,397 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:16,292 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:23,391 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:26,263 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:33,395 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:36,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:43,391 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:46,269 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:17:53,397 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:17:56,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:03,399 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:06,265 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:13,396 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:16,266 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:23,422 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:26,263 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:33,405 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:36,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:43,366 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:46,266 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:18:53,398 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:18:56,303 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:19:03,408 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:19:06,239 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:19:13,379 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:19:16,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:19:23,417 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:19:26,291 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:19:33,499 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:19:36,255 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:19:43,404 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:19:53,397 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:03,398 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:08,248 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:20:13,422 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:23,396 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:34,260 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:44,270 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:20:54,254 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:04,258 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:08,268 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:21:14,276 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:24,272 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:34,257 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:44,251 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:21:54,260 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:04,257 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:08,293 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:22:14,257 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:24,265 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:34,197 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:43,419 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:22:53,403 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:03,442 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:08,301 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:23:13,394 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:23,397 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:33,403 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:43,418 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:23:53,410 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:03,395 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:08,245 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:24:13,395 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:23,368 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:33,402 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:43,406 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:24:53,501 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:25:03,404 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:25:08,265 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:25:19,011 basehttp 14048 3236 "GET /fx_pos/16/0/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:25:19,301 basehttp 14048 3236 "GET /venture_login/?next=/fx_pos/16/0/ HTTP/1.1" 200 30996
+INFO 2021-02-19 17:25:19,464 basehttp 14048 3236 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+INFO 2021-02-19 17:25:29,346 basehttp 14048 3236 "GET /admin/fx/productmodel/101/change/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:25:29,577 basehttp 14048 3236 "GET /admin/login/?next=/admin/fx/productmodel/101/change/ HTTP/1.1" 200 2235
+INFO 2021-02-19 17:25:29,681 basehttp 14048 3236 "GET /static/admin/css/login.css HTTP/1.1" 200 1185
+INFO 2021-02-19 17:25:38,612 basehttp 14048 3236 "GET / HTTP/1.1" 200 176131
+INFO 2021-02-19 17:25:49,156 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:25:59,267 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:08,308 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:26:09,159 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:19,130 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:29,154 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:39,167 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:49,162 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:26:59,153 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:08,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:27:09,158 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:19,157 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:29,143 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:39,154 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:49,176 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:27:59,151 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:08,281 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:28:09,155 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:19,171 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:29,162 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:39,152 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:49,149 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:28:59,158 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:08,287 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:29:09,170 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:19,165 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:29,157 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:39,164 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:49,157 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:29:59,160 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:08,286 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:30:09,150 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:19,168 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:29,150 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:39,148 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:49,285 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:30:59,278 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:08,281 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:31:09,283 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:19,291 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:29,286 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:39,285 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:49,273 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:31:59,317 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:08,256 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:32:09,292 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:19,271 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:24,075 basehttp 14048 3236 "GET /admin/fx/productmodel/?q=kin+cup HTTP/1.1" 302 0
+INFO 2021-02-19 17:32:24,375 basehttp 14048 3236 "GET /admin/login/?next=/admin/fx/productmodel/%3Fq%3Dkin%2Bcup HTTP/1.1" 200 2239
+INFO 2021-02-19 17:32:29,277 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:32,846 basehttp 14048 3236 "POST /admin/login/?next=/admin/fx/productmodel/%3Fq%3Dkin%2Bcup HTTP/1.1" 200 2403
+INFO 2021-02-19 17:32:39,372 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:45,446 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:32:45,784 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:32:49,306 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:32:56,275 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:32:59,311 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:06,315 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:09,193 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:16,385 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:19,153 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:26,238 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:29,144 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:36,278 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:39,139 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:46,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:49,136 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:33:56,297 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:33:59,157 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:06,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:09,160 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:16,265 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:19,155 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:26,293 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:29,145 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:36,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:39,142 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:46,268 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:49,159 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:34:56,282 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:34:59,144 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:06,261 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:09,151 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:16,281 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:19,141 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:26,271 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:29,158 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:36,252 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:39,147 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:46,307 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:49,176 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:35:56,326 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:35:59,306 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:06,285 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:06,969 basehttp 14048 3236 "POST /admin/login/?next=/admin/fx/productmodel/%3Fq%3Dkin%2Bcup HTTP/1.1" 302 0
+INFO 2021-02-19 17:36:07,238 basehttp 14048 3236 "GET /admin/fx/productmodel/?q=kin+cup HTTP/1.1" 200 57142
+INFO 2021-02-19 17:36:07,454 basehttp 14048 3236 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-19 17:36:09,318 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:16,005 basehttp 14048 3236 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+INFO 2021-02-19 17:36:16,280 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:17,160 basehttp 14048 3236 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 17:36:19,265 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:26,303 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:29,288 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:36,236 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:39,295 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:46,280 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:49,260 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:36:56,270 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:36:59,286 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:37:06,304 basehttp 14048 3236 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:37:09,329 basehttp 14048 3236 "GET /live/0/0/ HTTP/1.1" 200 330
+WARNING 2021-02-19 17:37:15,195 basehttp 14048 3236 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 17:37:16,094 basehttp 14048 16968 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 17:37:16,384 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:37:19,300 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:37:26,303 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:37:29,281 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:37:36,281 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:37:39,262 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:37:46,268 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:37:49,280 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:37:59,278 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:08,307 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:38:09,268 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:19,309 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:29,294 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:39,288 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:49,328 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:38:59,311 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:08,284 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:39:09,288 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:19,311 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:29,277 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:39,287 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:49,302 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:39:51,894 basehttp 14048 16924 "GET /search_receiver/?action_request=search&filter_field_value=ber&total_no_of_row_per_page=5 HTTP/1.1" 200 772
+INFO 2021-02-19 17:39:59,320 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:40:01,721 basehttp 14048 16924 "GET /search_receiver/?action_request=search&filter_field_value=sam&total_no_of_row_per_page=5 HTTP/1.1" 200 231
+INFO 2021-02-19 17:40:04,406 views 14048 16924 --def get customer details
+INFO 2021-02-19 17:40:04,648 basehttp 14048 16924 "GET /get_customer_details_bypass/?member_id=je0725-0 HTTP/1.1" 200 168
+INFO 2021-02-19 17:40:08,300 basehttp 14048 16924 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:40:09,298 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:40:19,325 basehttp 14048 16924 "GET /live/0/0/ HTTP/1.1" 200 330
+WARNING 2021-02-19 17:40:23,047 basehttp 14048 16924 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 17:40:23,048 basehttp 14048 24536 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 17:40:23,061 basehttp 14048 24536 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 17:40:23,063 basehttp 14048 17816 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 17:40:29,341 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:40:39,287 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:40:49,296 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:41:08,246 basehttp 14048 24536 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:41:08,369 basehttp 14048 17816 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:42:08,265 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:42:08,268 basehttp 14048 24536 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:43:08,283 basehttp 14048 24536 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:43:08,285 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:44:08,333 basehttp 14048 17816 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:44:08,336 basehttp 14048 24536 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:45:08,205 basehttp 14048 10188 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:45:08,205 basehttp 14048 18408 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:45:14,303 basehttp 14048 18408 "GET /search_receiver/?action_request=search&filter_field_value=mop&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 17:45:16,141 views 14048 18408 --def get customer details
+INFO 2021-02-19 17:45:16,230 basehttp 14048 18408 "GET /get_customer_details_bypass/?member_id=ma0809-0 HTTP/1.1" 200 174
+INFO 2021-02-19 17:45:22,340 basehttp 14048 18408 "GET /search_receiver/?action_request=search&filter_field_value=mop&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 17:45:24,492 views 14048 18408 --def get customer details
+INFO 2021-02-19 17:45:24,596 basehttp 14048 18408 "GET /get_customer_details_bypass/?member_id=ma0809-0 HTTP/1.1" 200 174
+INFO 2021-02-19 17:46:08,268 basehttp 14048 18408 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:46:08,273 basehttp 14048 10188 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:47:08,255 basehttp 14048 10188 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:47:08,257 basehttp 14048 18408 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:48:08,282 basehttp 14048 18408 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:48:08,286 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:48:59,453 basehttp 14048 10188 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-19 17:49:07,952 basehttp 14048 10188 "GET /login/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:49:08,164 basehttp 14048 10188 "GET /staff_logout/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:49:08,261 basehttp 14048 18408 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:49:08,266 basehttp 14048 17992 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:49:08,278 basehttp 14048 10188 "GET /venture_main_request/ HTTP/1.1" 200 29177
+INFO 2021-02-19 17:49:12,543 basehttp 14048 10188 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 17:49:16,123 basehttp 14048 10188 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:49:16,249 basehttp 14048 17992 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:49:16,276 basehttp 14048 10188 "GET /login/?next=/dashboard/ HTTP/1.1" 200 53518
+INFO 2021-02-19 17:49:21,523 basehttp 14048 10188 "POST /login/?next=/dashboard/ HTTP/1.1" 302 0
+INFO 2021-02-19 17:49:21,753 basehttp 14048 10188 "GET /dashboard/ HTTP/1.1" 200 67764
+INFO 2021-02-19 17:49:26,238 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:49:28,249 basehttp 14048 10188 "GET /search_receiver/?action_request=search&filter_field_value=mop&total_no_of_row_per_page=5 HTTP/1.1" 200 227
+INFO 2021-02-19 17:49:30,590 basehttp 14048 10188 "GET /member/18/ HTTP/1.1" 200 223086
+INFO 2021-02-19 17:49:32,823 basehttp 14048 10188 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=18&total_no_of_row=20&last_row=0 HTTP/1.1" 200 555
+INFO 2021-02-19 17:49:36,289 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:49:46,280 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:49:56,318 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:01,936 basehttp 14048 10188 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=18&total_no_of_row=20&last_row=0 HTTP/1.1" 200 746
+INFO 2021-02-19 17:50:06,283 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:16,296 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:17,851 basehttp 14048 10188 "GET /pos_view/?venture_id=136 HTTP/1.1" 200 346
+INFO 2021-02-19 17:50:26,291 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:36,302 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:46,314 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:50:56,286 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:06,247 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:12,951 basehttp 14048 10188 "GET /search_receiver/?action_request=search&filter_field_value=fran&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-19 17:51:16,280 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:18,130 basehttp 14048 10188 "GET /member/20/ HTTP/1.1" 200 223055
+INFO 2021-02-19 17:51:23,112 basehttp 14048 10188 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 395
+INFO 2021-02-19 17:51:26,285 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:36,257 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:46,273 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:51:48,761 basehttp 14048 10188 "GET /create_update_member_finance/wallet/20/50/D/ HTTP/1.1" 200 78428
+INFO 2021-02-19 17:51:56,271 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:06,265 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:16,296 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:20,156 basehttp 14048 10188 "GET /member/20/ HTTP/1.1" 200 223055
+INFO 2021-02-19 17:52:25,384 basehttp 14048 10188 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 397
+INFO 2021-02-19 17:52:26,230 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:36,279 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:46,285 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:52:48,165 basehttp 14048 10188 "GET /search_receiver/?action_request=search&filter_field_value=ffra&total_no_of_row_per_page=5 HTTP/1.1" 200 66
+INFO 2021-02-19 17:52:52,896 basehttp 14048 10188 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-19 17:52:55,467 views 14048 10188 --def get customer details
+INFO 2021-02-19 17:52:55,811 basehttp 14048 10188 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 170
+INFO 2021-02-19 17:52:56,322 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:06,277 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:16,294 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:26,297 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:36,286 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:46,256 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:53:56,252 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:06,266 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:16,269 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:26,224 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:36,280 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:46,270 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:54:56,265 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:55:06,260 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:55:16,258 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+WARNING 2021-02-19 17:55:24,567 log 14048 10188 Not Found: /favicon.ico
+WARNING 2021-02-19 17:55:24,567 basehttp 14048 10188 "GET /favicon.ico HTTP/1.1" 404 16401
+INFO 2021-02-19 17:55:26,267 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:55:36,262 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:55:46,263 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:55:56,287 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:06,304 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:16,301 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:26,269 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:36,285 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:46,273 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:56:56,259 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:57:06,284 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:57:16,293 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:57:26,270 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:57:36,306 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:58:08,284 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 17:59:08,266 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+WARNING 2021-02-19 17:59:09,044 log 14048 10188 Forbidden (CSRF token missing or incorrect.): /pos_view/
+WARNING 2021-02-19 17:59:09,045 basehttp 14048 10188 "POST /pos_view/ HTTP/1.1" 403 2513
+INFO 2021-02-19 18:00:08,250 basehttp 14048 10188 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:25:34,366 basehttp 14048 22848 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:26:06,548 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:27:06,626 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:28:06,604 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:29:06,634 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:30:06,633 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:31:06,585 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:32:06,737 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:33:06,618 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:34:06,669 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:35:06,629 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:36:06,647 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:37:06,590 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:38:06,609 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:39:06,652 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:40:06,669 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:41:06,625 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:42:06,644 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:43:06,639 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:44:06,632 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:45:06,615 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:46:06,645 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:46:34,027 basehttp 14048 10356 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:46:34,195 basehttp 14048 18064 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 18:46:44,116 basehttp 14048 18064 "GET /live/24/0/ HTTP/1.1" 200 12
+INFO 2021-02-19 19:01:27,734 basehttp 14048 3960 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+INFO 2021-02-19 19:01:27,767 basehttp 14048 3960 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+INFO 2021-02-19 19:01:29,268 basehttp 14048 3960 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 21:25:24,318 basehttp 14048 22580 "GET /fx_pos/2/0/ HTTP/1.1" 200 207927
+INFO 2021-02-19 21:25:24,365 basehttp 14048 22580 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+INFO 2021-02-19 21:25:25,947 basehttp 14048 22580 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+INFO 2021-02-19 21:25:26,829 basehttp 14048 22580 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 21:25:34,150 basehttp 14048 22580 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-19 21:25:36,390 views 14048 22580 --def get customer details
+INFO 2021-02-19 21:25:36,653 basehttp 14048 22580 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-19 21:26:30,779 basehttp 14048 22580 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 21:26:31,748 basehttp 14048 26972 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 21:27:10,727 basehttp 14048 26384 "POST /pos_view/ HTTP/1.1" 200 117
+WARNING 2021-02-19 21:27:19,643 basehttp 14048 26384 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 21:27:19,644 basehttp 14048 22496 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 21:27:19,684 basehttp 14048 16204 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 21:27:19,685 basehttp 14048 22496 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 21:28:20,058 basehttp 14048 22496 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-19 21:28:22,838 basehttp 14048 22496 "GET /member/3/ HTTP/1.1" 200 223118
+INFO 2021-02-19 21:28:22,939 basehttp 14048 22496 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-19 21:28:23,003 basehttp 14048 22496 "GET /static/js/moment.js HTTP/1.1" 304 0
+INFO 2021-02-19 21:28:24,972 basehttp 14048 22496 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=3&total_no_of_row=20&last_row=0 HTTP/1.1" 200 3605
+INFO 2021-02-19 21:28:30,141 basehttp 14048 22496 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=3&total_no_of_row=20&last_row=0 HTTP/1.1" 200 3551
+INFO 2021-02-19 21:29:51,402 basehttp 14048 22496 "GET /fx_pos/2/0/ HTTP/1.1" 200 207929
+INFO 2021-02-19 21:29:52,476 basehttp 14048 22496 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 21:30:01,908 basehttp 14048 22496 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-19 21:30:03,990 views 14048 22496 --def get customer details
+INFO 2021-02-19 21:30:04,256 basehttp 14048 22496 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 170
+WARNING 2021-02-19 21:31:04,315 basehttp 14048 22496 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 21:31:05,862 basehttp 14048 16204 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-19 21:34:24,701 basehttp 14048 21508 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 21:34:24,702 basehttp 14048 17648 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 21:34:24,754 basehttp 14048 24556 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 21:34:24,755 basehttp 14048 17648 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 21:34:52,962 basehttp 14048 17648 "POST /pos_view/ HTTP/1.1" 200 117
+INFO 2021-02-19 21:35:09,823 basehttp 14048 17648 "GET /dashboard/ HTTP/1.1" 200 67764
+INFO 2021-02-19 21:35:18,820 basehttp 14048 17648 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-19 21:35:20,722 basehttp 14048 17648 "GET /live/0/0/ HTTP/1.1" 200 330
+INFO 2021-02-19 21:35:20,760 basehttp 14048 24556 "GET /live_services/ HTTP/1.1" 200 12
+INFO 2021-02-19 21:35:21,735 basehttp 14048 24556 "GET /member/20/ HTTP/1.1" 200 223057
+INFO 2021-02-19 21:35:27,051 basehttp 14048 24556 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 570
+INFO 2021-02-19 21:35:31,942 basehttp 14048 24556 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 573
+INFO 2021-02-19 21:39:37,118 basehttp 14048 24556 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-19 21:39:39,079 views 14048 24556 --def get customer details
+INFO 2021-02-19 21:39:39,343 basehttp 14048 24556 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-19 21:39:54,358 basehttp 14048 24556 "POST /pos_view/ HTTP/1.1" 200 117
+WARNING 2021-02-19 21:42:32,251 views 14048 24556  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-19 21:42:32,303 basehttp 14048 24556 "GET /pos_view/?venture_id=138 HTTP/1.1" 200 340
+INFO 2021-02-19 21:48:40,235 basehttp 14048 24388 "GET /fx_pos/2/0/ HTTP/1.1" 200 207994
+WARNING 2021-02-19 21:48:40,777 basehttp 14048 24388 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 21:48:40,781 basehttp 14048 18772 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 21:48:40,816 basehttp 14048 18772 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 21:48:40,818 basehttp 14048 25288 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 21:49:47,991 basehttp 14048 25288 "GET /fx_pos/2/0/ HTTP/1.1" 200 207996
+WARNING 2021-02-19 21:49:48,658 basehttp 14048 25288 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 21:49:48,853 basehttp 14048 18772 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 21:49:48,868 basehttp 14048 23124 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 21:49:48,870 basehttp 14048 15036 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 21:49:48,931 basehttp 14048 18772 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 21:49:55,538 basehttp 14048 18772 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 21:49:56,019 basehttp 14048 15036 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 21:50:13,120 basehttp 14048 23124 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-19 22:13:45,746 basehttp 14048 27048 "GET /fx_pos/2/0/ HTTP/1.1" 200 208154
+INFO 2021-02-19 22:13:45,811 basehttp 14048 2024 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+INFO 2021-02-19 22:13:45,811 basehttp 14048 27048 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+WARNING 2021-02-19 22:13:46,202 basehttp 14048 27048 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:13:46,204 basehttp 14048 2024 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:13:46,243 basehttp 14048 5760 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:13:46,244 basehttp 14048 2024 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:13:46,362 basehttp 14048 2024 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:13:58,831 basehttp 14048 2024 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:13:59,745 basehttp 14048 5760 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 22:17:35,981 basehttp 14048 17608 "GET /fx_pos/2/0/ HTTP/1.1" 200 208173
+WARNING 2021-02-19 22:17:36,415 basehttp 14048 17608 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:17:36,470 basehttp 14048 8604 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:17:36,517 basehttp 14048 24272 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:17:36,518 basehttp 14048 8604 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:17:36,649 basehttp 14048 8604 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:17:39,619 basehttp 14048 8604 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:17:40,780 basehttp 14048 24272 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 22:18:44,193 basehttp 14048 4368 "GET /fx_pos/2/0/ HTTP/1.1" 200 208159
+WARNING 2021-02-19 22:18:44,478 basehttp 14048 4368 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:18:44,510 basehttp 14048 16596 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:18:44,555 basehttp 14048 16596 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:18:44,556 basehttp 14048 23748 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:18:44,694 basehttp 14048 23748 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:18:51,040 basehttp 14048 23748 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:18:51,367 basehttp 14048 16596 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 22:25:24,277 basehttp 14048 15212 "GET /fx_pos/2/0/ HTTP/1.1" 200 208159
+WARNING 2021-02-19 22:25:27,438 basehttp 14048 15212 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:25:27,441 basehttp 14048 20628 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:25:27,521 basehttp 14048 2752 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:25:27,524 basehttp 14048 20628 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:25:27,690 basehttp 14048 20628 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-19 22:29:17,892 basehttp 14048 20628 "GET /fx_pos/2/0/ HTTP/1.1" 200 208368
+WARNING 2021-02-19 22:29:18,674 basehttp 14048 20628 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:29:18,804 basehttp 14048 2752 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:29:18,934 basehttp 14048 2752 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:29:18,936 basehttp 14048 21788 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:29:19,085 basehttp 14048 21788 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:29:22,864 basehttp 14048 21788 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:29:23,617 basehttp 14048 2752 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 22:30:22,111 basehttp 14048 21264 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-19 22:32:51,984 basehttp 14048 21264 "GET /fx_pos/2/0/ HTTP/1.1" 200 208371
+WARNING 2021-02-19 22:32:52,808 basehttp 14048 21264 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:32:52,881 basehttp 14048 24524 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:32:52,947 basehttp 14048 24524 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:32:52,976 basehttp 14048 25568 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:32:53,115 basehttp 14048 25568 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:32:57,103 basehttp 14048 25568 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:32:57,615 basehttp 14048 24524 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-19 22:33:36,957 basehttp 14048 18448 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-19 22:38:19,328 basehttp 14048 18448 "GET /fx_pos/2/0/ HTTP/1.1" 200 208395
+WARNING 2021-02-19 22:38:19,569 basehttp 14048 18448 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-19 22:38:19,614 basehttp 14048 27624 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-19 22:38:19,658 basehttp 14048 27624 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-19 22:38:19,661 basehttp 14048 25184 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-19 22:38:19,791 basehttp 14048 25184 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-19 22:38:24,108 basehttp 14048 25184 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-19 22:38:24,513 basehttp 14048 27624 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+ERROR 2021-02-19 22:42:03,257 log 14048 22720 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1918, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1922, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-19 22:42:03,266 basehttp 14048 22720 "POST /post_itemSold/ HTTP/1.1" 500 162841
+INFO 2021-02-19 22:43:58,555 basehttp 14048 22720 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-20 04:32:28,664 basehttp 14048 15128 "GET /fx_pos/2/0/ HTTP/1.1" 200 208395
+INFO 2021-02-20 04:32:28,713 basehttp 14048 21956 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+INFO 2021-02-20 04:32:28,713 basehttp 14048 15128 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+WARNING 2021-02-20 04:32:29,127 basehttp 14048 21956 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:32:29,130 basehttp 14048 15128 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:32:29,164 basehttp 14048 15128 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:32:29,166 basehttp 14048 27640 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:32:29,339 basehttp 14048 27640 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-20 04:32:46,112 basehttp 14048 27640 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-20 04:32:46,541 basehttp 14048 15128 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-20 04:37:29,378 basehttp 14048 13904 "GET /fx_pos/2/0/ HTTP/1.1" 200 208423
+WARNING 2021-02-20 04:37:29,664 basehttp 14048 13904 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:37:29,687 basehttp 14048 26400 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:37:29,736 basehttp 14048 26400 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:37:29,760 basehttp 14048 26400 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:37:29,975 basehttp 14048 26400 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:37:50,611 basehttp 14048 26400 "GET /fx_pos/2/0/ HTTP/1.1" 200 208443
+WARNING 2021-02-20 04:37:50,763 basehttp 14048 26400 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:37:50,785 basehttp 14048 27768 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:37:50,826 basehttp 14048 27768 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:37:50,840 basehttp 14048 27768 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:37:51,040 basehttp 14048 27768 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:37:52,954 basehttp 14048 27768 "GET /fx_pos/2/0/ HTTP/1.1" 200 208443
+WARNING 2021-02-20 04:37:53,108 basehttp 14048 27768 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:37:53,130 basehttp 14048 10084 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:37:53,161 basehttp 14048 10084 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:37:53,240 basehttp 14048 10084 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:37:53,406 basehttp 14048 10084 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:38:36,253 basehttp 14048 10084 "GET /fx_pos/2/0/ HTTP/1.1" 200 208468
+WARNING 2021-02-20 04:38:36,407 basehttp 14048 10084 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:38:36,441 basehttp 14048 20552 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:38:36,464 basehttp 14048 20552 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:38:36,483 basehttp 14048 20552 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:38:36,687 basehttp 14048 20552 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:41:14,559 basehttp 14048 20552 "GET /fx_pos/2/0/ HTTP/1.1" 200 208479
+WARNING 2021-02-20 04:41:14,742 basehttp 14048 20552 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:41:14,787 basehttp 14048 24720 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:41:14,788 basehttp 14048 20720 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:41:14,813 basehttp 14048 20720 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:41:15,064 basehttp 14048 20720 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:42:45,679 basehttp 14048 20720 "GET /fx_pos/2/0/ HTTP/1.1" 200 208544
+WARNING 2021-02-20 04:42:45,836 basehttp 14048 20720 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:42:45,857 basehttp 14048 24720 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:42:45,938 basehttp 14048 24720 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:42:45,968 basehttp 14048 24720 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:42:46,137 basehttp 14048 24720 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:43:11,065 basehttp 14048 24720 "GET /fx_pos/2/0/ HTTP/1.1" 200 208545
+WARNING 2021-02-20 04:43:11,222 basehttp 14048 24720 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:43:11,243 basehttp 14048 17464 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:43:11,284 basehttp 14048 17464 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:43:11,312 basehttp 14048 17464 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:43:11,511 basehttp 14048 17464 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:43:26,477 views 14048 17464 --def get customer details
+INFO 2021-02-20 04:43:26,541 views 14048 17464 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-20 04:43:26,704 basehttp 14048 17464 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-20 04:45:09,283 basehttp 14048 17464 "GET /fx_pos/2/0/ HTTP/1.1" 200 208579
+WARNING 2021-02-20 04:45:09,438 basehttp 14048 17464 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:45:09,487 basehttp 14048 24104 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:45:09,488 basehttp 14048 26932 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:45:09,514 basehttp 14048 24104 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:45:09,746 basehttp 14048 24104 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:47:04,520 basehttp 14048 26932 "GET /fx_pos/2/0/ HTTP/1.1" 200 208586
+WARNING 2021-02-20 04:47:04,689 basehttp 14048 26932 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:47:04,741 basehttp 14048 24104 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:47:04,743 basehttp 14048 25608 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:47:04,772 basehttp 14048 25608 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:47:04,931 basehttp 14048 25608 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 04:47:50,660 basehttp 14048 25608 "GET /fx_pos/2/0/ HTTP/1.1" 200 208558
+WARNING 2021-02-20 04:47:50,819 basehttp 14048 25608 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 04:47:50,842 basehttp 14048 24104 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 04:47:50,880 basehttp 14048 24104 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 04:47:50,909 basehttp 14048 24104 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 04:47:51,114 basehttp 14048 24104 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-20 04:48:46,412 basehttp 14048 24104 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-20 04:49:14,848 views 14048 2348 --def get customer details
+INFO 2021-02-20 04:49:14,937 views 14048 2348 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-20 04:49:15,105 basehttp 14048 2348 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+WARNING 2021-02-20 04:49:32,284 views 14048 2348 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 04:49:32,286 basehttp 14048 2348 "POST /pos_view/ HTTP/1.1" 200 97
+INFO 2021-02-20 05:08:30,392 basehttp 14048 13620 "GET /fx_pos/2/0/ HTTP/1.1" 200 208559
+WARNING 2021-02-20 05:08:30,627 basehttp 14048 13620 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:08:30,673 basehttp 14048 15248 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:08:30,707 basehttp 14048 15248 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:08:30,708 basehttp 14048 29240 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:08:30,891 basehttp 14048 29240 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:08:37,087 basehttp 14048 29240 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-20 05:08:39,108 views 14048 29240 --def get customer details
+INFO 2021-02-20 05:08:39,179 basehttp 14048 29240 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-20 05:09:00,900 basehttp 14048 29240 "POST /pos_view/ HTTP/1.1" 200 122
+INFO 2021-02-20 05:09:45,987 views 14048 29240 --def get customer details
+INFO 2021-02-20 05:09:46,050 basehttp 14048 29240 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+ERROR 2021-02-20 05:10:07,446 log 14048 29240 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1918, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1922, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-20 05:10:07,447 basehttp 14048 29240 "POST /post_itemSold/ HTTP/1.1" 500 162292
+WARNING 2021-02-20 05:10:22,374 views 14048 29240 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:10:22,375 basehttp 14048 29240 "POST /pos_view/ HTTP/1.1" 200 97
+INFO 2021-02-20 05:13:00,378 basehttp 14048 29240 "GET /fx_pos/2/0/ HTTP/1.1" 200 208607
+WARNING 2021-02-20 05:13:00,634 basehttp 14048 29240 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:13:00,680 basehttp 14048 15248 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:13:00,718 basehttp 14048 15248 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:13:00,719 basehttp 14048 28876 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:13:09,156 basehttp 14048 28876 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-20 05:14:02,004 basehttp 14048 28876 "GET /fx_pos/2/0/ HTTP/1.1" 200 208607
+WARNING 2021-02-20 05:14:02,249 basehttp 14048 28876 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:14:02,298 basehttp 14048 15248 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:14:02,334 basehttp 14048 3216 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:14:02,335 basehttp 14048 15248 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:15:44,294 basehttp 14048 15248 "GET /fx_pos/2/0/ HTTP/1.1" 200 208605
+WARNING 2021-02-20 05:15:44,429 basehttp 14048 15248 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:15:44,488 basehttp 14048 3216 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:15:44,503 basehttp 14048 3216 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:15:44,505 basehttp 14048 10708 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:16:21,837 basehttp 14048 10708 "GET /fx_pos/2/0/ HTTP/1.1" 200 208565
+WARNING 2021-02-20 05:16:21,975 basehttp 14048 10708 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:16:22,183 basehttp 14048 3216 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:16:22,201 basehttp 14048 3216 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:16:22,213 basehttp 14048 1528 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:16:22,215 basehttp 14048 26440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:16:26,632 basehttp 14048 26440 "GET /fx_pos/2/0/ HTTP/1.1" 200 208565
+WARNING 2021-02-20 05:16:26,761 basehttp 14048 26440 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:16:26,822 basehttp 14048 1528 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:16:26,841 basehttp 14048 3216 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:16:26,843 basehttp 14048 1528 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:16:27,083 basehttp 14048 1528 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:17:10,570 basehttp 14048 1528 "GET /fx_pos/2/0/ HTTP/1.1" 200 208753
+WARNING 2021-02-20 05:17:10,707 basehttp 14048 1528 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:17:10,762 basehttp 14048 3216 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:17:10,779 basehttp 14048 27600 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:17:10,783 basehttp 14048 25668 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:17:10,940 basehttp 14048 25668 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:17:18,766 basehttp 14048 25668 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-20 05:17:20,653 views 14048 25668 --def get customer details
+INFO 2021-02-20 05:17:20,756 basehttp 14048 25668 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-20 05:18:02,876 views 14048 25668 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:18:02,876 basehttp 14048 25668 "POST /pos_view/ HTTP/1.1" 200 97
+WARNING 2021-02-20 05:18:05,846 views 14048 25668 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:18:05,846 basehttp 14048 25668 "POST /pos_view/ HTTP/1.1" 200 97
+WARNING 2021-02-20 05:18:07,847 views 14048 25668 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:18:07,848 basehttp 14048 25668 "POST /pos_view/ HTTP/1.1" 200 97
+INFO 2021-02-20 05:18:17,294 basehttp 14048 25668 "GET /fx_pos/2/0/ HTTP/1.1" 200 208754
+WARNING 2021-02-20 05:18:17,449 basehttp 14048 25668 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:18:17,511 basehttp 14048 27600 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:18:17,526 basehttp 14048 3216 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:18:17,527 basehttp 14048 27600 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:18:17,673 basehttp 14048 27600 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:18:30,923 basehttp 14048 27600 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-20 05:18:32,525 views 14048 27600 --def get customer details
+INFO 2021-02-20 05:18:32,595 basehttp 14048 27600 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-20 05:19:23,565 views 14048 27600 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:19:23,565 basehttp 14048 27600 "POST /pos_view/ HTTP/1.1" 200 97
+WARNING 2021-02-20 05:19:37,910 views 14048 27600 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:19:37,911 basehttp 14048 27600 "POST /pos_view/ HTTP/1.1" 200 97
+WARNING 2021-02-20 05:20:05,981 views 14048 27600 Please enter an amount that is no more than P1,238.93
+INFO 2021-02-20 05:20:05,982 basehttp 14048 27600 "POST /pos_view/ HTTP/1.1" 200 97
+INFO 2021-02-20 05:20:12,553 basehttp 14048 27600 "GET /fx_pos/2/0/ HTTP/1.1" 200 208753
+WARNING 2021-02-20 05:20:12,696 basehttp 14048 27600 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:20:12,753 basehttp 14048 3216 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:20:12,769 basehttp 14048 3836 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:20:12,770 basehttp 14048 3216 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:20:12,945 basehttp 14048 3216 "GET /itemList/ HTTP/1.1" 200 26508
+INFO 2021-02-20 05:20:23,324 basehttp 14048 3216 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 203
+INFO 2021-02-20 05:20:24,879 views 14048 3216 --def get customer details
+INFO 2021-02-20 05:20:24,946 basehttp 14048 3216 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-20 05:20:42,204 basehttp 14048 3216 "POST /pos_view/ HTTP/1.1" 200 105
+INFO 2021-02-20 05:21:06,651 basehttp 14048 3216 "POST /pos_view/ HTTP/1.1" 200 105
+INFO 2021-02-20 05:21:14,740 basehttp 14048 3216 "POST /pos_view/ HTTP/1.1" 200 105
+WARNING 2021-02-20 05:26:00,585 basehttp 14048 3216 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-20 05:26:01,127 basehttp 14048 24976 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-20 05:30:06,860 basehttp 14048 13856 "GET /fx_pos/2/0/ HTTP/1.1" 200 208772
+WARNING 2021-02-20 05:30:07,003 basehttp 14048 13856 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-20 05:30:07,037 basehttp 14048 26328 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-20 05:30:07,039 basehttp 14048 29660 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-20 05:30:07,062 basehttp 14048 29660 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-20 05:30:07,213 basehttp 14048 29660 "GET /itemList/ HTTP/1.1" 200 26508
+WARNING 2021-02-20 05:30:24,553 basehttp 14048 29660 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-20 05:30:25,032 basehttp 14048 26328 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752

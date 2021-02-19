@@ -1439,6 +1439,7 @@ class pos_view(View):
                 print(f"Vent:{venture_id}")
                
                 if venture_id > 0:
+                        print(f"customer id.. {venture_id}")
                      
                         try: 
                                 venture_qs= VentureModel.objects.get( id=venture_id)
