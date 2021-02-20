@@ -139,7 +139,7 @@ urlpatterns = [
   
   #to be remove
   path('itemList/', views.itemList, name='itemList'),
-   
+  path('display_itemList/', views.display_itemList, name='display_itemList'),
    #backup
   path('backup/', views.backup, name='backup'),
    

@@ -707,9 +707,11 @@ th {
                             <label for="autocomplete" class="col-form-label">  Search Items </label> 
                             <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
                                
-                              
-                             <input id="autocomplete">  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
-                             ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+                             
+                             <input id="autocomplete"> <a id="clear-box" class="btn btn-warning btn-md">x</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
+                             >
+                            
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
                                  <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
                                </svg></a>
                                <a   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
@@ -1649,6 +1651,11 @@ console.log(items);
         // hide all pos-editor 
         
         
+        $("#clear-box").click(function(event){
+
+             $("#autocomplete").val("");
+        });
+
         $("#quantity-txt-modal").click(function(event){
             
             if( event.which == 13){
@@ -2022,13 +2029,13 @@ console.log(items);
 
        //reset
        $("#reset-form").click(function() {
-          saveTansactions();
+//           saveTansactions();
      
         
 
 
  
- return;
+//  return;
           
        
            $("#pos-form").trigger("reset");
@@ -2414,11 +2421,14 @@ console.log(items);
                   //  total_sales = total_sales.toFixed(2) ;
                     
 
-                     
+                    console.log("----total cm: " +total_cm );
                     $("#id_amount").val(total_sales.toFixed(2));
-                    tot= total_sales + total_cm
+                    tot = total_sales + total_cm;
                     $("#venture-total-txt").val(tot.toFixed(2));
-                    $("#id_cc").val(total_cm);
+                    tot_cm = total_cm + (total_cm * .5);
+                    
+                  //  $("#id_cc").val(total_cm);
+                    $("#id_cc").val(tot_cm.toFixed(2));
                     if(total_sales > 0){
                         submit_now =true;
                       $("#venture-submit-btn").prop("disabled",false);
@@ -2532,17 +2542,19 @@ console.log(items);
                                     console.log(" amount: "+ tot);
                                 //  $("#venture-total-txt").val(sales_total);
                                 // $("#id_amount").val(amount_total);
-
+                                       var no_barcode = 1;
                                         var btn ="";
                                         if (pcode =="A0000") { 
+                                           
                                             btn = pqty;
                                         }else{
                                             btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+pqty +"</a>";
+
                                         }
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
                                         var item_id = $("#pos-product-code-txt").attr("item_id");
-                                        var no_barcode = 1;
+                                       
                                         var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
@@ -3109,6 +3121,7 @@ $("#payment-login-lnk").click(function () {
                                    }else {        
                                                 console.log("item: "+item_id);
                                                  curr_barcode = Barcode.POS;
+                                                 $("#pos-product-code-txt").attr("item_id",item_pk);
                                                  $("#pos-product-name-txt").val( item.title  );//response['product_info']['title'].trim())
                                                  $("#pos-price-txt").val(price);
                                                  $("#pos-c-money-txt").val(cmoney);

@@ -1895,8 +1895,11 @@ class pos_view(View):
                     
     
             
-#to be removed
-# @csrf_exemp
+def display_itemList(request):
+
+    return render(request, 'fx/venture/display_itemlist.html', {})
+    
+    
 class JsonRead(View):
     template_name = 'MW_Etc/jsonpost.html'
     def get(self,request):

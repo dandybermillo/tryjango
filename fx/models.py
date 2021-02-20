@@ -45,7 +45,19 @@ class ProductModel(models.Model):
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
   
-
+class ProductModel1(models.Model): 
+      PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
+      CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
+      title = models.CharField(max_length = 200,blank= True) 
+      #description =  models.CharField(max_length=300,blank =True) 
+      category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)
+      qty = models.PositiveIntegerField()
+      price = models.FloatField()
+      #cm = models.FloatField(default =0 )
+      reg_price = models.FloatField()
+      product_id = models.CharField(max_length=13,blank =True)
+      img = models.ImageField(blank =True, null =True) 
+      sku =  models.CharField(max_length = 20,blank= True) 
 class MemberModel (models.Model):
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
     
@@ -81,6 +93,7 @@ class ProductSold(models.Model):
       amount = models.FloatField(default =0 )
       cm = models.FloatField(default =0 )
       price = models.FloatField(default =0 )
+      description =  models.CharField(max_length=100,blank= True,null =True)
       transaction_id = models.PositiveIntegerField(default =0)
       
 # class item(models.Model): 

@@ -1,0 +1,137 @@
+{% load static %}
+ 
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+   
+
+    <script src="{% static 'js/jquery_3.5.1.js' %}"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
+    <!-- <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet"> -->
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+
+
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+    <script src="{% static 'js/onscan.min.js' %}"></script>
+
+    <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
+ 
+    
+
+
+
+
+
+
+</head>
+ 
+<body>
+    
+    <div  id="msain" class="form-row"> 
+        <label for="autocomplete" class="col-form-label">  Search Items </label> 
+        <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
+           
+          
+         <input id="autocomplete">   <a   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
+         value="RESTART" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+          </svg> </a>
+        </div>
+
+      
+       
+      
+
+
+
+        <input type=hidden name=theValue>
+    </div>
+      
+      
+      
+      
+      
+</body>
+ 
+
+
+
+
+
+</html>
+<script>
+
+
+
+$(document).ready(function () {
+    var objs = [];
+
+ 
+
+
+//--------------- retrieve items
+  $.ajax({
+       url: '/itemList/',
+       type: "GET",
+       dataType: 'JSON',
+       success: function(response){
+           console.log("Response")
+           
+           items = response.data;
+
+           response["data"].forEach(function (item) {
+            objs.push({label:item.title +" | P "+item.reg_price,theValue:item.product_id});
+                    //   console.log("....item:",item.product_id);
+                      
+
+ 
+                });
+           //obj = JSON.parse(items);
+          // console.log(obj);
+        //  console.log(items);
+        //  var car = items.find(items => items.product_id ===  "A0002");
+        //  car.product_id = car.product_id+"*";
+        //  console.log(car);
+
+       },
+       error: function (response) {
+                    // do something with response
+         console.log(response);
+            
+                },
+              
+
+
+      });
+    $("#autocomplete").autocomplete({
+	source: objs,
+  select: function(e, ui) {
+    console.log("value:");
+
+    item_id = ui.item.theValue;
+    $("#pos-product-code-txt").val(item_id);
+    search_product_details(item_id);
+    $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
+     //$("#pos-add-btn").trigger("click");
+  }
+});
+$("#refresh").click(function(){
+       
+            location.reload(true);
+
+        });
+
+});
+
+</script>
