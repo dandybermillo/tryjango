@@ -1512,10 +1512,33 @@ class pos_view(View):
                # return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
                 data={"venture_id":venture_id,"source_type":venture_qs.source_type,"percent": venture_qs.percent,"amount":venture_qs.amount,"cc":venture_qs.cc,"change":change,"destination_acct_code":destination_acct_code,"desc":desc}
                 print(f"--- source type: {venture_qs.source_type}")
-                return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances})
+                
+#                  items = ProductModel.objects.all()
+#    # item_list = serializers.serialize('json', items)
+#  #  return HttpResponse(item_list, content_type="text/json-comment-filtered")
+#     data = list(items.values())
+#     # data = [{'label': 'Peter', 'email': 'peter@example.org'},
+#     #         {'label': 'Julia', 'email': 'julia@example.org'}]
+#     return JsonResponse({"data":data})
+                ps = []
+                try:
+                        productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
+                        
+                        for row in productSold:
+                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                                ps.append(row)
+                                       #   itemsold= ProductSold (member_id = customer,qty=obj["qty"],cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"],description=obj["description"],transaction_id=obj["transaction_id"])
+ 
+                except Exception as e:
+                    
+                            print(f"Pos description: {e}")
+                            logger.warning(f"Pos description: {e}")
+                
+                return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances,"ps":ps})
             
                         
         else:
+                        print("here------------------------------- ")
                         return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
                     
                     
@@ -1917,15 +1940,17 @@ class JsonRead(View):
                     customer = qty=obj["customer"]
                     if customer == 1:
                         customer =4
-                    itemsold= ProductSold (member_id= customer,qty=obj["qty"],cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"])
+                    itemsold= ProductSold (member_id = customer,qty=obj["qty"],price=obj['price'], cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"],description=obj["description"],transaction_id=obj["transaction_id"])
                     itemsold.save()
+                    print("success addin to product sold")
                   
         except Exception as e:
              print(f"error writin: {e}")
              logger.waning(f"error at jsonRead: e: {e}")
+             return JsonResponse({"type":"error"})
         
         return JsonResponse({"type":"success"})
-        
+         
     #       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
     #   item = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
     #   product_id = models.CharField(max_length=13,blank =True)
@@ -2044,7 +2069,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                 
     tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:5]   #.values('createdate').annotate(count=Count('id'))
           
-    print(f"--- customer: {walk_in_id}")
+    print(f"--- in charge: {staff_info.id}")
     venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
 
     context = {
