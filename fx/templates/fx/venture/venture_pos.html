@@ -575,7 +575,7 @@ th {
             </div>
                <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
-                    <div hidden >
+                    <div  hidden>
 
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}
                         {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}} 
@@ -627,7 +627,7 @@ th {
                               
                                 <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
                                 <input type="hidden" id="note" name="note" value="{{venture.note}}">
-                                <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
+                                <input type="text" id="customer" name="customer" value="{{venture.customer}}">
                                 <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
                           
 
@@ -748,7 +748,7 @@ th {
                     <th scope="col">Product Name</th>
                     <th scope="col">Qty</th>
                     <th scope="col">Price</th>
-                    <th   scope="col">CM</th>
+                    <th    scope="col">CM</th>
                     <th scope="col">Total</th>
                 
                 </tr>
@@ -1031,7 +1031,7 @@ th {
                   <small>.</small>
                 </div>
                 <p class="mb-1">Grocery: {{obj.customer.member_id|upper}}</p>
-                <small>A-Php{{obj.amount}} | CM-{{obj.cc}}</small>
+                <small>Amount Paid: P{{obj.amount}} | Community Money {{obj.cc}}</small>
               </button>
              {% endfor %} 
 <!-- ---- --> 
@@ -1439,8 +1439,8 @@ th {
     var product_detail = new Object();
     product_detail.units =0;
     product_detail.previous_unit =0;
-
-    customerInfo.id =1;
+    var walk_in_id = 4
+    customerInfo.id = walk_in_id;
     ID_Info.id = "";
     ID_Info.ON_SEARCH = false;
     ID_Info.is_name_blank = true;
@@ -1634,11 +1634,11 @@ console.log(items);
                     }
                 },
                 
-				// onKeyDetect: function (iKeyCode) 
-                // {
+				onKeyDetect: function (iKeyCode) 
+                {
 
-				// 	console.log('Pressed: ' + iKeyCode);
-				// }
+					console.log('Pressed: ' + iKeyCode);
+				}
 			});
 
 			// Test scanner is initialized
@@ -1791,14 +1791,15 @@ console.log(items);
                                         }
                                         if (pcode =="A0000") { 
                                            
-                                           btn = pqty;
+                                           btn = obj.qty;
                                        }else{
-                                           btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+pqty +"</a>";
+                                           btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+obj.qty +"</a>";
 
                                        }
                                         var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td value ='"+ obj.qty+"'>"+btn+"</td><td>"+obj.price+"</td><td class='hides'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hides'>"+obj.item_id+"</td> <td class='hides'>"+no_barcode+"</td></tr>";
                                         console.log("newrowl:"+ newRow);    
                                         $("#pos-table > tbody").prepend(newRow);
+
                                        // fill_table(item, row_ctr);
 
                                     });
@@ -1856,7 +1857,7 @@ console.log(items);
                                        $("#change-txt").val("");
                                   }
                                   $("#source-type").val(response["data"]["source_type"]);
-
+                                    adjust_total();
                                     name = response["member_info"]['name'].toUpperCase();
                                     $("#customer").val(response["member_info"]['id']);
                                    // console.log("id customer: " + $("#id_customer").val());
@@ -1970,12 +1971,12 @@ console.log(items);
                             
                             "<p class='mb-1'>"+desc+": "+ customer_id +"</p>"+
 
-                            "<small>"+"A-Php"+amount+ " | " +cc+  "</small>"+
+                            "<small>"+"Amount: P "+amount+ "  " +cc+  "</small>"+
                             
                             "</button>");
 
                   }
-        function clear_pos_table(){
+           function clear_pos_table(){
 
             $("#pos-table tbody tr").remove();
             var newRow = "<tr class='bolder'><td></td>  <td></td><td></td><td></td><td></td><td class='hides'></td><td></td>  </tr>";
@@ -2071,13 +2072,13 @@ console.log(items);
 
        //reset
        $("#reset-form").click(function() {
-           saveTansactions(1);
+//            saveTansactions(1);
      
         
 
 
  
-  return;
+//   return;
           
        
            $("#pos-form").trigger("reset");
@@ -2093,6 +2094,9 @@ console.log(items);
            walk_in =true;
          //  customerInfo.id = 1; //walk-in
            customer = walk_in_id;
+           
+           customerInfo.id = walk_in_id;
+           $("#customer").val(walk_in_id);
            customer_id ="WALK-IN";
            $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
            tender =0;
@@ -2584,20 +2588,21 @@ console.log(items);
                                     console.log(" amount: "+ tot);
                                 //  $("#venture-total-txt").val(sales_total);
                                 // $("#id_amount").val(amount_total);
-                                       var no_barcode = 1;
                                         var btn ="";
+                                        var item_id = 1;
                                         if (pcode =="A0000") { 
                                            
                                             btn = pqty;
                                         }else{
                                             btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+pqty +"</a>";
+                                            item_id = $("#pos-product-code-txt").attr("item_id");
+
 
                                         }
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
-                                        var item_id = $("#pos-product-code-txt").attr("item_id");
                                        
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td class='hides'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hides'>"+item_id+"</td> <td class='hides'>"+no_barcode+"</td></tr>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td class='hides'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hides'>"+item_id+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -2887,14 +2892,16 @@ $("#payment-login-lnk").click(function () {
                                         $("#customer-info-alert-text").text("_");
                                         $("#source-type").val("K");
                                         $("#source-cash-drop").text("CASH");
-                                        id= response["data"]["venture_id"];
-                                        $("#transNumber").text("#"+id);
-                                        console.log(" trans Number: "+ id);
-                                        if(  !$("#"+id).length){
-                                            fillHistory(ID_Info.id,id,"POS "+"#"+id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
+                                        var venture_id = response["data"]["venture_id"];
+                                        $("#transNumber").text("#"+venture_id);
+                                        console.log(" Success in saving transaction");
+                                        console.log(" trans Number: "+ venture_id);
+                                       // if(  !$("#"+id).length){
+                                        if( venture_id > 0){
+                                            fillHistory(ID_Info.id,venture_id,"POS "+"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
                                         }
                                         $("#salestotal-reps").val(sales_total.trim());
-                                        //$("#tender-txt").val()
+                                       
                                         $("#tendered-reps").val($("#tender-txt").val().trim());
                                          
                                         $("#change-reps").val($("#change-txt").val().trim());
@@ -2914,7 +2921,7 @@ $("#payment-login-lnk").click(function () {
                                     
                                         console.log("Data");
                                         console.log(data);
-                                        saveTansactions(id);
+                                        saveTansactions(venture_id);
                                         $("#pos-form").trigger("reset");
                                         $("#deposit-cash-drop").text("SELECT OPTION");
                                         $("#change_deposit_to").val("SELECT OPTION"); 

@@ -27408,3 +27408,216 @@ INFO 2021-02-22 17:48:24,348 basehttp 32368 20696 "GET /search_receiver/?action_
 INFO 2021-02-22 17:48:27,189 basehttp 32368 20696 "GET /member/20/ HTTP/1.1" 200 223067
 INFO 2021-02-22 17:48:29,331 basehttp 32368 20696 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1803
 INFO 2021-02-22 17:48:44,775 basehttp 32368 20696 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1625
+INFO 2021-02-22 18:46:12,683 autoreload 25832 33888 Watching for file changes with StatReloader
+INFO 2021-02-22 18:46:21,173 basehttp 25832 32724 "GET /admin/fx/venturemodel/ HTTP/1.1" 200 74853
+INFO 2021-02-22 18:46:21,410 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:46:40,126 basehttp 25832 32724 "GET /admin/fx/venturemodel/?all= HTTP/1.1" 200 105426
+INFO 2021-02-22 18:46:40,260 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:46:46,941 basehttp 25832 32724 "GET /admin/fx/venturemodel/163/change/?_changelist_filters=all%3D HTTP/1.1" 200 26918
+INFO 2021-02-22 18:46:47,063 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:48:07,000 basehttp 25832 32724 "GET /admin/fx/walletmodel/ HTTP/1.1" 200 45648
+INFO 2021-02-22 18:48:07,283 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:48:27,612 basehttp 25832 32724 "GET /search_receiver/?action_request=search&filter_field_value=badi&total_no_of_row_per_page=5 HTTP/1.1" 200 238
+INFO 2021-02-22 18:48:29,547 views 25832 32724 --def get customer details
+INFO 2021-02-22 18:48:29,744 basehttp 25832 32724 "GET /get_customer_details_bypass/?member_id=di1211-0 HTTP/1.1" 200 171
+INFO 2021-02-22 18:49:47,407 basehttp 25832 32724 "GET /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 200 78447
+INFO 2021-02-22 18:49:57,263 basehttp 25832 32724 "POST /create_update_member_finance/wallet/20/0/D/ HTTP/1.1" 302 0
+INFO 2021-02-22 18:49:57,639 basehttp 25832 32724 "GET /success/create_update_result/wallet/20/69/New%20transaction%20has%20been%20successfully%20added! HTTP/1.1" 200 78566
+INFO 2021-02-22 18:50:09,496 basehttp 25832 32724 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 66163
+INFO 2021-02-22 18:50:09,713 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:50:12,865 basehttp 25832 32724 "GET /admin/fx/ccmodel/add/ HTTP/1.1" 200 21727
+INFO 2021-02-22 18:50:12,976 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:50:44,232 basehttp 25832 32724 "POST /admin/fx/ccmodel/add/ HTTP/1.1" 302 0
+INFO 2021-02-22 18:50:44,913 basehttp 25832 32724 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 66387
+INFO 2021-02-22 18:50:45,220 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:50:50,078 basehttp 25832 32724 "GET /admin/fx/ccmodel/146/change/ HTTP/1.1" 200 21970
+INFO 2021-02-22 18:50:50,290 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:50:55,004 basehttp 25832 32724 "POST /admin/fx/ccmodel/146/change/ HTTP/1.1" 302 0
+INFO 2021-02-22 18:50:55,694 basehttp 25832 32724 "GET /admin/fx/ccmodel/ HTTP/1.1" 200 66401
+INFO 2021-02-22 18:50:55,791 basehttp 25832 32724 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 18:51:02,750 basehttp 25832 32724 "GET /member/20/ HTTP/1.1" 200 223080
+INFO 2021-02-22 18:51:04,940 basehttp 25832 32724 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1977
+INFO 2021-02-22 18:51:20,065 basehttp 25832 32724 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1801
+INFO 2021-02-22 18:51:39,942 basehttp 25832 32724 "GET /search_receiver/?action_request=search&filter_field_value=badiola&total_no_of_row_per_page=5 HTTP/1.1" 200 238
+INFO 2021-02-22 18:51:42,404 basehttp 25832 32724 "GET /member/27/ HTTP/1.1" 200 223088
+INFO 2021-02-22 20:05:27,270 basehttp 25832 22300 "GET /fx_pos/2/0/ HTTP/1.1" 200 212299
+INFO 2021-02-22 20:05:27,349 basehttp 25832 22300 "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+INFO 2021-02-22 20:05:27,350 basehttp 25832 17908 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+WARNING 2021-02-22 20:05:28,505 basehttp 25832 17908 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 20:05:28,721 basehttp 25832 20744 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 20:05:28,876 basehttp 25832 22300 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 20:05:28,885 basehttp 25832 34248 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 20:05:28,886 basehttp 25832 6580 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-22 20:07:41,142 basehttp 25832 6580 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 20:28:23,094 views 25832 23720  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 20:28:23,156 basehttp 25832 23720 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+INFO 2021-02-22 20:28:29,999 basehttp 25832 23720 "GET /pos_view/?venture_id=162 HTTP/1.1" 200 450
+INFO 2021-02-22 20:29:56,983 basehttp 25832 23720 "GET /admin/fx/productmodel/ HTTP/1.1" 200 103794
+INFO 2021-02-22 20:29:57,078 basehttp 25832 23720 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 20:30:22,825 basehttp 25832 23720 "GET /admin/fx/productmodel/?o=3 HTTP/1.1" 200 109496
+INFO 2021-02-22 20:30:22,942 basehttp 25832 23720 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 20:30:29,582 basehttp 25832 23720 "GET /admin/fx/productmodel/?q=lucky+&o=3 HTTP/1.1" 200 63269
+INFO 2021-02-22 20:30:29,828 basehttp 25832 23720 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-22 20:31:36,612 basehttp 25832 23720 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 20:32:23,161 basehttp 25832 34360 "GET /admin/fx/productmodel/add/?_changelist_filters=q%3Dlucky%2B%26o%3D3 HTTP/1.1" 200 19124
+INFO 2021-02-22 20:32:23,488 basehttp 25832 34360 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 20:39:50,159 basehttp 25832 9736 "GET /fx_pos/2/0/ HTTP/1.1" 200 212304
+WARNING 2021-02-22 20:39:50,525 basehttp 25832 9736 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 20:39:50,616 basehttp 25832 4792 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 20:39:50,684 basehttp 25832 4792 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 20:39:50,688 basehttp 25832 8476 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 20:39:51,013 basehttp 25832 8476 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 20:39:56,472 basehttp 25832 8476 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 20:39:56,924 basehttp 25832 4792 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 21:22:35,631 basehttp 25832 28812 "GET /fx_pos/2/0/ HTTP/1.1" 200 212362
+WARNING 2021-02-22 21:22:36,141 basehttp 25832 28812 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:22:36,143 basehttp 25832 27564 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:22:36,174 basehttp 25832 22188 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:22:36,175 basehttp 25832 27564 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:22:36,369 basehttp 25832 27564 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:23:18,227 basehttp 25832 27564 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-22 21:25:06,105 basehttp 25832 22188 "GET /fx_pos/2/0/ HTTP/1.1" 200 212265
+WARNING 2021-02-22 21:25:06,346 basehttp 25832 22188 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:25:06,371 basehttp 25832 24404 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:25:06,414 basehttp 25832 24404 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:25:06,429 basehttp 25832 24404 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:25:06,611 basehttp 25832 24404 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:26:54,994 basehttp 25832 24404 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 21:26:55,772 basehttp 25832 33076 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 21:28:32,111 basehttp 25832 12128 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 21:28:32,186 basehttp 25832 12128 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 21:28:46,910 views 25832 12128  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:28:46,945 basehttp 25832 12128 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 630
+INFO 2021-02-22 21:29:13,973 basehttp 25832 12128 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-22 21:29:15,975 views 25832 12128 --def get customer details
+INFO 2021-02-22 21:29:16,054 basehttp 25832 12128 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 21:29:29,982 views 25832 12128 --def get customer details
+INFO 2021-02-22 21:29:30,070 basehttp 25832 12128 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 21:29:45,866 basehttp 25832 12128 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 21:29:45,930 basehttp 25832 12128 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 21:30:02,111 basehttp 25832 12128 "GET /fx_pos/2/0/ HTTP/1.1" 200 212265
+WARNING 2021-02-22 21:30:02,249 basehttp 25832 12128 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:30:02,277 basehttp 25832 23732 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:30:02,309 basehttp 25832 25820 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:30:02,311 basehttp 25832 23732 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:30:02,481 basehttp 25832 23732 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:40:40,325 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:40:40,341 basehttp 25832 31608 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 749
+WARNING 2021-02-22 21:41:00,700 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:41:00,716 basehttp 25832 31608 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+WARNING 2021-02-22 21:41:02,286 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:41:02,299 basehttp 25832 31608 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 749
+WARNING 2021-02-22 21:41:04,094 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:41:04,107 basehttp 25832 31608 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+WARNING 2021-02-22 21:41:10,165 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:41:10,179 basehttp 25832 31608 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+WARNING 2021-02-22 21:41:11,608 views 25832 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:41:11,622 basehttp 25832 31608 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 749
+INFO 2021-02-22 21:52:50,688 basehttp 25832 27864 "GET /fx_pos/2/0/ HTTP/1.1" 200 212329
+WARNING 2021-02-22 21:52:50,917 basehttp 25832 27864 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:52:50,958 basehttp 25832 26780 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:52:50,992 basehttp 25832 26780 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:52:50,994 basehttp 25832 16640 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:52:51,145 basehttp 25832 16640 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 21:54:55,434 basehttp 25832 16640 "GET /fx_pos/2/0/ HTTP/1.1" 200 212334
+WARNING 2021-02-22 21:54:55,684 basehttp 25832 16640 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:54:55,711 basehttp 25832 26780 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:54:55,756 basehttp 25832 26780 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:54:55,788 basehttp 25832 26780 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:54:56,002 basehttp 25832 26780 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:55:01,179 views 25832 26780  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:55:01,197 basehttp 25832 26780 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+WARNING 2021-02-22 21:55:01,345 views 25832 26780  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:55:01,362 basehttp 25832 26780 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+INFO 2021-02-22 21:55:19,168 basehttp 25832 26780 "GET /fx_pos/2/0/ HTTP/1.1" 200 212409
+WARNING 2021-02-22 21:55:19,307 basehttp 25832 26780 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:55:19,325 basehttp 25832 27904 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:55:19,352 basehttp 25832 27904 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:55:19,370 basehttp 25832 27904 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:55:19,643 basehttp 25832 27904 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:55:25,722 views 25832 27904  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:55:25,746 basehttp 25832 27904 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 749
+WARNING 2021-02-22 21:55:25,900 views 25832 27904  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:55:25,916 basehttp 25832 27904 "GET /pos_view/?venture_id=164 HTTP/1.1" 200 749
+WARNING 2021-02-22 21:55:27,471 views 25832 27904  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:55:27,491 basehttp 25832 27904 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 460
+INFO 2021-02-22 21:55:57,909 basehttp 25832 27904 "GET /fx_pos/2/0/ HTTP/1.1" 200 212434
+WARNING 2021-02-22 21:55:58,044 basehttp 25832 27904 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:55:58,061 basehttp 25832 33400 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:55:58,089 basehttp 25832 33400 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:55:58,105 basehttp 25832 33400 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:55:58,243 basehttp 25832 33400 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 21:56:39,743 basehttp 25832 33400 "GET /fx_pos/2/0/ HTTP/1.1" 200 212439
+WARNING 2021-02-22 21:56:39,884 basehttp 25832 33400 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 21:56:39,902 basehttp 25832 20324 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 21:56:39,933 basehttp 25832 20324 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 21:56:39,948 basehttp 25832 20324 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 21:56:40,165 basehttp 25832 20324 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 21:56:50,541 basehttp 25832 20324 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 21:56:51,421 basehttp 25832 16728 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 21:57:32,744 basehttp 25832 3068 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 21:57:32,813 basehttp 25832 3068 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 21:57:41,415 views 25832 3068  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 21:57:41,436 basehttp 25832 3068 "GET /pos_view/?venture_id=165 HTTP/1.1" 200 564
+INFO 2021-02-22 22:07:43,085 basehttp 25832 33452 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-22 22:07:44,011 views 25832 33452 --def get customer details
+INFO 2021-02-22 22:07:44,096 basehttp 25832 33452 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 22:07:59,162 views 25832 33452 --def get customer details
+INFO 2021-02-22 22:07:59,234 basehttp 25832 33452 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 22:09:35,429 basehttp 25832 33452 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 22:09:35,535 basehttp 25832 33452 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 22:09:50,853 views 25832 33452  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 22:09:50,885 basehttp 25832 33452 "GET /pos_view/?venture_id=165 HTTP/1.1" 200 775
+INFO 2021-02-23 05:08:14,294 basehttp 25832 31984 "GET /fx_pos/2/0/ HTTP/1.1" 200 212437
+INFO 2021-02-23 05:08:14,450 basehttp 25832 31984 "GET /static/img/image/logo1.jpg HTTP/1.1" 304 0
+WARNING 2021-02-23 05:08:15,130 basehttp 25832 31984 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-23 05:08:15,148 basehttp 25832 31576 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-23 05:08:15,203 basehttp 25832 31576 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-23 05:08:15,203 basehttp 25832 29820 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-23 05:08:15,468 basehttp 25832 29820 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-23 05:08:21,235 basehttp 25832 29820 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-23 05:08:22,715 views 25832 29820 --def get customer details
+INFO 2021-02-23 05:08:22,835 basehttp 25832 29820 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-23 05:08:43,594 basehttp 25832 29820 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-23 05:08:43,737 basehttp 25832 29820 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-23 05:08:50,212 views 25832 29820  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:08:50,285 basehttp 25832 29820 "GET /pos_view/?venture_id=166 HTTP/1.1" 200 463
+WARNING 2021-02-23 05:09:14,529 views 25832 29820  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:09:14,566 basehttp 25832 29820 "GET /pos_view/?venture_id=165 HTTP/1.1" 200 775
+WARNING 2021-02-23 05:09:15,367 views 25832 29820  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:09:15,401 basehttp 25832 29820 "GET /pos_view/?venture_id=166 HTTP/1.1" 200 463
+INFO 2021-02-23 05:10:56,361 views 25832 29820 --def get customer details
+INFO 2021-02-23 05:10:56,466 basehttp 25832 29820 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-23 05:11:57,769 basehttp 25832 29820 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-23 05:11:59,789 basehttp 25832 31576 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-23 05:12:13,817 basehttp 25832 14556 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-23 05:12:13,911 basehttp 25832 14556 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-23 05:13:07,893 views 25832 14556  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:13:07,943 basehttp 25832 14556 "GET /pos_view/?venture_id=166 HTTP/1.1" 200 657
+INFO 2021-02-23 05:24:50,440 basehttp 25832 22732 "GET /fx_pos/2/0/ HTTP/1.1" 200 212558
+WARNING 2021-02-23 05:24:50,750 basehttp 25832 22732 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-23 05:24:50,846 basehttp 25832 31620 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-23 05:24:50,883 basehttp 25832 30300 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-23 05:24:50,883 basehttp 25832 31620 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-23 05:24:51,075 basehttp 25832 31620 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-23 05:25:00,831 basehttp 25832 31620 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-23 05:25:01,934 views 25832 31620 --def get customer details
+INFO 2021-02-23 05:25:02,038 basehttp 25832 31620 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-23 05:25:05,724 basehttp 25832 31620 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-23 05:25:07,044 basehttp 25832 30300 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-23 05:25:34,860 basehttp 25832 25692 "POST /pos_view/ HTTP/1.1" 200 116
+INFO 2021-02-23 05:25:34,953 basehttp 25832 25692 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-23 05:26:48,505 views 25832 25692 --def get customer details
+INFO 2021-02-23 05:26:48,610 basehttp 25832 25692 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 183
+INFO 2021-02-23 05:27:58,565 basehttp 25832 25692 "POST /pos_view/ HTTP/1.1" 200 118
+INFO 2021-02-23 05:27:58,662 basehttp 25832 25692 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-23 05:28:28,818 views 25832 25692  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:28:28,861 basehttp 25832 25692 "GET /pos_view/?venture_id=168 HTTP/1.1" 200 579
+WARNING 2021-02-23 05:28:36,397 views 25832 25692  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:28:36,451 basehttp 25832 25692 "GET /pos_view/?venture_id=167 HTTP/1.1" 200 561
+WARNING 2021-02-23 05:28:38,213 views 25832 25692  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:28:38,266 basehttp 25832 25692 "GET /pos_view/?venture_id=168 HTTP/1.1" 200 579
+INFO 2021-02-23 05:30:27,145 basehttp 25832 25692 "POST /pos_view/ HTTP/1.1" 200 118
+INFO 2021-02-23 05:30:27,305 basehttp 25832 25692 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-23 05:31:25,687 views 25832 25692  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-23 05:31:25,756 basehttp 25832 25692 "GET /pos_view/?venture_id=168 HTTP/1.1" 200 789
