@@ -26643,3 +26643,768 @@ INFO 2021-02-22 05:13:12,038 autoreload 21836 23984 C:\Users\dan\just_django\try
 INFO 2021-02-22 05:13:12,726 autoreload 24708 21792 Watching for file changes with StatReloader
 INFO 2021-02-22 05:13:16,219 autoreload 24708 21792 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
 INFO 2021-02-22 05:13:17,009 autoreload 10624 33736 Watching for file changes with StatReloader
+INFO 2021-02-22 05:13:24,014 basehttp 10624 28900 "GET /fx_pos/2/0/ HTTP/1.1" 200 211873
+WARNING 2021-02-22 05:13:24,185 basehttp 10624 28900 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 05:13:24,463 basehttp 10624 13380 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 05:13:24,710 basehttp 10624 28732 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 05:13:24,714 basehttp 10624 30500 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 05:13:24,726 basehttp 10624 27108 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+WARNING 2021-02-22 05:13:25,891 basehttp 10624 27108 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 05:13:26,546 basehttp 10624 30500 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 05:13:31,659 basehttp 10624 28732 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 05:13:31,772 basehttp 10624 28732 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 05:13:51,027 basehttp 10624 28732 "GET /fx_pos/2/0/ HTTP/1.1" 200 211873
+WARNING 2021-02-22 05:13:51,225 basehttp 10624 28732 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 05:13:51,257 basehttp 10624 13380 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 05:13:51,296 basehttp 10624 13380 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 05:13:51,299 basehttp 10624 5280 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 05:13:51,476 basehttp 10624 5280 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 05:13:55,015 views 10624 5280  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:13:55,057 basehttp 10624 5280 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+INFO 2021-02-22 05:15:52,183 basehttp 10624 5280 "GET /fx_pos/2/0/ HTTP/1.1" 200 211872
+WARNING 2021-02-22 05:15:52,422 basehttp 10624 5280 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 05:15:52,459 basehttp 10624 13380 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 05:15:52,499 basehttp 10624 13380 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 05:15:52,505 basehttp 10624 26380 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 05:15:52,676 basehttp 10624 26380 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 05:15:55,755 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:15:55,819 basehttp 10624 26380 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+WARNING 2021-02-22 05:16:01,562 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:01,626 basehttp 10624 26380 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 05:16:07,280 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:07,341 basehttp 10624 26380 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+WARNING 2021-02-22 05:16:31,152 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:31,211 basehttp 10624 26380 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 05:16:33,527 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:33,562 basehttp 10624 26380 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 05:16:35,439 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:35,500 basehttp 10624 26380 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+WARNING 2021-02-22 05:16:37,121 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:37,189 basehttp 10624 26380 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 05:16:58,285 views 10624 26380  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 05:16:58,349 basehttp 10624 26380 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+INFO 2021-02-22 07:18:08,624 basehttp 10624 22860 "GET /fx_pos/2/0/ HTTP/1.1" 200 212240
+INFO 2021-02-22 07:18:08,655 basehttp 10624 22860 "GET /static/js/jquery-ui.js HTTP/1.1" 304 0
+WARNING 2021-02-22 07:18:09,160 basehttp 10624 22860 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:18:09,160 basehttp 10624 32372 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:18:09,188 basehttp 10624 32372 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:18:09,196 basehttp 10624 1288 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:18:09,381 basehttp 10624 1288 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 07:18:16,843 views 10624 1288  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:18:16,869 basehttp 10624 1288 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+INFO 2021-02-22 07:19:22,773 basehttp 10624 1288 "GET /fx_pos/2/0/ HTTP/1.1" 200 212246
+WARNING 2021-02-22 07:19:23,048 basehttp 10624 1288 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:19:23,104 basehttp 10624 32372 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:19:23,136 basehttp 10624 32372 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:19:23,144 basehttp 10624 25316 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:19:23,312 basehttp 10624 25316 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 07:19:28,121 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:19:28,187 basehttp 10624 25316 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+WARNING 2021-02-22 07:19:31,618 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:19:31,654 basehttp 10624 25316 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 07:19:55,589 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:19:55,623 basehttp 10624 25316 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 07:19:56,957 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:19:57,011 basehttp 10624 25316 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+WARNING 2021-02-22 07:19:57,240 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:19:57,293 basehttp 10624 25316 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 432
+INFO 2021-02-22 07:20:11,880 basehttp 10624 25316 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 07:20:11,956 basehttp 10624 25316 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 07:20:19,397 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:20:19,466 basehttp 10624 25316 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 07:20:24,630 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:20:24,695 basehttp 10624 25316 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 07:20:26,011 views 10624 25316  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:20:26,079 basehttp 10624 25316 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+INFO 2021-02-22 07:34:07,946 basehttp 10624 27052 "GET /staff_logout/ HTTP/1.1" 302 0
+INFO 2021-02-22 07:34:08,276 basehttp 10624 27052 "GET /venture_main_request/ HTTP/1.1" 200 29253
+WARNING 2021-02-22 07:34:08,657 basehttp 10624 27052 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:34:08,710 basehttp 10624 27440 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:34:08,799 basehttp 10624 32028 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:34:08,801 basehttp 10624 27440 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:34:10,842 basehttp 10624 27440 "GET /venture_login/ HTTP/1.1" 200 31072
+WARNING 2021-02-22 07:34:11,237 basehttp 10624 27440 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:34:11,350 basehttp 10624 32028 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:34:11,387 basehttp 10624 27644 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:34:11,388 basehttp 10624 32028 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:34:18,253 basehttp 10624 27644 "POST /venture_login/ HTTP/1.1" 302 0
+INFO 2021-02-22 07:34:18,524 basehttp 10624 27644 "GET /fx_pos/20/0/ HTTP/1.1" 200 212252
+WARNING 2021-02-22 07:34:18,715 basehttp 10624 27644 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:34:18,749 basehttp 10624 31272 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:34:18,791 basehttp 10624 31272 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:34:18,793 basehttp 10624 9092 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:34:18,964 basehttp 10624 9092 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 07:35:21,957 basehttp 10624 9092 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 07:35:23,692 basehttp 10624 9092 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 07:36:17,672 basehttp 10624 9092 "GET /fx_pos/20/0/ HTTP/1.1" 200 212264
+WARNING 2021-02-22 07:36:17,994 basehttp 10624 9092 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 07:36:18,063 basehttp 10624 31272 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 07:36:18,130 basehttp 10624 31272 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 07:36:18,132 basehttp 10624 22728 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 07:36:18,368 basehttp 10624 22728 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 07:36:30,515 basehttp 10624 22728 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 07:36:31,701 basehttp 10624 31272 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 07:37:02,401 basehttp 10624 22208 "GET /admin/ HTTP/1.1" 200 6166
+INFO 2021-02-22 07:37:09,658 basehttp 10624 22208 "GET /admin/fx/productmodel/ HTTP/1.1" 200 93224
+INFO 2021-02-22 07:37:09,825 basehttp 10624 22208 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 07:37:21,826 basehttp 10624 22208 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 07:37:23,899 views 10624 22208 --def get customer details
+INFO 2021-02-22 07:37:24,065 basehttp 10624 22208 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+INFO 2021-02-22 07:42:58,086 basehttp 10624 2964 "POST /pos_view/ HTTP/1.1" 200 115
+ERROR 2021-02-22 07:42:58,514 log 10624 2964 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '.25'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 818, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'qty' expected a number but got '.25'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 07:42:58,533 basehttp 10624 2964 "POST /post_itemSold/ HTTP/1.1" 500 161024
+WARNING 2021-02-22 07:43:05,001 views 10624 2964  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 07:43:05,094 basehttp 10624 2964 "GET /pos_view/?venture_id=157 HTTP/1.1" 200 350
+INFO 2021-02-22 07:55:28,077 basehttp 10624 5392 "GET /search_receiver/?action_request=search&filter_field_value=jenny&total_no_of_row_per_page=5 HTTP/1.1" 200 231
+INFO 2021-02-22 07:55:30,632 views 10624 5392 --def get customer details
+INFO 2021-02-22 07:55:30,708 basehttp 10624 5392 "GET /get_customer_details_bypass/?member_id=je0725-0 HTTP/1.1" 200 168
+WARNING 2021-02-22 07:58:46,982 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:46,983 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 07:58:47,891 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:47,891 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 07:58:52,939 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:52,942 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 07:58:53,456 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:53,459 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 07:58:56,728 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:56,728 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 07:58:57,741 log 10624 5392 Not Found: /favicon.ico
+WARNING 2021-02-22 07:58:57,741 basehttp 10624 5392 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 08:56:42,591 basehttp 10624 24736 "GET /fx_pos/20/0/ HTTP/1.1" 200 212265
+INFO 2021-02-22 08:56:42,817 basehttp 10624 24736 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 08:56:44,329 basehttp 10624 24736 "GET /fx_pos/20/0/ HTTP/1.1" 200 212265
+INFO 2021-02-22 08:56:44,527 basehttp 10624 24736 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 08:56:48,250 log 10624 24736 Not Found: /favicon.ico
+WARNING 2021-02-22 08:56:48,250 basehttp 10624 24736 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 08:57:08,740 basehttp 10624 24736 "POST /pos_view/ HTTP/1.1" 200 116
+INFO 2021-02-22 08:57:08,817 basehttp 10624 24736 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 09:08:35,803 basehttp 10624 628 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+INFO 2021-02-22 10:39:23,781 basehttp 10624 22132 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 10:39:26,704 views 10624 22132 --def get customer details
+INFO 2021-02-22 10:39:26,846 basehttp 10624 22132 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+INFO 2021-02-22 10:54:07,758 basehttp 10624 33676 "GET /fx_pos/20/0/ HTTP/1.1" 200 212261
+INFO 2021-02-22 10:54:08,273 basehttp 10624 33676 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 10:54:34,720 basehttp 10624 33676 "GET /staff_logout/ HTTP/1.1" 302 0
+INFO 2021-02-22 10:54:34,836 basehttp 10624 33676 "GET /venture_main_request/ HTTP/1.1" 200 29253
+INFO 2021-02-22 10:54:37,414 basehttp 10624 33676 "GET /venture_login/ HTTP/1.1" 200 31072
+INFO 2021-02-22 10:54:43,601 basehttp 10624 33676 "POST /venture_login/ HTTP/1.1" 302 0
+INFO 2021-02-22 10:54:43,798 basehttp 10624 33676 "GET /fx_pos/2/0/ HTTP/1.1" 200 212248
+INFO 2021-02-22 10:54:44,201 basehttp 10624 33676 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 10:54:52,816 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:54:52,857 basehttp 10624 33676 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 10:54:56,344 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:54:56,386 basehttp 10624 33676 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 10:54:58,805 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:54:58,846 basehttp 10624 33676 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 10:55:00,644 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:00,684 basehttp 10624 33676 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 10:55:02,254 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:02,299 basehttp 10624 33676 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 10:55:03,605 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:03,686 basehttp 10624 33676 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 10:55:07,748 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:07,832 basehttp 10624 33676 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 10:55:09,033 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:09,086 basehttp 10624 33676 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 10:55:10,243 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:10,323 basehttp 10624 33676 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+WARNING 2021-02-22 10:55:11,965 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:12,047 basehttp 10624 33676 "GET /pos_view/?venture_id=154 HTTP/1.1" 200 440
+WARNING 2021-02-22 10:55:13,799 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:13,854 basehttp 10624 33676 "GET /pos_view/?venture_id=153 HTTP/1.1" 200 337
+WARNING 2021-02-22 10:55:24,380 views 10624 33676  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 10:55:24,434 basehttp 10624 33676 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 11:13:14,488 views 10624 31868  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:13:14,529 basehttp 10624 31868 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 11:14:43,905 views 10624 31868  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:14:43,945 basehttp 10624 31868 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 11:14:53,494 basehttp 10624 31868 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 11:14:53,495 basehttp 10624 23368 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 11:14:53,518 basehttp 10624 23368 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 11:14:53,519 basehttp 10624 32464 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 11:28:32,286 views 10624 19104 --def get customer details
+INFO 2021-02-22 11:28:32,327 views 10624 19104 else of from_code == 'qrcode': member_id :da1212-1
+INFO 2021-02-22 11:28:32,473 basehttp 10624 19104 "GET /get_customer_details/?customer_id=DA1212-1&password=6085&from=manual HTTP/1.1" 200 174
+INFO 2021-02-22 11:31:12,488 basehttp 10624 19104 "GET /fx_pos/2/0/ HTTP/1.1" 200 212300
+WARNING 2021-02-22 11:31:12,620 basehttp 10624 19104 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 11:31:12,623 basehttp 10624 21052 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 11:31:12,658 basehttp 10624 21052 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 11:31:12,661 basehttp 10624 29984 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 11:31:12,831 basehttp 10624 29984 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 11:31:16,715 views 10624 29984  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:31:16,733 basehttp 10624 29984 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+INFO 2021-02-22 11:31:53,114 basehttp 10624 29984 "GET /fx_pos/2/0/ HTTP/1.1" 200 212300
+WARNING 2021-02-22 11:31:53,226 basehttp 10624 29984 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 11:31:53,255 basehttp 10624 21052 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 11:31:53,289 basehttp 10624 21052 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 11:31:53,291 basehttp 10624 18456 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 11:31:53,465 basehttp 10624 18456 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 11:32:01,398 views 10624 18456  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:32:01,417 basehttp 10624 18456 "GET /pos_view/?venture_id=155 HTTP/1.1" 200 535
+INFO 2021-02-22 11:32:34,561 basehttp 10624 18456 "GET /fx_pos/2/0/ HTTP/1.1" 200 212300
+WARNING 2021-02-22 11:32:34,666 basehttp 10624 18456 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 11:32:34,682 basehttp 10624 21052 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 11:32:34,714 basehttp 10624 21052 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 11:32:34,715 basehttp 10624 31044 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 11:32:34,890 basehttp 10624 31044 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 11:32:41,044 basehttp 10624 31044 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 11:32:41,656 basehttp 10624 21052 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 11:33:08,124 basehttp 10624 28848 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 11:33:08,195 basehttp 10624 28848 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 11:33:16,677 views 10624 28848  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:33:16,696 basehttp 10624 28848 "GET /pos_view/?venture_id=159 HTTP/1.1" 200 550
+WARNING 2021-02-22 11:33:29,749 views 10624 28848  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:33:29,767 basehttp 10624 28848 "GET /pos_view/?venture_id=156 HTTP/1.1" 200 631
+WARNING 2021-02-22 11:33:33,432 views 10624 28848  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 11:33:33,452 basehttp 10624 28848 "GET /pos_view/?venture_id=159 HTTP/1.1" 200 550
+INFO 2021-02-22 11:35:17,012 basehttp 10624 28848 "GET /admin/fx/productmodel/add/ HTTP/1.1" 200 19073
+INFO 2021-02-22 11:35:17,188 basehttp 10624 28848 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 11:35:26,592 basehttp 10624 28848 "GET /admin/fx/productmodel/ HTTP/1.1" 200 103794
+INFO 2021-02-22 11:35:26,680 basehttp 10624 28848 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 11:35:55,338 basehttp 10624 28848 "GET /admin/fx/productmodel/177/change/ HTTP/1.1" 200 19376
+INFO 2021-02-22 11:35:55,411 basehttp 10624 28848 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 11:46:42,295 basehttp 10624 33768 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-22 11:46:43,945 views 10624 33768 --def get customer details
+INFO 2021-02-22 11:46:44,112 basehttp 10624 33768 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+WARNING 2021-02-22 11:46:46,401 views 10624 33768 at pos_view: old_customer_id != customer
+INFO 2021-02-22 11:46:46,402 basehttp 10624 33768 "POST /pos_view/ HTTP/1.1" 200 72
+INFO 2021-02-22 11:46:57,046 views 10624 33768 --def get customer details
+INFO 2021-02-22 11:46:57,107 views 10624 33768 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-22 11:46:57,252 basehttp 10624 33768 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+WARNING 2021-02-22 11:47:01,923 views 10624 33768 at pos_view: old_customer_id != customer
+INFO 2021-02-22 11:47:01,923 basehttp 10624 33768 "POST /pos_view/ HTTP/1.1" 200 72
+INFO 2021-02-22 11:50:34,361 basehttp 10624 33768 "GET /search_receiver/?action_request=search&filter_field_value=ann&total_no_of_row_per_page=5 HTTP/1.1" 200 224
+INFO 2021-02-22 11:50:37,968 views 10624 33768 --def get customer details
+INFO 2021-02-22 11:50:38,130 basehttp 10624 33768 "GET /get_customer_details_bypass/?member_id=an0729-0 HTTP/1.1" 200 169
+INFO 2021-02-22 11:50:54,928 basehttp 10624 33768 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 11:50:58,431 views 10624 33768 --def get customer details
+INFO 2021-02-22 11:50:58,509 basehttp 10624 33768 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+INFO 2021-02-22 11:51:15,547 basehttp 10624 33768 "GET /member/20/ HTTP/1.1" 200 223063
+INFO 2021-02-22 11:51:15,587 basehttp 10624 33768 "GET /static/js/custom.js HTTP/1.1" 304 0
+INFO 2021-02-22 11:51:15,657 basehttp 10624 33768 "GET /static/js/moment.js HTTP/1.1" 304 0
+INFO 2021-02-22 11:51:17,322 basehttp 10624 33768 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1453
+INFO 2021-02-22 11:53:35,496 views 10624 33768 --def get customer details
+INFO 2021-02-22 11:53:35,566 basehttp 10624 33768 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+WARNING 2021-02-22 11:53:45,100 views 10624 33768 at pos_view: old_customer_id != customer
+INFO 2021-02-22 11:53:45,101 basehttp 10624 33768 "POST /pos_view/ HTTP/1.1" 200 72
+WARNING 2021-02-22 11:55:42,117 views 10624 33768 at pos_view: old_customer_id != customer
+INFO 2021-02-22 11:55:42,118 basehttp 10624 33768 "POST /pos_view/ HTTP/1.1" 200 72
+INFO 2021-02-22 11:56:42,267 autoreload 10624 33736 C:\Users\dan\just_django\tryjango\fx\views.py changed, reloading.
+INFO 2021-02-22 11:56:43,105 autoreload 32368 30684 Watching for file changes with StatReloader
+INFO 2021-02-22 11:58:12,426 basehttp 32368 31904 "GET /fx_pos/2/0/ HTTP/1.1" 200 212300
+WARNING 2021-02-22 11:58:12,607 basehttp 32368 31904 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 11:58:12,789 basehttp 32368 30728 "GET /itemList/ HTTP/1.1" 200 28415
+INFO 2021-02-22 11:58:12,876 basehttp 32368 31608 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 11:58:12,893 basehttp 32368 30976 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 11:58:12,897 basehttp 32368 1528 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+WARNING 2021-02-22 11:58:39,609 basehttp 32368 1528 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 11:58:40,331 basehttp 32368 30976 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 11:59:46,896 basehttp 32368 31608 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 11:59:48,540 views 32368 31608 --def get customer details
+INFO 2021-02-22 11:59:48,637 basehttp 32368 31608 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+INFO 2021-02-22 11:59:58,413 basehttp 32368 31608 "POST /pos_view/ HTTP/1.1" 200 117
+ERROR 2021-02-22 12:00:00,240 log 32368 31608 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '.5'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 818, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'qty' expected a number but got '.5'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 12:00:00,246 basehttp 32368 31608 "POST /post_itemSold/ HTTP/1.1" 500 161049
+WARNING 2021-02-22 12:00:09,086 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:00:09,102 basehttp 32368 31608 "GET /pos_view/?venture_id=160 HTTP/1.1" 200 352
+WARNING 2021-02-22 12:00:12,600 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:00:12,616 basehttp 32368 31608 "GET /pos_view/?venture_id=160 HTTP/1.1" 200 352
+WARNING 2021-02-22 12:00:19,475 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:00:19,491 basehttp 32368 31608 "GET /pos_view/?venture_id=159 HTTP/1.1" 200 550
+WARNING 2021-02-22 12:00:27,282 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:00:27,299 basehttp 32368 31608 "GET /pos_view/?venture_id=160 HTTP/1.1" 200 352
+INFO 2021-02-22 12:00:35,325 basehttp 32368 31608 "GET /member/20/ HTTP/1.1" 200 223048
+INFO 2021-02-22 12:00:37,354 basehttp 32368 31608 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1628
+INFO 2021-02-22 12:00:49,149 basehttp 32368 31608 "GET /dashboard/ HTTP/1.1" 200 67764
+INFO 2021-02-22 12:00:55,096 basehttp 32368 31608 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 12:00:57,285 basehttp 32368 31608 "GET /member/20/ HTTP/1.1" 200 223048
+INFO 2021-02-22 12:01:00,818 basehttp 32368 31608 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1449
+INFO 2021-02-22 12:02:13,571 basehttp 32368 31608 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1628
+WARNING 2021-02-22 12:02:23,386 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:02:23,400 basehttp 32368 31608 "GET /pos_view/?venture_id=159 HTTP/1.1" 200 550
+WARNING 2021-02-22 12:02:26,868 views 32368 31608  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:02:26,884 basehttp 32368 31608 "GET /pos_view/?venture_id=160 HTTP/1.1" 200 352
+INFO 2021-02-22 12:03:57,719 basehttp 32368 31608 "GET /fx_pos/2/0/ HTTP/1.1" 200 212303
+WARNING 2021-02-22 12:03:57,815 basehttp 32368 31608 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 12:03:57,858 basehttp 32368 29996 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 12:03:57,894 basehttp 32368 29996 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 12:03:57,895 basehttp 32368 6324 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 12:03:58,066 basehttp 32368 6324 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 12:03:59,553 basehttp 32368 6324 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 12:04:01,038 basehttp 32368 29996 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 12:04:22,866 basehttp 32368 14200 "GET /search_receiver/?action_request=search&filter_field_value=sal&total_no_of_row_per_page=5 HTTP/1.1" 200 206
+INFO 2021-02-22 12:04:24,533 views 32368 14200 --def get customer details
+INFO 2021-02-22 12:04:24,610 basehttp 32368 14200 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 12:04:27,313 basehttp 32368 14200 "POST /pos_view/ HTTP/1.1" 200 117
+ERROR 2021-02-22 12:04:27,442 log 32368 14200 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 12:04:27,445 basehttp 32368 14200 "POST /post_itemSold/ HTTP/1.1" 500 164354
+WARNING 2021-02-22 12:06:18,397 views 32368 14200  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:06:18,414 basehttp 32368 14200 "GET /pos_view/?venture_id=161 HTTP/1.1" 200 365
+INFO 2021-02-22 12:07:49,807 views 32368 14200 --def get customer details
+INFO 2021-02-22 12:07:49,995 basehttp 32368 14200 "GET /get_customer_details_bypass/?member_id=sa1212-0 HTTP/1.1" 200 184
+INFO 2021-02-22 12:07:52,418 basehttp 32368 14200 "POST /pos_view/ HTTP/1.1" 200 117
+INFO 2021-02-22 12:07:52,492 basehttp 32368 14200 "POST /post_itemSold/ HTTP/1.1" 200 19
+WARNING 2021-02-22 12:08:09,585 views 32368 14200  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:08:09,601 basehttp 32368 14200 "GET /pos_view/?venture_id=161 HTTP/1.1" 200 824
+INFO 2021-02-22 12:08:26,310 basehttp 32368 14200 "GET /fx_pos/2/0/ HTTP/1.1" 200 212309
+WARNING 2021-02-22 12:08:26,400 basehttp 32368 14200 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 12:08:26,426 basehttp 32368 32164 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 12:08:26,460 basehttp 32368 32164 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 12:08:26,463 basehttp 32368 4348 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 12:08:26,635 basehttp 32368 4348 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 12:08:34,766 views 32368 4348  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:08:34,783 basehttp 32368 4348 "GET /pos_view/?venture_id=161 HTTP/1.1" 200 824
+WARNING 2021-02-22 12:09:02,439 basehttp 32368 4348 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 12:09:03,112 basehttp 32368 32164 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+INFO 2021-02-22 12:09:36,348 basehttp 32368 28532 "POST /pos_view/ HTTP/1.1" 200 119
+INFO 2021-02-22 12:09:36,416 basehttp 32368 28532 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 12:09:46,117 basehttp 32368 28532 "GET /fx_pos/2/0/ HTTP/1.1" 200 212305
+WARNING 2021-02-22 12:09:46,199 basehttp 32368 28532 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 12:09:46,231 basehttp 32368 8692 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 12:09:46,265 basehttp 32368 6324 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 12:09:46,266 basehttp 32368 8692 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 12:09:46,427 basehttp 32368 8692 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 12:09:49,967 views 32368 8692  Technical error in def get pos: Change_Table matching query does not exist. 
+INFO 2021-02-22 12:09:49,984 basehttp 32368 8692 "GET /pos_view/?venture_id=161 HTTP/1.1" 200 1049
+WARNING 2021-02-22 13:27:39,366 log 32368 10804 Not Found: /favicon.ico
+WARNING 2021-02-22 13:27:39,366 basehttp 32368 10804 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:29:10,582 log 32368 10804 Not Found: /favicon.ico
+WARNING 2021-02-22 13:29:10,583 basehttp 32368 10804 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:31:02,119 log 32368 10804 Not Found: /favicon.ico
+WARNING 2021-02-22 13:31:02,120 basehttp 32368 10804 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:31:03,800 log 32368 10804 Not Found: /favicon.ico
+WARNING 2021-02-22 13:31:03,802 basehttp 32368 10804 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:31:06,295 log 32368 10804 Not Found: /favicon.ico
+WARNING 2021-02-22 13:31:06,296 basehttp 32368 10804 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:31:20,877 basehttp 32368 10804 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 13:31:30,528 basehttp 32368 15708 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-22 13:37:43,682 log 32368 7800 Not Found: /favicon.ico
+WARNING 2021-02-22 13:37:43,683 basehttp 32368 7800 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 13:37:52,447 basehttp 32368 7800 "GET /fx_pos/2/0/ HTTP/1.1" 200 212305
+WARNING 2021-02-22 13:37:52,640 basehttp 32368 7800 "GET /static/js/popper.min.js.map HTTP/1.1" 404 1686
+INFO 2021-02-22 13:37:52,685 basehttp 32368 2952 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 191971
+INFO 2021-02-22 13:37:52,725 basehttp 32368 3816 "GET /static/css/bootstrap.css.map HTTP/1.1" 200 508537
+INFO 2021-02-22 13:37:52,726 basehttp 32368 2952 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 646986
+INFO 2021-02-22 13:37:52,910 basehttp 32368 2952 "GET /itemList/ HTTP/1.1" 200 28415
+WARNING 2021-02-22 13:37:55,277 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:37:55,278 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:38:36,085 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:38:36,085 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:38:37,674 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:38:37,674 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:38:38,795 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:38:38,795 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:38:39,846 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:38:39,846 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:41:06,283 log 32368 2952 Not Found: /favicon.ico
+WARNING 2021-02-22 13:41:06,283 basehttp 32368 2952 "GET /favicon.ico HTTP/1.1" 404 16590
+WARNING 2021-02-22 13:41:13,171 basehttp 32368 2952 "GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 404 1782
+WARNING 2021-02-22 13:41:19,531 basehttp 32368 3816 "GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 404 1752
+WARNING 2021-02-22 13:41:48,669 log 32368 1700 Not Found: /favicon.ico
+WARNING 2021-02-22 13:41:48,670 basehttp 32368 1700 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 15:12:10,094 basehttp 32368 22572 "GET /admin/fx/productmodel/?title=maggi+magic+saarap+8g HTTP/1.1" 200 61008
+INFO 2021-02-22 15:12:10,393 basehttp 32368 22572 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+WARNING 2021-02-22 15:16:21,551 log 32368 22572 Not Found: /favicon.ico
+WARNING 2021-02-22 15:16:21,553 basehttp 32368 22572 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 15:27:51,058 basehttp 32368 26480 "GET /admin/fx/productmodel/?q=milo&title=maggi+magic+saarap+8g HTTP/1.1" 200 62359
+INFO 2021-02-22 15:27:51,270 basehttp 32368 26480 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:27:55,196 basehttp 32368 26480 "GET /admin/fx/productmodel/? HTTP/1.1" 200 103794
+INFO 2021-02-22 15:27:55,451 basehttp 32368 26480 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:27:58,887 basehttp 32368 26480 "GET /admin/fx/productmodel/?q=milo HTTP/1.1" 200 59415
+INFO 2021-02-22 15:27:59,156 basehttp 32368 26480 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:28:05,550 basehttp 32368 20048 "GET /admin/fx/productmodel/93/change/?_changelist_filters=q%3Dmilo HTTP/1.1" 200 19468
+INFO 2021-02-22 15:28:05,688 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:28:12,528 basehttp 32368 20048 "POST /admin/fx/productmodel/93/change/?_changelist_filters=q%3Dmilo HTTP/1.1" 302 0
+INFO 2021-02-22 15:28:12,831 basehttp 32368 20048 "GET /admin/fx/productmodel/?q=milo HTTP/1.1" 200 59649
+INFO 2021-02-22 15:28:13,003 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:28:26,727 basehttp 32368 20048 "GET /admin/fx/productmodel/?q=birch+tree HTTP/1.1" 200 61046
+INFO 2021-02-22 15:28:26,860 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:32:28,605 basehttp 32368 20048 "GET /admin/fx/productmodel/?q=blanca HTTP/1.1" 200 57357
+INFO 2021-02-22 15:32:28,787 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:32:33,137 basehttp 32368 20048 "GET /admin/fx/productmodel/? HTTP/1.1" 200 103794
+INFO 2021-02-22 15:32:33,313 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:32:38,020 basehttp 32368 20048 "GET /admin/fx/productmodel/?q=blanca HTTP/1.1" 200 57357
+INFO 2021-02-22 15:32:38,237 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:33:28,726 basehttp 32368 20048 "GET /admin/fx/productmodel/? HTTP/1.1" 200 103794
+INFO 2021-02-22 15:33:28,933 basehttp 32368 20048 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:35:22,477 basehttp 32368 27272 "GET /admin/fx/productmodel/?q=pancit+cantoon HTTP/1.1" 200 62495
+INFO 2021-02-22 15:35:22,559 basehttp 32368 27272 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:35:55,838 basehttp 32368 27272 "GET /admin/fx/productmodel/? HTTP/1.1" 200 103794
+INFO 2021-02-22 15:35:55,962 basehttp 32368 27272 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 15:50:17,128 basehttp 32368 24500 "GET /search_receiver/?action_request=search&filter_field_value=samar&total_no_of_row_per_page=5 HTTP/1.1" 200 231
+INFO 2021-02-22 15:50:23,565 views 32368 24500 --def get customer details
+INFO 2021-02-22 15:50:23,875 basehttp 32368 24500 "GET /get_customer_details_bypass/?member_id=je0725-0 HTTP/1.1" 200 168
+INFO 2021-02-22 15:50:51,132 basehttp 32368 24500 "POST /pos_view/ HTTP/1.1" 200 115
+INFO 2021-02-22 15:50:51,283 basehttp 32368 24500 "POST /post_itemSold/ HTTP/1.1" 200 19
+INFO 2021-02-22 16:00:53,187 views 32368 26832 --def get customer details
+INFO 2021-02-22 16:00:53,276 basehttp 32368 26832 "GET /get_customer_details_bypass/?member_id=je0725-0 HTTP/1.1" 200 168
+INFO 2021-02-22 16:02:03,303 basehttp 32368 26832 "GET /create_update/0/ HTTP/1.1" 200 79166
+INFO 2021-02-22 16:04:45,500 basehttp 32368 26832 "POST /create_update/0/ HTTP/1.1" 302 0
+INFO 2021-02-22 16:04:46,038 basehttp 32368 26832 "GET /success/create_update_member_result/27/New%20member%20has%20been%20successfully%20added! HTTP/1.1" 200 80472
+INFO 2021-02-22 16:04:55,570 basehttp 32368 26832 "GET /search_receiver/?action_request=search&filter_field_value=diana&total_no_of_row_per_page=5 HTTP/1.1" 200 238
+INFO 2021-02-22 16:04:57,796 views 32368 26832 --def get customer details
+INFO 2021-02-22 16:04:57,968 basehttp 32368 26832 "GET /get_customer_details_bypass/?member_id=di1211-0 HTTP/1.1" 200 171
+INFO 2021-02-22 16:09:18,996 views 32368 32292 --def get customer details
+INFO 2021-02-22 16:09:19,120 views 32368 32292 else of from_code == 'qrcode': member_id :sa1212-0
+INFO 2021-02-22 16:09:19,532 basehttp 32368 32292 "GET /get_customer_details/?customer_id=SA1212-0&password=9059&from=manual HTTP/1.1" 200 184
+INFO 2021-02-22 16:09:49,555 views 32368 32292 --def get customer details
+INFO 2021-02-22 16:09:49,724 basehttp 32368 32292 "GET /get_customer_details_bypass/?member_id=di1211-0 HTTP/1.1" 200 171
+INFO 2021-02-22 16:10:07,248 basehttp 32368 32292 "POST /pos_view/ HTTP/1.1" 200 117
+ERROR 2021-02-22 16:10:07,485 log 32368 32292 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 16:10:07,488 basehttp 32368 32292 "POST /post_itemSold/ HTTP/1.1" 500 164340
+INFO 2021-02-22 16:10:14,237 basehttp 32368 32292 "GET /pos_view/?venture_id=163 HTTP/1.1" 200 361
+INFO 2021-02-22 16:10:48,412 basehttp 32368 32292 "GET /admin/fx/venturemodel/ HTTP/1.1" 200 74841
+INFO 2021-02-22 16:10:48,583 basehttp 32368 32292 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 16:10:52,411 basehttp 32368 32292 "GET /admin/fx/productmodel/ HTTP/1.1" 200 103794
+INFO 2021-02-22 16:10:52,555 basehttp 32368 32292 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 16:11:00,529 basehttp 32368 32292 "GET /admin/fx/productmodel/?all= HTTP/1.1" 200 149211
+INFO 2021-02-22 16:11:00,665 basehttp 32368 32292 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-02-22 16:16:07,501 basehttp 32368 28048 "POST /pos_view/ HTTP/1.1" 200 117
+ERROR 2021-02-22 16:16:07,794 log 32368 28048 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 16:16:07,798 basehttp 32368 28048 "POST /post_itemSold/ HTTP/1.1" 500 165341
+WARNING 2021-02-22 16:34:34,345 log 32368 31892 Not Found: /favicon.ico
+WARNING 2021-02-22 16:34:34,345 basehttp 32368 31892 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 17:40:26,777 basehttp 32368 33044 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 17:40:29,100 views 32368 33044 --def get customer details
+INFO 2021-02-22 17:40:29,268 basehttp 32368 33044 "GET /get_customer_details_bypass/?member_id=fr0401-1 HTTP/1.1" 200 171
+WARNING 2021-02-22 17:42:26,716 log 32368 33044 Not Found: /favicon.ico
+WARNING 2021-02-22 17:42:26,717 basehttp 32368 33044 "GET /favicon.ico HTTP/1.1" 404 16590
+INFO 2021-02-22 17:47:50,435 basehttp 32368 20696 "POST /pos_view/ HTTP/1.1" 200 115
+ERROR 2021-02-22 17:47:50,694 log 32368 20696 Internal Server Error: /post_itemSold/
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1944, in post
+    itemsold.save()
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\sql\compiler.py", line 1281, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 2388, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\myenvironmen\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\dan\just_django\tryjango\fx\views.py", line 1949, in post
+    logger.waning(f"error at jsonRead: e: {e}")
+AttributeError: 'Logger' object has no attribute 'waning'
+ERROR 2021-02-22 17:47:50,698 basehttp 32368 20696 "POST /post_itemSold/ HTTP/1.1" 500 167959
+INFO 2021-02-22 17:48:24,348 basehttp 32368 20696 "GET /search_receiver/?action_request=search&filter_field_value=fra&total_no_of_row_per_page=5 HTTP/1.1" 200 232
+INFO 2021-02-22 17:48:27,189 basehttp 32368 20696 "GET /member/20/ HTTP/1.1" 200 223067
+INFO 2021-02-22 17:48:29,331 basehttp 32368 20696 "GET /finance_load_more/?model=wallet&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1803
+INFO 2021-02-22 17:48:44,775 basehttp 32368 20696 "GET /finance_load_more/?model=cc&filter_field=member_id&filter_field_value=20&total_no_of_row=20&last_row=0 HTTP/1.1" 200 1625
