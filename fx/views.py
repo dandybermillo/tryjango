@@ -1657,11 +1657,11 @@ class pos_view(View):
                             old_amount = 0 
                             old_customer_id = customer
                             old_cc = 0
-                if old_customer_id != customer:
-                            all_valid = False
-                            print("error old_customer_id != customer")
-                            logger.warn("at pos_view: old_customer_id != customer")
-                            return JsonResponse({"type":'error', "message":"Customer ID mismatched error","data":{}})
+                # if old_customer_id != customer:
+                #             all_valid = False
+                #             print("error old_customer_id != customer")
+                #             logger.warn("at pos_view: old_customer_id != customer")
+                #             return JsonResponse({"type":'error', "message":"Customer ID mismatched error","data":{}})
 
                            # messages.error(request, f"Message: Technical problem encountered while saving record.")
               
