@@ -1707,7 +1707,7 @@ class pos_view(View):
                                         #inside:[if venture_id <=0]
                                         print(f" amount: {amount}, cc: {cc}, note: {note}, customer: {customer}, venture_id:{venture_id}, change_deposit_to: {change_deposit_to}")
                                        # print(f"cateory: {cateory},transaction_type:{ transaction_type}, source_type: {source_type} percent: {percent}")
-                                        print (f"user: {request.user}")
+                                        print (f"writing to venture")
                                         #-----------------e
                                         try:
                                                 venture_qs = Model(customer_id = customer,category =category,
@@ -1715,7 +1715,7 @@ class pos_view(View):
                                                 source_type =source_type,in_charge_id=staff_info.id,flag=1)
                                                 venture_qs.save()
                                                 venture_id =venture_qs.id
-                                                print("Success...")
+                                                print(f"Success in writin to model, id: {venture_id}")
                                         except Exception as e:
                                             Success = False
                                             print(f"creating venture transaction: {e}")

@@ -41,6 +41,7 @@ class ProductModel(models.Model):
       price = models.FloatField()
       #cm = models.FloatField(default =0 )
       reg_price = models.FloatField()
+      srp = models.FloatField(default = 0)
       product_id = models.CharField(max_length=13,blank =True)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
@@ -89,7 +90,7 @@ class ProductSold(models.Model):
       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       #product_id = models.CharField(max_length=13,blank =True)
-      qty = models.PositiveIntegerField(default =0)
+      qty = models.FloatField(default =0)
       amount = models.FloatField(default =0 )
       cm = models.FloatField(default =0 )
       price = models.FloatField(default =0 )

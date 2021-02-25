@@ -149,7 +149,7 @@ class SkillCategoryModelAdmin(admin.ModelAdmin):
     
  
 class ItemModelAdmin(admin.ModelAdmin):
-    list_display = ['id','product_id',"title",'price','reg_price','qty','sku','img','category']
+    list_display = ['id','product_id',"title",'price','reg_price','srp','qty','sku','img','category']
     list_filter = ("product_id","title")
     search_fields = ['title']
     

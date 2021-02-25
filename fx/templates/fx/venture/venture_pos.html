@@ -12,6 +12,10 @@
     .white-color{
         color:white;
     }
+    .blue-color{
+        font-weight: bold;
+        color:blue;
+    }
 ul.ui-autocomplete.ui-menu {
   z-index: 10000;
 }
@@ -594,15 +598,17 @@ th {
                        
                         {%endif%}
                     </div>
+                    
                     <div class="form-row">
                         <div class="form-group col-md-10">
                             <div hidden id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
                             <span id="assets"   style="margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                              </svg> </span>    <span class="bolder" id="customer-info-alert-textx">_</span>  <span style="float:right" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span>
+                              </svg> </span>    <span class="bolder" id="customer-info-alert-textx">_</span>  
                             
                             </div> 
                         </div>
+                        
                         <div class="form-group col-md-2">
                   
                             
@@ -627,7 +633,7 @@ th {
                               
                                 <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
                                 <input type="hidden" id="note" name="note" value="{{venture.note}}">
-                                <input type="text" id="customer" name="customer" value="{{venture.customer}}">
+                                <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
                                 <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
                           
 
@@ -743,14 +749,14 @@ th {
                     <tr class="green">
                     <th scope="col"><span class="other-product"  data-toggle="tooltip" data-placement="top" title="Add item without barcode"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                      </svg></span></th>   
+                      </svg></span>  <span   style="margin-left: 5px;" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span></th>   
                     <th scope="col">Product ID</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Qty</th>
                     <th scope="col">Price</th>
-                    <th    scope="col">CM</th>
+                    <th    hidden   scope="col">CM</th>
                     <th scope="col">Total</th>
-                
+                <!-- here -->
                 </tr>
                 </thead>
                 <tbody>
@@ -961,6 +967,7 @@ th {
               </div> -->
 
               <form>
+                 <p id="venture-id"> </p>
                 <div class="form-group row">
                     <label for="salestotal-reps" class="col-sm-3 col-form-label">Sales Total</label>
                     <div class="col-sm-9">
@@ -1027,10 +1034,10 @@ th {
              
              <button id="{{obj.id}}" class="history list-group-item list-group-item-action flex-column align-items-start ">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">POS #{{obj.id}}</h5>
+                  <h5 class="mb-1">#{{obj.id}} Grocery</h5>
                   <small>.</small>
                 </div>
-                <p class="mb-1">Grocery: {{obj.customer.member_id|upper}}</p>
+                <p class="mb-1">{{obj.customer.member_id|upper}}</p>
                 <small>Amount Paid: P{{obj.amount}} | Community Money {{obj.cc}}</small>
               </button>
              {% endfor %} 
@@ -1431,7 +1438,7 @@ th {
 
 <script>
     //okss
-  
+    var alt_key =0;
     var videoCode =0; //1-payment 2-venture
     var items;
     var ID_Info = new Object();
@@ -1447,6 +1454,10 @@ th {
 
     var keys = {};
     var keys_account = { 'W': 'WALLET', 'K': 'CASH' };
+    var MODAL_MEMBER =1
+    var MODAL_PRODUCT_SEARCH= 2;
+    var MODAL_PRODUCT_QTY = 3;
+    var MODAL_ON =0;
     keys["previous-selected-account"] = "CASH";
     keys["PREVIOUS-INPUT"] = "";
     // keys["REQUESTED-ACTION"] = "{{venture.request_action}}".trim().toUpperCase();
@@ -1482,7 +1493,17 @@ th {
 
          var objs = [];
 
+         $(document).keydown(function(e) { 
+               var x = e.keyCode;
+               if (x == 18){
+
+                   alt_key = 18;
+               }
+               
+                
  
+                }); 
+
 
 
 //--------------- retrieve items
@@ -1608,6 +1629,15 @@ console.log(items);
 
             });
 
+
+            $('#modal-search-member').on('shown.bs.modal', function () {
+                $('#txt-member-partial-payment').trigger('focus');
+            });
+
+
+            // $('#modal-search-member').on('shown.bs.modal', function () {
+            //     $('#txt-search-member').trigger('focus')
+            // })
                // inc dec for input quantity ends
         (function () {
 			onScan.attachTo(document, {
@@ -1636,14 +1666,56 @@ console.log(items);
                 
 				onKeyDetect: function (iKeyCode) 
                 {
+                   // if( iKeyCode ==1)
+                   console.log('Pressed: ' + iKeyCode);
+                   if(alt_key !=0 && iKeyCode == 88){
+                      
+                      
+                      if (MODAL_ON == MODAL_PRODUCT_SEARCH){
+                        $("#product-modal").modal('hide');
 
-					console.log('Pressed: ' + iKeyCode);
+                      }else if( MODAL_ON == MODAL_MEMBER){
+
+                        $("#modal-search-member").modal('hide');
+                      }else if (MODAL_ON == MODAL_PRODUCT_QTY){
+
+
+                      }
+                      return;
+                   }
+
+                   if(alt_key !=0 && iKeyCode == 83){
+                    $("#pos-product-code-txt").val("A0000");
+                        hide_pos_editor(1);
+                        
+                         $("#pos-product-name-txt").prop("readonly",false);
+                        $("#pos-qty-txt").val("1");     
+                        $("#pos-qty-txt").prop("readonly",false);
+                        $("#pos-price-txt").prop("readonly",false);
+                         $("#product-modal").modal('show');
+                         $("#pos-product-name-txt").focus();
+                         MODAL_ON = MODAL_PRODUCT_SEARCH;
+                         alt_key =0;
+                   }else if (alt_key !=0 && iKeyCode == 65 ){
+                      
+                       $("#modal-search-member").modal('show');
+                    //   $("#txt-member-partial-payment").focus();
+                         MODAL_ON = MODAL_MEMBER;
+                      
+                       alt_key =0;
+                   } else if (alt_key !=0 && iKeyCode == 78 ){
+                    $("#reset-form").trigger("click");
+                        
+                }
+
+					
 				}
 			});
 
 			// Test scanner is initialized
 			onScan.simulate(document, '121279');
         })()
+ 
         $("#refresh").click(function(){
             $(".loading").toggleClass("hidden");
             location.reload(true);
@@ -1767,7 +1839,7 @@ console.log(items);
                              
                                   console.log("success: ps:");
                                   console.log(response["ps"]);
-
+                                  walk_in =false;
                                   var pcode="";
                                   var pqty="";
                                   response["ps"].forEach(function (obj) {
@@ -1790,13 +1862,13 @@ console.log(items);
                                             pcode = obj.product_id;
                                         }
                                         if (pcode =="A0000") { 
-                                           
+                                           desc = obj.description;
                                            btn = obj.qty;
                                        }else{
                                            btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+obj.qty +"</a>";
 
                                        }
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td value ='"+ obj.qty+"'>"+btn+"</td><td>"+obj.price+"</td><td class='hides'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hides'>"+obj.item_id+"</td> <td class='hides'>"+no_barcode+"</td></tr>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td value ='"+ obj.qty+"'>"+btn+"</td><td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         console.log("newrowl:"+ newRow);    
                                         $("#pos-table > tbody").prepend(newRow);
 
@@ -1969,9 +2041,9 @@ console.log(items);
                                 "<h5 class='mb-1'>"+title+"</h5>"+
                                 "<small>"+ tim +"</small></div>"+
                             
-                            "<p class='mb-1'>"+desc+": "+ customer_id +"</p>"+
+                            "<p class='mb-1'>"+ customer_id +"</p>"+
 
-                            "<small>"+"Amount: P "+amount+ "  " +cc+  "</small>"+
+                            "<small>"+"Amount Paid: P "+amount+ " | Community Money: " +cc+  "</small>"+
                             
                             "</button>");
 
@@ -1979,7 +2051,7 @@ console.log(items);
            function clear_pos_table(){
 
             $("#pos-table tbody tr").remove();
-            var newRow = "<tr class='bolder'><td></td>  <td></td><td></td><td></td><td></td><td class='hides'></td><td></td>  </tr>";
+            var newRow = "<tr class='bolder'><td></td>  <td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
@@ -2079,7 +2151,7 @@ console.log(items);
 
  
 //   return;
-          
+$("#venture_id").val(0);
        
            $("#pos-form").trigger("reset");
            $("#customer-info-alert-text").text("");
@@ -2452,14 +2524,16 @@ console.log(items);
                             tot =  price * qty;
                         }else{
                            // console.log("---member");
-                             tot =(price * qty) - (cm * qty);
-                             total_cm = total_cm +  (cm * qty); 
+                             ded = cm * qty;
+                             addition_deduction = (ded * .5) + ded;
+                             tot =(price * qty) - addition_deduction;
+                             total_cm = total_cm +  addition_deduction; 
                              
                         }
                        // console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
                         if (tot >0){ 
 
-                           currentRow.find("td:eq(6)").text(tot);
+                           currentRow.find("td:eq(6)").text(tot.toFixed(2));
                         }
                         total_sales = total_sales + tot;
 
@@ -2467,14 +2541,19 @@ console.log(items);
                   //  total_sales = total_sales.toFixed(2) ;
                     
 
-                    console.log("----total cm: " +total_cm );
-                    $("#id_amount").val(total_sales.toFixed(2));
+                    console.log("------- xtotal cm: " +total_cm );
+                   
                     tot = total_sales + total_cm;
+
+                 
                     $("#venture-total-txt").val(tot.toFixed(2));
-                    tot_cm = total_cm + (total_cm * .5);
+                   // addition_deduction = total_cm * .3;
+                  //  tot_cm = total_cm + (addition_deduction);
+                  //  total_sales =total_sales -addition_deduction
+                    $("#id_amount").val(total_sales.toFixed(2));
                     
-                  //  $("#id_cc").val(total_cm);
-                    $("#id_cc").val(tot_cm.toFixed(2));
+                     $("#id_cc").val(total_cm.toFixed(2));
+                   //$("#id_cc").val(tot_cm.toFixed(2));
                     if(total_sales > 0){
                         submit_now =true;
                       $("#venture-submit-btn").prop("disabled",false);
@@ -2602,7 +2681,7 @@ console.log(items);
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
                                        
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td class='hides'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hides'>"+item_id+"</td></tr>";
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -2847,7 +2926,7 @@ $("#payment-login-lnk").click(function () {
 
 
         }
-        //submit
+        ///submit
 
         $("#venture-submit-btn").click(function (e) {
             console.log("------------submit form init-----------");
@@ -2893,19 +2972,20 @@ $("#payment-login-lnk").click(function () {
                                         $("#source-type").val("K");
                                         $("#source-cash-drop").text("CASH");
                                         var venture_id = response["data"]["venture_id"];
+                                        $("#venture-id").text("#"+venture_id);
                                         $("#transNumber").text("#"+venture_id);
                                         console.log(" Success in saving transaction");
                                         console.log(" trans Number: "+ venture_id);
                                        // if(  !$("#"+id).length){
                                         if( venture_id > 0){
-                                            fillHistory(ID_Info.id,venture_id,"POS "+"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
+                                            fillHistory(ID_Info.id,venture_id,"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
                                         }
                                         $("#salestotal-reps").val(sales_total.trim());
                                        
                                         $("#tendered-reps").val($("#tender-txt").val().trim());
                                          
                                         $("#change-reps").val($("#change-txt").val().trim());
-                                      //  $("#venture_id").val(response["data"]['venture_id']);
+                                        $("#venture_id").val(0);
                                         var option = $("#deposit-cash-drop").text().trim();
                                         if (option == "SELECT OPTION"){
                                             option ="";
@@ -3144,7 +3224,7 @@ $("#payment-login-lnk").click(function () {
  
                                      var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                          var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td value='1'>"+btn+"</td><td>"+price+"</td><td class='hides'>"+cmoney+"</td><td>"+total+"</td><td class='hides'>"+ item_pk+"</td>   </tr>";
+                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td value='1'>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                          $("#pos-table > tbody").prepend(newRow);
                                          
                                          console.log(">>>>> edit is selected");
@@ -3196,6 +3276,8 @@ $("#payment-login-lnk").click(function () {
  
                                   
                                }else{
+                                
+                                 beep();
                                  if(curr_barcode == Barcode.POS){
                                      $("#pos-product-code-txt").val(item_id);
  
@@ -3262,7 +3344,7 @@ $("#payment-login-lnk").click(function () {
 
                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                        var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hides'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                        var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
