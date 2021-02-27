@@ -128,7 +128,7 @@ def user_login_success(request,id):
               except Exception as e:
                    print(f"user_login_success: {e}")
         
-        tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=7), customer =id).order_by("-pk") #.values('createdate').annotate(count=Count('id'))
+        tx = dayTransactionModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30), customer =id).order_by("-pk") #.values('createdate').annotate(count=Count('id'))
        
         
         
@@ -1565,11 +1565,18 @@ class pos_view(View):
                
                 
                 print(f"------Post--------")
+                customer =   request.POST.get('customer','0').strip()
+                if customer =="test":
+                     return JsonResponse({"type":'success', "message":"Completed!","data":{}})
+                    
+                
+                customer =parseint( customer)
+                
                 source_type = request.POST.get('source_type',"").strip()
                 amount =float(request.POST.get('amount',"0").strip())
                 cc = float(request.POST.get('cc','0').strip())
                 note = request.POST.get('note',"").strip()
-                customer =parseint(  request.POST.get('customer','0').strip())
+                
                 print(f" type cust: {type(customer)}")
                  
                 venture_id = parseint( request.POST.get('venture_id',"0").strip())
@@ -2067,7 +2074,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                     cc_balance = maximum_deposit
                 asset_balance ={"cc_balance":cc_balance}
                 
-    tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:5]   #.values('createdate').annotate(count=Count('id'))
+    tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:30]   #.values('createdate').annotate(count=Count('id'))
           
     print(f"--- in charge: {staff_info.id}")
     venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  

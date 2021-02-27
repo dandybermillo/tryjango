@@ -562,15 +562,9 @@ th {
 
  
 
-    {% include 'fx/e_wallet/yes_no_modal.html' with code='new_transaction' float='right'  %}
+    {% include 'fx/e_wallet/yes_no_modal.html' with code='venture_payment' float='right'  %}
    
-   
-   <div>
-    
-
-
-   </div>
-
+ 
     <div class="container" style="border:none;width: 90%;">
         <div class="tcard">
             <!-- <div>
@@ -1043,7 +1037,7 @@ th {
                   <h5 class="mb-1">#{{obj.id}} Grocery</h5>
                   <small>.</small>
                 </div>
-                <p class="mb-1">{{obj.customer.firstname|upper}} | {{obj.customer.member_id|upper}}</p>
+                <p class="mb-1">{{obj.customer.member_id|upper}}</p>
                 <small>Amount Paid: P{{obj.amount}} | Community Money {{obj.cc}}</small>
               </button>
              {% endfor %} 
@@ -1444,7 +1438,6 @@ th {
 
 <script>
     //okss
-    var initialize = false;
     var alt_key =0;
     var videoCode =0; //1-payment 2-venture
     var items;
@@ -1496,8 +1489,7 @@ th {
     })();
 
     $(document).ready(function () {
-        $("#reset-form").trigger("click");
-        $("#confim-modal-new_transaction").text("New Transaction?");
+
 
          var objs = [];
 
@@ -1711,7 +1703,12 @@ console.log(items);
                          MODAL_ON = MODAL_MEMBER;
                       
                        alt_key =0;
-                   } 
+                   } else if (alt_key !=0 && iKeyCode == 78 ){
+                    $("#reset-form").trigger("click");
+                    alt_key =0;
+
+                        
+                }
 
 					
 				}
@@ -2046,7 +2043,7 @@ console.log(items);
                                 "<h5 class='mb-1'>"+title+"</h5>"+
                                 "<small>"+ tim +"</small></div>"+
                             
-                            "<p class='mb-1'>"+   customer_id +"</p>"+
+                            "<p class='mb-1'>"+ customer_id +"</p>"+
 
                             "<small>"+"Amount Paid: P "+amount+ " | Community Money: " +cc+  "</small>"+
                             
@@ -2149,46 +2146,6 @@ console.log(items);
 
        //reset
        $("#reset-form").click(function() {
-        initialize =true;
-        $("#customer").val("test");
-        $("#venture-submit-btn").trigger('click');
-        $("#venture_id").val(0);
-       
-       $("#pos-form").trigger("reset");
-       $("#customer-info-alert-text").text("");
-       $("#source-cash-drop").text("CASH");
-       $("#source-type").val("K");
-       $("#deposit-cash-drop").text("SELECT OPTION");
-       $("#change_deposit_to").val("SELECT OPTION");
-       $("#percent-drop").text(  "95%");
-       $(".chek-services").prop("checked",false);   
-
-       clear_pos_table();
-       walk_in =true;
-       //  customerInfo.id = 1; //walk-in
-       customer = walk_in_id;
-       
-       customerInfo.id = walk_in_id;
-       $("#customer").val(walk_in_id);
-       customer_id ="WALK-IN";
-       $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
-       tender =0;
-       $(".has-change-group").prop("disabled", false);
-       $("#units-total").text("");
-
-
-
-
-
-
-
-
-
-
-
-
-        alt_key =0;
-      //  $("#yes-no-modal-new_transaction").modal('show');
 //            saveTansactions(1);
      
         
@@ -2196,7 +2153,29 @@ console.log(items);
 
  
 //   return;
-          
+$("#venture_id").val(0);
+       
+           $("#pos-form").trigger("reset");
+           $("#customer-info-alert-text").text("");
+           $("#source-cash-drop").text("CASH");
+           $("#source-type").val("K");
+           $("#deposit-cash-drop").text("SELECT OPTION");
+          $("#change_deposit_to").val("SELECT OPTION");
+           $("#percent-drop").text(  "95%");
+           $(".chek-services").prop("checked",false);   
+
+           clear_pos_table();
+           walk_in =true;
+         //  customerInfo.id = 1; //walk-in
+           customer = walk_in_id;
+           
+           customerInfo.id = walk_in_id;
+           $("#customer").val(walk_in_id);
+           customer_id ="WALK-IN";
+           $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
+           tender =0;
+           $(".has-change-group").prop("disabled", false);
+           $("#units-total").text("");
 
           
        });
@@ -2867,41 +2846,16 @@ $("#payment-login-lnk").click(function () {
 
         });
 
-//confirm
 
-        confirm_new_transaction(function (confirm) {
-            console.log("-----------");
+
+        confirm_venture_payment(function (confirm) {
             //x var request_action = $(obj).text().trim();
             if (confirm) {
-                 
-                       $("#venture_id").val(0);
-       
-                        $("#pos-form").trigger("reset");
-                        $("#customer-info-alert-text").text("");
-                        $("#source-cash-drop").text("CASH");
-                        $("#source-type").val("K");
-                        $("#deposit-cash-drop").text("SELECT OPTION");
-                        $("#change_deposit_to").val("SELECT OPTION");
-                        $("#percent-drop").text(  "95%");
-                        $(".chek-services").prop("checked",false);   
-
-                        clear_pos_table();
-                        walk_in =true;
-                        //  customerInfo.id = 1; //walk-in
-                        customer = walk_in_id;
-                        
-                        customerInfo.id = walk_in_id;
-                        $("#customer").val(walk_in_id);
-                        customer_id ="WALK-IN";
-                        $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
-                        tender =0;
-                        $(".has-change-group").prop("disabled", false);
-                        $("#units-total").text("");
+                document.getElementById('venture-delete').click();
             } else {
                 $("#yes-no-modal-venture_payment").hide();
             }
         });
-
         var submit_now = false;
         $('form').submit(function (e) {
             console.log(" submitting.... form");
@@ -2977,14 +2931,11 @@ $("#payment-login-lnk").click(function () {
         ///submit
 
         $("#venture-submit-btn").click(function (e) {
-
-             
             console.log("------------submit form init-----------");
-            console.log("initialize: "+ initialize);
             var total_sales= parseFloat($("#venture-total-txt").val());
             
-            if ( initialize == false && (total_sales <=0 ||  isNaN(total_sales) || submit_now == false)){
-                console.log("=============.");
+            if (  total_sales <=0 ||  isNaN(total_sales) || submit_now == false){
+                console.log("=============");
                 console.log("total sales:"+total_sales);
                 console.log("submit_now: "+submit_now);
                 $(this).prop("disabled",true);
@@ -2995,7 +2946,7 @@ $("#payment-login-lnk").click(function () {
              
             var form = document.querySelector('#pos-form');
             var reportVal = form.checkValidity();
-            if (initialize ==false && reportVal == false) {
+            if (reportVal == false) {
                 console.log("validating......pos form");
                 form.reportValidity();
                 return;
@@ -3016,21 +2967,13 @@ $("#payment-login-lnk").click(function () {
                         response["message"]; // equals 'you"re logged in or You messed up';
                        
                         if (response["type"] === "success") {
-
-                            if(initialize){
-                                  initialize =false;
-                                  console.log("can submit...............");
-                                  return; 
-                            }
-                            initialize =false;
-                            console.log("can submit...............duplicate");
+                        
                                         var sales_total  = $("#venture-total-txt").val();
                                         data = response["data"];
                                         $("#customer-info-alert-text").text("_");
                                         $("#source-type").val("K");
                                         $("#source-cash-drop").text("CASH");
                                         var venture_id = response["data"]["venture_id"];
-                                        console.log("firstname: "+ response["data"]["firstname"]);
                                         $("#venture-id").text("#"+venture_id);
                                         $("#transNumber").text("#"+venture_id);
                                         console.log(" Success in saving transaction");
@@ -3088,19 +3031,12 @@ $("#payment-login-lnk").click(function () {
                         }
                     },
                     error: function (response) {
-                        init = initialize;
-                        initialize =false;
                         // do something with response
-                       if(init){ 
-                             $(".loading").toggleClass("hidden");
-                             location.reload(true);
-                       }else{ 
-                            console.log("Something went wrong! Try again..");
-                            //   $("#login-error").text("Something went wrong! Try again.");
-                            $("#venture-pay-alert").fadeIn();  // alert message
-                            $("#venture-pay-alert-message").text("Something went wrong! Try again..");
-                            $("#login-danger-alert").fadeIn();  // alert message
-                       }
+                    console.log("Something went wrong! Try again..");
+                    //   $("#login-error").text("Something went wrong! Try again.");
+                    $("#venture-pay-alert").fadeIn();  // alert message
+                     $("#venture-pay-alert-message").text("Something went wrong! Try again..");
+                    $("#login-danger-alert").fadeIn();  // alert message
                    // closeSnoAlertBox("login","danger");
                     },
                     });

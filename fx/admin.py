@@ -5,7 +5,7 @@ from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel,TeamMemberModel,SkillCategoryModel
 from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
-from .models import ProductModel
+from .models import ProductModel,ProductSold
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -152,8 +152,25 @@ class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['id','product_id',"title",'price','reg_price','srp','qty','sku','img','category']
     list_filter = ("product_id","title")
     search_fields = ['title']
+class ItemSoldModelAdmin(admin.ModelAdmin):
+    list_display = ['id','item',"qty",'amount','cm','price','description','transaction_id']
+    list_filter = ("transaction_id","description")
+    # search_fields = ['title']
     
-admin.site.register(ProductModel,ItemModelAdmin)  
+    
+    
+    
+    #   member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+    #   item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+    #   #product_id = models.CharField(max_length=13,blank =True)
+    #   qty = models.FloatField(default =0)
+    #   amount = models.FloatField(default =0 )
+    #   cm = models.FloatField(default =0 )
+    #   price = models.FloatField(default =0 )
+    #   description =  models.CharField(max_length=100,blank= True,null =True)
+    #   transaction_id = models.PositiveIntegerField(default =0)
+admin.site.register(ProductModel,ItemModelAdmin)
+admin.site.register(ProductSold,ItemSoldModelAdmin)  
 
 admin.site.register(SkillCategoryModel,SkillCategoryModelAdmin)  
 
