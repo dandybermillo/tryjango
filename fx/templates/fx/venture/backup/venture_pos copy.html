@@ -9,48 +9,6 @@
 {% block css_style %}
 
 <style>
-
-#contain {
-  position:relative;
-  min-height:80%;
-  border:4px solid red;
-  overflow:hidden;
-}
-
-#left {
-  float:left;
-  width:15%;
-  background-color:#cfc;
-  padding: 5px;
-  padding-bottom:9999px;
-  margin-bottom:-9999px;
-}
-
-.bold-style{
-
-    font-weight: bold;
-}
-#venture-total-txt,#id_cc{
-  font-size: 16px;
-  font-weight: bold;
-
-}
-#pos-table-container{
-    max-height: 700px !important;
-}
-/* ;max-height: 200px !important; */
-
-#main {
-  position:relative;
-  margin-left:15% !important;
-  width: 85%  !important;
-  background-color:#ffc;
-  padding-bottom:9999px;
-  margin-bottom:-9999px;
-}
-
-
-
     .white-color{
         color:white;
     }
@@ -58,13 +16,6 @@
         font-weight: bold;
         color:blue;
     }
-
-#id_amount{
- font-size: 35px !important;
-
-
-}
-
 ul.ui-autocomplete.ui-menu {
   z-index: 10000;
 }
@@ -599,406 +550,409 @@ th {
 {%  endblock css_style %}
 
 {% block sub_content%}
-     
+    
+
+
+
+
+ 
+ 
+
+   
+
+ 
 
     {% include 'fx/e_wallet/yes_no_modal.html' with code='new_transaction' float='right'  %}
    
    
-
-    <div class="contain"  >
-       
-       
-
-      
-<!-- heree -->
+   <div>
+    
 
 
+   </div>
+
+    <div class="container" style="border:none;width: 90%;">
+        <div class="tcard">
+            <!-- <div>
+                <p style="font-size: 1.5rem;"> PRODUCT ORDER FORM</p>
+            </div> -->
+             
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*).
             </div>
             <div id="venture-pay-alert" class="alert alert-danger" role="alert" style="display:none">
                <span id="venture-pay-alert-message"> </span>
             </div>
-            <form style="width: 100%;" id="pos-form" action="" name="pos-form" class="contain needs-validation"   method="POST" > 
-                <div style="2px solid blue"> 
+               <form id="pos-form" action="" name="pos-form" class="needs-validation"   method="POST">
                     {% csrf_token %}
                     <div  hidden>
+
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}
                         {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}} 
                     </div>
-                       <div id="left">
-                        
-                            <div class="form-row">
-                                <div class=" form-group col-md">
-                                    <label for="venture-total-txt" class="bold-style col-form-label">SALES TOTAL<span
-                                            class="asteriskField">*</span> </label>
-                                    <input  id="venture-total-txt"   readonly required type="number" step='any' min=0 max="10000"
-                                        class="total-sale mid-size form-control" value="{{venture.totalCost}}">
-                                </div>
-                            </div>
+                    
 
-                            <div class="form-row">
-                                
-                                <div class="form-group col-md">
-                                    <label for="id_amount" class="bold-style col-form-label">AMOUNT </label>
-                                    <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
-                                    <input style="background-color: #8eb4cc;font-weight: bolder;font-size: 20px;" type="number" readonly name="amount" step="any" class="numberinput form-control" required="" id="id_amount" name="amount"   min="0" max="10000">
-                                    
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-row">
-                                <div class="form-group col-md">
-
-                                    <label for="main-source-drop" class="bold-style col-form-label">SOURCE<span
-                                            class="asteriskField">*</span></label>
-                                    <div class="dropdown" id="main-source-drop">
-                                    
-                                        <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
-                                        <input type="hidden" id="note" name="note" value="{{venture.note}}">
-                                        <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
-                                        <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
-                                
-
-                                        <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
-                                            id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false" style="border:1px solid #ced4da;width: 100%;text-align: left;">
-
-                                            {% ifequal venture.source_type.value 'W' %} WALLET ACCOUNT {%else%}CASH
-                                            {%endifequal%}
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="source-cash-drop">
-                                            <button class="source-cash dropdown-item" type="button">CASH</button>
-                                            <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div hidden class="form-row">
-                                <div class="form-group col-md">
-
-                            <label for="main-percent-drop" class="bold-style col-form-label">PERCENTAGE </label>
-                                        <div class="dropdown" id="main-percent-drop" >
-                                            <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
-                                                id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled 
-                                                name="percent" style="border:1px solid #ced4da;width:100%;">
-                                                {{venture.percent}}%
-                                            </button>
-                                            <!-- .custom {
-                                                width: 78px !important;
-                                            } -->
-                                            <div class="dropdown-menu" aria-labelledby="percent-drop">
-                                                <button class="cc-percent dropdown-item" type="button">95% </button>
-                                                <button class="cc-percent dropdown-item" type="button">94% </button>
-                                                <button class="cc-percent dropdown-item" type="button">93% </button>
-                                                <button class="cc-percent dropdown-item" type="button">92% </button>
-                                                <button class="cc-percent dropdown-item" type="button">91% </button>
-                                                <button class="cc-percent dropdown-item" type="button">90% </button>
-                                                
-                                            </div>
-                                        </div>
-                                </div>
-
-                            </div>
+                    <div class="form-row">
+                      
+                        {% if venture.id > 0  %}
+                      
+                        <div class="form-group col-md-6">
+                           
+                            <input id="current-cuistomer" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                                class="mid-size form-control" value="{{member_info.member_id|upper}}">
+                        </div>
+                       
+                        {%endif%}
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <div hidden id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
+                            <span id="assets"   style="margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                              </svg> </span>    <span class="bolder" id="customer-info-alert-textx">_</span>  
                             
-                            <div class="form-row">
-                                
-                                <div class="form-group col-md">
-                                    <label for="id_cc" class="bold-style col-form-label">COMMUNITY MONEY </label>
-                                    <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
-                                </div>
-                            </div>  
+                            </div> 
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                  
+                            
+                        </div> 
+                        
+                       
 
-                            <div  class="form-row">
-                                <div class="form-group col-md">
-                                    <label  for="tender-txt" class="bolder col-form-label">TENDERED</label>
-                                    <div  id="main-source-drop">
-                                        <input type="text"   class=" has-change-group bolder small-size  review form-control"
-                                        id="tender-txt" name="tender" value="{{venture.tender}}"/>  
-                                    </div> 
-                                </div>
-                                
-                            </div>
+                    </div>
 
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="venture-total-txt" class="col-form-label">SALES TOTAL<span
+                                    class="asteriskField">*</span> </label>
+                            <input  id="venture-total-txt"   readonly required type="number" step='any' min=0 max="10000"
+                                class="total-sale mid-size form-control" value="{{venture.totalCost}}">
+                        </div>
+                        
+                        <div class="form-group col-md-3">
+                            <label for="main-source-drop" class="col-form-label">SOURCE<span
+                                    class="asteriskField">*</span></label>
+                            <div class="dropdown" id="main-source-drop">
+                              
+                                <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
+                                <input type="hidden" id="note" name="note" value="{{venture.note}}">
+                                <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
+                                <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
+                          
 
-                            <div  class="form-row">
-                                <div class="form-group col-md has-change-group">
-                                    <label for="change-txt" class="bolder red-color col-form-label">CHANGE</label>
-                                <div  id="main-source-drop">
-                                    <input type="text" readonly   class=" has-change-group red-color bolder small-size  review form-control"
-                                    id="change-txt" name="change" value="{{venture.change}}">
-                                </div>
-                                 </div>
-                            </div>
+                                <button class="left-position small-size btn btn-light dropdown-toggle" type="button"
+                                    id="source-cash-drop" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
 
-
-                            <div  class="form-row">
-                            <div class="form-group col-md ">  
-                                <label for="main-source-drop" class=" has-change-group bolder col-form-label">DEPOSIT CHANGE TO</label>
-                                <div class="dropdown" id="main-source-drop">
-                                    <button    class=" has-change-group left-position small-size btn btn-light dropdown-toggle" type="button"
-                                        id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" style="text-align: left;border:1px solid #ced4da;width: 100%;">
-                                        {% ifequal venture.destination_acct_code 'S' %} SAVING ACCT {%else%}  {% ifequal venture.destination_acct_code 'W' %}  WALLET ACCT
-                                        {%else%}SELECT OPTION
-                                        {%endifequal%}
-                                        {%endifequal%}
-                                        
-    
-                                    </button>
-                                    <input hidden type="hidden"  name="change_deposit_to"   value="SELECT OPTION"
-                                    id="change_deposit_to"  >
-    
-                                    <div class=" has-change-group dropdown-menu" aria-labelledby="source-cash-drop">
-                                        
-                                        <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
-                                        <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
-                                        <button class="deposit-cash dropdown-item" type="button">SELECT OPTION</button>
-                                    </div>
+                                    {% ifequal venture.source_type.value 'W' %} WALLET ACCOUNT {%else%}CASH
+                                    {%endifequal%}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="source-cash-drop">
+                                    <button class="source-cash dropdown-item" type="button">CASH</button>
+                                    <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div  class="form-row">
-                      
-                            <div style ="margin-top: 15px;" class="form-group col-md">
-                        
-                                
-                                <a  style="margin-bottom: 5px;"  data-toggle="tooltip" data-placement="top" title="Validate Member Customer or Switch to Walk-In Customer" id="venture-done" class="done btn btn-primary btn-md" value="MEMBER ONLY" > <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
-                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                </svg> </a>
-                                
-                                <a data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit"  > <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                                </svg> Pay Now</a> <span id="pay-by-cash"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
-                                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                    <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
-                                  </svg></span><span   id="pay-by-wallet"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
-                                    <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
-                                  </svg></span>
-
-                                 
-                                
+                        <div class="form-group col-md-3">
+                            <label for="main-percent-drop" class="col-form-label">PERCENTAGE </label>
+                            <div class="dropdown" id="main-percent-drop" >
+                                <button class=" left-position small-size btn btn-light dropdown-toggle " type="button"
+                                    id="percent-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled 
+                                    name="percent" style="border:1px solid #ced4da;width:100%;">
+                                    {{venture.percent}}%
+                                </button>
+                                <!-- .custom {
+                                    width: 78px !important;
+                                } -->
+                                <div class="dropdown-menu" aria-labelledby="percent-drop">
+                                    <button class="cc-percent dropdown-item" type="button">95% </button>
+                                    <button class="cc-percent dropdown-item" type="button">94% </button>
+                                    <button class="cc-percent dropdown-item" type="button">93% </button>
+                                    <button class="cc-percent dropdown-item" type="button">92% </button>
+                                    <button class="cc-percent dropdown-item" type="button">91% </button>
+                                    <button class="cc-percent dropdown-item" type="button">90% </button>
+                                     
+                                </div>
                             </div>
-                        
-                    
-                        </div> 
+                        </div>
 
+                        <!-- <div class="form-group col-md-6">
+                            {% ifequal venture.role_type.value 'S' %}
+                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">SELLER
+                                {% if venture.id > 0 %} RECEIVED {%else%} RECEIVES {%endif%}</label>
+                            {%else%}
+    
+                            {%ifequal venture.request_action 'trade' %}
+                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt" class="col-form-label">BUYER
+                                {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%} </label>
+                            {%else%}
+                            <label id="venture-total_owing-lbl" for="venture-total_owing-txt"
+                                class="col-form-label">CUSTOMER {% if venture.id > 0 %} PAID {%else%} PAYS {%endif%}</label>
+                            {%endifequal%}
+                            {%endifequal%}
+                            <input id="venture-total_owing-txt" type="text" readonly style="border:1px solid #ced4da;"
+                                class="mid-size gray-background  form-control" value="{% if venture.amount.value > 0%}  {%ifequal venture.source_type.value 'W'  %}P {{venture.amount.value}}  (FROM WALLET ACCOUNT)  {%else%}  P {{venture.amount.value}} {%endifequal%}  {% else %} 
+                                  {% endif %}">
+                        </div> -->
 
+                    </div>
 
+                    <div class="form-row">
+                      
+                        <div class="form-group col-md-6">
+                            <label for="id_amount" class="col-form-label">AMOUNT </label>
+                            <!-- <label for="id_saving" class="col-form-label">Saving(Deposit):</label> -->
+                            <input style="background-color: #8eb4cc;font-weight: bolder;font-size: 20px;" type="number" readonly name="amount" step="any" class="numberinput form-control" required="" id="id_amount" name="amount"   min="0" max="10000">
+                            
+                        </div>
+                         
+                        <div class="form-group col-md-6">
+                            <label for="id_cc" class="col-form-label">Co. Money </label>
+                            <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
+                        </div>
 
-
-                       </div>
-
-
-                        <div id="main"> 
-                                <div class="form-row">
-                                
-                                    {% if venture.id > 0  %}
-                                
-                                    <div class="form-group col-md-6">
-                                    
-                                        <input id="current-customer" required type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                                            class="mid-size form-control" value="{{member_info.member_id|upper}}">
-                                    </div>
-                                
-                                    {%endif%}
-                                </div>
-                                
-                                
-                                <div  id="msain" class="form-row" style="margin-top: 5px;margin-left: 10px;"> 
-                                   
-                                    <label for="autocomplete" class="col-form-label">  Search Items </label> 
-                                    <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
-                                    
-                                    
-                                    <input id="autocomplete"> <a style="margin-left:4px;margin-right: 3px;" id="clear-box" class="btn btn-warning btn-md">x</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
-                                    >
-                                    
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
-                                        <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
-                                    </svg></a>
-                                    <a style="margin-left:2px"  data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
-                                    value="RESTART" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                                        </svg> </a>
-                                        <a style="margin-left:20px" data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="btn btn-danger btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                        </svg> New Transaction</a>
-                                    </div>
-
-                                   
-
-                                
-                                
-                                
-
-
-
-                                    <input type=hidden name=theValue>
-                                    
-                                </div>   
-
-
-                                <div class="form-row">
-                                    <div class="form-group col-md-10">
-                                        <div hidden id="customer-info-alert" style="margin-bottom: 0px;" class="alert alert-primary" role="alert">
-                                        <span id="assets"   style="margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                        </svg> </span>    <span class="bolder" id="customer-info-alert-textx">_</span>  
-                                        
-                                        </div> 
-                                    </div>
-                                </div>
-
-                                <div   class="pos-container" style="width: 100%;max-height:85% !important;  padding:0px;">
-                                    <div id="pos-table-container"  style="margin-bottom:10px !important;overflow: scroll ">
-                                    <table   id="pos-table" class="table table-bordered" style="width: 100%">
-                                        <thead>
-                                            <tr class="green">
-                                            <th scope="col"><span class="other-product"  data-toggle="tooltip" data-placement="top" title="Add item without barcode"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                                            </svg></span>  <span   style="margin-left: 5px;" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span></th>   
-                                            <th scope="col">Product ID</th>
-                                            <th scope="col">Product Name</th>
-                                            <th scope="col">Qty</th>
-                                            <th scope="col">Price</th>
-                                            <th    hidden   scope="col">CM</th>
-                                            <th scope="col">Total</th>
-                                        <!-- here -->
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                            <tr>
-                                                <th></th>
-                                                <td> </td>
-                                                <td> </td>
-                                                <td> </td>
-                                                <td> </td>
-                                                <td> </td>
-                                                
-                                                
-                                            </tr>
-
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                        
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-
-                                            
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            
-                                            
-                                            
-                                        </tr><tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            
-                                            
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            
-                                            
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            
-                                            
-                                        </tr>
-                                        
-                                        
-                                        </tbody>
-                                    </table>
-                                    
-                                    </div>
-                                            <button hidden data-toggle="tooltip" data-placement="top" title="Add item without barcode" type="button"  class="other-product btn btn-success"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                                        </svg> </span>No Barcode</button> <span
-                                            id="code-message" class="red-color"></span> 
-                                            <!-- <label  class='bolder float-right'>Number of Units</label> -->
-                                        <label hidden class="bolder" style="float:right;margin-right: 25px; font-size: 20px;">Units: <span  data-toggle="tooltip" data-placement="top" title="Total Number of Units" id="units-total"> 0 </span>  </label> 
-
-                                </div>  
-
-                                <!-- --------- container ends ------------ -->
-                                <!-- <br>
-                                <br> -->
-
-
-                                
+                        <div  id="msain" class="form-row"> 
+                            <label for="autocomplete" class="col-form-label">  Search Items </label> 
+                            <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
                                
-                                              
+                             
+                             <input id="autocomplete"> <a id="clear-box" class="btn btn-warning btn-md">x</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
+                             >
+                            
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+                                 <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
+                               </svg></a>
+                               <a   data-toggle="tooltip" data-placement="top" title="To refresh this page. Caution: All data entered will be erased."  id="refresh"   class="btn btn-danger btn-md" type="button"
+                               value="RESTART" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                </svg> </a>
+                            </div>
 
-                                  
-                                              
+                          
+                           
+                          
 
-                   </div>    
-                   <div style="position: absolute;bottom: 1%;left:21%">
+
+
+                            <input type=hidden name=theValue>
+                        </div>
+
+                    </div>      
+
+                    <!-- ---- container begin --- -->
+
+ <div   class="container" style="width: 100%;max-height:  350px;  padding:0px">
+
+           
+            <div style="max-height: 350px;overflow: scroll;margin-bottom: 5px;">
+            <table id="pos-table" class="table table-bordered">
+                <thead>
+                    <tr class="green">
+                    <th scope="col"><span class="other-product"  data-toggle="tooltip" data-placement="top" title="Add item without barcode"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                      </svg></span>  <span   style="margin-left: 5px;" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span></th>   
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th    hidden   scope="col">CM</th>
+                    <th scope="col">Total</th>
+                <!-- here -->
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        
+                        
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        
+                        
+                    </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                   
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                      
-      
-                </div>
-            </form>
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                     
+                    
+                </tr>
+                
+                
+                </tbody>
+            </table>
             
-       
+            </div>
+           
+            <button data-toggle="tooltip" data-placement="top" title="Add item without barcode" type="button"  class="other-product btn btn-success"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+</svg> </span>No Barcode</button> <span
+            id="code-message" class="red-color"></span> 
+            <!-- <label  class='bolder float-right'>Number of Units</label> -->
+         <label class="bolder" style="float:right;margin-right: 25px; font-size: 20px;">Units: <span  data-toggle="tooltip" data-placement="top" title="Total Number of Units" id="units-total"> 0 </span>  </label> 
+
+</div>  
+
+
+
+                    <!-- --------- container ends ------------ -->
+                     <br>
+                     <br>
+                    
+                    <div style="margin-top:0px;" class="form-row">
+                       
+                         
+
+                      
+                        <div class="form-group col-md-2">
+                            <label for="tender-txt" class="bolder col-form-label">TENDERED</label>
+                            <div  id="main-source-drop">
+                                <input type="text"   class=" has-change-group bolder small-size  review form-control"
+                                id="tender-txt" name="tender" value="{{venture.tender}}"/>  
+                            </div> 
+                        </div>
+                         
+                        <div class="form-group col-md-2 has-change-group">
+                            <label for="change-txt" class="bolder red-color col-form-label">CHANGE</label>
+                        <div  id="main-source-drop">
+                            <input type="text" readonly   class=" has-change-group red-color bolder small-size  review form-control"
+                            id="change-txt" name="change" value="{{venture.change}}">
+                        </div>
+                        </div>
+                          <!-- i remve has-change-group from   <div class="form-group col-md-2 ">   -->
+                        <div class="form-group col-md-2 ">  
+                            <label for="main-source-drop" class=" has-change-group bolder col-form-label">DEPOSIT CHANGE TO</label>
+                            <div class="dropdown" id="main-source-drop">
+                                <button  class=" has-change-group left-position small-size btn btn-light dropdown-toggle" type="button"
+                                    id="deposit-cash-drop"   data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" style="border:1px solid #ced4da;width: 100%;">
+                                    {% ifequal venture.destination_acct_code 'S' %} SAVING ACCT {%else%}  {% ifequal venture.destination_acct_code 'W' %}  WALLET ACCT
+                                    {%else%}SELECT OPTION
+                                    {%endifequal%}
+                                    {%endifequal%}
+                                    
+ 
+                                </button>
+                                <input hidden type="hidden"  name="change_deposit_to"   value="SELECT OPTION"
+                                id="change_deposit_to"  >
+
+                                <div class=" has-change-group dropdown-menu" aria-labelledby="source-cash-drop">
+                                    
+                                    <button class="deposit-cash dropdown-item" type="button">WALLET ACCT</button>
+                                    <button class="deposit-cash dropdown-item" type="button">SAVING ACCT</button>
+                                    <button class="deposit-cash dropdown-item" type="button">SELECT OPTION</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="form-group col-md-1">
+                        </div>
+                    
+                        <div style ="margin-top: 15px;" class="form-group col-md-5">
+                       
+                            <a data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="btn btn-success btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg> New Transaction</a>
+                            <a data-toggle="tooltip" data-placement="top" title="Validate Member Customer or Switch to Walk-In Customer" id="venture-done" class="done btn btn-primary btn-md" value="MEMBER ONLY" > <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                              </svg> Member Only</a>
+                            <a data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit"  > <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                              </svg> Pay</a>
+                            <!-- {% if venture.id > 0 %}
+                            <a hidden id="venture-delete"
+                                href="{% url 'fx:delete_venture_url' member_info.id  venture.id 'venture' %}"></a>
+    
+                            <input style="float:right" id="venture-delete-this" class="btn btn-danger btn-md" type="button"
+                                value="Delete this" />
+    
+                             
+                            {%endif%} -->
+                        </div>
+                    
+                  
+                    </div>  
+
+                
+                    
+
+
+
+
+                     
+ <!-- ------------------- pos ------------------- -->
+
+
+<!-- --here. -->
+ 
+
+
+  <!-- ------------------- pos end --------------------- -->
+
+
+ 
+
+ 
+
+                    
+                </form>
+                
+
          
             
-       
+        </div>
         
     </div>
 
@@ -1374,10 +1328,10 @@ th {
                                         id="review-venture-total-txt" value="">
                                 </div>
                                 <label for="review-venture-source-txt" class="col-sm-1 col-form-label">Source<span
-                                        class="asteriskField">*</span> </label>
+                                        class="asteriskField">*</span></label>
                                 <div class="col-sm-5">
-                                   <input type="text" readonly class="small-size  review form-control"
-                                        id="r eview-venture-source-txt" value="">
+                                    <input type="text" readonly class="small-size  review form-control"
+                                        id="review-venture-source-txt" value="">
                                 </div>
 
                                 <!-- <label id="review-total_owing-txt" for="review-venture-total_owing-txt"
@@ -1542,7 +1496,6 @@ th {
     })();
 
     $(document).ready(function () {
-        $("#pay-by-wallet").hide();
         $("#reset-form").trigger("click");
         $("#confim-modal-new_transaction").text("New Transaction?");
 
@@ -1660,13 +1613,7 @@ console.log(items);
         var walk_in_id =customer;
         console.log("customer: "+customer);
         //set to walkin by default
-         if(walk_in){
-            $("#deposit-cash-drop").prop("disabled", true);
-            $("#source-cash-drop").prop("disabled", true);
-         }else{
-            $("#deposit-cash-drop").prop("disabled", false);
-            $("#source-cash-drop").prop("disabled", false);
-         }
+         
          $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
          $("#assets").hide();
 
@@ -1746,11 +1693,9 @@ console.log(items);
                    }
 
                    if(alt_key !=0 && iKeyCode == 83){
-                   
+                    $("#pos-product-code-txt").val("A0000");
                         hide_pos_editor(1);
-                        clear_pos_top();
-                        $("#pos-product-code-txt").val("A0000");
-                        $("#pos-add-btn").val("ADD");
+                        
                          $("#pos-product-name-txt").prop("readonly",false);
                         $("#pos-qty-txt").val("1");     
                         $("#pos-qty-txt").prop("readonly",false);
@@ -2111,16 +2056,11 @@ console.log(items);
            function clear_pos_table(){
 
             $("#pos-table tbody tr").remove();
-            var newRow = "<tr class='bolder'><td></td> <td></td> <td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
+            var newRow = "<tr class='bolder'><td></td>  <td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
-            $("#pos-table > tbody").prepend(newRow);
-            $("#pos-table > tbody").prepend(newRow);
-            $("#pos-table > tbody").prepend(newRow);
-            $("#pos-table > tbody").prepend(newRow);
-            
 
             
             table = document.getElementById("assets-table");
@@ -2225,7 +2165,6 @@ console.log(items);
 
        clear_pos_table();
        walk_in =true;
-       $("#deposit-cash-drop").prop("disabled", true);
        //  customerInfo.id = 1; //walk-in
        customer = walk_in_id;
        
@@ -2264,10 +2203,8 @@ console.log(items);
        $("#btn-auth-walk-in").click(function() {
 
            walk_in =true;
-           $("#deposit-cash-drop").prop("disabled", true);
            customer = walk_in_id;
            customer_id ="WALK-IN";
-            $("#source-cash-drop").prop("disabled", true);
            adjust_total();
            $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
            $("#login").modal('hide');
@@ -2950,7 +2887,6 @@ $("#payment-login-lnk").click(function () {
 
                         clear_pos_table();
                         walk_in =true;
-                        $("#deposit-cash-drop").prop("disabled", true);
                         //  customerInfo.id = 1; //walk-in
                         customer = walk_in_id;
                         
@@ -3131,7 +3067,6 @@ $("#payment-login-lnk").click(function () {
                                         clear_pos_table();
 
                                         walk_in =true;
-                                        $("#deposit-cash-drop").prop("disabled", true);
                                         customer = walk_in_id;
                                         customer_id ="WALK-IN";
                                         $("#units-total").text("");
@@ -3768,13 +3703,8 @@ $("#payment-login-lnk").click(function () {
                                 
                                 if(member_id =="WALK-IN"){
                                          walk_in =true;
-                                         $("#deposit-cash-drop").prop("disabled", true);
-                                         $("#source-cash-drop").prop("disabled", true);
-                                        
                                 }else{
                                          walk_in =false;
-                                         $("#deposit-cash-drop").prop("disabled", false);
-                                         $("#source-cash-drop").prop("disabled", false);
                                 }
                                 cust_info = name + " | "+member_id + "   (BY PASS)";
                                 
@@ -4376,13 +4306,9 @@ $("#payment-login-lnk").click(function () {
                 source_type = "K";
                 // max = 10000;
                 account_name = "CASH";
-
-              $("#pay-by-cash").show();
-              $("#pay-by-wallet").hide();
+            
             //25
             $(".has-change-group").prop("disabled", false);
-            $("#deposit-cash-drop").prop("disabled", false);
-             
             if (tender > 0) {
 
                 $("#tender-txt").val(tender);
@@ -4394,13 +4320,10 @@ $("#payment-login-lnk").click(function () {
 
 //wallet
             } else {
-                $("#pay-by-cash").hide();
-                $("#pay-by-wallet").show();
                 source_type = "W";
                 account_name = "WALLET";
                 keys['CC-BALANCE'] 
                 $(".has-change-group").prop("disabled", true);
-                $("#deposit-cash-drop").prop("disabled", true);
                 var tendered =  parseFloat($("#tender-txt").val());
                
                     if ( !isNaN(tendered)   &&  tendered > 0){
