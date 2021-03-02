@@ -453,7 +453,7 @@ min-width:150px !important;
 min-height:55px !important; */
 }
 tr.green th {
-  background: green;
+  background: brown;
   color: white;
 }
 
@@ -869,6 +869,7 @@ th {
                                             <th scope="col">Product ID</th>
                                             <th scope="col">Product Name</th>
                                             <th scope="col">Qty</th>
+                                           
                                             <th scope="col">Price</th>
                                             <th    hidden   scope="col">CM</th>
                                             <th scope="col">Total</th>
@@ -880,6 +881,7 @@ th {
                                             <tr>
                                                 <th></th>
                                                 <td> </td>
+                                                
                                                 <td> </td>
                                                 <td> </td>
                                                 <td> </td>
@@ -893,6 +895,7 @@ th {
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
+                                           
                                             <td> </td>
                                             <td> </td>
                                         
@@ -902,6 +905,7 @@ th {
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
+                                           
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
@@ -913,6 +917,7 @@ th {
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
+                                            
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
@@ -923,6 +928,7 @@ th {
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
+                                             
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
@@ -934,17 +940,7 @@ th {
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
                                             
-                                            
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td> </td>
-                                            <td> </td>
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
@@ -954,11 +950,21 @@ th {
                                         <tr>
                                             <th></th>
                                             <td> </td>
+                                            
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
                                             <td> </td>
                                             
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td> </td>
+                                           
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
                                             
                                         </tr>
                                         
@@ -1510,6 +1516,7 @@ th {
     var MODAL_MEMBER =1
     var MODAL_PRODUCT_SEARCH= 2;
     var MODAL_PRODUCT_QTY = 3;
+    var MODAL_PAY_NOW = 4;
     var MODAL_ON =0;
     keys["previous-selected-account"] = "CASH";
     keys["PREVIOUS-INPUT"] = "";
@@ -1766,7 +1773,15 @@ console.log(items);
                          MODAL_ON = MODAL_MEMBER;
                       
                        alt_key =0;
-                   } 
+                    }else if (alt_key !=0 && iKeyCode == 87 ){
+                      
+                      $("#modal-search-member").modal('show');
+                   //   $("#txt-member-partial-payment").focus();
+                        MODAL_ON = MODAL_PAY_NOW;
+                     
+                      alt_key =0;
+                      paynow();
+                  } 
 
 					
 				}
@@ -1857,26 +1872,35 @@ console.log(items);
 
         });
 
-        $("body").delegate(".quantity", "click", function(){
-              id = $(this).attr("id");
-              qty = $(this).val();
-              value =$(this).text();
-              qty= parseInt(qty);
-              product_detail.previous_unit =qty;
-              console.log(" qyt: "+qty +" text" );
-              $("#quantity-txt-modal").attr("code",id);
-              console.log("------ quantity id:"+id+ " rowindex: "+rIndex);
-              $("#quantity-txt-modal").val(value);
-            //  table = document.getElementById("pos-table");
-            // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
-            //table.rows[rIndex].cells[3].innerHTML = "12";
-            $("#quantity-modal").modal('show');
-            //   $("#venture_id").val(venture_id);
-            //   get_transaction();
-           //   $(this).addClass('active').siblings().removeClass('active');    
+        // $("body").delegate(".quantity", "click", function(){
+        //       id = $(this).attr("id");
+        //       qty = $(this).val();
+        //       value =$(this).text();
+        //       qty= parseInt(qty);
+        //       product_detail.previous_unit =qty;
+        //       console.log(" qyt: "+qty +" text" );
+        //       $("#quantity-txt-modal").attr("code",id);
+        //       console.log("------ quantity id:"+id+ " rowindex: "+rIndex);
+        //       $("#quantity-txt-modal").val(value);
+        //     //  table = document.getElementById("pos-table");
+        //     // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+        //     //table.rows[rIndex].cells[3].innerHTML = "12";
+        //     $("#quantity-modal").modal('show');
+        //     //   $("#venture_id").val(venture_id);
+        //     //   get_transaction();
+        //    //   $(this).addClass('active').siblings().removeClass('active');    
+
+
+        // });
+         
+        $("body").delegate(".quantity", "keyup", function(){
+              
+             adjust_total()
+               
 
 
         });
+
         function get_transaction(){
 
                     var data={};
@@ -1921,14 +1945,20 @@ console.log(items);
                                             desc =obj.description;
                                             pcode = obj.product_id;
                                         }
-                                        if (pcode =="A0000") { 
+                                        var txtamount;
+ 
+                                        if (pcode =="A0000" || pcode =="AOOOO") { 
                                            desc = obj.description;
                                            btn = obj.qty;
+                                           txtamount = obj.qty;
                                        }else{
-                                           btn = "<a   id=q-"+pcode+"  class='quantity  btn btn-info'>"+obj.qty +"</a>";
+                                           btn = "<a    class='quantity  btn btn-info'>"+obj.qty +"</a>";
+                                             txtamount ="<input value='"+ obj.qty+ "' class='quantity form-control' id='amount' name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required '>"
+
 
                                        }
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td value ='"+ obj.qty+"'>"+btn+"</td><td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         console.log("newrowl:"+ newRow);    
                                         $("#pos-table > tbody").prepend(newRow);
 
@@ -2095,7 +2125,7 @@ console.log(items);
                     if (customer_id.trim().length < 2){
                          customer_id ="WALK-IN";
                     } 
-                   
+
                     $( "#history" ).prepend( "<button   id='"+venture_id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
                             "<div class='d-flex w-100 justify-content-between'>"+
                                 "<h5 class='mb-1'>"+title+"</h5>"+
@@ -2111,15 +2141,20 @@ console.log(items);
            function clear_pos_table(){
 
             $("#pos-table tbody tr").remove();
-            var newRow = "<tr class='bolder'><td></td> <td></td> <td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
+            // var txtamount ="<input class='quantity form-control' id='amount' name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'>"
+
+            var newRow = "<tr class='bolder'><td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
+             
+            
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
+
             
 
             
@@ -2144,23 +2179,48 @@ console.log(items);
         });
 
      function saveTansactions(transaction_id){
-        console.log("tansaction id: =========")
+        console.log("save transaction tansaction id: =========")
         console.log(transaction_id);
         var rows = [];
             $('#pos-table tr').each(function(i, n){
+                // console.log("----tr---");
+                // console.log(this);
+                // console.log($(this).find("td:eq(3) input[type='number']"));
                 var $row = $(n);
-                var code = $row.find('td:eq(1)').text().trim();
+                var code = $row.find('td:eq(1)').text().trim().toUpperCase();
                 if( code.length >0){ 
-                         
+                          
 
                 var desc="";
                 if( code.charAt(0).toUpperCase()){
                     desc =  $row.find('td:eq(2)').text().trim();
                 }
-       
+                var quantity =1;
+             //   var quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+
+                
+                if (code == "A0000" || code =="AOOOO"){
+                    quantity = parseFloat( $row.find('td:eq(3)').text());
+                }else{  
+                    quantity = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+                    qty = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+                    // console.log("input type");
+                    // console.log( $row.find("td:eq(3)").val());
+                }
+                // console.log("qty > "+qty);
+                // console.log("quantity >"+code);
+                // console.log(quantity);
+                // console.log("after:")
+                if (isNaN(quantity)){
+                    quantity = 1;
+                }
+                console.log("quantity >"+code);
+                console.log(quantity);
+                 
+              //  quantity :parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
                 rows.push({
                   //  product_id: $row.find('td:eq(1)').text(),
-                    qty:   $row.find('td:eq(3)').text(),
+                    qty:   quantity ,
                     description:desc,
                     price:    $row.find('td:eq(4)').text(),
                     cm:       $row.find('td:eq(5)').text(),
@@ -2173,7 +2233,7 @@ console.log(items);
             });
             console.log("rows----------");
             console.log(rows);
-          
+             
             console.log(JSON.stringify(rows));
          
             $.ajax({
@@ -2565,13 +2625,22 @@ console.log(items);
                 var total_cm =0;
                 console.log("-----------adjust");
                 var unit=0;
+                var tot=0;
                 $("#pos-table tbody tr").each(function(){
                         var currentRow=$(this);
                         
                         var amount=parseFloat( currentRow.find("td:eq(6)").text());
+                        var quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
                         
                         
-                        var code= currentRow.find("td:eq(1)").text().trim();
+                        var code= currentRow.find("td:eq(1)").text().trim().toUpperCase();
+
+                        if (code == "A0000" || code == "AOOOO"){
+                            quantity = parseFloat(currentRow.find("td:eq(3)").text());
+                        }else{
+                            quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+
+                        }
                       
                         if (code !="") {
                            // ctr =ctr + 1;
@@ -2584,7 +2653,13 @@ console.log(items);
                                 }
                                 } 
                             ctr =ctr +  unit;
-                        }
+
+
+                            if (isNaN(quantity)) {
+                            quantity =0;
+                                  }  
+                                 console.log("quantity: "+ quantity);
+                     
 
 
                       //  currentRow.find("td:eq(6)").text("-1");
@@ -2607,12 +2682,12 @@ console.log(items);
                         
                         if (walk_in) {
                             // console.log("---walk-in");
-                            tot =  price * qty;
+                            tot =  price * quantity;
                         }else{
                            // console.log("---member");
-                             ded = cm * qty;
+                             ded = cm * quantity;
                              addition_deduction = (ded * .5) + ded;
-                             tot =(price * qty) - addition_deduction;
+                             tot =(price * quantity) - addition_deduction;
                              total_cm = total_cm +  addition_deduction; 
                              
                         }
@@ -2621,13 +2696,17 @@ console.log(items);
 
                            currentRow.find("td:eq(6)").text(tot.toFixed(2));
                         }
+                        console.log("tot " +tot );
                         total_sales = total_sales + tot;
+                    }
 
                 });
                   //  total_sales = total_sales.toFixed(2) ;
                     
 
                     console.log("------- xtotal cm: " +total_cm );
+                    console.log("-------total_sales:   " +total_sales );
+                    console.log( total_sales );
                    
                     tot = total_sales + total_cm;
 
@@ -2639,7 +2718,7 @@ console.log(items);
                     $("#id_amount").val(total_sales.toFixed(2));
                     
                      $("#id_cc").val(total_cm.toFixed(2));
-                   //$("#id_cc").val(tot_cm.toFixed(2));
+                   //$("#id_cc").val(tot_cm.toFixed(2));    
                     if(total_sales > 0){
                         submit_now =true;
                       $("#venture-submit-btn").prop("disabled",false);
@@ -2694,7 +2773,7 @@ console.log(items);
        });
 //add
        $("#pos-add-btn").click(function () {
-                 
+                     $("#product-modal").modal('hide');
                     $("#pos-product-code-txt").attr("readonly",false);
                     pcode = $("#pos-product-code-txt").val().trim();
                     pname = $("#pos-product-name-txt").val().trim();
@@ -2766,8 +2845,9 @@ console.log(items);
                                         }
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
-                                       
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td><td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
+                                        var txtamount ="<input class='quantity form-control'   name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'>"
+
+                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td>  <td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -2850,6 +2930,7 @@ $("#payment-login-lnk").click(function () {
         $('#pos-table tbody').on('click', 'tr', function(event) {
                      console.log("click row");
                      rIndex = this.rowIndex;
+                     console.log(event);
                      $(this).addClass('selected').siblings().removeClass('selected');   
                     // var value=$(this).find('td:first').html();
                      var  value = $(this).children("td:eq(1)").text().trim().toUpperCase();
@@ -3013,6 +3094,7 @@ $("#payment-login-lnk").click(function () {
         $("#id_percent").prop("step", "any");
 
         $("#btn-agree").click(function () {
+            
             //submit_now =true;
             console.log("btn agree");
             //if (videoCode == 2) { 
@@ -3028,7 +3110,12 @@ $("#payment-login-lnk").click(function () {
             //     console.log("payment....");
             // }
         });
-       
+        function paynow(){
+            $("#report-modal").modal('show');
+
+
+        }
+
         function changeHrefValues(member_id){
             console.log("member_id:: "+member_id)
             $("#main-venture-wallet-deposit").attr("href", "/finance/wallet/"+member_id+"/0/D");
@@ -3041,12 +3128,12 @@ $("#payment-login-lnk").click(function () {
         ///submit
 
         $("#venture-submit-btn").click(function (e) {
-
+           
              
             console.log("------------submit form init-----------");
             console.log("initialize: "+ initialize);
             var total_sales= parseFloat($("#venture-total-txt").val());
-            
+            saveTansactions(282);
             if ( initialize == false && (total_sales <=0 ||  isNaN(total_sales) || submit_now == false)){
                 console.log("=============.");
                 console.log("total sales:"+total_sales);
@@ -3057,6 +3144,9 @@ $("#payment-login-lnk").click(function () {
                 return;
             }
              
+
+
+
             var form = document.querySelector('#pos-form');
             var reportVal = form.checkValidity();
             if (initialize ==false && reportVal == false) {
@@ -3280,7 +3370,8 @@ $("#payment-login-lnk").click(function () {
 
 
         function search_product_details(item_id) {
-    
+
+             
             console.log("searching begins for :"+item_id);
             item_id =item_id.trim().toUpperCase();
             len = $("#c-"+item_id).length;
@@ -3355,7 +3446,9 @@ $("#payment-login-lnk").click(function () {
  
                                      var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                          var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td value='1'>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
+                                         var txtamount ="<input class='quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required form ='receiver_form'>"
+
+                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                          $("#pos-table > tbody").prepend(newRow);
                                          
                                          console.log(">>>>> edit is selected");

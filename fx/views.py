@@ -5432,7 +5432,7 @@ def  transfer(request,account_name,sender):
                 source_type = account_Initial_list.get(account_name)
                 #if source_type == 'C'
                 print(f"......source_type: {source_type} , {account_name}")
-                return
+                
                 account_id = -1 # nonexisting 
                 category = 1 # code for transfer operation
                 Success= True
