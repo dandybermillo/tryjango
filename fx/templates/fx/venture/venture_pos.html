@@ -9,7 +9,142 @@
 {% block css_style %}
 
 <style>
+.align-left{
+text-align: left;
 
+}
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive > li {
+    display: none;
+    width: 100%;
+  }
+  .nav-tabs-responsive > li > a {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+  }
+  .nav-tabs-responsive > li.active {
+    width: 54%;
+  }
+  .nav-tabs-responsive > li.active:first-child {
+    margin-left: 23%;
+  }
+  .nav-tabs-responsive > li.active, .nav-tabs-responsive > li.prev, .nav-tabs-responsive > li.next {
+    display: block;
+  }
+  .nav-tabs-responsive > li.prev, .nav-tabs-responsive > li.next {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  .nav-tabs-responsive > li.next > a, .nav-tabs-responsive > li.prev > a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .nav-tabs-responsive > li.next > a .text, .nav-tabs-responsive > li.prev > a .text {
+    display: none;
+  }
+  .nav-tabs-responsive > li.next > a:after, .nav-tabs-responsive > li.next > a:after, .nav-tabs-responsive > li.prev > a:after, .nav-tabs-responsive > li.prev > a:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .nav-tabs-responsive > li.prev > a:after {
+    content: "\e079";
+  }
+  .nav-tabs-responsive > li.next > a:after {
+    content: "\e080";
+  }
+  .nav-tabs-responsive > li.dropdown > a > .caret {
+    display: none;
+  }
+  .nav-tabs-responsive > li.dropdown > a:after {
+    content: "\e114";
+  }
+  .nav-tabs-responsive > li.dropdown.active > a:after {
+    display: none;
+  }
+  .nav-tabs-responsive > li.dropdown.active > a > .caret {
+    display: inline-block;
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-left {
+    left: 0;
+    right: auto;
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-right {
+    left: auto;
+    right: 0;
+  }
+}
+/**
+ * Demo Styles
+ */
+.wrapper {
+  padding: 15px 0;
+}
+
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
+    /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+tbody tr{
+    font-weight: bold;
+}
+/* Firefox */
+
+input[type=number] {
+
+  -moz-appearance: textfield;
+}
+tr.pos-table td:nth-child(1) { 
+         max-width: 50px; 
+            }
+tr.pos-table td:nth-child(2) { 
+         max-width: 100px; 
+            }
+
+tr.pos-table td:nth-child(4) { 
+         width: 150px; 
+            }
+.down,.up{
+    max-width: 60px !important;
+}
+.incdec{
+    font-weight: bolder;
+    font-size: 17px;
+    max-width: 80px !important;
+}
 #contain {
   position:relative;
   min-height:80%;
@@ -659,6 +794,7 @@ th {
                                         <input type="hidden" id="source-type" name="source_type" value="{{venture.source_type}}">
                                         <input type="hidden" id="note" name="note" value="{{venture.note}}">
                                         <input type="hidden" id="customer" name="customer" value="{{venture.customer}}">
+                                        
                                         <input type="hidden" id="venture_id" name="venture_id" value="{{venture.venture_id}}">
                                 
 
@@ -707,9 +843,13 @@ th {
                             
                             <div class="form-row">
                                 
-                                <div class="form-group col-md">
+                                <div id ="credit-line-div" class="form-group col-md">
+                                    <label for="id_cc" class="bold-style col-form-label">CREDIT LIMIT POINTS </label>
+                                    <input type="number" readonly name="credit_line" value="0" step="any" class="form-control" required="" id="credit-line"   >
+                                </div>
+                                <div  id ="community-money-div"  class="form-group col-md">
                                     <label for="id_cc" class="bold-style col-form-label">COMMUNITY MONEY </label>
-                                    <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc" name=cc min="0" max="5000">
+                                    <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc"  min="0" max="5000">
                                 </div>
                             </div>  
 
@@ -773,14 +913,14 @@ th {
                                     <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 </svg> </a>
                                 
-                                <a data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit"  > <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                                </svg> Pay Now</a> <span id="pay-by-cash"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                <a hidden data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="venture-submit-btn" type="submit" name="Submit"  >   Pay Now</a>
+                                <a data-toggle="tooltip" data-placement="top" title="To Start Paying"  disabled class="btn btn-success btn-md"  id="submit"  > Submit</a>
+                                 <!-- <span id="pay-by-cash"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
                                     <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                     <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
                                   </svg></span><span   id="pay-by-wallet"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
                                     <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
-                                  </svg></span>
+                                  </svg></span> -->
 
                                  
                                 
@@ -868,7 +1008,7 @@ th {
                                             </svg></span>  <span   style="margin-left: 5px;" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span></th>   
                                             <th scope="col">Product ID</th>
                                             <th scope="col">Product Name</th>
-                                            <th scope="col">Qty</th>
+                                            <th scope="col" >Qty</th>
                                            
                                             <th scope="col">Price</th>
                                             <th    hidden   scope="col">CM</th>
@@ -878,7 +1018,7 @@ th {
                                         </thead>
                                         <tbody>
                                             
-                                            <tr>
+                                            <tr class='pos-table'>
                                                 <th></th>
                                                 <td> </td>
                                                 
@@ -890,7 +1030,7 @@ th {
                                                 
                                             </tr>
 
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
@@ -901,7 +1041,7 @@ th {
                                         
                                             
                                         </tr>
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
@@ -913,7 +1053,7 @@ th {
                                             
                                             
                                         </tr>
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
@@ -924,7 +1064,7 @@ th {
                                             
                                             
                                             
-                                        </tr><tr>
+                                        </tr><tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
@@ -936,7 +1076,7 @@ th {
                                             
                                             
                                         </tr>
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             <td> </td>
@@ -947,7 +1087,7 @@ th {
                                             
                                             
                                         </tr>
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                             
@@ -957,7 +1097,7 @@ th {
                                             <td> </td>
                                             
                                         </tr>
-                                        <tr>
+                                        <tr class='pos-table'>
                                             <th></th>
                                             <td> </td>
                                            
@@ -1014,24 +1154,34 @@ th {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Report</h5>
+          <h3 id="modal-report-title" class="modal-title">Report</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+         
         </div>
+        <div>
+          <p id="customer-report-name" style="margin-left: 10px;text-align: left;font-size: 20px;" >Walk-In</p>
+    </div>
         <div class="modal-body">
             <!-- <div id="report-info-alert" class="alert alert-primary" role="alert">
                 <span bold> : </span> <span id="report-alert-text">_</span> <span style="float:right" id="report-success-text">x</span>
               </div> -->
-
+              <span id="pay-by-cash"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
+              </svg></span>
+              <span   id="pay-by-wallet"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+              </svg></span>
               <form>
                  <p id="venture-id"> </p>
                 <div class="form-group row">
-                    <label for="salestotal-reps" class="col-sm-3 col-form-label">Sales Total</label>
+                    <label for="salestotal-reps" class="col-sm-3 col-form-label">Amount</label>
                     <div class="col-sm-9">
                         
                        
-                       <input type="text" readonly class="form-control-plaintext" id="salestotal-reps" value="_">
+                       <input style= "font-weight: bold; font-size: 23px;" type="text" readonly class="form-control-plaintext" id="salestotal-reps" value="_">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -1058,8 +1208,83 @@ th {
         </div>
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-          <button type="button" class="btn btn-primary">EDIT</button>
+          <button id ="ready-to-pay" type="button" class="btn btn-success" data-dismiss="modal"> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+        </svg>  PAY NOW</button>
+          <button id="cancel-payment"type="button" class="btn btn-primary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <!-- addnote -->
+  <div id="add-note-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modal-report-title" class="modal-title">NOTE MAKER</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         
+        </div>
+        <div>
+          <p id="customer-note-name" style="margin-left: 10px;text-align: left;font-size: 20px;" ></p>
+    </div>
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="pos-product-code-txt" class="col-form-label">  NOTE </label>  
+                    <textarea   rows="10"   class="form-control"
+                    id="customer-note" name="customer_note" maxlength="300"></textarea>
+                </div>
+
+            </div>
+
+
+               
+
+       
+       
+    
+    
+    
+    
+    </div>
+        <div class="modal-footer">
+          
+          <button id="save-note"  type="button" class="btn btn-success" data-dismiss="modal">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+          </svg> SAVE NOTE</button>
+          <button  data-dismiss="modal"   class="btn btn-primary">CANCEL</button>
+          <button  data-dismiss="modal"  id="delete-note" class="btn btn-danger">DELETE</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- here. -->
+ <div id="no-barcode-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modal-report-title" class="modal-title">No Barcode</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+        
+    </div> 
+         
+        <div class="modal-footer">
+          
+          <button id ="ready-to-pay" type="button" class="btn btn-success" data-dismiss="modal"> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+        </svg> ok </button>
+          <button id="cancel-payment"type="button" class="btn btn-primary">Cancel</button>
         </div>
       </div>
     </div>
@@ -1079,14 +1304,71 @@ th {
         <div class="box-mobile-menu mobile-menu" >
           <div class="row">
              
+            <div class="wrapper" style="width: 100%;">
+                <div class="all history">
+              
+                  <div id="narrow-browser-alert" class="alert alert-info text-center">
+                    <strong>H I S T O R Y</strong> <br>Narrow your browser!</div>
+                  
+                  <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                      <li role="presentation" class="active">
+                        <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                          <span class="text">HOME | </span>
+                        </a>
+                      </li>
+                       
+                      
+                      <li role="presentation">
+                        <a href="#notes" role="tab" id="notes-tab" data-toggle="tab" aria-controls="notes">
+                          <span class="text"> NOTE </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div id="profile" class="tab-content">
+                      <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                    <div id="history" class="list-group" style="border: 5px solid red;">
+                                        {% for obj in transactions %}
+                                        <div  id="{{obj.id}}"  class="history-title"> 
+                                        <button class="history list-group-item list-group-item-action flex-column align-items-start ">
+                                            <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">#{{obj.id}} Grocery</h5>
+                                            <small>.</small>
+                                            </div>
+                                            <p class="mb-1">{{obj.customer.firstname|upper}} | {{obj.customer.member_id|upper}}</p>
+                                            <small>Amount Paid: P{{obj.amount}} | Community Money {{obj.cc}}</small>
+                                        </button>
+                                        </div>
+                                        {% endfor %} 
+                                </div>
+
+
+                      </div>
+                       
+                      <div   role="tabpanel" class="tab-pane fade" id="notes" aria-labelledby="notes-tab">
+                           <div id="notes_div">
+
+                           </div>
+                        
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <div class="col">
-              <h4><a href=""> History</a></h4>
+              <!-- <h4><a href=""> History</a></h4> -->
                <!-- <button id="sample"> click</button> -->
 
-              <div id="history" class="list-group">
+               
+
+
+               
+              <!-- <div id="history" class="list-group">
                  
             
-<!-- --- -->
+
              
                {% for obj in transactions %}
              
@@ -1099,8 +1381,11 @@ th {
                 <small>Amount Paid: P{{obj.amount}} | Community Money {{obj.cc}}</small>
               </button>
              {% endfor %} 
-<!-- ---- --> 
-             </div>
+              </div> -->
+
+
+
+
             </div>
           </div>
         </div><!--.mobile-menu-->
@@ -1260,7 +1545,7 @@ th {
                         value="ADD" />
                     
                         <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
-                    value="CANCEL" /> 
+                    value="CANCEL/HIDE" /> 
                         
                         
                     <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
@@ -1495,7 +1780,40 @@ th {
 
 
 <script>
+    (function($) {
+
+'use strict';
+
+$(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
+  var $target = $(e.target);
+  var $tabs = $target.closest('.nav-tabs-responsive');
+  var $current = $target.closest('li');
+  var $parent = $current.closest('li.dropdown');
+      $current = $parent.length > 0 ? $parent : $current;
+  var $next = $current.next();
+  var $prev = $current.prev();
+  var updateDropdownMenu = function($el, position){
+    $el
+        .find('.dropdown-menu')
+      .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+        .addClass( 'pull-xs-' + position );
+  };
+
+  $tabs.find('>li').removeClass('next prev');
+  $prev.addClass('prev');
+  $next.addClass('next');
+  
+  updateDropdownMenu( $prev, 'left' );
+  updateDropdownMenu( $current, 'center' );
+  updateDropdownMenu( $next, 'right' );
+});
+
+})(jQuery);
     //okss
+
+    var INCREMENTAL =0;
+    var WHOLE = 1;
+    var Credit_option = WHOLE;
     var initialize = false;
     var alt_key =0;
     var videoCode =0; //1-payment 2-venture
@@ -1549,12 +1867,106 @@ th {
     })();
 
     $(document).ready(function () {
+        $("#community-money-div").hide();
         $("#pay-by-wallet").hide();
         $("#reset-form").trigger("click");
         $("#confim-modal-new_transaction").text("New Transaction?");
 
          var objs = [];
 
+         $("body").delegate(".down", "click", function(){
+                console.log("dec");
+                var $incdec = $(this).next();
+                if ($incdec.val() > $(this).data("min")) {
+                            $incdec.val(parseFloat($incdec.val())-1);
+                            }
+                 adjust_total();
+            });
+
+            $("body").delegate(".up", "click", function(){
+                        
+                        var $incdec = $(this).prev();
+                    if ($incdec.val() < $(this).data("max")) {
+                        $incdec.val(parseFloat($incdec.val())+1);
+                    }
+                        adjust_total();
+            });
+
+
+
+            $("#delete-note").on('click',function(){
+                 
+                $('#customer-note').text("");
+               
+                
+              
+              
+                $('#save-note').trigger('click');
+
+
+            });
+            $("#addnote").on('click',function(){
+                $('#delete-note').hide();
+                $("#save-note").text("SAVE NOTE");
+                $("#customer-note-name").text($("#customer-info-alert-text").text());
+                $('#customer-note').text("");
+                $("#add-note-modal").modal('show');
+                
+              
+                $('#customer-note').trigger('focus');
+
+
+            });
+            $("#save-note").on('click',function(){
+                console.log("text:"+$(this).text());
+                 
+ 
+                var data={};
+                data["id"] =$(this).attr("code");
+                data["code"] =$(this).text();
+                data["customer"] =$("#customer").val();
+                data['note'] = $("#customer-note").val();
+                console.log("data:");
+                console.log(data);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/new_note_view/",
+                    data: data,
+                    success: function (response) {
+
+                        if (response["type"] === "success") {
+                        
+                            console.log("success!!!!");
+                            console.log(response["ps"]);
+                            
+                        } else if (response["type"] === "error") {
+                            console.log("Unable to save note!");
+
+                        }
+                    },
+                    error: function (response) {
+                        console.log("Something went wrong! Try again..");
+                    //   $("#login-error").text("Something went wrong! Try again.");
+                    $("#login-danger-alert").fadeIn();  // alert message
+                //  closeSnoAlertBox("login","danger");
+                    },
+                    });
+
+
+
+                    
+
+
+                });
+
+
+     $(".up").on('click',function(){
+         var $incdec = $(this).prev();
+         if ($incdec.val() < $(this).data("max")) {
+          $incdec.val(parseInt($incdec.val())+1);
+         }
+     });
          $(document).keydown(function(e) { 
                var x = e.keyCode;
                if (x == 18){
@@ -1602,6 +2014,26 @@ th {
 
 
       });
+
+
+  
+ $("#submit").click(function(event){
+    paynow();
+});
+      
+      $("#cancel-payment").click(function(event){
+
+
+              $("#report-modal").modal('hide');
+
+});
+  $("#ready-to-pay").click(function(event){
+
+
+      $("#venture-submit-btn").trigger('click');
+
+   });
+
   $("#autocomplete").autocomplete({
 	source: objs,
   select: function(e, ui) {
@@ -1712,9 +2144,10 @@ console.log(items);
 				suffixKeyCodes: [13],
 				reactToPaste: true,
 				onScan: function (sCode, iQty) {
+                   
                     $('#press-me').trigger('focus');
                     console.log('Scanned: ' + iQty + 'x ' + sCode +"  Barcode.POS: "+Barcode.POS);
-
+                    
                     if (sCode != "121279")
                      { 
                        beep();
@@ -1775,13 +2208,24 @@ console.log(items);
                        alt_key =0;
                     }else if (alt_key !=0 && iKeyCode == 87 ){
                       
-                      $("#modal-search-member").modal('show');
+                     // $("#modal-search-member").modal('show');
                    //   $("#txt-member-partial-payment").focus();
                         MODAL_ON = MODAL_PAY_NOW;
                      
-                      alt_key =0;
+                    
                       paynow();
-                  } 
+                      alt_key = 0;
+                  } else if(alt_key !=0 && iKeyCode == 90){
+                    alt_key = 0;
+                      $("#hamburger").trigger('click');
+
+                  } else if(alt_key != 0  && iKeyCode == 72){ 
+                    alt_key = 0;
+                    $('.overlay').toggleClass('hidden');
+                    $('#press-me').trigger('focus')
+
+
+                  }
 
 					
 				}
@@ -1852,6 +2296,24 @@ console.log(items);
 
 
         });
+        $("body").delegate(".customer-notes", "click", function(e){
+            var id = $(this).attr("id");
+            var txt = $(this).text();
+            $("#save-note").attr('code',id);
+            $('#delete-note').show();
+            console.log("note id: "+id + " text:"+txt);
+           
+            $("#customer-note-name").text($("#customer-info-alert-text").text());
+                $("#add-note-modal").modal('show');
+                $('#customer-note').trigger('focus');
+
+            $("#customer-note").text(txt);
+            $("#save-note").text("EDIT NOTE");
+
+            
+
+
+        });
         $("body").delegate(".make-receiver", "click", function(){
           var id = $(this).attr("id");
           console.log("=================== :"+ id);
@@ -1861,8 +2323,10 @@ console.log(items);
 
 
         });
-        $("body").delegate(".history", "click", function(){
+        $("body").delegate(".history-title", "click", function(){
+              console.log("history is clicked");
               venture_id = $(this).attr("id");
+
               $("#venture_id").val(venture_id);
               get_transaction();
               $(this).addClass('active').siblings().removeClass('active');   
@@ -1958,7 +2422,7 @@ console.log(items);
 
                                        }
 
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+                                        var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         console.log("newrowl:"+ newRow);    
                                         $("#pos-table > tbody").prepend(newRow);
 
@@ -2143,7 +2607,7 @@ console.log(items);
             $("#pos-table tbody tr").remove();
             // var txtamount ="<input class='quantity form-control' id='amount' name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'>"
 
-            var newRow = "<tr class='bolder'><td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
+            var newRow = "<tr class='pos-table bolder'><td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td class='hide'></td><td class='hide'></td>  </tr>";
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
             $("#pos-table > tbody").prepend(newRow);
@@ -2319,7 +2783,7 @@ console.log(items);
 //   return;
           
 
-          
+      $("#modal-search-member").modal('show');
        });
        $("#btn-auth-walk-in").click(function() {
 
@@ -2716,8 +3180,15 @@ console.log(items);
                   //  tot_cm = total_cm + (addition_deduction);
                   //  total_sales =total_sales -addition_deduction
                     $("#id_amount").val(total_sales.toFixed(2));
-                    
-                     $("#id_cc").val(total_cm.toFixed(2));
+                   
+                     if (Credit_option == INCREMENTAL){ 
+                        $("#id_cc").val(total_cm.toFixed(2));
+                        console.log("incremental--------------");
+                     } else
+                     {
+                        $("#credit-line").val(total_cm.toFixed(2));
+                        console.log("whote--------------");
+                     }
                    //$("#id_cc").val(tot_cm.toFixed(2));    
                     if(total_sales > 0){
                         submit_now =true;
@@ -2845,9 +3316,9 @@ console.log(items);
                                         }
                                         
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
-                                        var txtamount ="<input class='quantity form-control'   name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'>"
+                                        var txtamount ="<input class='quantity form-control'   name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'> "
 
-                                        var newRow = "<tr  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td>  <td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
+                                        var newRow = "<tr class='pos-table' id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td>  <td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -3111,6 +3582,19 @@ $("#payment-login-lnk").click(function () {
             // }
         });
         function paynow(){
+            $("#tendered-reps").val($("#tender-txt").val().trim());
+                                         
+            $("#change-reps").val($("#change-txt").val().trim());
+            amount = $("#id_amount").val();
+            $("#salestotal-reps").val(amount);
+            var option = $("#deposit-cash-drop").text().trim();
+            if (option == "SELECT OPTION"){
+                option ="";
+            }
+            $("#deposit-reps").val(option);
+
+            
+            $("#modal-report-title").text("Review Form");
             $("#report-modal").modal('show');
 
 
@@ -3193,25 +3677,25 @@ $("#payment-login-lnk").click(function () {
                                         if( venture_id > 0){
                                             fillHistory(ID_Info.id,venture_id,"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
                                         }
-                                        $("#salestotal-reps").val(sales_total.trim());
+                                        // $("#salestotal-reps").val(sales_total.trim());
                                        
-                                        $("#tendered-reps").val($("#tender-txt").val().trim());
+                                        // $("#tendered-reps").val($("#tender-txt").val().trim());
                                          
-                                        $("#change-reps").val($("#change-txt").val().trim());
+                                        // $("#change-reps").val($("#change-txt").val().trim());
                                         $("#venture_id").val(0);
-                                        var option = $("#deposit-cash-drop").text().trim();
-                                        if (option == "SELECT OPTION"){
-                                            option ="";
-                                        }
-                                        $("#deposit-reps").val(option);
+                                        // var option = $("#deposit-cash-drop").text().trim();
+                                        // if (option == "SELECT OPTION"){
+                                        //     option ="";
+                                        // }
+                                        // $("#deposit-reps").val(option);
                 
                                        
-                                        $("#report-modal").modal('show');
+                                      //  $("#report-modal").modal('show');
                                         // $("#login-success").text(response["message"]);
                                         // $("#login-success").css({ display: "block" });
                                         console.log("Success!!!!");
                                         // $("#user-page-lnk").click();
-                                    
+                                        
                                         console.log("Data");
                                         console.log(data);
                                         saveTansactions(venture_id);
@@ -3219,11 +3703,16 @@ $("#payment-login-lnk").click(function () {
                                         $("#deposit-cash-drop").text("SELECT OPTION");
                                         $("#change_deposit_to").val("SELECT OPTION"); 
                                         clear_pos_table();
-
+                                        $("#venture-pay-alert").fadeIn();
+                                        $("#venture-pay-alert-message").text("Payment has been approved! Thank you.");
+                                        setTimeout(function () {
+                                            $("#venture-pay-alert").hide();
+                                        }, 5000);
                                         walk_in =true;
                                         $("#deposit-cash-drop").prop("disabled", true);
                                         customer = walk_in_id;
                                         customer_id ="WALK-IN";
+                                        $("#customer-report-name").text("WALK-IN CUSTOMER");
                                         $("#units-total").text("");
                                         $("#customer-info-alert-text").text("WALK-IN CUSTOMER");
                                        
@@ -3446,8 +3935,8 @@ $("#payment-login-lnk").click(function () {
  
                                      var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                          var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                         var txtamount ="<input class='quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required form ='receiver_form'>"
-
+                                         var txtamount ="<div style='display:flex'> <input type='button' class='btn btn-info down' value='-' data-min='1'/><input class='incdec quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required ><input type='button' class='btn btn-info up' value='+' data-max='100'/></div>"
+                 
                                          var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                          $("#pos-table > tbody").prepend(newRow);
                                          
@@ -3568,7 +4057,7 @@ $("#payment-login-lnk").click(function () {
 
                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                        var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                        var newRow = "<tr class='pos-table' id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
@@ -3782,13 +4271,14 @@ $("#payment-login-lnk").click(function () {
 
         // }
 
-
+        //by pass
         function search_member_by_pass(member_id) {
             keys["PREVIOUS-INPUT"] = "";
             ID_Info.id = customer_id;
             var data = {}
             //ID_Info.ON_SEARCH = true;
             data['member_id'] = member_id;
+            //data['member_id_pk'] = customerInfo.id;
             
             console.log("reading :" );
             console.log( data['member_id']);
@@ -3802,9 +4292,12 @@ $("#payment-login-lnk").click(function () {
                    
                     videoCode = 2;
                     if( videoCode == 2) {  // venture
-                             console.log("response['data']");
-                             console.log(response['data']);
+                            // console.log("response['notes']");
+                            console.log(response['notes']);
                             if (response['data'] == "Success") {
+
+
+
                                 var total_sales= parseFloat($("#venture-total-txt").val());
                                 if ( total_sales <=0 ||  isNaN(total_sales)){
                                         console.log("=============");
@@ -3854,9 +4347,9 @@ $("#payment-login-lnk").click(function () {
                                 console.log("--------------");
                                 console.log(response["balances"]);
                                 table.rows[1].cells[1].innerHTML = cm_balance;
-                                table.rows[1].cells[2].innerHTML = w_balance;
-                                table.rows[1].cells[3].innerHTML = s_balance;
-                                table.rows[1].cells[4].innerHTML = l_balance;
+                                table.rows[1].cells[3].innerHTML = w_balance;
+                                table.rows[1].cells[4].innerHTML = s_balance;
+                                table.rows[1].cells[5].innerHTML = l_balance;
                                 var member_id = response["member_info"]["member_id"].trim().toUpperCase();
                                 
                                 if(member_id =="WALK-IN"){
@@ -3869,9 +4362,12 @@ $("#payment-login-lnk").click(function () {
                                          $("#deposit-cash-drop").prop("disabled", false);
                                          $("#source-cash-drop").prop("disabled", false);
                                 }
-                                cust_info = name + " | "+member_id + "   (BY PASS)";
+                                cust_info = name + " | "+member_id;
                                 
                                 $("#customer-info-alert-text").text(cust_info);
+                                $("#customer-report-name").text(name + " | "+member_id );
+                                
+                                
                                 $("#assets").show();
                                 if (minimum_deposit > cm_balance) {
                                     cm_balance = minimum_deposit;
@@ -3889,7 +4385,17 @@ $("#payment-login-lnk").click(function () {
                                 // $("#venture-total-txt").focus();
                                  changeHrefValues(response["member_info"]['id']);
 
-                              adjust_total();
+                                 adjust_total();
+
+                              
+                              $(".notes_div_child").remove();
+                              response["notes"].forEach(function (item) {
+                                   // row_ctr = row_ctr + 1;
+
+                                   $( "#notes_div" ).prepend("<div class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
+                               });
+                             
+
 
                             } else {
 
@@ -3923,6 +4429,7 @@ $("#payment-login-lnk").click(function () {
                        {
                                 $("#payment-login-lnk-hidden").attr("href", "/payment/"+member_id.toString()+"/0/");
                         // $("#main-venture").trigger("click");
+                      
                         document.getElementById("payment-login-lnk-hidden").click();
                        }
                        console.log(".....success:" + response["member_info"]['id']);
@@ -3942,7 +4449,8 @@ $("#payment-login-lnk").click(function () {
         //23
 //search
         function search_member_by_qrcode(customer_id, qrpassword, code) {
-            console.log("on search_member func");
+            
+            console.log("--------------------------on search_member func ----------------------------------------");
             console.log("customer_id: " + customer_id)
             console.log("qrpassword: " + qrpassword)
             customer_id = customer_id.trim().toUpperCase();
@@ -3974,8 +4482,8 @@ $("#payment-login-lnk").click(function () {
                     console.log("videoCode:  >"+videoCode );
                     videoCode = 2;
                     if( videoCode == 2) {  // venture
-                             console.log("response['data']");
-                             console.log(response['data']);
+                             console.log("response['notes']");
+                             //console.log(response['notes']);
                             if (response['data'] == "Success") {
                                 var total_sales= parseFloat($("#venture-total-txt").val());
                                 if ( total_sales <=0 ||  isNaN(total_sales)){

@@ -16,7 +16,7 @@ from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,Venture
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel 
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
 from fx.models import MechanicModel,LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel,RepairModel,DeliveryModel,ConstructionModel,LoadModel
-from fx.models import Change_Table,ProductModel,ProductSold
+from fx.models import Change_Table,ProductModel,ProductSold,CustomerNoteModel,CreditLineModel
 from .forms import WalletForm,SavingForm
 
 from fx.models import WalletModel,CodeGeneratorModel,UserPreferenceModel
@@ -681,10 +681,14 @@ def get_product_details(request):
 
 
 def get_customer_details_bypass(request):
+    #-#
     print("--def get customer details bypass")
     logger.info("--def get customer details")
     customer_id = request.GET.get("member_id", "").strip().lower()
-    print(f"customer id: {customer_id} -----------------")
+    
+   
+    # member_id_pk = request.GET.get("member_id_pk", "").strip().lower()
+    # print(f"member_id_pk id: {member_id_pk} -----------------")
 
    
     if request.is_ajax and request.method == "GET":
@@ -699,7 +703,22 @@ def get_customer_details_bypass(request):
             print(f"member_info:{member_info}")
             #cm_balance = get_running_finance_balance("cc","member_id",member_qs.id)["running_balance"]
             balances =get_all_balances(member_qs.id)
-            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances}, status = 200)
+            print(f"---pk:{member_qs.id}")
+            notes= []
+            
+            try:
+                notes_qs = CustomerNoteModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30),   member_id =member_qs.id).order_by("pk")[:100]
+                
+                for row in notes_qs:
+                    row ={"id":row.id,"note":row.note,"date_entered":row.date_entered}
+                    notes.append(row)
+            except Exception as e:
+                print(f"Retrieving customer note error: {e}")
+            
+            
+            
+            
+            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances,'notes':notes}, status = 200)
       except Exception as e:
             print (f"get customer detail bypass error: {e}, {type(e)}")
             logger.warning(f"get customer detail bypass error:  {e}, {type(e)}")
@@ -794,7 +813,10 @@ def get_customer_details(request):
                     #x = check_user(customer_id,password)
                     #print(f"---get_user:{x}")
                     
-          
+           
+           
+           
+                
 
             member_info = {"member_id":member_qs.member_id.upper(),"name":member_qs.name,"id": member_qs.id}
             print(f"member_info:{member_info}")
@@ -1426,7 +1448,73 @@ def get_pos(request):
                     
                     
                     
+class new_note_view(View):
+    def post(self, request, *args, **kwargs):
+         
+                 
+                if request.user.is_staff and request.user.is_active:
+                            print (f"user: {request.user}")
+                            staff_info=""
+                            try:
+                                staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                                print(f"..staff_info:{staff_info.name}")
+                            except Exception as e:
+                            # raise Http404("Sorry. User id does not exist!")
+                                print(f"def cuv @exception, id: None , e:{e}")
+                                logger.warning(f"def cuv @exception,e:{e}" ) 
+                else:
+                                print("going to unauthorized user page")  
+                                return redirect('/venture_login/') #
+                            # return redirect('/unauthorized_user/') #
+               
+                
+                
+                customer = parseint(  request.POST.get('customer','0').strip())
+                code =  request.POST.get('code','').strip().upper()
+                id = parseint(  request.POST.get('id','0').strip())
+                print(f"------Post--------L idL {id}")
+                 
+                
+                note =   request.POST.get('note','').strip()
+                if customer =="test":
+                     return JsonResponse({"type":'success', "message":"Completed!","data":{}})
+                
+                
+                print(f"customer: {customer}, note: {note}")
+                if note=="":
+                       try:
+                            customerNoteModel_qs = CustomerNoteModel.objects.get(id = id).delete()  #todo id = source_id
+                            print(f"code:{code}, Success:True")
+                            return JsonResponse({"type":'success', "message":"DELETED!","data":{}})
+                       except Exception as e:
+                            print(f"Delete customer note: {e}")
+                            return JsonResponse({"type":'error', "message":"Unable to delete record!","data":{}})
+                      
                     
+                if code == "SAVE NOTE":
+                        try:
+                                note_qs = CustomerNoteModel(note = note,member_id = customer)
+                                note_qs.save() 
+                                return JsonResponse({"type":'success', "message":"Succesfully added!","data":{"id":note_qs.id}})
+                        except Exception as e:
+                            print(f"Adding new note error: {e}")
+                            return JsonResponse({"type":'error', "message":"Unable to save!","data":{}})
+                else:
+                        try:
+                                #   venture_result = Model.objects.filter(id = venture_id).update( **filter_fields)
+                                note_qs = CustomerNoteModel.objects.filter(id = id ).update(note=note)
+                                note_qs.save() 
+                                return JsonResponse({"type":'success', "message":"Succesfully edited!","data":{"id":note_qs.id}})
+                        except Exception as e:
+                            print(f"Adding new note error: {e}")
+                            return JsonResponse({"type":'error', "message":"Unable to edit data!","data":{}})
+                    
+                       
+                
+                
+                
+                    
+             
 # @login_required(login_url='/venture_login/')
 #pos
 class pos_view(View):
@@ -1575,6 +1663,7 @@ class pos_view(View):
                 source_type = request.POST.get('source_type',"").strip()
                 amount =float(request.POST.get('amount',"0").strip())
                 cc = float(request.POST.get('cc','0').strip())
+                credit_line = float(request.POST.get('credit_line','0').strip())
                 note = request.POST.get('note',"").strip()
                 
                 print(f" type cust: {type(customer)}")
@@ -1675,7 +1764,7 @@ class pos_view(View):
                 if member:
                         cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]
                 print("Community account side")
-                if member and  int(cc) > cc_running_balance + old_cc:
+                if credit_line > 0 and  member and  int(cc) > cc_running_balance + old_cc:
                             all_valid = False
                             if cc_running_balance + old_cc <=0: ##?? y 2000
                                      message= "Sorry. Community Money Account  is empty!"
@@ -1743,6 +1832,24 @@ class pos_view(View):
 
                                         else:
                                             filter_fields["customer_cc_id"] =0
+                                            try:
+                                                    credit_limit_qs = CreditLineModel(amount =credit_line,member_id = customer)
+                                                    credit_limit_qs.save() 
+                                                    print(f"success :customer {customer},credit limit : {credit_line}")
+                                            except Exception as e:
+                                                    print(f"Unable to save to credit line  , e:{e}")
+                                            
+                                            
+                                            
+                                            #$
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                                         note_id = 0
                                         response = {}    
                                         print(f"today filter_fields: {filter_fields} ")
@@ -2075,11 +2182,12 @@ def create_update_venture1(request,customer_id,venture_id ):
                 asset_balance ={"cc_balance":cc_balance}
                 
     tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:30]   #.values('createdate').annotate(count=Count('id'))
-          
+    #date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30
+   # notes = CustomerNoteModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30),   member_id =4).order_by("-pk")[:100]
     print(f"--- in charge: {staff_info.id}")
     venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
 
-    context = {
+    context = {      
                     'asset_balance':asset_balance,
                     'venture': venture,  
                     'transactions':tx,
@@ -2609,7 +2717,9 @@ def get_all_balances(member_id):
             cc = get_running_finance_balance("cc","member_id",member_id)["running_balance"]
             saving = get_running_finance_balance("saving","member_id",member_id)["running_balance"]
             loan = get_running_finance_balance("payment","member_id",member_id)["running_balance"]
-            return {"wallet":round(wallet,2),"loan":round(loan,2),"cc":round(cc),"saving":round(saving,2)}
+            credit_limit = get_running_finance_balance("credit_limit","member_id",member_id)["running_balance"]
+            print(f"cl:  {credit_limit}")
+            return {"wallet":round(wallet,2),"loan":round(loan,2),"cc":round(cc),"saving":round(saving,2),"credit_limit":round(credit_limit,2)}
         except Exception as e:
             print (f"{e}, {type(e)}")
             return False
@@ -5066,11 +5176,17 @@ def create_update_member_finance(request,account_name,member_id,account_id,trans
 def get_running_finance_balance(model,filter_field, filter_field_value):
        #Add try exception inside this function'''
         
-        model_list= {"wallet":"WalletModel","saving":"SavingModel","cc":"CcModel","payment":"PaymentModel","loan":"PersonalLoanModel"}
+        model_list= {"wallet":"WalletModel","saving":"SavingModel","cc":"CcModel","payment":"PaymentModel","loan":"PersonalLoanModel","credit_limit":"CreditLineModel"}
+        
         model =model_list.get(model).lower()
         transaction_balance={}
         filter_dict = {filter_field: filter_field_value}
         Model = apps.get_model('fx', model)
+        
+        if model == "credit_limit":
+              
+              transaction_balance['total_withdrawal'] =transaction_details_withdrawal
+              return transaction_balance
         #total_rows = Model.objects.filter( **filter_dict ).count()
         #qs_deposit= clientQs.wallet_set.filter(transaction_type ='D')
         qs_deposit= Model.objects.filter( **filter_dict,transaction_type ='D')

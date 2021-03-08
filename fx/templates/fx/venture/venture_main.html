@@ -30,6 +30,7 @@ crossorigin="anonymous"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 
     <script src="{% static 'js/onscan.min.js' %}"></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/moment.js' %}" defer=""></script>
 
     <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
  
@@ -170,6 +171,7 @@ ul {
                   <tr class="green">
                   <th scope="col"></th>     
                   <th scope="col">Commnity Money</th>
+                  <th scope="col">Credit Limit</th>
                   <th scope="col">Wallet Account</th>
                   <th scope="col">Saving Account</th>
                   <th scope="col">Loan Account</th>
@@ -184,6 +186,7 @@ ul {
                       <td> </td>
                       <td> </td>
                       <td> </td>
+                      <td> </td>
                       
                       
                   </tr>
@@ -191,11 +194,21 @@ ul {
               
               </tbody>
           </table>
+           <div >
+
+            <a style="margin-left:2px"  data-toggle="tooltip" data-placement="top" title="Add notes"  id="addnote"   class="btn btn-info btn-md" type="button"
+            value="ADD" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+              <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+              <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+            </svg>
+          </a>
+           </div>
           </div>
           </div>
         </div>
         <nav class="navbar navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button id ="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             
           </button>
@@ -444,6 +457,36 @@ aria-labelledby="myLargeModalLabel" aria-hidden="false">
 //         console.log("-----------");
       
 //     });
+
+function get_date(date_entered, extend_date = false) {
+
+const today = moment();
+var date = moment();
+var extension = "";
+if (extend_date) {
+  extension = "   " + moment(date_entered).format("MMM Do");
+}
+
+if (moment().year() == moment(date_entered).year()) {
+  days = parseInt(today.diff(date_entered, 'days'));
+  if (days < 8) {
+    if (days == 0) {
+      date = "Today." + extension;
+    } else if (days == 1) {
+      date = "Yesterday." + extension;
+    } else {
+      date = days + " days ago." + extension;
+    }
+  } else {
+    date = moment(date_entered).format("MMM Do");
+  }
+
+} else {
+  date = moment(date_entered).format("MMM Do YY");
+}
+return date;
+}
+
 </script>
 
 

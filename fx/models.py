@@ -45,6 +45,9 @@ class ProductModel(models.Model):
       product_id = models.CharField(max_length=13,blank =True)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
+      def __str__(self):
+       
+        return f"{self.title}"
   
 class ProductModel1(models.Model): 
       PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
@@ -85,10 +88,12 @@ class MemberModel (models.Model):
 # class ps(models.Model): 
 #       amount = models.FloatField(default =0 )
 #       cm = models.FloatField(default =0 )
+
 class ProductSold(models.Model): 
       
       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      
       #product_id = models.CharField(max_length=13,blank =True)
       qty = models.FloatField(default =0)
       amount = models.FloatField(default =0 )
@@ -96,27 +101,15 @@ class ProductSold(models.Model):
       price = models.FloatField(default =0 )
       description =  models.CharField(max_length=100,blank= True,null =True)
       transaction_id = models.PositiveIntegerField(default =0)
+         
+      def __str__(self):
+        return f"{self.item.title}"
       
-# class item(models.Model): 
-      
-#       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-#       items = models.ForeignKey(ItemModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-     # product_id = models.CharField(max_length=13,blank =True)
-      # qty = models.PositiveIntegerField(default =0)
-      # amount = models.FloatField(default =0 )
-      # cm = models.FloatField(default =0 )
-      # price = models.FloatField(default =0 )
-      # transaction_id = models.PositiveIntegerField(default =0)
-# class productSold(models.Model): 
-      
-#       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-#       product = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-#      # product_id = models.CharField(max_length=13,blank =True)
-#       qty = models.PositiveIntegerField(default =0)
-#       amount = models.FloatField(default =0 )
-#       cm = models.FloatField(default =0 )
-#       price = models.FloatField(default =0 )
-#       transaction_id = models.PositiveIntegerField(default =0)
+class CreditLineModel(models.Model): 
+      member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      date_entered = models.DateField(auto_now_add=True, blank=True,null =True)
+      amount = models.FloatField(default =0 )
+
       
 class SkillCategoryModel (models.Model):   #
       category =models.CharField(max_length=100,blank =True, null =True)
@@ -132,7 +125,22 @@ class TeamMemberModel (models.Model):   #
         return f"{self.member.firstname} {self.member.lastname}"
      
 
-     
+class SupplierModel (models.Model):
+      supplier = models.CharField(default="",max_length=50,blank =False, null =False)
+      contact = models.CharField(default="", max_length=12,blank =True, null =True )
+      note =  models.CharField(default="",max_length=50,blank =True, null =True)
+      address =  models.CharField(default="",max_length=50,blank =True, null =True)
+      def __str__(self):
+         return f"{self.supplier}"
+class PriceListModel (models.Model):
+      product = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      supplier = models.ForeignKey(SupplierModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      date_entered = models.DateField(auto_now_add=True, blank=True,null =True)
+      price = models.FloatField(default =0 )
+      selling_price = models.FloatField(default =0 ) 
+
+      
+ 
 
 class ProfileModel (models.Model):   # Subject for Approval, the same as MemberModel
      MR,MS,MRS =("Mr.","Ms.","Mrs.")
@@ -439,7 +447,14 @@ class PendingLoanModel(models.Model):
    percent = models.FloatField(default =0)
    source_type = models.CharField(max_length=1,blank =True,default = 'C')  #c: cash
    source_id = models.IntegerField(default =0) # 0 - cash
+
+class CustomerNoteModel(models.Model):
     
+   note = models.TextField(max_length =300,blank =True,null=True,help_text='Enter note when necessary. Thank you')
+   date_entered = models.DateField(auto_now_add = True, blank= True, null =True) #auto_now_add = True
+   member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL)  
+   
+  
 class NoteModel(models.Model):
    REG_TRANSACTION,LOAN,GROCERY,PAYMENT,TRADING =(0,1,2,3,7)
    cat = ((REG_TRANSACTION,"REGULAR TRANSACTION") ,(LOAN,"LOAN"),(GROCERY,"GROCERY"),(PAYMENT,"PAYMENT"),(TRADING,"TRADING"))

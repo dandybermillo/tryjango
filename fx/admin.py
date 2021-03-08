@@ -5,7 +5,7 @@ from .models import Tmp_UsernameModel,Tmp_PasswordModel,IdRepositoryModel
 from .models import TransferModel,UserPreferenceModel,WalletModel,TradingModel
 from .models import CcModel,VentureCcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,Change_Table,ProfileModel,TeamMemberModel,SkillCategoryModel
 from .models import LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LoadModel,RepairModel,MechanicModel,ConstructionModel,DeliveryModel,LivePostModel
-from .models import ProductModel,ProductSold
+from .models import ProductModel,ProductSold,SupplierModel,PriceListModel,CustomerNoteModel,CreditLineModel
 import decimal, csv
 from django.db.models import Count
 #.model is a realative import bcoz models and admin are in 
@@ -153,22 +153,41 @@ class ItemModelAdmin(admin.ModelAdmin):
     list_filter = ("product_id","title")
     search_fields = ['title']
 class ItemSoldModelAdmin(admin.ModelAdmin):
+    list_per_page= 100
     list_display = ['id','item',"qty",'amount','cm','price','description','transaction_id']
-    list_filter = ("transaction_id","description")
-    # search_fields = ['title']
     
+   # search_fields = ['item.title']
     
+class SupplierAdmin(admin.ModelAdmin):
+    list_display = ['id','supplier',"address",'contact','note']
     
+class PriceListAdmin(admin.ModelAdmin):
+    list_display = ['id','product','supplier',"price",'selling_price','date_entered']
+class customerNoteAdmin(admin.ModelAdmin):
+    list_display = ['note','date_entered','member_id']
     
-    #   member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-    #   item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
-    #   #product_id = models.CharField(max_length=13,blank =True)
-    #   qty = models.FloatField(default =0)
-    #   amount = models.FloatField(default =0 )
-    #   cm = models.FloatField(default =0 )
-    #   price = models.FloatField(default =0 )
-    #   description =  models.CharField(max_length=100,blank= True,null =True)
-    #   transaction_id = models.PositiveIntegerField(default =0)
+class CreditLineModelAdmin(admin.ModelAdmin):
+    list_display = ['id','amount','member']
+    
+#  PriceListModel (models.Model):
+#       supplier = models.ForeignKey(SupplierModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+#       date = models.DateField( blank= True, null =True)
+#       price = models.FloatField(default =0 )
+#       selling_price = models.FloatField(default =0 )
+      
+   
+
+#  SupplierModel (models.Model):
+#       supplier = models.CharField(default="",max_length=50,blank =False, null =False)
+#       contact = models.CharField(default="", max_length=12,blank =True, null =True )
+#       note =  models.CharField(default="",max_length=50,blank =False, null =False)
+#       address =  models.CharField(default="",max_length=50,blank =False, null =False)
+
+
+admin.site.register(CreditLineModel,CreditLineModelAdmin)
+admin.site.register(CustomerNoteModel,customerNoteAdmin)
+admin.site.register(PriceListModel,PriceListAdmin)
+admin.site.register(SupplierModel,SupplierAdmin)
 admin.site.register(ProductModel,ItemModelAdmin)
 admin.site.register(ProductSold,ItemSoldModelAdmin)  
 
