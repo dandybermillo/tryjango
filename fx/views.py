@@ -2718,10 +2718,11 @@ def get_all_balances(member_id):
             saving = get_running_finance_balance("saving","member_id",member_id)["running_balance"]
             loan = get_running_finance_balance("payment","member_id",member_id)["running_balance"]
             credit_limit = get_running_finance_balance("credit_limit","member_id",member_id)["running_balance"]
-            print(f"cl:  {credit_limit}")
+            
+            print(f"credit limit balance-------------:  {credit_limit}")
             return {"wallet":round(wallet,2),"loan":round(loan,2),"cc":round(cc),"saving":round(saving,2),"credit_limit":round(credit_limit,2)}
         except Exception as e:
-            print (f"{e}, {type(e)}")
+            print (f"Get all balances: {e}, {type(e)}")
             return False
 
 def get_balances(request):
@@ -5177,16 +5178,32 @@ def get_running_finance_balance(model,filter_field, filter_field_value):
        #Add try exception inside this function'''
         
         model_list= {"wallet":"WalletModel","saving":"SavingModel","cc":"CcModel","payment":"PaymentModel","loan":"PersonalLoanModel","credit_limit":"CreditLineModel"}
-        
-        model =model_list.get(model).lower()
         transaction_balance={}
+        
+        
+        if model == "credit_limit":
+            print("-------------credit limit--------------")
+            qs_deposit= CreditLineModel.objects.filter( member_id = filter_field_value)
+            transaction_details_deposit=  qs_deposit.aggregate(total_line_of_credit=Sum('amount'))
+            transaction_balance['running_balance']=transaction_details_deposit['total_line_of_credit']
+            if  transaction_balance['running_balance'] == None:
+                  transaction_balance['running_balance'] =0
+                  print(f"----------------- total_line_of_credit: {type(transaction_balance['running_balance'])}")
+            
+            return transaction_balance
+        else:
+             print("------------ not--credit limit--------------")
+              
+        #       transaction_balance['total_withdrawal'] =transaction_details_withdrawal
+        model =model_list.get(model).lower()
+       
         filter_dict = {filter_field: filter_field_value}
         Model = apps.get_model('fx', model)
         
-        if model == "credit_limit":
+        # if model == "credit_limit":
               
-              transaction_balance['total_withdrawal'] =transaction_details_withdrawal
-              return transaction_balance
+        #       transaction_balance['total_withdrawal'] =transaction_details_withdrawal
+        #       return transaction_balance
         #total_rows = Model.objects.filter( **filter_dict ).count()
         #qs_deposit= clientQs.wallet_set.filter(transaction_type ='D')
         qs_deposit= Model.objects.filter( **filter_dict,transaction_type ='D')

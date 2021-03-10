@@ -42,6 +42,7 @@ class ProductModel(models.Model):
       #cm = models.FloatField(default =0 )
       reg_price = models.FloatField()
       srp = models.FloatField(default = 0)
+      whole_sale_price = models.FloatField(default = 0)
       product_id = models.CharField(max_length=13,blank =True)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
@@ -109,6 +110,7 @@ class CreditLineModel(models.Model):
       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       date_entered = models.DateField(auto_now_add=True, blank=True,null =True)
       amount = models.FloatField(default =0 )
+      source_id = models.IntegerField(default =0) 
 
       
 class SkillCategoryModel (models.Model):   #

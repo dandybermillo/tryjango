@@ -9,6 +9,10 @@
 {% block css_style %}
 
 <style>
+    .customer-notes{
+        padding:15px;
+    }
+
 .align-left{
 text-align: left;
 
@@ -844,11 +848,18 @@ th {
                             <div class="form-row">
                                 
                                 <div id ="credit-line-div" class="form-group col-md">
-                                    <label for="id_cc" class="bold-style col-form-label">CREDIT LIMIT POINTS </label>
+                                    <label for="id_cc" class="bold-style col-form-label">CREDIT LIMIT POINTS  <a class ="option-maker" data-toggle="tooltip" data-placement="top" title="Switch to incremental deduction on Comm. Money"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                      </svg> </a></label>
                                     <input type="number" readonly name="credit_line" value="0" step="any" class="form-control" required="" id="credit-line"   >
                                 </div>
                                 <div  id ="community-money-div"  class="form-group col-md">
-                                    <label for="id_cc" class="bold-style col-form-label">COMMUNITY MONEY </label>
+                                    
+                                    <label for="id_cc" class="bold-style col-form-label">COMMUNITY MONEY <a class ="option-maker" data-toggle="tooltip" data-placement="top" title="Switch to Increase Credit Limit "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                      </svg> </a </label>
                                     <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc"  min="0" max="5000">
                                 </div>
                             </div>  
@@ -1220,7 +1231,7 @@ th {
 
   <!-- addnote -->
   <div id="add-note-modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h3 id="modal-report-title" class="modal-title">NOTE MAKER</h3>
@@ -1893,7 +1904,27 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
             });
 
 
+            
+            
+            $(".option-maker").on('click',function(){
+                 if(Credit_option == WHOLE){
+                    $("#community-money-div").show();
+                    $("#credit-line-div").hide();
 
+                    
+              
+
+                     Credit_option =INCREMENTAL;
+                 }else{
+                     Credit_option = WHOLE;
+                     $("#community-money-div").hide();
+                     $("#credit-line-div").show();
+                 }
+                  adjust_total();
+                 
+ 
+ 
+             });
             $("#delete-note").on('click',function(){
                  
                 $('#customer-note').text("");
@@ -1906,10 +1937,13 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
             });
             $("#addnote").on('click',function(){
+
                 $('#delete-note').hide();
                 $("#save-note").text("SAVE NOTE");
+              
                 $("#customer-note-name").text($("#customer-info-alert-text").text());
                 $('#customer-note').text("");
+                $("#customer-note").val("");
                 $("#add-note-modal").modal('show');
                 
               
@@ -2299,6 +2333,7 @@ console.log(items);
         $("body").delegate(".customer-notes", "click", function(e){
             var id = $(this).attr("id");
             var txt = $(this).text();
+            console.log("------- text:"+ txt);
             $("#save-note").attr('code',id);
             $('#delete-note').show();
             console.log("note id: "+id + " text:"+txt);
@@ -2307,7 +2342,7 @@ console.log(items);
                 $("#add-note-modal").modal('show');
                 $('#customer-note').trigger('focus');
 
-            $("#customer-note").text(txt);
+            $("#customer-note").val(txt);
             $("#save-note").text("EDIT NOTE");
 
             
@@ -2492,6 +2527,7 @@ console.log(items);
                                     w_balance=  response["balances"]['wallet'];
                                     s_balance =  response["balances"]['saving'];
                                     l_balance=  response["balances"]['loan'];
+                                    credit_limit = response["balances"]['credit_limit'];
                                     
 
                                     table = document.getElementById("assets-table");
@@ -2513,9 +2549,11 @@ console.log(items);
                                         cm_balance = "1000+";
                                     } 
                                     table.rows[1].cells[1].innerHTML = cm_balance;
-                                    table.rows[1].cells[2].innerHTML = w_balance;
-                                    table.rows[1].cells[3].innerHTML = s_balance;
-                                    table.rows[1].cells[4].innerHTML = l_balance;
+                                    table.rows[1].cells[2].innerHTML = credit_limit;
+                                     
+                                    table.rows[1].cells[3].innerHTML = w_balance;
+                                    table.rows[1].cells[4].innerHTML = s_balance;
+                                    table.rows[1].cells[5].innerHTML = l_balance;
                                     cust_info = name + " | "+response["member_info"]["member_id"] ; //+ " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
                                     $("#customer-info-alert-text").text(cust_info);
                                   
@@ -2590,7 +2628,7 @@ console.log(items);
                          customer_id ="WALK-IN";
                     } 
 
-                    $( "#history" ).prepend( "<button   id='"+venture_id+"'  class='history list-group-item list-group-item-action flex-column align-items-start '"+">"+
+                    $( "#history" ).prepend( "<button   id='"+venture_id+"'  class='history-title list-group-item list-group-item-action flex-column align-items-start '"+">"+
                             "<div class='d-flex w-100 justify-content-between'>"+
                                 "<h5 class='mb-1'>"+title+"</h5>"+
                                 "<small>"+ tim +"</small></div>"+
@@ -3149,10 +3187,19 @@ console.log(items);
                             tot =  price * quantity;
                         }else{
                            // console.log("---member");
-                             ded = cm * quantity;
-                             addition_deduction = (ded * .5) + ded;
-                             tot =(price * quantity) - addition_deduction;
-                             total_cm = total_cm +  addition_deduction; 
+                                ded = cm * quantity;
+                                addition_deduction = (ded * .5) + ded;
+                            if (Credit_option == INCREMENTAL){
+                               
+                                tot =(price * quantity) - addition_deduction;
+                            }
+                            else{
+                            //   addition_deduction = 0;
+                               tot =(price * quantity);
+                            }
+
+                                //tot =(price * quantity) - addition_deduction;
+                                total_cm = total_cm +  addition_deduction; 
                              
                         }
                        // console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
@@ -3172,23 +3219,26 @@ console.log(items);
                     console.log("-------total_sales:   " +total_sales );
                     console.log( total_sales );
                    
-                    tot = total_sales + total_cm;
+                  
 
                  
-                    $("#venture-total-txt").val(tot.toFixed(2));
-                   // addition_deduction = total_cm * .3;
-                  //  tot_cm = total_cm + (addition_deduction);
-                  //  total_sales =total_sales -addition_deduction
-                    $("#id_amount").val(total_sales.toFixed(2));
-                   
+                  
+                                                          // addition_deduction = total_cm * .3;
+                                                          //  tot_cm = total_cm + (addition_deduction);
+                                                          //  total_sales =total_sales -addition_deduction
                      if (Credit_option == INCREMENTAL){ 
-                        $("#id_cc").val(total_cm.toFixed(2));
-                        console.log("incremental--------------");
+                         tot = total_sales + total_cm;
+                         $("#id_amount").val(total_sales.toFixed(2));
+                         $("#id_cc").val(total_cm.toFixed(2));
+                         console.log("incremental--------------");
                      } else
                      {
+                        tot = total_sales ;
+                        $("#id_amount").val(tot.toFixed(2));
                         $("#credit-line").val(total_cm.toFixed(2));
                         console.log("whote--------------");
                      }
+                     $("#venture-total-txt").val(tot.toFixed(2));
                    //$("#id_cc").val(tot_cm.toFixed(2));    
                     if(total_sales > 0){
                         submit_now =true;
@@ -4326,6 +4376,7 @@ $("#payment-login-lnk").click(function () {
                                 $("#id_cc").prop("max",cm_balance);
                                 w_balance=  response["balances"]['wallet'];
                                 l_balance=  response["balances"]['loan'];
+                                credit_limit= response["balances"]['credit_limit'];
                                 
                                 if (w_balance > 1000){
                                     w_balance= "1,000+"
@@ -4347,6 +4398,7 @@ $("#payment-login-lnk").click(function () {
                                 console.log("--------------");
                                 console.log(response["balances"]);
                                 table.rows[1].cells[1].innerHTML = cm_balance;
+                                table.rows[1].cells[2].innerHTML = credit_limit;
                                 table.rows[1].cells[3].innerHTML = w_balance;
                                 table.rows[1].cells[4].innerHTML = s_balance;
                                 table.rows[1].cells[5].innerHTML = l_balance;
