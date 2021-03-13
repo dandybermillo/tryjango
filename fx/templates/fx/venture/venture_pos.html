@@ -17,6 +17,11 @@
 text-align: left;
 
 }
+#credit-line,#id_cc{
+  color: green;
+  font-size: 30px;
+  font-weight: bold;
+}
 @media screen and (max-width: 479px) {
   .nav-tabs-responsive > li {
     display: none;
@@ -767,7 +772,7 @@ th {
                     </div>
                        <div id="left">
                         
-                            <div class="form-row">
+                            <div id="sales-total-container" class="form-row">
                                 <div class=" form-group col-md">
                                     <label for="venture-total-txt" class="bold-style col-form-label">SALES TOTAL<span
                                             class="asteriskField">*</span> </label>
@@ -1325,16 +1330,16 @@ th {
                     <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
                       <li role="presentation" class="active">
                         <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
-                          <span class="text">HOME | </span>
+                          <span class="text"> TRANSACTIONS | </span>
                         </a>
                       </li>
                        
                       
                       <li role="presentation">
                         <a href="#notes" role="tab" id="notes-tab" data-toggle="tab" aria-controls="notes">
-                          <span class="text"> NOTE </span>
+                          <span class="text"> NOTES </span>
                         </a>
-                      </li>
+                      </li> 
                     </ul>
                     <div id="profile" class="tab-content">
                       <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
@@ -1878,6 +1883,8 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+        
+      $("#sales-total-container").hide();
         $("#community-money-div").hide();
         $("#pay-by-wallet").hide();
         $("#reset-form").trigger("click");
@@ -1926,13 +1933,15 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
  
              });
             $("#delete-note").on('click',function(){
-                 
-                $('#customer-note').text("");
-               
-                
-              
-              
-                $('#save-note').trigger('click');
+                 note =  $('#customer-note').val().trim();
+                if(note == ""){
+                  $('#customer-note').text("");
+                   $('#save-note').trigger('click');
+
+                } 
+
+
+           
 
 
             });
@@ -1951,14 +1960,16 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
 
             });
+
             $("#save-note").on('click',function(){
+
                 console.log("text:"+$(this).text());
-                 
- 
                 var data={};
+                var note_id = $(this).attr("code");
                 data["id"] =$(this).attr("code");
                 data["code"] =$(this).text();
                 data["customer"] =$("#customer").val();
+                var note =  $("#customer-note").val();
                 data['note'] = $("#customer-note").val();
                 console.log("data:");
                 console.log(data);
@@ -1968,11 +1979,32 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                     url: "/new_note_view/",
                     data: data,
                     success: function (response) {
-
+                        var message= "";
                         if (response["type"] === "success") {
-                        
-                            console.log("success!!!!");
-                            console.log(response["ps"]);
+
+                              if(response["code"] <= 0) {
+                                $( "#child-"+ note_id).remove(); 
+                                  
+                                           
+                              }else if(response["code"] === 1)  {
+                                  note_id =response["data"]["id"];
+                                  console.log("note-id:"+ note_id);
+                                  $( "#notes_div" ).prepend("<div class='notes_div_child'><span> <strong> "+ "Today" +"</strong></span><p id='"+note_id+"' class='customer-notes align-left'> "+ note +"</p></div>");
+                              }
+                              else if(response["code"] === 2)  {     
+                                  console.log("code:" +response["code"]);
+                                  
+                                  $( "#"+note_id ).text(note);
+                               //   $( "#notes_div" ).prepend("<div class='notes_div_child'><span> <strong> "+ "Today" +"</strong></span><p id='"+note_id+"' class='customer-notes align-left'> "+ note +"</p></div>");
+                              }
+                              console.log("success!!!!");
+                              console.log(response["ps"]);
+                              $("#venture-pay-alert").fadeIn();
+                              $("#venture-pay-alert-message").text( response["message"]);
+                                     setTimeout(function () {
+                                            $("#venture-pay-alert").hide();
+                                        }, 5000);
+
                             
                         } else if (response["type"] === "error") {
                             console.log("Unable to save note!");
@@ -3188,6 +3220,7 @@ console.log(items);
                         }else{
                            // console.log("---member");
                                 ded = cm * quantity;
+                                //console.log("--==== ded: "+ded);
                                 addition_deduction = (ded * .5) + ded;
                             if (Credit_option == INCREMENTAL){
                                
@@ -3238,6 +3271,10 @@ console.log(items);
                         $("#credit-line").val(total_cm.toFixed(2));
                         console.log("whote--------------");
                      }
+
+
+                     console.log("}}}}}}}}}}}}}}}}}}}} total cm: "+ total_cm.toFixed(2))
+                     console.log("credit-option: "+Credit_option )
                      $("#venture-total-txt").val(tot.toFixed(2));
                    //$("#id_cc").val(tot_cm.toFixed(2));    
                     if(total_sales > 0){
@@ -4444,7 +4481,7 @@ $("#payment-login-lnk").click(function () {
                               response["notes"].forEach(function (item) {
                                    // row_ctr = row_ctr + 1;
 
-                                   $( "#notes_div" ).prepend("<div class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
+                                   $( "#notes_div" ).prepend("<div id ='child-"+item.id +"' class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
                                });
                              
 

@@ -1454,7 +1454,7 @@ class new_note_view(View):
                  
                 if request.user.is_staff and request.user.is_active:
                             print (f"user: {request.user}")
-                            staff_info=""
+                            staff_info = ""
                             try:
                                 staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
                                 print(f"..staff_info:{staff_info.name}")
@@ -1485,7 +1485,7 @@ class new_note_view(View):
                        try:
                             customerNoteModel_qs = CustomerNoteModel.objects.get(id = id).delete()  #todo id = source_id
                             print(f"code:{code}, Success:True")
-                            return JsonResponse({"type":'success', "message":"DELETED!","data":{}})
+                            return JsonResponse({"type":'success',"code":0, "message":"Note has been successfully deleted","data":{}})
                        except Exception as e:
                             print(f"Delete customer note: {e}")
                             return JsonResponse({"type":'error', "message":"Unable to delete record!","data":{}})
@@ -1495,18 +1495,19 @@ class new_note_view(View):
                         try:
                                 note_qs = CustomerNoteModel(note = note,member_id = customer)
                                 note_qs.save() 
-                                return JsonResponse({"type":'success', "message":"Succesfully added!","data":{"id":note_qs.id}})
+                                return JsonResponse({"type":'success', "code":1, "message":"Note has been succesfully added!","data":{"id":note_qs.id}})
                         except Exception as e:
                             print(f"Adding new note error: {e}")
                             return JsonResponse({"type":'error', "message":"Unable to save!","data":{}})
                 else:
                         try:
                                 #   venture_result = Model.objects.filter(id = venture_id).update( **filter_fields)
+                                print(f"id = :{id}")
                                 note_qs = CustomerNoteModel.objects.filter(id = id ).update(note=note)
-                                note_qs.save() 
-                                return JsonResponse({"type":'success', "message":"Succesfully edited!","data":{"id":note_qs.id}})
+                                #note_qs.save() 
+                                return JsonResponse({"type":'success',"code":2, "message":"Note has been succesfully changed!"})
                         except Exception as e:
-                            print(f"Adding new note error: {e}")
+                            print(f"Editing  note error: {e}")
                             return JsonResponse({"type":'error', "message":"Unable to edit data!","data":{}})
                     
                        
@@ -1628,11 +1629,6 @@ class pos_view(View):
         else:
                         print("here------------------------------- ")
                         return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
-                    
-                    
-     
-     
-     
     def post(self, request, *args, **kwargs):
          
                 member = True
@@ -1658,7 +1654,7 @@ class pos_view(View):
                      return JsonResponse({"type":'success', "message":"Completed!","data":{}})
                     
                 
-                customer =parseint( customer)
+                customer = parseint( customer)
                 
                 source_type = request.POST.get('source_type',"").strip()
                 amount =float(request.POST.get('amount',"0").strip())
@@ -1753,13 +1749,7 @@ class pos_view(View):
                             old_amount = 0 
                             old_customer_id = customer
                             old_cc = 0
-                # if old_customer_id != customer:
-                #             all_valid = False
-                #             print("error old_customer_id != customer")
-                #             logger.warn("at pos_view: old_customer_id != customer")
-                #             return JsonResponse({"type":'error', "message":"Customer ID mismatched error","data":{}})
-
-                           # messages.error(request, f"Message: Technical problem encountered while saving record.")
+                
               
                 if member:
                         cc_running_balance = get_running_finance_balance("cc","member_id",customer)["running_balance"]

@@ -107,10 +107,13 @@ class ProductSold(models.Model):
         return f"{self.item.title}"
       
 class CreditLineModel(models.Model): 
+      DEPOSIT,WITHRAW =('D','W')
+      t_type =( (DEPOSIT,"DEPOSIT"),(WITHRAW,"WITHRAW"))
       member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
       date_entered = models.DateField(auto_now_add=True, blank=True,null =True)
       amount = models.FloatField(default =0 )
       source_id = models.IntegerField(default =0) 
+      transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
 
       
 class SkillCategoryModel (models.Model):   #

@@ -164,7 +164,7 @@ class SupplierAdmin(admin.ModelAdmin):
 class PriceListAdmin(admin.ModelAdmin):
     list_display = ['id','product','supplier',"price",'selling_price','date_entered']
 class customerNoteAdmin(admin.ModelAdmin):
-    list_display = ['note','date_entered','member_id']
+    list_display = ['id','note','date_entered','member_id']
     
 class CreditLineModelAdmin(admin.ModelAdmin):
     list_display = ['id','amount','member']
