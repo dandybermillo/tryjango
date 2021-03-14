@@ -46,6 +46,7 @@ class ProductModel(models.Model):
       product_id = models.CharField(max_length=13,blank =True)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
+      hasbarcode = models.BooleanField(default= True)
       def __str__(self):
        
         return f"{self.title}"
@@ -113,7 +114,7 @@ class CreditLineModel(models.Model):
       date_entered = models.DateField(auto_now_add=True, blank=True,null =True)
       amount = models.FloatField(default =0 )
       source_id = models.IntegerField(default =0) 
-      transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
+      transaction_type = models.CharField(default =DEPOSIT, max_length=1,blank =True,choices=t_type)  #Todo: false here
 
       
 class SkillCategoryModel (models.Model):   #

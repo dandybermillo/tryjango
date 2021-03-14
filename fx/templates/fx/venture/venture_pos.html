@@ -9,6 +9,11 @@
 {% block css_style %}
 
 <style>
+    @media screen and (min-width: 676px) {
+        .modal-dialog {
+          max-width: 90%; /* New width for default modal */
+        }
+      }
     .customer-notes{
         padding:15px;
     }
@@ -756,6 +761,22 @@ th {
       
 <!-- heree -->
 
+<table   id="print-table"  border=".5"   class="table" style="width: 100%">
+  <thead>
+    <th scope="col">#</th>
+    <th scope="col">PRODUCT NAME</th>
+    <th scope="col" >QUANTITY</th>
+    <th scope="col" >PRICE</th>
+    <th scope="col" >AMOUNT</th>
+
+    
+  </thead>
+
+  <tbody>
+
+
+  </tbody>
+ </table> 
 
             <div id="venture-payment-failed-alert" class="alert alert-danger" role="alert" style="display:none">
                 Please fill in the box with asterisk sign(*).
@@ -984,6 +1005,19 @@ th {
                                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                                         </svg> </a>
+                                        
+
+
+
+
+                                        <a style="margin-left:10px" data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="print" class="btn btn-info btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                          <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                          <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                        </svg> </a>
+                                         
+
+
+
                                         <a style="margin-left:20px" data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="reset-form" class="btn btn-danger btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -1455,8 +1489,74 @@ th {
       </div>
     </div>
   </div>
+  <!-- hey -->
+  <div id ="products-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modify Quantity</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+                
+          <header>
+            <div class="product-container">
+              
+                <!-- Search box -->
+                <div class="search-box">
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="search-product" placeholder="Search Product">
+                        <!-- <button id="btn-search">Search</button> -->
+                    </form>
+                </div>
+                <div class="filter-box">
+                    <a href="#" class="btn-product active" data-filter="all">All</a>
+                    <a href="#" class="btn-product" data-filter="watch">Canned</a>
+                    <a href="#" class="btn-product" data-filter="shirt">Condiments</a>
+                    <a href="#" class="btn-product" data-filter="gown">Drinks</a>
+                    <a href="#" class="btn-product" data-filter="jewelry">Snacks</a>
+                    <a href="#" class="btn-product" data-filter="nobarcode">No Barcode</a>
+                </div>
+            </div>
+        </header>
+         
+        <main>
+          <div class="slide-container">
+          <section class="product-container" id="store-products">
+          
+
+            {% for obj in items %}
+                <div class="store-product {% if obj.hasbarcode %} has {% else %} nobarcode {%endif %} ">
+                    <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
+                    <div class="product-details">
+                        <h2>{{obj.title}}</h2>
+                        <p> <span>$39.99</span> {{obj.reg_price}}</p>
+                        <a href="#">Add to Cart wa</a>
+                    </div>
+                </div>
+          {% endfor %}
+           
+      </section>
+  </div>
+  </main>
 
 
+
+
+
+
+           
+        </div>
+        <div class="modal-footer">
+          <button id="add-product" type="button" class="btn btn-primary">Ok</button>
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
  <!-- -------------------- quantity editor--------------- -->
   <div id ="quantity-modal" class="modal" tabindex="-1" role="dialog">
@@ -1883,7 +1983,59 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+     
+      const search = document.getElementById("search-product");
+      const productName = document.querySelectorAll(".product-details h2");
+
+      const btns = document.querySelectorAll('.btn-product');
+       const storeProducts = document.querySelectorAll('.store-product'); 
+
+
+       for (i = 0; i < btns.length; i++) {
+
+    btns[i].addEventListener('click', (e) => {
+        e.preventDefault()
         
+        const filter = e.target.dataset.filter;
+        console.log(filter);
+        
+        storeProducts.forEach((product)=> {
+            if (filter === 'all'){
+                product.style.display = 'block'
+            } else {
+                if (product.classList.contains(filter)){
+                    product.style.display = 'block'
+                } else {
+                    product.style.display = 'none'
+                }
+            }
+        });
+    });
+};
+
+ 
+        
+ 
+  // $("#autocomplete").val("");
+
+
+       
+
+      $("#search-product").on("keyup", function (e) {
+    const text = e.target.value.toLowerCase();
+    console.log("---" +productName[0]);
+    productName.forEach(function(product) {
+        const item = product.firstChild.textContent;
+        if (item.toLowerCase().indexOf(text) != -1) {
+            product.parentElement.parentElement.style.display = "block"
+        } else {
+            product.parentElement.parentElement.style.display = "none"
+        }
+    })
+
+});
+
+      $("#print-table").hide();
       $("#sales-total-container").hide();
         $("#community-money-div").hide();
         $("#pay-by-wallet").hide();
@@ -1891,7 +2043,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
         $("#confim-modal-new_transaction").text("New Transaction?");
 
          var objs = [];
-
+     
          $("body").delegate(".down", "click", function(){
                 console.log("dec");
                 var $incdec = $(this).next();
@@ -1917,10 +2069,6 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                  if(Credit_option == WHOLE){
                     $("#community-money-div").show();
                     $("#credit-line-div").hide();
-
-                    
-              
-
                      Credit_option =INCREMENTAL;
                  }else{
                      Credit_option = WHOLE;
@@ -1939,10 +2087,10 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                    $('#save-note').trigger('click');
 
                 } 
+            });
 
-
-           
-
+            $("#print").on('click',function(){
+                 print_data();
 
             });
             $("#addnote").on('click',function(){
@@ -1954,8 +2102,6 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                 $('#customer-note').text("");
                 $("#customer-note").val("");
                 $("#add-note-modal").modal('show');
-                
-              
                 $('#customer-note').trigger('focus');
 
 
@@ -2291,7 +2437,7 @@ console.log(items);
                     $('#press-me').trigger('focus')
 
 
-                  }
+                  } 
 
 					
 				}
@@ -2309,10 +2455,94 @@ console.log(items);
 
         // hide all pos-editor 
         
-        
+        function print_data(){
+          $("#print-table tbody tr").remove();
+          var newRow = "<tr><td></td><td></td><td></td><td></td><td>.</td></tr>";
+                                              console.log("newrowl:"+ newRow);    
+          $("#print-table > tbody").prepend(newRow);
+          var ctr =0;
+          $('#pos-table tr').each(function(i, n){
+               
+                var $row = $(n);
+              
+                var code = $row.find('td:eq(1)').text().trim().toUpperCase();
+              
+              if( code.length >0){ 
+                var item = $row.find('td:eq(2)').text().trim().toUpperCase();  
+
+            //     var desc="";
+            //     if( code.charAt(0).toUpperCase()){
+            //         desc =  $row.find('td:eq(2)').text().trim();
+            //     }
+            //     var quantity =1;
+          //  var quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+                  quantity = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+                  price = $(this).find('td:eq(4)').text(),
+                  amount = $row.find('td:eq(6)').text(),
+                  ctr= ctr + 1;
+                  console.log("-- "+ item + "  "+ quantity+ " "+ price+ " "+amount);
+                  newRow = "<tr><td>"+ ctr + "</td><td>"+item +"</td><td>"+quantity +"</td><td>"+price+" </td><td>"+amount+" </td></tr>";
+                                              console.log("newrowl:"+ newRow);    
+                    $("#print-table > tbody").append(newRow);
+                   
+            }
+                
+            //     if (code == "A0000" || code =="AOOOO"){
+            //         quantity = parseFloat( $row.find('td:eq(3)').texx`t());
+            //     }else{  
+            //         quantity = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+            //         qty = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+            //         // console.log("input type");
+            //         // console.log( $row.find("td:eq(3)").val());
+            //     }
+            //     // console.log("qty > "+qty);
+            //     // console.log("quantity >"+code);
+            //     // console.log(quantity);
+            //     // console.log("after:")
+            //     if (isNaN(quantity)){
+            //         quantity = 1;
+            //     }
+            //     console.log("quantity >"+code);
+            //     console.log(quantity);
+                 
+            //   //  quantity :parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+            //     rows.push({
+            //       //  product_id: $row.find('td:eq(1)').text(),
+            //         qty:   quantity ,
+            //         description:desc,
+            //         price:    $row.find('td:eq(4)').text(),
+            //         cm:       $row.find('td:eq(5)').text(),
+            //         amount:   $row.find('td:eq(6)').text(),
+            //         customer: customerInfo.id,
+            //         transaction_id:transaction_id,
+            //         item_id:  $row.find('td:eq(7)').text(),
+            //     });
+            // }
+
+                 
+            });
+               newRow = "<tr><td></td><td></td><td></td><td></td><td>" +  $("#id_amount").val() +"</td></tr>";
+               $("#print-table > tbody").append(newRow);
+                $("#print-table").show();
+                   
+                  var divToPrint=document.getElementById("print-table");
+                  newWin= window.open("");
+                  newWin.document.write($("#customer-info-alert-text").text());
+                  newWin.document.write("");
+                  newWin.document.write(divToPrint.outerHTML);
+                 
+                  newWin.print();
+                  newWin.close(); 
+                  $("#print-table").hide();
+
+
+        }
+
         $("#clear-box").click(function(event){
 
-             $("#autocomplete").val("");
+          $("#products-modal").modal('show');
+
+            // $("#autocomplete").val("");
         });
 
         $("#quantity-txt-modal").click(function(event){

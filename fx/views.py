@@ -2176,6 +2176,7 @@ def create_update_venture1(request,customer_id,venture_id ):
    # notes = CustomerNoteModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30),   member_id =4).order_by("-pk")[:100]
     print(f"--- in charge: {staff_info.id}")
     venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
+    items = ProductModel.objects.all()
 
     context = {      
                     'asset_balance':asset_balance,
@@ -2183,6 +2184,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                     'transactions':tx,
                     'member_info':member_info,
                     'customer_info':customer_info,
+                    'items':items,
                 }
     # print(f"transaction:{tx.query}")
     # for  obj in tx:
