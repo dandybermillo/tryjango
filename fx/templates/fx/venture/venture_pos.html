@@ -214,9 +214,9 @@ tr.pos-table td:nth-child(4) {
 
 }
 
-ul.ui-autocomplete.ui-menu {
+/* ul.ui-autocomplete.ui-menu {
   z-index: 10000;
-}
+} */
 
 a{
   text-decoration:none;
@@ -990,12 +990,12 @@ th {
                                 
                                 <div  id="msain" class="form-row" style="margin-top: 5px;margin-left: 10px;"> 
                                    
-                                    <label for="autocomplete" class="col-form-label">  Search Items </label> 
+                                  
                                     <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
                                     
                                     
-                                    <input id="autocomplete"> <a style="margin-left:4px;margin-right: 3px;" id="clear-box" class="btn btn-warning btn-md">x</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
-                                    >
+                                     <a style="margin-left:4px;margin-right: 3px;" id="clear-box" class="btn btn-warning btn-md">Search</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
+                                    >  
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
                                         <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
@@ -1056,7 +1056,7 @@ th {
                                             <th scope="col"><span class="other-product"  data-toggle="tooltip" data-placement="top" title="Add item without barcode"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                                                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
                                             </svg></span>  <span   style="margin-left: 5px;" data-toggle="tooltip" data-placement="top" title="The Current Transaction Number" id="transNumber">#{{venture.transId}}</span></th>   
-                                            <th scope="col">Product ID</th>
+                                            <th hidden scope="col">Product ID</th>
                                             <th scope="col">Product Name</th>
                                             <th scope="col" >Qty</th>
                                            
@@ -1285,7 +1285,7 @@ th {
         <div class="modal-body">
             <div class="form-row">
                 <div class="form-group col-md">
-                    <label for="pos-product-code-txt" class="col-form-label">  NOTE </label>  
+                    <label for="customer-note" class="col-form-label">  NOTE </label>  
                     <textarea   rows="10"   class="form-control"
                     id="customer-note" name="customer_note" maxlength="300"></textarea>
                 </div>
@@ -1358,7 +1358,7 @@ th {
                 <div class="all history">
               
                   <div id="narrow-browser-alert" class="alert alert-info text-center">
-                    <strong>H I S T O R Y</strong> <br>Narrow your browser!</div>
+                    <strong>H I S T O R Y</strong>  </div>
                   
                   <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                     <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
@@ -1489,12 +1489,12 @@ th {
       </div>
     </div>
   </div>
-  <!-- hey -->
+   
   <div id ="products-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modify Quantity</h5>
+          <h5 class="modal-title">LIST OF ITEMS</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -1514,27 +1514,32 @@ th {
                 </div>
                 <div class="filter-box">
                     <a href="#" class="btn-product active" data-filter="all">All</a>
-                    <a href="#" class="btn-product" data-filter="watch">Canned</a>
-                    <a href="#" class="btn-product" data-filter="shirt">Condiments</a>
-                    <a href="#" class="btn-product" data-filter="gown">Drinks</a>
-                    <a href="#" class="btn-product" data-filter="jewelry">Snacks</a>
                     <a href="#" class="btn-product" data-filter="nobarcode">No Barcode</a>
+                    <a href="#" class="btn-product" data-filter="1">Canned</a>
+                    <a href="#" class="btn-product" data-filter="2">Dry Goods</a>
+                    <a href="#" class="btn-product" data-filter="6">Condiments</a>
+                    <a href="#" class="btn-product" data-filter="8">Seasoning</a>
+                    <a href="#" class="btn-product" data-filter="5">Drinks</a>
+                    <a href="#" class="btn-product" data-filter="7">Snacks</a>
+                    
                 </div>
             </div>
         </header>
          
         <main>
-          <div class="slide-container">
+          <div class="slide-container"  >
           <section class="product-container" id="store-products">
           
 
             {% for obj in items %}
-                <div class="store-product {% if obj.hasbarcode %} has {% else %} nobarcode {%endif %} ">
+                <div class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
                     <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
+                    <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
+                    <img style="width: 250px;height: 250px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
                     <div class="product-details">
                         <h2>{{obj.title}}</h2>
-                        <p> <span>$39.99</span> {{obj.reg_price}}</p>
-                        <a href="#">Add to Cart wa</a>
+                        <p> <span></span> {{obj.reg_price}}</p>
+                        <a class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
                     </div>
                 </div>
           {% endfor %}
@@ -1551,7 +1556,7 @@ th {
            
         </div>
         <div class="modal-footer">
-          <button id="add-product" type="button" class="btn btn-primary">Ok</button>
+          <button id="add-product" type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
           <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -1614,7 +1619,7 @@ th {
                         <label for="pos-product-code-txt" class="col-form-label">  CODE </label>  <span
                         id="code-message-A0000" class="red-color"></span>
                         <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
-                            class="mid-size form-control">
+                               readonly class="mid-size form-control">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
@@ -1636,7 +1641,7 @@ th {
                         <input id="pos-price-txt"  readonly type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
-                    <div class="form-group col-md-1">
+                    <div hidden class="form-group col-md-1">
                         <label for="pos-c-money-txt" class="col-form-label">C-MONEY </label>
                         <input id="pos-c-money-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
@@ -1942,6 +1947,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     var walk_in_id = 4
     customerInfo.id = walk_in_id;
     ID_Info.id = "";
+    ID_Info.member_id="";
     ID_Info.ON_SEARCH = false;
     ID_Info.is_name_blank = true;
 
@@ -1984,6 +1990,16 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
     $(document).ready(function () {
      
+     $("#pos-product-code-txt").text("A0000");
+      
+      $(".product-list").on('click',function(){
+        var item_id = $(this).attr("code");
+        console.log("--------code: "+ $(this).attr("code") );
+        $("#products-modal").modal("hide");
+        search_product_details(item_id);
+       
+      });
+
       const search = document.getElementById("search-product");
       const productName = document.querySelectorAll(".product-details h2");
 
@@ -2246,19 +2262,19 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
    });
 
-  $("#autocomplete").autocomplete({
-	source: objs,
-  select: function(e, ui) {
-    console.log("value:");
+//   $("#autocomplete").autocomplete({
+// 	source: objs,
+//   select: function(e, ui) {
+//     console.log("value:");
     
-    item_id = ui.item.theValue;
-    $("#pos-product-code-txt").val(item_id);
-    search_product_details(item_id);
-    $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected');
-    $("#autocomplete").val("");
-     //$("#pos-add-btn").trigger("click");
-  }
-});
+//     item_id = ui.item.theValue;
+//     $("#pos-product-code-txt").val(item_id);
+//     search_product_details(item_id);
+//     $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected');
+//     $("#autocomplete").val("");
+//      //$("#pos-add-btn").trigger("click");
+//   }
+// });
 
 console.log(items);
 
@@ -2398,17 +2414,18 @@ console.log(items);
                    }
 
                    if(alt_key !=0 && iKeyCode == 83){
-                   
-                        hide_pos_editor(1);
-                        clear_pos_top();
-                        $("#pos-product-code-txt").val("A0000");
-                        $("#pos-add-btn").val("ADD");
-                         $("#pos-product-name-txt").prop("readonly",false);
-                        $("#pos-qty-txt").val("1");     
-                        $("#pos-qty-txt").prop("readonly",false);
-                        $("#pos-price-txt").prop("readonly",false);
-                         $("#product-modal").modal('show');
-                         $("#pos-product-name-txt").focus();
+                       
+                        $("#products-modal").modal('show');
+                        // hide_pos_editor(1);
+                        // clear_pos_top();
+                        // $("#pos-product-code-txt").val("A0000");
+                        // $("#pos-add-btn").val("ADD");
+                        //  $("#pos-product-name-txt").prop("readonly",false);
+                        // $("#pos-qty-txt").val("1");     
+                        // $("#pos-qty-txt").prop("readonly",false);
+                        // $("#pos-price-txt").prop("readonly",false);
+                        //  $("#product-modal").modal('show');
+                        //  $("#pos-product-name-txt").focus();
                          MODAL_ON = MODAL_PRODUCT_SEARCH;
                          alt_key =0;
                    }else if (alt_key !=0 && iKeyCode == 65 ){
@@ -2477,6 +2494,13 @@ console.log(items);
             //     var quantity =1;
           //  var quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
                   quantity = parseFloat( $(this).find("td:eq(3) input[type='number']").val());
+
+                  if (isNaN(quantity)){
+                    quantity =  parseFloat($row.find('td:eq(3)').text());  
+
+                    
+                  }
+
                   price = $(this).find('td:eq(4)').text(),
                   amount = $row.find('td:eq(6)').text(),
                   ctr= ctr + 1;
@@ -2616,7 +2640,7 @@ console.log(items);
           console.log("=================== :"+ id);
           
           $("#modal-search-member").modal('hide');
-          search_member_by_pass(id);
+          search_member_bypass(id);
 
 
         });
@@ -2661,7 +2685,7 @@ console.log(items);
 
 
         });
-
+        
         function get_transaction(){
 
                     var data={};
@@ -2719,7 +2743,7 @@ console.log(items);
 
                                        }
 
-                                        var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+                                        var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                         console.log("newrowl:"+ newRow);    
                                         $("#pos-table > tbody").prepend(newRow);
 
@@ -2830,6 +2854,17 @@ console.log(items);
                         //     // $("#user-page-lnk").click();
                         //     id = response["id"];
                         // //  window.location.replace("/user/"+id);
+                                 $(".notes_div_child").remove();
+                                 response["notes"].forEach(function (item) {
+                                   // row_ctr = row_ctr + 1;
+
+                                   $( "#notes_div" ).prepend("<div id ='child-"+item.id +"' class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
+                                  });
+                             
+
+
+
+
                             } else if (response["type"] === "error") {
                             
                             
@@ -2935,7 +2970,7 @@ console.log(items);
         $(".other-product").click(function() {
             clear_pos_top();
             $("#product-modal").modal('show');
-            $("#pos-product-code-txt").focus();
+          //  $("#pos-product-code-txt").focus();
 
 
 
@@ -3496,6 +3531,7 @@ console.log(items);
                          console.log("incremental--------------");
                      } else
                      {
+                        total_cm = total_sales * .05
                         tot = total_sales ;
                         $("#id_amount").val(tot.toFixed(2));
                         $("#credit-line").val(total_cm.toFixed(2));
@@ -3542,7 +3578,7 @@ console.log(items);
              //  $("#pos-product-code-txt").prop("readonly",false);
        });
        $("#pos-delete-btn").click(function () {
-               $("#pos-product-code-txt").prop("readonly",false);
+              // $("#pos-product-code-txt").prop("readonly",false);
 
                $("tr.selected").remove();
                
@@ -3559,12 +3595,23 @@ console.log(items);
                 }, 1000);
 
        });
+//hey
+       $("#customer-info-alert-text").click(function () {
+                    
+
+
+
+       });
+
+
 //add
        $("#pos-add-btn").click(function () {
                      $("#product-modal").modal('hide');
-                    $("#pos-product-code-txt").attr("readonly",false);
+                 //   $("#pos-product-code-txt").attr("readonly",false);
                     pcode = $("#pos-product-code-txt").val().trim();
-                    pname = $("#pos-product-name-txt").val().trim();
+                    pname =
+                    
+                    $("#pos-product-name-txt").val().trim();
                     console.log("pcode:"+pcode);
                     pqty =  parseFloat($("#pos-qty-txt").val());
                     price = parseFloat( $("#pos-price-txt").val());   //redundant
@@ -3577,11 +3624,11 @@ console.log(items);
                            
                         }
                        
-                       if( pcode =="" ){
-                            $("#pos-product-code-txt").focus();
+                      //  if( pcode =="" ){
+                      //       $("#pos-product-code-txt").focus();
 
 
-                        }
+                      //   }
                         if (  isNaN( pqty) || pqty <=0 ){
                             $("#pos-qty-txt").focus();
                         }
@@ -3635,7 +3682,7 @@ console.log(items);
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ pname+"'";
                                         var txtamount ="<input class='quantity form-control'   name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required form ='receiver_form'> "
 
-                                        var newRow = "<tr class='pos-table' id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td>  <td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
+                                        var newRow = "<tr class='pos-table' id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td class='hide'>"+pcode+"</td><td>"+pname+"</td><td value ='"+ pqty+"'>"+btn+"</td>  <td>"+pprice+"</td><td class='hide'>"+pcmoney+"</td><td>"+ptotal+"</td><td class='hide'>"+item_id+"</td></tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
@@ -3697,11 +3744,14 @@ $("#payment-login-lnk").click(function () {
 
 
   function clear_pos_top(){
-    $("#pos-product-code-txt").prop("readonly",false);
-         $("#pos-product-code-txt").val("");
+//$("#pos-product-code-txt").prop("readonly",false);
+         $("#pos-product-code-txt").val("A0000");
+         $("#pos-product-name-txt").prop("readonly",false);
           $("#pos-product-name-txt").val("");
           $("#pos-qty-txt").val("");
+          $("#pos-qty-txt").prop("readonly",false);
           $("#pos-price-txt").val("");
+          $("#pos-price-txt").prop("readonly",false);
           $("#pos-c-money-txt").val("");
           $("#pos-total-txt").val("")
           
@@ -3758,7 +3808,7 @@ $("#payment-login-lnk").click(function () {
                       $("#pos-product-name-txt").prop("readonly",true);
                        
                     }
-                    $("#pos-product-code-txt").prop("readonly",true);
+                   // $("#pos-product-code-txt").prop("readonly",true);
                     $("#pos-product-code-txt").prop("item_id",tableData[7]);
                     $("#pos-qty-txt").prop("readonly",false);
                  
@@ -3768,7 +3818,7 @@ $("#payment-login-lnk").click(function () {
                     //     $("#pos-product-code-txt").attr("readonly",true);
                     //     console.log(">>>>>>>>>>>>>>>>>> "+ tableData[1].length)
                     //  }
-                     $("#pos-product-code-txt").attr("readonly",true);
+                   //  $("#pos-product-code-txt").attr("readonly",true);
 
                     $("#pos-product-name-txt").val(tableData[2] );
                     $("#pos-qty-txt").val(tableData[3] );
@@ -3781,7 +3831,7 @@ $("#payment-login-lnk").click(function () {
 
                     $("#product-modal").modal('show');
                    
-                    $("#pos-product-code-txt").focus();
+                  //  $("#pos-product-code-txt").focus();
 
 
 
@@ -4093,87 +4143,89 @@ $("#payment-login-lnk").click(function () {
                 }
                   
             });
+
+function erase_prod(){ 
 //code
-         $("#pos-product-code-txt").keyup(function (event) {
-               console.log("-----code reach...");
-                 $(this).val($(this).val().toUpperCase());
-                var item_id= $(this).val().trim().toUpperCase();
+        //  $("#pos-product-code-txt").keyup(function (event) {
+        //        console.log("-----code reach...");
+        //          $(this).val($(this).val().toUpperCase());
+        //         var item_id= $(this).val().trim().toUpperCase();
                 
-                if (event.which === 13) {
+        //         if (event.which === 13) {
                   
-                    submit_now =false;
-                    event.preventDefault();
-                    event.stopPropagation();
-                   if (item_id.length >=5){
-                       console.log("13 is hitted");
-                      ///  beep();
-                       search_product_details(item_id);
-                   }else{
+        //             submit_now =false;
+        //             event.preventDefault();
+        //             event.stopPropagation();
+        //            if (item_id.length >=5){
+        //                console.log("13 is hitted");
+        //               ///  beep();
+        //                search_product_details(item_id);
+        //            }else{
                    
-                    $("#code-message-A0000").text(" 5 or more character long");
-                    $(this).focus();
-                     setTimeout(function () {
-                    $("#code-message").text("");
-                   }, 10000);
-                    console.log("inside event.which: .13");
-                   }
+        //             $("#code-message-A0000").text(" 5 or more character long");
+        //             $(this).focus();
+        //              setTimeout(function () {
+        //             $("#code-message").text("");
+        //            }, 10000);
+        //             console.log("inside event.which: .13");
+        //            }
 
-                    return;
-                }
-            //     } else { 
+        //             return;
+        //         }
+        //     //     } else { 
           
-            // if (item_id.length > 0){
-            //     hide_pos_editor(1);
-            // }
+        //     // if (item_id.length > 0){
+        //     //     hide_pos_editor(1);
+        //     // }
 
-            if ( item_id.charAt(0) =='A' && item_id.trim().toUpperCase() ==  "A0000"){
-                console.log("------------");
-               /// beep();
-                hide_pos_editor(1);
-               $("#pos-product-name-txt").focus();
-               $("#pos-product-name-txt").prop("readonly",false);
-               $("#pos-qty-txt").val("1")
-               $("#pos-qty-txt").prop("readonly",false)
-               $("#pos-price-txt").prop("readonly",false)
-                return;
-            }else{
+        //     if ( item_id.charAt(0) =='A' && item_id.trim().toUpperCase() ==  "A0000"){
+        //         console.log("------------");
+        //        /// beep();
+        //         hide_pos_editor(1);
+        //        $("#pos-product-name-txt").focus();
+        //        $("#pos-product-name-txt").prop("readonly",false);
+        //        $("#pos-qty-txt").val("1")
+        //        $("#pos-qty-txt").prop("readonly",false)
+        //        $("#pos-price-txt").prop("readonly",false)
+        //         return;
+        //     }else{
 
-                $("#pos-product-name-txt").prop("readonly",true);
-                $("#pos-qty-txt").prop("readonly",true)
-               $("#pos-price-txt").prop("readonly",true)
+        //         $("#pos-product-name-txt").prop("readonly",true);
+        //         $("#pos-qty-txt").prop("readonly",true)
+        //        $("#pos-price-txt").prop("readonly",true)
 
-            }
+        //     }
            
-            if( item_id.trim().length < 5){
-                $("#pos-product-name-txt").val("");
-                    $("#pos-qty-txt").val("");
-                    $("#pos-price-txt").val("");
-                    $("#pos-c-money-txt").val("");
-                    $("#pos-total-txt").val("")
+        //     if( item_id.trim().length < 5){
+        //         $("#pos-product-name-txt").val("");
+        //             $("#pos-qty-txt").val("");
+        //             $("#pos-price-txt").val("");
+        //             $("#pos-c-money-txt").val("");
+        //             $("#pos-total-txt").val("")
                     
-                return
-            }
-            console.log("item id :" + item_id);
-            if (item_id.charAt(0) =='A' &&   item_id.length >=5){
-               /// beep();
-                curr_barcode = Barcode.MANUAL;
-                // $("#pos-qty-txt").focus();
-                $("#pos-qty-txt").select();
-                $("#pos-qty-txt").prop("readonly",false);
-               /// beep();
-                search_product_details(item_id);
+        //         return
+        //     }
+        //     console.log("item id :" + item_id);
+        //     if (item_id.charAt(0) =='A' &&   item_id.length >=5){
+        //        /// beep();
+        //         curr_barcode = Barcode.MANUAL;
+        //         // $("#pos-qty-txt").focus();
+        //         $("#pos-qty-txt").select();
+        //         $("#pos-qty-txt").prop("readonly",false);
+        //        /// beep();
+        //         search_product_details(item_id);
                  
-                console.log("searching....");
-            }
+        //         console.log("searching....");
+        //     }
 
-            if ( event.which == 13) {
-                console.log("------------------13");
-                event.preventDefault();
-                event.stopPropagation();
-           }
+        //     if ( event.which == 13) {
+        //         console.log("------------------13");
+        //         event.preventDefault();
+        //         event.stopPropagation();
+        //    }
 
-        });
-
+        // });
+        }
 
         function search_product_details(item_id) {
 
@@ -4254,7 +4306,7 @@ $("#payment-login-lnk").click(function () {
                                          var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
                                          var txtamount ="<div style='display:flex'> <input type='button' class='btn btn-info down' value='-' data-min='1'/><input class='incdec quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required ><input type='button' class='btn btn-info up' value='+' data-max='100'/></div>"
                  
-                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
+                                         var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td class='hide'>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                          $("#pos-table > tbody").prepend(newRow);
                                          
                                          console.log(">>>>> edit is selected");
@@ -4374,7 +4426,7 @@ $("#payment-login-lnk").click(function () {
 
                                     var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                         var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
-                                        var newRow = "<tr class='pos-table' id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
+                                        var newRow = "<tr class='pos-table' id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td class='hide'>"+item_id+"</td><td>"+title+"</td><td>"+btn+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td>    </tr>";
                                         $("#pos-table > tbody").prepend(newRow);
                                         
                                         console.log(">>>>> edit is selected");
@@ -4448,7 +4500,7 @@ $("#payment-login-lnk").click(function () {
         }
 
 
-
+                function erasethis(){ 
         //search
         // function search_product_details(item_id) {
         //     console.log("searching begins");
@@ -4588,8 +4640,16 @@ $("#payment-login-lnk").click(function () {
 
         // }
 
+
+
+
+
+
+
+                }
         //by pass
-        function search_member_by_pass(member_id) {
+        function search_member_bypass(member_id) {
+            console.log("<<<<<<<<<<<<<<<<<< bypass, member_id:  "+member_id);
             keys["PREVIOUS-INPUT"] = "";
             ID_Info.id = customer_id;
             var data = {}
@@ -4637,6 +4697,7 @@ $("#payment-login-lnk").click(function () {
                                 name = response["member_info"]['name'].toUpperCase();
                                 $("#customer").val(response["member_info"]['id']);
                                 ID_Info.id =response["member_info"]['id'];
+                                ID_Info.member_id =
                                 customerInfo.id = ID_Info.id;
                                // console.log("id customer: " + $("#id_customer").val());
                                 cm_balance = response["balances"]['cc'];

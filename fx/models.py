@@ -32,8 +32,8 @@ class CodeGeneratorModel(models.Model):
 #       img = models.ImageField(blank =True, null =True) 
 #       sku =  models.CharField(max_length = 20,blank= True) 
 class ProductModel(models.Model): 
-      PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER=0,1,2,3,4
-      CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(OTHER,"OTHER"))
+      PERSONAL_HYGIENE, CANNED, DRY,PRODUCE,OTHER,DRINKS,CONDIMENTS,SNACKS,SEASONING=0,1,2,3,4,5,6,7,8
+      CATEGORY_CODE = ((PERSONAL_HYGIENE,"PERSONAL_HYGIENE"),(CANNED,"CANNED GOODS"),(DRY,"DRY GOODS"),(PRODUCE,"PRODUCE"),(DRINKS,"DRINKS"),(OTHER,"OTHER"),(CONDIMENTS,"CONDIMENTS"),(SNACKS,"SNACKS"),(SEASONING,"SEASONING"))
       title = models.CharField(max_length = 200,blank= True) 
       #description =  models.CharField(max_length=300,blank =True) 
       category = models.PositiveIntegerField(default =OTHER, choices = CATEGORY_CODE)

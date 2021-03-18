@@ -1609,6 +1609,18 @@ class pos_view(View):
 #     # data = [{'label': 'Peter', 'email': 'peter@example.org'},
 #     #         {'label': 'Julia', 'email': 'julia@example.org'}]
 #     return JsonResponse({"data":data})
+
+
+                notes= []
+            
+                try:
+                    notes_qs = CustomerNoteModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30),   member_id =member_qs.id).order_by("pk")[:100]
+                    
+                    for row in notes_qs:
+                        row ={"id":row.id,"note":row.note,"date_entered":row.date_entered}
+                        notes.append(row)
+                except Exception as e:
+                    print(f"Retrieving customer note error: {e}")
                 ps = []
                 try:
                         productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
@@ -1623,7 +1635,7 @@ class pos_view(View):
                             print(f"Pos description: {e}")
                             logger.warning(f"Pos description: {e}")
                 
-                return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances,"ps":ps})
+                return JsonResponse({"type":'success', "message":"Success","data":data,"member_info":member_info,"balances":balances,"ps":ps,"notes":notes})
             
                         
         else:
