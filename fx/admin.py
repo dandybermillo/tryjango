@@ -154,7 +154,7 @@ class ItemModelAdmin(admin.ModelAdmin):
     search_fields = ['title']
 class ItemSoldModelAdmin(admin.ModelAdmin):
     list_per_page= 100
-    list_display = ['id','item',"qty",'amount','cm','price','description','transaction_id']
+    list_display = ['id','item',"qty",'amount','cm','price','description','transaction_id',"member_id"]
     
    # search_fields = ['item.title']
     

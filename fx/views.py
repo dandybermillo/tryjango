@@ -715,10 +715,16 @@ def get_customer_details_bypass(request):
             except Exception as e:
                 print(f"Retrieving customer note error: {e}")
             
+            product_codes = ProductSold.objects.all().values("item__product_id","item__title","member").distinct('item__product_id').filter( member = member_qs.id)
+            codes=[]
+            for row in product_codes:
+                codes.append(row["item__product_id"])
+                print(f"id : {row['item__product_id']} title: {row['item__title']}, member: {row['member']}")
+            
+           
             
             
-            
-            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances,'notes':notes}, status = 200)
+            return JsonResponse({"data":"Success","member_info":member_info,"balances":balances,'notes':notes,'product_codes':codes}, status = 200)
       except Exception as e:
             print (f"get customer detail bypass error: {e}, {type(e)}")
             logger.warning(f"get customer detail bypass error:  {e}, {type(e)}")
@@ -2189,7 +2195,14 @@ def create_update_venture1(request,customer_id,venture_id ):
     print(f"--- in charge: {staff_info.id}")
     venture ={'transaction_type':'W','customer':walk_in_id,'source_type':'K','percent':default_percentage,"venture_id":0,"transId":qs.id}  
     items = ProductModel.objects.all()
+     
+         
+ 
 
+   
+    
+    # for row in product_codes:
+    #     print(f"code: {row['item__product_id']}------item__title: ")
     context = {      
                     'asset_balance':asset_balance,
                     'venture': venture,  
@@ -2197,10 +2210,12 @@ def create_update_venture1(request,customer_id,venture_id ):
                     'member_info':member_info,
                     'customer_info':customer_info,
                     'items':items,
+                    
                 }
     # print(f"transaction:{tx.query}")
     # for  obj in tx:
     #     print(f"key:, value : {obj.customer.member_id}")
+  
     
     return render(request, 'fx/venture/venture_pos.html', context)
 

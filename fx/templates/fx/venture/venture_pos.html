@@ -743,6 +743,14 @@ th {
         padding-left: 0px;
 
     }
+
+
+    .item-control{
+      margin-bottom: 0px;
+      font-size: 10px;
+      max-height: 40px;
+            
+    }
 </style>
 
 {%  endblock css_style %}
@@ -760,6 +768,59 @@ th {
 
       
 <!-- heree -->
+<div hidden class ="containers" style="width: 200px; border:1px solid red">
+
+<form> 
+  <div class="form-row">
+    <div class="form-group col-sm item-control" >
+        <input  type="text" placeholder ="Barcode" class="form-control"  name="barcode"      required=""   >
+        
+    </div>
+</div>
+
+<div   class="form-row">
+  <div class="form-group col-sm item-control">
+      <input  id="txttitle" placeholder ="Title"  name="title"  class="form-control "  type="text"/>
+  </div>
+</div>
+<div  class="form-row">
+  <div  class="form-group col-md item-control">
+      <input type="text" placeholder="Quantity"    class="form-control"
+      id="txtquantity" name="quantity" >
+  </div>
+
+</div>
+<div  class="form-row">
+  <div class="form-group col-sm item-control">
+          <input type="text"   class="form-control"
+          id="txtprice" name="price" placeholder="Price" />  
+      
+  </div>
+
+</div>
+
+
+<div  class="form-row">
+      
+        
+      <div class="form-group col-md item-control item-control" >
+          <input type="text"     class="form-control"
+          id="txtregularprice" name="regular_price" placeholder="Reular Price" >
+      </div>
+      
+</div>
+<div  class="form-row">
+            <div  class="form-group col-md item-control">
+                <input type="text" placeholder="Whole Sale"    class="form-control"
+                id="txtwhole_sale" name="whole_sale" >
+            </div>
+       
+</div>
+</form>
+</div>
+
+ 
+
 
 <table   id="print-table"  border=".5"   class="table" style="width: 100%">
   <thead>
@@ -1521,25 +1582,32 @@ th {
                     <a href="#" class="btn-product" data-filter="8">Seasoning</a>
                     <a href="#" class="btn-product" data-filter="5">Drinks</a>
                     <a href="#" class="btn-product" data-filter="7">Snacks</a>
-                    
+                    <a href="#" class="btn-product" data-filter="picks">Member's Pick</a>
                 </div>
             </div>
         </header>
          
         <main>
-          <div class="slide-container"  >
+          <div class="slide-container"   >
           <section class="product-container" id="store-products">
           
-
+             <!-- {% for obj in product_codes %}
+               <p>  {{obj}}</p> 
+            {% endfor %}  -->
             {% for obj in items %}
-                <div class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
+            
+                  
+                 
+                   <div id="{{obj.product_id}}" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
+                 
                     <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
                     <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
-                    <img style="width: 250px;height: 250px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
+                    <img style="padding-right:2px; width: 250px;height: 250px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
                     <div class="product-details">
-                        <h2>{{obj.title}}</h2>
-                        <p> <span></span> {{obj.reg_price}}</p>
-                        <a class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
+                        <h2 id="{{obj.product_id}}">{{obj.title}}</h2>
+                        <p  class="reg_price"> <span></span> {{obj.reg_price}}</p>
+                        <p hidden class="whole_sale_price">  <span></span> {{obj.whole_sale_price}}</p>
+                        <a  id="btn-{{obj.product_id}}" class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
                     </div>
                 </div>
           {% endfor %}
@@ -1931,7 +1999,8 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
 })(jQuery);
     //okss
-
+    var product_codes = "";
+    var Whole_sale = false;   // set to true if the customer has retail store
     var INCREMENTAL =0;
     var WHOLE = 1;
     var Credit_option = WHOLE;
@@ -1989,7 +2058,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
-     
+   
      $("#pos-product-code-txt").text("A0000");
       
       $(".product-list").on('click',function(){
@@ -2013,14 +2082,59 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
         e.preventDefault()
         
         const filter = e.target.dataset.filter;
-        console.log(filter);
+        console.log("-------------filter: "+filter);
         
         storeProducts.forEach((product)=> {
             if (filter === 'all'){
                 product.style.display = 'block'
+                
+            }else if (filter === 'picks' ){
+              
+                  console.log("-------------filter pick is chosen: "+filter);
+
+                   
+                        //  product.style.display = 'block';
+                         // console.log("product ida:" )
+                         // console.log($(product));  
+                          var prod_id =product.id.trim();
+                          if (product_codes.includes(product.id)){
+                                product.style.display = 'block';
+                                $("#btn-"+prod_id).css("background","green");
+                                  
+                          }else
+                          {
+                            product.style.display = 'none'
+                            $("#btn-"+prod_id).css("background","orange");
+                          //   console.log("------------customer loves product-"+"#div-"+prod_id);
+                          //   $("#btn-"+prod_id).css("background","orange");
+                          // //  $(product).attr("border","black");
+                          //           //  product.style.color ="black";
+                          }
+                        
+                      
+
             } else {
+                console.log("????????????????????? filter: "+ filter);
                 if (product.classList.contains(filter)){
-                    product.style.display = 'block'
+                    product.style.display = 'block';
+                    console.log("product ida:" )
+                    console.log($(product));  
+                    var prod_id =product.id.trim();
+                    if (product_codes.includes(product.id)){
+                           $("#btn-"+prod_id).css("background","green");
+                            console.log("------------customer loves product-"+"#btn"+prod_id);
+                          //  console.log(product);
+
+                        //  product.style.color ="red"
+                            
+                    }else
+                    {
+                      console.log("------------customer loves product-"+"#div-"+prod_id);
+                      $("#btn-"+prod_id).css("background","orange");
+                    //  $(product).attr("border","black");
+                               //  product.style.color ="black";
+                    }
+                  
                 } else {
                     product.style.display = 'none'
                 }
@@ -2039,11 +2153,29 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
       $("#search-product").on("keyup", function (e) {
     const text = e.target.value.toLowerCase();
-    console.log("---" +productName[0]);
+    
     productName.forEach(function(product) {
         const item = product.firstChild.textContent;
+        //console.log(">>>>>>>>>>>>>>> product:");
+     //   console.log(product.id);
         if (item.toLowerCase().indexOf(text) != -1) {
             product.parentElement.parentElement.style.display = "block"
+                    var prod_id =product.id.trim();
+                    if (product_codes.includes(product.id)){
+                           $("#btn-"+prod_id).css("background","green");
+                            console.log("------------customer loves product-"+"#btn"+prod_id);
+                          //  console.log(product);
+
+                        //  product.style.color ="red"
+                            
+                    }else
+                    {
+                      console.log("------------customer loves product-"+"#div-"+prod_id);
+                      $("#btn-"+prod_id).css("background","orange");
+                    //  $(product).attr("border","black");
+                               //  product.style.color ="black";
+                    }
+
         } else {
             product.parentElement.parentElement.style.display = "none"
         }
@@ -3531,7 +3663,7 @@ console.log(items);
                          console.log("incremental--------------");
                      } else
                      {
-                        total_cm = total_sales * .05
+                        total_cm = total_sales * .10
                         tot = total_sales ;
                         $("#id_amount").val(tot.toFixed(2));
                         $("#credit-line").val(total_cm.toFixed(2));
@@ -3598,9 +3730,12 @@ console.log(items);
 //hey
        $("#customer-info-alert-text").click(function () {
                     
-
-
-
+          console.log( "---- "+ID_Info.member_id);
+          var member = ID_Info.member_id;
+          if (member != ""){       
+               search_member_bypass(member);
+            }
+          
        });
 
 
@@ -4229,7 +4364,7 @@ function erase_prod(){
 
         function search_product_details(item_id) {
 
-             
+      //hey       
             console.log("searching begins for :"+item_id);
             item_id =item_id.trim().toUpperCase();
             len = $("#c-"+item_id).length;
@@ -4271,10 +4406,15 @@ function erase_prod(){
                                    title =item.title;//response['product_info']['title'].trim();
                                    item_pk  =item.id;//response['product_info']['title'].trim();
                                    console.log("item_pk__--:"+item_pk);
+                                   console.log("---------- whole_sale_price:" + item.whole_sale_price);
 
                                    pric= parseFloat(item.price);
-
-                                   price = parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+                                   if (Whole_sale) {
+                                        price = parseFloat(item.whole_sale_price);
+                                   }else {
+                                        price = parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+                                   }
+                                   
                                    cmoney = price - pric;  
                                   // cmoney = parseFloat(item.cm) ;// (response['product_info']['cm']);
                                    if (isNaN(cmoney)) {
@@ -4379,7 +4519,7 @@ function erase_prod(){
 
 
 
-
+            $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
             return
             data['item_id'] = item_id;
            
@@ -4671,10 +4811,14 @@ function erase_prod(){
                     if( videoCode == 2) {  // venture
                             // console.log("response['notes']");
                             console.log(response['notes']);
+                            console.log("-------------------- get details ---------------");
                             if (response['data'] == "Success") {
 
 
-
+                                product_codes = response['product_codes'] ;
+                                console.log("codes:");
+                                console.log(product_codes) 
+                                 console.log(product_codes);
                                 var total_sales= parseFloat($("#venture-total-txt").val());
                                 if ( total_sales <=0 ||  isNaN(total_sales)){
                                         console.log("=============");
@@ -4697,7 +4841,7 @@ function erase_prod(){
                                 name = response["member_info"]['name'].toUpperCase();
                                 $("#customer").val(response["member_info"]['id']);
                                 ID_Info.id =response["member_info"]['id'];
-                                ID_Info.member_id =
+                                ID_Info.member_id = response["member_info"]['member_id'];
                                 customerInfo.id = ID_Info.id;
                                // console.log("id customer: " + $("#id_customer").val());
                                 cm_balance = response["balances"]['cc'];
@@ -4778,7 +4922,7 @@ function erase_prod(){
 
 
                             } else {
-
+                                 ID_Info.member_id ="";
 
                                 if (code == "qrcode") {
 
