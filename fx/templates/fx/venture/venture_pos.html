@@ -9,6 +9,69 @@
 {% block css_style %}
 
 <style>
+
+
+.context-menu {
+	display: none;
+	min-width: 150px;
+	position: fixed;
+	z-index: 900;
+	padding:5px 0;
+	background: #fff;
+    border: 1px solid #CCC;
+	border-radius: 5px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
+	font-weight: normal;
+}
+.context-menu.shown { display:block; }
+.context-menu a {
+	display: block;
+	padding: 3px 16px;
+	overflow: hidden;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	line-height: 16px;
+	white-space: nowrap;
+	font-size: 10.5pt;
+	font-weight: normal;
+	color: #333;
+	cursor: default;
+}
+.context-menu a.bold { font-weight:bold; }
+.context-menu a.disabled { color:#B7B7B7; }
+.context-menu a:not(.disabled):hover {
+	color: #FFF;
+    background-color:#1D5DF3;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#5f87f8), color-stop(100%,#1d5df3));
+	background-image:linear-gradient(to bottom, #5f87f8 0%,#1d5df3 100%);
+}
+.context-menu a > img {
+	float: left;
+	margin-right: 5px;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+}
+.context-menu hr {
+	border: 0;
+	height: 1px;
+	margin: 5px 1px;
+	background: #EEE;
+}
+
+
+
+/* <popup menu end> */
+#store-products {
+      
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     grid-gap: 10px;
+     row-gap:10px;
+   
+ }
+ 
+
     @media screen and (min-width: 676px) {
         .modal-dialog {
           max-width: 90%; /* New width for default modal */
@@ -768,56 +831,7 @@ th {
 
       
 <!-- heree -->
-<div hidden class ="containers" style="width: 200px; border:1px solid red">
 
-<form> 
-  <div class="form-row">
-    <div class="form-group col-sm item-control" >
-        <input  type="text" placeholder ="Barcode" class="form-control"  name="barcode"      required=""   >
-        
-    </div>
-</div>
-
-<div   class="form-row">
-  <div class="form-group col-sm item-control">
-      <input  id="txttitle" placeholder ="Title"  name="title"  class="form-control "  type="text"/>
-  </div>
-</div>
-<div  class="form-row">
-  <div  class="form-group col-md item-control">
-      <input type="text" placeholder="Quantity"    class="form-control"
-      id="txtquantity" name="quantity" >
-  </div>
-
-</div>
-<div  class="form-row">
-  <div class="form-group col-sm item-control">
-          <input type="text"   class="form-control"
-          id="txtprice" name="price" placeholder="Price" />  
-      
-  </div>
-
-</div>
-
-
-<div  class="form-row">
-      
-        
-      <div class="form-group col-md item-control item-control" >
-          <input type="text"     class="form-control"
-          id="txtregularprice" name="regular_price" placeholder="Reular Price" >
-      </div>
-      
-</div>
-<div  class="form-row">
-            <div  class="form-group col-md item-control">
-                <input type="text" placeholder="Whole Sale"    class="form-control"
-                id="txtwhole_sale" name="whole_sale" >
-            </div>
-       
-</div>
-</form>
-</div>
 
  
 
@@ -1083,6 +1097,8 @@ th {
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                         </svg> New Transaction</a>
+
+                                        <a style="margin-left:20px" data-toggle="tooltip" data-placement="top" title="Set to whole sale price" id="buyer-type-btn" class="btn btn-info btn-md">Retail</a>
                                     </div>
 
                                    
@@ -1573,6 +1589,8 @@ th {
                         <!-- <button id="btn-search">Search</button> -->
                     </form>
                 </div>
+
+                <!-- hey -->
                 <div class="filter-box">
                     <a href="#" class="btn-product active" data-filter="all">All</a>
                     <a href="#" class="btn-product" data-filter="nobarcode">No Barcode</a>
@@ -1586,32 +1604,99 @@ th {
                 </div>
             </div>
         </header>
-         
+        
         <main>
           <div class="slide-container"   >
-          <section class="product-container" id="store-products">
-          
+          <section   class="product-container" id="store-products" style="max-width: 100%;"  >
+         <!-- ///hey -->
+            <menu class="context-menu" >
+              <a  href="javascript:;" class="bold">Choices</a>
+              <hr>
+              <a href="javascript:;" data-menu="update">Update Item</a>
+              <a href="javascript:;" data-menu="green"></a>
+              <a href="javascript:;" data-menu="blue"></a>
+              <hr>
+              <a href="javascript:;" >.</a>
+            </menu>
              <!-- {% for obj in product_codes %}
                <p>  {{obj}}</p> 
             {% endfor %}  -->
+           
+           
             {% for obj in items %}
-            
-                  
-                 
-                   <div id="{{obj.product_id}}" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
-                 
-                    <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
-                    <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
-                    <img style="padding-right:2px; width: 250px;height: 250px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
-                    <div class="product-details">
-                        <h2 id="{{obj.product_id}}">{{obj.title}}</h2>
-                        <p  class="reg_price"> <span></span> {{obj.reg_price}}</p>
-                        <p hidden class="whole_sale_price">  <span></span> {{obj.whole_sale_price}}</p>
-                        <a  id="btn-{{obj.product_id}}" class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
-                    </div>
+                   <div  id="{{obj.product_id}}" style="max-height: 250px;" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
+                         
+                     <div   class="item-containers">
+
+                        
+                          <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
+                          <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
+                          <img class="product-img" style="padding-right:2px; width: 250px;max-height: 150px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
+                          <div class="product-details">
+
+                              <h2 id="{{obj.product_id}}">{{obj.title}}</h2>
+                            <input id="retail-{{obj.product_id}}"   style="background-color: transparent;border: none; text-align: center;margin-bottom: 8px;" type="number"  class="retail bold-style" value ="{{obj.reg_price}}"/>
+                            <input id="whole-{{obj.product_id}}"  class="whole_sale_price bold-style" style="background-color: transparent;border: none; text-align: center;margin-bottom: 8px;" type="number"   value ="{{obj.whole_sale_price}}"/>
+                              <a   id="btn-{{obj.product_id}}" class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
+                          </div>
+
+                      </div>
+
+
+                          <!-- <div hidden class ="data-entry-container" style="width: 100%; border:1px solid red">
+                                  <form> 
+                                    <div class="form-row">
+                                      <div class="form-group col-sm item-control" >
+                                          <input  type="text" placeholder ="Barcode" class="form-control"  name="barcode"      required=""   >
+                                      </div>
+                                  </div>
+                                  
+                                  <div   class="form-row">
+                                    <div class="form-group col-sm item-control">
+                                        <input    placeholder ="Title"  name="title"  class="form-control "  type="text"/>
+                                    </div>
+                                  </div>
+                                  <div  class="form-row">
+                                    <div  class="form-group col-md item-control">
+                                        <input type="text" placeholder="Quantity"    class="form-control"
+                                          name="quantity" >
+                                    </div>
+                                  
+                                  </div>
+                                  <div  class="form-row">
+                                    <div class="form-group col-sm item-control">
+                                            <input type="text"   class="form-control"
+                                              name="price" placeholder="Price" />  
+                                        
+                                    </div>
+                                  
+                                  </div>
+                                  
+                                  
+                                  <div  class="form-row">
+                                        
+                                          
+                                        <div class="form-group col-md item-control item-control" >
+                                            <input type="text"     class="form-control"
+                                              name="regular_price" placeholder="Reular Price" >
+                                        </div>
+                                        
+                                  </div>
+                                  <div  class="form-row">
+                                              <div  class="form-group col-md item-control">
+                                                  <input type="text" placeholder="Whole Sale"    class="form-control"
+                                                    name="whole_sale" >
+                                              </div>
+                                  </div>
+                                  </form>
+                          
+                          </div>
+           
+                     
+
                 </div>
           {% endfor %}
-           
+           </div>
       </section>
   </div>
   </main>
@@ -2058,14 +2143,212 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+      $( ".store-product" ).contextmenu(function(e) {
+   console.log("==========================");
+    //  document.querySelector(".product-img").addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            var contextMenu = document.querySelector(".context-menu");
+              posX = (e.clientX + 150 > document.documentElement.clientWidth) ? e.clientX - 150 : e.clientX,
+              posY = (e.clientY + 140 + 55 > document.documentElement.clientHeight) ? e.clientY - 140 : e.clientY;
+            contextMenu.style.top = posY + "px";
+            contextMenu.style.left = posX + "px";
+            contextMenu.classList.add("shown");
+       });
+       $(".context-menu").on('click',function(e){
+       
+            var target = e.target;
+            if (target.nodeName !== "A") return;
+            var menu = target.getAttribute("data-menu");
+            if (!menu) return;
+            var info = target.textContent;
+           // document.querySelector(".box").style.backgroundColor = color;
+           // document.querySelector("#info").textContent = "You clicked " + info;
+           console.log("---------color :"+ menu);
+           if (menu === "update"){
+
+
+
+           }
+            this.classList.remove("shown");
+});
+// document.addEventListener("click", function (e) {
+// 	var target = e.target;
+// 	while (target.nodeType !== Node.DOCUMENT_NODE) {
+// 		if (target.classList.contains("shown")) return;
+// 		else target = target.parentNode;
+// 	}
+// 	var elems2hide = document.querySelectorAll(".shown");
+// 	for (var i = 0, length = elems2hide.length; i < length; i++) {
+// 		elems2hide[i].classList.remove("shown");
+// 	}
+// });
    
      $("#pos-product-code-txt").text("A0000");
+     $(".whole_sale_price").hide();
+      //hey
+      $("#buyer-type-btn").on('click',function(){
+         var text= $(this).text().trim();
+         if (text === "Whole Sale"){
+                       Whole_sale =false;
+                       $(this).text("Retail Price");
+                       $(".whole_sale_price").hide();
+                       $(".retail").show();
+
+         }else{
+            Whole_sale = true;
+            $(this).text("Whole Sale");
+            $(".whole_sale_price").show();
+               $(".retail").hide();
+         }
+
+      });
+
       
       $(".product-list").on('click',function(){
         var item_id = $(this).attr("code");
         console.log("--------code: "+ $(this).attr("code") );
         $("#products-modal").modal("hide");
-        search_product_details(item_id);
+        var item = items.find(items => items.product_id ===   item_id);
+ 
+       if (item) {
+                           //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
+                           $("#pos-product-code-txt").css("background-color","white")
+                           title = item.title;//response['product_info']['title'].trim();
+                           item_pk  = item.id;//response['product_info']['title'].trim();
+                           console.log("item_pk__--:"+item_pk);
+                           console.log("---------- whole_sale_price:" + item.whole_sale_price);
+
+                           pric= parseFloat(item.price);
+                           if (Whole_sale) {
+                            console.log("---------------------------whole sale");
+                              //  price = parseFloat(item.whole_sale_price);
+                              price =parseFloat( $("#whole-"+ item_id).val());
+                           }else {
+                             //id="retail-{{obj.product_id}}"
+                                console.log("---------------------------retail");
+                                price = parseFloat( $("#retail-"+ item_id).val());
+                                console.log("price:"+ price);
+                                console.log("id:"+ "#retail-"+ item_id);
+                                //price = parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+                           }
+                           
+                           cmoney = price - pric;  
+                          // cmoney = parseFloat(item.cm) ;// (response['product_info']['cm']);
+                           if (isNaN(cmoney)) {
+                                 cmoney = 0;
+                             }else{
+
+                              cmoney=  cmoney.toFixed(2)
+                             }
+                          
+                           
+                           if (isNaN(price)) {
+                                 price = 0;
+                             }
+
+                           if( walk_in ) {
+                               total = price * 1; 
+                             
+                           }else{
+                               total = price - cmoney;
+                           }
+                           
+                           if (price <=0){
+                             $("#pos-price-txt").prop("readonly",false);
+
+                           }
+                           if(curr_barcode == Barcode.POS){
+
+                             var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
+                                 var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
+                                 var txtamount ="<div style='display:flex'> <input type='button' class='btn btn-info down' value='-' data-min='1'/><input class='incdec quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required ><input type='button' class='btn btn-info up' value='+' data-max='100'/></div>"
+         
+                                 var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td class='hide'>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
+                                 $("#pos-table > tbody").prepend(newRow);
+                                 
+                                 console.log(">>>>> edit is selected");
+                                 // table = document.getElementById("pos-table");
+                                 // // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                                 // table.rows[rIndex].cells[1].innerHTML = $("#pos-product-name-txt").val();
+                                 // table.rows[rIndex].cells[2].innerHTML =  $("#pos-qty-txt").val();
+                                 // table.rows[rIndex].cells[3].innerHTML =  $("#pos-price-txt").val();
+                                 // table.rows[rIndex].cells[4].innerHTML = $("#pos-c-money-txt").val();
+                                 // table.rows[rIndex].cells[5].innerHTML =  $("#pos-total-txt").val()
+                                 
+                                 // var total= compute_total_sales();
+                                 // $("#id_amount").val(total.total_sales);
+
+                                 if(walk_in) {
+                                     total.total_cm =0;
+                                 }
+                                 // $("#venture-total-txt").val(total.total_sales + total.total_cm);
+                                 // $("#id_cc").val(total.total_cm);
+                                 adjust_total();
+
+                             
+
+                           //1
+                           }else {        
+                                        console.log("item: "+item_id);
+                                         curr_barcode = Barcode.POS;
+                                         $("#pos-product-code-txt").attr("item_id",item_pk);
+                                         $("#pos-product-name-txt").val( item.title  );//response['product_info']['title'].trim())
+                                         $("#pos-price-txt").val(price);
+                                         $("#pos-c-money-txt").val(cmoney);
+                                         $("#pos-qty-txt").val("1");
+                                         $("#pos-product-code-txt").attr("item_id",item_pk);
+                                         console.log("product_info ");
+                                          
+                                         $("#pos-total-txt").val(total);
+                                         hide_pos_editor(1);
+                                         if (item_id == "A0000"){
+
+                                             $("#pos-product-name-txt").focus();
+                                         }else{
+
+                                             $("#pos-qty-txt").focus();
+                                         }
+                                        
+
+
+                           }
+
+                          
+                       }else{
+                        
+                         beep();
+                         if(curr_barcode == Barcode.POS){
+                             $("#pos-product-code-txt").val(item_id);
+
+                         }
+                         $("#pos-product-code-txt").css("background-color","red");
+                         setTimeout(function () {
+                              
+                             $("#pos-product-code-txt").css("background-color","white");
+                             
+                         }, 10000);
+                         
+                          console.log("error retrieving product detail.");
+                       }
+
+
+
+
+
+
+    $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
+
+
+
+
+
+
+
+
+
+
+
+
        
       });
 
@@ -2088,33 +2371,25 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
             if (filter === 'all'){
                 product.style.display = 'block'
                 
-            }else if (filter === 'picks' ){
+            }else if (filter === 'picks' && walk_in != true){
               
                   console.log("-------------filter pick is chosen: "+filter);
-
-                   
-                        //  product.style.display = 'block';
-                         // console.log("product ida:" )
-                         // console.log($(product));  
+                 
                           var prod_id =product.id.trim();
                           if (product_codes.includes(product.id)){
                                 product.style.display = 'block';
                                 $("#btn-"+prod_id).css("background","green");
-                                  
                           }else
                           {
                             product.style.display = 'none'
                             $("#btn-"+prod_id).css("background","orange");
-                          //   console.log("------------customer loves product-"+"#div-"+prod_id);
-                          //   $("#btn-"+prod_id).css("background","orange");
-                          // //  $(product).attr("border","black");
-                          //           //  product.style.color ="black";
+                    
                           }
                         
                       
 
             } else {
-                console.log("????????????????????? filter: "+ filter);
+             //   console.log("????????????????????? filter: "+ filter);
                 if (product.classList.contains(filter)){
                     product.style.display = 'block';
                     console.log("product ida:" )
@@ -4403,8 +4678,8 @@ function erase_prod(){
                                     
                                    //  product_info ={"title":product_info_qs.title,"price":product_info_qs.price,"cm":product_info_qs.cm}
                                    $("#pos-product-code-txt").css("background-color","white")
-                                   title =item.title;//response['product_info']['title'].trim();
-                                   item_pk  =item.id;//response['product_info']['title'].trim();
+                                   title = item.title;//response['product_info']['title'].trim();
+                                   item_pk  = item.id;//response['product_info']['title'].trim();
                                    console.log("item_pk__--:"+item_pk);
                                    console.log("---------- whole_sale_price:" + item.whole_sale_price);
 

@@ -88,8 +88,11 @@ header h1 {
 
 #store-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    column-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
+    grid-gap: 2px;
     row-gap: .5rem;
     padding: .5rem 0;
 }

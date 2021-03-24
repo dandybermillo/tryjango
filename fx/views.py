@@ -714,12 +714,13 @@ def get_customer_details_bypass(request):
                     notes.append(row)
             except Exception as e:
                 print(f"Retrieving customer note error: {e}")
-            
-            product_codes = ProductSold.objects.all().values("item__product_id","item__title","member").distinct('item__product_id').filter( member = member_qs.id)
+            if member_qs.id !=   walk_in_id:
+                     product_codes = ProductSold.objects.all().values("item__product_id","item__title","member").distinct('item__product_id').filter( member = member_qs.id)
             codes=[]
             for row in product_codes:
-                codes.append(row["item__product_id"])
-                print(f"id : {row['item__product_id']} title: {row['item__title']}, member: {row['member']}")
+                if row["item__product_id"] != 1 and row['item__title'] !="none":
+                    codes.append(row["item__product_id"])
+                    print(f"id : {row['item__product_id']} title: {row['item__title']}, member: {row['member']}")
             
            
             
