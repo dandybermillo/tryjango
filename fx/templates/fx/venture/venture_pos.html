@@ -809,9 +809,9 @@ th {
 
 
     .item-control{
-      margin-bottom: 0px;
+      /* margin-bottom: 0px;
       font-size: 10px;
-      max-height: 40px;
+      max-height: 40px; */
             
     }
 </style>
@@ -1590,7 +1590,7 @@ th {
                     </form>
                 </div>
 
-                <!-- hey -->
+                
                 <div class="filter-box">
                     <a href="#" class="btn-product active" data-filter="all">All</a>
                     <a href="#" class="btn-product" data-filter="nobarcode">No Barcode</a>
@@ -1616,7 +1616,7 @@ th {
               <a href="javascript:;" data-menu="green"></a>
               <a href="javascript:;" data-menu="blue"></a>
               <hr>
-              <a href="javascript:;" >.</a>
+              <a href="javascript:;" data-menu="hide" >Hide</a>
             </menu>
              <!-- {% for obj in product_codes %}
                <p>  {{obj}}</p> 
@@ -1626,9 +1626,7 @@ th {
             {% for obj in items %}
                    <div  id="{{obj.product_id}}" style="max-height: 250px;" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
                          
-                     <div   class="item-containers">
-
-                        
+                           
                           <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
                           <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
                           <img class="product-img" style="padding-right:2px; width: 250px;max-height: 150px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
@@ -1640,59 +1638,9 @@ th {
                               <a   id="btn-{{obj.product_id}}" class="product-list" code="{{obj.product_id}}" href="#">Add item</a>
                           </div>
 
-                      </div>
 
-
-                          <!-- <div hidden class ="data-entry-container" style="width: 100%; border:1px solid red">
-                                  <form> 
-                                    <div class="form-row">
-                                      <div class="form-group col-sm item-control" >
-                                          <input  type="text" placeholder ="Barcode" class="form-control"  name="barcode"      required=""   >
-                                      </div>
-                                  </div>
-                                  
-                                  <div   class="form-row">
-                                    <div class="form-group col-sm item-control">
-                                        <input    placeholder ="Title"  name="title"  class="form-control "  type="text"/>
-                                    </div>
-                                  </div>
-                                  <div  class="form-row">
-                                    <div  class="form-group col-md item-control">
-                                        <input type="text" placeholder="Quantity"    class="form-control"
-                                          name="quantity" >
-                                    </div>
-                                  
-                                  </div>
-                                  <div  class="form-row">
-                                    <div class="form-group col-sm item-control">
-                                            <input type="text"   class="form-control"
-                                              name="price" placeholder="Price" />  
-                                        
-                                    </div>
-                                  
-                                  </div>
-                                  
-                                  
-                                  <div  class="form-row">
-                                        
-                                          
-                                        <div class="form-group col-md item-control item-control" >
-                                            <input type="text"     class="form-control"
-                                              name="regular_price" placeholder="Reular Price" >
-                                        </div>
-                                        
-                                  </div>
-                                  <div  class="form-row">
-                                              <div  class="form-group col-md item-control">
-                                                  <input type="text" placeholder="Whole Sale"    class="form-control"
-                                                    name="whole_sale" >
-                                              </div>
-                                  </div>
-                                  </form>
                           
-                          </div>
-           
-                     
+                      
 
                 </div>
           {% endfor %}
@@ -1708,6 +1656,10 @@ th {
 
            
         </div>
+
+
+
+
         <div class="modal-footer">
           <button id="add-product" type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
           <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -1744,6 +1696,88 @@ th {
       </div>
     </div>
   </div>
+
+  <!-- ----------------------------- price editor ------------------------------ -->
+
+  <div id ="price-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modify Price</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <form id="price-editor-form" action="" name="price_editor_form" class="contain needs-validation"   method="POST"> 
+        <div class="modal-body">
+         
+                  <div>
+                  
+                      <div class="form-row">
+                        <label for="barcode-txt" class="col-form-label">  Barcode </label>  
+                        <div class="form-group col-md-3 item-control" >
+                            <input id= "barcode-txt" type="text" placeholder ="Barcode" class="form-control"  name="barcode"   required   >
+                        </div>
+                    </div>
+                    
+                    <div   class="form-row">
+                      <label for="txttitle" class="col-form-label">  Title </label> 
+                      <div class="form-group col-md-3 item-control">
+                          <input required  id="txttitle" placeholder ="Title"  name="title"  class="form-control "  type="text"/>
+                      </div>
+                    </div>
+                    <div  class="form-row">
+                      <label for="txtquantity" class="col-form-label">  Quantity </label> 
+                      <div  class="form-group col-md item-control">
+                          <input required   placeholder="Quantity" type="number" step='any' min=0 max="10000"   class="form-control"
+                          id="txtquantity" name="quantity" >
+                      </div>
+                    
+                    </div>
+                    <div  class="form-row">
+                      <label for="txtprice" class="col-form-label">  Unit price </label> 
+                      <div class="form-group col-sm item-control">
+                              <input type="number" step='any' min=0 max="100000" required  class="form-control"
+                              id="txtprice" name="unit_price" placeholder="Price" />  
+                          
+                      </div>
+                    
+                    </div>
+                    
+                    
+                    <div  class="form-row">
+                      <label for="txtregularprice" class="col-form-label">  Regular price </label> 
+                            
+                          <div class="form-group col-md item-control item-control" >
+                              <input type="number" step='any' min=0 max="100000"  required   class="form-control"
+                              id="txtregularprice" name="regular_price" placeholder="Regular Price" >
+                          </div>
+                          
+                    </div>
+                     <div  class="form-row">
+                      <label for="txtwholesale" class="col-form-label">  Whole Sale </label> 
+                                <div  class="form-group col-md item-control">
+                                    <input type="number" step='any' min=0 max="100000" placeholder="Whole Sale"  required  class="form-control"
+                                    id="txtwholesale" name="whole_sale" >
+                                </div>
+                    </div>
+                     
+                </div>
+                
+           
+        </div>
+        <div class="modal-footer">
+          <button id="Submit-price-editor" type="submit" class="btn btn-primary">Save Changes</button>
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+
+
 
 
 
@@ -2143,8 +2177,10 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+      var price_data = "";
       $( ".store-product" ).contextmenu(function(e) {
-   console.log("==========================");
+         id =$(this).attr("id");
+   console.log("========================== id:"+ id);
     //  document.querySelector(".product-img").addEventListener("contextmenu", function (e) {
             e.preventDefault();
             var contextMenu = document.querySelector(".context-menu");
@@ -2153,9 +2189,12 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
             contextMenu.style.top = posY + "px";
             contextMenu.style.left = posX + "px";
             contextMenu.classList.add("shown");
+            
+            $(".context-menu").attr("code",id);
+
        });
        $(".context-menu").on('click',function(e){
-       
+                  
             var target = e.target;
             if (target.nodeName !== "A") return;
             var menu = target.getAttribute("data-menu");
@@ -2164,9 +2203,18 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
            // document.querySelector(".box").style.backgroundColor = color;
            // document.querySelector("#info").textContent = "You clicked " + info;
            console.log("---------color :"+ menu);
-           if (menu === "update"){
+           if (menu === "update"){  
+                  var code= $(this).attr("code").trim();
+                  console.log("=========================] code:"+ code);
+            //   $("#item-"+ code).hide();
+                 get_price(code);
+                $("#price-modal").modal("show");
 
 
+
+           }else {
+             console.log("---hide");
+            $("#price-modal").modal("hide");
 
            }
             this.classList.remove("shown");
@@ -2373,10 +2421,12 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                 
             }else if (filter === 'picks' && walk_in != true){
               
-                  console.log("-------------filter pick is chosen: "+filter);
+                  
                  
                           var prod_id =product.id.trim();
+                          console.log("----------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>: prod_id : "+prod_id);
                           if (product_codes.includes(product.id)){
+                            console.log("----------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                                 product.style.display = 'block';
                                 $("#btn-"+prod_id).css("background","green");
                           }else
@@ -2424,28 +2474,29 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
   // $("#autocomplete").val("");
 
 
-       
+       //search
 
       $("#search-product").on("keyup", function (e) {
     const text = e.target.value.toLowerCase();
-    
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> text:"+ text);
     productName.forEach(function(product) {
         const item = product.firstChild.textContent;
-        //console.log(">>>>>>>>>>>>>>> product:");
-     //   console.log(product.id);
+        
+        
         if (item.toLowerCase().indexOf(text) != -1) {
             product.parentElement.parentElement.style.display = "block"
-                    var prod_id =product.id.trim();
+                    var prod_id = product.id.trim();
                     if (product_codes.includes(product.id)){
+                          console.log("text: " +text+"id: "+ product.id+" -- ITem:"+ item);
                            $("#btn-"+prod_id).css("background","green");
-                            console.log("------------customer loves product-"+"#btn"+prod_id);
+                          //  console.log("------------customer loves product-"+"#btn"+prod_id + " title:");
                           //  console.log(product);
 
                         //  product.style.color ="red"
                             
                     }else
                     {
-                      console.log("------------customer loves product-"+"#div-"+prod_id);
+                      console.log("else:------------customer loves product-"+"#div-"+prod_id);
                       $("#btn-"+prod_id).css("background","orange");
                     //  $(product).attr("border","black");
                                //  product.style.color ="black";
@@ -3290,6 +3341,59 @@ console.log(items);
                         });
 
         }
+        ///heys
+
+        function get_price(product_id){
+
+          var data={};
+          //  $("#reset-form").trigger("click");
+          
+          data["product_id"] = product_id;
+          console.log("product_id:" +product_id);
+
+          console.log(data);
+
+          $.ajax({
+              type: "GET",
+              url: "/price_edit_view/",
+              data: data,
+              success: function (response) {
+                  // do something with response
+                
+
+                  if (response["type"] === "success") {
+                  
+                        console.log("-------success---------");
+                        console.log("response['data']");
+                        price_data = response["data"];
+
+                        console.log(price_data['title']);
+                        $('#barcode-txt').val(product_id);
+                        $('#txttitle').val(response["data"]['title']);
+                        
+                        $('#txtquantity').val(response["data"]['qty']);
+                        $('#txtprice').val(response["data"]['price']);
+                        $('#txtregularprice').val(response["data"]['reg_price']);
+                        $('#txtwholesale').val(response["data"]['whole_sale']);
+
+                        
+
+                  } else if (response["type"] === "error") {
+                  
+                        console.log("Unable to  get price!");
+
+                  }
+              },
+              error: function (response) {
+                
+                  console.log("Something went wrong! Try again..");
+              //   $("#login-error").text("Something went wrong! Try again.");
+              $("#login-danger-alert").fadeIn();  // alert message
+            //  closeSnoAlertBox("login","danger");
+              },
+              });
+
+}
         $("#press-me").click(function() {
           
 
@@ -4386,6 +4490,66 @@ $("#payment-login-lnk").click(function () {
 
 
         }
+        //heys
+        $("#Submit-price-editor").click(function (e) {
+           
+             
+           console.log("------------submit form init-----------");
+           
+          // var total_sales= parseFloat($("#venture-total-txt").val());
+          // saveTansactions(282);
+          //  if ( initialize == false && (total_sales <=0 ||  isNaN(total_sales) || submit_now == false)){
+          //      console.log("=============.");
+          //      console.log("total sales:"+total_sales);
+          //      console.log("submit_now: "+submit_now);
+          //   //   $(this).prop("disabled",true);
+          //      e.preventDefault();
+          //   //   submit_now =true;
+          //      return;
+          //  }
+          $.ajax({
+              type: "POST",
+              url: "/price_edit_view/",
+              data: $("#price-editor-form").serialize(),
+              success: function (response) {
+                  // do something with response
+                  if (response["type"] === "success") {
+                  
+                        console.log("-------success---------");
+                        console.log("response['data']");
+                        price_data = response["data"];
+
+                        console.log(price_data['title']);
+                        $('#barcode-txt').val(product_id);
+                        $('#txttitle').val(response["data"]['title']);
+                        
+                        $('#txtquantity').val(response["data"]['qty']);
+                        $('#txtprice').val(response["data"]['price']);
+                        $('#txtregularprice').val(response["data"]['reg_price']);
+                        $('#txtwholesale').val(response["data"]['whole_sale']);
+
+                        
+
+                  } else if (response["type"] === "error") {
+                  
+                        console.log("Unable to  get price!");
+
+                  }
+              },
+              error: function (response) {
+                
+                  console.log("Something went wrong! Try again..");
+              //   $("#login-error").text("Something went wrong! Try again.");
+              $("#login-danger-alert").fadeIn();  // alert message
+            //  closeSnoAlertBox("login","danger");
+              },
+              });
+
+
+           
+
+
+        });
         ///submit
 
         $("#venture-submit-btn").click(function (e) {

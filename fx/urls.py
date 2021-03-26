@@ -153,6 +153,8 @@ urlpatterns = [
   path('fx_pos/<int:customer_id>/<int:venture_id>/', views.create_update_venture1, name = "fx_pos_url"), 
 
   path('pos_view/', views.pos_view.as_view(), name = "pos_view_url"), 
+  path('price_edit_view/', views.price_edit_view.as_view(), name = "price_edit_view_url"), 
+  
   path('new_note_view/', views.new_note_view.as_view(), name = "new_note_view_url"), 
   # path('get_pos/', views.get_pos, name = "get_pos_url"),   #ajax call to get  pos transactions
 

@@ -43,7 +43,7 @@ class ProductModel(models.Model):
       reg_price = models.FloatField()
       srp = models.FloatField(default = 0)
       whole_sale_price = models.FloatField(default = 0)
-      product_id = models.CharField(max_length=13,blank =True)
+      product_id = models.CharField(max_length=13,blank =False)
       img = models.ImageField(blank =True, null =True) 
       sku =  models.CharField(max_length = 20,blank= True) 
       hasbarcode = models.BooleanField(default= True)

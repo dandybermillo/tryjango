@@ -35,6 +35,7 @@ from django.contrib.auth import (
     login,
     logout
 )
+from django.db.models import Count
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import template
@@ -2040,7 +2041,78 @@ class pos_view(View):
                     
                     
     
+#heys
+
+
+class price_edit_view(View):
+    
+    def get(self, request, *args, **kwargs):
+        print("---price_edit_view-")
+      
+        if  request.user.is_authenticated is True:  
+               
+                product_id = request.GET.get('product_id',"").strip()
+                print(f">>> >product_id:{product_id}")
+                try:
+                       product_qs =  ProductModel.objects.get(product_id=product_id)
+                       data ={"title":product_qs.title,"qty":product_qs.qty,"price":product_qs.price,"reg_price":product_qs.reg_price,"whole_sale":product_qs.whole_sale_price,"hasbarcode":product_qs.hasbarcode }
+                except Exception as e:
+                    print(f"Error: venture > 0 at POST: {e}")
+                    logger.warning("Error: venture > 0 at POST: {e}")
+                    return JsonResponse({"type":'error', "message":"Unable to read price!","data":{}})
+               
+                return JsonResponse({"type":'success', "message":"Success","data":data })
             
+                        
+        else:
+                        print("here------------------------------- ")
+                        return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+    def post(self, request, *args, **kwargs):
+         
+              
+                if request.user.is_staff and request.user.is_active:
+                            print (f"user: {request.user}")
+                            # staff_info=""
+                            # try:
+                            #     staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                            #     print(f"..staff_info:{staff_info.name}")
+                            # except Exception as e:
+                            # # raise Http404("Sorry. User id does not exist!")
+                            #     print(f"def cuv @exception, id: None , e:{e}")
+                            #     logger.warning(f"def cuv @exception,e:{e}" ) 
+                else:
+                                print("going to unauthorized user page")  
+                                return redirect('/venture_login/') #
+                            # return redirect('/unauthorized_user/') #
+               
+                
+                print(f"------Post--------")
+                barcode =   request.POST.get('barcode','').strip()
+                title = request.POST.get('title',"").strip()
+                quantity =float(request.POST.get('quantity',"0").strip())
+                unit_price = float(request.POST.get('unit_price','0').strip())
+                regular_price = float(request.POST.get('regular_price','0').strip())
+                whole_sale = request.POST.get('whole_sale',"0").strip()
+                
+                print(f"barcode: {barcode}, title: {title}, quantity: {quantity},unit price: {unit_price}, regular price: {regular_price}, whole: {whole_sale}")
+                filter_dict = {"product_id":barcode,"title":title,"qty":quantity,"price":unit_price,"reg_price":regular_price,"whole_sale_price":whole_sale}
+                try:
+                        res = ProductModel.objects.filter( product_id =barcode ).update( **filter_dict) #3 done editing
+                        return JsonResponse({"type":'success', "message":"Successfully updated"})
+                except Exception as e:
+                        
+                        print (f"error:{e}, {type(e)}")
+                        return JsonResponse({"type":'error', "message":"Unable to update item!","data":{}})
+                    #loan = ""
+                    #loan_qs = PersonalLoan.objects.filter(id=loan_qs.id) 
+                    # for result in loan_qs:
+                    #         loan = {"cc_loan":result.cc_loan,"saving":result.saving,"percent":result.percent,"source_type":result.source_type,"note":note}
+                        return {"type":"error"} 
+                return
+            
+             
+                    
+                               
 def display_itemList(request):
 
     return render(request, 'fx/venture/display_itemlist.html', {})
@@ -2165,6 +2237,11 @@ def create_update_venture1(request,customer_id,venture_id ):
     
     print(f"---------- id:{qs.id}")
     print (f"user: {request.user}")
+    
+    repeated_names = ProductModel.objects.values('title', 'product_id').annotate(Count('product_id')).order_by().filter(product_id__count__gt=1) 
+    for row in repeated_names:
+       print(f"title: {row['title']}------item__title: ")
+    
     default_percentage = 95  #
     if request.user.is_staff and request.user.is_active:
         print (f"user: {request.user}")
