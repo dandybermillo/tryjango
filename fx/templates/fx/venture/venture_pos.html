@@ -1624,7 +1624,7 @@ th {
            
            
             {% for obj in items %}
-                   <div  id="{{obj.product_id}}" style="max-height: 250px;" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
+                   <div  id="{{obj.product_id}}" pk="{{obj.id}}" style="max-height: 250px;" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
                          
                            
                           <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
@@ -1710,10 +1710,14 @@ th {
         </div>
 
         <form id="price-editor-form" action="" name="price_editor_form" class="contain needs-validation"   method="POST"> 
+          {% csrf_token %}
         <div class="modal-body">
          
                   <div>
-                  
+                    <input id= "product_pk" type="text"   class="form-control"  name="pk"   required   >
+                    <div id="price-editor-alert" class="alert alert-danger" role="alert" style="display:none">
+                      <span id="price-editor-alert-message"> </span>
+                   </div>
                       <div class="form-row">
                         <label for="barcode-txt" class="col-form-label">  Barcode </label>  
                         <div class="form-group col-md-3 item-control" >
@@ -1729,7 +1733,7 @@ th {
                     </div>
                     <div  class="form-row">
                       <label for="txtquantity" class="col-form-label">  Quantity </label> 
-                      <div  class="form-group col-md item-control">
+                      <div  class="form-group col-md-3 item-control">
                           <input required   placeholder="Quantity" type="number" step='any' min=0 max="10000"   class="form-control"
                           id="txtquantity" name="quantity" >
                       </div>
@@ -1737,7 +1741,7 @@ th {
                     </div>
                     <div  class="form-row">
                       <label for="txtprice" class="col-form-label">  Unit price </label> 
-                      <div class="form-group col-sm item-control">
+                      <div class="form-group col-md-3 item-control">
                               <input type="number" step='any' min=0 max="100000" required  class="form-control"
                               id="txtprice" name="unit_price" placeholder="Price" />  
                           
@@ -1749,7 +1753,7 @@ th {
                     <div  class="form-row">
                       <label for="txtregularprice" class="col-form-label">  Regular price </label> 
                             
-                          <div class="form-group col-md item-control item-control" >
+                          <div class="form-group col-md-3 item-control item-control" >
                               <input type="number" step='any' min=0 max="100000"  required   class="form-control"
                               id="txtregularprice" name="regular_price" placeholder="Regular Price" >
                           </div>
@@ -1757,7 +1761,7 @@ th {
                     </div>
                      <div  class="form-row">
                       <label for="txtwholesale" class="col-form-label">  Whole Sale </label> 
-                                <div  class="form-group col-md item-control">
+                                <div  class="form-group col-md-3 item-control">
                                     <input type="number" step='any' min=0 max="100000" placeholder="Whole Sale"  required  class="form-control"
                                     id="txtwholesale" name="whole_sale" >
                                 </div>
@@ -1769,7 +1773,7 @@ th {
         </div>
         <div class="modal-footer">
           <button id="Submit-price-editor" type="submit" class="btn btn-primary">Save Changes</button>
-          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Hide</button>
         </div>
 
       </form>
@@ -2178,9 +2182,12 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
     $(document).ready(function () {
       var price_data = "";
+      
+     
       $( ".store-product" ).contextmenu(function(e) {
-         id =$(this).attr("id");
-   console.log("========================== id:"+ id);
+         id = $(this).attr("id");
+         pk = $(this).attr("pk");
+   console.log("========================== pk:"+ pk);
     //  document.querySelector(".product-img").addEventListener("contextmenu", function (e) {
             e.preventDefault();
             var contextMenu = document.querySelector(".context-menu");
@@ -2191,6 +2198,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
             contextMenu.classList.add("shown");
             
             $(".context-menu").attr("code",id);
+            $(".context-menu").attr("pk",pk);
 
        });
        $(".context-menu").on('click',function(e){
@@ -3366,8 +3374,12 @@ console.log(items);
                         console.log("-------success---------");
                         console.log("response['data']");
                         price_data = response["data"];
+                        //console.log( price_data);
 
-                        console.log(price_data['title']);
+                        //console.log("--------------product_id:"+price_data['product_id']);
+                        pk =$("#"+product_id).attr("pk");
+                        console.log("--------------- pk:"+pk);
+                        $("#product_pk").val(pk);
                         $('#barcode-txt').val(product_id);
                         $('#txttitle').val(response["data"]['title']);
                         
@@ -4507,6 +4519,7 @@ $("#payment-login-lnk").click(function () {
           //   //   submit_now =true;
           //      return;
           //  }
+          e.preventDefault();
           $.ajax({
               type: "POST",
               url: "/price_edit_view/",
@@ -4514,25 +4527,33 @@ $("#payment-login-lnk").click(function () {
               success: function (response) {
                   // do something with response
                   if (response["type"] === "success") {
+                      //  item_data = response['data'];
+                        console.log("--------------product_id:"+price_data.title);
+                        //$('#barcode-txt').val(product_id);
+                      //  $('#txttitle').val(response["data"]['title']);
+                        
+                       // $('#txtquantity').val(response["data"]['qty']);
+                       // $('#txtprice').val(response.reg_price);
+                       // $('#txtregularprice').val(price_data.reg_price);
+                       // $('#txtwholesale').val(price_data.whole_sale);
                   
-                        console.log("-------success---------");
-                        console.log("response['data']");
-                        price_data = response["data"];
-
-                        console.log(price_data['title']);
-                        $('#barcode-txt').val(product_id);
-                        $('#txttitle').val(response["data"]['title']);
+                        //console.log("-------success---------:"+ print_data['product_id']);
                         
-                        $('#txtquantity').val(response["data"]['qty']);
-                        $('#txtprice').val(response["data"]['price']);
-                        $('#txtregularprice').val(response["data"]['reg_price']);
-                        $('#txtwholesale').val(response["data"]['whole_sale']);
+                      var product_id = $("#barcode-txt").val();
+                      console.log("---reg_price----------+::"+ $("#txtregularprice").val());
+                      $("#retail-"+product_id).val($("#txtregularprice").val());
+                      $("#whole-"+product_id).val($("#txtwholesale").val());
 
-                        
+                        $("#price-editor-alert").fadeIn();
+                        $("#price-editor-alert-message").text(response["message"]);
+                        setTimeout(function () {
+                            $("#price-editor-alert").hide();
+                        }, 5000);
+                      //  $("#price-editor-alert-message").text(response["message"]);
 
                   } else if (response["type"] === "error") {
                   
-                        console.log("Unable to  get price!");
+                        console.log("Unable to  update the price!");
 
                   }
               },

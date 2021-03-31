@@ -2087,6 +2087,7 @@ class price_edit_view(View):
                
                 
                 print(f"------Post--------")
+                pk = int(  request.POST.get('pk','0'))
                 barcode =   request.POST.get('barcode','').strip()
                 title = request.POST.get('title',"").strip()
                 quantity =float(request.POST.get('quantity',"0").strip())
@@ -2094,10 +2095,10 @@ class price_edit_view(View):
                 regular_price = float(request.POST.get('regular_price','0').strip())
                 whole_sale = request.POST.get('whole_sale',"0").strip()
                 
-                print(f"barcode: {barcode}, title: {title}, quantity: {quantity},unit price: {unit_price}, regular price: {regular_price}, whole: {whole_sale}")
+                print(f"pk: {pk},barcode: {barcode}, title: {title}, quantity: {quantity},unit price: {unit_price}, regular price: {regular_price}, whole: {whole_sale}")
                 filter_dict = {"product_id":barcode,"title":title,"qty":quantity,"price":unit_price,"reg_price":regular_price,"whole_sale_price":whole_sale}
                 try:
-                        res = ProductModel.objects.filter( product_id =barcode ).update( **filter_dict) #3 done editing
+                        res = ProductModel.objects.filter( id =pk ).update( **filter_dict) #3 done editing
                         return JsonResponse({"type":'success', "message":"Successfully updated"})
                 except Exception as e:
                         

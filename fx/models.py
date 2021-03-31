@@ -103,10 +103,10 @@ class ProductSold(models.Model):
       price = models.FloatField(default =0 )
       description =  models.CharField(max_length=100,blank= True,null =True)
       transaction_id = models.PositiveIntegerField(default =0)
-         
+      active =  models.BooleanField(default= False)
       def __str__(self):
         return f"{self.item.title}"
-      
+
 class CreditLineModel(models.Model): 
       DEPOSIT,WITHRAW =('D','W')
       t_type =( (DEPOSIT,"DEPOSIT"),(WITHRAW,"WITHRAW"))
