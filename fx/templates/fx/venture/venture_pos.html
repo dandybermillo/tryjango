@@ -73,9 +73,9 @@
  
 
     @media screen and (min-width: 676px) {
-        .modal-dialog {
-          max-width: 90%; /* New width for default modal */
-        }
+          .modal-xl {
+          max-width: 95% !important; /* New width for default modal  
+        } */
       }
     .customer-notes{
         padding:15px;
@@ -1788,10 +1788,10 @@ th {
 
   <!-- -------------------- product editor--------------- -->
   <div id ="product-modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modify Quantity</h5>
+          <h5 class="modal-title">Modify Quantitys</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -1804,41 +1804,63 @@ th {
 
             <div>
                 
+
+             
+
                
                 <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="pos-product-code-txt" class="col-form-label">  CODE </label>  <span
+                        <label for="pos-product-code-txt" class="col-md-1 col-form-label">  CODE </label>  <span
                         id="code-message-A0000" class="red-color"></span>
+                    <div class="form-group col-md-4 item-control">
+                       
                         <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                                readonly class="mid-size form-control">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="pos-product-name-txt" class="col-form-label">PRODUCT NAME<span
-                            class="asteriskField">*</span> </label>
+
+                  </div>
+
+                  <div class="form-row">
+                    <label for="pos-product-name-txt" class="col-md-1  col-form-label">ITEM NAME<span
+                      class="asteriskField">*</span> </label>
+                    <div class="form-group col-md-4 item-control">
+                      
                         <input id="pos-product-name-txt"  readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>  
-                    <div class="form-group col-md-1">
-                        <label for="pos-qty-txt" class="col-form-label">QTY<span
-                            class="asteriskField">*</span> </label>
-                      
+                  </div>
+
+                  <div class="form-row">
+                    <label for="pos-qty-txt" class="col-md-1 col-form-label">QTY<span
+                      class="asteriskField">*</span> </label>
+                    <div class="form-group col-md-4 item-control">
                         <input id="pos-qty-txt" readonly type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" value="{{member_info.member_id|upper}}">
                             
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="pos-price-txt" class="col-form-label">PRICE<span
-                            class="asteriskField">*</span> </label>
+                  </div>
+
+                    <div class="form-row">
+                      <label for="pos-price-txt" class="col-md-1  col-form-label">PRICE<span
+                        class="asteriskField">*</span> </label>
+                    <div class="form-group col-md-4 item-control">
+                       
                         <input id="pos-price-txt"  readonly type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
-                    <div hidden class="form-group col-md-1">
-                        <label for="pos-c-money-txt" class="col-form-label">C-MONEY </label>
+                  </div>
+                    <div class="form-row">
+                      <label for="pos-c-money-txt" class="col-md-1  col-form-label">C-MONEY </label>
+                    <div hidden class="form-group col-md-4 item-control">
+                       
                         <input id="pos-c-money-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
-                    <div class="form-group col-md-1">
-                        <label for="pos-total-txt" class="col-form-label"> TOTAL</label>
+                  </div>
+
+                    <div class="form-row">
+                      <label for="pos-total-txt" class="col-md-1  col-form-label"> TOTAL</label>
+                    <div class="form-group col-md-4 item-control">
+                        
                         <input id="pos-total-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
@@ -1848,6 +1870,17 @@ th {
                     
             
                 </div>
+                
+
+
+
+
+
+
+
+
+
+
 
                 <div class="row">
 
@@ -1866,6 +1899,7 @@ th {
                    
                    </div> 
 
+                   <div hidden class="form-row">
                     <div class="form-group col-md-4">
                         <div class="form-check form-check-inline">
                             <input class="chek-services form-check-input" checked type="checkbox" id="checkGrocery" value="Grocery">
@@ -1896,8 +1930,13 @@ th {
                                 id="venture-description-txt" name="note" maxlength="100">{{venture.note}}</textarea>
 
                         </div>
-                        </div>
-                  
+                   </div>
+                  </div>
+
+
+
+
+
                 </div>
                     
             </div>
