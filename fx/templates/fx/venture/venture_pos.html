@@ -75,7 +75,9 @@
     @media screen and (min-width: 676px) {
           .modal-xl {
           max-width: 95% !important; /* New width for default modal  
+           /* New width for default modal  
         } */
+        max-height: 50% !important;
       }
     .customer-notes{
         padding:15px;
@@ -814,6 +816,7 @@ th {
       max-height: 40px; */
             
     }
+  }
 </style>
 
 {%  endblock css_style %}
@@ -1069,7 +1072,7 @@ th {
                                     <div style="display:inline-flex" class="form-group col-md-8"  class="mid-size form-control"> 
                                     
                                     
-                                     <a style="margin-left:4px;margin-right: 3px;" id="clear-box" class="btn btn-warning btn-md">Search</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
+                                     <a style="margin-left:4px;margin-right: 3px;" id="search-all" class="btn btn-warning btn-md">Search</a>  <a   data-toggle="tooltip" data-placement="top" title="To activate the barcode reader."  id="press-me"   class="btn btn-secondary btn-md"   
                                     >  
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
@@ -1085,7 +1088,7 @@ th {
 
 
 
-                                        <a style="margin-left:10px" data-toggle="tooltip" data-placement="top" title="Start New Transaction" id="print" class="btn btn-info btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                        <a style="margin-left:10px" data-toggle="tooltip" data-placement="top" title="Print records" id="print" class="btn btn-info btn-md"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                                           <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
                                           <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
                                         </svg> </a>
@@ -1601,6 +1604,7 @@ th {
                     <a href="#" class="btn-product" data-filter="5">Drinks</a>
                     <a href="#" class="btn-product" data-filter="7">Snacks</a>
                     <a href="#" class="btn-product" data-filter="picks">Member's Pick</a>
+                   
                 </div>
             </div>
         </header>
@@ -1625,11 +1629,11 @@ th {
            
             {% for obj in items %}
                    <div  id="{{obj.product_id}}" pk="{{obj.id}}" style="max-height: 250px;" class="store-product {% if obj.hasbarcode %} {{obj.category}} {% else %} nobarcode {%endif %} ">
-                         
+                         <a href="#" class="product-qty" ></a>
                            
                           <!-- <img src="/static/img/480034400001.jpg" alt=""> -->
                           <!-- <img src="{% static '/img/products/default.jpg' %}" alt=""> -->
-                          <img class="product-img" style="padding-right:2px; width: 250px;max-height: 150px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
+                          <img class="product-img" code="{{obj.product_id}}" style="padding-right:2px; width: 250px;max-height: 150px;object-fit: fill" src="{% if obj.img %}  {{obj.img.url}} {% else %}  {% static '/img/products/default.jpg' %} {%endif%}" alt="">
                           <div class="product-details">
 
                               <h2 id="{{obj.product_id}}">{{obj.title}}</h2>
@@ -1700,7 +1704,7 @@ th {
   <!-- ----------------------------- price editor ------------------------------ -->
 
   <div id ="price-modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog  modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Modify Price</h5>
@@ -1714,34 +1718,34 @@ th {
         <div class="modal-body">
          
                   <div>
-                    <input id= "product_pk" type="text"   class="form-control"  name="pk"   required   >
+                    <input hidden id= "product_pk" type="text"   class="form-control"  name="pk"   required   >
                     <div id="price-editor-alert" class="alert alert-danger" role="alert" style="display:none">
                       <span id="price-editor-alert-message"> </span>
                    </div>
                       <div class="form-row">
-                        <label for="barcode-txt" class="col-form-label">  Barcode </label>  
-                        <div class="form-group col-md-3 item-control" >
+                        <label for="barcode-txt" class="col-md-3 col-form-label">  Barcode </label>  
+                        <div class="form-group col-md-9 item-control" >
                             <input id= "barcode-txt" type="text" placeholder ="Barcode" class="form-control"  name="barcode"   required   >
                         </div>
                     </div>
                     
                     <div   class="form-row">
-                      <label for="txttitle" class="col-form-label">  Title </label> 
-                      <div class="form-group col-md-3 item-control">
+                      <label for="txttitle" class="col-md-3 col-form-label">  Title </label> 
+                      <div class="form-group col-md-9 item-control">
                           <input required  id="txttitle" placeholder ="Title"  name="title"  class="form-control "  type="text"/>
                       </div>
                     </div>
                     <div  class="form-row">
-                      <label for="txtquantity" class="col-form-label">  Quantity </label> 
-                      <div  class="form-group col-md-3 item-control">
+                      <label for="txtquantity" class="col-md-3 col-form-label">  Quantity </label> 
+                      <div  class="form-group col-md-9 item-control">
                           <input required   placeholder="Quantity" type="number" step='any' min=0 max="10000"   class="form-control"
                           id="txtquantity" name="quantity" >
                       </div>
                     
                     </div>
                     <div  class="form-row">
-                      <label for="txtprice" class="col-form-label">  Unit price </label> 
-                      <div class="form-group col-md-3 item-control">
+                      <label for="txtprice" class="col-md-3 col-form-label">  Unit price </label> 
+                      <div class="form-group col-md-9 item-control">
                               <input type="number" step='any' min=0 max="100000" required  class="form-control"
                               id="txtprice" name="unit_price" placeholder="Price" />  
                           
@@ -1751,17 +1755,17 @@ th {
                     
                     
                     <div  class="form-row">
-                      <label for="txtregularprice" class="col-form-label">  Regular price </label> 
+                      <label for="txtregularprice" class="col-md-3 col-form-label">  Regular price </label> 
                             
-                          <div class="form-group col-md-3 item-control item-control" >
+                          <div class="form-group col-md-9 item-control item-control" >
                               <input type="number" step='any' min=0 max="100000"  required   class="form-control"
                               id="txtregularprice" name="regular_price" placeholder="Regular Price" >
                           </div>
                           
                     </div>
                      <div  class="form-row">
-                      <label for="txtwholesale" class="col-form-label">  Whole Sale </label> 
-                                <div  class="form-group col-md-3 item-control">
+                      <label for="txtwholesale" class="col-md-3 col-form-label">  Whole Sale </label> 
+                                <div  class="form-group col-md-9 item-control">
                                     <input type="number" step='any' min=0 max="100000" placeholder="Whole Sale"  required  class="form-control"
                                     id="txtwholesale" name="whole_sale" >
                                 </div>
@@ -1788,10 +1792,10 @@ th {
 
   <!-- -------------------- product editor--------------- -->
   <div id ="product-modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modify Quantitys</h5>
+          <h5 class="modal-title">Modify Quantity</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -1809,30 +1813,31 @@ th {
 
                
                 <div class="form-row">
-                        <label for="pos-product-code-txt" class="col-md-1 col-form-label">  CODE </label>  <span
+                        <label for="pos-product-code-txt" class="col-md-3 col-form-label">  CODE </label>  <span
                         id="code-message-A0000" class="red-color"></span>
-                    <div class="form-group col-md-4 item-control">
+                    <div class="form-group col-md-9 item-control">
                        
-                        <input id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                        <input hidden id="pos-product-code-txt"   type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                                readonly class="mid-size form-control">
+                               <label  class="col-md-3 col-form-label">  NO-BARCODE </label>     
                     </div>
 
                   </div>
 
                   <div class="form-row">
-                    <label for="pos-product-name-txt" class="col-md-1  col-form-label">ITEM NAME<span
+                    <label for="pos-product-name-txt" class="col-md-3 col-form-label">ITEM NAME<span
                       class="asteriskField">*</span> </label>
-                    <div class="form-group col-md-4 item-control">
+                    <div class="form-group col-md-9 item-control">
                       
-                        <input id="pos-product-name-txt"  readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                        <input id="pos-product-name-txt"  placeholder="Enter Item Name" readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>  
                   </div>
 
                   <div class="form-row">
-                    <label for="pos-qty-txt" class="col-md-1 col-form-label">QTY<span
+                    <label for="pos-qty-txt" class="col-md-3 col-form-label">QTY<span
                       class="asteriskField">*</span> </label>
-                    <div class="form-group col-md-4 item-control">
+                    <div class="form-group col-md-9 item-control">
                         <input id="pos-qty-txt" readonly type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" value="{{member_info.member_id|upper}}">
                             
@@ -1840,17 +1845,17 @@ th {
                   </div>
 
                     <div class="form-row">
-                      <label for="pos-price-txt" class="col-md-1  col-form-label">PRICE<span
+                      <label for="pos-price-txt" class="col-md-3  col-form-label">PRICE<span
                         class="asteriskField">*</span> </label>
-                    <div class="form-group col-md-4 item-control">
+                    <div class="form-group col-md-9 item-control">
                        
                         <input id="pos-price-txt"  readonly type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
                     </div>
                   </div>
-                    <div class="form-row">
-                      <label for="pos-c-money-txt" class="col-md-1  col-form-label">C-MONEY </label>
-                    <div hidden class="form-group col-md-4 item-control">
+                    <div hidden class="form-row">
+                      <label for="pos-c-money-txt" class="col-md-3  col-form-label">C-MONEY </label>
+                    <div  class="form-group col-md-4 item-control">
                        
                         <input id="pos-c-money-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
@@ -1858,8 +1863,8 @@ th {
                   </div>
 
                     <div class="form-row">
-                      <label for="pos-total-txt" class="col-md-1  col-form-label"> TOTAL</label>
-                    <div class="form-group col-md-4 item-control">
+                      <label for="pos-total-txt" class="col-md-3  col-form-label"> TOTAL</label>
+                    <div class="form-group col-md-9 item-control">
                         
                         <input id="pos-total-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
                             class="mid-size form-control" >
@@ -1886,15 +1891,14 @@ th {
 
 
                     <div class ="form-group col-md-8" style="padding-left:12px">
-                        <input data-toggle="tooltip" data-placement="top" title="Add Item"  id="pos-add-btn" class="btn btn-success btn-md" type="button"
-                        value="ADD" />
+                      
                     
-                        <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
-                    value="CANCEL/HIDE" /> 
+                        <!-- <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                    value="CANCEL/HIDE" />  -->
                         
                         
-                    <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
-                    value="DELETE" />
+                    <!-- <input data-toggle="tooltip" readonly data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
+                    value="DELETE" /> -->
 
                    
                    </div> 
@@ -1941,23 +1945,19 @@ th {
                     
             </div>
 
-<!--             
-            <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Quantity:</label>
-                  <input id="quantity-txt-modal" type="text" class="form-control">
-                </div>
-            </form> -->
-
+ 
 
 
         </div>
-        <div class="modal-footer"  style="display: block;">
+        <div class="modal-footer"  >
             
              
                  
-                
-                    <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">CLOSE</button>
+          <input data-toggle="tooltip" data-placement="top" title="Add Item"  id="pos-add-btn" class="btn btn-success btn-md" type="button"
+          value="ADD" />
+
+          
+                    <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">HIDE</button>
               
        
         </div>
@@ -2220,9 +2220,32 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+      var PRODUCTS_MODAL_SHOWN =false;
       var price_data = "";
       
-     
+      // $(".pos-field").on('click',function(e){
+      //     console.log("->>>>>>>>>>>>>>>>>>>>----------------------------pos filed clicked---------------------");
+      //    if (PRODUCTS_MODAL_SHOWN){
+      //        PRODUCTS_MODAL_SHOWN =false;
+      //      $("#products-modal").modal('hide');
+
+      //    }
+      
+      // });
+
+      $("body").delegate(".pos-field", "click", function(e){
+        console.log("->>>>>>>>>>>>>>>>>>>>----------------------------pos filed clicked---------------------");
+       // e.preventDefault();
+       
+        if (PRODUCTS_MODAL_SHOWN){
+             PRODUCTS_MODAL_SHOWN =false;
+            $("#products-modal").modal('hide');
+
+         }
+         $(this).trigger('focus');
+        
+      });
+
       $( ".store-product" ).contextmenu(function(e) {
          id = $(this).attr("id");
          pk = $(this).attr("pk");
@@ -2240,6 +2263,8 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
             $(".context-menu").attr("pk",pk);
 
        });
+
+       
        $(".context-menu").on('click',function(e){
                   
             var target = e.target;
@@ -2266,6 +2291,20 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
            }
             this.classList.remove("shown");
 });
+//hee
+    function show_item(barcode){
+
+     // $("#btn-"+barcode).text("U");
+      storeProducts.forEach((product)=> {
+
+        product.style.display = 'none';
+
+    
+      });    
+         $("#"+barcode.trim()).css("display","block");    
+         $("#products-modal").modal('show');    
+         PRODUCTS_MODAL_SHOWN =true;
+      };
 // document.addEventListener("click", function (e) {
 // 	var target = e.target;
 // 	while (target.nodeType !== Node.DOCUMENT_NODE) {
@@ -2299,10 +2338,37 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
       });
 
       
-      $(".product-list").on('click',function(){
+      $(".product-list,.product-img").on('click',function(){
+
+
         var item_id = $(this).attr("code");
-        console.log("--------code: "+ $(this).attr("code") );
+
+        var len = $("#c-"+item_id).length;
+        // if (len > 0) {
+        //   console.log("----------------- already existed...");
+        //                     if (Whole_sale) {
+        //                          console.log("---------------------------whole sale");
+        //                       //  price = parseFloat(item.whole_sale_price);
+        //                           price =parseFloat( $("#whole-"+ item_id).val());
+        //                     }else {
+        //                      //id="retail-{{obj.product_id}}"
+        //                         console.log("---------------------------retail");
+        //                         price = parseFloat( $("#retail-"+ item_id).val());
+        //                         console.log("price:"+ price);
+        //                         console.log("id:"+ "#retail-"+ item_id);
+        //                         //price = parseFloat(item.reg_price);  // parseFloat( response['product_info']['price']);
+        //                    }
+
+        //   return;
+        // }else
+        // {
+        //   console.log("----------------- new one");
+        // }
+
+        console.log("--------code or id: "+ $(this).attr("code") );
         $("#products-modal").modal("hide");
+        PRODUCTS_MODAL_SHOWN =false;
+        $("#"+item_id+" .product-qty").text("1");
         var item = items.find(items => items.product_id ===   item_id);
  
        if (item) {
@@ -2353,14 +2419,31 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
                            }
                            if(curr_barcode == Barcode.POS){
+                                 console.log("Barcode.POS ");
+                                if( len > 0) { 
 
-                             var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
+               
+                                  var presyo = parseFloat( $("#c-"+ item_id).find("td:eq(4)").text());
+                                  if( presyo != price){
+                                     $("#c-"+ item_id).find("td:eq(4)").text(price);
+                                  }
+ 
+
+
+                                   console.log("----------presyo::: "+ presyo);
+                                }else{
+                                  console.log("Barcode.POS ELSE ");
+
+                                 var btn = "<a   id=q-"+item_id+" class='quantity  btn btn-info'>1</a>";
                                  var tooltip ="data-toggle='tooltip' data-placement='top' title='"+ "Delete product name "+ title+"'";
                                  var txtamount ="<div style='display:flex'> <input type='button' class='btn btn-info down' value='-' data-min='1'/><input class='incdec quantity pos-field form-control' id=ii-"+item_id+ " type='number'  value='1' step='any' max ='10000' min ='0' required ><input type='button' class='btn btn-info up' value='+' data-max='100'/></div>"
          
                                  var newRow = "<tr  id=c-"+ item_id +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span class='white-color'>x</span></a></td>  <td class='hide'>"+item_id+"</td><td>"+title+"</td><td>"+txtamount+"</td><td>"+price+"</td><td class='hide'>"+cmoney+"</td><td>"+total+"</td><td class='hide'>"+ item_pk+"</td>   </tr>";
                                  $("#pos-table > tbody").prepend(newRow);
-                                 
+                               
+
+
+                                }
                                  console.log(">>>>> edit is selected");
                                  // table = document.getElementById("pos-table");
                                  // // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
@@ -2383,7 +2466,8 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                              
 
                            //1
-                           }else {        
+                           }else {      
+                                       console.log("Barcode.POS ELSE ");
                                         console.log("item: "+item_id);
                                          curr_barcode = Barcode.POS;
                                          $("#pos-product-code-txt").attr("item_id",item_pk);
@@ -2564,22 +2648,47 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
         $("#confim-modal-new_transaction").text("New Transaction?");
 
          var objs = [];
+
+
+
      
          $("body").delegate(".down", "click", function(){
-                console.log("dec");
-                var $incdec = $(this).next();
+                $("#products-modal").modal('hide');
+                PRODUCTS_MODAL_SHOWN =false;
+               
+                var $incdec = $(this).next(); 
+                var id = $incdec.attr("id");
+                id =  id.replace('ii-', '');
+                console.log("incdec----id: "+id);
+              
+                console.log($incdec);
                 if ($incdec.val() > $(this).data("min")) {
                             $incdec.val(parseFloat($incdec.val())-1);
                             }
+                var x = $("#ii-"+ id).val();
+                console.log("---x :"+ x)
+                  $("#"+id+" .product-qty").text(x);
+                //console.log("---xxx :"+ xxx)
                  adjust_total();
             });
 
             $("body").delegate(".up", "click", function(){
-                        
+                       if(PRODUCTS_MODAL_SHOWN)
+                        {
+                         $("#products-modal").modal('hide');
+                         PRODUCTS_MODAL_SHOWN =false;
+                           }
+
+                         console.log("......up is clicked")
                         var $incdec = $(this).prev();
+                        var id = $incdec.attr("id");
+                           id =  id.replace('ii-', '');
                     if ($incdec.val() < $(this).data("max")) {
                         $incdec.val(parseFloat($incdec.val())+1);
                     }
+                    var x = $("#ii-"+ id).val();
+                      console.log("---x :"+ x)
+                     $("#"+id+" .product-qty").text(x);
                         adjust_total();
             });
 
@@ -2921,6 +3030,7 @@ console.log(items);
                    if(alt_key !=0 && iKeyCode == 83){
                        
                         $("#products-modal").modal('show');
+                        PRODUCTS_MODAL_SHOWN = true;
                         // hide_pos_editor(1);
                         // clear_pos_top();
                         // $("#pos-product-code-txt").val("A0000");
@@ -2969,9 +3079,31 @@ console.log(items);
 			onScan.simulate(document, '121279');
         })()
  
+
+        confirm_new_transaction(function (confirm) {
+      //var obj = $("#yes-no-modal-new_transaction").val();
+
+      //var request_action = $(obj).text().trim();
+
+      console.log("Confirm: "+ confirm);
+      if (confirm) {
+        //  console.log("yes...................");
+          $(".loading").toggleClass("hidden");
+           location.reload(true);
+
+      }  
+    });
+
+
+
+
         $("#refresh").click(function(){
-            $(".loading").toggleClass("hidden");
-            location.reload(true);
+
+          $("#confim-modal-new_transaction").text("WARNING!   Are you sure you want refresh this page?");
+          $("#yes-no-modal-new_transaction").modal('show');
+        //  $("#yes-no-modal-new_transfer").val(obj);
+        //    $(".loading").toggleClass("hidden");
+          //  location.reload(true);
 
         });
 
@@ -3067,9 +3199,10 @@ console.log(items);
 
         }
 
-        $("#clear-box").click(function(event){
+        $("#search-all").click(function(event){
 
           $("#products-modal").modal('show');
+          PRODUCTS_MODAL_SHOWN =true;
 
             // $("#autocomplete").val("");
         });
@@ -3116,6 +3249,17 @@ console.log(items);
 
         $("body").delegate(".del-row", "click", function(){
             $("#product-modal").modal('hide');
+            if (PRODUCTS_MODAL_SHOWN === true){ 
+               $("#products-modal").modal('hide');
+               PRODUCTS_MODAL_SHOWN =false;
+            }
+            console.log("selected rows===========");
+            var id = $("tr.selected").attr("id");
+
+            id =  id.replace('c-', '');
+            console.log("id: "+id)
+            $("#"+id+" .product-qty").text("");
+            $("tr.selected").remove();
             $("tr.selected").remove();
             adjust_total();
 
@@ -3531,7 +3675,12 @@ console.log(items);
         
         $(".other-product").click(function() {
             clear_pos_top();
+            
+            $("#pos-add-btn").val("ADD");
+            $("#pos-qty-txt").val("1");
+          
             $("#product-modal").modal('show');
+            $('#pos-product-name-txt').trigger('focus')
           //  $("#pos-product-code-txt").focus();
 
 
@@ -3705,7 +3854,7 @@ console.log(items);
 
 
         //
-        $("#pos-delete-btn").prop("disabled",true);
+        // $("#pos-delete-btn").prop("disabled",true);
       //  $("#id_amount").css("font-size","30px")
 
 
@@ -3999,6 +4148,7 @@ console.log(items);
                         if (code == "A0000" || code == "AOOOO"){
                             quantity = parseFloat(currentRow.find("td:eq(3)").text());
                         }else{
+                         
                             quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
 
                         }
@@ -4122,41 +4272,41 @@ console.log(items);
             
 }
 //cancel
-       $("#pos-cancel-btn").click(function () {
+      //  $("#pos-cancel-btn").click(function () {
 
 
                
-               clear_pos_top();
-               hide_pos_editor(0);
-               $("#pos-add-btn").val("ADD");
-               $("#pos-delete-btn").prop("disabled",true);
-               $("#pos-product-name-txt").prop("readonly",true);
-               $("#pos-price-txt").prop("readonly",true);
-               $("#pos-qty-txt").prop("readonly",true);
+      //          clear_pos_top();
+      //          hide_pos_editor(0);
+      //          $("#pos-add-btn").val("ADD");
+      //          $("#pos-delete-btn").prop("disabled",true);
+      //          $("#pos-product-name-txt").prop("readonly",true);
+      //          $("#pos-price-txt").prop("readonly",true);
+      //          $("#pos-qty-txt").prop("readonly",true);
 
 
                
 
-             //  $("#pos-product-code-txt").prop("readonly",false);
-       });
-       $("#pos-delete-btn").click(function () {
-              // $("#pos-product-code-txt").prop("readonly",false);
+      //        //  $("#pos-product-code-txt").prop("readonly",false);
+      //  });
+      //  $("#pos-delete-btn").click(function () {
+      //         // $("#pos-product-code-txt").prop("readonly",false);
 
-               $("tr.selected").remove();
+      //          $("tr.selected").remove();
                
-               $(this).prop("disabled",true);
+      //          $(this).prop("disabled",true);
            
-               $("#pos-add-btn").val("ADD");
-               adjust_total();
-               clear_pos_top();
-               $('#press-me').trigger('focus')
-               $(this).focus();
-             setTimeout(function () {
+      //          $("#pos-add-btn").val("ADD");
+      //          adjust_total();
+      //          clear_pos_top();
+      //          $('#press-me').trigger('focus')
+      //          $(this).focus();
+      //        setTimeout(function () {
                 
-                hide_pos_editor(0);
-                }, 1000);
+      //           hide_pos_editor(0);
+      //           }, 1000);
 
-       });
+      //  });
 //hey
        $("#customer-info-alert-text").click(function () {
                     
@@ -4174,7 +4324,7 @@ console.log(items);
                      $("#product-modal").modal('hide');
                  //   $("#pos-product-code-txt").attr("readonly",false);
                     pcode = $("#pos-product-code-txt").val().trim();
-                    pname =
+                    pname = $("#pos-product-name-txt").val().trim();
                     
                     $("#pos-product-name-txt").val().trim();
                     console.log("pcode:"+pcode);
@@ -4331,14 +4481,15 @@ $("#payment-login-lnk").click(function () {
 // });
 //row click
         $('#pos-table tbody').on('click', 'tr', function(event) {
-                     console.log("click row");
+                     console.log("-------------click row");
                      rIndex = this.rowIndex;
-                     console.log(event);
+                    // console.log(event);
                      $(this).addClass('selected').siblings().removeClass('selected');   
                     // var value=$(this).find('td:first').html();
                      var  value = $(this).children("td:eq(1)").text().trim().toUpperCase();
                      if (value.length > 6 || value != "A0000"){
                          console.log("code: "+ value);
+                         show_item(value);
                        //  clear_pos_top();
                       //   hide_pos_editor(0);
                          event.preventDefault;
@@ -4391,7 +4542,7 @@ $("#payment-login-lnk").click(function () {
                     $("#pos-c-money-txt").val(tableData[5] );
                     $("#pos-total-txt").val(tableData[6] );
                     $("#pos-add-btn").val("SAVE CHANGES");
-                    $("#pos-delete-btn").prop("disabled",false);
+                    //$("#pos-delete-btn").prop("disabled",false);
                     // hide_pos_editor(1);
 
                     $("#product-modal").modal('show');
