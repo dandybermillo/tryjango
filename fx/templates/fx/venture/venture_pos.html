@@ -218,6 +218,16 @@ tr.pos-table td:nth-child(4) {
             }
 .down,.up{
     max-width: 60px !important;
+    color: black;
+}
+.down,.up,.pos-field{
+    background-color: transparent;
+    border: none;
+}
+.del-row{
+
+  background-color: transparent;
+  border: .5px solid gray;
 }
 .incdec{
     font-weight: bolder;
@@ -681,8 +691,8 @@ th {
 
 /* when row is selected */
 .selected {
-    color: white;
-    background-color: rgb(70, 70, 238);
+   
+    color: rgb(70, 70, 238);
 }
 /* -------------- */
     div.white {
@@ -868,6 +878,8 @@ th {
                     <div  hidden>
                         {{venture.in_charge}} {{venture.source_type}}{{venture.customer}}{{venture.percent}}
                         {{venture.transaction_type}}{{venture.customer_source_id}}{{venture.category}} 
+                        <input  id="credit-txt"  name="credit" readonly required type="text"  
+                                        value="yes">
                     </div>
                        <div id="left">
                         
@@ -916,6 +928,7 @@ th {
                                         <div class="dropdown-menu" aria-labelledby="source-cash-drop">
                                             <button class="source-cash dropdown-item" type="button">CASH</button>
                                             <button class="source-cash dropdown-item" type="button">WALLET ACCOUNT</button>
+                                            <button class="source-cash dropdown-item" type="button">CREDIT ACCOUNT</button>
                                         </div>
                                     </div>
                                 </div>
@@ -963,7 +976,7 @@ th {
                                     <label for="id_cc" class="bold-style col-form-label">COMMUNITY MONEY <a class ="option-maker" data-toggle="tooltip" data-placement="top" title="Switch to Increase Credit Limit "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                                         <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                      </svg> </a </label>
+                                      </svg> </a> </label>
                                     <input type="number" readonly name="cc" value="0" step="any" class="form-control" required="" id="id_cc"  min="0" max="5000">
                                 </div>
                             </div>  
@@ -2246,6 +2259,8 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
         
       });
 
+      
+
       $( ".store-product" ).contextmenu(function(e) {
          id = $(this).attr("id");
          pk = $(this).attr("pk");
@@ -2671,6 +2686,16 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                 //console.log("---xxx :"+ xxx)
                  adjust_total();
             });
+            $("body").delegate(".pos-field", "keyup", function(){
+                  var id = $(this).attr("id");
+                  id =  id.replace('ii-', '');
+                  var qty = $(this).val();
+                  console.log("....value: "+ qty);
+                  $("#"+id+" .product-qty").text(qty);
+                 adjust_total();
+
+             });
+
 
             $("body").delegate(".up", "click", function(){
                        if(PRODUCTS_MODAL_SHOWN)
@@ -3334,7 +3359,204 @@ console.log(items);
 
 
         });
-        
+        function get_credit_transaction(){
+
+              var data={};
+              //  $("#reset-form").trigger("click");
+              data["member_id"] =ID_Info.member_id;
+              console.log("data:");
+
+              console.log(data);
+             return;
+              $.ajax({
+                  type: "GET",
+                  url: "/pos_credit_view/",
+                  data: data,
+                  success: function (response) {
+                      // do something with response
+                      response["result"]; // equals 'Success or failed';
+                      response["message"]; // equals 'you"re logged in or You messed up';
+
+                      if (response["type"] === "success") {
+                      
+                            console.log("success: ps:");
+                            console.log(response["ps"]);
+                            walk_in =false;
+                            var pcode="";
+                            var pqty="";
+                            response["ps"].forEach(function (obj) {
+                                  //console.log("....item:",item);
+                                  console.log("obj: ")
+                                  console.log(obj);
+
+                                  var item = items.find(items => items.id ===   obj.item_id);
+                                  var tooltip=""
+                                  var btn=""
+                                  var no_barcode=""
+                                  var ptotal=""
+                                  if(item){
+                                    desc =item.title
+                                    pcode =item.product_id
+                                  }else
+                                  {
+
+                                      desc =obj.description;
+                                      pcode = obj.product_id;
+                                  }
+                                  var txtamount;
+
+                                  if (pcode =="A0000" || pcode =="AOOOO") { 
+                                    desc = obj.description;
+                                    btn = obj.qty;
+                                    txtamount = obj.qty;
+                                }else{
+                                    btn = "<a    class='quantity  btn btn-info'>"+obj.qty +"</a>";
+                                      txtamount ="<input value='"+ obj.qty+ "' class='quantity form-control' id='amount' name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required '>"
+
+
+                                }
+
+                                  var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+                                  console.log("newrowl:"+ newRow);    
+                                  $("#pos-table > tbody").prepend(newRow);
+
+                                // fill_table(item, row_ctr);
+
+                              });
+                            // console.log(response["member_info"]);
+                            // console.log(response["balances"]);
+                            // amount =response["data"]['amount'];
+                            // var source_type = response["data"]['source_type'];
+                            if (source_type =="K"){ 
+                                text = "CASH";
+                            }else if  (source_type == "W"){ 
+                                  text = "WALLET ACCOUNT"
+                            }else if  (source_type == "S"){ 
+                                  text = "SAVING ACCOUNT"
+                            }
+                            $("#source-cash-drop").text(text);
+                            cc = response["data"]['cc'];
+                            total =  amount + cc;
+                            $("#venture-total-txt").val(total.toFixed(0));
+                            $("#id_amount").val(amount);
+                            $("#id_cc").val(cc);
+                            $("#percent-drop").text( "95%"); //?95% r:variable
+                            var deposit_to ="SELECT OPTION";
+                            //console.log("destination_acct_code:" + response["data"]["destination_acct_code"] );
+                            // if(response["data"]["destination_acct_code"] == 'S' )
+                            // {
+                            //     deposit_to = "SAVING ACCT";
+                            // }else if ( response["data"]["destination_acct_code"] == 'W' ){
+                            //     deposit_to = "WALLET ACCT";  
+                            // }
+                                
+                            // $("#deposit-cash-drop").text(deposit_to);
+                            // $("#change_deposit_to").val(deposit_to); 
+                            // $("#transNumber").text("#"+response["data"]['venture_id']);
+                            // var desc = response["data"]['desc'].trim();
+                            //   // note = desc
+                            //   console.log("desc:"+ desc);
+                            //   if (desc.length > 0) {
+                            //     trim_description(desc);
+                            //   }else{
+
+                                
+                            //       $(".chek-services").prop("checked",false);    
+                            //       $("#venture-description-txt").val("");
+                            //   }
+
+                            // $("#note").val(desc);
+
+                            // if (response["data"]['change'] > 0){
+                            //     tendered =  amount + response["data"]['change'];
+                            //     $("#tender-txt").val(tendered);
+                            //     $("#change-txt").val(response["data"]['change']);
+                            // } else{
+
+                            //     $("#tender-txt").val("");
+                            //     $("#change-txt").val("");
+                            // }
+                            $("#source-type").val(response["data"]["source_type"]);
+                              adjust_total();
+                              name = response["member_info"]['name'].toUpperCase();
+                              $("#customer").val(response["member_info"]['id']);
+                            // console.log("id customer: " + $("#id_customer").val());
+                              cm_balance = response["balances"]['cc'];
+                              $("#id_cc").prop("max",cm_balance);
+                              w_balance=  response["balances"]['wallet'];
+                              s_balance =  response["balances"]['saving'];
+                              l_balance=  response["balances"]['loan'];
+                              credit_limit = response["balances"]['credit_limit'];
+                              
+
+                              table = document.getElementById("assets-table");
+                              // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                              console.log("--------------");
+                              console.log(response["balances"]);
+                            
+
+
+                  //             if (w_balance > 1000){
+                  //             w_balance= "1000+"
+                  //             } 
+                          
+                  //             s_balance =  response["balances"]['saving'];
+                  //             if (s_balance > 1000){
+                  //                 s_balance =  "1000+"
+                  //             } 
+                  //             if (cm_balance > 1000) {
+                  //                 cm_balance = "1000+";
+                  //             } 
+                  //             table.rows[1].cells[1].innerHTML = cm_balance;
+                  //             table.rows[1].cells[2].innerHTML = credit_limit;
+                              
+                  //             table.rows[1].cells[3].innerHTML = w_balance;
+                  //             table.rows[1].cells[4].innerHTML = s_balance;
+                  //             table.rows[1].cells[5].innerHTML = l_balance;
+                  //             cust_info = name + " | "+response["member_info"]["member_id"] ; //+ " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
+                  //             $("#customer-info-alert-text").text(cust_info);
+                            
+                  //             if (minimum_deposit > cm_balance) {
+                  //                 cm_balance = minimum_deposit;
+                  //             }
+                  //             $("#id_cc").prop("max", cm_balance);
+                  // //     $("#login-form").trigger("reset");
+                  // //     // $("#login-success").text(response["message"]);
+                  // //     // $("#login-success").css({ display: "block" });
+                  // //     console.log("Acccess granted");
+                  // //     // $("#user-page-lnk").click();
+                  // //     id = response["id"];
+                  // // //  window.location.replace("/user/"+id);
+                  //         $(".notes_div_child").remove();
+                  //         response["notes"].forEach(function (item) {
+                  //           // row_ctr = row_ctr + 1;
+
+                  //           $( "#notes_div" ).prepend("<div id ='child-"+item.id +"' class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
+                  //           });
+                      
+
+
+
+
+                      } else if (response["type"] === "error") {
+                      
+                      
+                      
+                      console.log("Acccess denied");
+
+                      }
+                  },
+                  error: function (response) {
+                      // do something with response
+                      console.log("Something went wrong! Try again..");
+                  //   $("#login-error").text("Something went wrong! Try again.");
+                  $("#login-danger-alert").fadeIn();  // alert message
+                //  closeSnoAlertBox("login","danger");
+                  },
+                  });
+
+              }
+///heys
         function get_transaction(){
 
                     var data={};
@@ -3745,7 +3967,10 @@ console.log(items);
             console.log(rows);
              
             console.log(JSON.stringify(rows));
-         
+            
+
+
+             
             $.ajax({
                 type: "POST",
                 url: "/post_itemSold/",
@@ -4765,11 +4990,12 @@ $("#payment-login-lnk").click(function () {
 
         $("#venture-submit-btn").click(function (e) {
            
-             
-            console.log("------------submit form init-----------");
+            var  credit = $("#credit-txt").val();
+            console.log("------------submit form init-----------credit:" + credit);
+           
             console.log("initialize: "+ initialize);
             var total_sales= parseFloat($("#venture-total-txt").val());
-            saveTansactions(282);
+          //  saveTansactions(282);
             if ( initialize == false && (total_sales <=0 ||  isNaN(total_sales) || submit_now == false)){
                 console.log("=============.");
                 console.log("total sales:"+total_sales);
@@ -4820,14 +5046,20 @@ $("#payment-login-lnk").click(function () {
                                         $("#source-type").val("K");
                                         $("#source-cash-drop").text("CASH");
                                         var venture_id = response["data"]["venture_id"];
+
+
+
+                                        //saveTansactions(venture_id); //1
+                                        saveTansactions(venture_id);
+
                                         console.log("firstname: "+ response["data"]["firstname"]);
                                         $("#venture-id").text("#"+venture_id);
                                         $("#transNumber").text("#"+venture_id);
                                         console.log(" Success in saving transaction");
                                         console.log(" trans Number: "+ venture_id);
                                        // if(  !$("#"+id).length){
-                                        if( venture_id > 0){
-                                            fillHistory(ID_Info.id,venture_id,"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
+                                        if(  venture_id > 0){
+                                             //fillHistory(ID_Info.id,venture_id,"#"+venture_id,"Grocery",$("#id_amount").val(),$("#id_cc").val());
                                         }
                                         // $("#salestotal-reps").val(sales_total.trim());
                                        
@@ -4850,7 +5082,7 @@ $("#payment-login-lnk").click(function () {
                                         
                                         console.log("Data");
                                         console.log(data);
-                                        saveTansactions(venture_id);
+                                       // saveTansactions(venture_id); //2
                                         $("#pos-form").trigger("reset");
                                         $("#deposit-cash-drop").text("SELECT OPTION");
                                         $("#change_deposit_to").val("SELECT OPTION"); 
@@ -5289,7 +5521,10 @@ function erase_prod(){
 
         }
 
-
+        $("#debt").click(function (e) {
+                
+              
+        });
                 function erasethis(){ 
         //search
         // function search_product_details(item_id) {
@@ -5499,7 +5734,7 @@ function erase_prod(){
                                 w_balance=  response["balances"]['wallet'];
                                 l_balance=  response["balances"]['loan'];
                                 credit_limit= response["balances"]['credit_limit'];
-                                
+                                debt = response["balances"]['debt'];
                                 if (w_balance > 1000){
                                     w_balance= "1,000+"
                                 } 
@@ -5524,6 +5759,8 @@ function erase_prod(){
                                 table.rows[1].cells[3].innerHTML = w_balance;
                                 table.rows[1].cells[4].innerHTML = s_balance;
                                 table.rows[1].cells[5].innerHTML = l_balance;
+                                table.rows[1].cells[6].innerHTML =  "<a id ='debt' href='#'  >"+ debt+"</a>";
+
                                 var member_id = response["member_info"]["member_id"].trim().toUpperCase();
                                 
                                 if(member_id =="WALK-IN"){
@@ -6144,6 +6381,9 @@ function erase_prod(){
         $(".source-cash").click(function () {
 
             var text = $(this).text().trim();
+
+            console.log(" source type is clicked: "+ text);
+
             $("#source-cash-drop").text(text);
             var max = 0
             account_name = ""
@@ -6169,22 +6409,27 @@ function erase_prod(){
 
 //wallet
             } else {
-                $("#pay-by-cash").hide();
-                $("#pay-by-wallet").show();
-                source_type = "W";
-                account_name = "WALLET";
-                keys['CC-BALANCE'] 
-                $(".has-change-group").prop("disabled", true);
-                $("#deposit-cash-drop").prop("disabled", true);
-                var tendered =  parseFloat($("#tender-txt").val());
-               
-                    if ( !isNaN(tendered)   &&  tendered > 0){
-                        tender =tendered;
-                        $("#change-txt").val("");
-                        $("#tender-txt").val("");
-                    }
 
 
+                if (text =="CREDIT ACCOUNT"){
+                    source_type = "D";
+                }else{
+                      source_type = "W";
+                      $("#pay-by-cash").hide();
+                      $("#pay-by-wallet").show();
+                      account_name = "WALLET";
+                      keys['CC-BALANCE'] 
+                      $(".has-change-group").prop("disabled", true);
+                      $("#deposit-cash-drop").prop("disabled", true);
+                      var tendered =  parseFloat($("#tender-txt").val());
+                    
+                          if ( !isNaN(tendered)   &&  tendered > 0){
+                              tender =tendered;
+                              $("#change-txt").val("");
+                              $("#tender-txt").val("");
+                          }
+
+                        }
 
             }
             keys["SOURCE"] = source_type;

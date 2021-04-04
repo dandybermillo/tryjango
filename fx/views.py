@@ -16,7 +16,7 @@ from .forms import MemberForm,UserLoginForm,PersonalLoanForm,PaymentForm,Venture
 from fx.models import MemberModel,Tmp_UsernameModel,Tmp_PasswordModel,VentureModel,IdRepositoryModel 
 from fx.models import PersonalLoanModel,CcModel,SavingModel,PaymentModel,PendingLoanModel,NoteModel,VentureWalletModel,VentureCcModel,TradingModel
 from fx.models import MechanicModel,LoanSummaryModel,tmpVariables,dayTransactionModel,JoinModel,MessageModel,LivePostModel,ProfileModel,RepairModel,DeliveryModel,ConstructionModel,LoadModel
-from fx.models import Change_Table,ProductModel,ProductSold,CustomerNoteModel,CreditLineModel
+from fx.models import Change_Table,ProductModel,ProductSold,CustomerNoteModel,CreditLineModel,VentureModels,ProductSolds
 from .forms import WalletForm,SavingForm
 
 from fx.models import WalletModel,CodeGeneratorModel,UserPreferenceModel
@@ -682,7 +682,7 @@ def get_product_details(request):
 
 
 def get_customer_details_bypass(request):
-    #-#
+    #//ey
     print("--def get customer details bypass")
     logger.info("--def get customer details")
     customer_id = request.GET.get("member_id", "").strip().lower()
@@ -723,9 +723,19 @@ def get_customer_details_bypass(request):
                     codes.append(row["item__product_id"])
                     print(f"id : {row['item__product_id']} title: {row['item__title']}, member: {row['member']}")
             
+            venture_id = 0
+            try:
+                    venture_qs = VentureModel.objects.get(source_type="D", customer_id =member_qs.id) #todo: handler
+                    print(f" ----------------------- venture_qs.id: { venture_qs.id}")
+                    venture_id =venture_qs.id
+                    balances["debt"] =venture_qs.amount
+                    
+            except Exception as e:
+                   print(f"Retrieving credit from venture table: {e}")
+                   venture_id =0
+            print(f"balances: {balances}")
            
-            
-            
+                
             return JsonResponse({"data":"Success","member_info":member_info,"balances":balances,'notes':notes,'product_codes':codes}, status = 200)
       except Exception as e:
             print (f"get customer detail bypass error: {e}, {type(e)}")
@@ -1526,6 +1536,41 @@ class new_note_view(View):
              
 # @login_required(login_url='/venture_login/')
 #pos
+
+class pos_credit_view(View): #$
+    def get(self, request, *args, **kwargs):
+                ps = []
+                try:
+                        productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
+                        
+                        for row in productSold:
+                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                                ps.append(row)
+                                       #   itemsold= ProductSold (member_id = customer,qty=obj["qty"],cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"],description=obj["description"],transaction_id=obj["transaction_id"])
+ 
+                except Exception as e:
+                    
+                            print(f"Pos description: {e}")
+                            logger.warning(f"Pos description: {e}")
+                            return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+            ps = [] #list of product ordered by credit
+            try:
+                        productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
+                        for row in productSold:
+                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                                print(f" row: {row}")
+                                ps.append(row)
+            except Exception as e:
+                    print(f"Pos description: {e}")
+                    logger.warning(f"Pos description: {e}")
+                    return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+            return JsonResponse({"type":'success', "message":"Success","data":{},"member_info":{},"balances":{},"ps":ps})
+            
+                        
+        # else:
+        #                 print("here------------------------------- ")
+        #                 return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}}))
+
 class pos_view(View):
     
     def get(self, request, *args, **kwargs):
@@ -1619,6 +1664,8 @@ class pos_view(View):
 #     return JsonResponse({"data":data})
 
 
+
+
                 notes= []
             
                 try:
@@ -1668,7 +1715,7 @@ class pos_view(View):
                             # return redirect('/unauthorized_user/') #
                
                 
-                print(f"------Post--------")
+                
                 customer =   request.POST.get('customer','0').strip()
                 if customer =="test":
                      return JsonResponse({"type":'success', "message":"Completed!","data":{}})
@@ -1681,6 +1728,54 @@ class pos_view(View):
                 cc = float(request.POST.get('cc','0').strip())
                 credit_line = float(request.POST.get('credit_line','0').strip())
                 note = request.POST.get('note',"").strip()
+                
+                
+                
+                
+                
+                
+                # for credit 
+                
+                
+                print(f"------Post--------")
+                credit = source_type #      request.POST.get('credit','').strip()
+                print(f"---credit: {credit}--------")
+                venture_id =0
+                
+                if source_type =="D":
+                    
+                    try:
+                                    venture_qs = VentureModel(customer_id = customer,category =6,
+                                    amount = amount,cc = 0,transaction_type ="W",date_entered = date.today(),
+                                    source_type =source_type,in_charge_id=staff_info.id,flag=1)
+                                    venture_qs.save()
+                                    venture_id = venture_qs.id
+                                    print(f"Success in writin to model, id: {venture_id}")
+                                    data = {"venture_id":venture_id}
+                                    return JsonResponse({"type":'success', "message":"Completed!","data":data})
+                    except Exception as e:
+                        Success = False
+                        print(f"creating venture transaction: {e}")
+                        return JsonResponse({"type":'error', "message":"Unable to save data!","data":{}})
+                      
+               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                # end for credit
+                
+                
+                
                 
                 print(f" type cust: {type(customer)}")
                  

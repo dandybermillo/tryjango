@@ -106,6 +106,21 @@ class ProductSold(models.Model):
      # credit =  models.BooleanField(default= False)
       def __str__(self):
         return f"{self.item.title}"
+class ProductSolds(models.Model): 
+      
+      member = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      item = models.ForeignKey(ProductModel,null =True, on_delete =models.SET_NULL ) # todo null=False
+      
+      #product_id = models.CharField(max_length=13,blank =True)
+      qty = models.FloatField(default =0)
+      amount = models.FloatField(default =0 )
+      cm = models.FloatField(default =0 )
+      price = models.FloatField(default =0 )
+      description =  models.CharField(max_length=100,blank= True,null =True)
+      transaction_id = models.PositiveIntegerField(default =0)
+     # credit =  models.BooleanField(default= False)
+      def __str__(self):
+        return f"{self.item.title}"
 
 class CreditLineModel(models.Model): 
       DEPOSIT,WITHRAW =('D','W')
@@ -487,6 +502,7 @@ class WalletModel(models.Model):
     
     class Meta:
       ordering = ['-id']
+      
 class VentureWalletModel(models.Model):  
     
     REG_TRANSACTION,TRANSFER,GROCERY,LOAN,VENTURE,TRADE =(0,1,2,5,6,7)
@@ -559,11 +575,38 @@ class VentureModel(models.Model):
       t_type =( (DEPOSIT,"DEPOSIT"),(WITHRAW,"WITHRAW"))
       UNACCEPTED,ACCEPTED,BEING_EDITED,DONE_EDITING =(0,1,2,3)
       flag_type = ((UNACCEPTED,"UNACCEPTED") ,(ACCEPTED,"ACCEPTED"),(BEING_EDITED,"BEING_EDITED") ,(DONE_EDITING,"DONE_EDITING"))
-      CASH,WALLET,SAVING =('K','W','S')
+      CASH,WALLET,SAVING,DEBT =('K','W','S','D')
       sources =((WALLET,"WALLET ACCOUNT"),
-        (CASH,"CASH"),(SAVING,"SAVINGS ACCOUNT"))
+        (CASH,"CASH"),(SAVING,"SAVINGS ACCOUNT"),(DEBT,"CREDIT ACCOUNT"))
       customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Customer' ) # todo null=False
       in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='in_charge' ) # todo null=False
+      transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
+      category = models.PositiveIntegerField(default = 2 ,choices = cat) # 0 means  debit or credit in general
+      amount = models.FloatField(verbose_name ="AMOUNT (PHP)",blank =False,null =False)
+      cc = models.FloatField(verbose_name ="CO. MONEY",default =0)
+      percent = models.FloatField(default =95)
+      source_type = models.CharField(max_length=1,default = 'K',choices = sources)  #c: cash
+      customer_source_id = models.IntegerField(default = 0) # for wallet
+      customer_cc_id = models.IntegerField(default = 0) # for cc or cmoney
+      date_entered = models.DateField(verbose_name ="Date", blank= True, null =True)
+      flag = models.PositiveIntegerField(default = 0 ,choices = flag_type)
+      note_id = models.IntegerField(default =0)
+      @property
+      def total_cost(self):
+          return self.amount + self.cc
+class VentureModels(models.Model):
+      REG_TRANSACTION,TRANSFER,GROCERY,LOAN,TRADE =(0,1,2,5,7)
+      cat =((REG_TRANSACTION,"REGULAR TRANSACTION"),
+        (TRANSFER,"TRANSFER"),(GROCERY,"GROCERY"),(LOAN,"LOAN"),(TRADE,"TRADE"))
+      DEPOSIT,WITHRAW =('D','W')
+      t_type =( (DEPOSIT,"DEPOSIT"),(WITHRAW,"WITHRAW"))
+      UNACCEPTED,ACCEPTED,BEING_EDITED,DONE_EDITING =(0,1,2,3)
+      flag_type = ((UNACCEPTED,"UNACCEPTED") ,(ACCEPTED,"ACCEPTED"),(BEING_EDITED,"BEING_EDITED") ,(DONE_EDITING,"DONE_EDITING"))
+      CASH,WALLET,SAVING,DEBT =('K','W','S','D')
+      sources =((WALLET,"WALLET ACCOUNT"),
+        (CASH,"CASH"),(SAVING,"SAVINGS ACCOUNT"))
+      customer = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='Trading_Customers' ) # todo null=False
+      in_charge = models.ForeignKey(MemberModel,null =True, on_delete =models.SET_NULL,related_name='in_charges' ) # todo null=False
       transaction_type = models.CharField(max_length=1,blank =True,choices=t_type)  #Todo: false here
       category = models.PositiveIntegerField(default = 2 ,choices = cat) # 0 means  debit or credit in general
       amount = models.FloatField(verbose_name ="AMOUNT (PHP)",blank =False,null =False)
