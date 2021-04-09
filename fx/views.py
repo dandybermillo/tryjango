@@ -1539,6 +1539,21 @@ class new_note_view(View):
 
 class pos_credit_view(View): #$
     def get(self, request, *args, **kwargs):
+                customer =    request.GET.get('customer_id','0').strip()
+                customer = parseint(customer)
+                print(f"--- customer: {customer}")
+                 
+                venture_id = 0
+                dat=[]
+                try:
+                        venture_qs = VentureModel.objects.get(source_type="D", customer_id =customer) #todo: handler
+                        print(f" ----------------------- venture_qs.id: { venture_qs.id}")
+                        venture_id =venture_qs.id
+                        dat.append({"debt":venture_qs.amount})
+                        
+                except Exception as e:
+                    print(f"Retrieving credit from venture table: {e}")
+                    venture_id =0
                 ps = []
                 try:
                         productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
@@ -1553,18 +1568,18 @@ class pos_credit_view(View): #$
                             print(f"Pos description: {e}")
                             logger.warning(f"Pos description: {e}")
                             return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
-            ps = [] #list of product ordered by credit
-            try:
-                        productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
-                        for row in productSold:
-                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
-                                print(f" row: {row}")
-                                ps.append(row)
-            except Exception as e:
-                    print(f"Pos description: {e}")
-                    logger.warning(f"Pos description: {e}")
-                    return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
-            return JsonResponse({"type":'success', "message":"Success","data":{},"member_info":{},"balances":{},"ps":ps})
+                ps = [] #list of product ordered by credit
+                try:
+                            productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
+                            for row in productSold:
+                                    row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                                    print(f" row: {row}")
+                                    ps.append(row)
+                except Exception as e:
+                        print(f"Pos description: {e}")
+                        logger.warning(f"Pos description: {e}")
+                        return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+                return JsonResponse({"type":'success', "message":"Success","data":dat,"member_info":{},"balances":{},"ps":ps})
             
                         
         # else:
@@ -2141,6 +2156,7 @@ class pos_view(View):
 
 class price_edit_view(View):
     
+    
     def get(self, request, *args, **kwargs):
         print("---price_edit_view-")
       
@@ -2363,7 +2379,7 @@ def create_update_venture1(request,customer_id,venture_id ):
                     cc_balance = maximum_deposit
                 asset_balance ={"cc_balance":cc_balance}
                 
-    tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:30]   #.values('createdate').annotate(count=Count('id'))
+    tx = VentureModel.objects.select_related('customer').filter(date_entered__lte=datetime.today(),   in_charge_id =staff_info.id).order_by("-pk")[:1130]   #.values('createdate').annotate(count=Count('id'))
     #date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30
    # notes = CustomerNoteModel.objects.filter(date_entered__lte=datetime.today(), date_entered__gt=datetime.today()-timedelta(days=30),   member_id =4).order_by("-pk")[:100]
     print(f"--- in charge: {staff_info.id}")

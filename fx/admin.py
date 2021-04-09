@@ -151,7 +151,7 @@ class SkillCategoryModelAdmin(admin.ModelAdmin):
 class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['id','product_id',"title",'price','reg_price','whole_sale_price','srp','qty','sku','img','category','hasbarcode']
     list_filter = ("product_id","category")
-    search_fields = ['title']
+    search_fields = ['title',"product_id"]
 class ItemSoldModelAdmin(admin.ModelAdmin):
     list_per_page= 100
     list_display = ['id','item',"qty",'amount','cm','price','description','transaction_id',"member_id"]

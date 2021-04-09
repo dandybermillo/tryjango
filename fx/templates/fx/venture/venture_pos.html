@@ -1800,7 +1800,180 @@ th {
 
 
 
+ <!-- -------------------- product credit editor--------------- -->
 
+ <div id ="product-credit-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog  modal-lg" role="document">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modify Item Sold</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+
+
+        <form id="product-credit-editor-form" action="" name="price_credit_editor_form" class="contain needs-validation"   method="POST"> 
+          {% csrf_token %}
+      <div class="modal-body">
+                       
+
+                      <div class="form-row">
+                        <label  class="col-md-3 col-form-label">  CODE </label>  <span
+                        id="product-code-credit-txt" class="red-color"></span>
+                     </div>
+
+                      <div class="form-row">
+                        <label for="product-credit-name-txt" class="col-md-3 col-form-label">ITEM NAME<span
+                          class="asteriskField">*</span> </label>
+                        <div class="form-group col-md-9 item-control">
+                          
+                            <input id="product-credit-name-txt"  placeholder="Enter Item Name" readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                                class="mid-size form-control" >
+                        </div>  
+                      </div>
+
+                      <div class="form-row">
+                        <label for="qty-credit-txt" class="col-md-3 col-form-label">QUANTITY<span
+                          class="asteriskField">*</span> </label>
+                        <div class="form-group col-md-9 item-control">
+                            <input id="qty-credit-txt"   type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                                class="mid-size form-control"  >
+                                
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <label for="price-credit-txt" class="col-md-3  col-form-label">PRICE<span
+                          class="asteriskField">*</span> </label>
+                            <div class="form-group col-md-9 item-control">
+                                <input id="price-credit-txt"    type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                                    class="mid-size form-control" >
+                            </div>
+                      </div>
+                     
+                      <div hidden class="form-row">
+                        <label for="c-money-credit-txt" class="col-md-3  col-form-label">C-MONEY </label>
+                      <div  class="form-group col-md-4 item-control">
+                         
+                          <input id="c-money-credit-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                              class="mid-size form-control" >
+                      </div>
+                    </div>
+  
+                      <div class="form-row">
+                        <label for="total-credit-txt" class="col-md-3  col-form-label"> TOTAL</label>
+                      <div class="form-group col-md-9 item-control">
+                          
+                          <input id="total-credit-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                              class="mid-size form-control" >
+                      </div>
+  
+                  </div>
+
+
+
+         
+      </div>
+      <div class="modal-footer">
+        
+               <input data-toggle="tooltip" data-placement="top" title="Save any changes to this item"  id="submit-price-credit-editor" class="btn btn-success btn-md" type="submit"
+          value="SAVE CHANGES" /> 
+          <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="delete-credit-btn" class="btn btn-danger btn-md" type="button"
+          value="DELETE  ITEM" />
+          
+                    <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">HIDE</button>
+             
+
+
+      </div>
+
+
+    </form>
+
+     
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+
+  <!-- -------------------- product credit editor---------------x -->
+  <div id ="product-credit-modalx" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+
+     
+        <div class="modal-header">
+          <h5 class="modal-title">Modify Item Sold</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+
+            <div>
+
+               
+                   
+
+                    
+                
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+
+
+                    <div class ="form-group col-md-8" style="padding-left:12px">
+                      
+                    
+                        <!-- <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                    value="CANCEL/HIDE" />  -->
+                        
+                        
+                    <!-- <input data-toggle="tooltip" readonly data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
+                    value="DELETE" /> -->
+
+                   
+                   </div> 
+
+                </div>
+                    
+            </div>
+
+
+        </div>
+        <div class="modal-footer"  >
+                 
+          <!-- <input data-toggle="tooltip" data-placement="top" title="Save any changes to this item"  id="submit-price-credit-editor" class="btn btn-success btn-md" type="submit"
+          value="SAVE CHANGES" /> 
+          <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="delete-credit-btn" class="btn btn-danger btn-md" type="button"
+          value="DELETE  ITEM" />
+          
+                    <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">HIDE</button>
+               -->
+       
+        </div>
+
+     
+      </div>
+   
+    </div>
+ 
+  <!-- ----------------------------- burger end ----------------------------------- -->
 
 
   <!-- -------------------- product editor--------------- -->
@@ -1814,17 +1987,7 @@ th {
           </button>
         </div>
         <div class="modal-body">
-
-
-
-
-
             <div>
-                
-
-             
-
-               
                 <div class="form-row">
                         <label for="pos-product-code-txt" class="col-md-3 col-form-label">  CODE </label>  <span
                         id="code-message-A0000" class="red-color"></span>
@@ -1834,9 +1997,7 @@ th {
                                readonly class="mid-size form-control">
                                <label  class="col-md-3 col-form-label">  NO-BARCODE </label>     
                     </div>
-
                   </div>
-
                   <div class="form-row">
                     <label for="pos-product-name-txt" class="col-md-3 col-form-label">ITEM NAME<span
                       class="asteriskField">*</span> </label>
@@ -1978,8 +2139,109 @@ th {
     </div>
   </div>
   <!-- ----------------------------- burger end ----------------------------------- -->
+  <div id ="product-credit-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-header">
+        <h5 class="modal-title">Modify Item Sold</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+               <!-- <div class="form-row">
+                      <label  class="col-md-3 col-form-label">  CODE </label>  <span
+                      id="product-code-credit-txt" class="red-color"></span>
+                </div>
+                <div class="form-row">
+                  <label for="product-credit-name-txt" class="col-md-3 col-form-label">ITEM NAME<span
+                    class="asteriskField">*</span> </label>
+                  <div class="form-group col-md-9 item-control">
+                      <input id="product-credit-name-txt"  placeholder="Enter Item Name" readonly type="text" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control" >
+                  </div>  
+                </div>
+
+                <div class="form-row">
+                  <label for="qty-credit-txt" class="col-md-3 col-form-label">QUANTITY<span
+                    class="asteriskField">*</span> </label>
+                  <div class="form-group col-md-9 item-control">
+                      <input id="qty-credit-txt"   type="number" step='any' min=".0001" max="1000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control"  >
+                  </div>
+                </div>
+
+                  <div class="form-row">
+                    <label for="price-credit-txt" class="col-md-3  col-form-label">PRICE<span
+                      class="asteriskField">*</span> </label>
+                  <div class="form-group col-md-9 item-control">
+                      <input id="price-credit-txt"    type="number" step='any' min=1 max="100000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control" >
+                  </div>
+                </div>  
+                 <div hidden class="form-row">
+                    <label for="c-money-credit-txt" class="col-md-3  col-form-label">C-MONEY </label>
+                  <div  class="form-group col-md-4 item-control">
+                     
+                      <input id="c-money-credit-txt" readonly  type="number" step='any' min=1 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control" >
+                  </div> -->
+             
+
+                  <div class="form-row">
+                    <label for="total-credit-txt" class="col-md-3  col-form-label"> TOTAL</label>
+                  <div class="form-group col-md-9 item-control">
+                      
+                      <input id="total-credit-txt"  readonly type="number" step='any' min=0 max="10000" style="border-bottom:1px solid gray;font-weight: bolder;"
+                          class="mid-size form-control" >
+                  </div>
 
 
+                
+                  
+          
+              </div>
+
+
+              <div class="row">
+
+
+                  <div class ="form-group col-md-8" style="padding-left:12px">
+                    
+                  
+                      <!-- <input data-toggle="tooltip" data-placement="top" title="Cancel this item"  id="pos-cancel-btn" class="btn btn-info btn-md" type="button"
+                  value="CANCEL/HIDE" />  -->
+                      
+                      
+                  <!-- <input data-toggle="tooltip" readonly data-placement="top" title="Delete this item"  id="pos-delete-btn" class="btn btn-danger btn-md" type="button"
+                  value="DELETE" /> -->
+
+                 
+                 </div> 
+
+              </div>
+                  
+        
+
+
+      </div>
+      <div class="modal-footer"  >
+               
+        <!-- <input data-toggle="tooltip" data-placement="top" title="Save any changes to this item"  id="submit-price-credit-editor" class="btn btn-success btn-md" type="submit"
+        value="SAVE CHANGES" /> 
+        <input data-toggle="tooltip" data-placement="top" title="Delete this item"  id="delete-credit-btn" class="btn btn-danger btn-md" type="button"
+        value="DELETE  ITEM" />
+        
+                  <button data-toggle="tooltip" data-placement="top" title="Hide this form" type="button" class="float-left btn btn-secondary" data-dismiss="modal">HIDE</button>
+             -->
+     
+      </div>
+
+   
+    </div>
+ 
+  </div>
+<!-- ----------------------------- end test -------------------- -->
     <div class="modal fade" id="venture-payment-transaction-modal" data-backdrop="static" data-keyboard="false"
         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -2256,6 +2518,21 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
 
          }
          $(this).trigger('focus');
+        
+      });
+      $("body").delegate("#debt", "click", function(e){
+        $("#hamburger").trigger('click');
+           console.log(" -------------debt is click")
+          get_credit_transaction();
+      //   console.log("->>>>>>>>>>>>>>>>>>>>----------------------------pos filed clicked---------------------");
+      //  // e.preventDefault();
+       
+      //   if (PRODUCTS_MODAL_SHOWN){
+      //        PRODUCTS_MODAL_SHOWN =false;
+      //       $("#products-modal").modal('hide');
+
+      //    }
+      //    $(this).trigger('focus');
         
       });
 
@@ -3360,14 +3637,14 @@ console.log(items);
 
         });
         function get_credit_transaction(){
-
+               //ello
               var data={};
               //  $("#reset-form").trigger("click");
-              data["member_id"] =ID_Info.member_id;
+              data["customer_id"] =customerInfo.id;
               console.log("data:");
 
               console.log(data);
-             return;
+              
               $.ajax({
                   type: "GET",
                   url: "/pos_credit_view/",
@@ -3384,6 +3661,7 @@ console.log(items);
                             walk_in =false;
                             var pcode="";
                             var pqty="";
+                            $("#pos-table tbody tr").remove();
                             response["ps"].forEach(function (obj) {
                                   //console.log("....item:",item);
                                   console.log("obj: ")
@@ -3411,12 +3689,12 @@ console.log(items);
                                     txtamount = obj.qty;
                                 }else{
                                     btn = "<a    class='quantity  btn btn-info'>"+obj.qty +"</a>";
-                                      txtamount ="<input value='"+ obj.qty+ "' class='quantity form-control' id='amount' name='" + pcode + "_amount' type='number' step='any' max ='10000' min ='0' required '>"
+                                      txtamount = obj.qty 
 
 
                                 }
-
-                                  var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td><a "+ tooltip+" class='del-row btn btn-danger'><span    class='white-color' " + tooltip +">x</span></a>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+                                  ptotal =obj.qty *obj.price;
+                                  var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                   console.log("newrowl:"+ newRow);    
                                   $("#pos-table > tbody").prepend(newRow);
 
@@ -3425,116 +3703,32 @@ console.log(items);
                               });
                             // console.log(response["member_info"]);
                             // console.log(response["balances"]);
-                            // amount =response["data"]['amount'];
-                            // var source_type = response["data"]['source_type'];
+                             amount =response["data"]['amount'];
+                             var source_type = response["data"]['source_type'];
                             if (source_type =="K"){ 
                                 text = "CASH";
                             }else if  (source_type == "W"){ 
                                   text = "WALLET ACCOUNT"
                             }else if  (source_type == "S"){ 
                                   text = "SAVING ACCOUNT"
+                            }else{
+                              text = "CREDIT ACCOUNT"
                             }
+                            $("#source-type").val("D");
                             $("#source-cash-drop").text(text);
                             cc = response["data"]['cc'];
                             total =  amount + cc;
-                            $("#venture-total-txt").val(total.toFixed(0));
-                            $("#id_amount").val(amount);
-                            $("#id_cc").val(cc);
+                            //$("#venture-total-txt").val(total.toFixed(0));
+                            //$("#id_amount").val(amount);
+                           // $("#id_cc").val(cc);
                             $("#percent-drop").text( "95%"); //?95% r:variable
                             var deposit_to ="SELECT OPTION";
-                            //console.log("destination_acct_code:" + response["data"]["destination_acct_code"] );
-                            // if(response["data"]["destination_acct_code"] == 'S' )
-                            // {
-                            //     deposit_to = "SAVING ACCT";
-                            // }else if ( response["data"]["destination_acct_code"] == 'W' ){
-                            //     deposit_to = "WALLET ACCT";  
-                            // }
-                                
-                            // $("#deposit-cash-drop").text(deposit_to);
-                            // $("#change_deposit_to").val(deposit_to); 
-                            // $("#transNumber").text("#"+response["data"]['venture_id']);
-                            // var desc = response["data"]['desc'].trim();
-                            //   // note = desc
-                            //   console.log("desc:"+ desc);
-                            //   if (desc.length > 0) {
-                            //     trim_description(desc);
-                            //   }else{
-
-                                
-                            //       $(".chek-services").prop("checked",false);    
-                            //       $("#venture-description-txt").val("");
-                            //   }
-
-                            // $("#note").val(desc);
-
-                            // if (response["data"]['change'] > 0){
-                            //     tendered =  amount + response["data"]['change'];
-                            //     $("#tender-txt").val(tendered);
-                            //     $("#change-txt").val(response["data"]['change']);
-                            // } else{
-
-                            //     $("#tender-txt").val("");
-                            //     $("#change-txt").val("");
-                            // }
-                            $("#source-type").val(response["data"]["source_type"]);
                               adjust_total();
-                              name = response["member_info"]['name'].toUpperCase();
-                              $("#customer").val(response["member_info"]['id']);
-                            // console.log("id customer: " + $("#id_customer").val());
-                              cm_balance = response["balances"]['cc'];
-                              $("#id_cc").prop("max",cm_balance);
-                              w_balance=  response["balances"]['wallet'];
-                              s_balance =  response["balances"]['saving'];
-                              l_balance=  response["balances"]['loan'];
-                              credit_limit = response["balances"]['credit_limit'];
-                              
-
                               table = document.getElementById("assets-table");
                               // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
                               console.log("--------------");
                               console.log(response["balances"]);
                             
-
-
-                  //             if (w_balance > 1000){
-                  //             w_balance= "1000+"
-                  //             } 
-                          
-                  //             s_balance =  response["balances"]['saving'];
-                  //             if (s_balance > 1000){
-                  //                 s_balance =  "1000+"
-                  //             } 
-                  //             if (cm_balance > 1000) {
-                  //                 cm_balance = "1000+";
-                  //             } 
-                  //             table.rows[1].cells[1].innerHTML = cm_balance;
-                  //             table.rows[1].cells[2].innerHTML = credit_limit;
-                              
-                  //             table.rows[1].cells[3].innerHTML = w_balance;
-                  //             table.rows[1].cells[4].innerHTML = s_balance;
-                  //             table.rows[1].cells[5].innerHTML = l_balance;
-                  //             cust_info = name + " | "+response["member_info"]["member_id"] ; //+ " | "+cm_balance+" | "+ w_balance+" | "+s_balance;  
-                  //             $("#customer-info-alert-text").text(cust_info);
-                            
-                  //             if (minimum_deposit > cm_balance) {
-                  //                 cm_balance = minimum_deposit;
-                  //             }
-                  //             $("#id_cc").prop("max", cm_balance);
-                  // //     $("#login-form").trigger("reset");
-                  // //     // $("#login-success").text(response["message"]);
-                  // //     // $("#login-success").css({ display: "block" });
-                  // //     console.log("Acccess granted");
-                  // //     // $("#user-page-lnk").click();
-                  // //     id = response["id"];
-                  // // //  window.location.replace("/user/"+id);
-                  //         $(".notes_div_child").remove();
-                  //         response["notes"].forEach(function (item) {
-                  //           // row_ctr = row_ctr + 1;
-
-                  //           $( "#notes_div" ).prepend("<div id ='child-"+item.id +"' class='notes_div_child'><span> <strong>"+ get_date(item.date_entered) +"</strong></span><p id='"+item.id+"' class='customer-notes align-left'> "+ item.note +"</p></div>");
-                  //           });
-                      
-
 
 
 
@@ -4240,6 +4434,41 @@ console.log(items);
             $("#yes-no-modal-venture_payment").modal('show');
         });
 
+        $("#qty-credit-txt").on("keyup", function (event) {
+                  var qty = parseFloat($(this).val());
+                  var price = parseFloat($("#price-credit-txt").val());
+                  var total = qty * price;
+                  $("#total-credit-txt").val( total);
+
+                    if( event.which == 13){
+                            submit_now = false;
+                            $("#price-credit-txt").focus();
+                            return;
+                    }
+
+
+
+
+
+          });
+          $("#price-credit-txt").on("keyup", function (event) {
+                  var price = parseFloat($(this).val());
+                  var qty = parseFloat($("#qty-credit-txt").val());
+                  var total = qty * price;
+                  $("#total-credit-txt").val( total);
+
+                    if( event.which == 13){
+                            submit_now = false;
+                            $("#price-credit-txt").focus();
+                            return;
+                    }
+
+
+
+
+
+          });
+
        // ------------------- pos table --------------
        // 
        $("#pos-qty-txt").on("keyup", function (event) {
@@ -4374,7 +4603,12 @@ console.log(items);
                             quantity = parseFloat(currentRow.find("td:eq(3)").text());
                         }else{
                          
+                            source_type = $("#source-type").val().trim();
+                             if(source_type =="D") {
+                                      
+                             }else{ 
                             quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+                             }
 
                         }
                       
@@ -4543,9 +4777,37 @@ console.log(items);
           
        });
 
+          //modify item 
+          $("#submit-price-credit-editor").click(function () {
+                                        table = document.getElementById("pos-table");
+                                        // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                                      //  table.rows[rIndex].cells[2].innerHTML = $("#pos-product-name-txt").val();
+                                        table.rows[rIndex].cells[3].innerHTML =   $("#qty-credit-txt").val();
+                                        table.rows[rIndex].cells[4].innerHTML =  $("#price-credit-txt").val();
+                                       // cmoney =parseFloat( $("#pos-c-money-txt").val());
+                                        //cmoney = cmoney.toFixed(2)
+                                       // table.rows[rIndex].cells[5].innerHTML = cmoney;
+                                        table.rows[rIndex].cells[6].innerHTML =  $("#total-credit-txt").val()
+                                       // table.rows[rIndex].cells[7].innerHTML = $("#pos-qty-txt").val();
+ 
+                        setTimeout(function () {
+                            hide_pos_editor(0);
+                        }, 10000);
 
+                        adjust_total();
+                        clear_pos_top();
+                        $("#pos-product-name-txt").prop("readonly",true);
+                        // $("#pos-price-txt").prop("readonly",true);
+                        // $("#pos-qty-txt").prop("readonly",true);
+                        
+                        $("#product-credit-modal").modal('hide');
+                       // $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
+
+          });
 //add
        $("#pos-add-btn").click(function () {
+
+                    console.log("add new item click");
                      $("#product-modal").modal('hide');
                  //   $("#pos-product-code-txt").attr("readonly",false);
                     pcode = $("#pos-product-code-txt").val().trim();
@@ -4626,7 +4888,8 @@ console.log(items);
                                         $("#pos-table > tbody").prepend(newRow);
                                         pqty = parseInt(pqty);
                                         product_detail.units = product_detail.units + pqty;
-                    }else
+                    }
+                    else
                     {
                                     console.log(">>>>> edit is selected");
                                     table = document.getElementById("pos-table");
@@ -4706,10 +4969,46 @@ $("#payment-login-lnk").click(function () {
 // });
 //row click
         $('#pos-table tbody').on('click', 'tr', function(event) {
+                      var source_type= $("#source-type").val().trim(); 
+                      console.log("source type:"+source_type);
+                      rIndex = this.rowIndex;
+                      $(this).addClass('selected').siblings().removeClass('selected');   
+                      if (source_type =="D")
+                      {
+                              var tableData = $(this).children("td").map(function() {
+                              return $(this).text();
+
+                          }).get();
+                          var td=tableData[1] +  '*' +  tableData[2] + '*' + tableData[3] + '*' +  tableData[4] + '*' + tableData[5];
+                          console.log(td);
+                          pcode =  tableData[1].trim();
+
+
+                            $("#product-code-credit-txt").text(tableData[1]);
+                            $("#product-credit-name-txt").val(tableData[2] );
+                            $("#qty-credit-txt").val(tableData[3] );
+                            $("#price-credit-txt").val(tableData[4] );
+                           // $("#pos-c-money-txt").val(tableData[5] );
+                           console.log("tableData[6] :"+tableData[6] );
+                            $("#total-credit-txt").val( tableData[6] );
+
+                        $("#product-credit-modal").modal("show");
+
+
+
+                        return;
+                      }
+
+                         
+
+                          
+
+
+
                      console.log("-------------click row");
-                     rIndex = this.rowIndex;
+                    
                     // console.log(event);
-                     $(this).addClass('selected').siblings().removeClass('selected');   
+                    
                     // var value=$(this).find('td:first').html();
                      var  value = $(this).children("td:eq(1)").text().trim().toUpperCase();
                      if (value.length > 6 || value != "A0000"){
@@ -4729,6 +5028,11 @@ $("#payment-login-lnk").click(function () {
                     var td=tableData[1] +  '*' +  tableData[2] + '*' + tableData[3] + '*' +  tableData[4] + '*' + tableData[5];
                     console.log(td);
                     pcode =  tableData[1].trim();
+
+
+
+
+
 
                     if (pcode ==""){
                         return;
@@ -4918,6 +5222,77 @@ $("#payment-login-lnk").click(function () {
 
         }
         //heys
+        //heys
+        $("#submit-price-credit-editor").click(function (e) {
+            
+             
+           console.log("------------submit credit form init-----------");
+           
+          // var total_sales= parseFloat($("#venture-total-txt").val());
+          // saveTansactions(282);
+          //  if ( initialize == false && (total_sales <=0 ||  isNaN(total_sales) || submit_now == false)){
+          //      console.log("=============.");
+          //      console.log("total sales:"+total_sales);
+          //      console.log("submit_now: "+submit_now);
+          //   //   $(this).prop("disabled",true);
+          //      e.preventDefault();
+          //   //   submit_now =true;
+          //      return;
+          //  }
+          e.preventDefault();
+
+
+          // $.ajax({
+          //     type: "POST",
+          //     url: "/price_edit_view/",
+          //     data: $("#price-editor-form").serialize(),
+          //     success: function (response) {
+          //         // do something with response
+          //         if (response["type"] === "success") {
+          //             //  item_data = response['data'];
+          //               console.log("--------------product_id:"+price_data.title);
+          //               //$('#barcode-txt').val(product_id);
+          //             //  $('#txttitle').val(response["data"]['title']);
+                        
+          //              // $('#txtquantity').val(response["data"]['qty']);
+          //              // $('#txtprice').val(response.reg_price);
+          //              // $('#txtregularprice').val(price_data.reg_price);
+          //              // $('#txtwholesale').val(price_data.whole_sale);
+                  
+          //               //console.log("-------success---------:"+ print_data['product_id']);
+                        
+          //             var product_id = $("#barcode-txt").val();
+          //             console.log("---reg_price----------+::"+ $("#txtregularprice").val());
+          //             $("#retail-"+product_id).val($("#txtregularprice").val());
+          //             $("#whole-"+product_id).val($("#txtwholesale").val());
+
+          //               $("#price-editor-alert").fadeIn();
+          //               $("#price-editor-alert-message").text(response["message"]);
+          //               setTimeout(function () {
+          //                   $("#price-editor-alert").hide();
+          //               }, 5000);
+          //             //  $("#price-editor-alert-message").text(response["message"]);
+
+          //         } else if (response["type"] === "error") {
+                  
+          //               console.log("Unable to  update the price!");
+
+          //         }
+          //     },
+          //     error: function (response) {
+                
+          //         console.log("Something went wrong! Try again..");
+          //     //   $("#login-error").text("Something went wrong! Try again.");
+          //     $("#login-danger-alert").fadeIn();  // alert message
+          //   //  closeSnoAlertBox("login","danger");
+          //     },
+          //     });
+
+
+           
+
+
+        });
         $("#Submit-price-editor").click(function (e) {
            
              
@@ -5160,7 +5535,9 @@ $("#payment-login-lnk").click(function () {
                 }
                   
             });
-
+    
+              
+      //   });
 function erase_prod(){ 
 //code
         //  $("#pos-product-code-txt").keyup(function (event) {
@@ -5521,10 +5898,7 @@ function erase_prod(){
 
         }
 
-        $("#debt").click(function (e) {
-                
-              
-        });
+        
                 function erasethis(){ 
         //search
         // function search_product_details(item_id) {
