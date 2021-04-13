@@ -2495,6 +2495,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
     })();
 
     $(document).ready(function () {
+      var transaction_credit_id = 0;
       var PRODUCTS_MODAL_SHOWN =false;
       var price_data = "";
       
@@ -2521,9 +2522,9 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
         
       });
       $("body").delegate("#debt", "click", function(e){
-        $("#hamburger").trigger('click');
+           $("#hamburger").trigger('click');
            console.log(" -------------debt is click")
-          get_credit_transaction();
+           get_credit_transaction();
       //   console.log("->>>>>>>>>>>>>>>>>>>>----------------------------pos filed clicked---------------------");
       //  // e.preventDefault();
        
@@ -2557,6 +2558,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
        });
 
        
+      
        $(".context-menu").on('click',function(e){
                   
             var target = e.target;
@@ -2691,7 +2693,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                                  cmoney = 0;
                              }else{
 
-                              cmoney=  cmoney.toFixed(2)
+                              cmoney = cmoney.toFixed(2)
                              }
                           
                            
@@ -2703,7 +2705,7 @@ $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', functi
                                total = price * 1; 
                              
                            }else{
-                               total = price - cmoney;
+                               total = price;// - cmoney; // remove due to wrong total for credit account
                            }
                            
                            if (price <=0){
@@ -3657,7 +3659,8 @@ console.log(items);
                       if (response["type"] === "success") {
                       
                             console.log("success: ps:");
-                            console.log(response["ps"]);
+                            console.log("-------- credit id:" + response["transaction_credit_id"]);
+                            transaction_credit_id = response["transaction_credit_id"];
                             walk_in =false;
                             var pcode="";
                             var pqty="";
@@ -3694,13 +3697,14 @@ console.log(items);
 
                                 }
                                   ptotal =obj.qty *obj.price;
-                                  var newRow = "<tr class='pos-table'  id=c-"+ pcode +"><td>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
+                                  var newRow = "<tr code =" + obj.pk +" class='pos-table'  id=c-"+ pcode +"><td>  </td>  <td class='hide'>"+pcode+"</td><td>"+desc+"</td><td>"+txtamount+"</td> <td>"+obj.price+"</td><td class='hide'>"+obj.cm+"</td><td>"+ptotal+"</td><td class='hide'>"+obj.item_id+"</td> <td class='hide'>"+no_barcode+"</td></tr>";
                                   console.log("newrowl:"+ newRow);    
-                                  $("#pos-table > tbody").prepend(newRow);
+                                  $("#pos-table > tbody").append(newRow);
 
                                 // fill_table(item, row_ctr);
 
                               });
+                              
                             // console.log(response["member_info"]);
                             // console.log(response["balances"]);
                              amount =response["data"]['amount'];
@@ -4105,12 +4109,12 @@ console.log(items);
         });
 
      function saveTansactions(transaction_id){
-        console.log("save transaction tansaction id: =========")
+        console.log("save transaction tansaction id: "+transaction_id);
         console.log(transaction_id);
         var rows = [];
             $('#pos-table tr').each(function(i, n){
                 // console.log("----tr---");
-                // console.log(this);
+                 
                 // console.log($(this).find("td:eq(3) input[type='number']"));
                 var $row = $(n);
                 var code = $row.find('td:eq(1)').text().trim().toUpperCase();
@@ -4140,11 +4144,14 @@ console.log(items);
                 if (isNaN(quantity)){
                     quantity = 1;
                 }
-                console.log("quantity >"+code);
-                console.log(quantity);
-                 
-              //  quantity :parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
-                rows.push({
+                trans_code =  $(this).attr("code");
+                console.log("code:"+ trans_code);
+                if ( trans_code > 0){
+                 // console.log("--- undefined trans code: " + $(this).attr("code"));
+
+                }else
+                {
+                  rows.push({
                   //  product_id: $row.find('td:eq(1)').text(),
                     qty:   quantity ,
                     description:desc,
@@ -4155,14 +4162,25 @@ console.log(items);
                     transaction_id:transaction_id,
                     item_id:  $row.find('td:eq(7)').text(),
                 });
+                  console.log("---- undefined trans code: " + $(this).attr("code"));
+                }
+              
+               // console.log(quantity);
+                 
+              //  quantity :parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+            
+
+                
+               
             }
             });
+
             console.log("rows----------");
             console.log(rows);
              
             console.log(JSON.stringify(rows));
             
-
+           
 
              
             $.ajax({
@@ -4581,7 +4599,8 @@ console.log(items);
                         
          }
          function adjust_total(){
-
+           console.log("returnin........");
+ 
             var total = new Object();
             // loop over each table row (tr)
                 var ctr =0;
@@ -4604,11 +4623,15 @@ console.log(items);
                         }else{
                          
                             source_type = $("#source-type").val().trim();
-                             if(source_type =="D") {
-                                      
-                             }else{ 
-                            quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
-                             }
+                            if(source_type =="D") {
+                               quantity = parseFloat(currentRow.find("td:eq(3)").text());  
+                               console.log(",,,,,,,,,, quantity:"+ quantity+ "  code:"+code );
+                               if (isNaN(quantity) || quantity <=0){
+                                quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+                               }
+                            }else{ 
+                                 quantity = parseFloat(currentRow.find("td:eq(3) input[type='number']").val());
+                            }
 
                         }
                       
@@ -4626,7 +4649,7 @@ console.log(items);
 
 
                             if (isNaN(quantity)) {
-                            quantity =0;
+                                       quantity =0;
                                   }  
                                  console.log("quantity: "+ quantity);
                      
@@ -4654,29 +4677,31 @@ console.log(items);
                             // console.log("---walk-in");
                             tot =  price * quantity;
                         }else{
-                           // console.log("---member");
-                                ded = cm * quantity;
-                                //console.log("--==== ded: "+ded);
-                                addition_deduction = (ded * .5) + ded;
-                            if (Credit_option == INCREMENTAL){
-                               
-                                tot =(price * quantity) - addition_deduction;
-                            }
-                            else{
-                            //   addition_deduction = 0;
-                               tot =(price * quantity);
-                            }
 
-                                //tot =(price * quantity) - addition_deduction;
-                                total_cm = total_cm +  addition_deduction; 
+                                        
+                               
+                                          ded = cm * quantity;
+                                          //console.log("--==== ded: "+ded);
+                                          addition_deduction = (ded * .5) + ded;
+                                      if (Credit_option == INCREMENTAL){
+                                        
+                                          tot =(price * quantity) - addition_deduction;
+                                      }
+                                      else{
+                                      //   addition_deduction = 0;
+                                        tot =(price * quantity);
+                                      }
+                                          console.log("<<<<<<<< tot:"+ tot);
+                                          //tot =(price * quantity) - addition_deduction;
+                                          total_cm = total_cm +  addition_deduction; 
                              
                         }
-                       // console.log("cm :"+ cm + "  total: "+amount+ " "+tot + " qty: "+qty );
+                        console.log("-------code:"+code+ "   total: "+amount+ " tot: "+tot + " quantity: "+quantity + " price: " +price);
                         if (tot >0){ 
 
                            currentRow.find("td:eq(6)").text(tot.toFixed(2));
                         }
-                        console.log("tot " +tot );
+                     //   console.log("tot " +tot );
                         total_sales = total_sales + tot;
                     }
 
@@ -4777,31 +4802,110 @@ console.log(items);
           
        });
 
+
+       $("#delete-credit-btn").on('click',function(e){
+              $("#qty-credit-txt").val(0);
+              $("#price-credit-txt").val(0);
+             // $("tr.selected").remove();
+              $("#submit-price-credit-editor").trigger("click");
+        });
           //modify item 
           $("#submit-price-credit-editor").click(function () {
-                                        table = document.getElementById("pos-table");
-                                        // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
-                                      //  table.rows[rIndex].cells[2].innerHTML = $("#pos-product-name-txt").val();
-                                        table.rows[rIndex].cells[3].innerHTML =   $("#qty-credit-txt").val();
-                                        table.rows[rIndex].cells[4].innerHTML =  $("#price-credit-txt").val();
-                                       // cmoney =parseFloat( $("#pos-c-money-txt").val());
-                                        //cmoney = cmoney.toFixed(2)
-                                       // table.rows[rIndex].cells[5].innerHTML = cmoney;
-                                        table.rows[rIndex].cells[6].innerHTML =  $("#total-credit-txt").val()
-                                       // table.rows[rIndex].cells[7].innerHTML = $("#pos-qty-txt").val();
- 
-                        setTimeout(function () {
-                            hide_pos_editor(0);
-                        }, 10000);
 
-                        adjust_total();
-                        clear_pos_top();
-                        $("#pos-product-name-txt").prop("readonly",true);
-                        // $("#pos-price-txt").prop("readonly",true);
-                        // $("#pos-qty-txt").prop("readonly",true);
-                        
+                        var  qty =  $("#qty-credit-txt").val();
+                        var  price = $("#price-credit-txt").val();
+                        var  pk  = $(this).attr("code");
+                      
+
+
+                        var data={};
+              //  $("#reset-form").trigger("click");
+              
+              data["pk"] =pk;
+              data["qty"] =qty;
+              data["price"] =price;
+              console.log("data:");
+
+              //console.log(data);
+             
+              $.ajax({
+                  type: "POST",
+                  url: "/pos_credit_view/",
+                  data: data,
+                  success: function (response) {
+                      // do something with response
+                      response["result"]; // equals 'Success or failed';
+                      response["message"]; // equals 'you"re logged in or You messed up';
+
+                      if (response["type"] === "success") {
+                            if(response["message"].trim() == "deleted" ){
+                               $("tr.selected").remove();
+                               adjust_total();
+
+                            }else{ 
+                                           console.log("success: ps:");
+                                            // console.log(response["ps"]);
+                                            table = document.getElementById("pos-table");
+                                          // table.rows[rIndex].cells[1].innerHTML =  $("#pos-product-code-txt").val();
+                                        //  table.rows[rIndex].cells[2].innerHTML = $("#pos-product-name-txt").val();
+                                            table.rows[rIndex].cells[3].innerHTML =   $("#qty-credit-txt").val();
+                                            table.rows[rIndex].cells[4].innerHTML =  $("#price-credit-txt").val();
+                                          // cmoney =parseFloat( $("#pos-c-money-txt").val());
+                                          //cmoney = cmoney.toFixed(2)
+                                          // table.rows[rIndex].cells[5].innerHTML = cmoney;
+                                          table.rows[rIndex].cells[6].innerHTML =  $("#total-credit-txt").val()
+                                          // table.rows[rIndex].cells[7].innerHTML = $("#pos-qty-txt").val();
+
+                                          setTimeout(function () {
+                                              hide_pos_editor(0);
+                                          }, 10000);
+
+                                          adjust_total();
+                                          clear_pos_top();
+                                          $("#pos-product-name-txt").prop("readonly",true);
+                                          // $("#pos-price-txt").prop("readonly",true);
+                                          // $("#pos-qty-txt").prop("readonly",true);
+                            }
                         $("#product-credit-modal").modal('hide');
                        // $("#pos-table tbody tr:first").addClass('selected').siblings().removeClass('selected'); 
+                            
+
+                              
+
+                      } else if (response["type"] === "error") {
+                      
+                      
+                      
+                      console.log("Acccess denied");
+
+                      }
+                  },
+                  error: function (response) {
+                      // do something with response
+                      console.log("Something went wrong! Try again..");
+                  //   $("#login-error").text("Something went wrong! Try again.");
+                  $("#login-danger-alert").fadeIn();  // alert message
+                //  closeSnoAlertBox("login","danger");
+                  },
+                  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
 
           });
 //add
@@ -4973,13 +5077,19 @@ $("#payment-login-lnk").click(function () {
                       console.log("source type:"+source_type);
                       rIndex = this.rowIndex;
                       $(this).addClass('selected').siblings().removeClass('selected');   
-                      if (source_type =="D")
+                      var code = parseInt( $(this).attr("code"))
+                      if(isNaN(code) ){
+                            code =0
+                      }
+                      if (source_type =="D" && code > 0)
                       {
                               var tableData = $(this).children("td").map(function() {
                               return $(this).text();
 
                           }).get();
                           var td=tableData[1] +  '*' +  tableData[2] + '*' + tableData[3] + '*' +  tableData[4] + '*' + tableData[5];
+                          console.log("----tr code ----:"+$(this).attr("code"));
+                          $("#submit-price-credit-editor").attr("code",+$(this).attr("code"));
                           console.log(td);
                           pcode =  tableData[1].trim();
 
@@ -5364,7 +5474,6 @@ $("#payment-login-lnk").click(function () {
         ///submit
 
         $("#venture-submit-btn").click(function (e) {
-           
             var  credit = $("#credit-txt").val();
             console.log("------------submit form init-----------credit:" + credit);
            
@@ -5394,9 +5503,82 @@ $("#payment-login-lnk").click(function () {
             $(this).prop("disabled",true);
            
             e.preventDefault();
+            console.log(">------------- source type: "+ source_type);
+            console.log("-------------   transaction_credit_id: "+ transaction_credit_id);
+            console.log(">------------- total amount: "+ $("#id_amount").val());
 
+            if (source_type == "D"){
+                     
+                    var data={};
+                    data["venture_id"] =transaction_credit_id;  
+                    data["amount"] =$("#id_amount").val();  
+                    $.ajax({
+                    type: "POST",
+                    url: "/pos_credit_venture_view/",
+               
+                    data: data,
+                    success: function (response) {
+                        // do something with response
+                        response["result"]; // equals 'Success or failed';
+                        response["message"]; // equals 'you"re logged in or You messed up';
+                        if (response["type"] === "success") {
+                                        console.log();
+                                        
+                                        $("#venture-pay-alert").fadeIn();
+                                        $("#venture-pay-alert-message").text("Payment has been approved! Thank you.");
+                                        setTimeout(function () {
+                                            $("#venture-pay-alert").hide();
+                                        }, 5000);
+                                        saveTansactions(transaction_credit_id);
+                                    //  window.location.replace("/user/"+id);
+                        } else if (response["type"] === "error") {
+                                    $("#venture-pay-alert").fadeIn();  // alert message
+                                    //("login","danger");
+                                    $("#venture-pay-alert-message").text( response["message"]);
+                                   
+                                    console.log("message:" + response["message"]);
+
+                                    setTimeout(function () {
+                                            $("#venture-pay-alert").hide();
+                                        }, 5000);
+
+                        }
+                    },
+                    error: function (response) {
+                        init = initialize;
+                        initialize =false;
+                        // do something with response
+                       if(init){ 
+                             $(".loading").toggleClass("hidden");
+                             location.reload(true);
+                       }else{ 
+                            console.log("Something went wrong! Try again..");
+                            //   $("#login-error").text("Something went wrong! Try again.");
+                            $("#venture-pay-alert").fadeIn();  // alert message
+                            $("#venture-pay-alert-message").text("Something went wrong! Try again..");
+                            $("#login-danger-alert").fadeIn();  // alert message
+                       }
+                   // closeSnoAlertBox("login","danger");
+                    },
+                    });  
+                  
+
+                      return;
+
+            }
+            // // if (source_type.trim() == "D"){
+            // //     console.log("------------- if---");
+              
+            // //      saveTansactions(transaction_credit_id);
+            // // }else
+            // // {
+            // //     console.log("------------- else---");
+            // //     saveTansactions(venture_id);
+            // // }
+            
+               
             $("#units-total").text(ctr);
-            $.ajax({
+                    $.ajax({
                     type: "POST",
                     url: "/pos_view/",
 

@@ -155,6 +155,7 @@ urlpatterns = [
   path('pos_view/', views.pos_view.as_view(), name = "pos_view_url"), 
   
   path('pos_credit_view/', views.pos_credit_view.as_view(), name = "pos_credit_view_url"), 
+  path('pos_credit_venture_view/', views.pos_credit_venture_view.as_view(), name = "pos_credit_venture_view_url"), 
   
   path('price_edit_view/', views.price_edit_view.as_view(), name = "price_edit_view_url"), 
   

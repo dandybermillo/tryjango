@@ -1536,6 +1536,51 @@ class new_note_view(View):
              
 # @login_required(login_url='/venture_login/')
 #pos
+class pos_credit_venture_view(View): #$
+    def post(self, request, *args, **kwargs):
+                if request.user.is_staff and request.user.is_active:
+                            print (f"user: {request.user}")
+                            staff_info=""
+                            try:
+                                staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                                print(f"..staff_info:{staff_info.name}")
+                            except Exception as e:
+                            # raise Http404("Sorry. User id does not exist!")
+                                print(f"def cuv @exception, id: None , e:{e}")
+                                logger.warning(f"def cuv @exception,e:{e}" ) 
+                else:
+                                print("going to unauthorized user page")  
+                                return redirect('/venture_login/') #
+                            # return redirect('/unauthorized_user/') #
+               
+                
+                
+                pk =  int( request.POST.get('venture_id','0')) 
+                amount = float(request.POST.get('amount',"0"))
+               
+                print(f"--------------- pk: {pk}, amount:{amount} ")
+                 
+                 
+                
+                # if pk > 0:
+                    
+                    
+                #         if qty <= 0 and price <=0:
+                #                 Productsold_qs=ProductSold.objects.get(id=pk).delete()
+                                 
+                #                 return JsonResponse({"type":'success', "message":"deleted","data":Productsold_qs})
+                #         else:
+                            
+                try:  
+                        result = VentureModel.objects.filter(id = pk).update(amount=amount)
+                        print(f"--------------- result: {result}") 
+                        if result > 0:
+                           return JsonResponse({"type":'success', "message":"Completed!","data":{}})
+                except Exception as e:
+                        print(f"...result notes error: {e} ")
+                        return JsonResponse({"type":'error', "message":"Unable to edit  this data!","data":{}})
+                #                         print (f"{e}, {type(e)}")
+                
 
 class pos_credit_view(View): #$
     def get(self, request, *args, **kwargs):
@@ -1559,7 +1604,7 @@ class pos_credit_view(View): #$
                         productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
                         
                         for row in productSold:
-                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                                row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id,"pk":row.id }
                                 ps.append(row)
                                        #   itemsold= ProductSold (member_id = customer,qty=obj["qty"],cm=obj["cm"],amount=obj["amount"],item_id=obj["item_id"],description=obj["description"],transaction_id=obj["transaction_id"])
  
@@ -1568,23 +1613,72 @@ class pos_credit_view(View): #$
                             print(f"Pos description: {e}")
                             logger.warning(f"Pos description: {e}")
                             return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
-                ps = [] #list of product ordered by credit
-                try:
-                            productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
-                            for row in productSold:
-                                    row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
-                                    print(f" row: {row}")
-                                    ps.append(row)
-                except Exception as e:
-                        print(f"Pos description: {e}")
-                        logger.warning(f"Pos description: {e}")
-                        return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
-                return JsonResponse({"type":'success', "message":"Success","data":dat,"member_info":{},"balances":{},"ps":ps})
+              #  ps = [] #list of product ordered by credit
+                # try:
+                #             productSold = ProductSold.objects.filter(transaction_id=venture_id) #todo: handler
+                #             for row in productSold:
+                #                     row ={"description":row.description,"qty":row.qty,"price":row.price,"cm":row.cm,"amount":row.amount,"item_id":row.item_id }
+                #                     print(f" row: {row}")
+                #                     ps.append(row)
+                # except Exception as e:
+                #         print(f"Pos description: {e}")
+                #         logger.warning(f"Pos description: {e}")
+                #         return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}})
+                return JsonResponse({"type":'success', "message":"Success","data":dat,"member_info":{},"balances":{},"ps":ps,"transaction_credit_id":venture_id})
             
                         
         # else:
         #                 print("here------------------------------- ")
         #                 return JsonResponse({"type":'error', "message":"Invalid Transaction Request!","data":{}}))
+
+
+
+    def post(self, request, *args, **kwargs):
+         
+              
+                if request.user.is_staff and request.user.is_active:
+                            print (f"user: {request.user}")
+                            staff_info=""
+                            try:
+                                staff_info =  MemberModel.objects.get(user_id  = request.user.id) 
+                                print(f"..staff_info:{staff_info.name}")
+                            except Exception as e:
+                            # raise Http404("Sorry. User id does not exist!")
+                                print(f"def cuv @exception, id: None , e:{e}")
+                                logger.warning(f"def cuv @exception,e:{e}" ) 
+                else:
+                                print("going to unauthorized user page")  
+                                return redirect('/venture_login/') #
+                            # return redirect('/unauthorized_user/') #
+               
+                
+                
+                pk =  int( request.POST.get('pk','0')) 
+                qty = float(request.POST.get('qty',"0"))
+                price = float(request.POST.get('price',"0"))
+                print(f"--------------- pk: {pk}, qty:{qty} price {price} ")
+                 
+                
+                if pk > 0:
+                    
+                    
+                        if qty <= 0 and price <=0:
+                                Productsold_qs=ProductSold.objects.get(id=pk).delete()
+                                 
+                                return JsonResponse({"type":'success', "message":"deleted","data":Productsold_qs})
+                        else:
+                            
+                                try:  
+                                        result = ProductSold.objects.filter(id = pk).update(qty=qty,price=price)
+                                        return JsonResponse({"type":'success', "message":"Completed!","data":{}})
+                                except Exception as e:
+                                        print(f"...result notes:")
+                                        print (f"{e}, {type(e)}")
+                return JsonResponse({"type":'error', "message":"Unable to update record","data":{}})
+                       
+
+
+
 
 class pos_view(View):
     
